@@ -119,6 +119,54 @@ Java_com_mapswithme_maps_editor_Editor_nativeSetWebsite(JNIEnv * env, jclass, js
 }
 
 JNIEXPORT jstring JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeGetFacebookPage(JNIEnv * env, jclass)
+{
+  return jni::ToJavaString(env, g_editableMapObject.GetFacebookPage());
+}
+
+JNIEXPORT void JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeSetFacebookPage(JNIEnv * env, jclass, jstring value)
+{
+  g_editableMapObject.SetFacebookPage(jni::ToNativeString(env, value));
+}
+
+JNIEXPORT jstring JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeGetInstagramPage(JNIEnv * env, jclass)
+{
+  return jni::ToJavaString(env, g_editableMapObject.GetInstagramPage());
+}
+
+JNIEXPORT void JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeSetInstagramPage(JNIEnv * env, jclass, jstring value)
+{
+  g_editableMapObject.SetInstagramPage(jni::ToNativeString(env, value));
+}
+
+JNIEXPORT jstring JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeGetTwitterPage(JNIEnv * env, jclass)
+{
+  return jni::ToJavaString(env, g_editableMapObject.GetTwitterPage());
+}
+
+JNIEXPORT void JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeSetTwitterPage(JNIEnv * env, jclass, jstring value)
+{
+  g_editableMapObject.SetTwitterPage(jni::ToNativeString(env, value));
+}
+
+JNIEXPORT jstring JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeGetVkPage(JNIEnv * env, jclass)
+{
+  return jni::ToJavaString(env, g_editableMapObject.GetVkPage());
+}
+
+JNIEXPORT void JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeSetVkPage(JNIEnv * env, jclass, jstring value)
+{
+  g_editableMapObject.SetVkPage(jni::ToNativeString(env, value));
+}
+
+JNIEXPORT jstring JNICALL
 Java_com_mapswithme_maps_editor_Editor_nativeGetEmail(JNIEnv * env, jclass)
 {
   return jni::ToJavaString(env, g_editableMapObject.GetEmail());
@@ -589,6 +637,34 @@ JNIEXPORT jboolean JNICALL
 Java_com_mapswithme_maps_editor_Editor_nativeIsWebsiteValid(JNIEnv * env, jclass clazz, jstring website)
 {
   return osm::EditableMapObject::ValidateWebsite(jni::ToNativeString(env, website));
+}
+
+// static boolean nativeIsFacebookPageValid(String facebookPage)
+JNIEXPORT jboolean JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeIsFacebookPageValid(JNIEnv * env, jclass clazz, jstring facebookPage)
+{
+  return osm::EditableMapObject::ValidateFacebookPage(jni::ToNativeString(env, facebookPage));
+}
+
+// static boolean nativeIsInstagramPageValid(String instagramPage)
+JNIEXPORT jboolean JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeIsInstagramPageValid(JNIEnv * env, jclass clazz, jstring instagramPage)
+{
+  return osm::EditableMapObject::ValidateInstagramPage(jni::ToNativeString(env, instagramPage));
+}
+
+// static boolean nativeIsTwitterPageValid(String twitterPage)
+JNIEXPORT jboolean JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeIsTwitterPageValid(JNIEnv * env, jclass clazz, jstring twitterPage)
+{
+  return osm::EditableMapObject::ValidateTwitterPage(jni::ToNativeString(env, twitterPage));
+}
+
+// static boolean nativeIsVkPageValid(String vkPage)
+JNIEXPORT jboolean JNICALL
+Java_com_mapswithme_maps_editor_Editor_nativeIsVkPageValid(JNIEnv * env, jclass clazz, jstring vkPage)
+{
+  return osm::EditableMapObject::ValidateVkPage(jni::ToNativeString(env, vkPage));
 }
 
 // static boolean nativeIsEmailValid(String email)

@@ -122,6 +122,10 @@ EditorDialog::EditorDialog(QWidget * parent, osm::EditableMapObject & emo)
     case osm::Props::Fax: v = emo.GetFax(); break;
     case osm::Props::Email: v = emo.GetEmail(); break;
     case osm::Props::Website: v = emo.GetWebsite(); break;
+    case osm::Props::FacebookPage: v = emo.GetFacebookPage(); break;
+    case osm::Props::InstagramPage: v = emo.GetInstagramPage(); break;
+    case osm::Props::TwitterPage: v = emo.GetTwitterPage(); break;
+    case osm::Props::VkPage: v = emo.GetVkPage(); break;
     case osm::Props::Internet:
       {
         grid->addWidget(new QLabel(kInternetObjectName), row, 0);
@@ -243,6 +247,10 @@ void EditorDialog::OnSave()
     case osm::Props::Fax: m_feature.SetFax(v); break;
     case osm::Props::Email: m_feature.SetEmail(v); break;
     case osm::Props::Website: m_feature.SetWebsite(v); break;
+    case osm::Props::FacebookPage: m_feature.SetFacebookPage(v); break;
+    case osm::Props::InstagramPage: m_feature.SetInstagramPage(v); break;
+    case osm::Props::TwitterPage: m_feature.SetTwitterPage(v); break;
+    case osm::Props::VkPage: m_feature.SetVkPage(v); break;
     case osm::Props::Internet: ASSERT(false, ("Is handled separately above."));
     case osm::Props::Cuisine:
     {

@@ -492,6 +492,26 @@ void EditableMapObject::SetWebsite(string website)
   m_metadata.Drop(feature::Metadata::FMD_URL);
 }
 
+void EditableMapObject::SetFacebookPage(string facebookPage)
+{
+  m_metadata.Set(feature::Metadata::FMD_FACEBOOK_PAGE, facebookPage);
+}
+
+void EditableMapObject::SetInstagramPage(string instagramPage)
+{
+  m_metadata.Set(feature::Metadata::FMD_INSTAGRAM_PAGE, instagramPage);
+}
+
+void EditableMapObject::SetTwitterPage(string twitterPage)
+{
+  m_metadata.Set(feature::Metadata::FMD_TWITTER_PAGE, twitterPage);
+}
+
+void EditableMapObject::SetVkPage(string vkPage)
+{
+  m_metadata.Set(feature::Metadata::FMD_VK_PAGE, vkPage);
+}
+
 void EditableMapObject::SetInternet(Internet internet)
 {
   m_metadata.Set(feature::Metadata::FMD_INTERNET, DebugPrint(internet));
@@ -742,6 +762,78 @@ bool EditableMapObject::ValidateWebsite(string const & site)
     return false;
 
   return true;
+}
+
+//static
+bool EditableMapObject::ValidateFacebookPage(string const & facebookPage)
+{
+  if (facebookPage.empty())
+    return true;
+  //check that facebookPage contains valid username. See rules: https://www.facebook.com/help/105399436216001
+  if (strings::EndsWith(facebookPage, ".com") || strings::EndsWith(facebookPage, ".net"))
+    return false;
+  if (regex_match(facebookPage, regex(R"(^[a-zA-Z\d.]{5,}$)")))
+    return true;
+  if (ValidateWebsite(facebookPage))
+  {
+    //check domain name
+    //TODO: maybe there is better way to parse URL and extract domain name
+    return regex_match(facebookPage, regex(R"(^(https?:\/\/)?([^/]+\.)?facebook\.com/.+)"));
+  }
+
+  return false;
+}
+
+//static
+bool EditableMapObject::ValidateInstagramPage(string const & instagramPage)
+{
+  if (instagramPage.empty())
+    return true;
+
+  //check that instagramPage contains valid username. Rules took here: https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/
+  if (regex_match(instagramPage, regex(R"(^[A-Za-z0-9_][A-Za-z0-9_.]{0,28}[A-Za-z0-9_]$)")))
+    return true;
+  if (ValidateWebsite(instagramPage))
+  {
+    //check domain name
+    //TODO: maybe there is better way to parse URL and extract domain name
+    return regex_match(instagramPage, regex(R"(^(https?:\/\/)?([^/]+\.)?instagram\.com/.+)"));
+  }
+
+  return false;
+}
+
+//static
+bool EditableMapObject::ValidateTwitterPage(string const & twitterPage)
+{
+  if (twitterPage.empty())
+    return true;
+  if (ValidateWebsite(twitterPage))
+  {
+    //check domain name
+    //TODO: maybe there is better way to parse URL and extract domain name
+    return regex_match(twitterPage, regex(R"(^(https?:\/\/)?([^/]+\.)?twitter\.com/.+)"));
+  }
+  else
+  {
+    //check that twitterPage contains valid username. Rules took here: https://stackoverflow.com/q/11361044
+    return regex_match(twitterPage, regex(R"(^[A-Za-z0-9_]{1,15}$)"));
+  }
+}
+
+//static
+bool EditableMapObject::ValidateVkPage(string const & vkPage)
+{
+  if (vkPage.empty())
+    return true;
+  if (ValidateWebsite(vkPage))
+  {
+    //check domain name
+    //TODO: maybe there is better way to parse URL and extract domain name
+    return regex_match(vkPage, regex(R"(^(https?:\/\/)?([^/]+\.)?vk\.com/.+)"));
+  }
+  else
+    return false;
 }
 
 // static

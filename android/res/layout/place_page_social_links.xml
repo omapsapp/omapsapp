@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  style="@style/PlacePageSocialIconsFrame"
+  android:tag="website"
+  tools:background="#20FF0000">
+
+  <ImageView
+    android:id="@+id/iv__place_facebook"
+    style="@style/PlacePageSocialIcon"
+    android:src="@drawable/ic_facebook"/>
+
+  <ImageView
+    android:id="@+id/iv__place_instagram"
+    style="@style/PlacePageSocialIcon"
+    android:src="@drawable/ic_instagram"/>
+
+  <ImageView
+    android:id="@+id/iv__place_twitter"
+    style="@style/PlacePageSocialIcon"
+    android:src="@drawable/ic_twitter"/>
+
+  <ImageView
+    android:id="@+id/iv__place_vk"
+    style="@style/PlacePageSocialIcon"
+    android:src="@drawable/ic_vk"/>
+</LinearLayout>

@@ -257,7 +257,7 @@ android {
   }
 
   splits.abi {
-    boolean enabled = project.hasProperty('splitApk')
+    boolean enabled = project.hasProperty('splitApk') && project.property('splitApk').toBoolean()
     println ("Create separate apks: " + enabled)
     enable enabled
     reset()

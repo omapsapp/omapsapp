@@ -55,6 +55,10 @@ string DebugPrint(Props props)
   case osm::Props::Fax: k = "fax"; break;
   case osm::Props::Email: k = "email"; break;
   case osm::Props::Website: k = "website"; break;
+  case osm::Props::FacebookPage: k = "contact:facebook"; break;
+  case osm::Props::InstagramPage: k = "contact:instagram"; break;
+  case osm::Props::TwitterPage: k = "contact:twitter"; break;
+  case osm::Props::VkPage: k = "contact:vk"; break;
   case osm::Props::Internet: k = "internet_access"; break;
   case osm::Props::Cuisine: k = "cuisine"; break;
   case osm::Props::OpeningHours: k = "opening_hours"; break;
@@ -157,6 +161,26 @@ string MapObject::GetWebsite() const
   if (website.empty())
     website = m_metadata.Get(feature::Metadata::FMD_URL);
   return website;
+}
+
+string MapObject::GetFacebookPage() const
+{
+  return m_metadata.Get(feature::Metadata::FMD_FACEBOOK_PAGE);
+}
+
+string MapObject::GetInstagramPage() const
+{
+  return m_metadata.Get(feature::Metadata::FMD_INSTAGRAM_PAGE);
+}
+
+string MapObject::GetTwitterPage() const
+{
+  return m_metadata.Get(feature::Metadata::FMD_TWITTER_PAGE);
+}
+
+string MapObject::GetVkPage() const
+{
+  return m_metadata.Get(feature::Metadata::FMD_VK_PAGE);
 }
 
 Internet MapObject::GetInternet() const

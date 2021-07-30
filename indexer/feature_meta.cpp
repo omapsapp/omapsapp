@@ -71,6 +71,14 @@ bool Metadata::TypeFromString(string const & k, Metadata::EType & outType)
     outType = Metadata::FMD_WEBSITE;
   else if (k == "website" || k == "contact:website")
     outType = Metadata::FMD_WEBSITE;
+  else if (k == "contact:facebook")
+    outType = Metadata::FMD_FACEBOOK_PAGE;
+  else if (k == "contact:instagram")
+    outType = Metadata::FMD_INSTAGRAM_PAGE;
+  else if (k == "contact:twitter")
+    outType = Metadata::FMD_TWITTER_PAGE;
+  else if (k == "contact:vk")
+    outType = Metadata::FMD_VK_PAGE;
   else if (k == "internet_access" || k == "wifi")
     outType = Metadata::FMD_INTERNET;
   else if (k == "ele")
@@ -183,6 +191,10 @@ string ToString(Metadata::EType type)
   case Metadata::FMD_OPERATOR: return "operator";
   case Metadata::FMD_URL: return "url";
   case Metadata::FMD_WEBSITE: return "website";
+  case Metadata::FMD_FACEBOOK_PAGE: return "contact:facebook";
+  case Metadata::FMD_INSTAGRAM_PAGE: return "contact:instagram";
+  case Metadata::FMD_TWITTER_PAGE: return "contact:twitter";
+  case Metadata::FMD_VK_PAGE: return "contact:vk";
   case Metadata::FMD_INTERNET: return "internet_access";
   case Metadata::FMD_ELE: return "ele";
   case Metadata::FMD_TURN_LANES: return "turn:lanes";
