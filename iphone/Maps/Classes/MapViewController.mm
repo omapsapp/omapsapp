@@ -481,9 +481,6 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
   [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)showRemoveAds {
-}
-
 - (void)processMyPositionStateModeEvent:(MWMMyPositionMode)mode {
   self.currentPositionMode = mode;
   [MWMLocationManager setMyPositionMode:mode];
@@ -523,8 +520,6 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
     }];
   }
 }
-
-#pragma mark - MWMRemoveAdsViewControllerDelegate
 
 #pragma mark - MWMFrameworkDrapeObserver
 

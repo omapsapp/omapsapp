@@ -19,12 +19,7 @@
 		39B9682423E1AC7400D3B8E3 /* libge0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B9682323E1AC7400D3B8E3 /* libge0.a */; };
 		39E3C60323312BA800FB0C37 /* features_fetcher.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 39E3C60123312BA800FB0C37 /* features_fetcher.hpp */; };
 		39E3C60423312BA800FB0C37 /* features_fetcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39E3C60223312BA800FB0C37 /* features_fetcher.cpp */; };
-		3D0AEAFC1FBB0FF400AD042B /* libgenerator_tests_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0AEAFF1FBB0FF400AD042B /* libgenerator_tests_support.a */; };
-		3D0AEAFE1FBB0FF400AD042B /* libsearch_tests_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0AEB011FBB0FF400AD042B /* libsearch_tests_support.a */; };
-		3D0BBAE523F3EEEF00A50354 /* libweb_api.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0BBAE423F3EEEF00A50354 /* libweb_api.a */; };
-		3D0BBAE723F3EF2700A50354 /* libvulkan_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0BBAE623F3EF2700A50354 /* libvulkan_wrapper.a */; };
 		3D0BBAE923F3EF4B00A50354 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0BBAE823F3EF4B00A50354 /* CoreLocation.framework */; };
-		3D0BBAEB23F3EF9D00A50354 /* libdescriptions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0BBAEA23F3EF9D00A50354 /* libdescriptions.a */; };
 		3D47B2C71F20EF06000828D2 /* displayed_categories_modifiers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D47B2C51F20EF06000828D2 /* displayed_categories_modifiers.cpp */; };
 		3D47B2C81F20EF06000828D2 /* displayed_categories_modifiers.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3D47B2C61F20EF06000828D2 /* displayed_categories_modifiers.hpp */; };
 		3D4E99821FB462B60025B48C /* everywhere_search_params.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3D4E99801FB462B60025B48C /* everywhere_search_params.hpp */; };
@@ -86,14 +81,12 @@
 		4740185423F5BE8A00A93C81 /* minizip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4740185323F5BE8A00A93C81 /* minizip.framework */; };
 		4740185523F5BE8B00A93C81 /* minizip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4740185323F5BE8A00A93C81 /* minizip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		475BD61B211C5FDC00E298C6 /* libshaders.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 475BD61A211C5FDC00E298C6 /* libshaders.a */; };
-		47A9D82220A19E9E00E4671B /* libopen_location_code.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9D82120A19E9E00E4671B /* libopen_location_code.a */; };
 		47A9D82420A19EC300E4671B /* libkml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9D82320A19EC300E4671B /* libkml.a */; };
 		56C116602090E5670068BBC0 /* extrapolator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56C1165E2090E5670068BBC0 /* extrapolator.cpp */; };
 		56C116612090E5670068BBC0 /* extrapolator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 56C1165F2090E5670068BBC0 /* extrapolator.hpp */; };
 		56D1C15E20A0AB9D005C689E /* extrapolator_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56D1C15D20A0AB9D005C689E /* extrapolator_tests.cpp */; };
 		56DAC36E23992467000BC50D /* libvulkan_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC36D23992467000BC50D /* libvulkan_wrapper.a */; };
 		56DAC3702399248B000BC50D /* libdescriptions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC36F2399248B000BC50D /* libdescriptions.a */; };
-		56DAC37223992491000BC50D /* libweb_api.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC37123992491000BC50D /* libweb_api.a */; };
 		56DAC37423992505000BC50D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC37323992504000BC50D /* Security.framework */; };
 		56DAC37623992556000BC50D /* libtraffic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC37523992556000BC50D /* libtraffic.a */; };
 		56EE14D31FE80E900036F20C /* libtransit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EE14D41FE80E900036F20C /* libtransit.a */; };
@@ -103,8 +96,6 @@
 		670E39411C46C5C700E9C0A6 /* gps_tracker.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 670E393F1C46C5C700E9C0A6 /* gps_tracker.hpp */; };
 		671ED38E20D403B300D4317E /* chart_generator_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 671ED38920D403B300D4317E /* chart_generator_tests.cpp */; };
 		671ED38F20D403B300D4317E /* search_api_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 671ED38A20D403B300D4317E /* search_api_tests.cpp */; };
-		671ED39120D4046D00D4317E /* libeditor_tests_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 671ED39020D4046D00D4317E /* libeditor_tests_support.a */; };
-		674231CB1DF984F600913FEB /* libtraffic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 674231CA1DF984F600913FEB /* libtraffic.a */; };
 		674A29F01B26FD6F001A525C /* testingmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 674A29EE1B26FD5F001A525C /* testingmain.cpp */; };
 		674A2A101B26FE62001A525C /* libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 674A29F41B26FE62001A525C /* libbase.a */; };
 		674A2A111B26FE62001A525C /* libcoding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 674A29F51B26FE62001A525C /* libcoding.a */; };
@@ -174,8 +165,6 @@
 		BBD9E2C71EE9D01900DF189A /* routing_mark.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BBD9E2C51EE9D01900DF189A /* routing_mark.hpp */; };
 		BBFC7E3A202D29C000531BE7 /* user_mark_layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBFC7E38202D29BF00531BE7 /* user_mark_layer.cpp */; };
 		BBFC7E3B202D29C000531BE7 /* user_mark_layer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BBFC7E39202D29BF00531BE7 /* user_mark_layer.hpp */; };
-		F627BFC41E8E89B600B1CBF4 /* librouting_common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F627BFC31E8E89B600B1CBF4 /* librouting_common.a */; };
-		F685EB631E955C45003CA3FF /* libicu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F685EB621E955C45003CA3FF /* libicu.a */; };
 		F6B283031C1B03320081957A /* gps_track_collection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B282FB1C1B03320081957A /* gps_track_collection.cpp */; };
 		F6B283041C1B03320081957A /* gps_track_collection.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F6B282FC1C1B03320081957A /* gps_track_collection.hpp */; };
 		F6B283051C1B03320081957A /* gps_track_filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6B282FD1C1B03320081957A /* gps_track_filter.cpp */; };
@@ -186,6 +175,13 @@
 		F6B2830A1C1B03320081957A /* gps_track.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F6B283021C1B03320081957A /* gps_track.hpp */; };
 		F6D2CE7E1EDEB7F500636DFD /* routing_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6D2CE7C1EDEB7F500636DFD /* routing_manager.cpp */; };
 		F6D2CE7F1EDEB7F500636DFD /* routing_manager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F6D2CE7D1EDEB7F500636DFD /* routing_manager.hpp */; };
+		FAA3955426B73C070045ABEF /* libeditor_tests_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA571F620C1935B007BDE27 /* libeditor_tests_support.a */; };
+		FAA3955526B73C1F0045ABEF /* libgenerator_tests_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA571FA20C1935B007BDE27 /* libgenerator_tests_support.a */; };
+		FAA3955626B73C270045ABEF /* libicu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA571FC20C1935B007BDE27 /* libicu.a */; };
+		FAA3955726B73C410045ABEF /* libopen_location_code.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA5721F20C194B8007BDE27 /* libopen_location_code.a */; };
+		FAA3955826B73C4A0045ABEF /* librouting_common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA5720A20C1935C007BDE27 /* librouting_common.a */; };
+		FAA3955926B73C510045ABEF /* libsearch_tests_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA5720E20C1935C007BDE27 /* libsearch_tests_support.a */; };
+		FAA3955A26B73C620045ABEF /* libtraffic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC37523992556000BC50D /* libtraffic.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -235,23 +231,11 @@
 		39B9682323E1AC7400D3B8E3 /* libge0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libge0.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3C60123312BA800FB0C37 /* features_fetcher.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = features_fetcher.hpp; sourceTree = "<group>"; };
 		39E3C60223312BA800FB0C37 /* features_fetcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = features_fetcher.cpp; sourceTree = "<group>"; };
-		3D0AEAFF1FBB0FF400AD042B /* libgenerator_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgenerator_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0AEB001FBB0FF400AD042B /* libindexer_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libindexer_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0AEB011FBB0FF400AD042B /* libsearch_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libsearch_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0BBAE423F3EEEF00A50354 /* libweb_api.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libweb_api.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0BBAE623F3EF2700A50354 /* libvulkan_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libvulkan_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0BBAE823F3EF4B00A50354 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		3D0BBAEA23F3EF9D00A50354 /* libdescriptions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdescriptions.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0BBAEC23F3EFBC00A50354 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3D0BBB9723F3F45F00A50354 /* libindexer_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libindexer_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0BBB9923F3FCF700A50354 /* libweb_api.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libweb_api.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0BBB9B23F3FDAE00A50354 /* libtraffic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libtraffic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D47B2C51F20EF06000828D2 /* displayed_categories_modifiers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = displayed_categories_modifiers.cpp; sourceTree = "<group>"; };
 		3D47B2C61F20EF06000828D2 /* displayed_categories_modifiers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = displayed_categories_modifiers.hpp; sourceTree = "<group>"; };
 		3D4E99801FB462B60025B48C /* everywhere_search_params.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = everywhere_search_params.hpp; sourceTree = "<group>"; };
 		3D4E99811FB462B60025B48C /* viewport_search_params.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = viewport_search_params.hpp; sourceTree = "<group>"; };
-		3D4F457D21354F720005E765 /* libeye_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libeye_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D4F457F21354F720005E765 /* libeye.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libeye.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D62CBCB20F4DFD600E7BB6E /* search_product_info.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = search_product_info.hpp; sourceTree = "<group>"; };
 		3DA571D820C1921D007BDE27 /* map_integration_tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = map_integration_tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA571EF20C19262007BDE27 /* interactive_search_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = interactive_search_test.cpp; sourceTree = "<group>"; };
@@ -260,7 +244,6 @@
 		3DA571F820C1935B007BDE27 /* libeditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libeditor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA571FA20C1935B007BDE27 /* libgenerator_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgenerator_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA571FC20C1935B007BDE27 /* libicu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libicu.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DA571FE20C1935B007BDE27 /* libindexer_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libindexer_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA5720020C1935C007BDE27 /* libindexer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libindexer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA5720220C1935C007BDE27 /* libjansson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libjansson.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA5720420C1935C007BDE27 /* liboauthcpp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liboauthcpp.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,14 +290,12 @@
 		45F6EE9C1FB1C77500019892 /* search_api.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search_api.cpp; sourceTree = "<group>"; };
 		4740185323F5BE8A00A93C81 /* minizip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = minizip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		475BD61A211C5FDC00E298C6 /* libshaders.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libshaders.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		47A9D82120A19E9E00E4671B /* libopen_location_code.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libopen_location_code.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A9D82320A19EC300E4671B /* libkml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libkml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1165E2090E5670068BBC0 /* extrapolator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = extrapolator.cpp; path = extrapolation/extrapolator.cpp; sourceTree = "<group>"; };
 		56C1165F2090E5670068BBC0 /* extrapolator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = extrapolator.hpp; path = extrapolation/extrapolator.hpp; sourceTree = "<group>"; };
 		56D1C15D20A0AB9D005C689E /* extrapolator_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = extrapolator_tests.cpp; sourceTree = "<group>"; };
 		56DAC36D23992467000BC50D /* libvulkan_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libvulkan_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DAC36F2399248B000BC50D /* libdescriptions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdescriptions.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		56DAC37123992491000BC50D /* libweb_api.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libweb_api.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DAC37323992504000BC50D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		56DAC37523992556000BC50D /* libtraffic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libtraffic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EE14D41FE80E900036F20C /* libtransit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libtransit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,8 +305,6 @@
 		670E393F1C46C5C700E9C0A6 /* gps_tracker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gps_tracker.hpp; sourceTree = "<group>"; };
 		671ED38920D403B300D4317E /* chart_generator_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chart_generator_tests.cpp; sourceTree = "<group>"; };
 		671ED38A20D403B300D4317E /* search_api_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search_api_tests.cpp; sourceTree = "<group>"; };
-		671ED39020D4046D00D4317E /* libeditor_tests_support.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libeditor_tests_support.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		674231CA1DF984F600913FEB /* libtraffic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtraffic.a; path = "../../../omim-build/xcode/Debug/libtraffic.a"; sourceTree = "<group>"; };
 		674A29CB1B26FCFE001A525C /* bookmarks_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bookmarks_test.cpp; sourceTree = "<group>"; };
 		674A29CE1B26FCFE001A525C /* kmz_unarchive_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kmz_unarchive_test.cpp; sourceTree = "<group>"; };
 		674A29CF1B26FCFE001A525C /* mwm_url_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mwm_url_tests.cpp; sourceTree = "<group>"; };
@@ -403,8 +382,6 @@
 		BBD9E2C51EE9D01900DF189A /* routing_mark.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = routing_mark.hpp; sourceTree = "<group>"; };
 		BBFC7E38202D29BF00531BE7 /* user_mark_layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user_mark_layer.cpp; sourceTree = "<group>"; };
 		BBFC7E39202D29BF00531BE7 /* user_mark_layer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = user_mark_layer.hpp; sourceTree = "<group>"; };
-		F627BFC31E8E89B600B1CBF4 /* librouting_common.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librouting_common.a; path = "/Users/v.mikhaylenko/mapsme/omim/xcode/routing_common/../../../omim-build/xcode/Debug/librouting_common.a"; sourceTree = "<absolute>"; };
-		F685EB621E955C45003CA3FF /* libicu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicu.a; path = "/Users/v.mikhaylenko/mapsme/omim/xcode/icu/../../../omim-build/xcode/Debug/libicu.a"; sourceTree = "<absolute>"; };
 		F6B282FB1C1B03320081957A /* gps_track_collection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gps_track_collection.cpp; sourceTree = "<group>"; };
 		F6B282FC1C1B03320081957A /* gps_track_collection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gps_track_collection.hpp; sourceTree = "<group>"; };
 		F6B282FD1C1B03320081957A /* gps_track_filter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gps_track_filter.cpp; sourceTree = "<group>"; };
@@ -415,13 +392,6 @@
 		F6B283021C1B03320081957A /* gps_track.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gps_track.hpp; sourceTree = "<group>"; };
 		F6D2CE7C1EDEB7F500636DFD /* routing_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = routing_manager.cpp; sourceTree = "<group>"; };
 		F6D2CE7D1EDEB7F500636DFD /* routing_manager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = routing_manager.hpp; sourceTree = "<group>"; };
-		F6DA2A961CCE24DB00F087B5 /* libdrape_frontend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdrape_frontend.a; path = "../../../omim-xcode-build/Debug/libdrape_frontend.a"; sourceTree = "<group>"; };
-		F6DA2A981CCE252600F087B5 /* libeditor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditor.a; path = "../../../omim-xcode-build/Debug/libeditor.a"; sourceTree = "<group>"; };
-		F6DA2A991CCE252600F087B5 /* liboauthcpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liboauthcpp.a; path = "../../../omim-xcode-build/Debug/liboauthcpp.a"; sourceTree = "<group>"; };
-		F6DA2A9A1CCE252600F087B5 /* libplatform_tests_support.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libplatform_tests_support.a; path = "/Users/v.mikhaylenko/mapsme/omim/xcode/platform/../../../omim-xcode-build/Debug/libplatform_tests_support.a"; sourceTree = "<absolute>"; };
-		F6DA2A9B1CCE252600F087B5 /* libpugixml.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpugixml.a; path = "../../../omim-xcode-build/Debug/libpugixml.a"; sourceTree = "<group>"; };
-		F6DA2A9C1CCE252600F087B5 /* libsdf_image.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsdf_image.a; path = "../../../omim-xcode-build/Debug/libsdf_image.a"; sourceTree = "<group>"; };
-		F6DA2A9D1CCE252600F087B5 /* libstb_image.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libstb_image.a; path = "../../../omim-xcode-build/Debug/libstb_image.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,44 +435,40 @@
 			files = (
 				39B9682423E1AC7400D3B8E3 /* libge0.a in Frameworks */,
 				56DAC37423992505000BC50D /* Security.framework in Frameworks */,
-				56DAC37223992491000BC50D /* libweb_api.a in Frameworks */,
 				56DAC3702399248B000BC50D /* libdescriptions.a in Frameworks */,
 				56DAC36E23992467000BC50D /* libvulkan_wrapper.a in Frameworks */,
-				3D0BBAEB23F3EF9D00A50354 /* libdescriptions.a in Frameworks */,
 				3D0BBAE923F3EF4B00A50354 /* CoreLocation.framework in Frameworks */,
-				3D0BBAE723F3EF2700A50354 /* libvulkan_wrapper.a in Frameworks */,
-				3D0BBAE523F3EEEF00A50354 /* libweb_api.a in Frameworks */,
+				FAA3955526B73C1F0045ABEF /* libgenerator_tests_support.a in Frameworks */,
 				3DD122BB2135708900EDFB53 /* libmetrics_tests_support.a in Frameworks */,
+				FAA3955926B73C510045ABEF /* libsearch_tests_support.a in Frameworks */,
 				3DD122BD2135708900EDFB53 /* libmetrics.a in Frameworks */,
 				475BD61B211C5FDC00E298C6 /* libshaders.a in Frameworks */,
-				671ED39120D4046D00D4317E /* libeditor_tests_support.a in Frameworks */,
 				47A9D82420A19EC300E4671B /* libkml.a in Frameworks */,
-				47A9D82220A19E9E00E4671B /* libopen_location_code.a in Frameworks */,
 				56EE14D71FE80F290036F20C /* libbsdiff.a in Frameworks */,
 				56EE14D51FE80EBD0036F20C /* libmwm_diff.a in Frameworks */,
 				56EE14D31FE80E900036F20C /* libtransit.a in Frameworks */,
-				3D0AEAFC1FBB0FF400AD042B /* libgenerator_tests_support.a in Frameworks */,
-				3D0AEAFE1FBB0FF400AD042B /* libsearch_tests_support.a in Frameworks */,
-				F685EB631E955C45003CA3FF /* libicu.a in Frameworks */,
-				F627BFC41E8E89B600B1CBF4 /* librouting_common.a in Frameworks */,
-				674231CB1DF984F600913FEB /* libtraffic.a in Frameworks */,
 				34DDA1821DBE5DF40088A609 /* libtracking.a in Frameworks */,
 				6788508A1D071E34004201E1 /* libdrape_frontend.a in Frameworks */,
 				6788508B1D071E34004201E1 /* libeditor.a in Frameworks */,
 				6788508C1D071E34004201E1 /* liboauthcpp.a in Frameworks */,
 				6788508D1D071E34004201E1 /* libplatform_tests_support.a in Frameworks */,
 				6788508E1D071E34004201E1 /* libpugixml.a in Frameworks */,
+				FAA3955826B73C4A0045ABEF /* librouting_common.a in Frameworks */,
 				6788508F1D071E34004201E1 /* libsdf_image.a in Frameworks */,
 				678850901D071E34004201E1 /* libstb_image.a in Frameworks */,
 				678850821D071E33004201E1 /* libdrape.a in Frameworks */,
 				67F183811BD5049500AB1840 /* libagg.a in Frameworks */,
 				67F183841BD5049500AB1840 /* libtess2.a in Frameworks */,
 				67F183751BD5041700AB1840 /* libz.tbd in Frameworks */,
+				FAA3955726B73C410045ABEF /* libopen_location_code.a in Frameworks */,
+				FAA3955A26B73C620045ABEF /* libtraffic.a in Frameworks */,
 				674A2A2F1B26FF7B001A525C /* libmap.a in Frameworks */,
 				674A2A101B26FE62001A525C /* libbase.a in Frameworks */,
 				674A2A111B26FE62001A525C /* libcoding.a in Frameworks */,
 				674A2A131B26FE62001A525C /* libexpat.a in Frameworks */,
 				674A2A141B26FE62001A525C /* libfreetype.a in Frameworks */,
+				FAA3955426B73C070045ABEF /* libeditor_tests_support.a in Frameworks */,
+				FAA3955626B73C270045ABEF /* libicu.a in Frameworks */,
 				674A2A161B26FE62001A525C /* libgenerator.a in Frameworks */,
 				674A2A171B26FE62001A525C /* libgeometry.a in Frameworks */,
 				674A2A1B1B26FE62001A525C /* libindexer.a in Frameworks */,
@@ -532,64 +498,45 @@
 		34DDA17E1DBE5DF40088A609 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39B9682323E1AC7400D3B8E3 /* libge0.a */,
-				56DAC37523992556000BC50D /* libtraffic.a */,
-				56DAC37323992504000BC50D /* Security.framework */,
-				56DAC37123992491000BC50D /* libweb_api.a */,
-				56DAC36F2399248B000BC50D /* libdescriptions.a */,
-				56DAC36D23992467000BC50D /* libvulkan_wrapper.a */,
-				4740185323F5BE8A00A93C81 /* minizip.framework */,
-				3D0BBB9B23F3FDAE00A50354 /* libtraffic.a */,
-				3D0BBB9923F3FCF700A50354 /* libweb_api.a */,
-				3D0BBB9723F3F45F00A50354 /* libindexer_tests_support.a */,
-				3D0BBAEC23F3EFBC00A50354 /* Security.framework */,
-				3D0BBAEA23F3EF9D00A50354 /* libdescriptions.a */,
 				3D0BBAE823F3EF4B00A50354 /* CoreLocation.framework */,
-				3D0BBAE623F3EF2700A50354 /* libvulkan_wrapper.a */,
-				3D0BBAE423F3EEEF00A50354 /* libweb_api.a */,
-				3DD122BA2135708900EDFB53 /* libmetrics_tests_support.a */,
-				3DD122BC2135708900EDFB53 /* libmetrics.a */,
-				3D4F457D21354F720005E765 /* libeye_tests_support.a */,
-				3D4F457F21354F720005E765 /* libeye.a */,
-				475BD61A211C5FDC00E298C6 /* libshaders.a */,
-				3DA5721D20C194B8007BDE27 /* libgenerator.a */,
-				3DA5721F20C194B8007BDE27 /* libopen_location_code.a */,
-				3DA5722120C194B8007BDE27 /* libopening_hours.a */,
-				3DA5722320C194B8007BDE27 /* libprotobuf.a */,
-				3DA5722520C194B8007BDE27 /* libpugixml.a */,
-				3DA5721920C1946F007BDE27 /* libcoding.a */,
-				3DA5721B20C1946F007BDE27 /* libgeometry.a */,
 				3DA571F420C1935B007BDE27 /* libbase.a */,
+				56EE14D81FE80F290036F20C /* libbsdiff.a */,
+				3DA5721920C1946F007BDE27 /* libcoding.a */,
+				56DAC36F2399248B000BC50D /* libdescriptions.a */,
 				3DA571F620C1935B007BDE27 /* libeditor_tests_support.a */,
 				3DA571F820C1935B007BDE27 /* libeditor.a */,
+				39B9682323E1AC7400D3B8E3 /* libge0.a */,
 				3DA571FA20C1935B007BDE27 /* libgenerator_tests_support.a */,
+				3DA5721D20C194B8007BDE27 /* libgenerator.a */,
+				3DA5721B20C1946F007BDE27 /* libgeometry.a */,
 				3DA571FC20C1935B007BDE27 /* libicu.a */,
-				3DA571FE20C1935B007BDE27 /* libindexer_tests_support.a */,
 				3DA5720020C1935C007BDE27 /* libindexer.a */,
 				3DA5720220C1935C007BDE27 /* libjansson.a */,
+				47A9D82320A19EC300E4671B /* libkml.a */,
+				3DD122BA2135708900EDFB53 /* libmetrics_tests_support.a */,
+				3DD122BC2135708900EDFB53 /* libmetrics.a */,
+				56EE14D61FE80EBD0036F20C /* libmwm_diff.a */,
 				3DA5720420C1935C007BDE27 /* liboauthcpp.a */,
+				3DA5721F20C194B8007BDE27 /* libopen_location_code.a */,
+				3DA5722120C194B8007BDE27 /* libopening_hours.a */,
 				3DA5720620C1935C007BDE27 /* libplatform_tests_support.a */,
 				3DA5720820C1935C007BDE27 /* libplatform.a */,
+				3DA5722320C194B8007BDE27 /* libprotobuf.a */,
+				3DA5722520C194B8007BDE27 /* libpugixml.a */,
 				3DA5720A20C1935C007BDE27 /* librouting_common.a */,
 				3DA5720C20C1935C007BDE27 /* librouting.a */,
 				3DA5720E20C1935C007BDE27 /* libsearch_tests_support.a */,
 				3DA5721020C1935C007BDE27 /* libsearch.a */,
+				475BD61A211C5FDC00E298C6 /* libshaders.a */,
 				3DA5721220C1935C007BDE27 /* libstorage.a */,
 				3DA5721420C1935C007BDE27 /* libsuccinct.a */,
 				3DA5721620C1935C007BDE27 /* libtess2.a */,
-				671ED39020D4046D00D4317E /* libeditor_tests_support.a */,
-				47A9D82320A19EC300E4671B /* libkml.a */,
-				47A9D82120A19E9E00E4671B /* libopen_location_code.a */,
-				56EE14D81FE80F290036F20C /* libbsdiff.a */,
-				56EE14D61FE80EBD0036F20C /* libmwm_diff.a */,
-				56EE14D41FE80E900036F20C /* libtransit.a */,
-				3D0AEAFF1FBB0FF400AD042B /* libgenerator_tests_support.a */,
-				3D0AEB001FBB0FF400AD042B /* libindexer_tests_support.a */,
-				3D0AEB011FBB0FF400AD042B /* libsearch_tests_support.a */,
-				F685EB621E955C45003CA3FF /* libicu.a */,
-				F627BFC31E8E89B600B1CBF4 /* librouting_common.a */,
-				674231CA1DF984F600913FEB /* libtraffic.a */,
 				34DDA1801DBE5DF40088A609 /* libtracking.a */,
+				56DAC37523992556000BC50D /* libtraffic.a */,
+				56EE14D41FE80E900036F20C /* libtransit.a */,
+				56DAC36D23992467000BC50D /* libvulkan_wrapper.a */,
+				4740185323F5BE8A00A93C81 /* minizip.framework */,
+				56DAC37323992504000BC50D /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -643,32 +590,15 @@
 		674A2A341B2700B2001A525C /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				F6DA2A981CCE252600F087B5 /* libeditor.a */,
-				F6DA2A991CCE252600F087B5 /* liboauthcpp.a */,
-				F6DA2A9A1CCE252600F087B5 /* libplatform_tests_support.a */,
-				F6DA2A9B1CCE252600F087B5 /* libpugixml.a */,
-				F6DA2A9C1CCE252600F087B5 /* libsdf_image.a */,
-				F6DA2A9D1CCE252600F087B5 /* libstb_image.a */,
-				F6DA2A961CCE24DB00F087B5 /* libdrape_frontend.a */,
-				678850831D071E34004201E1 /* libdrape_frontend.a */,
-				678850841D071E34004201E1 /* libeditor.a */,
-				678850851D071E34004201E1 /* liboauthcpp.a */,
-				678850861D071E34004201E1 /* libplatform_tests_support.a */,
-				678850871D071E34004201E1 /* libpugixml.a */,
-				678850881D071E34004201E1 /* libsdf_image.a */,
-				678850891D071E34004201E1 /* libstb_image.a */,
-				67F183871BD5050900AB1840 /* SystemConfiguration.framework */,
-				67F183851BD504ED00AB1840 /* libsystem_configuration.tbd */,
-				67F1837D1BD5049500AB1840 /* libagg.a */,
-				67F183801BD5049500AB1840 /* libtess2.a */,
-				67F183741BD5041700AB1840 /* libz.tbd */,
-				674A2A321B26FFE9001A525C /* OpenGL.framework */,
 				674A2A2D1B26FF4F001A525C /* Cocoa.framework */,
-				674A2A2B1B26FF38001A525C /* IOKit.framework */,
 				674A2A291B26FF24001A525C /* CoreFoundation.framework */,
+				674A2A2B1B26FF38001A525C /* IOKit.framework */,
+				67F1837D1BD5049500AB1840 /* libagg.a */,
 				674A29F41B26FE62001A525C /* libbase.a */,
 				674A29F51B26FE62001A525C /* libcoding.a */,
+				678850831D071E34004201E1 /* libdrape_frontend.a */,
 				674A29F61B26FE62001A525C /* libdrape.a */,
+				678850841D071E34004201E1 /* libeditor.a */,
 				674A29F71B26FE62001A525C /* libexpat.a */,
 				674A29F81B26FE62001A525C /* libfreetype.a */,
 				674A29FA1B26FE62001A525C /* libgenerator.a */,
@@ -676,14 +606,24 @@
 				674A29FC1B26FE62001A525C /* libgflags.a */,
 				674A29FF1B26FE62001A525C /* libindexer.a */,
 				674A2A001B26FE62001A525C /* libjansson.a */,
+				678850851D071E34004201E1 /* liboauthcpp.a */,
 				674A2A011B26FE62001A525C /* libopening_hours.a */,
 				674A2A021B26FE62001A525C /* libosrm.a */,
+				678850861D071E34004201E1 /* libplatform_tests_support.a */,
 				674A2A031B26FE62001A525C /* libplatform.a */,
 				674A2A041B26FE62001A525C /* libprotobuf.a */,
+				678850871D071E34004201E1 /* libpugixml.a */,
 				674A2A061B26FE62001A525C /* librouting.a */,
+				678850881D071E34004201E1 /* libsdf_image.a */,
 				674A2A071B26FE62001A525C /* libsearch.a */,
+				678850891D071E34004201E1 /* libstb_image.a */,
 				674A2A091B26FE62001A525C /* libstorage.a */,
 				674A2A0A1B26FE62001A525C /* libsuccinct.a */,
+				67F183851BD504ED00AB1840 /* libsystem_configuration.tbd */,
+				67F183801BD5049500AB1840 /* libtess2.a */,
+				67F183741BD5041700AB1840 /* libz.tbd */,
+				674A2A321B26FFE9001A525C /* OpenGL.framework */,
+				67F183871BD5050900AB1840 /* SystemConfiguration.framework */,
 			);
 			name = libs;
 			sourceTree = "<group>";

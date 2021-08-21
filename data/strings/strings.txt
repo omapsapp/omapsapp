@@ -15269,42 +15269,6 @@
     sk = Pridať zastávku
     sw = Ongeza eneo la kusimama
 
-  [preloader_viator_button]
-    tags = android
-    en = Learn more
-    be = Даведацца больш
-    ru = Посмотреть
-    bg = Научете повече
-    ar = تعلم المزيد
-    cs = Zjistit více
-    da = Flere oplysninger
-    nl = Meer leren
-    fi = Lisätietoja
-    fr = En savoir plus
-    de = Weitere Informationen
-    hu = Tudjon meg többet
-    id = Pelajari selengkapnya
-    it = Ulteriori informazioni
-    ja = 詳細情報
-    ko = 자세히 알아보기
-    nb = Finn ut mer
-    pl = Dowiedz się więcej
-    pt = Saber mais
-    pt-BR = Saiba mais
-    ro = Află mai multe
-    es = Más información
-    sv = Läs mer
-    th = เรียนรู้เพิ่มเติม
-    tr = Daha fazla bilgi edinin
-    uk = Докладніше
-    vi = Tìm hiểu thêm
-    zh-Hans = 了解更多
-    zh-Hant = 進一步了解
-    el = Μάθετε περισσότερα
-    fa = بیشتر بدانید
-    sk = Zistiť viac
-    sw = Jua mengi zaidi
-
   [start_from_my_position]
     tags = ios
     en = Start from
@@ -16350,43 +16314,6 @@
     el = Προφίλ OpenStreetMap
     fa = OpenStreetMap نمایه
     sk = Profil OpenStreetMap
-
-  [place_page_search_similar_hotel]
-    tags = android
-    en = Search similar hotels
-    be = Шукаць падобныя гатэлі
-    ru = Найти похожие отели
-    bg = Търсене на сходни хотели
-    ar = ابحث عن فنادق مماثلة
-    cs = Hledat podobné hotely
-    da = Søg lignende hoteller
-    nl = Zoek vergelijkbare hotels
-    fi = Etsi samanlaisia ​​hotelleja
-    fr = Rechercher des hôtels similaires
-    de = Nach ähnlichen Hotels suchen
-    hu = Hasonló szálláshelyek keresése
-    id = Cari hotel serupa
-    it = Cerca hotel simili
-    ja = 類似のホテルを検索
-    ko = 비슷한 호텔 검색
-    nb = Søk lignende hoteller
-    pl = Wyszukaj podobne hotele
-    pt = Pesquisar hotéis semelhantes
-    pt-BR = Buscar hotéis semelhantes
-    ro = Căutați hoteluri similare
-    es = Buscar hoteles similares
-    sv = Sök liknande hotell
-    th = ค้นหาโรงแรมที่คล้ายกัน
-    tr = Benzer otellerde ara
-    uk = Шукати схожі готелі
-    vi = Tìm kiếm khách sạn
-    zh-Hans = 搜索类似的酒店
-    zh-Hant = 搜索類似的酒店
-    el = Αναζήτηση παρόμοιων ξενοδοχείων
-    es-MX = Buscar hoteles similares
-    fa = جست‌وجوی هتل‌های مشابه
-    sk = Vyhľadať podobné hotely
-    sw = Tafuta hoteli sawa
 
   [bookmarks_detect_title]
     tags = ios
@@ -21914,43 +21841,6 @@
     fa = در حال دانلود
     sk = Sťahovanie
     sw = Inapakua
-
-  [key_information_title]
-    tags = android, ios
-    en = Key information
-    be = Галоўная інфармацыя
-    ru = Ключевая информация
-    bg = Ключова информация
-    ar = معلومات رئيسية
-    cs = Klíčové informace
-    da = Central information
-    nl = Belangrijke informatie
-    fi = Avaintietoa
-    fr = Informations clés
-    de = Wichtige Informationen
-    hu = Kulcs információ
-    id = Informasi kunci
-    it = Informazioni importanti
-    ja = 重要情報
-    ko = 핵심 정보
-    nb = Nøkkelinformasjon
-    pl = Kluczowe informacje
-    pt = Informação importante
-    pt-BR = Informação importante
-    ro = Informații cheie
-    es = Información clave
-    sv = Nyckelinformation
-    th = ข้อมูลหลัก
-    tr = Anahtar bilgisi
-    uk = Ключова інформація
-    vi = Thông tin chìa khóa
-    zh-Hans = 关键信息
-    zh-Hant = 關鍵信息
-    el = Βασικές πληροφορίες
-    es-MX = Información clave
-    fa = اطلاعات کلیدی
-    sk = Kľúčová informácia
-    sw = Habari muhimu
 
   [download_map_title]
     tags = android

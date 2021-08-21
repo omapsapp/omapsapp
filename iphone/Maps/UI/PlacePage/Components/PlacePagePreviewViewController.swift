@@ -3,10 +3,6 @@ final class PlacePageDirectionView: UIView {
   @IBOutlet var label: UILabel!
 }
 
-protocol PlacePagePreviewViewControllerDelegate: AnyObject {
-  func previewDidPressRemoveAds()
-}
-
 final class PlacePagePreviewViewController: UIViewController {
   @IBOutlet var stackView: UIStackView!
   @IBOutlet var popularView: UIView!
@@ -48,8 +44,6 @@ final class PlacePagePreviewViewController: UIViewController {
     }
   }
   
-  weak var delegate: PlacePagePreviewViewControllerDelegate?
-
   private var distance: String? = nil
   private var speedAndAltitude: String? = nil
   private var heading: CGFloat? = nil

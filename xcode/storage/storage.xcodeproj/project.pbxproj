@@ -63,7 +63,6 @@
 		56DAC38523992819000BC50D /* queued_country.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56DAC38323992819000BC50D /* queued_country.cpp */; };
 		56DAC38623992819000BC50D /* queued_country.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 56DAC38423992819000BC50D /* queued_country.hpp */; };
 		56DAC38823992F7F000BC50D /* libdescriptions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC38723992F7F000BC50D /* libdescriptions.a */; };
-		56DAC38A23992F84000BC50D /* libweb_api.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC38923992F84000BC50D /* libweb_api.a */; };
 		56DAC38C23992F8C000BC50D /* libvulkan_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAC38B23992F8C000BC50D /* libvulkan_wrapper.a */; };
 		56DAC38D23992FB1000BC50D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3971141D229D89F4003915E5 /* Security.framework */; };
 		56EE14DF1FE813D00036F20C /* libmwm_diff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EE14E01FE813D00036F20C /* libmwm_diff.a */; };
@@ -277,7 +276,6 @@
 		56DAC38323992819000BC50D /* queued_country.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = queued_country.cpp; sourceTree = "<group>"; };
 		56DAC38423992819000BC50D /* queued_country.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = queued_country.hpp; sourceTree = "<group>"; };
 		56DAC38723992F7F000BC50D /* libdescriptions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdescriptions.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		56DAC38923992F84000BC50D /* libweb_api.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libweb_api.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DAC38B23992F8C000BC50D /* libvulkan_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libvulkan_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EE14DE1FE813BC0036F20C /* libtransit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libtransit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EE14E01FE813D00036F20C /* libmwm_diff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libmwm_diff.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -430,7 +428,6 @@
 				39B9682223E1AC5F00D3B8E3 /* libge0.a in Frameworks */,
 				56DAC38D23992FB1000BC50D /* Security.framework in Frameworks */,
 				56DAC38C23992F8C000BC50D /* libvulkan_wrapper.a in Frameworks */,
-				56DAC38A23992F84000BC50D /* libweb_api.a in Frameworks */,
 				56DAC38823992F7F000BC50D /* libdescriptions.a in Frameworks */,
 				56FB43712164A8A1002099B3 /* libkml.a in Frameworks */,
 				56FB436F2164A848002099B3 /* libshaders.a in Frameworks */,
@@ -480,7 +477,6 @@
 			children = (
 				39B9682123E1AC5F00D3B8E3 /* libge0.a */,
 				56DAC38B23992F8C000BC50D /* libvulkan_wrapper.a */,
-				56DAC38923992F84000BC50D /* libweb_api.a */,
 				56DAC38723992F7F000BC50D /* libdescriptions.a */,
 				4740186323F5BF1800A93C81 /* minizip.framework */,
 				4740186023F5BF0C00A93C81 /* minizip.framework */,

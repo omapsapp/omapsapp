@@ -97,10 +97,6 @@ class SearchStyleSheet: IStyleSheet {
       s.textAlignment = .natural
     }
 
-    theme.add(styleName: "SearchCellAds", from: "TableCell") { (s) -> Void in
-      s.backgroundColor = colors.searchPromoBackground
-    }
-
     theme.add(styleName: "SearchCellAvaliable", from: "TableCell") { (s) -> Void in
       s.backgroundColor = colors.transparentGreen
     }

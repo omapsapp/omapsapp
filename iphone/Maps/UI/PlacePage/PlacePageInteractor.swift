@@ -22,14 +22,6 @@ extension PlacePageInteractor: PlacePageInteractorProtocol {
   }
 }
 
-// MARK: - PlacePagePreviewViewControllerDelegate
-
-extension PlacePageInteractor: PlacePagePreviewViewControllerDelegate {
-  func previewDidPressRemoveAds() {
-    MWMPlacePageManagerHelper.showRemoveAds()
-  }
-}
-
 // MARK: - PlacePageInfoViewControllerDelegate
 
 extension PlacePageInteractor: PlacePageInfoViewControllerDelegate {

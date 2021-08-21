@@ -29,7 +29,6 @@
 + (void)avoidDirty;
 + (void)avoidFerry;
 + (void)avoidToll;
-+ (void)showRemoveAds;
 + (void)openElevationDifficultPopup:(PlacePageData *)data;
 
 @end
