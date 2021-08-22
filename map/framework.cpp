@@ -119,21 +119,23 @@ Framework::FixedPosition::FixedPosition()
 
 namespace
 {
-char const kMapStyleKey[] = "MapStyleKeyV1";
-char const kAllow3dKey[] = "Allow3d";
-char const kAllow3dBuildingsKey[] = "Buildings3d";
-char const kAllowAutoZoom[] = "AutoZoom";
-char const kTrafficEnabledKey[] = "TrafficEnabled";
-char const kTransitSchemeEnabledKey[] = "TransitSchemeEnabled";
-char const kIsolinesEnabledKey[] = "IsolinesEnabled";
-char const kTrafficSimplifiedColorsKey[] = "TrafficSimplifiedColors";
-char const kLargeFontsSize[] = "LargeFontsSize";
-char const kTranslitMode[] = "TransliterationMode";
-char const kPreferredGraphicsAPI[] = "PreferredGraphicsAPI";
-char const kShowDebugInfo[] = "DebugInfo";
+std::string const kMapStyleKey = "MapStyleKeyV1";
+std::string const kAllow3dKey = "Allow3d";
+std::string const kAllow3dBuildingsKey = "Buildings3d";
+std::string const kAllowAutoZoom = "AutoZoom";
+std::string const kTrafficEnabledKey = "TrafficEnabled";
+std::string const kTransitSchemeEnabledKey = "TransitSchemeEnabled";
+std::string const kIsolinesEnabledKey = "IsolinesEnabled";
+std::string const kTrafficSimplifiedColorsKey = "TrafficSimplifiedColors";
+std::string const kLargeFontsSize = "LargeFontsSize";
+std::string const kTranslitMode = "TransliterationMode";
+std::string const kPreferredGraphicsAPI = "PreferredGraphicsAPI";
+std::string const kShowDebugInfo = "DebugInfo";
+std::string const kLastUpdateKey = "LastUpdateCheck";
 
 auto constexpr kLargeFontsScaleFactor = 1.6;
 size_t constexpr kMaxTrafficCacheSizeBytes = 64 /* Mb */ * 1024 * 1024;
+double constexpr kUpdateCheckInterval = 60 * 60 * 24;
 
 // TODO!
 // To adjust GpsTrackFilter was added secret command "?gpstrackaccuracy:xxx;"
@@ -1181,6 +1183,18 @@ void Framework::EnterForeground()
     m_drapeEngine->OnEnterForeground(secondsInBackground);
   }
 
+  double lastUpdateTime;
+  if (!settings::Get(kLastUpdateKey, lastUpdateTime) || m_startForegroundTime - lastUpdateTime > kUpdateCheckInterval)
+  {
+    /// @todo Probably GetCurrentNetworkPolicy() is better than DownloadingPolicy.
+    //if (platform::GetCurrentNetworkPolicy().CanUse())
+    if (m_storageDownloadingPolicy.IsDownloadingAllowed())
+    {
+      settings::Set(kLastUpdateKey, m_startForegroundTime);
+      m_storage.RunCountriesCheckAsync();
+    }
+  }
+
   m_trafficManager.OnEnterForeground();
 }
 
@@ -1190,7 +1204,9 @@ void Framework::InitCountryInfoGetter()
 
   auto const & platform = GetPlatform();
   m_infoGetter = CountryInfoReader::CreateCountryInfoGetter(platform);
-  m_infoGetter->SetAffiliations(&m_storage.GetAffiliations());
+
+  // Storage::GetAffiliations() pointer never changed.
+  m_infoGetter->SetAffiliations(m_storage.GetAffiliations());
 }
 
 void Framework::InitSearchAPI(size_t numThreads)

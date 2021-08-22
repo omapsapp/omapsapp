@@ -230,16 +230,21 @@ private:
 
   CountryNameGetter m_countryNameGetter;
 
-  // |m_affiliations| is a mapping from countryId to the list of names of
-  // geographical objects (such as countries) that encompass this countryId.
-  // Note. Affiliations is inherited from ancestors of the countryId in country tree.
-  // |m_affiliations| is filled during Storage initialization or during migration process.
-  // It is filled with data of countries.txt (field "affiliations").
-  // Once filled |m_affiliations| is not changed.
+  /**
+   * @brief Mapping from countryId to the list of names of
+   * geographical objects (such as countries) that encompass this countryId.
+   * @note Affiliations are inherited from ancestors of the countryId in country tree.
+   * Initialized with data of countries.txt (field "affiliations").
+   * Once filled, they are not changed.
+   */
   Affiliations m_affiliations;
   CountryNameSynonyms m_countryNameSynonyms;
+
+  /// @todo This containers are empty for now, but probably will be used in future.
+  /// @{
   MwmTopCityGeoIds m_mwmTopCityGeoIds;
   MwmTopCountryGeoIds m_mwmTopCountryGeoIds;
+  /// @}
 
   MwmSize m_maxMwmSizeBytes = 0;
 
@@ -432,12 +437,14 @@ public:
   /// \return true if updateInfo is filled correctly and false otherwise.
   bool GetUpdateInfo(CountryId const & countryId, UpdateInfo & updateInfo) const;
 
-  Affiliations const & GetAffiliations() const { return m_affiliations; }
-
-  CountryNameSynonyms const & GetCountryNameSynonyms() const { return m_countryNameSynonyms; }
-
-  MwmTopCityGeoIds const & GetMwmTopCityGeoIds() const { return m_mwmTopCityGeoIds; }
+  /// @name This functions should be called from 'main' thread only to avoid races.
+  /// @{
+  /// @return Pointer that will be stored for later use.
+  Affiliations const * GetAffiliations() const;
+  CountryNameSynonyms const & GetCountryNameSynonyms() const;
+  MwmTopCityGeoIds const & GetMwmTopCityGeoIds() const;
   std::vector<base::GeoObjectId> GetTopCountryGeoIds(CountryId const & countryId) const;
+  /// @}
 
   /// \brief Calls |toDo| for each node for subtree with |root|.
   /// For example ForEachInSubtree(GetRootId()) calls |toDo| for every node including

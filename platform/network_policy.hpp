@@ -21,7 +21,7 @@ public:
   bool CanUse() const { return m_canUse; }
 
 private:
-  NetworkPolicy(bool const canUseNetwork) : m_canUse(canUseNetwork) {}
+  explicit NetworkPolicy(bool canUse) : m_canUse(canUse) {}
 
   bool m_canUse = false;
 };

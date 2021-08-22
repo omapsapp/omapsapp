@@ -150,6 +150,18 @@ string Platform::ReadPathForFile(string const & file, string searchScope) const
                                 "Have been looking in:\n", possiblePaths));
 }
 
+std::unique_ptr<ModelReader> Platform::GetReaderSafe(std::string const & file, std::string const & searchScope) const
+{
+  try
+  {
+    return GetReader(file, searchScope);
+  }
+  catch (RootException const &)
+  {
+  }
+  return nullptr;
+}
+
 string Platform::ResourcesMetaServerUrl() const
 {
   return RESOURCES_METASERVER_URL;

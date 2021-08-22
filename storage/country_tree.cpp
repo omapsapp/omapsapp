@@ -450,9 +450,47 @@ int64_t LoadCountriesFromFile(string const & path, CountryTree & countries,
                               MwmTopCountryGeoIds & mwmTopCountryGeoIds)
 {
   string json;
-  ReaderPtr<Reader>(GetPlatform().GetReader(path)).ReadAsString(json);
-  return LoadCountriesFromBuffer(json, countries, affiliations, countryNameSynonyms,
-                                 mwmTopCityGeoIds, mwmTopCountryGeoIds);
+  int64_t version = -1;
+
+  // Basically, we choose latest version from "resource" or "writable".
+  // w > r in case of autoupdates
+  // r > w in case of new countries file with updated app
+
+  auto & pl = GetPlatform();
+  auto reader = pl.GetReaderSafe(path, "fr");
+  if (reader)
+  {
+    reader->ReadAsString(json);
+    version = LoadCountriesFromBuffer(json, countries, affiliations, countryNameSynonyms,
+                                      mwmTopCityGeoIds, mwmTopCountryGeoIds);
+  }
+
+  reader = pl.GetReaderSafe(path, "w");
+  if (reader)
+  {
+    CountryTree newCountries;
+    Affiliations newAffs;
+    CountryNameSynonyms newSyms;
+    MwmTopCityGeoIds newCityIds;
+    MwmTopCountryGeoIds newCountryIds;
+
+    reader->ReadAsString(json);
+    int64_t const newVersion = LoadCountriesFromBuffer(json, newCountries, newAffs, newSyms,
+                                                       newCityIds, newCountryIds);
+
+    if (newVersion > version)
+    {
+      version = newVersion;
+
+      countries = std::move(newCountries);
+      affiliations = std::move(newAffs);
+      countryNameSynonyms = std::move(newSyms);
+      mwmTopCityGeoIds = std::move(newCityIds);
+      mwmTopCountryGeoIds = std::move(newCountryIds);
+    }
+  }
+
+  return version;
 }
 
 void LoadCountryFile2CountryInfo(string const & jsonBuffer, map<string, CountryInfo> & id2info)

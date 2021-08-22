@@ -96,11 +96,6 @@ struct DownloaderSearchParams;
 
 namespace routing { namespace turns{ class Settings; } }
 
-namespace platform
-{
-class NetworkPolicy;
-}
-
 namespace descriptions
 {
 class Loader;

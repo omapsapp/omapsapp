@@ -748,16 +748,16 @@ UNIT_TEST(StorageTest_GetAffiliations)
 
   vector<string> const abkhaziaId = {"Abkhazia"};
   for (auto const & s : {"Georgia", "Russia", "Europe"})
-    TEST_EQUAL(storage.GetAffiliations().at(s), abkhaziaId, ());
+    TEST_EQUAL(storage.GetAffiliations()->at(s), abkhaziaId, ());
 
   // Affiliation inheritance.
   vector<string> const disputableId = {"Disputable Territory"};
   for (auto const & s : {"Stepchild Land1", "Stepchild Land2"})
-    TEST_EQUAL(storage.GetAffiliations().at(s), disputableId, ());
+    TEST_EQUAL(storage.GetAffiliations()->at(s), disputableId, ());
 
   vector<string> const indisputableId = {"Indisputable Territory Of Country1"};
   for (auto const & s : {"Child Land1"})
-    TEST_EQUAL(storage.GetAffiliations().at(s), indisputableId, ());
+    TEST_EQUAL(storage.GetAffiliations()->at(s), indisputableId, ());
 }
 
 UNIT_TEST(StorageTest_HasCountryId)

@@ -333,7 +333,7 @@ int main(int argc, char ** argv)
   storage::Storage storage(countriesFile, argv[1]);
   storage.Init(&DidDownload, &WillDelete);
   auto infoGetter = storage::CountryInfoReader::CreateCountryInfoGetter(pl);
-  infoGetter->SetAffiliations(&storage.GetAffiliations());
+  infoGetter->SetAffiliations(storage.GetAffiliations());
 
   GetStyleReader().SetCurrentStyle(MapStyleMerged);
   classificator::Load();

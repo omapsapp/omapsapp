@@ -203,6 +203,9 @@ public:
   /// [w]ritable, [r]esources, [s]ettings, by [f]ull path, [e]xternal resources,
   std::unique_ptr<ModelReader> GetReader(std::string const & file,
                                          std::string const & searchScope = std::string()) const;
+  /// @return nullptr instead of throw if file not exist.
+  std::unique_ptr<ModelReader> GetReaderSafe(std::string const & file,
+                                             std::string const & searchScope = std::string()) const;
 
   /// @name File operations
   //@{

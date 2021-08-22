@@ -156,7 +156,9 @@ m2::RectD CountryInfoGetter::GetLimitRectForLeaf(CountryId const & leafCountryId
 void CountryInfoGetter::GetMatchedRegions(std::string const & affiliation,
                                           RegionIdVec & regions) const
 {
-  CHECK(m_affiliations, ());
+  // Once set, m_affiliations ptr is never changed (same as the content).
+  ASSERT(m_affiliations, ());
+
   auto it = m_affiliations->find(affiliation);
   if (it == m_affiliations->end())
     return;
