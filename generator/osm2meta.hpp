@@ -70,6 +70,10 @@ public:
     case Metadata::FMD_STARS: valid = ValidateAndFormat_stars(v); break;
     case Metadata::FMD_OPERATOR: valid = ValidateAndFormat_operator(v); break;
     case Metadata::FMD_URL:  // The same validator as for website.
+    case Metadata::FMD_FACEBOOK_PAGE:  // The same validator as for website.
+    case Metadata::FMD_INSTAGRAM_PAGE:  // The same validator as for website.
+    case Metadata::FMD_TWITTER_PAGE:  // The same validator as for website.
+    case Metadata::FMD_VK_PAGE:  // The same validator as for website.
     case Metadata::FMD_WEBSITE: valid = ValidateAndFormat_url(v); break;
     case Metadata::FMD_INTERNET: valid = ValidateAndFormat_internet(v); break;
     case Metadata::FMD_ELE: valid = ValidateAndFormat_ele(v); break;

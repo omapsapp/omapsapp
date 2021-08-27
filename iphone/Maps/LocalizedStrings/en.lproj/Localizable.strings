@@ -366,6 +366,9 @@
 /* Text in menu */
 "instagram" = "Instagram";
 
+/* Text in place editor */
+"vk" = "VK";
+
 /* Text in menu */
 "openstreetmap" = "OpenStreetMap";
 

@@ -234,6 +234,8 @@
 	<string name="twitter">Twitter</string>
 	<!-- Text in menu -->
 	<string name="instagram">Instagram</string>
+	<!-- Text in place editor -->
+	<string name="vk">VK</string>
 	<!-- Text in menu -->
 	<string name="openstreetmap">OpenStreetMap</string>
 	<!-- Settings: Send feedback button and dialog title -->

@@ -116,6 +116,26 @@ PlacePageDialog::PlacePageDialog(QWidget * parent, place_page::Info const & info
       v = info.GetWebsite();
       link = true;
       break;
+    case osm::Props::FacebookPage:
+      k = "Facebook";
+      v = info.GetFacebookPage();
+      link = true;
+      break;
+    case osm::Props::InstagramPage:
+      k = "Instagram";
+      v = info.GetInstagramPage();
+      link = true;
+      break;
+    case osm::Props::TwitterPage:
+      k = "Twitter";
+      v = info.GetTwitterPage();
+      link = true;
+      break;
+    case osm::Props::VkPage:
+      k = "VK";
+      v = info.GetVkPage();
+      link = true;
+      break;
     case osm::Props::Internet:
       k = "Internet";
       v = DebugPrint(info.GetInternet());

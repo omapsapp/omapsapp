@@ -48,7 +48,11 @@ enum class Props : uint8_t
   Wikipedia = 10,
   Flats = 11,
   BuildingLevels = 12,
-  Level = 13
+  Level = 13,
+  FacebookPage = 14,
+  InstagramPage = 15,
+  TwitterPage = 16,
+  VkPage = 17
 };
 std::string DebugPrint(Props props);
 
@@ -77,6 +81,10 @@ public:
   std::string GetFax() const;
   std::string GetEmail() const;
   std::string GetWebsite() const;
+  std::string GetFacebookPage() const;
+  std::string GetInstagramPage() const;
+  std::string GetTwitterPage() const;
+  std::string GetVkPage() const;
   Internet GetInternet() const;
   /// @returns non-localized cuisines keys.
   std::vector<std::string> GetCuisines() const;
@@ -152,6 +160,10 @@ std::vector<Props> MetadataToProps(std::vector<T> const & metadata)
     // Url is not used in UI and should be matched to Website.
     case Metadata::FMD_URL:
     case Metadata::FMD_WEBSITE: res.push_back(Props::Website); break;
+    case Metadata::FMD_FACEBOOK_PAGE: res.push_back(Props::FacebookPage); break;
+    case Metadata::FMD_INSTAGRAM_PAGE: res.push_back(Props::InstagramPage); break;
+    case Metadata::FMD_TWITTER_PAGE: res.push_back(Props::TwitterPage); break;
+    case Metadata::FMD_VK_PAGE: res.push_back(Props::VkPage); break;
     case Metadata::FMD_INTERNET: res.push_back(Props::Internet); break;
     case Metadata::FMD_ELE: res.push_back(Props::Elevation); break;
     case Metadata::FMD_EMAIL: res.push_back(Props::Email); break;

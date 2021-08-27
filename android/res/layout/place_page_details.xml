@@ -50,6 +50,11 @@
 
     <include layout="@layout/place_page_website"/>
 
+    <com.mapswithme.maps.widget.placepage.SocialLinksView
+      android:id="@+id/place_page_social_links"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
     <include layout="@layout/place_page_wiki"/>
 
     <include layout="@layout/place_page_email"/>

@@ -73,6 +73,14 @@ public final class Editor
   public static native void nativeSetPhone(String phone);
   public static native String nativeGetWebsite();
   public static native void nativeSetWebsite(String website);
+  public static native String nativeGetFacebookPage();
+  public static native void nativeSetFacebookPage(String facebookPage);
+  public static native String nativeGetInstagramPage();
+  public static native void nativeSetInstagramPage(String instagramPage);
+  public static native String nativeGetTwitterPage();
+  public static native void nativeSetTwitterPage(String twitterPage);
+  public static native String nativeGetVkPage();
+  public static native void nativeSetVkPage(String vkPage);
   public static native String nativeGetEmail();
   public static native void nativeSetEmail(String email);
   public static native int nativeGetStars();
@@ -115,6 +123,10 @@ public final class Editor
   public static native boolean nativeIsZipcodeValid(String zipCode);
   public static native boolean nativeIsPhoneValid(String phone);
   public static native boolean nativeIsWebsiteValid(String site);
+  public static native boolean nativeIsFacebookPageValid(String site);
+  public static native boolean nativeIsInstagramPageValid(String site);
+  public static native boolean nativeIsTwitterPageValid(String site);
+  public static native boolean nativeIsVkPageValid(String site);
   public static native boolean nativeIsEmailValid(String email);
   public static native boolean nativeIsNameValid(String name);
 

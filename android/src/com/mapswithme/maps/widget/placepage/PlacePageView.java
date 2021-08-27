@@ -99,6 +99,7 @@ public class PlacePageView extends NestedScrollViewClickFixed
   private View mWebsite;
   private TextView mTvWebsite;
   private TextView mTvLatlon;
+  private SocialLinksView mSocialLinks;
   private View mOpeningHours;
   private TextView mFullOpeningHours;
   private TextView mTodayOpeningHours;
@@ -295,6 +296,8 @@ public class PlacePageView extends NestedScrollViewClickFixed
     mWebsite = findViewById(R.id.ll__place_website);
     mWebsite.setOnClickListener(this);
     mTvWebsite = findViewById(R.id.tv__place_website);
+    mSocialLinks = findViewById(R.id.place_page_social_links);
+    mSocialLinks.setPlacePageView(this);
     LinearLayout latlon = findViewById(R.id.ll__place_latlon);
     latlon.setOnClickListener(this);
     mTvLatlon = findViewById(R.id.tv__place_latlon);
@@ -803,6 +806,7 @@ public class PlacePageView extends NestedScrollViewClickFixed
     refreshMetadataOrHide(mapObject.getMetadata(Metadata.MetadataType.FMD_INTERNET), mWifi, null);
     refreshMetadataOrHide(mapObject.getMetadata(Metadata.MetadataType.FMD_FLATS), mEntrance, mTvEntrance);
     refreshOpeningHours(mapObject);
+    refreshSocialLinks(mapObject);
 
 //    showTaxiOffer(mapObject);
 
@@ -885,6 +889,16 @@ public class PlacePageView extends NestedScrollViewClickFixed
     UiUtils.setTextAndShow(mFullOpeningHours, TimeFormatUtils.formatTimetables(getContext(), timetables));
     if (!containsCurrentWeekday)
       refreshTodayOpeningHours(resources.getString(R.string.day_off_today), resources.getColor(R.color.base_red));
+  }
+
+  private void refreshSocialLinks(@NonNull MapObject mapObject)
+  {
+    final String facebookPageLink = mapObject.getMetadata(Metadata.MetadataType.FMD_FACEBOOK_PAGE);
+    final String instagramPageLink = mapObject.getMetadata(Metadata.MetadataType.FMD_INSTAGRAM_PAGE);
+    final String twitterPageLink = mapObject.getMetadata(Metadata.MetadataType.FMD_TWITTER_PAGE);
+    final String vkPageLink = mapObject.getMetadata(Metadata.MetadataType.FMD_VK_PAGE);
+
+    mSocialLinks.refreshSocialLinks(facebookPageLink, instagramPageLink, twitterPageLink, vkPageLink);
   }
 
   private void refreshTodayOpeningHours(String text, @ColorInt int color)
@@ -1191,11 +1205,6 @@ public class PlacePageView extends NestedScrollViewClickFixed
   @Override
   public boolean onLongClick(View v)
   {
-    final Object tag = v.getTag();
-    final String tagStr = tag == null ? "" : tag.toString();
-
-    final PopupMenu popup = new PopupMenu(getContext(), v);
-    final Menu menu = popup.getMenu();
     final List<String> items = new ArrayList<>();
     switch (v.getId())
     {
@@ -1235,6 +1244,14 @@ public class PlacePageView extends NestedScrollViewClickFixed
         break;
     }
 
+    showCopyMenu(v, items);
+    return true;
+  }
+
+  public void showCopyMenu(View anchorView, List<String> items)
+  {
+    final PopupMenu popup = new PopupMenu(getContext(), anchorView);
+    final Menu menu = popup.getMenu();
     final String copyText = getResources().getString(android.R.string.copy);
     for (int i = 0; i < items.size(); i++)
       menu.add(Menu.NONE, i, i, String.format("%s %s", copyText, items.get(i)));
@@ -1250,7 +1267,6 @@ public class PlacePageView extends NestedScrollViewClickFixed
     });
 
     popup.show();
-    return true;
   }
 
   private void close()

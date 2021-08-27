@@ -137,6 +137,10 @@ public:
 
   void SetEmail(std::string const & email);
   void SetWebsite(std::string website);
+  void SetFacebookPage(std::string facebookPage);
+  void SetInstagramPage(std::string instagramPage);
+  void SetTwitterPage(std::string twitterPage);
+  void SetVkPage(std::string vkPage);
   void SetWikipedia(std::string const & wikipedia);
 
   void SetInternet(Internet internet);
@@ -168,6 +172,10 @@ public:
   static bool ValidatePostCode(std::string const & postCode);
   static bool ValidatePhoneList(std::string const & phone);
   static bool ValidateWebsite(std::string const & site);
+  static bool ValidateFacebookPage(std::string const & facebookPage);
+  static bool ValidateInstagramPage(std::string const & instagramPage);
+  static bool ValidateTwitterPage(std::string const & twitterPage);
+  static bool ValidateVkPage(std::string const & vkPage);
   static bool ValidateEmail(std::string const & email);
   static bool ValidateLevel(std::string const & level);
   static bool ValidateName(std::string const & name);

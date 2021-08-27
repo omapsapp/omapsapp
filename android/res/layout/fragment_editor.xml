@@ -176,6 +176,18 @@
         <include
           android:id="@+id/block_operator"
           layout="@layout/item_editor_input"/>
+        <include
+          android:id="@+id/block_facebook"
+          layout="@layout/item_editor_input"/>
+        <include
+          android:id="@+id/block_instagram"
+          layout="@layout/item_editor_input"/>
+        <include
+          android:id="@+id/block_twitter"
+          layout="@layout/item_editor_input"/>
+        <include
+          android:id="@+id/block_vk"
+          layout="@layout/item_editor_input"/>
         <RelativeLayout
           android:id="@+id/block_cuisine"
           style="@style/MwmWidget.Editor.MetadataBlock.Clickable"

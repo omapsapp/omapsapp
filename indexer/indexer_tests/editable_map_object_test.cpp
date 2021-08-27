@@ -193,6 +193,83 @@ UNIT_TEST(EditableMapObject_ValidateEmail)
   TEST(!EditableMapObject::ValidateEmail("email@e#$%&'*+-/=?^`_{}|~.com"), ());
 }
 
+UNIT_TEST(EditableMapObject_ValidateFacebookPage)
+{
+  TEST(EditableMapObject::ValidateFacebookPage(""), ());
+  TEST(EditableMapObject::ValidateFacebookPage("facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("www.facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("http://facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("https://facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("http://www.facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("https://www.facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("https://en-us.facebook.com/OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("OpenStreetMap"), ());
+  TEST(EditableMapObject::ValidateFacebookPage("some.good.page"), ());
+
+  TEST(!EditableMapObject::ValidateFacebookPage("instagram.com/openstreetmapus"), ());
+  TEST(!EditableMapObject::ValidateFacebookPage("https://instagram.com/openstreetmapus"), ());
+  TEST(!EditableMapObject::ValidateFacebookPage("OpenStreetMap.com"), ());
+  TEST(!EditableMapObject::ValidateFacebookPage("osm"), ());
+  TEST(!EditableMapObject::ValidateFacebookPage("osm.net"), ());
+}
+
+UNIT_TEST(EditableMapObject_ValidateInstagramPage)
+{
+  TEST(EditableMapObject::ValidateInstagramPage(""), ());
+  TEST(EditableMapObject::ValidateInstagramPage("instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("www.instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("http://instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("https://instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("http://www.instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("https://www.instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("https://en-us.instagram.com/openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("openstreetmapus"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("open.street.map.us"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("open_street_map_us"), ());
+  TEST(EditableMapObject::ValidateInstagramPage("_osm_"), ());
+
+  TEST(!EditableMapObject::ValidateInstagramPage("facebook.com/osm_us"), ());
+  TEST(!EditableMapObject::ValidateInstagramPage("https://facebook.com/osm_us"), ());
+  TEST(!EditableMapObject::ValidateInstagramPage(".osm"), ());
+  TEST(!EditableMapObject::ValidateInstagramPage("osm."), ());
+  TEST(!EditableMapObject::ValidateInstagramPage(".dots_not_allowed."), ());
+  TEST(!EditableMapObject::ValidateInstagramPage("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"), ());
+}
+
+UNIT_TEST(EditableMapObject_ValidateTwitterPage)
+{
+  TEST(EditableMapObject::ValidateTwitterPage(""), ());
+  TEST(EditableMapObject::ValidateTwitterPage("twitter.com/osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("www.twitter.com/osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("http://twitter.com/osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("https://twitter.com/osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("http://www.twitter.com/osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("https://www.twitter.com/osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("osm_tech"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("_osm_tech_"), ());
+  TEST(EditableMapObject::ValidateTwitterPage("1"), ());
+
+  TEST(!EditableMapObject::ValidateTwitterPage("instagram.com/osm_tech"), ());
+  TEST(!EditableMapObject::ValidateTwitterPage("https://instagram.com/osm_tech"), ());
+  TEST(!EditableMapObject::ValidateTwitterPage("dots.not.allowed"), ());
+  TEST(!EditableMapObject::ValidateTwitterPage("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"), ());
+}
+
+UNIT_TEST(EditableMapObject_ValidateVkPage)
+{
+  TEST(EditableMapObject::ValidateVkPage(""), ());
+  TEST(EditableMapObject::ValidateVkPage("vk.com/id404"), ());
+  TEST(EditableMapObject::ValidateVkPage("www.vk.com/id404"), ());
+  TEST(EditableMapObject::ValidateVkPage("http://vk.com/id404"), ());
+  TEST(EditableMapObject::ValidateVkPage("https://vk.com/id404"), ());
+  TEST(EditableMapObject::ValidateVkPage("http://www.vk.com/id404"), ());
+  TEST(EditableMapObject::ValidateVkPage("https://www.vk.com/id404"), ());
+
+  TEST(!EditableMapObject::ValidateVkPage("instagram.com/hello_world"), ());
+  TEST(!EditableMapObject::ValidateVkPage("https://instagram.com/hello_world"), ());
+  TEST(!EditableMapObject::ValidateVkPage("usernames_not_allowed"), ());
+}
+
 UNIT_TEST(EditableMapObject_ValidateName)
 {
   vector<string> correctNames = {"abc", "абв", "ᆺᆯㅕ", "꫞ꪺꫀꪸ", "a b?c", "a!b.c", "a(b)c", "a,b.c",

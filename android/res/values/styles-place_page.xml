@@ -45,6 +45,20 @@
     <item name="android:visibility">gone</item>
   </style>
 
+  <style name="PlacePageSocialIconsFrame">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">@dimen/height_block_base</item>
+    <item name="android:orientation">horizontal</item>
+    <item name="android:paddingBottom">@dimen/margin_half</item>
+    <item name="android:paddingLeft">@dimen/margin_base</item>
+    <item name="android:paddingStart">@dimen/margin_base</item>
+    <item name="android:paddingRight">@dimen/margin_base</item>
+    <item name="android:paddingEnd">@dimen/margin_base</item>
+    <item name="android:paddingTop">@dimen/margin_half</item>
+    <item name="android:gravity">center_vertical</item>
+  </style>
+
   <style name="PlacePageMetadataText">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
@@ -78,5 +92,15 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:tint">?iconTint</item>
     <item name="android:layout_marginEnd">@dimen/margin_base</item>
+  </style>
+
+  <style name="PlacePageSocialIcon">
+    <item name="android:layout_width">@dimen/margin_double_and_half</item>
+    <item name="android:layout_height">@dimen/margin_double_and_half</item>
+    <item name="android:layout_marginEnd">@dimen/margin_half</item>
+    <item name="android:layout_marginRight">@dimen/margin_half</item>
+    <item name="android:background">?clickableBackground</item>
+    <item name="android:clickable">true</item>
+    <item name="android:visibility">gone</item>
   </style>
 </resources>
