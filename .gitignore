@@ -85,7 +85,6 @@ iphone/Maps/3party/Carthage/Build/iOS/*.dSYM
 iphone/Maps/3party/Carthage/Build/*.version
 
 # GeneratedFiles
-version/version.hpp
 tools/win/MapsWithMe*
 GeneratedFiles
 
@@ -164,7 +163,7 @@ designer_version.h
 *.sw?
 
 # Build version
-build_version.hpp
+platform/platform_qt_version.cpp
 
 #python modules building
 tools/python/*/build

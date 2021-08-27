@@ -38,7 +38,7 @@
   AppInfo * appInfo = [AppInfo sharedInfo];
   NSString * version = appInfo.bundleVersion;
   if (appInfo.buildNumber)
-    version = [NSString stringWithFormat:@"%@.%@", version, appInfo.buildNumber];
+    version = [NSString stringWithFormat:@"%@-%@", version, appInfo.buildNumber];
   self.versionLabel.text = [NSString stringWithFormat:L(@"version"), version];
 
   self.dataVersionLabel.text = [NSString stringWithFormat:L(@"data_version"), [MWMFrameworkHelper dataVersion]];

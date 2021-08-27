@@ -260,6 +260,12 @@ public:
 
   std::string DeviceModel() const;
 
+  /// @return string version as displayed to the user.
+  std::string Version() const;
+
+  /// @return integer version in yyMMdd format.
+  int32_t IntVersion() const;
+
   /// @return url for clients to download maps
   //@{
   std::string MetaServerUrl() const;

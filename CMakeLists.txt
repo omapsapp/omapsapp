@@ -363,12 +363,3 @@ omim_add_test_subdirectory(qt_tstfrm)
 if (PLATFORM_ANDROID)
   add_subdirectory(android/jni)
 endif()
-
-add_custom_target(BuildVersion ALL
-  COMMAND ${CMAKE_COMMAND}
-  ARGS
-  -D MAPSME_CURRENT_PROJECT_ROOT=${OMIM_ROOT}
-  -D PATH_WITH_BUILD_VERSION_HPP=${OMIM_ROOT}
-  -D PROJECT_NAME=${PROJECT_NAME}
-  -P ${OMIM_ROOT}/cmake/BuildVersion.cmake
-)

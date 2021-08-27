@@ -60,6 +60,21 @@ std::string Platform::DeviceModel() const
   return jni::ToNativeString(env, deviceModel);
 }
 
+std::string Platform::Version() const
+{
+  JNIEnv * env = jni::GetEnv();
+  static jmethodID const getVersionId = jni::GetStaticMethodID(env, g_utilsClazz, "getVersion", "()Ljava/lang/String;");
+  auto const version = static_cast<jstring>(env->CallStaticObjectMethod(g_utilsClazz, getVersionId));
+  return jni::ToNativeString(env, version);
+}
+
+int32_t Platform::IntVersion() const
+{
+  JNIEnv * env = jni::GetEnv();
+  static jmethodID const getIntVersionId = jni::GetStaticMethodID(env, g_utilsClazz, "getIntVersion", "()I");
+  return env->CallStaticIntMethod(g_utilsClazz, getIntVersionId);
+}
+
 Platform::EConnectionType Platform::ConnectionStatus()
 {
   JNIEnv * env = jni::GetEnv();

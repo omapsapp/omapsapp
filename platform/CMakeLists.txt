@@ -94,6 +94,16 @@ elseif(${PLATFORM_ANDROID})
     platform_unix_impl.hpp
   )
 else() # neither iPhone nor Android
+  #
+  # There is no reliable cross-platform way to generate version from git.
+  # Use the current date for desktop.
+  #
+  string(TIMESTAMP VERSION "%Y.%m.%d" UTC)
+  string(TIMESTAMP INT_VERSION "%y%m%d" UTC)
+  configure_file("${CMAKE_CURRENT_SOURCE_DIR}/platform_qt_version.cpp.in"
+                 "${CMAKE_CURRENT_BINARY_DIR}/platform_qt_version.cpp"
+                  @ONLY)
+
   append(
     SRC
     localization_dummy.cpp
@@ -101,6 +111,7 @@ else() # neither iPhone nor Android
     location_service.hpp
     network_policy_dummy.cpp
     platform_qt.cpp
+    "${CMAKE_CURRENT_BINARY_DIR}/platform_qt_version.cpp"
     wifi_info.hpp
     wifi_location_service.cpp
   )

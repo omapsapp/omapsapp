@@ -130,6 +130,9 @@ def getVersion() {
   // - CC - the number of commits from the current day
   // 21_00_00_00_00 is the the greatest value Google Play allows for versionCode.
   // See https://developer.android.com/studio/publish/versioning for details.
+  //
+  // (!) Please sync with Utils.getIntVersion().
+  //
   def versionCode = (year - 2000) * 1_00_00_00 + month * 1_00_00 + day * 1_00 + build
 
   // Use the current date to generate the version name:

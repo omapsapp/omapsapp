@@ -42,7 +42,6 @@
 #include <exception>
 #include <iostream>
 
-#include "build_version.hpp"
 #include "defines.hpp"
 
 #include "3party/gflags/src/gflags/gflags.h"
@@ -61,15 +60,14 @@ DEFINE_bool(debug, false, "Debug mode.");
 MAIN_WITH_ERROR_HANDLING([](int argc, char ** argv) {
   CHECK(IsLittleEndian(), ("Only little-endian architectures are supported."));
 
+  Platform & pl = GetPlatform();
   google::SetUsageMessage(
       "complex_generator is a program that generates complexes on the basis of "
       "the last generation of maps. Complexes are a hierarchy of interesting "
       "geographical features.");
-  google::SetVersionString(std::to_string(omim::build_version::git::kTimestamp) + " " +
-                           omim::build_version::git::kHash);
+  google::SetVersionString(pl.Version());
   google::ParseCommandLineFlags(&argc, &argv, true);
 
-  Platform & pl = GetPlatform();
   auto threadsCount = pl.CpuCores();
   CHECK(!FLAGS_user_resource_path.empty(), ());
   pl.SetResourceDir(FLAGS_user_resource_path);

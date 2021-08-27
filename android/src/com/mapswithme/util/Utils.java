@@ -644,6 +644,21 @@ public class Utils
   }
 
   @NonNull
+  public static String getVersion()
+  {
+    return BuildConfig.VERSION_NAME;
+  }
+
+  @NonNull
+  public static int getIntVersion()
+  {
+    // Please sync with getVersion() in build.gradle
+    // - % 100000000 removes prefix for special markets, e.g Huawei.
+    // - / 100 removes the number of commits in the current day.
+    return (BuildConfig.VERSION_CODE % 1_00_00_00_00) / 100;
+  }
+
+  @NonNull
   public static <T> T[] concatArrays(@Nullable T[] a, T... b)
   {
     if (a == null || a.length == 0)

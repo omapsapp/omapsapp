@@ -162,6 +162,23 @@ std::string Platform::DeviceModel() const
   return deviceModel.UTF8String;
 }
 
+std::string Platform::Version() const
+{
+  NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+  return version.UTF8String;
+}
+
+int32_t Platform::IntVersion() const
+{
+  NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+  int year = 0;
+  int month = 0;
+  int day = 0;
+  int rc = sscanf(version.UTF8String, "%d.%d.%d", &year, &month, &day);
+  CHECK_EQUAL(rc, 3, ("Failed t parse version"));
+  return (int32_t)(year - 2000) * 10000 + month * 100 + day;
+}
+
 Platform::EConnectionType Platform::ConnectionStatus()
 {
   struct sockaddr_in zero;

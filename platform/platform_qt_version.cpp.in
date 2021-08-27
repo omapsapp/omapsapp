@@ -1,0 +1,11 @@
+#include "platform/platform.hpp"
+
+std::string Platform::Version() const
+{
+  return "@VERSION@";
+}
+
+int32_t Platform::IntVersion() const
+{
+  return @INT_VERSION@;
+}

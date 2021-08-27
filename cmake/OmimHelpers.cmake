@@ -29,7 +29,6 @@ endmacro()
 # Functions for using in subdirectories
 function(omim_add_executable executable)
   add_executable(${executable} ${ARGN})
-  add_dependencies(${executable} BuildVersion)
   if (USE_ASAN)
     target_link_libraries(
       ${executable}
@@ -78,7 +77,6 @@ endfunction()
 
 function(omim_add_library library)
   add_library(${library} ${ARGN})
-  add_dependencies(${library} BuildVersion)
   if (USE_PPROF AND PLATFORM_MAC)
     find_path(PPROF_INCLUDE_DIR NAMES gperftools/profiler.h)
     target_include_directories(${library} SYSTEM PUBLIC ${PPROF_INCLUDE_DIR})
