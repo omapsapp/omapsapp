@@ -78,8 +78,9 @@ void PostcodePoints::Get(strings::UniString const & postcode, bool recursive,
     });
     if (it == trieIt->m_edges.end())
       return;
-    trieIt = trieIt->GoToEdge(distance(trieIt->m_edges.begin(), it));
+
     postcodeIt += it->m_label.size();
+    trieIt = trieIt->GoToEdge(distance(trieIt->m_edges.begin(), it));
   }
 
   if (postcodeIt != postcode.end())

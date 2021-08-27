@@ -50,6 +50,18 @@ endif()
 
 # End of setting the target platform
 
+# Sanitizer
+if (PLATFORM_DESKTOP)
+  # https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation
+  set(BUILD_WITH_SANITIZER None CACHE STRING "Set to 'address' or others to enable sanitizer")
+
+  if (NOT ${BUILD_WITH_SANITIZER} MATCHES "None")
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=${BUILD_WITH_SANITIZER} -fno-omit-frame-pointer")
+      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=${BUILD_WITH_SANITIZER} -fno-omit-frame-pointer")
+      message(STATUS "Enable sanitizer: ${BUILD_WITH_SANITIZER}")
+  endif()
+endif()
+
 # Set build type:
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")

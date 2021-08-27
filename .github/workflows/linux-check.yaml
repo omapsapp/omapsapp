@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        compiler: [{ CXX: g++-10, CC: gcc-10 }, { CXX: clang++, CC: clang }]
+        compiler: [{ CXX: g++-10, CC: gcc-10, SAN: address }, { CXX: clang++, CC: clang, SAN: thread }]
 
     steps:
       - name: Checkout sources
@@ -54,7 +54,7 @@ jobs:
           CC: ${{ matrix.compiler.CC }}
           CXX: ${{ matrix.compiler.CXX }}
         # -g1 should slightly reduce build time.
-        run: cmake . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-g1
+        run: cmake . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG=-g1 -DBUILD_WITH_SANITIZER=${{ matrix.compiler.SAN }}
 
       - name: Compile
         shell: bash
