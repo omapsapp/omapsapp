@@ -873,7 +873,7 @@ sk:3Benzínová pumpa
 sw:mafuta
 fa:جایگاه سوخت
 
-shop-bakery|@eat
+shop-bakery|shop-pastry|@eat
 en:3Bakery|U+1F35E
 ru:3Булочная|3пекарня
 bg:3Пекарна
@@ -1019,6 +1019,14 @@ sk:Príležitostné potreby
 sw:Duka
 fa:بقالی
 
+shop-deli|@food
+en:4Delicatessen
+ru:4Деликатесы
+
+shop-farm|@food
+en:Farm food
+ru:Фермерская еда
+
 shop-garden_centre
 en:4Garden Centre|U+1F3EC|U+1F3EA|U+1F3E1
 en-US:4Garden Center
@@ -1053,6 +1061,14 @@ zh-Hant:園藝店|購物
 el:Κατάστημα ειδών κήπου|κατάστημα
 sk:Škôlka|materská škôlka
 fa:فروشگاه تجهیزات باغبانی
+
+shop-grocery|@food
+en:Grocery
+ru:Бакалея
+
+shop-health_food|@food
+en:Health food
+ru:Здоровая еда
 
 shop-mobile_phone
 en:4Cell Phones|4Mobile Phones|6smartphones|electronics store|U+1F3EC|U+1F3EA|U+1F4F1|U+1F4F2
@@ -1160,7 +1176,7 @@ el:Κρεοπωλείο|κατάστημα
 sk:Mäsiar
 fa:قصابی
 
-shop-furniture
+shop-furniture|shop-kitchen
 en:4Furniture Store
 ru:Магазин мебели|4мебель
 bg:Магазин за мебели
@@ -1338,7 +1354,7 @@ el:Ηλεκτρονικά|κατάστημα
 sk:4Elektronika
 fa:فروشگاه تجهیزات الکترونیکی
 
-shop-hardware|shop-doityourself
+shop-hardware|shop-houseware|shop-doityourself
 en:4Hardware Store|DIY|do it yourself|U+1F3EC|U+1F3EA|U+1F50B|U+1F50C|U+1F4A1|U+1F526|U+1F529|U+1F528|U+2614
 ru:3Хозяйственный|Стройтовары|хозтовары|сделай сам
 bg:НСС|направи си сам|строителни материали
@@ -8896,6 +8912,10 @@ el:Κατάστημα με θαλασσινά
 sk:Obchodník s rybami
 fa:فروشگاه غذای دریایی
 mr:सीफूड शॉप
+
+shop-second_hand
+en:4Second Hand
+ru:4Подержанные товары
 
 shop-ticket
 en:4Ticket Shop|tickets|ticket hub|ticket office|ticket center|booking office|box office|ticket agency|ticket booth|pay box

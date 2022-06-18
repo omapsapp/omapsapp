@@ -683,6 +683,7 @@ IsWifiChecker::IsWifiChecker()
 IsEatChecker::IsEatChecker()
 {
   // The order should be the same as in "enum class Type" declaration.
+  /// @todo Should we include shops like: confectionery and pastry, because bakery is already present?
   base::StringIL const types[] = {{"amenity", "cafe"},
                                   {"shop", "bakery"},
                                   {"amenity", "fast_food"},

@@ -2146,7 +2146,9 @@ node|z16[shop=bookmaker],
 area|z16[shop=bookmaker]
 {icon-image: bookmaker-m.svg;}
 node|z16[shop=bakery],
-area|z16[shop=bakery]
+area|z16[shop=bakery],
+node|z16[shop=pastry],
+area|z16[shop=pastry],
 {icon-image: bakery-m.svg;}
 node|z16[shop=beauty],
 area|z16[shop=beauty]
@@ -2210,7 +2212,15 @@ node|z16[amenity=ice_cream],
 area|z16[amenity=ice_cream]
 {icon-image: ice_cream-m.svg;}
 node|z16[shop=convenience],
-area|z16[shop=convenience]
+area|z16[shop=convenience],
+node|z16[shop=deli],
+area|z16[shop=deli],
+node|z16[shop=farm],
+area|z16[shop=farm],
+node|z16[shop=grocery],
+area|z16[shop=grocery],
+node|z16[shop=health_food],
+area|z16[shop=health_food],
 {icon-image: grocery-m.svg;}
 node|z16[shop=copyshop],
 area|z16[shop=copyshop]
@@ -2234,7 +2244,9 @@ node|z16[shop=florist],
 area|z16[shop=florist]
 {icon-image: florist-m.svg;}
 node|z16[shop=furniture],
-area|z16[shop=furniture]
+area|z16[shop=furniture],
+node|z16[shop=kitchen],
+area|z16[shop=kitchen],
 {icon-image: furniture-m.svg;}
 node|z16[shop=garden_centre],
 area|z16[shop=garden_centre]
@@ -2257,7 +2269,9 @@ node|z16[shop=hairdresser],
 area|z16[shop=hairdresser]
 {icon-image: hairdresser-m.svg;}
 node|z16[shop=hardware],
-area|z16[shop=hardware]
+area|z16[shop=hardware],
+node|z16[shop=houseware],
+area|z16[shop=houseware],
 {icon-image: doityourself-m.svg;}
 node|z16[shop=jewelry],
 area|z16[shop=jewelry]
@@ -2312,7 +2326,9 @@ node|z17-[shop=bookmaker],
 area|z17-[shop=bookmaker]
 {icon-image: bookmaker-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=bakery],
-area|z17-[shop=bakery]
+area|z17-[shop=bakery],
+node|z17-[shop=pastry],
+area|z17-[shop=pastry],
 {icon-image: bakery-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=beauty],
 area|z17-[shop=beauty]
@@ -2376,7 +2392,15 @@ node|z17-[amenity=ice_cream],
 area|z17-[amenity=ice_cream]
 {icon-image: ice_cream-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=convenience],
-area|z17-[shop=convenience]
+area|z17-[shop=convenience],
+node|z17-[shop=deli],
+area|z17-[shop=deli],
+node|z17-[shop=farm],
+area|z17-[shop=farm],
+node|z17-[shop=grocery],
+area|z17-[shop=grocery],
+node|z17-[shop=health_food],
+area|z17-[shop=health_food],
 {icon-image: grocery-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=copyshop],
 area|z17-[shop=copyshop]
@@ -2400,7 +2424,9 @@ node|z17-[shop=florist],
 area|z17-[shop=florist]
 {icon-image: florist-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=furniture],
-area|z17-[shop=furniture]
+area|z17-[shop=furniture],
+node|z17-[shop=kitchen],
+area|z17-[shop=kitchen],
 {icon-image: furniture-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=garden_centre],
 area|z17-[shop=garden_centre]
@@ -2423,7 +2449,9 @@ node|z17-[shop=hairdresser],
 area|z17-[shop=hairdresser]
 {icon-image: hairdresser-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=hardware],
-area|z17-[shop=hardware]
+area|z17-[shop=hardware],
+node|z17-[shop=houseware],
+area|z17-[shop=houseware],
 {icon-image: doityourself-m.svg;icon-min-distance: 24;text-optional: true;}
 node|z17-[shop=jewelry],
 area|z17-[shop=jewelry]

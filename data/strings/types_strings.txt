@@ -16836,6 +16836,10 @@
     zh-Hans = 化妝品店
     zh-Hant = 化妆品
 
+  [type.shop.deli]
+    en = Delicatessen Shop
+    ru = Магазин деликатесов
+
   [type.shop.department_store]
     en = Department Store
     ar = متجر شامل
@@ -17038,6 +17042,10 @@
     vi = Cửa hàng
     zh-Hans = 商店
     zh-Hant = 購物
+
+  [type.shop.farm]
+    en = Farm Food Shop
+    ru = Магазин фермерской еды
 
   [type.shop.florist]
     en = Florist’s
@@ -17244,6 +17252,10 @@
     zh-Hans = 蔬果零售店
     zh-Hant = 蔬果零售店
 
+  [type.shop.grocery]
+    en = Grocery
+    ru = Бакалея
+
   [type.shop.hairdresser]
     en = Hairdresser
     ar = مصفف شعر
@@ -17279,6 +17291,7 @@
     zh-Hant = 理髮師
 
   [type.shop.hardware]
+    ref = type.shop.doityourself
     en = Hardware Store
     ar = متجر عدد وأدوات
     cs = Železářství
@@ -17311,6 +17324,14 @@
     vi = Cửa hàng phần cứng
     zh-Hans = 硬件店
     zh-Hant = 五金行
+
+  [type.shop.health_food]
+    en = Health Food Shop
+    ru = Магазин здоровой еды
+
+  [type.shop.houseware]
+    ref = type.shop.doityourself
+    en = Houseware
 
   [type.shop.jewelry]
     en = Jewelry
@@ -17372,6 +17393,10 @@
     vi = Cửa hàng
     zh-Hans = 商店
     zh-Hant = 小舖
+
+  [type.shop.kitchen]
+    en = Kitchen Store
+    ru = Магазин кухонь
 
   [type.shop.laundry]
     en = Laundry
@@ -17747,6 +17772,11 @@
     zh-Hans = 室外设备
     zh-Hant = 室外設備
 
+  [type.shop.pastry]
+    ref = type.shop.bakery
+    en = Pastry
+    ru = Кондитерская пекарня
+
   [type.shop.pawnbroker]
     en = Pawnbroker
     ar = سمسار تسليف
@@ -17881,6 +17911,10 @@
     vi = Người bán cá
     zh-Hans = 鱼商
     zh-Hant = 魚販
+
+  [type.shop.second_hand]
+    en = Second Hand
+    ru = Магазин подержанных товаров
 
   [type.shop.shoes]
     en = Shoe Store

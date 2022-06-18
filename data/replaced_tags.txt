@@ -30,8 +30,13 @@ bench=yes : amenity=bench
 shelter=yes : amenity=shelter
 toilets=yes : amenity=toilets
 restaurant=yes : amenity=restaurant
-shop=ice_cream : amenity=ice_cream
+
 ice_cream=yes : amenity=ice_cream
+
+shop=ice_cream : amenity=ice_cream
+shop=e-cigarette : shop=tobacco
+shop=food : shop=convenience
+shop=haberdashery : shop=sewing
 
 ford=boat : highway=ford
 ford=intermittent : highway=ford

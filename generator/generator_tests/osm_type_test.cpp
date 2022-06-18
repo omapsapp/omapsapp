@@ -557,6 +557,7 @@ UNIT_CLASS_TEST(TestWithClassificator, OsmType_Surface)
 
   TestSurfaceTypes("fine_gravel", "", "", "paved_bad");
   TestSurfaceTypes("fine_gravel", "intermediate", "", "paved_bad");
+  TestSurfaceTypes("cobblestone", "", "", "paved_bad");
 
   // We definitely should store more than 4 surface options.
   // Gravel (widely used tag) always goes to unpaved_bad which is strange sometimes.
@@ -1986,22 +1987,28 @@ UNIT_CLASS_TEST(TestWithClassificator, OsmType_SimpleTypesSmoke)
     {"shop", "convenience"},
     {"shop", "copyshop"},
     {"shop", "cosmetics"},
+    {"shop", "deli"},
     {"shop", "department_store"},
     {"shop", "doityourself"},
     {"shop", "dry_cleaning"},
     {"shop", "electronics"},
     {"shop", "erotic"},
     {"shop", "fabric"},
+    {"shop", "farm"},
     {"shop", "florist"},
     {"shop", "funeral_directors"},
     {"shop", "furniture"},
     {"shop", "garden_centre"},
     {"shop", "gift"},
     {"shop", "greengrocer"},
+    {"shop", "grocery"},
     {"shop", "hairdresser"},
     {"shop", "hardware"},
+    {"shop", "houseware"},
+    {"shop", "health_food"},
     {"shop", "jewelry"},
     {"shop", "kiosk"},
+    {"shop", "kitchen"},
     {"shop", "laundry"},
     {"shop", "mall"},
     {"shop", "massage"},
@@ -2013,10 +2020,12 @@ UNIT_CLASS_TEST(TestWithClassificator, OsmType_SimpleTypesSmoke)
     {"shop", "newsagent"},
     {"shop", "optician"},
     {"shop", "outdoor"},
+    {"shop", "pastry"},
     {"shop", "pawnbroker"},
     {"shop", "pet"},
     {"shop", "photo"},
     {"shop", "seafood"},
+    {"shop", "second_hand"},
     {"shop", "shoes"},
     {"shop", "sports"},
     {"shop", "stationery"},
