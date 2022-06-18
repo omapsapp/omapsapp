@@ -853,12 +853,17 @@ world  +
         {}
     shop  +
         alcohol  -
+        antiques  -
+        art  -
+        baby_goods  -
+        bag  -
         bakery  -
         beauty  -
         beverages  -
         bicycle  -
         bookmaker  -
         books  -
+        boutique  -
         butcher  -
         car  -
         car_parts  -
@@ -866,6 +871,8 @@ world  +
             tyres  -
             {}
         caravan  -
+        charity  -
+        cheese  -
         chemist  -
         chocolate  -
         clothes  -
@@ -875,50 +882,74 @@ world  +
         convenience  -
         copyshop  -
         cosmetics  -
+        craft  -
+        dairy  -
+        deli  -
         department_store  -
         doityourself  -
         dry_cleaning  -
+        electrical  -
         electronics  -
         erotic  -
         fabric  -
+        farm  -
+        fishing  -
         florist  -
         funeral_directors  -
         furniture  -
         garden_centre  -
         gift  -
         greengrocer  -
+        grocery  -
         hairdresser  -
         hardware  -
+        health_food  -
+        houseware  -
+        interior_decoration  -
         jewelry  -
         kiosk  -
+        kitchen  -
         laundry  -
+        lottery  -
         mall  -
         massage  -
+        medical_supply  -
         mobile_phone  -
         money_lender  -
         motorcycle  -
         music  -
         musical_instrument  -
         newsagent  -
+        nutrition_supplements  -
         optician  -
         outdoor  -
+        paint  -
+        pastry  -
         pawnbroker  -
+        perfumery  -
         pet  -
         photo  -
         seafood  -
+        second_hand  -
+        sewing  -
         shoes  -
         sports  -
         stationery  -
+        storage_rental  -
         supermarket  -
         tattoo  -
         tea  -
         ticket  -
+        tobacco  -
         toys  -
+        trade  -
         travel_agency  -
         tyres  -
         variety_store  -
         video  -
         video_games  -
+        watches  -
+        wholesale  -
         wine  -
         {}
     sport  +
