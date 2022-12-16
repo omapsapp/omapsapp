@@ -38,6 +38,8 @@
   //-->
   <uses-permission android:name="android.permission.WAKE_LOCK"/>
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES"/>
+  <uses-permission android:name="androidx.car.app.ACCESS_SURFACE"/>
 
   <queries>
     <intent>
@@ -723,6 +725,14 @@
       android:name="app.organicmaps.background.OsmUploadService"
       android:permission="android.permission.BIND_JOB_SERVICE"
       android:exported="false"/>
+    <service
+        android:name="app.organicmaps.car.NavigationCarAppService"
+        android:exported="true">
+      <intent-filter>
+        <action android:name="androidx.car.app.CarAppService" />
+        <category android:name="androidx.car.app.category.NAVIGATION" />
+      </intent-filter>
+    </service>
 
     <!-- Catches app upgraded intent -->
     <receiver
@@ -747,6 +757,14 @@
     <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="false" />
     <!-- Disable Google's anonymous stats collection -->
     <meta-data android:name="android.webkit.WebView.MetricsOptOut" android:value="true" />
+
+    <!-- For android Auto -->
+    <meta-data android:name="com.google.android.gms.car.application"
+        android:resource="@xml/automotive_app_desc"/>
+
+    <meta-data
+        android:name="androidx.car.app.minCarApiLevel"
+        android:value="1"/>
 
   </application>
 </manifest>

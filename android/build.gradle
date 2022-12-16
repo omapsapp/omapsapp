@@ -84,6 +84,7 @@ dependencies {
 
   implementation 'androidx.annotation:annotation:1.5.0'
   implementation 'androidx.appcompat:appcompat:1.7.0-alpha01'
+  implementation 'androidx.car.app:app:1.3.0-rc01'
   implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
   implementation 'androidx.fragment:fragment:1.5.4'
   // Lifecycle is added as a workaround for duplicate classes error caused by some outdated dependency:
@@ -97,6 +98,8 @@ dependencies {
   implementation 'androidx.work:work-runtime:2.7.1'
   implementation 'com.google.android.material:material:1.8.0-alpha02'
   implementation 'com.google.code.gson:gson:2.10'
+  // Fix for app/organicmaps/util/FileUploadWorker.java:14: error: cannot access ListenableFuture
+  implementation 'com.google.guava:guava:29.0-android'
   implementation 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
   implementation 'com.github.devnullorthrow:MPAndroidChart:3.2.0-alpha'
   implementation 'net.jcip:jcip-annotations:1.0'

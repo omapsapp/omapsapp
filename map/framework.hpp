@@ -162,7 +162,13 @@ protected:
   using TViewportChangedFn = df::DrapeEngine::ModelViewChangedHandler;
   TViewportChangedFn m_viewportChangedFn;
 
-  drape_ptr<df::DrapeEngine> m_drapeEngine;
+  struct DrapeEngineData
+  {
+    drape_ptr<df::DrapeEngine> m_drapeEngine;
+    df::OnGraphicsContextInitialized m_onGraphicsContextInitialized;
+    df::DrapeApi m_drapeApi;
+  };
+  std::unordered_map<df::DrapeEngineId, DrapeEngineData> m_drapeEngines;
 
   StorageDownloadingPolicy m_storageDownloadingPolicy;
   storage::Storage m_storage;
@@ -174,8 +180,6 @@ protected:
   std::unique_ptr<BookmarkManager> m_bmManager;
 
   SearchMarks m_searchMarks;
-
-  df::DrapeApi m_drapeApi;
 
   bool m_isRenderingEnabled;
 
@@ -213,7 +217,7 @@ public:
   explicit Framework(FrameworkParams const & params = {});
   virtual ~Framework() override;
 
-  df::DrapeApi & GetDrapeApi() { return m_drapeApi; }
+  df::DrapeApi & GetDrapeApi() { return m_drapeEngines.begin()->second.m_drapeApi; }
 
   /// \returns true if there're unsaved changes in map with |countryId| and false otherwise.
   /// \note It works for group and leaf node.
@@ -394,17 +398,18 @@ public:
     df::Hints m_hints;
   };
 
-  void CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFactory, DrapeCreationParams && params);
-  ref_ptr<df::DrapeEngine> GetDrapeEngine();
-  bool IsDrapeEngineCreated() const { return m_drapeEngine != nullptr; }
+  df::DrapeEngineId CreateDrapeEngineId();
+  void CreateDrapeEngine(df::DrapeEngineId engineId, ref_ptr<dp::GraphicsContextFactory> contextFactory, DrapeCreationParams && params);
+  ref_ptr<df::DrapeEngine> GetDrapeEngine(df::DrapeEngineId engineId);
+  bool IsDrapeEngineCreated(df::DrapeEngineId engineId) const { return m_drapeEngines.count(engineId) != 0 && m_drapeEngines.at(engineId).m_drapeEngine != nullptr; }
   void DestroyDrapeEngine();
   /// Called when graphics engine should be temporarily paused and then resumed.
   void SetRenderingEnabled(ref_ptr<dp::GraphicsContextFactory> contextFactory = nullptr);
   void SetRenderingDisabled(bool destroySurface);
 
-  void SetGraphicsContextInitializationHandler(df::OnGraphicsContextInitialized && handler);
+  void SetGraphicsContextInitializationHandler(df::DrapeEngineId engineId, df::OnGraphicsContextInitialized && handler);
 
-  void OnRecoverSurface(int width, int height, bool recreateContextDependentResources);
+  void OnRecoverSurface(df::DrapeEngineId engineId, int width, int height, bool recreateContextDependentResources);
   void OnDestroySurface();
 
   void UpdateVisualScale(double vs);
@@ -419,8 +424,6 @@ private:
   /// Depends on initialized Drape engine.
   void LoadViewport();
 
-  df::OnGraphicsContextInitialized m_onGraphicsContextInitialized;
-
 public:
   void ConnectToGpsTracker();
   void DisconnectFromGpsTracker();
@@ -431,7 +434,7 @@ public:
 
   void SetupMeasurementSystem();
 
-  void SetWidgetLayout(gui::TWidgetsLayoutInfo && layout);
+  void SetWidgetLayout(df::DrapeEngineId engineId, gui::TWidgetsLayoutInfo && layout);
 
   void PrepareToShutdown();
 
@@ -493,7 +496,7 @@ public:
   void SetViewportCenter(m2::PointD const & pt, int zoomLevel = -1, bool isAnim = true);
 
   m2::RectD GetCurrentViewport() const;
-  void SetVisibleViewport(m2::RectD const & rect);
+  void SetVisibleViewport(df::DrapeEngineId engineId, m2::RectD const & rect);
 
   /// - Check minimal visible scale according to downloaded countries.
   void ShowRect(m2::RectD const & rect, int maxScale = -1, bool animation = true,
@@ -512,7 +515,7 @@ public:
   void StopLocationFollow();
 
   /// Resize event from window.
-  void OnSize(int w, int h);
+  void OnSize(df::DrapeEngineId engineId, int w, int h);
 
   enum EScaleMode
   {
@@ -522,20 +525,20 @@ public:
     SCALE_MIN_LIGHT
   };
 
-  void Scale(EScaleMode mode, bool isAnim);
-  void Scale(EScaleMode mode, m2::PointD const & pxPoint, bool isAnim);
-  void Scale(double factor, bool isAnim);
-  void Scale(double factor, m2::PointD const & pxPoint, bool isAnim);
+  void Scale(df::DrapeEngineId engineId, EScaleMode mode, bool isAnim);
+  void Scale(df::DrapeEngineId engineId, EScaleMode mode, m2::PointD const & pxPoint, bool isAnim);
+  void Scale(df::DrapeEngineId engineId, double factor, bool isAnim);
+  void Scale(df::DrapeEngineId engineId, double factor, m2::PointD const & pxPoint, bool isAnim);
 
   /// Moves the viewport a distance of factorX * viewportWidth and factorY * viewportHeight.
   /// E.g. factorX == 1.0 moves the map one screen size to the right, factorX == -0.5 moves the map
   /// half screen size to the left, factorY == -2.0 moves the map two sizes down,
   /// factorY = 1.5 moves the map one and a half size up.
-  void Move(double factorX, double factorY, bool isAnim);
+  void Move(df::DrapeEngineId engineId, double factorX, double factorY, bool isAnim);
 
   void Rotate(double azimuth, bool isAnim);
 
-  void TouchEvent(df::TouchEvent const & touch);
+  void TouchEvent(df::DrapeEngineId engineId, df::TouchEvent const & touch);
 
   int GetDrawScale() const;
 

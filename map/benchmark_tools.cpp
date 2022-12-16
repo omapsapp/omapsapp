@@ -57,7 +57,8 @@ void RunScenario(Framework * framework, std::shared_ptr<BenchmarkHandle> handle)
 
   auto & scenarioData = handle->m_scenariosToRun[handle->m_currentScenario];
 
-  framework->GetDrapeEngine()->RunScenario(std::move(scenarioData),
+  // TODO: fix
+  framework->GetDrapeEngine(0)->RunScenario(std::move(scenarioData),
                                            [handle](std::string const & name)
   {
 #ifdef DRAPE_MEASURER_BENCHMARK

@@ -642,10 +642,12 @@ public class MwmActivity extends BaseMwmFragmentActivity
     switch (button)
     {
       case zoomIn:
-        Map.zoomIn();
+        // TODO: fix
+        // Map.zoomIn();
         break;
       case zoomOut:
-        Map.zoomOut();
+        // TODO: fix
+        // Map.zoomOut();
         break;
       case myPosition:
         LocationState.nativeSwitchToNextMode();
@@ -1715,10 +1717,12 @@ public class MwmActivity extends BaseMwmFragmentActivity
     switch (keyCode)
     {
       case KeyEvent.KEYCODE_DPAD_DOWN:
-        Map.zoomOut();
+        // TODO: fix
+        // Map.zoomOut();
         return true;
       case KeyEvent.KEYCODE_DPAD_UP:
-        Map.zoomIn();
+        // TODO: fix
+        // Map.zoomIn();
         return true;
       case KeyEvent.KEYCODE_ESCAPE:
         Intent currIntent = getIntent();

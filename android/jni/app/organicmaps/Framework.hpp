@@ -50,18 +50,20 @@ namespace android
   class Framework : private power_management::PowerManager::Subscriber
   {
   private:
-    drape_ptr<dp::ThreadSafeFactory> m_oglContextFactory;
-    drape_ptr<dp::GraphicsContextFactory> m_vulkanContextFactory;
+    struct DrapeEngineData
+    {
+        drape_ptr<dp::ThreadSafeFactory> m_oglContextFactory;
+        drape_ptr<dp::GraphicsContextFactory> m_vulkanContextFactory;
+        bool m_isSurfaceDestroyed;
+        std::map<gui::EWidget, gui::Position> m_guiPositions;
+    };
+    std::unordered_map<df::DrapeEngineId, DrapeEngineData> m_drapeEngines;
     ::Framework m_work;
 
     math::LowPassVector<float, 3> m_sensors[2];
     double m_lastCompass;
 
     std::string m_searchQuery;
-
-    bool m_isSurfaceDestroyed;
-
-    std::map<gui::EWidget, gui::Position> m_guiPositions;
 
     void TrafficStateChanged(TrafficManager::TrafficState state);
     void TransitSchemeStateChanged(TransitReadManager::TransitSchemeState state);
@@ -89,14 +91,15 @@ namespace android
     void OnLocationUpdated(location::GpsInfo const & info);
     void OnCompassUpdated(location::CompassInfo const & info, bool forceRedraw);
 
-    bool CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi, bool firstLaunch,
-                           bool launchByDeepLink, uint32_t appVersionCode);
-    bool IsDrapeEngineCreated() const;
-    bool DestroySurfaceOnDetach();
-    void DetachSurface(bool destroySurface);
-    bool AttachSurface(JNIEnv * env, jobject jSurface);
-    void PauseSurfaceRendering();
-    void ResumeSurfaceRendering();
+    df::DrapeEngineId CreateDrapeEngineId();
+    bool CreateDrapeEngine(JNIEnv * env, df::DrapeEngineId engineId, jobject jSurface, int densityDpi,
+                           bool firstLaunch, bool launchByDeepLink, uint32_t appVersionCode);
+    bool IsDrapeEngineCreated(df::DrapeEngineId engineId) const;
+    bool DestroySurfaceOnDetach(df::DrapeEngineId engineId);
+    void DetachSurface(df::DrapeEngineId engineId, bool destroySurface);
+    bool AttachSurface(JNIEnv * env, df::DrapeEngineId engineId, jobject jSurface);
+    void PauseSurfaceRendering(df::DrapeEngineId engineId);
+    void ResumeSurfaceRendering(df::DrapeEngineId engineId);
 
     void SetMapStyle(MapStyle mapStyle);
     void MarkMapStyle(MapStyle mapStyle);
@@ -112,7 +115,7 @@ namespace android
       return m_work.GetRoutingManager().GetLastUsedRouter();
     }
 
-    void Resize(JNIEnv * env, jobject jSurface, int w, int h);
+    void Resize(JNIEnv * env, df::DrapeEngineId engineId, jobject jSurface, int w, int h);
 
     struct Finger
     {
@@ -127,11 +130,11 @@ namespace android
       float m_x, m_y;
     };
 
-    void Scale(double factor, m2::PointD const & pxPoint, bool isAnim);
+    void Scale(df::DrapeEngineId engineId, double factor, m2::PointD const & pxPoint, bool isAnim);
 
-    void Move(double factorX, double factorY, bool isAnim);
+    void Move(df::DrapeEngineId engineId, double factorX, double factorY, bool isAnim);
 
-    void Touch(int action, Finger const & f1, Finger const & f2, uint8_t maskedPointer);
+    void Touch(df::DrapeEngineId engineId, int action, Finger const & f1, Finger const & f2, uint8_t maskedPointer);
 
     bool Search(search::EverywhereSearchParams const & params);
     std::string GetLastSearchQuery() { return m_searchQuery; }
@@ -145,8 +148,8 @@ namespace android
 
     void AddString(std::string const & name, std::string const & value);
 
-    void Scale(::Framework::EScaleMode mode);
-    void Scale(m2::PointD const & centerPt, int targetZoom, bool animate);
+    void Scale(df::DrapeEngineId engineId, ::Framework::EScaleMode mode);
+    void Scale(df::DrapeEngineId engineId, m2::PointD const & centerPt, int targetZoom, bool animate);
 
     void ReplaceBookmark(kml::MarkId markId, kml::BookmarkData & bm);
     void MoveBookmark(kml::MarkId markId, kml::MarkGroupId curCat, kml::MarkGroupId newCat);
@@ -180,9 +183,9 @@ namespace android
     void SetChoosePositionMode(bool isChoosePositionMode, bool isBusiness, bool hasPosition, m2::PointD const & position);
     bool GetChoosePositionMode();
 
-    void SetupWidget(gui::EWidget widget, float x, float y, dp::Anchor anchor);
-    void ApplyWidgets();
-    void CleanWidgets();
+    void SetupWidget(df::DrapeEngineId engineId, gui::EWidget widget, float x, float y, dp::Anchor anchor);
+    void ApplyWidgets(df::DrapeEngineId engineId);
+    void CleanWidgets(df::DrapeEngineId engineId);
 
     place_page::Info & GetPlacePageInfo();
 

@@ -46,6 +46,8 @@ namespace df
 class UserMarksProvider;
 class MapDataProvider;
 
+using DrapeEngineId = std::size_t;
+
 class DrapeEngine
 {
 public:

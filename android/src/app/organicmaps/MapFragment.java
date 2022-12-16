@@ -164,7 +164,7 @@ public class MapFragment extends BaseMwmFragment implements View.OnTouchListener
       action = Map.NATIVE_ACTION_CANCEL;
       break;
     }
-    Map.onTouch(action, event, pointerIndex);
+    mMap.onTouch(action, event, pointerIndex);
     return true;
   }
 

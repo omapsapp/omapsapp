@@ -107,7 +107,6 @@ enum MultiTouchAction
 
 Framework::Framework()
   : m_lastCompass(0.0)
-  , m_isSurfaceDestroyed(false)
   , m_isChoosePositionMode(false)
 {
   m_work.GetTrafficManager().SetStateListener(bind(&Framework::TrafficStateChanged, this, _1));
@@ -163,15 +162,22 @@ void Framework::IsolinesSchemeStateChanged(IsolinesManager::IsolinesState state)
     m_onIsolinesStateChangedFn(state);
 }
 
-bool Framework::DestroySurfaceOnDetach()
+bool Framework::DestroySurfaceOnDetach(df::DrapeEngineId engineId)
 {
-  if (m_vulkanContextFactory)
+  if (m_drapeEngines[engineId].m_vulkanContextFactory)
     return false;
   return true;
 }
 
-bool Framework::CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi, bool firstLaunch,
-                                  bool launchByDeepLink, uint32_t appVersionCode)
+df::DrapeEngineId Framework::CreateDrapeEngineId()
+{
+  df::DrapeEngineId engineId = m_work.CreateDrapeEngineId();
+  m_drapeEngines[engineId];
+  return engineId;
+}
+
+bool Framework::CreateDrapeEngine(JNIEnv * env, df::DrapeEngineId engineId, jobject jSurface, int densityDpi,
+                                  bool firstLaunch, bool launchByDeepLink, uint32_t appVersionCode)
 {
   // Vulkan is supported only since Android 8.0, because some Android devices with Android 7.x
   // have fatal driver issue, which can lead to process termination and whole OS destabilization.
@@ -183,34 +189,36 @@ bool Framework::CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi
   if (vulkanForbidden)
     LOG(LWARNING, ("Vulkan API is forbidden on this device."));
 
+  DrapeEngineData &drapeEngineData = m_drapeEngines[engineId];
+
   if (m_work.LoadPreferredGraphicsAPI() == dp::ApiVersion::Vulkan && !vulkanForbidden)
   {
-    m_vulkanContextFactory =
+    drapeEngineData.m_vulkanContextFactory =
         make_unique_dp<AndroidVulkanContextFactory>(appVersionCode, sdkVersion);
-    if (!CastFactory(m_vulkanContextFactory)->IsVulkanSupported())
+    if (!CastFactory(drapeEngineData.m_vulkanContextFactory)->IsVulkanSupported())
     {
       LOG(LWARNING, ("Vulkan API is not supported."));
-      m_vulkanContextFactory.reset();
+      drapeEngineData.m_vulkanContextFactory.reset();
     }
 
-    if (m_vulkanContextFactory)
+    if (drapeEngineData.m_vulkanContextFactory)
     {
-      auto f = CastFactory(m_vulkanContextFactory);
+      auto f = CastFactory(drapeEngineData.m_vulkanContextFactory);
       f->SetSurface(env, jSurface);
       if (!f->IsValid())
       {
         LOG(LWARNING, ("Invalid Vulkan API context."));
-        m_vulkanContextFactory.reset();
+        drapeEngineData.m_vulkanContextFactory.reset();
       }
     }
   }
 
   AndroidOGLContextFactory * oglFactory = nullptr;
-  if (!m_vulkanContextFactory)
+  if (!drapeEngineData.m_vulkanContextFactory)
   {
-    m_oglContextFactory = make_unique_dp<dp::ThreadSafeFactory>(
+    drapeEngineData.m_oglContextFactory = make_unique_dp<dp::ThreadSafeFactory>(
       new AndroidOGLContextFactory(env, jSurface));
-    oglFactory = m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
+    oglFactory = drapeEngineData.m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
     if (!oglFactory->IsValid())
     {
       LOG(LWARNING, ("Invalid GL context."));
@@ -219,9 +227,9 @@ bool Framework::CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi
   }
 
   ::Framework::DrapeCreationParams p;
-  if (m_vulkanContextFactory)
+  if (drapeEngineData.m_vulkanContextFactory)
   {
-    auto f = CastFactory(m_vulkanContextFactory);
+    auto f = CastFactory(drapeEngineData.m_vulkanContextFactory);
     p.m_apiVersion = dp::ApiVersion::Vulkan;
     p.m_surfaceWidth = f->GetWidth();
     p.m_surfaceHeight = f->GetHeight();
@@ -238,33 +246,35 @@ bool Framework::CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi
   p.m_isChoosePositionMode = m_isChoosePositionMode;
   p.m_hints.m_isFirstLaunch = firstLaunch;
   p.m_hints.m_isLaunchByDeepLink = launchByDeepLink;
-  ASSERT(!m_guiPositions.empty(), ("GUI elements must be set-up before engine is created"));
-  p.m_widgetsInitInfo = m_guiPositions;
+  ASSERT(!drapeEngineData.m_guiPositions.empty(), ("GUI elements must be set-up before engine is created"));
+  p.m_widgetsInitInfo = drapeEngineData.m_guiPositions;
 
   m_work.SetMyPositionModeListener(bind(&Framework::MyPositionModeChanged, this, _1, _2));
 
-  if (m_vulkanContextFactory)
-    m_work.CreateDrapeEngine(make_ref(m_vulkanContextFactory), move(p));
+  if (drapeEngineData.m_vulkanContextFactory)
+    m_work.CreateDrapeEngine(engineId, make_ref(drapeEngineData.m_vulkanContextFactory), move(p));
   else
-    m_work.CreateDrapeEngine(make_ref(m_oglContextFactory), move(p));
+    m_work.CreateDrapeEngine(engineId, make_ref(drapeEngineData.m_oglContextFactory), move(p));
+
   m_work.EnterForeground();
 
   return true;
 }
 
-bool Framework::IsDrapeEngineCreated() const
+bool Framework::IsDrapeEngineCreated(df::DrapeEngineId engineId) const
 {
-  return m_work.IsDrapeEngineCreated();
+  return m_work.IsDrapeEngineCreated(engineId);
 }
 
-void Framework::Resize(JNIEnv * env, jobject jSurface, int w, int h)
+void Framework::Resize(JNIEnv * env, df::DrapeEngineId engineId, jobject jSurface, int w, int h)
 {
-  if (m_vulkanContextFactory)
+  auto& drapeEngineData = m_drapeEngines[engineId];
+  if (drapeEngineData.m_vulkanContextFactory)
   {
-    auto vulkanContextFactory = CastFactory(m_vulkanContextFactory);
+    auto vulkanContextFactory = CastFactory(drapeEngineData.m_vulkanContextFactory);
     if (vulkanContextFactory->GetWidth() != w || vulkanContextFactory->GetHeight() != h)
     {
-      m_vulkanContextFactory->SetPresentAvailable(false);
+      drapeEngineData.m_vulkanContextFactory->SetPresentAvailable(false);
       m_work.SetRenderingDisabled(false /* destroySurface */);
 
       vulkanContextFactory->ChangeSurface(env, jSurface, w, h);
@@ -275,32 +285,33 @@ void Framework::Resize(JNIEnv * env, jobject jSurface, int w, int h)
   }
   else
   {
-    m_oglContextFactory->CastFactory<AndroidOGLContextFactory>()->UpdateSurfaceSize(w, h);
+    drapeEngineData.m_oglContextFactory->CastFactory<AndroidOGLContextFactory>()->UpdateSurfaceSize(w, h);
   }
-  m_work.OnSize(w, h);
+  m_work.OnSize(engineId, w, h);
 }
 
-void Framework::DetachSurface(bool destroySurface)
+void Framework::DetachSurface(df::DrapeEngineId engineId, bool destroySurface)
 {
   LOG(LINFO, ("Detach surface started. destroySurface =", destroySurface));
-  if (m_vulkanContextFactory)
+  auto& drapeEngineData = m_drapeEngines[engineId];
+  if (drapeEngineData.m_vulkanContextFactory)
   {
-    m_vulkanContextFactory->SetPresentAvailable(false);
+    drapeEngineData.m_vulkanContextFactory->SetPresentAvailable(false);
   }
   else
   {
-    ASSERT(m_oglContextFactory != nullptr, ());
-    m_oglContextFactory->SetPresentAvailable(false);
+    ASSERT(drapeEngineData.m_oglContextFactory != nullptr, ());
+    drapeEngineData.m_oglContextFactory->SetPresentAvailable(false);
   }
 
   if (destroySurface)
   {
     LOG(LINFO, ("Destroy surface."));
-    m_isSurfaceDestroyed = true;
+    drapeEngineData.m_isSurfaceDestroyed = true;
     m_work.OnDestroySurface();
   }
 
-  if (m_vulkanContextFactory)
+  if (drapeEngineData.m_vulkanContextFactory)
   {
     // With Vulkan we don't need to recreate all graphics resources,
     // we have to destroy only resources bound with surface (swapchains,
@@ -309,25 +320,25 @@ void Framework::DetachSurface(bool destroySurface)
     m_work.SetRenderingDisabled(false /* destroySurface */);
 
     // Allow pipeline dump only on enter background.
-    CastFactory(m_vulkanContextFactory)->ResetSurface(destroySurface /* allowPipelineDump */);
+    CastFactory(drapeEngineData.m_vulkanContextFactory)->ResetSurface(destroySurface /* allowPipelineDump */);
   }
   else
   {
     m_work.SetRenderingDisabled(destroySurface);
-    auto factory = m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
+    auto factory = drapeEngineData.m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
     factory->ResetSurface();
   }
   LOG(LINFO, ("Detach surface finished."));
 }
 
-bool Framework::AttachSurface(JNIEnv * env, jobject jSurface)
+bool Framework::AttachSurface(JNIEnv * env, df::DrapeEngineId engineId, jobject jSurface)
 {
   LOG(LINFO, ("Attach surface started."));
-
+  auto& drapeEngineData = m_drapeEngines[engineId];
   int w = 0, h = 0;
-  if (m_vulkanContextFactory)
+  if (drapeEngineData.m_vulkanContextFactory)
   {
-    auto factory = CastFactory(m_vulkanContextFactory);
+    auto factory = CastFactory(drapeEngineData.m_vulkanContextFactory);
     factory->SetSurface(env, jSurface);
     if (!factory->IsValid())
     {
@@ -339,8 +350,8 @@ bool Framework::AttachSurface(JNIEnv * env, jobject jSurface)
   }
   else
   {
-    ASSERT(m_oglContextFactory != nullptr, ());
-    auto factory = m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
+    ASSERT(drapeEngineData.m_oglContextFactory != nullptr, ());
+    auto factory = drapeEngineData.m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
     factory->SetSurface(env, jSurface);
     if (!factory->IsValid())
     {
@@ -351,25 +362,25 @@ bool Framework::AttachSurface(JNIEnv * env, jobject jSurface)
     h = factory->GetHeight();
   }
 
-  ASSERT(!m_guiPositions.empty(), ("GUI elements must be set-up before engine is created"));
+  ASSERT(!drapeEngineData.m_guiPositions.empty(), ("GUI elements must be set-up before engine is created"));
 
-  if (m_vulkanContextFactory)
+  if (drapeEngineData.m_vulkanContextFactory)
   {
-    m_vulkanContextFactory->SetPresentAvailable(true);
+    drapeEngineData.m_vulkanContextFactory->SetPresentAvailable(true);
     m_work.SetRenderingEnabled();
   }
   else
   {
-    m_oglContextFactory->SetPresentAvailable(true);
-    m_work.SetRenderingEnabled(make_ref(m_oglContextFactory));
+    drapeEngineData.m_oglContextFactory->SetPresentAvailable(true);
+    m_work.SetRenderingEnabled(make_ref(drapeEngineData.m_oglContextFactory));
   }
 
-  if (m_isSurfaceDestroyed)
+  if (drapeEngineData.m_isSurfaceDestroyed)
   {
     LOG(LINFO, ("Recover surface, viewport size:", w, h));
-    bool const recreateContextDependentResources = (m_vulkanContextFactory == nullptr);
-    m_work.OnRecoverSurface(w, h, recreateContextDependentResources);
-    m_isSurfaceDestroyed = false;
+    bool const recreateContextDependentResources = (drapeEngineData.m_vulkanContextFactory == nullptr);
+    m_work.OnRecoverSurface(engineId, w, h, recreateContextDependentResources);
+    drapeEngineData.m_isSurfaceDestroyed = false;
   }
 
   LOG(LINFO, ("Attach surface finished."));
@@ -377,26 +388,28 @@ bool Framework::AttachSurface(JNIEnv * env, jobject jSurface)
   return true;
 }
 
-void Framework::PauseSurfaceRendering()
+void Framework::PauseSurfaceRendering(df::DrapeEngineId engineId)
 {
-  if (m_vulkanContextFactory)
-    m_vulkanContextFactory->SetPresentAvailable(false);
-  if (m_oglContextFactory)
-    m_oglContextFactory->SetPresentAvailable(false);
+  auto& drapeEngineData = m_drapeEngines[engineId];
+  if (drapeEngineData.m_vulkanContextFactory)
+    drapeEngineData.m_vulkanContextFactory->SetPresentAvailable(false);
+  if (drapeEngineData.m_oglContextFactory)
+    drapeEngineData.m_oglContextFactory->SetPresentAvailable(false);
 
   LOG(LINFO, ("Pause surface rendering."));
 }
 
-void Framework::ResumeSurfaceRendering()
+void Framework::ResumeSurfaceRendering(df::DrapeEngineId engineId)
 {
-  if (m_vulkanContextFactory)
+  auto& drapeEngineData = m_drapeEngines[engineId];
+  if (drapeEngineData.m_vulkanContextFactory)
   {
-    if (CastFactory(m_vulkanContextFactory)->IsValid())
-      m_vulkanContextFactory->SetPresentAvailable(true);
+    if (CastFactory(drapeEngineData.m_vulkanContextFactory)->IsValid())
+      drapeEngineData.m_vulkanContextFactory->SetPresentAvailable(true);
   }
-  if (m_oglContextFactory)
+  if (drapeEngineData.m_oglContextFactory)
   {
-    AndroidOGLContextFactory * factory = m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
+    AndroidOGLContextFactory * factory = drapeEngineData.m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
     if (factory->IsValid())
       factory->SetPresentAvailable(true);
   }
@@ -412,10 +425,13 @@ void Framework::MarkMapStyle(MapStyle mapStyle)
 {
   // In case of Vulkan rendering we don't recreate geometry and textures data, so
   // we need use SetMapStyle instead of MarkMapStyle in all cases.
-  if (m_vulkanContextFactory)
-    m_work.SetMapStyle(mapStyle);
-  else
-    m_work.MarkMapStyle(mapStyle);
+  for (const auto& [engineId, engineData] : m_drapeEngines)
+  {
+    if (engineData.m_vulkanContextFactory)
+      m_work.SetMapStyle(mapStyle);
+    else
+      m_work.MarkMapStyle(mapStyle);
+  }
 }
 
 MapStyle Framework::GetMapStyle() const
@@ -471,17 +487,17 @@ void Framework::ShowNode(CountryId const & idx, bool zoomToDownloadButton)
   }
 }
 
-void Framework::Scale(double factor, m2::PointD const & pxPoint, bool isAnim)
+void Framework::Scale(df::DrapeEngineId engineId, double factor, m2::PointD const & pxPoint, bool isAnim)
 {
-  m_work.Scale(factor, pxPoint, isAnim);
+  m_work.Scale(engineId, factor, pxPoint, isAnim);
 }
 
-void Framework::Move(double factorX, double factorY, bool isAnim)
+void Framework::Move(df::DrapeEngineId engineId, double factorX, double factorY, bool isAnim)
 {
-  m_work.Move(factorX, factorY, isAnim);
+  m_work.Move(engineId, factorX, factorY, isAnim);
 }
 
-void Framework::Touch(int action, Finger const & f1, Finger const & f2, uint8_t maskedPointer)
+void Framework::Touch(df::DrapeEngineId engineId, int action, Finger const & f1, Finger const & f2, uint8_t maskedPointer)
 {
   MultiTouchAction eventType = static_cast<MultiTouchAction>(action);
   df::TouchEvent event;
@@ -514,7 +530,7 @@ void Framework::Touch(int action, Finger const & f1, Finger const & f2, uint8_t 
   event.SetSecondTouch(touch);
 
   event.SetFirstMaskedPointer(maskedPointer);
-  m_work.TouchEvent(event);
+  m_work.TouchEvent(engineId, event);
 }
 
 m2::PointD Framework::GetViewportCenter() const
@@ -527,14 +543,14 @@ void Framework::AddString(string const & name, string const & value)
   m_work.AddString(name, value);
 }
 
-void Framework::Scale(::Framework::EScaleMode mode)
+void Framework::Scale(df::DrapeEngineId engineId, ::Framework::EScaleMode mode)
 {
-  m_work.Scale(mode, true);
+  m_work.Scale(engineId, mode, true);
 }
 
-void Framework::Scale(m2::PointD const & centerPt, int targetZoom, bool animate)
+void Framework::Scale(df::DrapeEngineId engineId, m2::PointD const & centerPt, int targetZoom, bool animate)
 {
-  ref_ptr<df::DrapeEngine> engine = m_work.GetDrapeEngine();
+  ref_ptr<df::DrapeEngine> engine = m_work.GetDrapeEngine(engineId);
   if (engine)
     engine->SetModelViewCenter(centerPt, targetZoom, animate, false);
 }
@@ -658,27 +674,27 @@ location::EMyPositionMode Framework::GetMyPositionMode() const
 
 void Framework::SwitchMyPositionNextMode()
 {
-  ASSERT(IsDrapeEngineCreated(), ());
+  ASSERT(IsDrapeEngineCreated(0), ());
   m_work.SwitchMyPositionNextMode();
 }
 
-void Framework::SetupWidget(gui::EWidget widget, float x, float y, dp::Anchor anchor)
+void Framework::SetupWidget(df::DrapeEngineId engineId, gui::EWidget widget, float x, float y, dp::Anchor anchor)
 {
-  m_guiPositions[widget] = gui::Position(m2::PointF(x, y), anchor);
+  m_drapeEngines[engineId].m_guiPositions[widget] = gui::Position(m2::PointF(x, y), anchor);
 }
 
-void Framework::ApplyWidgets()
+void Framework::ApplyWidgets(df::DrapeEngineId engineId)
 {
   gui::TWidgetsLayoutInfo layout;
-  for (auto const & widget : m_guiPositions)
+  for (auto const & widget : m_drapeEngines[engineId].m_guiPositions)
     layout[widget.first] = widget.second.m_pixelPivot;
 
-  m_work.SetWidgetLayout(move(layout));
+  m_work.SetWidgetLayout(engineId, move(layout));
 }
 
-void Framework::CleanWidgets()
+void Framework::CleanWidgets(df::DrapeEngineId engineId)
 {
-  m_guiPositions.clear();
+  m_drapeEngines[engineId].m_guiPositions.clear();
 }
 
 void Framework::SetupMeasurementSystem()
@@ -1628,7 +1644,8 @@ Java_app_organicmaps_Framework_nativeGetAutoZoomEnabled(JNIEnv *, jclass)
 JNIEXPORT void JNICALL
 Java_app_organicmaps_Framework_nativeZoomToPoint(JNIEnv * env, jclass, jdouble lat, jdouble lon, jint zoom, jboolean animate)
 {
-  g_framework->Scale(m2::PointD(mercator::FromLatLon(lat, lon)), zoom, animate);
+  // TODO: fix
+  g_framework->Scale(0, m2::PointD(mercator::FromLatLon(lat, lon)), zoom, animate);
 }
 
 JNIEXPORT jobject JNICALL
@@ -1691,7 +1708,7 @@ Java_app_organicmaps_Framework_nativeGetActiveObjectFormattedCuisine(JNIEnv * en
 JNIEXPORT void JNICALL
 Java_app_organicmaps_Framework_nativeSetVisibleRect(JNIEnv * env, jclass, jint left, jint top, jint right, jint bottom)
 {
-  frm()->SetVisibleViewport(m2::RectD(left, top, right, bottom));
+//  frm()->SetVisibleViewport(m2::RectD(left, top, right, bottom));
 }
 
 JNIEXPORT jboolean JNICALL

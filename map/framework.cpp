@@ -153,8 +153,11 @@ pair<MwmSet::MwmId, MwmSet::RegResult> Framework::RegisterMap(LocalCountryFile c
 void Framework::OnLocationError(TLocationError /*error*/)
 {
   m_trafficManager.UpdateMyPosition(TrafficManager::MyPosition());
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->LoseLocation();
+  for (const auto& [_, drapeEngineData] : m_drapeEngines)
+  {
+    if (drapeEngineData.m_drapeEngine)
+        drapeEngineData.m_drapeEngine->LoseLocation();
+  }
 }
 
 void Framework::OnLocationUpdate(GpsInfo const & info)
@@ -193,14 +196,18 @@ void Framework::OnCompassUpdate(CompassInfo const & info)
   CompassInfo const & rInfo = info;
 #endif
 
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->SetCompassInfo(rInfo);
+  for (const auto& [_, drapeEngineData] : m_drapeEngines)
+  {
+    if (drapeEngineData.m_drapeEngine)
+        drapeEngineData.m_drapeEngine->SetCompassInfo(rInfo);
+  }
 }
 
 void Framework::SwitchMyPositionNextMode()
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->SwitchMyPositionNextMode();
+  for (const auto& [engineId, drapeEngineData] : m_drapeEngines)
+    if (drapeEngineData.m_drapeEngine)
+      drapeEngineData.m_drapeEngine->SwitchMyPositionNextMode();
 }
 
 void Framework::SetMyPositionModeListener(TMyPositionModeChanged && fn)
@@ -215,7 +222,10 @@ void Framework::SetMyPositionPendingTimeoutListener(df::DrapeEngine::UserPositio
 
 EMyPositionMode Framework::GetMyPositionMode() const
 {
-  return m_drapeEngine ? m_drapeEngine->GetMyPositionMode() : PendingPosition;
+  for (const auto& [engineId, drapeEngineData] : m_drapeEngines)
+    if (drapeEngineData.m_drapeEngine)
+      return drapeEngineData.m_drapeEngine->GetMyPositionMode();
+  return PendingPosition;
 }
 
 TrafficManager & Framework::GetTrafficManager()
@@ -804,11 +814,11 @@ void Framework::ShowBookmark(Bookmark const * mark)
   auto es = GetBookmarkManager().GetEditSession();
   es.SetIsVisible(mark->GetGroupId(), true /* visible */);
 
-  if (m_drapeEngine != nullptr)
-  {
-    m_drapeEngine->SetModelViewCenter(mark->GetPivot(), scale, true /* isAnim */,
-                                      true /* trackVisibleViewport */);
-  }
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//  {
+//      m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewCenter(mark->GetPivot(), scale, true /* isAnim */,
+//                                                          true /* trackVisibleViewport */);
+//  }
 
   ActivateMapSelection();
 }
@@ -867,13 +877,13 @@ void Framework::ShowFeature(FeatureID const & featureId)
   info.m_match = place_page::BuildInfo::Match::FeatureOnly;
   m_currentPlacePageInfo = BuildPlacePageInfo(info);
 
-  if (m_drapeEngine != nullptr)
-  {
-    auto const pt = m_currentPlacePageInfo->GetMercator();
-    auto const scale = scales::GetUpperComfortScale();
-    m_drapeEngine->SetModelViewCenter(pt, scale, true /* isAnim */, true /* trackVisibleViewport */);
-  }
-  ActivateMapSelection();
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//  {
+//    auto const pt = m_currentPlacePageInfo->GetMercator();
+//    auto const scale = scales::GetUpperComfortScale();
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewCenter(pt, scale, true /* isAnim */, true /* trackVisibleViewport */);
+//  }
+//  ActivateMapSelection();
 }
 
 void Framework::AddBookmarksFile(string const & filePath, bool isTemporaryFile)
@@ -907,8 +917,8 @@ void Framework::LoadViewport()
   m2::AnyRectD rect;
   if (settings::Get("ScreenClipRect", rect) && df::GetWorldRect().IsRectInside(rect.GetGlobalRect()))
   {
-    if (m_drapeEngine != nullptr)
-      m_drapeEngine->SetModelViewAnyRect(rect, false /* isAnim */, false /* useVisibleViewport */);
+//    if (m_drapeEngines.begin()->second.m_drapeEngine)
+//      m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewAnyRect(rect, false /* isAnim */, false /* useVisibleViewport */);
   }
   else
   {
@@ -918,10 +928,10 @@ void Framework::LoadViewport()
 
 void Framework::ShowAll()
 {
-  if (m_drapeEngine == nullptr)
-    return;
-  m_drapeEngine->SetModelViewAnyRect(m2::AnyRectD(m_featuresFetcher.GetWorldRect()), false /* isAnim */,
-                                     false /* useVisibleViewport */);
+//  if (!m_drapeEngines.begin()->second.m_drapeEngine)
+//    return;
+//  m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewAnyRect(m2::AnyRectD(m_featuresFetcher.GetWorldRect()), false /* isAnim */,
+//                                                       false /* useVisibleViewport */);
 }
 
 m2::PointD Framework::GetVisiblePixelCenter() const
@@ -937,8 +947,8 @@ m2::PointD const & Framework::GetViewportCenter() const
 void Framework::SetViewportCenter(m2::PointD const & pt, int zoomLevel /* = -1 */,
                                   bool isAnim /* = true */)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->SetModelViewCenter(pt, zoomLevel, isAnim, false /* trackVisibleViewport */);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewCenter(pt, zoomLevel, isAnim, false /* trackVisibleViewport */);
 }
 
 m2::RectD Framework::GetCurrentViewport() const
@@ -946,9 +956,9 @@ m2::RectD Framework::GetCurrentViewport() const
   return m_currentModelView.ClipRect();
 }
 
-void Framework::SetVisibleViewport(m2::RectD const & rect)
+void Framework::SetVisibleViewport(df::DrapeEngineId engineId, m2::RectD const & rect)
 {
-  if (m_drapeEngine == nullptr)
+  if (!m_drapeEngines[engineId].m_drapeEngine)
     return;
 
   double constexpr kEps = 0.5;
@@ -960,22 +970,22 @@ void Framework::SetVisibleViewport(m2::RectD const & rect)
     return;
 
   m_visibleViewport = rect;
-  m_drapeEngine->SetVisibleViewport(rect);
+  m_drapeEngines[engineId].m_drapeEngine->SetVisibleViewport(rect);
 }
 
 void Framework::ShowRect(m2::RectD const & rect, int maxScale, bool animation, bool useVisibleViewport)
 {
-  if (m_drapeEngine == nullptr)
-    return;
-
-  m_drapeEngine->SetModelViewRect(rect, true /* applyRotation */, maxScale /* zoom */, animation,
-                                  useVisibleViewport);
+//  if (!m_drapeEngines.begin()->second.m_drapeEngine)
+//    return;
+//
+//  m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewRect(rect, true /* applyRotation */, maxScale /* zoom */, animation,
+//                                                    useVisibleViewport);
 }
 
 void Framework::ShowRect(m2::AnyRectD const & rect, bool animation, bool useVisibleViewport)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->SetModelViewAnyRect(rect, animation, useVisibleViewport);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewAnyRect(rect, animation, useVisibleViewport);
 }
 
 void Framework::GetTouchRect(m2::PointD const & center, uint32_t pxRadius, m2::AnyRectD & rect)
@@ -991,26 +1001,26 @@ void Framework::SetViewportListener(TViewportChangedFn const & fn)
 #if defined(OMIM_OS_MAC) || defined(OMIM_OS_LINUX)
 void Framework::NotifyGraphicsReady(TGraphicsReadyFn const & fn, bool needInvalidate)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->NotifyGraphicsReady(fn, needInvalidate);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->NotifyGraphicsReady(fn, needInvalidate);
 }
 #endif
 
 void Framework::StopLocationFollow()
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->StopLocationFollow();
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->StopLocationFollow();
 }
 
-void Framework::OnSize(int w, int h)
+void Framework::OnSize(df::DrapeEngineId engineId, int w, int h)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->Resize(std::max(w, 2), std::max(h, 2));
+  if (m_drapeEngines[engineId].m_drapeEngine != nullptr)
+    m_drapeEngines[engineId].m_drapeEngine->Resize(std::max(w, 2), std::max(h, 2));
 
   /// @todo Expected that DrapeEngine::Resize does all the work, but nope ..
   /// - Strange, but seems like iOS works fine without it.
   /// - Test Android screen orientation and position mark in map and navigation modes.
-  SetVisibleViewport(m2::RectD(0, 0, w, h));
+  SetVisibleViewport(engineId,m2::RectD(0, 0, w, h));
 }
 
 namespace
@@ -1024,57 +1034,57 @@ double ScaleModeToFactor(Framework::EScaleMode mode)
 
 } // namespace
 
-void Framework::Scale(EScaleMode mode, bool isAnim)
+void Framework::Scale(df::DrapeEngineId engineId, EScaleMode mode, bool isAnim)
 {
-  Scale(ScaleModeToFactor(mode), isAnim);
+  Scale(engineId, ScaleModeToFactor(mode), isAnim);
 }
 
-void Framework::Scale(Framework::EScaleMode mode, m2::PointD const & pxPoint, bool isAnim)
+void Framework::Scale(df::DrapeEngineId engineId, Framework::EScaleMode mode, m2::PointD const & pxPoint, bool isAnim)
 {
-  Scale(ScaleModeToFactor(mode), pxPoint, isAnim);
+  Scale(engineId, ScaleModeToFactor(mode), pxPoint, isAnim);
 }
 
-void Framework::Scale(double factor, bool isAnim)
+void Framework::Scale(df::DrapeEngineId engineId, double factor, bool isAnim)
 {
-  Scale(factor, GetVisiblePixelCenter(), isAnim);
+  Scale(engineId, factor, GetVisiblePixelCenter(), isAnim);
 }
 
-void Framework::Scale(double factor, m2::PointD const & pxPoint, bool isAnim)
+void Framework::Scale(df::DrapeEngineId engineId, double factor, m2::PointD const & pxPoint, bool isAnim)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->Scale(factor, pxPoint, isAnim);
+  if (m_drapeEngines[engineId].m_drapeEngine != nullptr)
+      m_drapeEngines[engineId].m_drapeEngine->Scale(factor, pxPoint, isAnim);
 }
 
-void Framework::Move(double factorX, double factorY, bool isAnim)
+void Framework::Move(df::DrapeEngineId engineId, double factorX, double factorY, bool isAnim)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->Move(factorX, factorY, isAnim);
+  if (m_drapeEngines[engineId].m_drapeEngine != nullptr)
+    m_drapeEngines[engineId].m_drapeEngine->Move(factorX, factorY, isAnim);
 }
 
 void Framework::Rotate(double azimuth, bool isAnim)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->Rotate(azimuth, isAnim);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->Rotate(azimuth, isAnim);
 }
 
-void Framework::TouchEvent(df::TouchEvent const & touch)
+void Framework::TouchEvent(df::DrapeEngineId engineId, df::TouchEvent const & touch)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->AddTouchEvent(touch);
+  if (m_drapeEngines[engineId].m_drapeEngine != nullptr)
+    m_drapeEngines[engineId].m_drapeEngine->AddTouchEvent(touch);
 }
 
 int Framework::GetDrawScale() const
 {
-  if (m_drapeEngine != nullptr)
-    return df::GetDrawTileScale(m_currentModelView);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    return df::GetDrawTileScale(m_currentModelView);
 
   return 0;
 }
 
 void Framework::RunFirstLaunchAnimation()
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->RunFirstLaunchAnimation();
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->RunFirstLaunchAnimation();
 }
 
 bool Framework::IsCountryLoadedByName(string_view name) const
@@ -1084,8 +1094,8 @@ bool Framework::IsCountryLoadedByName(string_view name) const
 
 void Framework::InvalidateRect(m2::RectD const & rect)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->InvalidateRect(rect);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->InvalidateRect(rect);
 }
 
 void Framework::ClearAllCaches()
@@ -1128,8 +1138,9 @@ void Framework::MemoryWarning()
 
 void Framework::EnterBackground()
 {
-  if (m_drapeEngine)
-    m_drapeEngine->OnEnterBackground();
+  for (const auto& [engineId, drapeEngineData] : m_drapeEngines)
+    if (drapeEngineData.m_drapeEngine)
+      drapeEngineData.m_drapeEngine->OnEnterBackground();
 
   SaveViewport();
 
@@ -1145,8 +1156,9 @@ void Framework::EnterBackground()
 
 void Framework::EnterForeground()
 {
-  if (m_drapeEngine)
-    m_drapeEngine->OnEnterForeground();
+  for (const auto& [engineId, drapeEngineData] : m_drapeEngines)
+    if (drapeEngineData.m_drapeEngine)
+      drapeEngineData.m_drapeEngine->OnEnterForeground();
 
   m_trafficManager.OnEnterForeground();
 }
@@ -1275,12 +1287,12 @@ void Framework::SelectSearchResult(search::Result const & result, bool animation
   m_currentPlacePageInfo = BuildPlacePageInfo(info);
   if (m_currentPlacePageInfo)
   {
-    if (m_drapeEngine) {
-      if (scale < 0)
-        scale = GetFeatureViewportScale(m_currentPlacePageInfo->GetTypes());
-      m2::PointD const center = m_currentPlacePageInfo->GetMercator();
-      m_drapeEngine->SetModelViewCenter(center, scale, animation, true /* trackVisibleViewport */);
-    }
+//    if (m_drapeEngines.begin()->second.m_drapeEngine) {
+//      if (scale < 0)
+//        scale = GetFeatureViewportScale(m_currentPlacePageInfo->GetTypes());
+//      m2::PointD const center = m_currentPlacePageInfo->GetMercator();
+//      m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewCenter(center, scale, animation, true /* trackVisibleViewport */);
+//    }
 
     ActivateMapSelection();
   }
@@ -1422,7 +1434,14 @@ bool Framework::GetDistanceAndAzimut(m2::PointD const & point,
   return (d < 25000.0);
 }
 
-void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFactory, DrapeCreationParams && params)
+df::DrapeEngineId Framework::CreateDrapeEngineId()
+{
+  df::DrapeEngineId engineId = static_cast<df::DrapeEngineId>(random());
+  m_drapeEngines[engineId];
+  return engineId;
+}
+
+void Framework::CreateDrapeEngine(df::DrapeEngineId engineId, ref_ptr<dp::GraphicsContextFactory> contextFactory, DrapeCreationParams && params)
 {
   auto idReadFn = [this](df::MapDataProvider::TReadCallback<FeatureID const> const & fn,
                          m2::RectD const & r,
@@ -1451,12 +1470,12 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
   {
   };
 
-  auto onGraphicsContextInitialized = [this]()
+  auto onGraphicsContextInitialized = [this, engineId]()
   {
-    GetPlatform().RunTask(Platform::Thread::Gui, [this]()
+    GetPlatform().RunTask(Platform::Thread::Gui, [this, engineId]()
     {
-      if (m_onGraphicsContextInitialized)
-        m_onGraphicsContextInitialized();
+      if (m_drapeEngines[engineId].m_onGraphicsContextInitialized)
+          m_drapeEngines[engineId].m_onGraphicsContextInitialized();
     });
   };
 
@@ -1488,26 +1507,27 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
       isAutozoomEnabled, simplifiedTrafficColors, std::move(overlaysShowStatsFn),
       std::move(onGraphicsContextInitialized));
 
-  m_drapeEngine = make_unique_dp<df::DrapeEngine>(std::move(p));
-  m_drapeEngine->SetModelViewListener([this](ScreenBase const & screen)
+  DrapeEngineData &drapeEngineData = m_drapeEngines[engineId];
+  drapeEngineData.m_drapeEngine = make_unique_dp<df::DrapeEngine>(std::move(p));
+  drapeEngineData.m_drapeEngine->SetModelViewListener([this](ScreenBase const & screen)
   {
     GetPlatform().RunTask(Platform::Thread::Gui, [this, screen](){ OnViewportChanged(screen); });
   });
-  m_drapeEngine->SetTapEventInfoListener([this](df::TapInfo const & tapInfo)
+  drapeEngineData.m_drapeEngine->SetTapEventInfoListener([this](df::TapInfo const & tapInfo)
   {
     GetPlatform().RunTask(Platform::Thread::Gui, [this, tapInfo]()
     {
       OnTapEvent(place_page::BuildInfo(tapInfo));
     });
   });
-  m_drapeEngine->SetUserPositionListener([this](m2::PointD const & position, bool hasPosition)
+  drapeEngineData.m_drapeEngine->SetUserPositionListener([this](m2::PointD const & position, bool hasPosition)
   {
     GetPlatform().RunTask(Platform::Thread::Gui, [this, position, hasPosition]()
     {
       OnUserPositionChanged(position, hasPosition);
     });
   });
-  m_drapeEngine->SetUserPositionPendingTimeoutListener([this]()
+  drapeEngineData.m_drapeEngine->SetUserPositionPendingTimeoutListener([this]()
   {
     GetPlatform().RunTask(Platform::Thread::Gui, [this]()
     {
@@ -1516,7 +1536,7 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
     });
   });
 
-  OnSize(params.m_surfaceWidth, params.m_surfaceHeight);
+  OnSize(engineId, params.m_surfaceWidth, params.m_surfaceHeight);
 
   Allow3dMode(allow3d, allow3dBuildings);
 
@@ -1525,15 +1545,15 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
   if (m_connectToGpsTrack)
     GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2));
 
-  GetBookmarkManager().SetDrapeEngine(make_ref(m_drapeEngine));
-  m_drapeApi.SetDrapeEngine(make_ref(m_drapeEngine));
-  m_routingManager.SetDrapeEngine(make_ref(m_drapeEngine), allow3d);
-  m_trafficManager.SetDrapeEngine(make_ref(m_drapeEngine));
-  m_transitManager.SetDrapeEngine(make_ref(m_drapeEngine));
-  m_isolinesManager.SetDrapeEngine(make_ref(m_drapeEngine));
-  m_searchMarks.SetDrapeEngine(make_ref(m_drapeEngine));
+//  GetBookmarkManager().SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine));
+  drapeEngineData.m_drapeApi.SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine));
+//  m_routingManager.SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine), allow3d);
+//  m_trafficManager.SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine));
+//  m_transitManager.SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine));
+//  m_isolinesManager.SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine));
+//  m_searchMarks.SetDrapeEngine(make_ref(drapeEngineData.m_drapeEngine));
 
-  InvalidateUserMarks();
+//  InvalidateUserMarks();
 
   auto const transitSchemeEnabled = LoadTransitSchemeEnabled();
   m_transitManager.EnableTransitSchemeMode(transitSchemeEnabled);
@@ -1543,20 +1563,21 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
   if (!settings::Get(kShowDebugInfo, showDebugInfo))
     showDebugInfo = false;
   if (showDebugInfo)
-    m_drapeEngine->ShowDebugInfo(showDebugInfo);
+    drapeEngineData.m_drapeEngine->ShowDebugInfo(showDebugInfo);
 
   benchmark::RunGraphicsBenchmark(this);
 }
 
-void Framework::OnRecoverSurface(int width, int height, bool recreateContextDependentResources)
+void Framework::OnRecoverSurface(df::DrapeEngineId engineId, int width, int height, bool recreateContextDependentResources)
 {
-  if (m_drapeEngine)
+  DrapeEngineData &drapeEngineData = m_drapeEngines[engineId];
+  if (drapeEngineData.m_drapeEngine)
   {
-    m_drapeEngine->RecoverSurface(width, height, recreateContextDependentResources);
+    drapeEngineData.m_drapeEngine->RecoverSurface(width, height, recreateContextDependentResources);
 
     InvalidateUserMarks();
 
-    m_drapeApi.Invalidate();
+    drapeEngineData.m_drapeApi.Invalidate();
   }
 
   m_trafficManager.OnRecoverSurface();
@@ -1571,86 +1592,88 @@ void Framework::OnDestroySurface()
 
 void Framework::UpdateVisualScale(double vs)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->UpdateVisualScale(vs, m_isRenderingEnabled);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->UpdateVisualScale(vs, m_isRenderingEnabled);
 }
 
 void Framework::UpdateMyPositionRoutingOffset(bool useDefault, int offsetY)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->UpdateMyPositionRoutingOffset(useDefault, offsetY);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->UpdateMyPositionRoutingOffset(useDefault, offsetY);
 }
 
-ref_ptr<df::DrapeEngine> Framework::GetDrapeEngine()
+ref_ptr<df::DrapeEngine> Framework::GetDrapeEngine(df::DrapeEngineId engineId)
 {
-  return make_ref(m_drapeEngine);
+  return make_ref(m_drapeEngines[engineId].m_drapeEngine);
 }
 
 void Framework::DestroyDrapeEngine()
 {
-  if (m_drapeEngine != nullptr)
+  for (auto& [engineId, drapeEngineData] : m_drapeEngines)
   {
-    m_drapeApi.SetDrapeEngine(nullptr);
-    m_routingManager.SetDrapeEngine(nullptr, false);
-    m_trafficManager.SetDrapeEngine(nullptr);
-    m_transitManager.SetDrapeEngine(nullptr);
-    m_isolinesManager.SetDrapeEngine(nullptr);
-    m_searchMarks.SetDrapeEngine(nullptr);
-    GetBookmarkManager().SetDrapeEngine(nullptr);
-
+    if (drapeEngineData.m_drapeEngine != nullptr)
+    {
+      drapeEngineData.m_drapeApi.SetDrapeEngine(nullptr);
+      m_routingManager.SetDrapeEngine(nullptr, false);
+      m_trafficManager.SetDrapeEngine(nullptr);
+      m_transitManager.SetDrapeEngine(nullptr);
+      m_isolinesManager.SetDrapeEngine(nullptr);
+      m_searchMarks.SetDrapeEngine(nullptr);
+      GetBookmarkManager().SetDrapeEngine(nullptr);
+      drapeEngineData.m_drapeEngine.reset();
+    }
     m_trafficManager.Teardown();
     GpsTracker::Instance().Disconnect();
-    m_drapeEngine.reset();
   }
 }
 
 void Framework::SetRenderingEnabled(ref_ptr<dp::GraphicsContextFactory> contextFactory)
 {
   m_isRenderingEnabled = true;
-  if (m_drapeEngine)
-    m_drapeEngine->SetRenderingEnabled(contextFactory);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetRenderingEnabled(contextFactory);
 }
 
 void Framework::SetRenderingDisabled(bool destroySurface)
 {
   m_isRenderingEnabled = false;
-  if (m_drapeEngine)
-    m_drapeEngine->SetRenderingDisabled(destroySurface);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetRenderingDisabled(destroySurface);
 }
 
-void Framework::SetGraphicsContextInitializationHandler(df::OnGraphicsContextInitialized && handler)
+void Framework::SetGraphicsContextInitializationHandler(df::DrapeEngineId engineId, df::OnGraphicsContextInitialized && handler)
 {
-  m_onGraphicsContextInitialized = std::move(handler);
+  m_drapeEngines[engineId].m_onGraphicsContextInitialized = std::move(handler);
 }
 
 void Framework::EnableDebugRectRendering(bool enabled)
 {
-  if (m_drapeEngine)
-    m_drapeEngine->EnableDebugRectRendering(enabled);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->EnableDebugRectRendering(enabled);
 }
 
 void Framework::ConnectToGpsTracker()
 {
   m_connectToGpsTrack = true;
-  if (m_drapeEngine)
-  {
-    m_drapeEngine->ClearGpsTrackPoints();
-    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2));
-  }
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//  {
+//    m_drapeEngines.begin()->second.m_drapeEngine->ClearGpsTrackPoints();
+//    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2));
+//  }
 }
 
 void Framework::DisconnectFromGpsTracker()
 {
   m_connectToGpsTrack = false;
   GpsTracker::Instance().Disconnect();
-  if (m_drapeEngine)
-    m_drapeEngine->ClearGpsTrackPoints();
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//    m_drapeEngines.begin()->second.m_drapeEngine->ClearGpsTrackPoints();
 }
 
 void Framework::OnUpdateGpsTrackPointsCallback(vector<pair<size_t, location::GpsTrackInfo>> && toAdd,
                                                pair<size_t, size_t> const & toRemove)
 {
-  ASSERT(m_drapeEngine.get() != nullptr, ());
+//  ASSERT(m_drapeEngines.begin()->second.m_drapeEngine.get() != nullptr, ());
 
   vector<df::GpsTrackPoint> pointsAdd;
   pointsAdd.reserve(toAdd.size());
@@ -1674,7 +1697,7 @@ void Framework::OnUpdateGpsTrackPointsCallback(vector<pair<size_t, location::Gps
       indicesRemove.emplace_back(i);
   }
 
-  m_drapeEngine->UpdateGpsTrackPoints(std::move(pointsAdd), std::move(indicesRemove));
+//  m_drapeEngines.begin()->second.m_drapeEngine->UpdateGpsTrackPoints(std::move(pointsAdd), std::move(indicesRemove));
 }
 
 void Framework::MarkMapStyle(MapStyle mapStyle)
@@ -1694,11 +1717,11 @@ void Framework::MarkMapStyle(MapStyle mapStyle)
 
 void Framework::SetMapStyle(MapStyle mapStyle)
 {
-  MarkMapStyle(mapStyle);
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->UpdateMapStyle();
-  InvalidateUserMarks();
-  UpdateMinBuildingsTapZoom();
+//  MarkMapStyle(mapStyle);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->UpdateMapStyle();
+//  InvalidateUserMarks();
+//  UpdateMinBuildingsTapZoom();
 }
 
 MapStyle Framework::GetMapStyle() const
@@ -1713,10 +1736,10 @@ void Framework::SetupMeasurementSystem()
   m_routingManager.SetTurnNotificationsUnits(measurement_utils::GetMeasurementUnits());
 }
 
-void Framework::SetWidgetLayout(gui::TWidgetsLayoutInfo && layout)
+void Framework::SetWidgetLayout(df::DrapeEngineId engineId, gui::TWidgetsLayoutInfo && layout)
 {
-  ASSERT(m_drapeEngine != nullptr, ());
-  m_drapeEngine->SetWidgetLayout(std::move(layout));
+  ASSERT(m_drapeEngines[engineId].m_drapeEngine != nullptr, ());
+  m_drapeEngines[engineId].m_drapeEngine->SetWidgetLayout(std::move(layout));
 }
 
 bool Framework::ShowMapForURL(string const & url)
@@ -1776,8 +1799,8 @@ bool Framework::ShowMapForURL(string const & url)
 
     // ShowRect function interferes with ActivateMapSelection and we have strange behaviour as a result.
     // Use more obvious SetModelViewCenter here.
-    if (m_drapeEngine)
-      m_drapeEngine->SetModelViewCenter(point, scale, true, true);
+//    if (m_drapeEngines.begin()->second.m_drapeEngine)
+//      m_drapeEngines.begin()->second.m_drapeEngine->SetModelViewCenter(point, scale, true, true);
 
     if (result != NO_NEED_CLICK)
     {
@@ -1971,12 +1994,12 @@ void Framework::ActivateMapSelection()
 
   auto const selObj = m_currentPlacePageInfo->GetSelectedObject();
   CHECK_NOT_EQUAL(selObj, df::SelectionShape::OBJECT_EMPTY, ("Empty selections are impossible."));
-  if (m_drapeEngine)
-  {
-    auto const & bi = m_currentPlacePageInfo->GetBuildInfo();
-    m_drapeEngine->SelectObject(selObj, m_currentPlacePageInfo->GetMercator(), featureId,
-                                bi.m_needAnimationOnSelection, bi.m_isGeometrySelectionAllowed, true);
-  }
+//  if (m_drapeEngines.begin()->second.m_drapeEngine)
+//  {
+//    auto const & bi = m_currentPlacePageInfo->GetBuildInfo();
+//    m_drapeEngines.begin()->second.m_drapeEngine->SelectObject(selObj, m_currentPlacePageInfo->GetMercator(), featureId,
+//                                bi.m_needAnimationOnSelection, bi.m_isGeometrySelectionAllowed, true);
+//  }
 
   /// @todo Current android logic is strange (see SetPlacePageListeners comments), so skip assert.
   //ASSERT(m_onPlacePageOpen, ());
@@ -1998,8 +2021,8 @@ void Framework::DeactivateMapSelection(bool notifyUI)
 
     m_currentPlacePageInfo = {};
 
-    if (m_drapeEngine != nullptr)
-      m_drapeEngine->DeselectObject();
+//    if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//      m_drapeEngines.begin()->second.m_drapeEngine->DeselectObject();
   }
 }
 
@@ -2047,13 +2070,13 @@ void Framework::OnTapEvent(place_page::BuildInfo const & buildInfo)
     {
       if (m_currentPlacePageInfo->GetTrackId() == prevTrackId)
       {
-        if (m_drapeEngine)
-        {
-          m_drapeEngine->SelectObject(df::SelectionShape::ESelectedObject::OBJECT_TRACK,
-                                      m_currentPlacePageInfo->GetMercator(), FeatureID(),
-                                      false /* isAnim */, false /* isGeometrySelectionAllowed */,
-                                      true /* isSelectionShapeVisible */);
-        }
+//        if (m_drapeEngines.begin()->second.m_drapeEngine)
+//        {
+//          m_drapeEngines.begin()->second.m_drapeEngine->SelectObject(df::SelectionShape::ESelectedObject::OBJECT_TRACK,
+//                                      m_currentPlacePageInfo->GetMercator(), FeatureID(),
+//                                      false /* isAnim */, false /* isGeometrySelectionAllowed */,
+//                                      true /* isSelectionShapeVisible */);
+//        }
         return;
       }
       GetBookmarkManager().UpdateElevationMyPosition(m_currentPlacePageInfo->GetTrackId());
@@ -2071,8 +2094,8 @@ void Framework::OnTapEvent(place_page::BuildInfo const & buildInfo)
 
 void Framework::InvalidateRendering()
 {
-  if (m_drapeEngine)
-    m_drapeEngine->Invalidate();
+  if (m_drapeEngines.begin()->second.m_drapeEngine)
+    m_drapeEngines.begin()->second.m_drapeEngine->Invalidate();
 }
 
 void Framework::UpdateMinBuildingsTapZoom()
@@ -2198,16 +2221,16 @@ std::optional<place_page::Info> Framework::BuildPlacePageInfo(
   auto const isFeatureMatchingEnabled = buildInfo.IsFeatureMatchingEnabled();
 
   // Using VisualParams inside FindTrackInTapPosition/GetDefaultTapRect requires drapeEngine.
-  if (m_drapeEngine != nullptr && buildInfo.IsTrackMatchingEnabled() && !buildInfo.m_isLongTap &&
-      !(isFeatureMatchingEnabled && selectedFeature.IsValid()))
-  {
-    auto const trackSelectionInfo = FindTrackInTapPosition(buildInfo);
-    if (trackSelectionInfo.m_trackId != kml::kInvalidTrackId)
-    {
-      BuildTrackPlacePage(trackSelectionInfo, outInfo);
-      return outInfo;
-    }
-  }
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr && buildInfo.IsTrackMatchingEnabled() && !buildInfo.m_isLongTap &&
+//      !(isFeatureMatchingEnabled && selectedFeature.IsValid()))
+//  {
+//    auto const trackSelectionInfo = FindTrackInTapPosition(buildInfo);
+//    if (trackSelectionInfo.m_trackId != kml::kInvalidTrackId)
+//    {
+//      BuildTrackPlacePage(trackSelectionInfo, outInfo);
+//      return outInfo;
+//    }
+//  }
 
   if (isFeatureMatchingEnabled && !selectedFeature.IsValid())
     selectedFeature = FindBuildingAtPoint(buildInfo.m_mercator);
@@ -2402,16 +2425,16 @@ void Framework::SaveTransliteration(bool allowTranslit)
 
 void Framework::Allow3dMode(bool allow3d, bool allow3dBuildings)
 {
-  if (m_drapeEngine == nullptr)
-    return;
-
-  if (!m_powerManager.IsFacilityEnabled(power_management::Facility::PerspectiveView))
-    allow3d = false;
-
-  if (!m_powerManager.IsFacilityEnabled(power_management::Facility::Buildings3d))
-    allow3dBuildings = false;
-
-  m_drapeEngine->Allow3dMode(allow3d, allow3dBuildings);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine == nullptr)
+//    return;
+//
+//  if (!m_powerManager.IsFacilityEnabled(power_management::Facility::PerspectiveView))
+//    allow3d = false;
+//
+//  if (!m_powerManager.IsFacilityEnabled(power_management::Facility::Buildings3d))
+//    allow3dBuildings = false;
+//
+//  m_drapeEngines.begin()->second.m_drapeEngine->Allow3dMode(allow3d, allow3dBuildings);
 }
 
 void Framework::Save3dMode(bool allow3d, bool allow3dBuildings)
@@ -2446,10 +2469,10 @@ void Framework::SetLargeFontsSize(bool isLargeSize)
 {
   double const scaleFactor = isLargeSize ? kLargeFontsScaleFactor : 1.0;
 
-  ASSERT(m_drapeEngine.get() != nullptr, ());
-  m_drapeEngine->SetFontScaleFactor(scaleFactor);
+//  ASSERT(m_drapeEngines.begin()->second.m_drapeEngine.get() != nullptr, ());
+//  m_drapeEngines.begin()->second.m_drapeEngine->SetFontScaleFactor(scaleFactor);
 
-  InvalidateRect(GetCurrentViewport());
+//  InvalidateRect(GetCurrentViewport());
 }
 
 bool Framework::LoadTrafficEnabled()
@@ -2491,8 +2514,8 @@ void Framework::AllowAutoZoom(bool allowAutoZoom)
   routing::RouterType const type = m_routingManager.GetRouter();
   bool const isPedestrianRoute = type == RouterType::Pedestrian;
 
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->AllowAutoZoom(allowAutoZoom && !isPedestrianRoute);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->AllowAutoZoom(allowAutoZoom && !isPedestrianRoute);
 }
 
 void Framework::SaveAutoZoom(bool allowAutoZoom)
@@ -2529,11 +2552,11 @@ void Framework::SaveIsolinesEnabled(bool enabled)
 void Framework::EnableChoosePositionMode(bool enable, bool enableBounds, bool applyPosition,
                                          m2::PointD const & position)
 {
-  if (m_drapeEngine != nullptr)
-  {
-    m_drapeEngine->EnableChoosePositionMode(enable,
-      enableBounds ? GetSelectedFeatureTriangles() : vector<m2::TriangleD>(), applyPosition, position);
-  }
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//  {
+//    m_drapeEngines.begin()->second.m_drapeEngine->EnableChoosePositionMode(enable,
+//      enableBounds ? GetSelectedFeatureTriangles() : vector<m2::TriangleD>(), applyPosition, position);
+//  }
 }
 
 vector<m2::TriangleD> Framework::GetSelectedFeatureTriangles() const
@@ -2561,8 +2584,8 @@ vector<m2::TriangleD> Framework::GetSelectedFeatureTriangles() const
 
 void Framework::BlockTapEvents(bool block)
 {
-  if (m_drapeEngine != nullptr)
-    m_drapeEngine->BlockTapEvents(block);
+//  if (m_drapeEngines.begin()->second.m_drapeEngine != nullptr)
+//    m_drapeEngines.begin()->second.m_drapeEngine->BlockTapEvents(block);
 }
 
 bool Framework::ParseDrapeDebugCommand(string const & query)
@@ -2589,14 +2612,14 @@ bool Framework::ParseDrapeDebugCommand(string const & query)
 
   if (query == "?aa" || query == "effect:antialiasing")
   {
-    m_drapeEngine->SetPosteffectEnabled(df::PostprocessRenderer::Antialiasing,
-                                        true /* enabled */);
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetPosteffectEnabled(df::PostprocessRenderer::Antialiasing,
+//                                        true /* enabled */);
     return true;
   }
   if (query == "?no-aa" || query == "effect:no-antialiasing")
   {
-    m_drapeEngine->SetPosteffectEnabled(df::PostprocessRenderer::Antialiasing,
-                                        false /* enabled */);
+//    m_drapeEngines.begin()->second.m_drapeEngine->SetPosteffectEnabled(df::PostprocessRenderer::Antialiasing,
+//                                        false /* enabled */);
     return true;
   }
   if (query == "?scheme")
@@ -2621,29 +2644,29 @@ bool Framework::ParseDrapeDebugCommand(string const & query)
   }
   if (query == "?debug-info")
   {
-    m_drapeEngine->ShowDebugInfo(true /* shown */);
+//    m_drapeEngines.begin()->second.m_drapeEngine->ShowDebugInfo(true /* shown */);
     return true;
   }
   if (query == "?debug-info-always")
   {
-    m_drapeEngine->ShowDebugInfo(true /* shown */);
-    settings::Set(kShowDebugInfo, true);
+//    m_drapeEngines.begin()->second.m_drapeEngine->ShowDebugInfo(true /* shown */);
+//    settings::Set(kShowDebugInfo, true);
     return true;
   }
   if (query == "?no-debug-info")
   {
-    m_drapeEngine->ShowDebugInfo(false /* shown */);
-    settings::Set(kShowDebugInfo, false);
+//    m_drapeEngines.begin()->second.m_drapeEngine->ShowDebugInfo(false /* shown */);
+//    settings::Set(kShowDebugInfo, false);
     return true;
   }
   if (query == "?debug-rect")
   {
-    m_drapeEngine->EnableDebugRectRendering(true /* shown */);
+//    m_drapeEngines.begin()->second.m_drapeEngine->EnableDebugRectRendering(true /* shown */);
     return true;
   }
   if (query == "?no-debug-rect")
   {
-    m_drapeEngine->EnableDebugRectRendering(false /* shown */);
+//    m_drapeEngines.begin()->second.m_drapeEngine->EnableDebugRectRendering(false /* shown */);
     return true;
   }
 #if defined(OMIM_METAL_AVAILABLE)
@@ -3168,7 +3191,7 @@ void Framework::OnRouteFollow(routing::RouterType type)
   // TODO. We need to sync two enums VehicleType and RouterType to be able to pass
   // GetRoutingSettings(type).m_matchRoute to the FollowRoute() instead of |isPedestrianRoute|.
   // |isArrowGlued| parameter fully corresponds to |m_matchRoute| in RoutingSettings.
-  m_drapeEngine->FollowRoute(scale, scale3d, enableAutoZoom, !isPedestrianRoute /* isArrowGlued */);
+  m_drapeEngines.begin()->second.m_drapeEngine->FollowRoute(scale, scale3d, enableAutoZoom, !isPedestrianRoute /* isArrowGlued */);
 }
 
 // RoutingManager::Delegate

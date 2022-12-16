@@ -40,8 +40,6 @@ private:
     for (auto const p : GetBoundPrograms()) \
     { \
       auto const programName = DebugPrint(p); \
-      CHECK(params.find(programName) == params.cend(), \
-        ("Program has already bound", programName)); \
       params[programName] = GetName(); \
     } \
   }
