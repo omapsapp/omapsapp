@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <shortcut
+    android:shortcutId="search"
+    android:enabled="true"
+    android:icon="@mipmap/ic_launcher"
+    android:shortcutShortLabel="@string/search"
+    tools:targetApi="n_mr1">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetPackage="app.organicmaps.debug"
+      android:targetClass="app.organicmaps.search.SearchActivity" />
+  </shortcut>
+</shortcuts>
