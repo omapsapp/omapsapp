@@ -159,7 +159,6 @@ android {
     buildConfigField 'String', 'SUPPORT_MAIL', '"android@organicmaps.app"'
     // Should be customized in flavors.
     buildConfigField 'String', 'REVIEW_URL', '""'
-    resourceConfigurations += [project.ext.supportedLocalizations]
 
     multiDexEnabled true
     multiDexKeepFile file('multidex-config.txt')
@@ -408,6 +407,9 @@ android {
   androidResources {
     ignoreAssetsPattern '!.svn:!.git:!.DS_Store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~'
     noCompress 'txt', 'bin', 'html', 'png', 'json', 'mwm', 'ttf', 'sdf', 'ui', 'config', 'csv', 'spv', 'obj'
+	
+    // Turn automatic per-app language feature on
+    generateLocaleConfig true
   }
 
   compileOptions {
