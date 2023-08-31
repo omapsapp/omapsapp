@@ -590,6 +590,8 @@ line|z19-[highway=busway],
 line|z13-[highway=pedestrian],
 line|z13-[highway=ford]
 {color: @pedestrian;opacity: 1;}
+line|z13-[highway=pedestrian][area?],
+{opacity: 0;}
 line|z13-[highway=cycleway]
 {color: @cycleway;opacity: 1;}
 line|z13-[highway=construction],
