@@ -22549,7 +22549,7 @@ cont {
     scale: 13
     lines {
       width: 1.0
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 2.0
         dd: 1.0
@@ -22562,7 +22562,7 @@ cont {
     scale: 14
     lines {
       width: 1.6
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 3.6
         dd: 1.6
@@ -22587,7 +22587,7 @@ cont {
     scale: 15
     lines {
       width: 2.0
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 5.0
         dd: 2.2
@@ -22612,7 +22612,7 @@ cont {
     scale: 16
     lines {
       width: 2.4
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 5.4
         dd: 2.7
@@ -22636,7 +22636,7 @@ cont {
     scale: 17
     lines {
       width: 3.0
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 5.0
         dd: 2.0
@@ -22660,7 +22660,7 @@ cont {
     scale: 18
     lines {
       width: 4.0
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 7.0
         dd: 3.0
@@ -22684,7 +22684,7 @@ cont {
     scale: 19
     lines {
       width: 5.0
-      color: 16777215
+      color: 4294967295
       dashdot {
         dd: 16.2
         dd: 8.1
