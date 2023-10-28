@@ -104,6 +104,7 @@ void MapWidget::CreateEngine()
       [&p](gui::EWidget widget, gui::Position const & pos) { p.m_widgetsInitInfo[widget] = pos; });
 
   p.m_widgetsInitInfo[gui::WIDGET_SCALE_FPS_LABEL] = gui::Position(dp::LeftTop);
+  p.m_widgetsInitInfo[gui::WIDGET_SPEED_LIMIT] = gui::Position(m2::PointF(100, 100), dp::Center);
 
   m_framework.CreateDrapeEngine(make_ref(m_contextFactory), std::move(p));
   m_framework.SetViewportListener(std::bind(&MapWidget::OnViewportChanged, this, std::placeholders::_1));

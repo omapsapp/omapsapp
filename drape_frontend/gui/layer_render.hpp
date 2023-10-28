@@ -80,5 +80,7 @@ private:
                                 ref_ptr<dp::TextureManager> textures);
   m2::PointF CacheWatermark(ref_ptr<dp::GraphicsContext> context, Position const & position,
                             ref_ptr<LayerRenderer> renderer, ref_ptr<dp::TextureManager> textures);
+  m2::PointF CacheSpeedLimit(ref_ptr<dp::GraphicsContext> context, Position const & position,
+                             ref_ptr<LayerRenderer> renderer, ref_ptr<dp::TextureManager> textures);
 };
 }  // namespace gui

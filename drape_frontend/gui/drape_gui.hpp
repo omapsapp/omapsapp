@@ -3,6 +3,7 @@
 #include "drape_frontend/gui/compass.hpp"
 #include "drape_frontend/gui/scale_fps_helper.hpp"
 #include "drape_frontend/gui/skin.hpp"
+#include "drape_frontend/gui/speed_limit_helper.hpp"
 
 #include "storage/storage_defines.hpp"
 
@@ -23,6 +24,7 @@ class DrapeGui
 public:
   static DrapeGui & Instance();
   static RulerHelper & GetRulerHelper();
+  static SpeedLimitHelper & GetSpeedLimitHelper();
 
   static dp::FontDecl GetGuiTextFont();
 
@@ -45,6 +47,7 @@ public:
 private:
   DrapeGui();
   RulerHelper & GetRulerHelperImpl();
+  SpeedLimitHelper & GetSpeedLimitHelperImpl();
 
   struct Impl;
   std::unique_ptr<Impl> m_impl;

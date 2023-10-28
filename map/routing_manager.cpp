@@ -563,6 +563,7 @@ void RoutingManager::RemoveRoute(bool deactivateFollowing)
     // Remove all subroutes.
     m_drapeEngine.SafeCall(&df::DrapeEngine::RemoveSubroute,
                            dp::DrapeID(), true /* deactivateFollowing */);
+    m_drapeEngine.SafeCall(&df::DrapeEngine::SetSpeedLimitInfo, -1.f);
   }
   else
   {
@@ -794,6 +795,12 @@ void RoutingManager::CloseRouting(bool removeRoutePoints)
     m_bmManager->GetEditSession().ClearGroup(UserMark::Type::ROUTING);
     CancelRecommendation(Recommendation::RebuildAfterPointsLoading);
   }
+}
+
+void RoutingManager::GetRouteFollowingInfo(routing::FollowingInfo & info)
+{
+  m_routingSession.GetRouteFollowingInfo(info);
+  m_drapeEngine.SafeCall(&df::DrapeEngine::SetSpeedLimitInfo, info.m_speedLimitMps);
 }
 
 void RoutingManager::SetLastUsedRouter(RouterType type)

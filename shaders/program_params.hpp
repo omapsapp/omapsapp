@@ -163,6 +163,7 @@ struct GuiProgramParams
     Program::TextStaticOutlinedGui,
     Program::TextOutlinedGui,
     Program::TexturingGui,
+    Program::GuiCircle,
     Program::Ruler)
 } ALIGNMENT;
 

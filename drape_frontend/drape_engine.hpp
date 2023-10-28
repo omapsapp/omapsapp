@@ -156,6 +156,7 @@ public:
   void SetCompassInfo(location::CompassInfo const & info);
   void SetGpsInfo(location::GpsInfo const & info, bool isNavigable,
                   location::RouteMatchingInfo const & routeInfo);
+  void SetSpeedLimitInfo(double speedLimitMps) const;
   void SwitchMyPositionNextMode();
   void LoseLocation();
   void StopLocationFollow();

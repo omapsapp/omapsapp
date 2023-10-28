@@ -23,11 +23,6 @@ Color::Color(uint32_t rgba)
   : m_rgba(rgba)
 {}
 
-Color::Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
-{
-  m_rgba = red << 24 | green << 16 | blue << 8 | alpha;
-}
-
 uint8_t Color::GetRed() const
 {
   return EXTRACT_BYTE(m_rgba, 3);

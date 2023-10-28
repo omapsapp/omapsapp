@@ -77,6 +77,8 @@ set(SRC
   gps_track_point.hpp
   gps_track_renderer.cpp
   gps_track_renderer.hpp
+  gui/elements/circle.cpp
+  gui/elements/circle.hpp
   gui/choose_position_mark.cpp
   gui/choose_position_mark.hpp
   gui/compass.cpp
@@ -100,6 +102,10 @@ set(SRC
   gui/shape.hpp
   gui/skin.cpp
   gui/skin.hpp
+  gui/speed_limit.cpp
+  gui/speed_limit.hpp
+  gui/speed_limit_helper.hpp
+  gui/speed_limit_helper.cpp
   kinetic_scroller.cpp
   kinetic_scroller.hpp
   line_shape.cpp

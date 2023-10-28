@@ -497,6 +497,11 @@ void DrapeEngine::SetGpsInfo(location::GpsInfo const & info, bool isNavigable,
                                   MessagePriority::Normal);
 }
 
+void DrapeEngine::SetSpeedLimitInfo(double speedLimitMps) const
+{
+  gui::DrapeGui::Instance().GetSpeedLimitHelper().SetSpeedLimit(speedLimitMps);
+}
+
 void DrapeEngine::SwitchMyPositionNextMode()
 {
   using Mode = ChangeMyPositionModeMessage::EChangeType;

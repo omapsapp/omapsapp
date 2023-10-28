@@ -24,6 +24,8 @@ set(shader_files
     GL/dashed_line.vsh.glsl
     GL/debug_rect.fsh.glsl
     GL/debug_rect.vsh.glsl
+    GL/gui_circle.fsh.glsl
+    GL/gui_circle.vsh.glsl
     GL/hatching_area.fsh.glsl
     GL/hatching_area.vsh.glsl
     GL/line.fsh.glsl

@@ -348,9 +348,25 @@ void MutableLabel::Precache(PrecacheParams const & params, PrecacheResult & resu
   glsl::vec2 colorTex = glsl::ToVec2(color.GetTexRect().Center());
   glsl::vec2 outlineTex = glsl::ToVec2(outlineColor.GetTexRect().Center());
 
+  uint32_t maxGlyphWidth = 0;
+  uint32_t maxGlyphHeight = 0;
+  for (const auto & node : m_alphabet)
+  {
+    dp::TextureManager::GlyphRegion const & reg = node.second;
+    m2::PointU pixelSize(reg.GetPixelSize());
+    maxGlyphWidth = std::max(maxGlyphWidth, pixelSize.x);
+    maxGlyphHeight = std::max(maxGlyphHeight, pixelSize.y);
+  }
+
+  float offsetWidth = 0;
+  if (params.m_anchor == dp::Center)
+  {
+    offsetWidth -= maxGlyphWidth / (1.5f * vparams.GetVisualScale());
+  }
+
   auto const vertexCount = static_cast<size_t>(m_maxLength) * 4;
   result.m_buffer.resize(vertexCount,
-                         StaticVertex(glsl::vec3(0.0, 0.0, 0.0), colorTex, outlineTex));
+                         StaticVertex(glsl::vec3(offsetWidth, 0.0, 0.0), colorTex, outlineTex));
 
   float depth = 0.0f;
   for (size_t i = 0; i < vertexCount; i += 4)
@@ -360,16 +376,6 @@ void MutableLabel::Precache(PrecacheParams const & params, PrecacheResult & resu
     result.m_buffer[i + 2].m_position.z = depth;
     result.m_buffer[i + 3].m_position.z = depth;
     depth += 10.0f;
-  }
-
-  uint32_t maxGlyphWidth = 0;
-  uint32_t maxGlyphHeight = 0;
-  for (const auto & node : m_alphabet)
-  {
-    dp::TextureManager::GlyphRegion const & reg = node.second;
-    m2::PointU pixelSize(reg.GetPixelSize());
-    maxGlyphWidth = std::max(maxGlyphWidth, pixelSize.x);
-    maxGlyphHeight = std::max(maxGlyphHeight, pixelSize.y);
   }
 
   result.m_maxPixelSize = m2::PointF(m_maxLength * maxGlyphWidth, maxGlyphHeight);
@@ -556,6 +562,7 @@ m2::PointF MutableLabelDrawer::Draw(ref_ptr<dp::GraphicsContext> context, Params
   drape_ptr<MutableLabelHandle> handle = params.m_handleCreator(params.m_anchor, params.m_pivot);
 
   MutableLabel::PrecacheParams preCacheP;
+  preCacheP.m_anchor = params.m_anchor;
   preCacheP.m_alphabet = params.m_alphabet;
   preCacheP.m_font = params.m_font;
   preCacheP.m_maxLength = params.m_maxLength;

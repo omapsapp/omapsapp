@@ -19,6 +19,7 @@ DashedLine dashed_line.vsh.glsl dashed_line.fsh.glsl
 PathSymbol path_symbol.vsh.glsl texturing.fsh.glsl
 HatchingArea hatching_area.vsh.glsl hatching_area.fsh.glsl
 TexturingGui texturing_gui.vsh.glsl texturing.fsh.glsl
+GuiCircle gui_circle.vsh.glsl gui_circle.fsh.glsl
 Ruler ruler.vsh.glsl texturing.fsh.glsl
 Accuracy position_accuracy3d.vsh.glsl texturing.fsh.glsl
 MyPosition my_position.vsh.glsl texturing.fsh.glsl

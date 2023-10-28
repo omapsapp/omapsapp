@@ -35,6 +35,7 @@ public final class Map
   public static final int WIDGET_COMPASS = 0x02;
   public static final int WIDGET_COPYRIGHT = 0x04;
   public static final int WIDGET_SCALE_FPS_LABEL = 0x08;
+  public static final int WIDGET_SPEED_LIMIT = 0x10;
 
   // Should correspond to dp::Anchor from drape_global.hpp
   public static final int ANCHOR_CENTER = 0x00;
@@ -328,11 +329,13 @@ public final class Map
     if (mDisplayType == DisplayType.Device)
     {
       nativeSetupWidget(WIDGET_SCALE_FPS_LABEL, UiUtils.dimen(context, R.dimen.margin_base), UiUtils.dimen(context, R.dimen.margin_base) * 2, ANCHOR_LEFT_TOP);
+      nativeSetupWidget(WIDGET_SPEED_LIMIT, mWidth / 2, mHeight / 2, ANCHOR_CENTER);
       updateCompassOffset(context, mCurrentCompassOffsetX, mCurrentCompassOffsetY, false);
     }
     else
     {
       nativeSetupWidget(WIDGET_SCALE_FPS_LABEL, UiUtils.dimen(context, R.dimen.margin_base), mHeight - UiUtils.dimen(context, R.dimen.margin_base) * 5, ANCHOR_LEFT_TOP);
+      nativeSetupWidget(WIDGET_SPEED_LIMIT, mWidth / 2, mHeight / 2, ANCHOR_CENTER);
       updateCompassOffset(context, mWidth, mCurrentCompassOffsetY, true);
     }
   }

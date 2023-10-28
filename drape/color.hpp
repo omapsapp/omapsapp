@@ -12,7 +12,10 @@ struct Color
 {
   Color();
   explicit Color(uint32_t rgba);
-  Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
+  constexpr Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
+    : m_rgba(red << 24 | green << 16 | blue << 8 | alpha)
+  {
+  }
 
   uint8_t GetRed() const;
   uint8_t GetGreen() const;
@@ -37,13 +40,13 @@ struct Color
 
   void PremultiplyAlpha(float opacity);
 
-  static Color Black() { return Color(0, 0, 0, 255); }
-  static Color White() { return Color(255, 255, 255, 255); }
-  static Color Red() { return Color(255, 0, 0, 255); }
-  static Color Blue() { return Color(0, 0, 255, 255); }
-  static Color Green() { return Color(0, 255, 0, 255); }
-  static Color Yellow() { return Color(255, 255, 0, 255); }
-  static Color Transparent() { return Color(0, 0, 0, 0); }
+  static constexpr Color Black() { return Color(0, 0, 0, 255); }
+  static constexpr Color White() { return Color(255, 255, 255, 255); }
+  static constexpr Color Red() { return Color(255, 0, 0, 255); }
+  static constexpr Color Blue() { return Color(0, 0, 255, 255); }
+  static constexpr Color Green() { return Color(0, 255, 0, 255); }
+  static constexpr Color Yellow() { return Color(255, 255, 0, 255); }
+  static constexpr Color Transparent() { return Color(0, 0, 0, 0); }
 
 private:
   uint32_t m_rgba;
