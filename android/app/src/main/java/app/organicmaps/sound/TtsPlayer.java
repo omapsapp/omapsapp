@@ -2,6 +2,7 @@ package app.organicmaps.sound;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,6 +12,11 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.media.AudioAttributesCompat;
+import androidx.media.AudioFocusRequestCompat;
+import androidx.media.AudioManagerCompat;
+
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
 import app.organicmaps.util.Config;
@@ -47,7 +53,18 @@ public enum TtsPlayer
 
   private TextToSpeech mTts;
   private boolean mInitializing;
-  private AudioFocusManager mAudioFocusManager;
+
+  private final AudioFocusRequestCompat mAudioFocusRequest =
+    new AudioFocusRequestCompat.Builder(AudioManagerCompat.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK)
+      .setAudioAttributes(
+        new AudioAttributesCompat.Builder()
+          .setUsage(AudioAttributesCompat.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+          .setContentType(AudioAttributesCompat.CONTENT_TYPE_SPEECH)
+          .build()
+      )
+      .setOnAudioFocusChangeListener(focusChange -> {})
+      .build();
+  private AudioManager mAudioManager;
 
   private final Bundle mParams = new Bundle();
 
@@ -162,27 +179,27 @@ public enum TtsPlayer
       mTts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
         @Override
         public void onStart(String utteranceId) {
-          mAudioFocusManager.requestAudioFocus();
+          AudioManagerCompat.requestAudioFocus(mAudioManager, mAudioFocusRequest);
         }
 
         @Override
         public void onDone(String utteranceId) {
-          mAudioFocusManager.releaseAudioFocus();
+          AudioManagerCompat.abandonAudioFocusRequest(mAudioManager, mAudioFocusRequest);
         }
 
         @Override
         @SuppressWarnings("deprecated") // abstract method must be implemented
         public void onError(String utteranceId)
         {
-          mAudioFocusManager.releaseAudioFocus();
+          AudioManagerCompat.abandonAudioFocusRequest(mAudioManager, mAudioFocusRequest);
         }
 
         @Override
         public void onError(String utteranceId, int errorCode) {
-          mAudioFocusManager.releaseAudioFocus();
+          AudioManagerCompat.abandonAudioFocusRequest(mAudioManager, mAudioFocusRequest);
         }
       });
-      mAudioFocusManager = new AudioFocusManager(context);
+      mAudioManager = ContextCompat.getSystemService(context, AudioManager.class);
       mParams.putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, Config.TTS.getVolume());
       mInitializing = false;
     }));
@@ -198,11 +215,10 @@ public enum TtsPlayer
     if (Config.TTS.isEnabled())
       try
       {
-        boolean isMusicActive = mAudioFocusManager.requestAudioFocus();
-        if (isMusicActive)
-          delayHandler.postDelayed(() -> mTts.speak(textToSpeak, TextToSpeech.QUEUE_ADD, mParams, textToSpeak), TTS_SPEAK_DELAY_MILLIS);
-        else
-          mTts.speak(textToSpeak, TextToSpeech.QUEUE_ADD, mParams, textToSpeak);
+        final boolean isMusicActive = mAudioManager.isMusicActive();
+        AudioManagerCompat.requestAudioFocus(mAudioManager, mAudioFocusRequest);
+        final long delay = isMusicActive ? TTS_SPEAK_DELAY_MILLIS : 0;
+        delayHandler.postDelayed(() -> mTts.speak(textToSpeak, TextToSpeech.QUEUE_ADD, mParams, textToSpeak), delay);
       }
       catch (IllegalArgumentException e)
       {
@@ -222,7 +238,7 @@ public enum TtsPlayer
     if (isReady())
       try
       {
-        mAudioFocusManager.releaseAudioFocus();
+        AudioManagerCompat.abandonAudioFocusRequest(mAudioManager, mAudioFocusRequest);
         mTts.stop();
       }
       catch (IllegalArgumentException e)

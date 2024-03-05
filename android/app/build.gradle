@@ -388,6 +388,7 @@ dependencies {
   implementation 'androidx.recyclerview:recyclerview:1.3.2'
   implementation 'androidx.work:work-runtime:2.9.1'
   implementation 'androidx.lifecycle:lifecycle-process:2.8.4'
+  implementation 'androidx.media:media:1.7.0'
   implementation 'com.google.android.material:material:1.12.0'
   // Fix for app/organicmaps/util/FileUploadWorker.java:14: error: cannot access ListenableFuture
   // https://github.com/organicmaps/organicmaps/issues/6106
