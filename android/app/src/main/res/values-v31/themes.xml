@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MwmTheme.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_padded</item>
+        <item name="windowSplashScreenBackground">@color/bg_primary</item>
+        <item name="android:textColorPrimary">@color/white_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="postSplashScreenTheme">@style/MwmTheme</item>
+    </style>
+
+    <style name="MwmTheme.Night.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_padded</item>
+        <item name="windowSplashScreenBackground">@color/bg_primary_night</item>
+        <item name="android:textColorPrimary">@color/white_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary_night</item>
+        <item name="android:statusBarColor">@color/bg_primary_night</item>
+        <item name="postSplashScreenTheme">@style/MwmTheme</item>
+    </style>
+</resources>

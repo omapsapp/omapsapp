@@ -6,6 +6,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 import app.organicmaps.display.DisplayManager;
 import app.organicmaps.location.LocationHelper;
@@ -46,19 +48,27 @@ public class SplashActivity extends AppCompatActivity
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState)
   {
+    SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
     super.onCreate(savedInstanceState);
-
     final Context context = getApplicationContext();
-    final String theme = Config.getCurrentUiTheme(context);
-    if (ThemeUtils.isDefaultTheme(context, theme))
-      setTheme(R.style.MwmTheme_Splash);
-    else if (ThemeUtils.isNightTheme(context, theme))
-      setTheme(R.style.MwmTheme_Night_Splash);
+
+    final int theme = getSplashTheme(context);
+    // use new splashscreen api for >= 31
+    // maybe doesn't work for android auto?
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      getSplashScreen().setSplashScreenTheme(theme);
+      //always keep splash while in SplashActivity
+      splashScreen.setKeepOnScreenCondition(() -> true );
+    }
+    // use old splashscreen method for below 31
     else
-      throw new IllegalArgumentException("Attempt to apply unsupported theme: " + theme);
+    {
+      setTheme(theme);
+      setContentView(R.layout.activity_splash);
+    }
 
     UiThread.cancelDelayedTasks(mInitCoreDelayedTask);
-    setContentView(R.layout.activity_splash);
+
     mPermissionRequest = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(),
         result -> Config.setLocationRequested());
 
@@ -161,5 +171,15 @@ public class SplashActivity extends AppCompatActivity
     Config.setFirstStartDialogSeen(this);
     startActivity(intent);
     finish();
+  }
+  private int getSplashTheme(Context context)
+  {
+    final String theme = Config.getCurrentUiTheme(context);
+    if (ThemeUtils.isDefaultTheme(context, theme))
+        return R.style.MwmTheme_Splash;
+      else if (ThemeUtils.isNightTheme(context, theme))
+        return R.style.MwmTheme_Night_Splash;
+      else
+        throw new IllegalArgumentException("Attempt to apply unsupported theme: " + theme);
   }
 }
