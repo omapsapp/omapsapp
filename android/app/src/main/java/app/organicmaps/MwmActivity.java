@@ -157,7 +157,11 @@ public class MwmActivity extends BaseMwmFragmentActivity
                                                      EditorHostFragment.class.getName(),
                                                      ReportFragment.class.getName() };
 
-  public static final int REQ_CODE_DRIVING_OPTIONS = 6;
+  public final ActivityResultLauncher<Intent> startDrivingOptionsForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResult ->
+  {
+     if( activityResult.getResultCode() == Activity.RESULT_OK)
+      rebuildLastRoute();
+  });
 
   private static final String MAIN_MENU_ID = "MAIN_MENU_BOTTOM_SHEET";
   private static final String LAYERS_MENU_ID = "LAYERS_MENU_BOTTOM_SHEET";
@@ -614,7 +618,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
 
     if (!mIsTabletLayout)
     {
-      mRoutingPlanInplaceController = new RoutingPlanInplaceController(this, this, this);
+      mRoutingPlanInplaceController = new RoutingPlanInplaceController(this, startDrivingOptionsForResult, this, this);
       removeCurrentFragment(false);
     }
 
@@ -1016,18 +1020,6 @@ public class MwmActivity extends BaseMwmFragmentActivity
       mRoutingPlanInplaceController.restoreState(savedInstanceState);
 
     mPowerSaveDisclaimerShown = savedInstanceState.getBoolean(POWER_SAVE_DISCLAIMER_SHOWN, false);
-  }
-
-  @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent data)
-  {
-    super.onActivityResult(requestCode, resultCode, data);
-
-    if (resultCode != Activity.RESULT_OK)
-      return;
-
-    if (requestCode == REQ_CODE_DRIVING_OPTIONS)
-      rebuildLastRoute();
   }
 
   private void rebuildLastRoute()
@@ -1690,7 +1682,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
     mAlertDialog = new MaterialAlertDialogBuilder(this, R.style.MwmTheme_AlertDialog)
         .setTitle(R.string.unable_to_calc_alert_title)
         .setMessage(R.string.unable_to_calc_alert_subtitle)
-        .setPositiveButton(R.string.settings, (dialog, which) -> DrivingOptionsActivity.start(this))
+        .setPositiveButton(R.string.settings, (dialog, which) -> DrivingOptionsActivity.start(this, startDrivingOptionsForResult))
         .setNegativeButton(R.string.cancel, null)
         .setOnDismissListener(dialog -> mAlertDialog = null)
         .show();

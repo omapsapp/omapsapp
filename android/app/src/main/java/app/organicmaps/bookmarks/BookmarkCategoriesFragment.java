@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.CallSuper;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
@@ -57,9 +58,6 @@ public class BookmarkCategoriesFragment extends BaseMwmRecyclerFragment<Bookmark
 {
   private static final String TAG = BookmarkCategoriesFragment.class.getSimpleName();
 
-  static final int REQ_CODE_DELETE_CATEGORY = 102;
-  static final int REQ_CODE_IMPORT_DIRECTORY = 103;
-
   private static final int MAX_CATEGORY_NAME_LENGTH = 60;
 
   public static final String BOOKMARKS_CATEGORIES_MENU_ID = "BOOKMARKS_CATEGORIES_BOTTOM_SHEET";
@@ -74,6 +72,22 @@ public class BookmarkCategoriesFragment extends BaseMwmRecyclerFragment<Bookmark
   @SuppressWarnings("NullableProblems")
   @NonNull
   private DataChangedListener mCategoriesAdapterObserver;
+
+  private final ActivityResultLauncher<Intent> startBookmarkListForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResult -> {
+    if( activityResult.getResultCode() == Activity.RESULT_OK)
+      onDeleteActionSelected(getSelectedCategory());
+  });
+
+  private final ActivityResultLauncher<Intent> startImportDirectoryForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResult ->
+    {
+      if( activityResult.getResultCode() == Activity.RESULT_OK)
+        onImportDirectoryResult(activityResult.getData());
+    });
+
+  private final ActivityResultLauncher<Intent> startBookmarkSettingsForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResult -> {
+    // not handled at the moment
+  });
+
 
   @Override
   @LayoutRes
@@ -259,7 +273,7 @@ public class BookmarkCategoriesFragment extends BaseMwmRecyclerFragment<Bookmark
 
     PackageManager packageManager = requireActivity().getPackageManager();
     if (intent.resolveActivity(packageManager) != null)
-      startActivityForResult(intent, REQ_CODE_IMPORT_DIRECTORY);
+      startImportDirectoryForResult.launch(intent);
     else
       showNoFileManagerError();
   }
@@ -275,7 +289,7 @@ public class BookmarkCategoriesFragment extends BaseMwmRecyclerFragment<Bookmark
   public void onItemClick(@NonNull View v, @NonNull BookmarkCategory category)
   {
     mSelectedCategory = category;
-    BookmarkListActivity.startForResult(this, category);
+    BookmarkListActivity.startForResult(this, startBookmarkListForResult, category);
   }
 
   @Override
@@ -303,54 +317,42 @@ public class BookmarkCategoriesFragment extends BaseMwmRecyclerFragment<Bookmark
 
   private void onSettingsActionSelected(@NonNull BookmarkCategory category)
   {
-    BookmarkCategorySettingsActivity.startForResult(this, category);
+    BookmarkCategorySettingsActivity.startForResult(this, startBookmarkSettingsForResult, category);
   }
 
-  @Override
-  public final void onActivityResult(int requestCode, int resultCode, Intent data)
+  private void onImportDirectoryResult(Intent data)
   {
-    super.onActivityResult(requestCode, resultCode, data);
-    if (resultCode != Activity.RESULT_OK)
-      return;
-    switch (requestCode)
-    {
-      case REQ_CODE_DELETE_CATEGORY -> onDeleteActionSelected(getSelectedCategory());
-      case REQ_CODE_IMPORT_DIRECTORY ->
-      {
-        if (data == null)
-          throw new AssertionError("Data is null");
+    if (data == null)
+      throw new AssertionError("Data is null");
 
-        final Context context = requireActivity();
-        final Uri rootUri = data.getData();
-        final ProgressDialog dialog = new ProgressDialog(context, R.style.MwmTheme_ProgressDialog);
-        dialog.setMessage(getString(R.string.wait_several_minutes));
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setIndeterminate(true);
-        dialog.setCancelable(false);
-        dialog.show();
-        Logger.d(TAG, "Importing bookmarks from " + rootUri);
-        MwmApplication app = MwmApplication.from(context);
-        final File tempDir = new File(StorageUtils.getTempPath(app));
-        final ContentResolver resolver = context.getContentResolver();
-        ThreadPool.getStorage().execute(() -> {
-          AtomicInteger found = new AtomicInteger(0);
-          StorageUtils.listContentProviderFilesRecursively(
+    final Context context = requireActivity();
+    final Uri rootUri = data.getData();
+    final ProgressDialog dialog = new ProgressDialog(context, R.style.MwmTheme_ProgressDialog);
+    dialog.setMessage(getString(R.string.wait_several_minutes));
+    dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+    dialog.setIndeterminate(true);
+    dialog.setCancelable(false);
+    dialog.show();
+    Logger.d(TAG, "Importing bookmarks from " + rootUri);
+    MwmApplication app = MwmApplication.from(context);
+    final File tempDir = new File(StorageUtils.getTempPath(app));
+    final ContentResolver resolver = context.getContentResolver();
+    ThreadPool.getStorage().execute(() -> {
+      AtomicInteger found = new AtomicInteger(0);
+      StorageUtils.listContentProviderFilesRecursively(
               resolver, rootUri, uri -> {
                 if (BookmarkManager.INSTANCE.importBookmarksFile(resolver, uri, tempDir))
                   found.incrementAndGet();
               });
-          UiThread.run(() -> {
-            if (dialog.isShowing())
-              dialog.dismiss();
-            int found_val = found.get();
-            String message = context.getResources().getQuantityString(
+      UiThread.run(() -> {
+        if (dialog.isShowing())
+          dialog.dismiss();
+        int found_val = found.get();
+        String message = context.getResources().getQuantityString(
                 R.plurals.bookmarks_detect_message, found_val, found_val);
-            Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show();
-          });
-        });
-      }
-      default -> throw new AssertionError("Invalid requestCode: " + requestCode);
-    }
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show();
+      });
+    });
   }
 
   @Override
