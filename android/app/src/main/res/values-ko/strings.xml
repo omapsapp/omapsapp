@@ -537,9 +537,8 @@
 	<string name="enable_logging">로깅 사용</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">일반 피드백</string>
-	<string name="prefs_languages_information">당사는 음성 지침을 위해 시스템 TTS를 사용합니다. 많은 Android 장치에서 Google TTS를 사용합니다. Google Play(https://play.google.com/store/apps/details?id=com.google.android.tts)에서 Google TTS를 다운로드하거나 업데이트할 수 있습니다.</string>
-	<string name="prefs_languages_information_off">일부 언어의 경우 앱 스토어(Google Play, Galaxy Store, App Gallery, FDroid)에서 다른 음성 합성기 또는 추가 언어 팩을 설치해야 합니다.\n장치의 설정 → 언어 및 입력 → 음성 → 텍스트-음성 변환 출력을 엽니다.\n여기서 음성 합성에 대한 설정을 관리하고(예: 오프라인 사용을 위한 언어 팩 다운로드) 다른 텍스트-음성 변환 엔진을 선택할 수 있습니다.</string>
-	<string name="prefs_languages_information_off_link">자세한 내용을 보려면 이 가이드를 확인하세요.</string>
+	<string name="prefs_tts_system_setup">음성 안내를 사용할 수 없거나 사용 중인 언어가 지원되지 않는 경우 이 바로 가기를 사용하여 시스템이 음성 합성을 사용하도록 설정되어 있는지 확인하세요. 그렇지 않은 경우 먼저 앱 스토어에서 해당 언어를 지원하는 텍스트 음성 변환 엔진을 설치하세요.</string>
+	<string name="prefs_tts_info_guide_link">자세한 내용을 보려면 이 가이드를 확인하세요.</string>
 	<string name="transliteration_title">라틴어로 음역</string>
 	<string name="learn_more">자세히 알아보기</string>
 	<!-- Subway exits for public transport marks on the map -->

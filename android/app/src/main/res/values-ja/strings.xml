@@ -572,9 +572,8 @@
 	<string name="enable_logging">ログを有効化</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">一般的なフィードバック</string>
-	<string name="prefs_languages_information">音声案内にはシステムの TTS を使用します。多くの Android 端末が Google の TTS を使用しており、Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts) からダウンロードや更新を行うことができます。</string>
-	<string name="prefs_languages_information_off">いくつかの言語では、アプリストア(Google PlayやGalaxy Storeなど)からその他の音声合成または追加の言語パックをインストールする必要があります。お使いのデバイスで [設定] → [言語と入力] → [音声] → [音声出力] を開いてください。ここで音声合成の設定 (たとえば、オフラインで使用する言語パックのダウンロードなど) を管理し、別の音声合成エンジンを選択することができます。</string>
-	<string name="prefs_languages_information_off_link">詳細については、このガイドをご確認ください。</string>
+	<string name="prefs_tts_system_setup">音声指示を有効にできない場合、またはお使いの言語がサポートされていない場合は、このショートカットでお使いのシステムが音声合成用に設定されていることを確認してください。そうでない場合は、まずアプリストアからお使いの言語に対応した音声合成エンジンをインストールする。</string>
+	<string name="prefs_tts_info_guide_link">詳細については、このガイドをご確認ください。</string>
 	<string name="transliteration_title">ラテン文字への翻字</string>
 	<string name="learn_more">詳細情報</string>
 	<!-- Subway exits for public transport marks on the map -->

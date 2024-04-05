@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/system_settings_link"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/altitude_chart_container_padding_left"
+    android:paddingHorizontal="@dimen/altitude_chart_container_padding_left">
+    <TextView
+        android:id="@android:id/title"
+        style="@style/MwmTextAppearance.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/base_accent"
+        tools:text="this will be a link" />
+</LinearLayout>

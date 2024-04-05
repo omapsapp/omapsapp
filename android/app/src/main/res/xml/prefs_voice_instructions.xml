@@ -16,20 +16,14 @@
       android:key="@string/pref_tts_test_voice"
       android:title="@string/pref_tts_test_voice_title" />
   <Preference
+      android:layout="@layout/custompref_no_bottom_pad"
       android:key="@string/pref_tts_open_system_settings"
-      android:title="@string/pref_tts_open_system_settings" />
+      android:title="@string/pref_tts_open_system_settings"
+      android:summary="@string/prefs_tts_system_setup" />
   <Preference
-      android:enabled="false"
-      android:key="@string/pref_tts_info"
-      android:persistent="false"
-      android:selectable="false"
-      android:summary="@string/prefs_languages_information" />
-  <Preference
-      android:enabled="true"
-      android:key="@string/pref_tts_info_link"
-      android:persistent="false"
-      android:selectable="true"
-      android:summary="@string/prefs_languages_information_off_link" />
+      android:layout="@layout/custompref_add_link_fragment"
+      android:key="@string/prefs_tts_info_guide_link"
+      android:title="@string/prefs_tts_info_guide_link"/>
   <ListPreference
       android:key="@string/pref_tts_speed_cameras"
       android:title="@string/speedcams_alert_title"

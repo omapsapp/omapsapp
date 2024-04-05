@@ -553,9 +553,8 @@
 	<string name="enable_logging">Abilita i registri</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Feedback generale</string>
-	<string name="prefs_languages_information">Usiamo il TTS di sistema per le istruzioni vocali. Molti dispositivi Android utilizzano Google TTS, che puoi scaricare o aggiornare da Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Per alcune lingue, sarà necessario installare un altro sintetizzatore vocale o un language pack aggiuntivo dall\'app store (Google Play, Galaxy Store, App Gallery, FDroid).\nApri le impostazioni del tuo dispositivo → Lingua e inserimento → Da testo a voce → Motore sintesi vocale.\nQui puoi gestire le impostazioni di sintesi vocale (ad esempio, scaricare una lingua per l\'utilizzo offline) e selezionare un altro motore di sintesi vocale.</string>
-	<string name="prefs_languages_information_off_link">Per maggiori informazioni, consulta questa guida.</string>
+	<string name="prefs_tts_system_setup">Se non riesci ad attivare le istruzioni vocali o la tua lingua non è supportata, assicurati che il tuo sistema sia impostato per la sintesi vocale con questa scorciatoia. In caso contrario, installa prima un motore di sintesi vocale che supporti la tua lingua dal tuo app store.</string>
+	<string name="prefs_tts_info_guide_link">Per maggiori informazioni, consulta questa guida.</string>
 	<string name="transliteration_title">Trascrizione in latino</string>
 	<string name="learn_more">Scopri di più</string>
 	<!-- Subway exits for public transport marks on the map -->

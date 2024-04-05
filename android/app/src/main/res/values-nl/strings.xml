@@ -566,9 +566,8 @@
 	<string name="enable_logging">Logboekregistratie inschakelen</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Algemene Feedback</string>
-	<string name="prefs_languages_information">We gebruiken het TTS-systeem voor gesproken instructies. Vele Android toestellen gebruiken Google TTS, u kunt het downloaden of bijwerken in Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Voor sommige talen dient u een andere spraaksynthesesoftware of een aanvullende taalpakket te installeren van de app store (Google Play, Galaxy Store, App Gallery, FDroid).\nOpen de instellingen van uw toestel → Taal en invoer → Spraak → Uitvoer voor tekst-naar-spraak.\nHier kunt u instellingen voor spraaksynthese beheren (bijvoorbeeld taalpakket downloaden voor offline gebruik) en een andere tekst-naar-spraak engine selecteren.</string>
-	<string name="prefs_languages_information_off_link">Gelieve deze handleiding te lezen voor meer informatie.</string>
+	<string name="prefs_tts_system_setup">Als je gesproken instructies niet kunt inschakelen of als je taal niet wordt ondersteund, controleer dan of je systeem is ingesteld op spraaksynthese met deze snelkoppeling. Als dat niet het geval is, installeer dan eerst een tekst-naar-spraak engine die jouw taal ondersteunt uit de app store.</string>
+	<string name="prefs_tts_info_guide_link">Gelieve deze handleiding te lezen voor meer informatie.</string>
 	<string name="transliteration_title">Transliteratie in het Latijnse alfabet</string>
 	<string name="learn_more">Meer informatie</string>
 	<!-- Subway exits for public transport marks on the map -->

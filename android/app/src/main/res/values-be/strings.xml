@@ -564,9 +564,8 @@
 	<string name="enable_logging">Уключыць вядзенне журналу</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Агульны водгук</string>
-	<string name="prefs_languages_information">Мы ужываем сістэмны сінтэзатар маўлення (TTS). Многія прылады на Android ужываюць Google TTS, вы можаце спампаваць або абнавіць яго праз Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Для некаторых моў вам спатрэбіцца ўсталяваць сінтэзатар маўлення або дадатковы моўны пакет з крамы праграм (Google Play, Galaxy Store, App Gallery, F-Droid).\Зайдзіце на вашай прыладзе ў Налады → Мова і ўвод → Маўленне → Сінтэз маўлення.\nТут вы можаце задаць налады сінтэза маўлення (напрыклад, спампаваць моўны пакет для выкарыстання без падключэння да інтэрнэту) або выбраць іншы сінтэзатар маўлення.</string>
-	<string name="prefs_languages_information_off_link">Больш падрабязная інфармацыя знаходзіцца ў гэтым кіраўніцтве.</string>
+	<string name="prefs_tts_system_setup">Калі немагчыма ўключыць галасавыя інструкцыі або ваша мова не падтрымліваецца, пераканайцеся, што ваша сістэма настроена на сінтэз маўлення з дапамогай гэтага ярлыка. Калі гэта не так, спачатку ўсталюйце механізм пераўтварэння тэксту ў маўленне, які падтрымлівае вашу мову з вашай крамы прыкладанняў.</string>
+	<string name="prefs_tts_info_guide_link">Больш падрабязная інфармацыя знаходзіцца ў гэтым кіраўніцтве.</string>
 	<string name="transliteration_title">Транслітарацыя лацінкай</string>
 	<string name="learn_more">Даведацца больш</string>
 	<!-- Subway exits for public transport marks on the map -->

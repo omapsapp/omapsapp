@@ -525,9 +525,8 @@
 	<string name="enable_logging">Активиране на запис на дневник</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Обща обратна връзка</string>
-	<string name="prefs_languages_information">Навигирането се озвучава от системен синтезатор на реч (TTS). Много устройства използват Google TTS, който може да бъде изтеглен или актуализиран от Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts).</string>
-	<string name="prefs_languages_information_off">За някои езици може да се наложи да инсталирате допълнителен синтезатор на реч (TTS) от магазина за приложения (Google Play Магазин, Galaxy Store).\nЗа да настроите синтезатора на реч, отидете в Настройки → Езици и въвеждане → Синтезиран говор.\nТук можете да инсталирате допълнителни езикови пакети или да изберете синтезатор на реч.</string>
-	<string name="prefs_languages_information_off_link">За повече информация вижте това ръководство.</string>
+	<string name="prefs_tts_system_setup">Ако не можете да активирате гласовите инструкции или езикът ви не се поддържа, уверете се, че системата ви е настроена за синтез на реч с този пряк път. Ако това не е така, първо инсталирайте механизъм за преобразуване на текст в реч, който поддържа вашия език, от магазина за приложения.</string>
+	<string name="prefs_tts_info_guide_link">За повече информация вижте това ръководство.</string>
 	<string name="transliteration_title">Латинска транслитерация</string>
 	<string name="learn_more">Научете повече</string>
 	<!-- Subway exits for public transport marks on the map -->

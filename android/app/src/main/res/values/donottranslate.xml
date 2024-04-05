@@ -24,8 +24,6 @@
   <string name="pref_tts_info" translatable="false">TtsInfo</string>
   <string name="pref_tts_info_link" translatable="false">TtsInfoLink</string>
   <string name="pref_tts_speed_cameras" translatable="false">SpeedCameras</string>
-  <!-- TODO: Move to another domain. -->
-  <string name="tts_info_link" translatable="false">https://mapsme.zendesk.com/hc/en-us/articles/208628985-How-can-I-check-TTS-settings-on-my-Android-device-</string>
   <string name="prefs_routing" translatable="false">RoutingOptions</string>
   <string name="pref_autodownload" translatable="false">AutoDownloadMap</string>
   <string name="pref_3d" translatable="false">3D</string>

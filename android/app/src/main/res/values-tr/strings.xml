@@ -570,9 +570,8 @@
 	<string name="enable_logging">Günlüğü etkinleştir</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Genel Geri Bildirim</string>
-	<string name="prefs_languages_information">Sesli yönlendirme için TTS sistemini kullanıyoruz. Çoğu Android cihaz, Google TTS\'yi kullanıyor. Uygulamayı, Google Play\'den indirebilir veya güncelleyebilirsiniz (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Bazı diller için uygulama mağazasından (Google Play, Galaxy Store, App Gallery, FDroid) farklı bir konuşma sentezleyicisi veya ek bir dil paketi yüklemeniz gerekebilir. Cihaz ayarları → Dil ve Giriş → Konuşma → Metin Okuma seçeneğini açın. Buradan konuşma sentezi ayarlarını yönetebilir (örneğin, çevrimdışı kullanım için bir dil paketini karşıdan yükleyebilir) ve başka bir metin okuma motorunu seçebilirsiniz.</string>
-	<string name="prefs_languages_information_off_link">Daha fazla bilgi için lütfen bu kılavuzu inceleyin.</string>
+	<string name="prefs_tts_system_setup">Sesli talimatları etkinleştiremiyorsanız veya diliniz desteklenmiyorsa, lütfen sisteminizin bu kısayolla konuşma sentezi için ayarlandığından emin olun. Değilse, önce uygulama mağazanızdan dilinizi destekleyen bir metinden konuşmaya motoru yükleyin.</string>
+	<string name="prefs_tts_info_guide_link">Daha fazla bilgi için lütfen bu kılavuzu inceleyin.</string>
 	<string name="transliteration_title">Latin harf çevirisi</string>
 	<string name="learn_more">Daha fazla bilgi edinin</string>
 	<!-- Subway exits for public transport marks on the map -->

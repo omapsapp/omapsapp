@@ -573,9 +573,8 @@
 	<string name="enable_logging">Включить запись логов</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Отправить отзыв</string>
-	<string name="prefs_languages_information">Подсказки озвучиваются системным синтезатором речи (TTS). На многих устройствах используется Google TTS, его можно загрузить или обновить в Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Для некоторых языков, возможно, необходимо установить дополнительный синтезатор речи (TTS) из магазина приложений (Google Play, Galaxy Store, App Gallery, FDroid).\nЧтобы настроить синтезатор речи, перейдите в Настройки → Язык и ввод → Синтез речи.\nЗдесь можно установить дополнительные языковые пакеты или выбрать синтезатор речи.</string>
-	<string name="prefs_languages_information_off_link">Более подробная информация — в этом руководстве.</string>
+	<string name="prefs_tts_system_setup">Если ты не можешь включить голосовые инструкции или твой язык не поддерживается, убедись, что твоя система настроена на синтез речи с помощью этого ярлыка. Если это не так, сначала установи движок для преобразования текста в речь, поддерживающий твой язык, из магазина приложений.</string>
+	<string name="prefs_tts_info_guide_link">Более подробная информация — в этом руководстве.</string>
 	<string name="transliteration_title">Латинская транслитерация</string>
 	<string name="learn_more">Узнать больше</string>
 	<!-- Subway exits for public transport marks on the map -->
@@ -768,6 +767,8 @@
 	<string name="translated_om_site_url">https://organicmaps.app/ru/</string>
 	<!-- Link to OSM wiki for Editor, Profile and About pages -->
 	<string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/RU:О_проекте</string>
+	<!-- Link to OM TTS setup guide -->
+	<string name="tts_info_guide_link">https://organicmaps.app/ru/faq/%D1%81%D0%B8%D0%BD%D1%82%D0%B5%D0%B7-%D1%80%D0%B5%D1%87%D0%B8-tts-%D0%BD%D0%B0-android/</string>
 	<!-- App Tip #00 -->
 	<string name="app_tip_00">Спасибо, что пользуетесь нашими картами, созданными сообществом!</string>
 	<!-- App tip #01 -->

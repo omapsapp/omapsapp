@@ -526,9 +526,8 @@
 	<string name="enable_logging">Ενεργοποίηση δυνατότητας καταγραφής</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Γενικό σχόλιο</string>
-	<string name="prefs_languages_information">Χρησιμοποιούμε σύστημα TTS για τις φωνητικές οδηγίες. Αρκετές συσκευές Android χρησιμοποιούν Google TTS, μπορείτε να το κατεβάσετε ή να το ενημερώσετε από το Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Για μερικές γλώσσες θα χρειαστεί να εγκαταστήσετε συνθεσάιζερ ομιλίας ή συμπληρωματικό πακέτο γλώσσας από το app store (Google Play, Galaxy Store, App Gallery, FDroid).\nΑνοίξτε τις Ρυθμίσεις της συσκευής σας → Γλώσσα και εισαγωγή → Ομιλία → Μετατροπή κειμένου σε ομιλία.\nΕδώ μπορείτε να διαχειριστείτε τις ρυθμίσεις της σύνθεσης ομιλίας (για παράδειγμα, μπορείτε να κατεβάσετε πακέτο γλώσσας για χρήση εκτός σύνδεσης) και να επιλέξετε άλλη μηχανή μετατροπής κειμένου σε ομιλία.</string>
-	<string name="prefs_languages_information_off_link">Για περισσότερες πληροφορίες δείτε αυτό τον οδηγό.</string>
+	<string name="prefs_tts_system_setup">Εάν δεν μπορείτε να ενεργοποιήσετε τις φωνητικές οδηγίες ή η γλώσσα σας δεν υποστηρίζεται, βεβαιωθείτε ότι το σύστημά σας έχει ρυθμιστεί για σύνθεση φωνής με αυτή τη συντόμευση. Αν δεν είναι, εγκαταστήστε πρώτα μια μηχανή μετατροπής κειμένου σε ομιλία που υποστηρίζει τη γλώσσα σας από το κατάστημα εφαρμογών σας.</string>
+	<string name="prefs_tts_info_guide_link">Για περισσότερες πληροφορίες δείτε αυτό τον οδηγό.</string>
 	<string name="transliteration_title">Μεταγραφή στα Λατινικά</string>
 	<string name="learn_more">Μάθετε περισσότερα</string>
 	<!-- Subway exits for public transport marks on the map -->

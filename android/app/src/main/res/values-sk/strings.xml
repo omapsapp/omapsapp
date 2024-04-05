@@ -568,9 +568,8 @@
 	<string name="enable_logging">Zapnúť zaznamenávanie</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Všeobecné pripomienky</string>
-	<string name="prefs_languages_information">Na hlasové pokyny používame systém TTS. Mnohé zariadenia s Adroidom používajú Google TTS, ktorý si môžete stiahnuť alebo aktualizovať z obchodu Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Pre niektoré jazyky bude potrebné nainštalovať syntetizátor reči alebo balík doplnkového jazyka z obchodu s aplikáciami (Google Play, Galaxy Store, App Gallery, FDroid). Otvorte nastavenia zariadenia → Jazyk a vstup → Reč → Prevod textu na reč. Tu môžete spravovať nastavenia pre syntézu reči (napríklad stiahnuť jazykový balík pre použitie v režime offline) a vybrať iný jazyk.</string>
-	<string name="prefs_languages_information_off_link">Viac informácií nájdete v tomto návode.</string>
+	<string name="prefs_tts_system_setup">Ak nemôžete povoliť hlasové pokyny alebo váš jazyk nie je podporovaný, uistite sa, že je váš systém nastavený na syntézu reči pomocou tejto skratky. Ak nie je, nainštalujte si najprv z obchodu s aplikáciami mechanizmus na prevod textu na reč, ktorý podporuje váš jazyk.</string>
+	<string name="prefs_tts_info_guide_link">Viac informácií nájdete v tomto návode.</string>
 	<string name="transliteration_title">Prepis do latinky</string>
 	<string name="learn_more">Zistiť viac</string>
 	<!-- Subway exits for public transport marks on the map -->

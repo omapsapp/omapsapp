@@ -537,9 +537,8 @@
 	<string name="enable_logging">Bật nhật ký</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Phản hồi chung</string>
-	<string name="prefs_languages_information">Chúng tôi sử dụng TTS hệ thống để hướng dẫn bằng giọng nói. Rất nhiều thiết bị Android sử dụng Google TTS, bạn có thể tải về hoặc cập nhật nó từ Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Đối với một số ngôn ngữ, bạn sẽ cần cài đặt một trình tổng hợp lời nói khác hoặc một gói ngôn ngữ bổ sung từ cửa hàng ứng dụng (Google Play, Galaxy Store, App Gallery, FDroid).\nMở cài đặt của thiết bị → Ngôn ngữ và nhập liệu → Lời nói → Đầu ra văn bản sang lời nói.\nTại đây bạn có thể quản lý các cài đặt tổng hợp lời nói (ví dụ, tải về các gói ngôn ngữ để sử dụng ngoại tuyến) và chọn một công cụ chuyển đổi văn bản sang lời nói khác.</string>
-	<string name="prefs_languages_information_off_link">Để biết thêm thông tin, vui lòng kiểm tra bài hướng dẫn này.</string>
+	<string name="prefs_tts_system_setup">Nếu không thể bật hướng dẫn bằng giọng nói hoặc ngôn ngữ của bạn không được hỗ trợ, hãy đảm bảo hệ thống của bạn được thiết lập để tổng hợp giọng nói bằng phím tắt này. Nếu không, trước tiên hãy cài đặt công cụ chuyển văn bản sang giọng nói hỗ trợ ngôn ngữ của bạn từ cửa hàng ứng dụng.</string>
+	<string name="prefs_tts_info_guide_link">Để biết thêm thông tin, vui lòng kiểm tra bài hướng dẫn này.</string>
 	<string name="transliteration_title">Chuyển ngữ sang chữ Latinh</string>
 	<string name="learn_more">Tìm hiểu thêm</string>
 	<!-- Subway exits for public transport marks on the map -->

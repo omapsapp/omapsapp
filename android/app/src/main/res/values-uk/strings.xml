@@ -572,9 +572,8 @@
 	<string name="enable_logging">Включити логіювання</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Загальний відгук</string>
-	<string name="prefs_languages_information">Для озвучування голосових інструкцій ми використовуємо систему TTS. Більшість Android-пристроїв підтримують систему Google TTS. Для завантаження або оновлення перейдіть до магазину Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Для деяких мов вам знадобиться встановити інший додаток для синтезу мовлення або додатковий мовний пакет з магазину додатків (Google Play, Galaxy Store, App Gallery, FDroid).\nВідкрийте налаштування пристрою → Мови та введення → Мовлення → Синтез мовлення.\nТут ви можете здійснювати управління налаштуваннями синтезу мовлення (наприклад, завантажити мовний пакет для використання офлайн) або вибрати інший програмний рушій для синтезу мовлення.</string>
-	<string name="prefs_languages_information_off_link">Додаткову інформацію див. у цьому керівництві.</string>
+	<string name="prefs_tts_system_setup">Якщо ви не можете увімкнути голосові інструкції або ваша мова не підтримується, переконайтеся, що ваша система налаштована на синтез мовлення за допомогою цього ярлика. Якщо це не так, спершу встановіть систему перетворення тексту на мову, яка підтримує вашу мову, з вашого магазину додатків.</string>
+	<string name="prefs_tts_info_guide_link">Додаткову інформацію див. у цьому керівництві.</string>
 	<string name="transliteration_title">Транслітерація латинськими літерами</string>
 	<string name="learn_more">Докладніше</string>
 	<!-- Subway exits for public transport marks on the map -->

@@ -570,9 +570,8 @@
 	<string name="enable_logging">Aktiver loggføring</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Generell tilbakemelding</string>
-	<string name="prefs_languages_information">Vi bruker system TTS for stemmeveiledning. Mange Android-enheter bruker Google TTS, Du kan laste ned eller oppdatere via Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">For enkelte språk er det nødvendig å installere en annen talesyntese eller en ekstra språkpakke fra appbutikken (Google Play, Galaxy Store, App Gallery, FDroid).\nGå til enhetens innstillinger → Språk og input → Tale → Tekst til tale output.\nHer kan du administrere innstillingene for talesyntese (for eksempel laste ned språkpakke for offline bruk) og velge en annen tekst-til-tale-motor.</string>
-	<string name="prefs_languages_information_off_link">Les denne veiledningen for mer informasjon.</string>
+	<string name="prefs_tts_system_setup">Hvis du ikke kan aktivere taleinstruksjoner eller språket ditt ikke støttes, må du kontrollere at systemet er konfigurert for talesyntese med denne snarveien. Hvis ikke, må du først installere en tekst-til-tale-motor som støtter språket ditt fra appbutikken.</string>
+	<string name="prefs_tts_info_guide_link">Les denne veiledningen for mer informasjon.</string>
 	<string name="transliteration_title">Omskrivning til latin</string>
 	<string name="learn_more">Finn ut mer</string>
 	<!-- Subway exits for public transport marks on the map -->

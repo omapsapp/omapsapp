@@ -534,9 +534,8 @@
 	<string name="enable_logging">ورود به سیستم را فعال کنید</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">\"تنظیمات: دکمه \"ارسال بازخورد کلی</string>
-	<string name="prefs_languages_information">ما از TTS سیستم برای دستورالعمل‌های صوتی استفاده می کنیم. بسیاری از دستگاه‌های Android از Google TTS استفاده می کنند، شما می توانید آن را از Google Play دانلود کنید (https://play.google.com/store/apps/details؟id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">برای بعضی از زبان‌ها، شما باید speech synthesizer یا یک بسته زبان دیگر را از فروشگاه برنامه (بازار Google Play، Galaxy Store) نصب کنید. \n تنظیمات دستگاه خود را باز کنید. → زبان و ورودی → گفتار → خروجی متن به گفتار. می توانید تنظیمات برای ترکیب گفتار (به عنوان مثال، بسته‌های زبان را برای استفاده آفلاین دانلود کنید) را مدیریت کنید و یک موتور دیگر متن به گفتار را انتخاب کنید.</string>
-	<string name="prefs_languages_information_off_link">برای اطلاعات بیشتر لطفا این راهنما را بررسی کنید.</string>
+	<string name="prefs_tts_system_setup">اگر نمیu200cتوانید دستورالعملu200cهای صوتی را فعال کنید یا زبان شما پشتیبانی نمیu200cشود، لطفاً مطمئن شوید که سیستم شما برای ترکیب گفتار با این میانu200cبر تنظیم شده است. اگر اینطور نیست، ابتدا یک موتور تبدیل متن به گفتار که از زبان شما پشتیبانی می کند از فروشگاه برنامه خود نصب کنید.</string>
+	<string name="prefs_tts_info_guide_link">برای اطلاعات بیشتر لطفا این راهنما را بررسی کنید.</string>
 	<string name="transliteration_title">ترجمه به لاتین</string>
 	<string name="learn_more">بیشتر بدانید</string>
 	<!-- Subway exits for public transport marks on the map -->

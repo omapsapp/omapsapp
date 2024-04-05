@@ -551,9 +551,8 @@
 	<string name="enable_logging">Naplózás engedélyezése</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Általános visszajelzés</string>
-	<string name="prefs_languages_information">TTS rendszert használunk a hangnavigációhoz. Sok Android-os készülék használja a Google TTS-t; töltse le vagy frissítse a Google Play áruházból (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Egyes nyelveknél másik beszédszintetizátort vagy további nyelvi csomagot kell telepítenie az alkalmazás-áruházból (Google Play, Galaxy Store, App Gallery, FDroid). Nyissa meg a készülék beállításait → Nyelv és bevitel → Beszéd → Szöveg-beszéd átalakító kimenet. Itt kezelheti a beszédszintézis beállításokat (például nyelvi csomag letöltése kapcsolat nélküli használatra) és másik szövegfelolvasót jelölhe tki.</string>
-	<string name="prefs_languages_information_off_link">További tájékoztatást találhat még ebben az útmutatóban.</string>
+	<string name="prefs_tts_system_setup">Ha nem tudja engedélyezni a hangutasításokat, vagy az Ön nyelve nem támogatott, kérjük, győződjön meg róla, hogy rendszere be van állítva a beszédszintézisre ezzel a parancsikonnal. Ha nem, akkor először telepítsen egy olyan szövegről beszédbe váltó motort, amely támogatja az Ön nyelvét az alkalmazásboltból.</string>
+	<string name="prefs_tts_info_guide_link">További tájékoztatást találhat még ebben az útmutatóban.</string>
 	<string name="transliteration_title">Átírás latin nyelvre</string>
 	<string name="learn_more">Tudjon meg többet</string>
 	<!-- Subway exits for public transport marks on the map -->

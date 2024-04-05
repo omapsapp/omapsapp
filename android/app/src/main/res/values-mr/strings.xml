@@ -538,9 +538,8 @@
 	<string name="enable_logging">लॉग चालू करा</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">सामान्य अभिप्राय</string>
-	<string name="prefs_languages_information">आम्ही ध्वनी निर्देशांसाठी \"सिस्टम TTS\" वापरतो. अनेक Android उपकरणे \"Google TTS\" वापरतात, जे तुम्ही Google Play वरून डाउनलोड किंवा अद्ययावत करू शकता (https://play.google.com/store/apps/details?idu003dcom.google.android.tts)</string>
-	<string name="prefs_languages_information_off">काही भाषांसाठी, तुम्हाला अँप स्टोअर (Google Play, Galaxy Store, App Gallery, FDroid) वरून स्पीच मिश्रक किंवा अतिरिक्त भाषा संच इन्स्टॉल करावे लागतील.\nतुमच्या उपकरणाची सेटिंग → भाषा आणि इनपुट → स्पीच → \"टेक्स्ट टू स्पीच आउटपुट\" उघडा.\nयेथे तुम्ही स्पीच मिश्रणासाठी सेटिंग व्यवस्थापित करू शकता (उदाहरणार्थ, ऑफलाइन वापरासाठी भाषा संच डाउनलोड करा) आणि दुसरे टेक्स्ट-टू-स्पीच इंजिन निवडा.</string>
-	<string name="prefs_languages_information_off_link">अधिक माहितीसाठी कृपया ही मार्गदर्शिका पहा.</string>
+	<string name="prefs_tts_system_setup">व्हॉइस सूचना सक्षम करण्यात अक्षम असल्यास किंवा तुमची भाषा समर्थित नसल्यास, कृपया तुमची प्रणाली या शॉर्टकटसह उच्चार संश्लेषणासाठी सेटअप असल्याची खात्री करा. तसे नसल्यास, प्रथम तुमच्या ॲप स्टोअरमधून तुमच्या भाषेला सपोर्ट करणारे टेक्स्ट-टू-स्पीच इंजिन इंस्टॉल करा.</string>
+	<string name="prefs_tts_info_guide_link">अधिक माहितीसाठी कृपया ही मार्गदर्शिका पहा.</string>
 	<string name="transliteration_title">लॅटिनमध्ये (इंग्रजीची अक्षरे) लिप्यंतरण</string>
 	<string name="learn_more">अधिक जाणून घ्या</string>
 	<!-- Subway exits for public transport marks on the map -->

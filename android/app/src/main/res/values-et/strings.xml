@@ -562,9 +562,8 @@
 	<string name="enable_logging">Luba logimine</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Üldine tagasiside</string>
-	<string name="prefs_languages_information">Hääljuhiste jaoks kasutame TTS süsteemi. Paljud Android-seadmed kasutavad Google\'i TTS-i, saate selle alla laadida või värskendada teenusest Google Play (https:play.google.comstoreappsdetails?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Mõne keele puhul peate paigaldama kõnesüntesaatori või täiendava keelepaketi rakenduste poest (Google Play, Galaxy Store, App Gallery, FDroid).\nAvage oma seadme seaded → Keel ja sisend → Kõne → Tekst kõneks väljund.\nSiin saate hallata kõnesünteesi seadeid (näiteks alla laadida keelepaketti võrguühenduseta kasutamiseks) ja valida mõne muu teksti kõneks muutmise mootori.</string>
-	<string name="prefs_languages_information_off_link">Lisainfo saamiseks palun vaadake seda juhist.</string>
+	<string name="prefs_tts_system_setup">Kui te ei saa hääljuhiseid lubada või kui teie keelt ei toetata, veenduge, et teie süsteem on selle otsetee abil kõnesünteesi jaoks häälestatud. Kui see nii ei ole, installige esmalt rakenduste poest teie keelt toetav kõnesüntesaator.</string>
+	<string name="prefs_tts_info_guide_link">Lisainfo saamiseks palun vaadake seda juhist.</string>
 	<string name="transliteration_title">Transliteratsioon ladina keelde</string>
 	<string name="learn_more">Lisateave</string>
 	<!-- Subway exits for public transport marks on the map -->

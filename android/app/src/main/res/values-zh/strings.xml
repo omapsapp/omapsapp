@@ -548,9 +548,8 @@
 	<string name="enable_logging">启用记录</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">一般反馈</string>
-	<string name="prefs_languages_information">我们为语音指令使用“文字转语音”系统。许多 Android 设备使用 Google 文字转语音，您可以从 Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts) 下载或更新这一功能</string>
-	<string name="prefs_languages_information_off">对于某些语言，您需要从应用商店（Google Play Market、Galaxy Store）中安装其他语音合成器或语言包。\n打开您的设备的设置 → 语言和输入法 → 语音 → 文字转语音 (TTS) 输出。\n您可以在这里管理语音合成的设置（例如，下载语言包供离线使用）和选择其他文字转语音引擎。</string>
-	<string name="prefs_languages_information_off_link">如需了解更多信息，请查阅此指南。</string>
+	<string name="prefs_tts_system_setup">如果无法启用语音指令或不支持您的语言，请确保您的系统已通过此快捷方式设置为语音合成。如果没有，请先从应用商店安装一个支持您的语言的文本到语音引擎。</string>
+	<string name="prefs_tts_info_guide_link">如需了解更多信息，请查阅此指南。</string>
 	<string name="transliteration_title">直译成拉丁文</string>
 	<string name="learn_more">了解更多</string>
 	<!-- Subway exits for public transport marks on the map -->

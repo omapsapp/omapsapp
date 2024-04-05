@@ -572,9 +572,8 @@
 	<string name="enable_logging">Activer le journal</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Feedback général</string>
-	<string name="prefs_languages_information">Nous utilisons le système TTS pour les instructions vocales. De nombreux appareils Android utilisent Google TTS, vous pouvez le télécharger ou le mettre à jour depuis Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Pour certaines langues, il vous faudra installer un autre logiciel de synthèse vocale ou un pack de langue supplémentaire depuis l’app store (Google Play, Galaxy Store, App Gallery, FDroid). Ouvrez les paramètres de votre appareil → Langue et saisie → Reconnaissance vocale → Saisie vocale. Ici, vous pouvez gérer les paramètres pour la synthèse vocale (par exemple, télécharger un pack de langue pour une utilisation en mode hors ligne) et sélectionner un autre moteur de saisie vocale.</string>
-	<string name="prefs_languages_information_off_link">Pour plus d’informations, veuillez consulter ce guide.</string>
+	<string name="prefs_tts_system_setup">Si tu ne peux pas activer les instructions vocales ou si ta langue n\'est pas prise en charge, assure-toi que ton système est configuré pour la synthèse vocale avec ce raccourci. Si ce n\'est pas le cas, installe d\'abord un moteur de synthèse vocale qui prend en charge ta langue à partir de ton magasin d\'applications.</string>
+	<string name="prefs_tts_info_guide_link">Pour plus d’informations, veuillez consulter ce guide.</string>
 	<string name="transliteration_title">Translittération en latin</string>
 	<string name="learn_more">En savoir plus</string>
 	<!-- Subway exits for public transport marks on the map -->

@@ -570,9 +570,8 @@
 	<string name="enable_logging">Girişi aktivləşdirin</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Ümumi rəy</string>
-	<string name="prefs_languages_information">Biz səsli təlimatlar üçün TTS sistemindən istifadə edirik. Əksər Android cihazları Google TTS-dən istifadə edir. Siz proqramı Google Play-dən yükləyə və ya yeniləyə bilərsiniz (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Bəzi dillər üçün proqram mağazasından (Google Play, Galaxy Store, App Gallery, FDroid) fərqli nitq sintezatoru və ya əlavə dil paketi quraşdırmalı ola bilərsiniz. \nCihaz parametrləri → Dil və Daxiletmə → Nitq → Mətndən nitqə funksiyasını yandırın. \nBuradan siz nitq sintezi parametrlərini idarə edə bilərsiniz (məsələn, oflayn istifadə üçün dil paketini endirə bilərsiniz) və başqa mətndən-nitqə mühərrik seçə bilərsiniz.</string>
-	<string name="prefs_languages_information_off_link">Əlavə məlumat üçün bu təlimatı nəzərdən keçirin.</string>
+	<string name="prefs_tts_system_setup">Səs təlimatlarını aktiv edə bilmirsinizsə və ya diliniz dəstəklənmirsə, sisteminizin bu qısayolla nitq sintezi üçün qurulduğundan əmin olun. Əgər belə deyilsə, əvvəlcə proqram mağazanızdan dilinizi dəstəkləyən mətndən nitqə mühərrik quraşdırın.</string>
+	<string name="prefs_tts_info_guide_link">Əlavə məlumat üçün bu təlimatı nəzərdən keçirin.</string>
 	<string name="transliteration_title">Latın transliterasiyası</string>
 	<string name="learn_more">Daha ətraflı</string>
 	<!-- Subway exits for public transport marks on the map -->

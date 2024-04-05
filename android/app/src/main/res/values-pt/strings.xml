@@ -544,9 +544,8 @@
 	<string name="enable_logging">Ativar o histórico</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Opinão geral</string>
-	<string name="prefs_languages_information">Utilizamos o sistema TTS para as instruções de voz. Muitos dispositivos Android usam o Google TTS, pode transferir ou atualizá-lo a partir do Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Para alguns idiomas, precisará de instalar outro sintetizador de voz ou um pacote de idiomas adicional a partir da loja de aplicações (Google Play, Galaxy Store, App Gallery, FDroid). Abra as Configurações do seu dispositivo → Idioma e entrada → Voz → Saída de texto para voz. Aqui pode gerir as configurações de síntese de voz (por exemplo, transferir um pacote de idioma para poder utilizá-lo sem estar ligado à Internet) ou selecionar outro motor de texto para voz.</string>
-	<string name="prefs_languages_information_off_link">Para obter mais informações, consulte este guia.</string>
+	<string name="prefs_tts_system_setup">Se não for possível ativar as instruções de voz ou se o teu idioma não for suportado, certifica-te de que o teu sistema está configurado para síntese de voz com este atalho. Se não estiver, instala primeiro um motor de conversão de texto em voz que suporte o teu idioma a partir da tua loja de aplicações.</string>
+	<string name="prefs_tts_info_guide_link">Para obter mais informações, consulte este guia.</string>
 	<string name="transliteration_title">Transliteração para o latim</string>
 	<string name="learn_more">Saber mais</string>
 	<!-- Subway exits for public transport marks on the map -->

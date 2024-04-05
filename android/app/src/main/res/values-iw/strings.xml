@@ -562,8 +562,8 @@
 	<string name="enable_logging">הפעל logging</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">משוב כללי</string>
-	<string name="prefs_languages_information">אנחנו משתמשים מערכת TTS של המערכת כדי לספק הנחיות קוליות. הרבה מכשירי Android מוגדרים להשתמש ב-Google TTS, שניתן להוריד ולעדכן מחנות Play (כאן: https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off_link">למידע נוסף ניתן לקרוא את המדריך הזה.</string>
+	<string name="prefs_tts_system_setup">אם לא ניתן להפעיל הוראות קוליות או שהשפה שלך אינה נתמכת, ודא שהמערכת שלך מוגדרת לסינתזה של דיבור באמצעות קיצור דרך זה. אם לא, התקן תחילה מנוע טקסט לדיבור שתומך בשפה שלך מחנות האפליקציות שלך.</string>
+	<string name="prefs_tts_info_guide_link">למידע נוסף ניתן לקרוא את המדריך הזה.</string>
 	<string name="transliteration_title">תעתיק לאותיות לטיניות</string>
 	<string name="learn_more">למידע נוסף</string>
 	<!-- Subway exits for public transport marks on the map -->

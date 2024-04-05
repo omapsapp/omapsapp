@@ -404,8 +404,8 @@
 	<string name="mobile_data_option_ask">हमेशा पूछिये</string>
 	<string name="big_font">मानचित्र लेबल के लिए आकार बढ़ाएँ</string>
 	<string name="enable_logging">लॉगिंग करने देना</string>
-	<string name="prefs_languages_information_off">कुछ भाषाओं के लिए, आपको ऐप स्टोर (Google Play, Galaxy Store, App Gallery, FDroid) से एक स्पीच सिंथेसाइज़र या एक अतिरिक्त भाषा पैक इंस्टॉल करना होगा।\nअपने डिवाइस की सेटिंग्स खोलें → भाषा और इनपुट → स्पीच → टेक्स्ट टू स्पीच आउटपुट.\nयहां आप वाक् संश्लेषण के लिए सेटिंग्स प्रबंधित कर सकते हैं (उदाहरण के लिए, ऑफ़लाइन उपयोग के लिए भाषा पैक डाउनलोड करें) और एक अन्य टेक्स्ट-टू-स्पीच इंजन का चयन कर सकते हैं।</string>
-	<string name="prefs_languages_information_off_link">अधिक जानकारी के लिए कृपया इस गाइड को देखें।</string>
+	<string name="prefs_tts_system_setup">यदि ध्वनि निर्देश सक्षम करने में असमर्थ हैं या आपकी भाषा समर्थित नहीं है, तो कृपया सुनिश्चित करें कि आपका सिस्टम इस शॉर्टकट के साथ वाक् संश्लेषण के लिए सेटअप है। यदि ऐसा नहीं है, तो पहले अपने ऐप स्टोर से एक टेक्स्ट-टू-स्पीच इंजन इंस्टॉल करें जो आपकी भाषा का समर्थन करता हो।</string>
+	<string name="prefs_tts_info_guide_link">अधिक जानकारी के लिए कृपया इस गाइड को देखें।</string>
 	<string name="transliteration_title">लैटिन में लिप्यंतरण</string>
 	<string name="routing_add_start_point">मार्ग की योजना बनाने के लिए एक प्रारंभिक बिंदु जोड़ें</string>
 	<string name="routing_add_finish_point">मार्ग की योजना बनाने के लिए एक गंतव्य जोड़ें</string>

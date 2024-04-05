@@ -570,9 +570,8 @@
 	<string name="enable_logging">Habilitar historial</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Opinión general</string>
-	<string name="prefs_languages_information">Utilizamos el sistema TTS para las instrucciones de voz. Muchos dispositivos de Android usan Google TTS. Puede descargar o actualizarlo desde Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Para algunos idiomas, debe instalar otro sintetizador de voz o un paquete de idioma adicional desde la tienda de aplicaciones (Google Play, Galaxy Store, App Gallery, FDroid). Abra los Ajustes de su dispositivo → Idioma e introducción → Voz → Opciones texto a voz. Aquí puede administrar la configuración de síntesis de voz (por ejemplo, descargar un paquete de idioma para poder usarlo sin conexión) o seleccionar otro motor de texto a voz.</string>
-	<string name="prefs_languages_information_off_link">Para obtener más información, consulte esta guía.</string>
+	<string name="prefs_tts_system_setup">Si no puedes activar las instrucciones de voz o tu idioma no es compatible, asegúrate de que tu sistema está configurado para la síntesis de voz con este acceso directo. Si no lo está, instala primero en tu tienda de aplicaciones un motor de texto a voz compatible con tu idioma.</string>
+	<string name="prefs_tts_info_guide_link">Para obtener más información, consulte esta guía.</string>
 	<string name="transliteration_title">Transliteración al latín</string>
 	<string name="learn_more">Leer más</string>
 	<!-- Subway exits for public transport marks on the map -->
@@ -759,6 +758,8 @@
 	<string name="translated_om_site_url">https://organicmaps.app/es/</string>
 	<!-- Link to OSM wiki for Editor, Profile and About pages -->
 	<string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/ES:Acerca_de_OpenStreetMap</string>
+	<!-- Link to OM TTS setup guide -->
+	<string name="tts_info_guide_link">https://organicmaps.app/es/faq/text-to-speech-android-tts/</string>
 	<!-- App Tip #00 -->
 	<string name="app_tip_00">¡Gracias por utilizar nuestros mapas creados por la comunidad!</string>
 	<!-- App tip #01 -->

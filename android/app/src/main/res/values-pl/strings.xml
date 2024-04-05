@@ -570,9 +570,8 @@
 	<string name="enable_logging">Włącz zbieranie danych</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Ogólne uwagi</string>
-	<string name="prefs_languages_information">Stosujemy system TTS dla komend głosowych. Stosuje go wiele urządzeń z systemem Android, można go pobrać lub zaktualizować z Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">W przypadku niektórych języków wymagana będzie instalacja innego syntezatora lub pakietu językowego ze strony aplikacji (Google Play, Galaxy Store, App Gallery, FDroid). Otwórz ustawienia urządzenia → Język i klawiatura → Mowa → Przetwarzanie tekstu na mowę.\nMożesz w tym miejscu zarządzać ustawieniami syntezy mowy (np. pobrać pakiet językowy do stosowania offline) i wybrać inny silnik przetwarzania tekstu na mowę.</string>
-	<string name="prefs_languages_information_off_link">Aby uzyskać więcej informacji, spójrz na ten poradnik.</string>
+	<string name="prefs_tts_system_setup">Jeśli nie możesz włączyć instrukcji głosowych lub Twój język nie jest obsługiwany, upewnij się, że Twój system jest skonfigurowany do syntezy mowy za pomocą tego skrótu. Jeśli tak nie jest, zainstaluj najpierw silnik syntezy mowy obsługujący Twój język ze sklepu z aplikacjami.</string>
+	<string name="prefs_tts_info_guide_link">Aby uzyskać więcej informacji, spójrz na ten poradnik.</string>
 	<string name="transliteration_title">Transkrypcja na alfabet łaciński</string>
 	<string name="learn_more">Dowiedz się więcej</string>
 	<!-- Subway exits for public transport marks on the map -->

@@ -543,9 +543,8 @@
 	<string name="enable_logging">Povolit protokolování</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Všeobecné připomínky</string>
-	<string name="prefs_languages_information">Pro hlasové pokyny používáme systém TTS. Mnoho zařízení se systémem Android používá Google TTS, můžete si ho stáhnout nebo aktualizovat na Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">U některých jazyků je třeba nainstalovat jiný hlasový syntetizátor nebo další jazykové sady z obchodu s aplikacemi (Google Play, Galaxy Store, App Gallery, FDroid).\nOtevřete nastavení vašeho zařízení → Jazyky a zadávání → Hlasové zadávání → Převod textu na řeč. \nZde můžete spravovat nastavení pro syntézu řeči (například stáhnout jazykový balíček pro použití offline) a vybrat jiný modul převodu textu na řeč.</string>
-	<string name="prefs_languages_information_off_link">Více informací najdete v tomto návodu.</string>
+	<string name="prefs_tts_system_setup">Pokud nemůžete povolit hlasové pokyny nebo váš jazyk není podporován, ujistěte se, že je váš systém nastaven pro syntézu řeči pomocí této zkratky. Pokud tomu tak není, nainstalujte si nejprve z obchodu s aplikacemi převodník textu na řeč, který podporuje váš jazyk.</string>
+	<string name="prefs_tts_info_guide_link">Více informací najdete v tomto návodu.</string>
 	<string name="transliteration_title">Přepis do latinky</string>
 	<string name="learn_more">Zjistit více</string>
 	<!-- Subway exits for public transport marks on the map -->

@@ -583,9 +583,8 @@
 	<string name="enable_logging">تفعيل التسجيل</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">تعقيب عام</string>
-	<string name="prefs_languages_information">نحن نستخدم نظام تحويل النص إلى كلام (TTS) للتعليمات الصوتية. تستخدم العديد من أجهزة أندرويد نظام Google TTS، يمكنك تنزيله من أو تحديثه من متجر Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">بالنسبة لبعض اللغات، ستحتاج إلى تنزيل تطبيق تحويل النص إلى كلام أو حزمة لغات إضافية من متجر التطبيقات(متجر Play، Galaxy Store، App Gallery، FDroid(.\nافتح إعدادات جهازك ثم اللغة والإدخال ثم تحويل النص إلى كلام.\nهنا يمكنك إدارة الإعدادات لأنظمة تحويل النص إلى كلا(على سبيل المثال، تنزيل حزمة اللغة للاستجدام دون اتصال انترنيت)</string>
-	<string name="prefs_languages_information_off_link">لمزيد من المعلومات الرجاء مراجعة هذا الدليل.</string>
+	<string name="prefs_tts_system_setup">إذا لم تتمكن من تمكين التعليمات الصوتية أو كانت لغتك غير مدعومة، فيرجى التأكد من إعداد نظامك لتركيب الكلام باستخدام هذا الاختصار. إذا لم يكن الأمر كذلك، فقم بتثبيت محرك تحويل النص إلى كلام الذي يدعم لغتك من متجر التطبيقات الخاص بك أولاً.</string>
+	<string name="prefs_tts_info_guide_link">لمزيد من المعلومات الرجاء مراجعة هذا الدليل.</string>
 	<string name="transliteration_title">كتابة جميع الاسماء بالحروف اللاتينية بشكل حرفي</string>
 	<string name="learn_more">معرفة المزيد</string>
 	<!-- Subway exits for public transport marks on the map -->

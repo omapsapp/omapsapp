@@ -572,9 +572,8 @@
 	<string name="enable_logging">Ota loki käyttöön</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Yleinen palaute</string>
-	<string name="prefs_languages_information">Käytämme ääniohjeisiin tekstistä puheeksi -järjestelmää. Monet Android-laitteet käyttävät Googlen tekstistä puheeksi -sovellusta, jonka voit ladata tai päivittää Google Playssä (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Joidenkin kielien osalta sinun täytyy asentaa toinen puhesyntetisaattori tai lisäkielipaketti sovelluskaupasta (Google Play, Galaxy Store, App Gallery, FDroid). Avaa laitteen asetukset → Kieli ja syöttötapa → Puhe → Teksistä puheeksi -toisto. Täällä voit hallita puhesynteesin asetuksia (esimerkiksi ladata offline-tilassa käytettävän kielipaketin) ja valita toisen tekstistä puheeksi -moottorin.</string>
-	<string name="prefs_languages_information_off_link">Lisätietoja saat tästä oppaasta.</string>
+	<string name="prefs_tts_system_setup">Jos et voi ottaa ääniohjeita käyttöön tai kielesi ei ole tuettu, varmista, että järjestelmäsi on asetettu puhesynteesiä varten tämän pikakuvakkeen avulla. Jos näin ei ole, asenna ensin sovelluskaupastasi kielesi tukeva puheääniohjelma.</string>
+	<string name="prefs_tts_info_guide_link">Lisätietoja saat tästä oppaasta.</string>
 	<string name="transliteration_title">Translitterointi latinalaisiksi aakkosiksi</string>
 	<string name="learn_more">Lisätietoja</string>
 	<!-- Subway exits for public transport marks on the map -->

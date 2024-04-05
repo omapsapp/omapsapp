@@ -76,6 +76,7 @@
 	<!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
 	<string name="dialog_kayak_button">Detalles sobre Kayak</string>
 	<string name="placepage_add_place_button">Agregar lugar a OpenStreetMap</string>
+	<string name="prefs_tts_system_setup">Si no puede habilitar las instrucciones de voz o su idioma no es compatible, asegúrese de que su sistema esté configurado para síntesis de voz con este acceso directo. Si no es así, primero instale un motor de texto a voz que admita su idioma desde su tienda de aplicaciones.</string>
 	<string name="transliteration_title">Transliteración al alfabeto latino</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
 	<string name="alert_reauth_message">Inicie sesión en OpenStreetMap para cargar automáticamente todas las ediciones de su mapa. Obtenga más información <a href="https://github.com/organicmaps/organicmaps/issues/6144">aquí</a>.</string>

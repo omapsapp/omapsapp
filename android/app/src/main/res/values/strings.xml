@@ -595,9 +595,8 @@
 	<string name="enable_logging">Enable logging</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">General Feedback</string>
-	<string name="prefs_languages_information">We use system TTS for voice instructions. Many Android devices use Google TTS, you can download or update it from Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">For some languages, you will need to install a speech synthesizer or an additional language pack from the app store (Google Play, Galaxy Store, App Gallery, FDroid).\nOpen your device\'s settings → Language and input → Speech → Text to speech output.\nHere you can manage settings for speech synthesis (for example, download language pack for offline use) and select another text-to-speech engine.</string>
-	<string name="prefs_languages_information_off_link">For more information please check this guide.</string>
+	<string name="prefs_tts_system_setup">If unable to enable voice instructions or your language isn\'t supported, please ensure your system is setup for speech synthesis with this shortcut. If it isn\'t, install a text-to-speech engine that supports your language from your app store first.</string>
+	<string name="prefs_tts_info_guide_link">For more information please check this guide. ↗</string>
 	<string name="transliteration_title">Transliteration into Latin alphabet</string>
 	<string name="learn_more">Learn more</string>
 	<!-- Subway exits for public transport marks on the map -->
@@ -788,6 +787,8 @@
 	<string name="translated_om_site_url">https://organicmaps.app/</string>
 	<!-- Link to OSM wiki for Editor, Profile and About pages -->
 	<string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+	<!-- Link to OM TTS setup guide -->
+	<string name="tts_info_guide_link">https://organicmaps.app/faq/text-to-speech-android-tts/</string>
 	<!-- A number of bookmarks and a number of tracks, separated by comma, like: 1 bookmark, 5 tracks -->
 	<string name="comma_separated_pair">%1$s, %2$s</string>
 	<!-- App Tip #00 -->

@@ -554,9 +554,8 @@
 	<string name="enable_logging">Activează jurnalizarea</string>
 	<!-- Settings: "Send general feedback" button -->
 	<string name="feedback_general">Părere generală</string>
-	<string name="prefs_languages_information">Pentru instrucțiuni vocale utilizăm sistemul TTS. Multe dispozitive Android folosesc Google TTS. Poți descărca sau actualiza aplicația din Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-	<string name="prefs_languages_information_off">Pentru unele limbi trebuie să instalezi alt sintetizator de voce sau un pachet lingvistic suplimentar din Magazinul de aplicații (Google Play, Galaxy Store, App Gallery, FDroid).\nDeschide setările dispozitivului → Limbă → Transformare text în vorbire → Motor preferat.\nAici poți alege motorul de transformare a textului în vorbire și poți descărca o limbă pentru utilizare fără internet.</string>
-	<string name="prefs_languages_information_off_link">Consultă acest ghid pentru informații suplimentare.</string>
+	<string name="prefs_tts_system_setup">Dacă nu puteți activa instrucțiunile vocale sau dacă limba dvs. nu este acceptată, asigurați-vă că sistemul dvs. este configurat pentru sinteza vocală cu această comandă rapidă. În caz contrar, instalați mai întâi un motor text-to-speech care acceptă limba dvs. din magazinul de aplicații.</string>
+	<string name="prefs_tts_info_guide_link">Consultă acest ghid pentru informații suplimentare.</string>
 	<string name="transliteration_title">Transcrie în alfabet latin</string>
 	<string name="learn_more">Mai multe</string>
 	<!-- Subway exits for public transport marks on the map -->
