@@ -213,6 +213,11 @@ public:
     SetStaticSize(0);
   }
 
+  explicit operator std::basic_string_view<T> const()
+  {
+    return std::basic_string_view<T>{data(), size()};
+  }
+
   /// @todo Here is some inconsistencies:
   /// - "data" method should return 0 if vector is empty;\n
   /// - potential memory overrun if m_dynamic is empty;\n
@@ -288,6 +293,10 @@ public:
   }
 
   /// By value to be consistent with m_vec.push_back(m_vec[0]).
+  /// The bug comes after the following sequence:
+  /// 1. operator[] returns a reference for zero element.
+  /// 2. push_back causes switching from the stack to heap allocation and moves all elements (including zero one).
+  /// 3. An outdated reference to the already moved zero element is pushed back in the push_back.
   void push_back(T t)
   {
     if (!IsDynamic())

@@ -21,7 +21,7 @@ namespace
 UNIT_TEST(BufferVector_PushBackAndRealloc)
 {
   using ElementT = std::vector<int>;
-  ElementT element({1, 2, 3});
+  ElementT const element({1, 2, 3});
 
   size_t constexpr kFixedSize = 2;
   {
@@ -412,5 +412,38 @@ UNIT_TEST(BufferVector_Erase)
     TEST_EQUAL(v1.size(), v2.size(), ());
     for (size_t i = 0; i < v1.size(); ++i)
       TEST_EQUAL(v1[i], v2[i], ());
+  }
+}
+
+UNIT_TEST(BufferVector_StringView)
+{
+  {
+    buffer_vector<std::string_view::value_type, 4> bv = {'a', 'b', 'c', 'd'};
+    std::string_view constexpr svStack = "abcd";
+    TEST_EQUAL(svStack, std::string_view{bv}, ());
+
+    bv.push_back('e');
+    std::string_view constexpr svHeap = "abcde";
+    TEST_EQUAL(svHeap, std::string_view{bv}, ());
+  }
+
+  {
+    buffer_vector<std::u16string_view::value_type, 4> bv = {u'à', u'b', u'ç', u'ð'};
+    std::u16string_view constexpr svStack = u"àbçð";
+    TEST_EQUAL(svStack, std::u16string_view{bv}, ());
+
+    bv.push_back(u'ë');
+    std::u16string_view constexpr svHeap = u"àbçðë";
+    TEST_EQUAL(svHeap, std::u16string_view{bv}, ());
+  }
+
+  {
+    buffer_vector<std::u32string_view::value_type, 4> bv = {U'à', U'b', U'ç', U'ð'};
+    std::u32string_view constexpr svStack = U"àbçð";
+    TEST_EQUAL(svStack, std::u32string_view{bv}, ());
+
+    bv.push_back(U'ë');
+    std::u32string_view constexpr svHeap = U"àbçðë";
+    TEST_EQUAL(svHeap, std::u32string_view{bv}, ());
   }
 }
