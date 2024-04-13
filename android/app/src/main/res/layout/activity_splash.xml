@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:orientation="vertical"
+    tools:background="@color/bg_primary"
   android:gravity="center">
 
   <ImageView
       android:id="@+id/iv__logo"
-      android:layout_width="wrap_content"
+      android:layout_width="255dp"
       android:layout_height="0dp"
       android:contentDescription="@null"
-      app:srcCompat="@drawable/splash"
+      app:srcCompat="@drawable/ic_splash"
       android:layout_weight="1000"
       android:layout_margin="@dimen/margin_double"/>
 
@@ -30,6 +32,7 @@
         android:layout_marginBottom="@dimen/margin_eighth"
         android:text="@string/app_name"
         android:gravity="center_horizontal"
+        tools:textColor="@color/white_primary"
         android:textAppearance="@style/MwmTextAppearance.Title.Splash" />
 
     <TextView
@@ -40,6 +43,7 @@
         android:layout_marginStart="@dimen/margin_double"
         android:layout_marginEnd="@dimen/margin_double"
         android:gravity="center_horizontal"
+        tools:textColor="@color/white_primary"
         android:textAppearance="@style/MwmTextAppearance.Toolbar" />
 
   </LinearLayout>
