@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
+import app.organicmaps.sdk.editor.Editor;
 
 import java.util.ArrayList;
 import java.util.Arrays;

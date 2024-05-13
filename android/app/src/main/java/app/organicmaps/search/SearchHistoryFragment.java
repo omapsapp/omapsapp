@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmRecyclerFragment;
-import app.organicmaps.location.LocationHelper;
-import app.organicmaps.routing.RoutingController;
+import app.organicmaps.sdk.location.LocationHelper;
+import app.organicmaps.sdk.routing.RoutingController;
 import app.organicmaps.widget.PlaceholderView;
 import app.organicmaps.widget.SearchToolbarController;
 import app.organicmaps.util.UiUtils;

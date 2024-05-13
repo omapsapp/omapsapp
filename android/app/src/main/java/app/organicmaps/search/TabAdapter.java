@@ -13,7 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import app.organicmaps.R;
 import app.organicmaps.util.Graphics;
-import app.organicmaps.util.Config;
+import app.organicmaps.sdk.util.Config;
 
 import java.util.ArrayList;
 import java.util.List;

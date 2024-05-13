@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmToolbarFragment;
+import app.organicmaps.sdk.editor.Editor;
 import app.organicmaps.util.UiUtils;
 import com.google.android.material.textfield.TextInputEditText;
 

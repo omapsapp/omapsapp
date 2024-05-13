@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import app.organicmaps.R;
-import app.organicmaps.editor.data.Language;
-import app.organicmaps.editor.data.LocalizedName;
-import app.organicmaps.util.StringUtils;
+import app.organicmaps.sdk.editor.Editor;
+import app.organicmaps.sdk.editor.data.Language;
+import app.organicmaps.sdk.editor.data.LocalizedName;
+import app.organicmaps.sdk.util.StringUtils;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
 

@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
-import app.organicmaps.editor.data.Language;
+import app.organicmaps.sdk.editor.data.Language;
 
 public class LanguagesAdapter extends RecyclerView.Adapter<LanguagesAdapter.Holder>
 {

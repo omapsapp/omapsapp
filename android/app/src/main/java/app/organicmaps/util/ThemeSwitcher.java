@@ -8,14 +8,14 @@ import android.os.Build;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Framework;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
-import app.organicmaps.display.DisplayManager;
+import app.organicmaps.sdk.display.DisplayManager;
 import app.organicmaps.downloader.DownloaderStatusIcon;
-import app.organicmaps.location.LocationHelper;
-import app.organicmaps.routing.RoutingController;
-import app.organicmaps.util.concurrency.UiThread;
+import app.organicmaps.sdk.location.LocationHelper;
+import app.organicmaps.sdk.routing.RoutingController;
+import app.organicmaps.sdk.util.concurrency.UiThread;
 
 public enum ThemeSwitcher
 {

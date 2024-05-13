@@ -9,8 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
-import app.organicmaps.location.LocationHelper;
-import app.organicmaps.routing.RoutingController;
+import app.organicmaps.sdk.location.LocationHelper;
+import app.organicmaps.sdk.routing.RoutingController;
+import app.organicmaps.sdk.search.SearchRecents;
 import app.organicmaps.widget.SearchToolbarController;
 import app.organicmaps.util.Graphics;
 

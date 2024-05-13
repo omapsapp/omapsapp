@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmRecyclerFragment;
-import app.organicmaps.editor.data.HoursMinutes;
+import app.organicmaps.sdk.editor.data.HoursMinutes;
 
 public class SimpleTimetableFragment extends BaseMwmRecyclerFragment<SimpleTimetableAdapter>
                                   implements TimetableProvider,

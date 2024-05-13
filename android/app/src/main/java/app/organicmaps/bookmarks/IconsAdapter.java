@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import app.organicmaps.R;
-import app.organicmaps.bookmarks.data.Icon;
+import app.organicmaps.sdk.bookmarks.data.Icon;
 import app.organicmaps.util.Graphics;
 
 import java.util.List;
@@ -44,7 +44,7 @@ public class IconsAdapter extends ArrayAdapter<Icon>
     {
       circle = Graphics.drawCircleAndImage(getItem(position).argb(),
                                            R.dimen.track_circle_size,
-                                           R.drawable.ic_bookmark_none,
+                                           app.organicmaps.sdk.R.drawable.ic_bookmark_none,
                                            R.dimen.bookmark_icon_size,
                                            getContext());
 

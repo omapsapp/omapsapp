@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
 import app.organicmaps.dialog.EditTextDialogFragment;
-import app.organicmaps.editor.data.LocalizedStreet;
+import app.organicmaps.sdk.editor.data.LocalizedStreet;
 import app.organicmaps.util.UiUtils;
 
 public class StreetAdapter extends RecyclerView.Adapter<StreetAdapter.BaseViewHolder>

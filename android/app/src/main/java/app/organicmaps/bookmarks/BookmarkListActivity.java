@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseToolbarActivity;
-import app.organicmaps.bookmarks.data.BookmarkCategory;
-import app.organicmaps.bookmarks.data.BookmarkManager;
+import app.organicmaps.sdk.bookmarks.data.BookmarkCategory;
+import app.organicmaps.sdk.bookmarks.data.BookmarkManager;
 import app.organicmaps.util.ThemeUtils;
 
 public class BookmarkListActivity extends BaseToolbarActivity

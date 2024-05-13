@@ -79,8 +79,6 @@ def getCommitMessage() {
   return run(['git', '--no-pager', 'show', '-s', '--format=%s%n%n%b', 'HEAD']).trim()
 }
 
-def osName = System.properties['os.name'].toLowerCase()
-
 project.ext.appId = 'app.organicmaps'
 project.ext.appName = 'Organic Maps'
 
@@ -116,30 +114,6 @@ android {
     // Should be customized in flavors.
     buildConfigField 'String', 'REVIEW_URL', '""'
     resourceConfigurations += [project.ext.supportedLocalizations]
-
-    externalNativeBuild {
-      def pchFlag = 'OFF'
-      if (project.hasProperty('pch')) pchFlag = 'ON'
-
-      def njobs = ''
-      if (project.hasProperty('njobs')) njobs = project.getProperty('njobs')
-
-      def enableVulkanDiagnostics = 'OFF'
-      if (project.hasProperty('enableVulkanDiagnostics')) {
-        enableVulkanDiagnostics = project.getProperty('enableVulkanDiagnostics')
-      }
-
-      cmake {
-        cppFlags '-fexceptions', '-frtti'
-        // There is no sense to enable sections without gcc's --gc-sections flag.
-        cFlags '-fno-function-sections', '-fno-data-sections',
-               '-Wno-extern-c-compat'
-        arguments '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=c++_static',
-                  "-DOS=$osName", '-DSKIP_TESTS=ON', '-DSKIP_TOOLS=ON', "-DUSE_PCH=$pchFlag",
-                  "-DNJOBS=$njobs", "-DENABLE_VULKAN_DIAGNOSTICS=$enableVulkanDiagnostics"
-        targets 'organicmaps'
-      }
-    }
 
     // Use, for example, -Parm32 gradle parameter to build only for armeabi-v7a.
     ndk {
@@ -323,14 +297,6 @@ android {
     }
   }
 
-  externalNativeBuild {
-    cmake {
-      version '3.22.1+'
-      buildStagingDirectory './nativeOutputs'
-      path '../../CMakeLists.txt'
-    }
-  }
-
   // We don't compress these extensions in assets/ because our random FileReader can't read zip-compressed files from apk.
   // TODO: Load all minor files via separate call to ReadAsString which can correctly handle compressed files in zip containers.
   androidResources {
@@ -347,6 +313,7 @@ android {
 }
 
 dependencies {
+  implementation project(":organicmaps")
   coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
 
   // Google Play Location Services

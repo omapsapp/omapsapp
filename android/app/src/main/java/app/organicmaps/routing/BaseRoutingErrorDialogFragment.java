@@ -17,8 +17,9 @@ import androidx.appcompat.app.AlertDialog;
 import app.organicmaps.R;
 import app.organicmaps.adapter.DisabledChildSimpleExpandableListAdapter;
 import app.organicmaps.base.BaseMwmDialogFragment;
-import app.organicmaps.downloader.CountryItem;
-import app.organicmaps.util.StringUtils;
+import app.organicmaps.sdk.downloader.CountryItem;
+import app.organicmaps.sdk.routing.RoutingController;
+import app.organicmaps.sdk.util.StringUtils;
 import app.organicmaps.util.UiUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 

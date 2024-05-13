@@ -5,7 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 
 import app.organicmaps.base.BaseMwmRecyclerFragment;
-import app.organicmaps.editor.data.Language;
+import app.organicmaps.sdk.editor.Editor;
+import app.organicmaps.sdk.editor.data.Language;
 
 import java.util.ArrayList;
 import java.util.Collections;

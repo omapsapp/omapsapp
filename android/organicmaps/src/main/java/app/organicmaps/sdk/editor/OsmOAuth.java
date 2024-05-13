@@ -1,0 +1,133 @@
+package app.organicmaps.sdk.editor;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.Size;
+import androidx.annotation.WorkerThread;
+import androidx.fragment.app.FragmentManager;
+
+import app.organicmaps.sdk.OrganicMaps;
+import app.organicmaps.sdk.util.NetworkPolicy;
+
+public final class OsmOAuth
+{
+  private OsmOAuth() {}
+
+  public enum AuthType
+  {
+    OSM("OSM"),
+    GOOGLE("Google");
+
+    public final String name;
+
+    AuthType(String name)
+    {
+      this.name = name;
+    }
+  }
+
+  public static final int OK = 0;
+
+  private static final String PREF_OSM_TOKEN = "OsmToken";   // Unused after migration from OAuth1 to OAuth2
+  private static final String PREF_OSM_SECRET = "OsmSecret"; // Unused after migration from OAuth1 to OAuth2
+  private static final String PREF_OSM_USERNAME = "OsmUsername";
+  private static final String PREF_OSM_CHANGESETS_COUNT = "OsmChangesetsCount";
+  private static final String PREF_OSM_OAUTH2_TOKEN = "OsmOAuth2Token";
+
+  public static final String URL_PARAM_VERIFIER = "oauth_verifier";
+
+  public static boolean isAuthorized(@NonNull Context context)
+  {
+    return OrganicMaps.prefs(context).contains(PREF_OSM_OAUTH2_TOKEN);
+  }
+
+  public static boolean containsOAuth1Credentials(@NonNull Context context)
+  {
+    SharedPreferences prefs = OrganicMaps.prefs(context);
+    return prefs.contains(PREF_OSM_TOKEN) && prefs.contains(PREF_OSM_SECRET);
+  }
+
+  public static void clearOAuth1Credentials(@NonNull Context context)
+  {
+    OrganicMaps.prefs(context).edit()
+            .remove(PREF_OSM_TOKEN)
+            .remove(PREF_OSM_SECRET)
+            .apply();
+  }
+
+  public static String getAuthToken(@NonNull Context context)
+  {
+    return OrganicMaps.prefs(context).getString(PREF_OSM_OAUTH2_TOKEN, "");
+  }
+
+  public static String getUsername(@NonNull Context context)
+  {
+    return OrganicMaps.prefs(context).getString(PREF_OSM_USERNAME, "");
+  }
+
+  public static void setAuthorization(@NonNull Context context, String oauthToken, String username)
+  {
+    OrganicMaps.prefs(context).edit()
+                  .putString(PREF_OSM_OAUTH2_TOKEN, oauthToken)
+                  .putString(PREF_OSM_USERNAME, username)
+                  .apply();
+  }
+
+  public static void clearAuthorization(@NonNull Context context)
+  {
+    OrganicMaps.prefs(context).edit()
+                  .remove(PREF_OSM_TOKEN)
+                  .remove(PREF_OSM_SECRET)
+                  .remove(PREF_OSM_USERNAME)
+                  .remove(PREF_OSM_OAUTH2_TOKEN)
+                  .apply();
+  }
+
+  public static String getHistoryUrl(@NonNull Context context)
+  {
+    return nativeGetHistoryUrl(getUsername(context));
+  }
+
+  /**
+   * @return string with OAuth2 token
+   */
+  @WorkerThread
+  @Size(2)
+  @Nullable
+  public static native String nativeAuthWithPassword(String login, String password);
+
+  @WorkerThread
+  @Nullable
+  public static native String nativeGetOsmUsername(String oauthToken);
+
+  @WorkerThread
+  @NonNull
+  public static native String nativeGetHistoryUrl(String user);
+
+  /**
+   * @return < 0 if failed to get changesets count.
+   */
+  @WorkerThread
+  private static native int nativeGetOsmChangesetsCount(String oauthToken);
+
+  @WorkerThread
+  public static int getOsmChangesetsCount(@NonNull Context context, @NonNull FragmentManager fm) {
+    final int[] editsCount = {-1};
+    NetworkPolicy.checkNetworkPolicy(fm, policy -> {
+      if (!policy.canUseNetwork())
+        return;
+
+      final String token = getAuthToken(context);
+      editsCount[0] = OsmOAuth.nativeGetOsmChangesetsCount(token);
+    });
+    final SharedPreferences prefs = OrganicMaps.prefs(context);
+    if (editsCount[0] < 0)
+      return prefs.getInt(PREF_OSM_CHANGESETS_COUNT, 0);
+
+    prefs.edit().putInt(PREF_OSM_CHANGESETS_COUNT, editsCount[0]).apply();
+    return editsCount[0];
+  }
+}

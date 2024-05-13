@@ -8,11 +8,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 
 import app.organicmaps.R;
-import app.organicmaps.bookmarks.data.BookmarkCategory;
-import app.organicmaps.bookmarks.data.BookmarkManager;
-import app.organicmaps.bookmarks.data.BookmarkSharingResult;
+import app.organicmaps.sdk.bookmarks.data.BookmarkCategory;
+import app.organicmaps.sdk.bookmarks.data.BookmarkManager;
+import app.organicmaps.sdk.bookmarks.data.BookmarkSharingResult;
 import app.organicmaps.util.SharingUtils;
-import app.organicmaps.util.log.Logger;
+import app.organicmaps.sdk.util.log.Logger;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;

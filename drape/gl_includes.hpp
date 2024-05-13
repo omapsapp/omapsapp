@@ -19,7 +19,7 @@
   #define GL_GLEXT_PROTOTYPES
   #include <GLES2/gl2.h>
   #include <GLES2/gl2ext.h>
-  #include "android/app/src/main/cpp/app/organicmaps/opengl/gl3stub.h"
+  #include "android/organicmaps//src/main/cpp/app/organicmaps/opengl/gl3stub.h"
   #include <EGL/egl.h>
 #elif defined(OMIM_OS_LINUX)
   #define GL_GLEXT_PROTOTYPES

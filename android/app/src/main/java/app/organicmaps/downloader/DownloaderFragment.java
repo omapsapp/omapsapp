@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmRecyclerFragment;
 import app.organicmaps.base.OnBackPressListener;
+import app.organicmaps.sdk.downloader.CountryItem;
+import app.organicmaps.sdk.downloader.MapManager;
 import app.organicmaps.search.NativeMapSearchListener;
 import app.organicmaps.search.SearchEngine;
 import app.organicmaps.widget.PlaceholderView;

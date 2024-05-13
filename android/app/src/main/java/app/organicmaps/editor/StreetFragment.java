@@ -13,7 +13,8 @@ import androidx.annotation.Nullable;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmRecyclerFragment;
 import app.organicmaps.dialog.EditTextDialogFragment;
-import app.organicmaps.editor.data.LocalizedStreet;
+import app.organicmaps.sdk.editor.Editor;
+import app.organicmaps.sdk.editor.data.LocalizedStreet;
 import app.organicmaps.util.Option;
 
 public class StreetFragment extends BaseMwmRecyclerFragment<StreetAdapter>

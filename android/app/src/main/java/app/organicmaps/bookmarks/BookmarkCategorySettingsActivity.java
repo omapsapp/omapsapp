@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmFragmentActivity;
-import app.organicmaps.bookmarks.data.BookmarkCategory;
+import app.organicmaps.sdk.bookmarks.data.BookmarkCategory;
 
 public class BookmarkCategorySettingsActivity extends BaseMwmFragmentActivity
 {

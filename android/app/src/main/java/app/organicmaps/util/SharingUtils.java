@@ -10,10 +10,10 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Framework;
 import app.organicmaps.R;
-import app.organicmaps.bookmarks.data.BookmarkInfo;
-import app.organicmaps.bookmarks.data.MapObject;
+import app.organicmaps.sdk.bookmarks.data.BookmarkInfo;
+import app.organicmaps.sdk.bookmarks.data.MapObject;
 
 public class SharingUtils
 {

@@ -13,23 +13,24 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.TwoStatePreference;
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Framework;
 import app.organicmaps.R;
-import app.organicmaps.downloader.MapManager;
+import app.organicmaps.sdk.downloader.MapManager;
 import app.organicmaps.downloader.OnmapDownloader;
 import app.organicmaps.editor.ProfileActivity;
 import app.organicmaps.help.HelpActivity;
-import app.organicmaps.location.LocationHelper;
+import app.organicmaps.sdk.location.LocationHelper;
 import app.organicmaps.location.LocationProviderFactory;
-import app.organicmaps.routing.RoutingOptions;
-import app.organicmaps.util.Config;
-import app.organicmaps.util.NetworkPolicy;
-import app.organicmaps.util.PowerManagment;
+import app.organicmaps.sdk.routing.RoutingOptions;
+import app.organicmaps.sdk.settings.UnitLocale;
+import app.organicmaps.sdk.util.Config;
+import app.organicmaps.sdk.util.NetworkPolicy;
+import app.organicmaps.sdk.util.PowerManagment;
 import app.organicmaps.util.SharedPropertiesUtils;
 import app.organicmaps.util.ThemeSwitcher;
 import app.organicmaps.util.Utils;
-import app.organicmaps.util.log.LogsManager;
-import app.organicmaps.search.SearchRecents;
+import app.organicmaps.sdk.util.log.LogsManager;
+import app.organicmaps.sdk.search.SearchRecents;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SettingsPrefsFragment extends BaseXmlSettingsFragment
@@ -474,12 +475,5 @@ public class SettingsPrefsFragment extends BaseXmlSettingsFragment
       }
       return AUTO;
     }
-  }
-
-  public enum SpeedCameraMode
-  {
-    AUTO,
-    ALWAYS,
-    NEVER
   }
 }

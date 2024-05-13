@@ -7,22 +7,23 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.core.content.IntentCompat;
 
-import app.organicmaps.Framework;
-import app.organicmaps.Map;
+import app.organicmaps.sdk.Framework;
+import app.organicmaps.sdk.Map;
 import app.organicmaps.MwmActivity;
 import app.organicmaps.MwmApplication;
-import app.organicmaps.api.ParsedRoutingData;
-import app.organicmaps.api.ParsedSearchRequest;
-import app.organicmaps.api.RequestType;
-import app.organicmaps.api.RoutePoint;
-import app.organicmaps.bookmarks.data.BookmarkManager;
-import app.organicmaps.bookmarks.data.FeatureId;
-import app.organicmaps.bookmarks.data.MapObject;
+import app.organicmaps.sdk.OrganicMaps;
+import app.organicmaps.sdk.api.ParsedRoutingData;
+import app.organicmaps.sdk.api.ParsedSearchRequest;
+import app.organicmaps.sdk.api.RequestType;
+import app.organicmaps.sdk.api.RoutePoint;
+import app.organicmaps.sdk.bookmarks.data.BookmarkManager;
+import app.organicmaps.sdk.bookmarks.data.FeatureId;
+import app.organicmaps.sdk.bookmarks.data.MapObject;
 import app.organicmaps.routing.RoutingController;
 import app.organicmaps.search.SearchActivity;
 import app.organicmaps.search.SearchEngine;
-import app.organicmaps.util.StorageUtils;
-import app.organicmaps.util.concurrency.ThreadPool;
+import app.organicmaps.sdk.util.StorageUtils;
+import app.organicmaps.sdk.util.concurrency.ThreadPool;
 
 import java.io.File;
 import java.util.Collections;
@@ -53,8 +54,8 @@ public class Factory
       if (uris == null)
         return false;
 
-      MwmApplication app = MwmApplication.from(activity);
-      final File tempDir = new File(StorageUtils.getTempPath(app));
+      final OrganicMaps om = OrganicMaps.from(activity);
+      final File tempDir = new File(StorageUtils.getTempPath(om));
       final ContentResolver resolver = activity.getContentResolver();
       ThreadPool.getStorage().execute(() -> BookmarkManager.INSTANCE.importBookmarksFiles(resolver, uris, tempDir));
       return false;

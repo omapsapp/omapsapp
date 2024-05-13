@@ -18,10 +18,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
-import app.organicmaps.editor.data.HoursMinutes;
+import app.organicmaps.sdk.editor.OpeningHours;
+import app.organicmaps.sdk.editor.data.HoursMinutes;
 import app.organicmaps.editor.data.TimeFormatUtils;
-import app.organicmaps.editor.data.Timespan;
-import app.organicmaps.editor.data.Timetable;
+import app.organicmaps.sdk.editor.data.Timespan;
+import app.organicmaps.sdk.editor.data.Timetable;
 import app.organicmaps.util.UiUtils;
 
 import java.util.ArrayList;

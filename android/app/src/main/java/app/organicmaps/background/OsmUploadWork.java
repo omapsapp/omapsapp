@@ -10,10 +10,11 @@ import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
+
 import app.organicmaps.MwmApplication;
 import app.organicmaps.editor.Editor;
 import app.organicmaps.editor.OsmOAuth;
-import app.organicmaps.util.log.Logger;
+import app.organicmaps.sdk.util.log.Logger;
 
 public class OsmUploadWork extends Worker
 {

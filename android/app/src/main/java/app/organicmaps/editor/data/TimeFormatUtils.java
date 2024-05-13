@@ -6,6 +6,8 @@ import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 
 import app.organicmaps.R;
+import app.organicmaps.sdk.editor.data.Timespan;
+import app.organicmaps.sdk.editor.data.Timetable;
 import app.organicmaps.util.Utils;
 
 import java.text.DateFormatSymbols;

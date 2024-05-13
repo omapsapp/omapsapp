@@ -44,9 +44,11 @@ import app.organicmaps.BuildConfig;
 import app.organicmaps.MwmActivity;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
-import app.organicmaps.util.concurrency.UiThread;
-import app.organicmaps.util.log.Logger;
-import app.organicmaps.util.log.LogsManager;
+import app.organicmaps.sdk.util.Distance;
+import app.organicmaps.sdk.util.StorageUtils;
+import app.organicmaps.sdk.util.concurrency.UiThread;
+import app.organicmaps.sdk.util.log.Logger;
+import app.organicmaps.sdk.util.log.LogsManager;
 
 import java.io.Closeable;
 import java.io.IOException;

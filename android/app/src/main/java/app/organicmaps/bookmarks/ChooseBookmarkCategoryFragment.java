@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmDialogFragment;
-import app.organicmaps.bookmarks.data.BookmarkCategory;
-import app.organicmaps.bookmarks.data.BookmarkManager;
+import app.organicmaps.sdk.bookmarks.data.BookmarkCategory;
+import app.organicmaps.sdk.bookmarks.data.BookmarkManager;
 import app.organicmaps.dialog.EditTextDialogFragment;
 
 import java.util.List;

@@ -12,16 +12,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Framework;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmToolbarFragment;
-import app.organicmaps.util.Constants;
-import app.organicmaps.util.DateUtils;
+import app.organicmaps.sdk.editor.OsmOAuth;
+import app.organicmaps.sdk.util.Constants;
+import app.organicmaps.sdk.util.DateUtils;
 import app.organicmaps.util.InputUtils;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
-import app.organicmaps.util.concurrency.ThreadPool;
-import app.organicmaps.util.concurrency.UiThread;
+import app.organicmaps.sdk.util.concurrency.ThreadPool;
+import app.organicmaps.sdk.util.concurrency.UiThread;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 

@@ -23,8 +23,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.tabs.TabLayout;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmDialogFragment;
-import app.organicmaps.editor.data.HoursMinutes;
-import app.organicmaps.util.DateUtils;
+import app.organicmaps.sdk.editor.data.HoursMinutes;
+import app.organicmaps.sdk.util.DateUtils;
 import app.organicmaps.util.ThemeUtils;
 import app.organicmaps.util.Utils;
 

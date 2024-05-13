@@ -28,17 +28,19 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Framework;
 import app.organicmaps.MwmActivity;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
+import app.organicmaps.sdk.routing.RoutingController;
+import app.organicmaps.sdk.routing.RoutingInfo;
 import app.organicmaps.sound.MediaPlayerWrapper;
-import app.organicmaps.location.LocationHelper;
-import app.organicmaps.location.LocationListener;
+import app.organicmaps.sdk.location.LocationHelper;
+import app.organicmaps.sdk.location.LocationListener;
 import app.organicmaps.sound.TtsPlayer;
 import app.organicmaps.util.Graphics;
-import app.organicmaps.util.LocationUtils;
-import app.organicmaps.util.log.Logger;
+import app.organicmaps.sdk.util.LocationUtils;
+import app.organicmaps.sdk.util.log.Logger;
 
 public class NavigationService extends Service implements LocationListener
 {

@@ -20,11 +20,11 @@ import androidx.fragment.app.FragmentManager;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
 import app.organicmaps.SplashActivity;
-import app.organicmaps.util.Config;
+import app.organicmaps.sdk.util.Config;
+import app.organicmaps.sdk.util.log.Logger;
 import app.organicmaps.util.RtlUtils;
 import app.organicmaps.util.ThemeUtils;
 import app.organicmaps.util.concurrency.UiThread;
-import app.organicmaps.util.log.Logger;
 
 import java.util.Objects;
 

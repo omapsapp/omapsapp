@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
-import app.organicmaps.editor.data.FeatureCategory;
+import app.organicmaps.sdk.editor.data.FeatureCategory;
 import app.organicmaps.util.UiUtils;
 
 public class FeatureCategoryAdapter extends RecyclerView.Adapter<FeatureCategoryAdapter.FeatureViewHolder>

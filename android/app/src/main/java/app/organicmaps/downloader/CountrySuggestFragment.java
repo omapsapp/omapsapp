@@ -17,6 +17,8 @@ import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmFragment;
 import app.organicmaps.base.BaseMwmFragmentActivity;
 import app.organicmaps.location.LocationHelper;
+import app.organicmaps.sdk.downloader.CountryItem;
+import app.organicmaps.sdk.downloader.MapManager;
 import app.organicmaps.widget.WheelProgressView;
 import app.organicmaps.util.StringUtils;
 import app.organicmaps.util.UiUtils;

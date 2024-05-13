@@ -19,11 +19,12 @@ import androidx.preference.Preference;
 import androidx.preference.SeekBarPreference;
 import androidx.preference.TwoStatePreference;
 
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Framework;
 import app.organicmaps.R;
-import app.organicmaps.sound.LanguageData;
-import app.organicmaps.sound.TtsPlayer;
-import app.organicmaps.util.Config;
+import app.organicmaps.sdk.settings.SpeedCameraMode;
+import app.organicmaps.sdk.sound.LanguageData;
+import app.organicmaps.sdk.sound.TtsPlayer;
+import app.organicmaps.sdk.util.Config;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
 
@@ -309,7 +310,7 @@ public class VoiceInstructionsSettingsFragment extends BaseXmlSettingsFragment
     pref.setSummary(pref.getEntry());
     pref.setOnPreferenceChangeListener((preference, newValue) -> {
       final String speedCamModeValue = (String) newValue;
-      final SettingsPrefsFragment.SpeedCameraMode newCamMode = SettingsPrefsFragment.SpeedCameraMode.valueOf(speedCamModeValue);
+      final SpeedCameraMode newCamMode = SpeedCameraMode.valueOf(speedCamModeValue);
       final CharSequence summary = pref.getEntries()[newCamMode.ordinal()];
       pref.setSummary(summary);
       if (pref.getValue().equals(newValue))
@@ -320,7 +321,7 @@ public class VoiceInstructionsSettingsFragment extends BaseXmlSettingsFragment
     });
   }
 
-  private void onSpeedCamerasPrefChanged(@NonNull SettingsPrefsFragment.SpeedCameraMode newCamMode)
+  private void onSpeedCamerasPrefChanged(@NonNull SpeedCameraMode newCamMode)
   {
     Framework.setSpeedCamerasMode(newCamMode);
   }

@@ -14,10 +14,11 @@ import androidx.core.widget.NestedScrollView;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmRecyclerFragment;
-import app.organicmaps.editor.data.FeatureCategory;
+import app.organicmaps.sdk.editor.Editor;
+import app.organicmaps.sdk.editor.data.FeatureCategory;
 import app.organicmaps.widget.SearchToolbarController;
 import app.organicmaps.widget.ToolbarController;
-import app.organicmaps.util.Language;
+import app.organicmaps.sdk.util.Language;
 import app.organicmaps.util.Utils;
 
 import java.util.Arrays;

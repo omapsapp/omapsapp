@@ -21,8 +21,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.MwmActivity;
 import app.organicmaps.R;
+import app.organicmaps.sdk.downloader.CountryItem;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.routing.RoutingController;
+import app.organicmaps.sdk.downloader.MapManager;
 import app.organicmaps.util.StringUtils;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.bottomsheet.MenuBottomSheetFragment;

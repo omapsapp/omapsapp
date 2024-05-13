@@ -380,5 +380,5 @@ endif()
 omim_add_test_subdirectory(qt_tstfrm)
 
 if (PLATFORM_ANDROID)
-  add_subdirectory(android/app/src/main/cpp)
+  add_subdirectory(android/organicmaps/src/main/cpp)
 endif()

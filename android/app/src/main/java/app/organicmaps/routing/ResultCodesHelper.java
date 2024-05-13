@@ -9,7 +9,7 @@ import androidx.annotation.StringRes;
 
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
-import app.organicmaps.location.LocationHelper;
+import app.organicmaps.sdk.location.LocationHelper;
 
 import java.util.ArrayList;
 import java.util.List;

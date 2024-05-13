@@ -6,8 +6,8 @@ import android.os.Parcelable;
 import androidx.annotation.Nullable;
 import androidx.core.os.ParcelCompat;
 
-import app.organicmaps.bookmarks.data.Error;
-import app.organicmaps.bookmarks.data.Result;
+import app.organicmaps.sdk.bookmarks.data.Error;
+import app.organicmaps.sdk.bookmarks.data.Result;
 
 public class OperationStatus implements Parcelable
 {

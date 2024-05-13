@@ -4,10 +4,10 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import app.organicmaps.Framework;
-import app.organicmaps.maplayer.isolines.IsolinesManager;
-import app.organicmaps.maplayer.subway.SubwayManager;
-import app.organicmaps.maplayer.traffic.TrafficManager;
+import app.organicmaps.sdk.Framework;
+import app.organicmaps.sdk.maplayer.isolines.IsolinesManager;
+import app.organicmaps.sdk.maplayer.subway.SubwayManager;
+import app.organicmaps.sdk.maplayer.traffic.TrafficManager;
 import app.organicmaps.util.ThemeSwitcher;
 
 public enum Mode

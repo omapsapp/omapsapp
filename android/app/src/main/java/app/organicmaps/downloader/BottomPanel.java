@@ -5,9 +5,12 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import app.organicmaps.R;
+import app.organicmaps.sdk.downloader.CountryItem;
+import app.organicmaps.sdk.downloader.MapManager;
+import app.organicmaps.sdk.downloader.UpdateInfo;
 import app.organicmaps.util.StringUtils;
 import app.organicmaps.util.UiUtils;
-import static app.organicmaps.downloader.CountryItem.*;
+import static app.organicmaps.sdk.downloader.CountryItem.*;
 
 class BottomPanel
 {
