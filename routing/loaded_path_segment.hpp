@@ -23,7 +23,7 @@ namespace routing
 struct LoadedPathSegment
 {
   std::vector<geometry::PointWithAltitude> m_path;
-  std::vector<turns::SingleLaneInfo> m_lanes;
+  turns::lanes::LanesInfo m_lanes;
   RouteSegment::RoadNameInfo m_roadNameInfo;
   //double m_weight = 0.0; /*!< Time in seconds to pass the segment. */
   SegmentRange m_segmentRange;

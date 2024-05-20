@@ -1,4 +1,4 @@
-#include "routing/turns.hpp"
+#include "turns.hpp"
 
 #include "geometry/angles.hpp"
 
@@ -20,29 +20,6 @@ using namespace std;
 
 namespace
 {
-/// The order is important. Starting with the most frequent tokens according to
-/// taginfo.openstreetmap.org we minimize the number of the comparisons in ParseSingleLane().
-///
-/// A `none` lane can be represented either as "none" or as "". That means both "none" and ""
-/// should be considered names, even though they refer to the same thing. As a result,
-/// `LaneWay::None` appears twice in this array, which is one longer than the number of
-/// enum values.
-array<pair<LaneWay, char const *>, static_cast<size_t>(LaneWay::Count) + 1> const g_laneWayNames = {
-    {{LaneWay::None, ""},
-     {LaneWay::Through, "through"},
-     {LaneWay::Left, "left"},
-     {LaneWay::Right, "right"},
-     {LaneWay::None, "none"},
-     {LaneWay::SharpLeft, "sharp_left"},
-     {LaneWay::SlightLeft, "slight_left"},
-     {LaneWay::MergeToRight, "merge_to_right"},
-     {LaneWay::MergeToLeft, "merge_to_left"},
-     {LaneWay::SlightRight, "slight_right"},
-     {LaneWay::SharpRight, "sharp_right"},
-     {LaneWay::Reverse, "reverse"}}};
-static_assert(g_laneWayNames.size() == static_cast<size_t>(LaneWay::Count) + 1,
-              "Check the size of g_laneWayNames");
-
 array<pair<CarDirection, char const *>, static_cast<size_t>(CarDirection::Count)> const
     g_turnNames = {{{CarDirection::None, "None"},
                     {CarDirection::GoStraight, "GoStraight"},
@@ -165,19 +142,13 @@ string DebugPrint(SegmentRange const & segmentRange)
 
 namespace turns
 {
-// SingleLaneInfo ---------------------------------------------------------------------------------
-bool SingleLaneInfo::operator==(SingleLaneInfo const & other) const
-{
-  return m_lane == other.m_lane && m_isRecommended == other.m_isRecommended;
-}
-
 string DebugPrint(TurnItem const & turnItem)
 {
   stringstream out;
   out << "TurnItem "
       << "{ m_index = " << turnItem.m_index
       << ", m_turn = " << DebugPrint(turnItem.m_turn)
-      << ", m_lanes = " << ::DebugPrint(turnItem.m_lanes)
+      << ", m_lanes = " << lanes::DebugPrint(turnItem.m_lanes)
       << ", m_exitNum = " << turnItem.m_exitNum
       << ", m_pedestrianDir = " << DebugPrint(turnItem.m_pedestrianTurn)
       << " }";
@@ -242,146 +213,6 @@ bool IsGoStraightOrSlightTurn(CarDirection t)
           t == CarDirection::TurnSlightRight);
 }
 
-bool IsLaneWayConformedTurnDirection(LaneWay l, CarDirection t)
-{
-  switch (t)
-  {
-    default:
-      return false;
-    case CarDirection::GoStraight:
-      return l == LaneWay::Through;
-    case CarDirection::TurnRight:
-      return l == LaneWay::Right;
-    case CarDirection::TurnSharpRight:
-      return l == LaneWay::SharpRight;
-    case CarDirection::TurnSlightRight:
-    case CarDirection::ExitHighwayToRight:
-      return l == LaneWay::SlightRight;
-    case CarDirection::TurnLeft:
-      return l == LaneWay::Left;
-    case CarDirection::TurnSharpLeft:
-      return l == LaneWay::SharpLeft;
-    case CarDirection::TurnSlightLeft:
-    case CarDirection::ExitHighwayToLeft:
-      return l == LaneWay::SlightLeft;
-    case CarDirection::UTurnLeft:
-    case CarDirection::UTurnRight:
-      return l == LaneWay::Reverse;
-  }
-}
-
-bool IsLaneWayConformedTurnDirectionApproximately(LaneWay l, CarDirection t)
-{
-  switch (t)
-  {
-    default:
-      return false;
-    case CarDirection::GoStraight:
-      return l == LaneWay::Through || l == LaneWay::SlightRight || l == LaneWay::SlightLeft;
-    case CarDirection::TurnRight:
-      return l == LaneWay::Right || l == LaneWay::SharpRight || l == LaneWay::SlightRight;
-    case CarDirection::TurnSharpRight:
-      return l == LaneWay::SharpRight || l == LaneWay::Right;
-    case CarDirection::TurnSlightRight:
-      return l == LaneWay::SlightRight || l == LaneWay::Through || l == LaneWay::Right;
-    case CarDirection::TurnLeft:
-      return l == LaneWay::Left || l == LaneWay::SlightLeft || l == LaneWay::SharpLeft;
-    case CarDirection::TurnSharpLeft:
-      return l == LaneWay::SharpLeft || l == LaneWay::Left;
-    case CarDirection::TurnSlightLeft:
-      return l == LaneWay::SlightLeft || l == LaneWay::Through || l == LaneWay::Left;
-    case CarDirection::UTurnLeft:
-    case CarDirection::UTurnRight:
-      return l == LaneWay::Reverse;
-    case CarDirection::ExitHighwayToLeft:
-      return l == LaneWay::SlightLeft || l == LaneWay::Left;
-    case CarDirection::ExitHighwayToRight:
-      return l == LaneWay::SlightRight || l == LaneWay::Right;
-  }
-}
-
-bool IsLaneUnrestricted(const SingleLaneInfo & lane)
-{
-  /// @todo Is there any reason to store None single lane?
-  return lane.m_lane.size() == 1 && lane.m_lane[0] == LaneWay::None;
-}
-
-void SplitLanes(string const & lanesString, char delimiter, vector<string> & lanes)
-{
-  lanes.clear();
-  istringstream lanesStream(lanesString);
-  string token;
-  while (getline(lanesStream, token, delimiter))
-  {
-    lanes.push_back(token);
-  }
-}
-
-bool ParseSingleLane(string const & laneString, char delimiter, TSingleLane & lane)
-{
-  lane.clear();
-  // When `laneString` ends with "" representing none, for example, in "right;",
-  // `getline` will not read any characters, so it exits the loop and does not
-  // handle the "". So, we add a delimiter to the end of `laneString`. Nonempty
-  // final tokens consume the delimiter and act as expected, and empty final tokens
-  // read a the delimiter, so `getline` sets `token` to the empty string rather than
-  // exiting the loop.
-  istringstream laneStream(laneString + delimiter);
-  string token;
-  while (getline(laneStream, token, delimiter))
-  {
-    auto const it = find_if(g_laneWayNames.begin(), g_laneWayNames.end(),
-                            [&token](pair<LaneWay, string> const & p)
-    {
-        return p.second == token;
-    });
-    if (it == g_laneWayNames.end())
-      return false;
-    lane.push_back(it->first);
-  }
-  return true;
-}
-
-bool ParseLanes(string lanesString, vector<SingleLaneInfo> & lanes)
-{
-  if (lanesString.empty())
-    return false;
-  lanes.clear();
-  strings::AsciiToLower(lanesString);
-  base::EraseIf(lanesString, [](char c) { return isspace(c); });
-
-  vector<string> SplitLanesStrings;
-  SingleLaneInfo lane;
-  SplitLanes(lanesString, '|', SplitLanesStrings);
-  for (string const & s : SplitLanesStrings)
-  {
-    if (!ParseSingleLane(s, ';', lane.m_lane))
-    {
-      lanes.clear();
-      return false;
-    }
-    lanes.push_back(lane);
-  }
-  return true;
-}
-
-string DebugPrint(LaneWay const l)
-{
-  auto const it = find_if(g_laneWayNames.begin(), g_laneWayNames.end(),
-                          [&l](pair<LaneWay, string> const & p)
-  {
-    return p.first == l;
-  });
-
-  if (it == g_laneWayNames.end())
-  {
-    stringstream out;
-    out << "unknown LaneWay (" << static_cast<int>(l) << ")";
-    return out.str();
-  }
-  return it->second;
-}
-
 string DebugPrint(CarDirection const turn)
 {
   return GetTurnString(turn);
@@ -404,14 +235,6 @@ string DebugPrint(PedestrianDirection const l)
 
   ASSERT(false, (static_cast<int>(l)));
   return "unknown PedestrianDirection";
-}
-
-string DebugPrint(SingleLaneInfo const & singleLaneInfo)
-{
-  stringstream out;
-  out << "SingleLaneInfo [ m_isRecommended == " << singleLaneInfo.m_isRecommended
-      << ", m_lane == " << ::DebugPrint(singleLaneInfo.m_lane) << " ]" << endl;
-  return out.str();
 }
 
 double PiMinusTwoVectorsAngle(m2::PointD const & junctionPoint, m2::PointD const & ingoingPoint,

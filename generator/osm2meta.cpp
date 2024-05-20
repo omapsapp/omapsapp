@@ -1,5 +1,7 @@
 #include "generator/osm2meta.hpp"
 
+#include "generator/turn_lanes_metadata_processor.hpp"
+
 #include "indexer/classificator.hpp"
 #include "indexer/ftypes_matcher.hpp"
 #include "indexer/editable_map_object.hpp"
@@ -171,17 +173,7 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_junction_ref(std::string
 
 std::string MetadataTagProcessorImpl::ValidateAndFormat_turn_lanes(std::string const & v)
 {
-  return v;
-}
-
-std::string MetadataTagProcessorImpl::ValidateAndFormat_turn_lanes_forward(std::string const & v)
-{
-  return v;
-}
-
-std::string MetadataTagProcessorImpl::ValidateAndFormat_turn_lanes_backward(std::string const & v)
-{
-  return v;
+  return generator::TurnLanesMetadataProcessor::ValidateAndFormat(v);
 }
 
 std::string MetadataTagProcessorImpl::ValidateAndFormat_email(std::string const & v)
@@ -518,9 +510,9 @@ void MetadataTagProcessor::operator()(std::string const & k, std::string const &
   case Metadata::FMD_DESTINATION: valid = ValidateAndFormat_destination(v); break;
   case Metadata::FMD_DESTINATION_REF: valid = ValidateAndFormat_destination_ref(v); break;
   case Metadata::FMD_JUNCTION_REF: valid = ValidateAndFormat_junction_ref(v); break;
-  case Metadata::FMD_TURN_LANES: valid = ValidateAndFormat_turn_lanes(v); break;
-  case Metadata::FMD_TURN_LANES_FORWARD: valid = ValidateAndFormat_turn_lanes_forward(v); break;
-  case Metadata::FMD_TURN_LANES_BACKWARD: valid = ValidateAndFormat_turn_lanes_backward(v); break;
+  case Metadata::FMD_TURN_LANES:
+  case Metadata::FMD_TURN_LANES_FORWARD:
+  case Metadata::FMD_TURN_LANES_BACKWARD: valid = ValidateAndFormat_turn_lanes(v); break;
   case Metadata::FMD_EMAIL: valid = ValidateAndFormat_email(v); break;
   case Metadata::FMD_POSTCODE: valid = ValidateAndFormat_postcode(v); break;
   case Metadata::FMD_WIKIPEDIA: valid = ValidateAndFormat_wikipedia(v); break;

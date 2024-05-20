@@ -6,8 +6,6 @@
 
 #include "geometry/angles.hpp"
 
-#include <limits.h>
-
 namespace routing
 {
 using namespace std;
@@ -85,7 +83,7 @@ void FixupCarTurns(vector<RouteSegment> & routeSegments)
         routeSegments[idx - 1].ClearTurn();
     }
   }
-  SelectRecommendedLanes(routeSegments);
+  lanes::SelectRecommendedLanes(routeSegments);
 }
 
 void GetTurnDirectionBasic(IRoutingResult const & result, size_t const outgoingSegmentIndex,
@@ -599,73 +597,4 @@ size_t CheckUTurnOnRoute(IRoutingResult const & result, size_t const outgoingSeg
 
   return 0;
 }
-
-bool FixupLaneSet(CarDirection turn, vector<SingleLaneInfo> & lanes, bool (*checker)(LaneWay, CarDirection))
-{
-  bool isLaneConformed = false;
-  // There are two nested loops below. (There is a for-loop in checker.)
-  // But the number of calls of the body of inner one (in checker) is relatively small.
-  // Less than 10 in most cases.
-  for (auto & singleLane : lanes)
-  {
-    for (LaneWay laneWay : singleLane.m_lane)
-    {
-      if (checker(laneWay, turn))
-      {
-        singleLane.m_isRecommended = true;
-        isLaneConformed = true;
-        break;
-      }
-    }
-  }
-  return isLaneConformed;
-}
-
-template <typename It>
-bool SelectFirstUnrestrictedLane(LaneWay direction, It lanesBegin, It lanesEnd)
-{
-  const It firstUnrestricted = find_if(lanesBegin, lanesEnd, IsLaneUnrestricted);
-  if (firstUnrestricted == lanesEnd)
-    return false;
-
-  firstUnrestricted->m_isRecommended = true;
-  firstUnrestricted->m_lane.insert(firstUnrestricted->m_lane.begin(), direction);
-  return true;
-}
-
-bool SelectUnrestrictedLane(CarDirection turn, vector<SingleLaneInfo> & lanes)
-{
-  if (IsTurnMadeFromLeft(turn))
-    return SelectFirstUnrestrictedLane(LaneWay::Left, lanes.begin(), lanes.end());
-  else if (IsTurnMadeFromRight(turn))
-    return SelectFirstUnrestrictedLane(LaneWay::Right, lanes.rbegin(), lanes.rend());
-  return false;
-}
-
-void SelectRecommendedLanes(vector<RouteSegment> & routeSegments)
-{
-  for (auto & segment : routeSegments)
-  {
-    auto & t = segment.GetTurn();
-    if (t.IsTurnNone() || t.m_lanes.empty())
-      continue;
-    auto & lanes = segment.GetTurnLanes();
-    // Checking if there are elements in lanes which correspond with the turn exactly.
-    // If so fixing up all the elements in lanes which correspond with the turn.
-    if (FixupLaneSet(t.m_turn, lanes, &IsLaneWayConformedTurnDirection))
-      continue;
-    // If not checking if there are elements in lanes which corresponds with the turn
-    // approximately. If so fixing up all these elements.
-    if (FixupLaneSet(t.m_turn, lanes, &IsLaneWayConformedTurnDirectionApproximately))
-      continue;
-    // If not, check if there is an unrestricted lane which could correspond to the
-    // turn. If so, fix up that lane.
-    if (SelectUnrestrictedLane(t.m_turn, lanes))
-      continue;
-    // Otherwise, we don't have lane recommendations for the user, so we don't
-    // want to send the lane data any further.
-    segment.ClearTurnLanes();
-  }
-}
-
 }  // namespace routing

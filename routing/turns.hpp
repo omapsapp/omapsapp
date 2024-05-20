@@ -1,6 +1,7 @@
 #pragma once
 
 #include "routing/segment.hpp"
+#include "routing/lanes.hpp"
 
 #include "routing_common/num_mwm_id.hpp"
 
@@ -118,41 +119,6 @@ enum class PedestrianDirection
 
 std::string DebugPrint(PedestrianDirection const l);
 
-/*!
- * \warning The values of LaneWay shall be synchronized with values of LaneWay enum in java.
- */
-enum class LaneWay
-{
-  None = 0,
-  Reverse,
-  SharpLeft,
-  Left,
-  SlightLeft,
-  MergeToRight,
-  Through,
-  MergeToLeft,
-  SlightRight,
-  Right,
-  SharpRight,
-  Count  /**< This value is used for internals only. */
-};
-
-std::string DebugPrint(LaneWay const l);
-
-typedef std::vector<LaneWay> TSingleLane;
-
-struct SingleLaneInfo
-{
-  TSingleLane m_lane;
-  bool m_isRecommended = false;
-
-  SingleLaneInfo() = default;
-  SingleLaneInfo(std::initializer_list<LaneWay> const & l) : m_lane(l) {}
-  bool operator==(SingleLaneInfo const & other) const;
-};
-
-std::string DebugPrint(SingleLaneInfo const & singleLaneInfo);
-
 struct TurnItem
 {
   TurnItem()
@@ -192,10 +158,10 @@ struct TurnItem
     return m_turn == CarDirection::None && m_pedestrianTurn == PedestrianDirection::None;
   }
 
-  uint32_t m_index;                    /*!< Index of point on route polyline (Index of segment + 1). */
-  CarDirection m_turn = CarDirection::None; /*!< The turn instruction of the TurnItem */
-  std::vector<SingleLaneInfo> m_lanes; /*!< Lane information on the edge before the turn. */
-  uint32_t m_exitNum;                  /*!< Number of exit on roundabout. */
+  uint32_t m_index;                         // Index of point on route polyline (Index of segment + 1).
+  CarDirection m_turn = CarDirection::None; // The turn instruction of the TurnItem.
+  lanes::LanesInfo m_lanes;                 // Lane information on the edge before the turn.
+  uint32_t m_exitNum;                       // Number of exit on roundabout.
   /*!
    * \brief m_pedestrianTurn is type of corresponding direction for a pedestrian, or None
    * if there is no pedestrian specific direction
@@ -228,38 +194,6 @@ bool IsTurnMadeFromLeft(CarDirection t);
 bool IsTurnMadeFromRight(CarDirection t);
 bool IsStayOnRoad(CarDirection t);
 bool IsGoStraightOrSlightTurn(CarDirection t);
-
-/*!
- * \param l A variant of going along a lane.
- * \param t A turn direction.
- * \return True if @l corresponds with @t exactly. For example it returns true
- * when @l equals to LaneWay::Right and @t equals to TurnDirection::TurnRight.
- * Otherwise it returns false.
- */
-bool IsLaneWayConformedTurnDirection(LaneWay l, CarDirection t);
-
-/*!
- * \param l A variant of going along a lane.
- * \param t A turn direction.
- * \return True if @l corresponds with @t approximately. For example it returns true
- * when @l equals to LaneWay::Right and @t equals to TurnDirection::TurnSlightRight.
- * Otherwise it returns false.
- */
-bool IsLaneWayConformedTurnDirectionApproximately(LaneWay l, CarDirection t);
-
-bool IsLaneUnrestricted(const SingleLaneInfo & lane);
-
-/*!
- * \brief Parse lane information which comes from @lanesString
- * \param lanesString lane information. Example through|through|through|through;right
- * \param lanes the result of parsing.
- * \return true if @lanesString parsed successfully, false otherwise.
- * Note 1: if @lanesString is empty returns false.
- * Note 2: @laneString is passed by value on purpose. It'll be used(changed) in the method.
- */
-bool ParseLanes(std::string lanesString, std::vector<SingleLaneInfo> & lanes);
-void SplitLanes(std::string const & lanesString, char delimiter, std::vector<std::string> & lanes);
-bool ParseSingleLane(std::string const & laneString, char delimiter, TSingleLane & lane);
 
 /*!
  * \returns pi minus angle from vector [junctionPoint, ingoingPoint]

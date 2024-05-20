@@ -20,9 +20,7 @@ struct MetadataTagProcessorImpl
   static std::string ValidateAndFormat_local_ref(std::string const & v) ;
   static std::string ValidateAndFormat_destination_ref(std::string const & v) ;
   static std::string ValidateAndFormat_junction_ref(std::string const & v) ;
-  static std::string ValidateAndFormat_turn_lanes(std::string const & v) ;
-  static std::string ValidateAndFormat_turn_lanes_forward(std::string const & v) ;
-  static std::string ValidateAndFormat_turn_lanes_backward(std::string const & v) ;
+  static std::string ValidateAndFormat_turn_lanes(std::string const & v);
   static std::string ValidateAndFormat_email(std::string const & v) ;
   static std::string ValidateAndFormat_postcode(std::string const & v) ;
   static std::string ValidateAndFormat_flats(std::string const & v) ;

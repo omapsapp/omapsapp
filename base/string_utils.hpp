@@ -319,10 +319,11 @@ public:
   bool operator()(UniChar c) const;
 };
 
-template <class StringT> class SimpleTokenizer : public
-    TokenizeIterator<SimpleDelimiter, ::utf8::unchecked::iterator<typename StringT::const_iterator>, false /* KeepEmptyTokens */>
+template <class StringT, bool KeepEmptyTokens = false>
+class SimpleTokenizer : public
+    TokenizeIterator<SimpleDelimiter, ::utf8::unchecked::iterator<typename StringT::const_iterator>, KeepEmptyTokens>
 {
-  using BaseT = TokenizeIterator<SimpleDelimiter, ::utf8::unchecked::iterator<typename StringT::const_iterator>, false /* KeepEmptyTokens */>;
+  using BaseT = TokenizeIterator<SimpleDelimiter, ::utf8::unchecked::iterator<typename StringT::const_iterator>, KeepEmptyTokens>;
 public:
   SimpleTokenizer(StringT const & str, SimpleDelimiter const & delims)
     : BaseT(str.begin(), str.end(), delims)
@@ -330,10 +331,10 @@ public:
   }
 };
 
-template <typename TFunctor>
+template <typename TFunctor, bool KeepEmptyTokens = false>
 void Tokenize(std::string_view str, char const * delims, TFunctor && f)
 {
-  SimpleTokenizer iter(str, delims);
+  SimpleTokenizer<std::string_view, KeepEmptyTokens> iter(str, delims);
   while (iter)
   {
     f(*iter);
@@ -342,11 +343,12 @@ void Tokenize(std::string_view str, char const * delims, TFunctor && f)
 }
 
 /// @note Lifetime of return container is the same as \a str lifetime. Avoid temporary input.
-template <class ResultT = std::string_view>
+template <class ResultT = std::string_view, bool KeepEmtyTokens = false>
 std::vector<ResultT> Tokenize(std::string_view str, char const * delims)
 {
   std::vector<ResultT> c;
-  Tokenize(str, delims, [&c](std::string_view v) { c.push_back(ResultT(v)); });
+  auto f = [&c](std::string_view v) { c.push_back(ResultT(v)); };
+  Tokenize<decltype(f), KeepEmtyTokens>(str, delims, std::move(f));
   return c;
 }
 
@@ -424,6 +426,16 @@ bool ToInteger(char const * start, T & result, int base = 10)
 }
 
 [[nodiscard]] inline bool to_uint(char const * s, unsigned int & i, int base = 10)
+{
+  return internal::ToInteger(s, i, base);
+}
+
+[[nodiscard]] inline bool to_int16(char const * s, short & i, int base = 10)
+{
+  return internal::ToInteger(s, i, base);
+}
+
+[[nodiscard]] inline bool to_uint16(char const * s, unsigned short & i, int base = 10)
 {
   return internal::ToInteger(s, i, base);
 }

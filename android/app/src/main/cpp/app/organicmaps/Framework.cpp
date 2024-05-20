@@ -1244,7 +1244,7 @@ Java_app_organicmaps_Framework_nativeGetRouteFollowingInfo(JNIEnv * env, jclass)
                             "Ljava/lang/String;Ljava/lang/String;DIIIII"
                             "[Lapp/organicmaps/routing/SingleLaneInfo;ZZ)V");
 
-  vector<routing::FollowingInfo::SingleLaneInfoClient> const & lanes = info.m_lanes;
+  auto const & lanes = info.m_lanes;
   jobjectArray jLanes = nullptr;
   if (!lanes.empty())
   {
@@ -1252,18 +1252,13 @@ Java_app_organicmaps_Framework_nativeGetRouteFollowingInfo(JNIEnv * env, jclass)
     auto const lanesSize = static_cast<jsize>(lanes.size());
     jLanes = env->NewObjectArray(lanesSize, laneClass, nullptr);
     ASSERT(jLanes, (jni::DescribeException()));
-    static jmethodID const ctorSingleLaneInfoID = jni::GetConstructorID(env, laneClass, "([BZ)V");
+    static jmethodID const ctorSingleLaneInfoID = jni::GetConstructorID(env, laneClass, "(SS)V");
 
     for (jsize j = 0; j < lanesSize; ++j)
     {
-      auto const laneSize = static_cast<jsize>(lanes[j].m_lane.size());
-      jni::TScopedLocalByteArrayRef singleLane(env, env->NewByteArray(laneSize));
-      ASSERT(singleLane.get(), (jni::DescribeException()));
-      env->SetByteArrayRegion(singleLane.get(), 0, laneSize, lanes[j].m_lane.data());
-
       jni::TScopedLocalRef singleLaneInfo(
-          env, env->NewObject(laneClass, ctorSingleLaneInfoID, singleLane.get(),
-                              lanes[j].m_isRecommended));
+          env, env->NewObject(laneClass, ctorSingleLaneInfoID, static_cast<jshort>(lanes[j].m_laneWays.data),
+                              static_cast<jshort>(lanes[j].m_recommendedLaneWays.data)));
       ASSERT(singleLaneInfo.get(), (jni::DescribeException()));
       env->SetObjectArrayElement(jLanes, j, singleLaneInfo.get());
     }

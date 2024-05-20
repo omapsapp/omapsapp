@@ -80,6 +80,8 @@ set(SRC
   joint_segment.hpp
   junction_visitor.cpp
   junction_visitor.hpp
+  lanes.cpp
+  lanes.hpp
   latlon_with_altitude.cpp
   latlon_with_altitude.hpp
   leaps_graph.cpp

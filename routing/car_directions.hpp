@@ -24,11 +24,6 @@ protected:
   virtual void FixupTurns(std::vector<RouteSegment> & routeSegments);
 };
 
-/*!
- * \brief Selects lanes which are recommended for an end user.
- */
-void SelectRecommendedLanes(std::vector<RouteSegment> & routeSegments);
-
 void FixupCarTurns(std::vector<RouteSegment> & routeSegments);
 
 /*!

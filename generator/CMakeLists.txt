@@ -225,6 +225,8 @@ set(SRC
   translator_world.hpp
   translators_pool.cpp
   translators_pool.hpp
+  turn_lanes_metadata_processor.cpp
+  turn_lanes_metadata_processor.hpp
   unpack_mwm.cpp
   unpack_mwm.hpp
   utils.cpp

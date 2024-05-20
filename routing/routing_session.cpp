@@ -431,14 +431,7 @@ void RoutingSession::GetRouteFollowingInfo(FollowingInfo & info) const
   if (distanceToTurnMeters < kShowLanesMinDistInMeters || timeToNearestTurnSec < 60.0)
   {
     info.m_displayedStreetName = info.m_targetName;
-    // There are two nested loops below. Outer one is for lanes and inner one (ctor of
-    // SingleLaneInfo) is
-    // for each lane's directions. The size of turn.m_lanes is relatively small. Less than 10 in
-    // most cases.
-    info.m_lanes.clear();
-    info.m_lanes.reserve(turn.m_lanes.size());
-    for (size_t j = 0; j < turn.m_lanes.size(); ++j)
-      info.m_lanes.emplace_back(turn.m_lanes[j]);
+    info.m_lanes = turn.m_lanes;
   }
   else
   {
