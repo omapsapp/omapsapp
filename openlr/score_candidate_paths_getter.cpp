@@ -222,8 +222,7 @@ void ScoreCandidatePathsGetter::GetAllSuitablePaths(ScoreEdgeVec const & startLi
 
 void ScoreCandidatePathsGetter::GetBestCandidatePaths(vector<shared_ptr<Link>> const & allPaths,
                                                       LinearSegmentSource source, bool isLastPoint,
-                                                      uint32_t requiredBearing, double bearDistM,
-                                                      m2::PointD const & startPoint,
+                                                      uint32_t requiredBearing, double bearDistM, m2::PointD const &,
                                                       ScorePathVec & candidates)
 {
   CHECK_NOT_EQUAL(source, LinearSegmentSource::NotValid, ());

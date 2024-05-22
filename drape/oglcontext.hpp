@@ -11,11 +11,11 @@ public:
   ApiVersion GetApiVersion() const override;
   std::string GetRendererName() const override;
   std::string GetRendererVersion() const override;
-  void ForgetFramebuffer(ref_ptr<dp::BaseFramebuffer> framebuffer) override {}
-  void ApplyFramebuffer(std::string const & framebufferLabel) override {}
+  void ForgetFramebuffer(ref_ptr<dp::BaseFramebuffer>) override {}
+  void ApplyFramebuffer(std::string const &) override {}
 
   void DebugSynchronizeWithCPU() override;
-  void PushDebugLabel(std::string const & label) override {}
+  void PushDebugLabel(std::string const &) override {}
   void PopDebugLabel() override {}
 
   void SetClearColor(dp::Color const & color) override;
@@ -30,6 +30,6 @@ public:
                          StencilAction passAction) override;
   
   // Do not use custom stencil reference value in OpenGL rendering.
-  void SetStencilReferenceValue(uint32_t stencilReferenceValue) override {}
+  void SetStencilReferenceValue(uint32_t) override {}
 };
 }  // namespace dp

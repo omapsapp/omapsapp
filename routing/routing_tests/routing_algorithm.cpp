@@ -45,7 +45,7 @@ void UndirectedGraph::GetOutgoingEdgesList(astar::VertexData<Vertex, Weight> con
   GetEdgesList(vertexData.m_vertex, true /* isOutgoing */, adj);
 }
 
-double UndirectedGraph::HeuristicCostEstimate(Vertex const & v, Vertex const & w)
+double UndirectedGraph::HeuristicCostEstimate(Vertex const &, Vertex const &)
 {
   return 0.0;
 }

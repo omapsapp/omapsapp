@@ -281,7 +281,7 @@ Storage::WorldStatus Storage::GetForceDownloadWorlds(std::vector<platform::Count
   return (anyWorldWasMoved && res.empty() ? WorldStatus::WAS_MOVED : WorldStatus::READY);
 }
 
-void Storage::RegisterAllLocalMaps(bool enableDiffs /* = false */)
+void Storage::RegisterAllLocalMaps(bool /* enableDiffs = false */)
 {
   //CHECK_THREAD_CHECKER(m_threadChecker, ());
   //ASSERT(!IsDownloadInProgress(), ());

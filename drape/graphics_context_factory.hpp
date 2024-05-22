@@ -18,8 +18,8 @@ public:
   virtual GraphicsContext * GetResourcesUploadContext() = 0;
   virtual bool IsDrawContextCreated() const { return false; }
   virtual bool IsUploadContextCreated() const { return false; }
-  virtual void WaitForInitialization(dp::GraphicsContext * context) {}
-  virtual void SetPresentAvailable(bool available) {}
+  virtual void WaitForInitialization(dp::GraphicsContext * /* context */) {}
+  virtual void SetPresentAvailable(bool /* available */) {}
 };
 
 class ThreadSafeFactory : public GraphicsContextFactory

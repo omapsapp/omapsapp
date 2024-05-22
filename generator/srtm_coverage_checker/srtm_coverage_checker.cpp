@@ -66,7 +66,7 @@ int main(int argc, char * argv[])
 
     size_t all = 0;
     size_t good = 0;
-    feature::ForEachFeature(path, [&](FeatureType & ft, uint32_t fid) {
+    feature::ForEachFeature(path, [&](FeatureType & ft, uint32_t /* fid */) {
       if (!routing::IsRoad(feature::TypesHolder(ft)))
         return;
 

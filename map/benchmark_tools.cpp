@@ -58,13 +58,13 @@ void RunScenario(Framework * framework, std::shared_ptr<BenchmarkHandle> handle)
   auto & scenarioData = handle->m_scenariosToRun[handle->m_currentScenario];
 
   framework->GetDrapeEngine()->RunScenario(std::move(scenarioData),
-                                           [handle](std::string const & name)
+                                           [handle](std::string const & /* name */)
   {
 #ifdef DRAPE_MEASURER_BENCHMARK
     df::DrapeMeasurer::Instance().Start();
 #endif
   },
-  [framework, handle](std::string const & name)
+  [framework, handle](std::string const & /* name */)
   {
 #ifdef DRAPE_MEASURER_BENCHMARK
     df::DrapeMeasurer::Instance().Stop();
@@ -204,6 +204,8 @@ void RunGraphicsBenchmark(Framework * framework)
 
   // Run scenarios without downloading.
   RunScenario(framework, handle);
+#else
+  UNUSED_VALUE(framework);
 #endif
 }
 }  // namespace benchmark

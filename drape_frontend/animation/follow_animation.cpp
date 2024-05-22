@@ -180,7 +180,7 @@ bool MapFollowAnimation::GetTargetProperty(Object object, ObjectProperty propert
   return GetProperty(object, property, true /* targetValue */, value);
 }
 
-bool MapFollowAnimation::GetProperty(Object object, ObjectProperty property, bool targetValue, PropertyValue & value) const
+bool MapFollowAnimation::GetProperty(Object, ObjectProperty property, bool targetValue, PropertyValue & value) const
 {
   if (property == Animation::ObjectProperty::Position)
   {

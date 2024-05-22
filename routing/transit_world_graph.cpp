@@ -24,9 +24,8 @@ TransitWorldGraph::TransitWorldGraph(unique_ptr<CrossMwmGraph> crossMwmGraph,
   CHECK(m_estimator, ());
 }
 
-void TransitWorldGraph::GetEdgeList(astar::VertexData<Segment, RouteWeight> const & vertexData,
-                                    bool isOutgoing, bool useRoutingOptions,
-                                    bool useAccessConditional, SegmentEdgeListT & edges)
+void TransitWorldGraph::GetEdgeList(astar::VertexData<Segment, RouteWeight> const & vertexData, bool isOutgoing,
+                                    bool useRoutingOptions, bool, SegmentEdgeListT & edges)
 {
   auto const & segment = vertexData.m_vertex;
   auto & transitGraph = GetTransitGraph(segment.GetMwmId());
@@ -69,10 +68,8 @@ void TransitWorldGraph::GetEdgeList(astar::VertexData<Segment, RouteWeight> cons
   edges.append(fakeFromReal.begin(), fakeFromReal.end());
 }
 
-void TransitWorldGraph::GetEdgeList(
-    astar::VertexData<JointSegment, RouteWeight> const & parentVertexData, Segment const & segment,
-    bool isOutgoing, bool useAccessConditional, JointEdgeListT & edges,
-    WeightListT & parentWeights)
+void TransitWorldGraph::GetEdgeList(astar::VertexData<JointSegment, RouteWeight> const &, Segment const &, bool, bool,
+                                    JointEdgeListT &, WeightListT &)
 {
   CHECK(false, ("TransitWorldGraph does not support Joints mode."));
 }

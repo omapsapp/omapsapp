@@ -53,7 +53,7 @@ public:
   bool HasPartialTextureUpdates() const override;
 
   void DebugSynchronizeWithCPU() override {}
-  void PushDebugLabel(std::string const & label) override {}
+  void PushDebugLabel(std::string const &) override {}
   void PopDebugLabel() override {}
 
   void SetClearColor(Color const & color) override;

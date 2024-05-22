@@ -294,7 +294,7 @@ RoadGeometry const & Geometry::GetRoad(uint32_t featureId)
   return m_featureIdToRoad->GetValue(featureId);
 }
 
-SpeedInUnits GeometryLoader::GetSavedMaxspeed(uint32_t featureId, bool forward)
+SpeedInUnits GeometryLoader::GetSavedMaxspeed(uint32_t, bool)
 {
   UNREACHABLE();
 }

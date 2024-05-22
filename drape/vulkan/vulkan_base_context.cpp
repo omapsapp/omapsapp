@@ -326,7 +326,7 @@ void VulkanBaseContext::ForgetFramebuffer(ref_ptr<dp::BaseFramebuffer> framebuff
   DestroyRenderPassAndFramebuffer(framebuffer);
 }
 
-void VulkanBaseContext::ApplyFramebuffer(std::string const & framebufferLabel)
+void VulkanBaseContext::ApplyFramebuffer(std::string const &)
 {
   vkCmdSetStencilReference(m_renderingCommandBuffers[m_inflightFrameIndex], VK_STENCIL_FRONT_AND_BACK,
                            m_stencilReferenceValue);

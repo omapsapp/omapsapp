@@ -11,7 +11,7 @@ namespace downloader_tests
 
 class DownloaderStub : public storage::MapFilesDownloaderWithPing
 {
-  virtual void Download(storage::QueuedCountry && queuedCountry)
+  void Download(storage::QueuedCountry &&) override
   {
   }
 };

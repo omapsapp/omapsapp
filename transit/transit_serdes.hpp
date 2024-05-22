@@ -61,6 +61,7 @@ public:
   std::enable_if_t<std::is_same<T, int32_t>::value || std::is_same<T, int64_t>::value> operator()(
       T t, char const * name = nullptr) const
   {
+    UNUSED_VALUE(name);
     WriteVarInt(m_sink, t);
   }
 
@@ -210,21 +211,21 @@ public:
   std::enable_if_t<(std::is_integral<T>::value || std::is_enum<T>::value) &&
                    !std::is_same<T, uint32_t>::value && !std::is_same<T, uint64_t>::value &&
                    !std::is_same<T, int32_t>::value && !std::is_same<T, int64_t>::value>
-  operator()(T & t, char const * name = nullptr)
+  operator()(T & t, char const * /* name */ = nullptr)
   {
     ReadPrimitiveFromSource(m_source, t);
   }
 
   template <typename T>
   std::enable_if_t<std::is_same<T, uint32_t>::value || std::is_same<T, uint64_t>::value> operator()(
-      T & t, char const * name = nullptr)
+      T & t, char const * /* name */ = nullptr)
   {
     t = ReadVarUint<T>(m_source);
   }
 
   template <typename T>
   std::enable_if_t<std::is_same<T, int32_t>::value || std::is_same<T, int64_t>::value> operator()(
-      T & t, char const * name = nullptr)
+      T & t, char const * /* name */ = nullptr)
   {
     t = ReadVarInt<T>(m_source);
   }
@@ -288,7 +289,7 @@ public:
     idBundle.Visit(*this);
   }
 
-  void operator()(Edge & e, char const * name = nullptr)
+  void operator()(Edge & e, char const * /* name */ = nullptr)
   {
     (*this)(e.m_stop1Id);
     (*this)(e.m_stop2Id);
@@ -435,7 +436,7 @@ public:
 
   template <typename T>
   std::enable_if_t<std::is_integral<T>::value || std::is_enum<T>::value, void> operator()(
-      T & t, char const * name = nullptr)
+      T & t, char const * /* name */ = nullptr)
   {
     ReadPrimitiveFromSource(m_source, t);
   }

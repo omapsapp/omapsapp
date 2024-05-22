@@ -36,9 +36,8 @@ public:
   // IRouter overrides:
   string GetName() const override { return "Dummy"; }
   void SetGuides(GuidesTracks && /* guides */) override {}
-  RouterResultCode CalculateRoute(Checkpoints const & checkpoints, m2::PointD const & startDirection,
-                            bool adjustToPrevRoute, RouterDelegate const & delegate,
-                            Route & route) override
+  RouterResultCode CalculateRoute(Checkpoints const & checkpoints, m2::PointD const &, bool, RouterDelegate const &,
+                                  Route & route) override
   {
     route = Route("dummy", checkpoints.GetPoints().cbegin(), checkpoints.GetPoints().cend(),
                   0 /* route id */);
@@ -49,8 +48,7 @@ public:
     return m_result;
   }
 
-  bool FindClosestProjectionToRoad(m2::PointD const & point, m2::PointD const & direction,
-                                   double radius, EdgeProj & proj) override
+  bool FindClosestProjectionToRoad(m2::PointD const &, m2::PointD const &, double, EdgeProj &) override
   {
     return false;
   }
@@ -77,7 +75,7 @@ struct DummyRoutingCallbacks
   }
 
   // NeedMoreMapsCallback callback
-  void operator()(uint64_t routeId, set<string> const & absent)
+  void operator()(uint64_t /* routeId */, set<string> const & absent)
   {
     m_codes.push_back(RouterResultCode::NeedMoreMaps);
     m_absent.emplace_back(absent);

@@ -77,9 +77,8 @@ void SingleVehicleWorldGraph::CheckAndProcessTransitFeatures(Segment const & par
   jointEdges.insert(jointEdges.end(), newCrossMwmEdges.begin(), newCrossMwmEdges.end());
 }
 
-void SingleVehicleWorldGraph::GetEdgeList(
-    astar::VertexData<Segment, RouteWeight> const & vertexData, bool isOutgoing,
-    bool useRoutingOptions, bool useAccessConditional, SegmentEdgeListT & edges)
+void SingleVehicleWorldGraph::GetEdgeList(astar::VertexData<Segment, RouteWeight> const & vertexData, bool isOutgoing,
+                                          bool useRoutingOptions, bool, SegmentEdgeListT & edges)
 {
   CHECK_NOT_EQUAL(m_mode, WorldGraphMode::LeapsOnly, ());
 
@@ -94,10 +93,9 @@ void SingleVehicleWorldGraph::GetEdgeList(
     GetTwins(segment, isOutgoing, useRoutingOptions, edges);
 }
 
-void SingleVehicleWorldGraph::GetEdgeList(
-    astar::VertexData<JointSegment, RouteWeight> const & parentVertexData, Segment const & parent,
-    bool isOutgoing, bool useAccessConditional, JointEdgeListT & jointEdges,
-    WeightListT & parentWeights)
+void SingleVehicleWorldGraph::GetEdgeList(astar::VertexData<JointSegment, RouteWeight> const & parentVertexData,
+                                          Segment const & parent, bool isOutgoing, bool, JointEdgeListT & jointEdges,
+                                          WeightListT & parentWeights)
 {
   // Fake segments aren't processed here. All work must be done
   // on the IndexGraphStarterJoints abstraction-level.
@@ -117,8 +115,7 @@ void SingleVehicleWorldGraph::GetEdgeList(
   ASSERT_EQUAL(jointEdges.size(), parentWeights.size(), ());
 }
 
-LatLonWithAltitude const & SingleVehicleWorldGraph::GetJunction(Segment const & segment,
-                                                                         bool front)
+LatLonWithAltitude const & SingleVehicleWorldGraph::GetJunction(Segment const & segment, bool front)
 {
   return GetRoadGeometry(segment.GetMwmId(), segment.GetFeatureId())
          .GetJunction(segment.GetPointId(front));

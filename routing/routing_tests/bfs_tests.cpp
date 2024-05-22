@@ -164,7 +164,7 @@ UNIT_TEST(BFS_ReconstructPathTest)
   DirectedGraph graph = BuildSmallDirectedCyclicGraph();
 
   BFS<DirectedGraph> bfs(graph);
-  bfs.Run(0 /* start */, true /* isOutgoing */, [&](auto const & state) { return true; });
+  bfs.Run(0 /* start */, true /* isOutgoing */, [&](auto const &) { return true; });
 
   std::vector<uint32_t> path = bfs.ReconstructPath(2, false /* reverse */);
   std::vector<uint32_t> expected = {0, 1, 2};

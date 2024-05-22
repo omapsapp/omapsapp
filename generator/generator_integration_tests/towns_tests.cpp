@@ -45,8 +45,8 @@ namespace
 {
 class TestAffiliation : public feature::AffiliationInterface
 {
-  std::vector<std::string> GetAffiliations(feature::FeatureBuilder const & fb) const override { return {}; }
-  std::vector<std::string> GetAffiliations(m2::PointD const & point) const override { return {}; }
+  std::vector<std::string> GetAffiliations(feature::FeatureBuilder const & /* fb */) const override { return {}; }
+  std::vector<std::string> GetAffiliations(m2::PointD const & /* point */) const override { return {}; }
 
   bool HasCountryByName(std::string const & name) const override
   {

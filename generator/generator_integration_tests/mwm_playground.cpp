@@ -48,9 +48,9 @@ UNIT_TEST(CrossMwmWeights)
   using IdxWeightT = std::pair<uint32_t, uint32_t>;
   std::vector<IdxWeightT> idx2weight;
 
-  connector.ForEachEnter([&](uint32_t enterIdx, Segment const & enter)
+  connector.ForEachEnter([&](uint32_t enterIdx, Segment const &)
   {
-    connector.ForEachExit([&](uint32_t exitIdx, Segment const & exit)
+    connector.ForEachExit([&](uint32_t exitIdx, Segment const &)
     {
       uint32_t const idx = connector.GetWeightIndex(enterIdx, exitIdx);
       uint32_t const weight = connector.GetWeight(enterIdx, exitIdx);

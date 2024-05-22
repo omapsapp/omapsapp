@@ -33,7 +33,7 @@ public:
   virtual void SetIsVisible(bool isVisible);
 
 protected:
-  virtual void SetDirty(bool updateModificationDate = true) { m_isDirty = true; }
+  virtual void SetDirty(bool /* updateModificationDate */ = true) { m_isDirty = true; }
 
   UserMark::Type m_type;
 

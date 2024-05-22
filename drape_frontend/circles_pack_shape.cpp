@@ -112,6 +112,7 @@ void CirclesPackHandle::GetPixelShape(ScreenBase const & screen, bool perspectiv
 {
   UNUSED_VALUE(screen);
   UNUSED_VALUE(perspective);
+  UNUSED_VALUE(rects);
 }
 
 void CirclesPackHandle::SetPoint(size_t index, m2::PointD const & position, float radius,

@@ -49,7 +49,7 @@ static vector<RouteSegment::RoadNameInfo> const kTestNames =
      {"Street3", "", "", "", "", false}};
 
 void GetTestRouteSegments(vector<m2::PointD> const & routePoints, vector<turns::TurnItem> const & turns,
-                          vector<RouteSegment::RoadNameInfo> const & streets, vector<double> const & times,
+                          vector<RouteSegment::RoadNameInfo> const & streets, vector<double> const &,
                           vector<RouteSegment> & routeSegments)
 {
   RouteSegmentsFrom({}, routePoints, turns, streets, routeSegments);

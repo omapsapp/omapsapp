@@ -18,7 +18,7 @@ ArrowAnimation::ArrowAnimation(m2::PointD const & startPos, m2::PointD const & e
     m_properties.insert(Animation::ObjectProperty::Angle);
 }
 
-void ArrowAnimation::Init(ScreenBase const & screen, TPropertyCache const & properties)
+void ArrowAnimation::Init(ScreenBase const &, TPropertyCache const & properties)
 {
   PropertyValue value;
   double minDuration;
@@ -64,7 +64,7 @@ bool ArrowAnimation::HasObject(Object object) const
   return object == Animation::Object::MyPositionArrow;
 }
 
-Animation::TObjectProperties const & ArrowAnimation::GetProperties(Object object) const
+Animation::TObjectProperties const & ArrowAnimation::GetProperties(Object) const
 {
   return m_properties;
 }

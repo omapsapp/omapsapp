@@ -854,7 +854,7 @@ void MyPositionController::ActivateRouting(int zoomLevel, bool enableAutoZoom, b
     ChangeMode(location::FollowAndRotate);
     ChangeModelView(m_position, m_isDirectionAssigned ? m_drawDirection : 0.0,
                     GetRoutingRotationPixelCenter(), zoomLevel,
-                    [this](ref_ptr<Animation> anim)
+                    [this](const ref_ptr<Animation>&)
                     {
                       UpdateViewport(kDoNotChangeZoom);
                     });

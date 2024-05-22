@@ -160,10 +160,9 @@ void IndexGraph::GetEdgeList(JointSegment const & parentJoint, Segment const & p
                   parentWeights, parents);
 }
 
-void IndexGraph::GetEdgeListImpl(
-    astar::VertexData<JointSegment, RouteWeight> const & parentVertexData, Segment const & parent,
-    bool isOutgoing, bool useAccessConditional, JointEdgeListT & edges,
-    WeightListT & parentWeights, Parents<JointSegment> const & parents) const
+void IndexGraph::GetEdgeListImpl(astar::VertexData<JointSegment, RouteWeight> const & parentVertexData,
+                                 Segment const & parent, bool isOutgoing, bool, JointEdgeListT & edges,
+                                 WeightListT & parentWeights, Parents<JointSegment> const & parents) const
 {
   SegmentListT possibleChildren;
   GetSegmentCandidateForJoint(parent, isOutgoing, possibleChildren);

@@ -37,7 +37,7 @@ public:
   virtual void RenderRange(ref_ptr<GraphicsContext> context,
                            bool drawAsLine, IndicesRange const & range) = 0;
 
-  virtual void AddBindingInfo(dp::BindingInfo const & bindingInfo) {}
+  virtual void AddBindingInfo(dp::BindingInfo const & /* bindingInfo */) {}
 };
 
 namespace metal

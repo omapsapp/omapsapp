@@ -101,9 +101,8 @@ NamesDataSource EditableMapObject::GetNamesDataSource()
 }
 
 // static
-NamesDataSource EditableMapObject::GetNamesDataSource(StringUtf8Multilang const & source,
-                                                      vector<int8_t> const & mwmLanguages,
-                                                      int8_t const userLangCode)
+NamesDataSource EditableMapObject::GetNamesDataSource(StringUtf8Multilang const & source, vector<int8_t> const &,
+                                                      int8_t const)
 {
   NamesDataSource result;
   auto & names = result.names;

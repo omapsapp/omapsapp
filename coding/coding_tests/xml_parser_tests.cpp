@@ -53,7 +53,7 @@ public:
   using PairsOfStrings = std::vector<std::pair<std::string, std::string>>;
   using Strings = std::vector<std::string>;
 
-  void CharData(std::string const & ch) {}
+  void CharData(std::string const & /* ch */) {}
 
   void AddAttr(std::string key, std::string value)
   {

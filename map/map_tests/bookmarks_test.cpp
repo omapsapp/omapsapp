@@ -821,7 +821,7 @@ UNIT_TEST(Bookmarks_Sorting)
     }
   };
 
-  auto const printBlocks = [](std::string const & name, BookmarkManager::SortedBlocksCollection const & blocks)
+  auto const printBlocks = [](std::string const & /* name */, BookmarkManager::SortedBlocksCollection const & /* blocks */)
   {
     // Uncomment for debug output.
     /*
@@ -847,7 +847,7 @@ UNIT_TEST(Bookmarks_Sorting)
     params.m_hasMyPosition = hasMyPosition;
     params.m_myPosition = myPosition;
     params.m_onResults = [&sortedBlocks](BookmarkManager::SortedBlocksCollection && results,
-                                         BookmarkManager::SortParams::Status status)
+                                         BookmarkManager::SortParams::Status /* status */)
     {
       sortedBlocks = std::move(results);
     };

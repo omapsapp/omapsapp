@@ -124,7 +124,7 @@ double GetPedestrianClimbPenalty(EdgeEstimator::Purpose purpose, double tangent,
   }
 }
 
-double GetBicycleClimbPenalty(EdgeEstimator::Purpose purpose, double tangent, geometry::Altitude altitudeM)
+double GetBicycleClimbPenalty(EdgeEstimator::Purpose, double tangent, geometry::Altitude altitudeM)
 {
   double constexpr kMinPenalty = 1.0;
   double const impact = tangent >= 0.0 ? 1.0 : 0.35;

@@ -319,7 +319,7 @@ IRoadGraph::RoadInfo MakeRoadInfoForTesting(bool bidirectional, double speedKMPH
 }
 
 // RoadGraphBase ------------------------------------------------------------------
-void RoadGraphBase::GetRouteEdges(EdgeVector & routeEdges) const
+void RoadGraphBase::GetRouteEdges(EdgeVector &) const
 {
   NOTIMPLEMENTED();
 }

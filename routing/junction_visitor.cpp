@@ -10,8 +10,7 @@ namespace routing
 
 #ifdef DEBUG
 // Leaps algorithm.
-void DebugRoutingState(Segment const & vertex, std::optional<Segment> const & parent,
-                       RouteWeight const & heuristic, RouteWeight const & distance)
+void DebugRoutingState(Segment const &, std::optional<Segment> const &, RouteWeight const &, RouteWeight const &)
 {
   // 1. Dump current processing vertex.
 //  std::cout << DebugPrint(vertex);
@@ -24,8 +23,8 @@ void DebugRoutingState(Segment const & vertex, std::optional<Segment> const & pa
 }
 
 // Joints algorithm.
-void DebugRoutingState(JointSegment const & vertex, std::optional<JointSegment> const & parent,
-                       RouteWeight const & heuristic, RouteWeight const & distance)
+void DebugRoutingState(JointSegment const &, std::optional<JointSegment> const &, RouteWeight const &,
+                       RouteWeight const &)
 {
   // 1. Dump current processing vertex.
 //  std::cout << DebugPrint(vertex);

@@ -139,7 +139,7 @@ void GetUSPostcodes(std::string const & filename, storage::CountryId const & cou
   usFieldIndices.m_longIndex = 4;
   usFieldIndices.m_datasetCount = 8;
 
-  auto const transformUsPostcode = [](std::string & postcode) { return true; };
+  auto const transformUsPostcode = [](std::string & /* postcode */) { return true; };
 
   std::vector<std::pair<Key, Value>> usPostcodesKeyValuePairs;
   std::vector<m2::PointD> usPostcodesValueMapping;

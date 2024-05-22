@@ -206,7 +206,7 @@ void OpenGLHWTexture::Create(ref_ptr<dp::GraphicsContext> context, Params const 
   GLFunctions::glFlush();
 }
 
-void OpenGLHWTexture::UploadData(ref_ptr<dp::GraphicsContext> context, uint32_t x, uint32_t y,
+void OpenGLHWTexture::UploadData(ref_ptr<dp::GraphicsContext>, uint32_t x, uint32_t y,
                                  uint32_t width, uint32_t height, ref_ptr<void> data)
 {
   ASSERT(Validate(), ());

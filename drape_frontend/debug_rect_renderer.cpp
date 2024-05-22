@@ -28,7 +28,7 @@ drape_ptr<dp::MeshObject> CreateMesh(ref_ptr<dp::GraphicsContext> context, ref_p
 }
 }  // namespace
 
-DebugRectRenderer::DebugRectRenderer(ref_ptr<dp::GraphicsContext> context, ref_ptr<dp::GpuProgram> program,
+DebugRectRenderer::DebugRectRenderer(ref_ptr<dp::GraphicsContext>, ref_ptr<dp::GpuProgram> program,
                                      ref_ptr<gpu::ProgramParamsSetter> paramsSetter)
   : m_program(program)
   , m_paramsSetter(paramsSetter)

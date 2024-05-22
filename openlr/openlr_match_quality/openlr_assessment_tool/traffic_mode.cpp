@@ -222,12 +222,12 @@ bool TrafficMode::SaveSampleAs(std::string const & fileName) const
   return true;
 }
 
-int TrafficMode::rowCount(const QModelIndex & parent) const
+int TrafficMode::rowCount(const QModelIndex & /* parent */) const
 {
   return static_cast<int>(m_segments.size());
 }
 
-int TrafficMode::columnCount(const QModelIndex & parent) const { return 4; }
+int TrafficMode::columnCount(const QModelIndex & /* parent */) const { return 4; }
 
 QVariant TrafficMode::data(const QModelIndex & index, int role) const
 {

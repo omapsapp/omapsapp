@@ -120,8 +120,8 @@ class IntermediateDataTest : public cache::IntermediateDataReaderInterface
   std::map<cache::Key, WayElement> m_map;
 
 public:
-  virtual bool GetNode(cache::Key id, double & y, double & x) const { UNREACHABLE(); }
-  virtual bool GetWay(cache::Key id, WayElement & e)
+  bool GetNode(cache::Key, double &, double &) const override { UNREACHABLE(); }
+  bool GetWay(cache::Key id, WayElement & e) override
   {
     auto it = m_map.find(id);
     if (it != m_map.end())
@@ -131,7 +131,7 @@ public:
     }
     return false;
   }
-  virtual bool GetRelation(cache::Key id, RelationElement & e) { UNREACHABLE(); }
+  bool GetRelation(cache::Key, RelationElement &) override { UNREACHABLE(); }
 
   void Add(OsmElement const & e)
   {
@@ -199,12 +199,12 @@ class TestAccessFixture
   class Way2Feature : public OsmWay2FeaturePoint
   {
   public:
-    virtual void ForEachFeature(uint64_t wayID, std::function<void (uint32_t)> const & fn) override
+    void ForEachFeature(uint64_t wayID, std::function<void (uint32_t)> const & fn) override
     {
       fn(base::checked_cast<uint32_t>(wayID));
     }
-    virtual void ForEachNodeIdx(uint64_t wayID, uint32_t candidateIdx, m2::PointU pt,
-                                std::function<void (uint32_t, uint32_t)> const & fn) override
+    void ForEachNodeIdx(uint64_t wayID, uint32_t, m2::PointU pt,
+                        std::function<void(uint32_t, uint32_t)> const & fn) override
     {
       auto const ll = mercator::ToLatLon(PointUToPointD(pt, kPointCoordBits, mercator::Bounds::FullRect()));
 

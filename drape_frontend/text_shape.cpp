@@ -296,11 +296,9 @@ void TextShape::DrawSubString(ref_ptr<dp::GraphicsContext> context, StraightText
     DrawSubStringOutlined(context, layout, font, baseOffset, batcher, textures, isPrimary, isOptional);
 }
 
-void TextShape::DrawSubStringPlain(ref_ptr<dp::GraphicsContext> context,
-                                   StraightTextLayout const & layout, dp::FontDecl const & font,
-                                   glm::vec2 const & baseOffset, ref_ptr<dp::Batcher> batcher,
-                                   ref_ptr<dp::TextureManager> textures, bool isPrimary,
-                                   bool isOptional) const
+void TextShape::DrawSubStringPlain(ref_ptr<dp::GraphicsContext> context, StraightTextLayout const & layout,
+                                   dp::FontDecl const & font, glm::vec2 const &, ref_ptr<dp::Batcher> batcher,
+                                   ref_ptr<dp::TextureManager> textures, bool isPrimary, bool isOptional) const
 {
   gpu::TTextStaticVertexBuffer staticBuffer;
   gpu::TTextDynamicVertexBuffer dynamicBuffer;
@@ -359,11 +357,9 @@ void TextShape::DrawSubStringPlain(ref_ptr<dp::GraphicsContext> context,
   batcher->InsertListOfStrip(context, state, make_ref(&provider), std::move(handle), 4);
 }
 
-void TextShape::DrawSubStringOutlined(ref_ptr<dp::GraphicsContext> context,
-                                      StraightTextLayout const & layout, dp::FontDecl const & font,
-                                      glm::vec2 const & baseOffset, ref_ptr<dp::Batcher> batcher,
-                                      ref_ptr<dp::TextureManager> textures, bool isPrimary,
-                                      bool isOptional) const
+void TextShape::DrawSubStringOutlined(ref_ptr<dp::GraphicsContext> context, StraightTextLayout const & layout,
+                                      dp::FontDecl const & font, glm::vec2 const &, ref_ptr<dp::Batcher> batcher,
+                                      ref_ptr<dp::TextureManager> textures, bool isPrimary, bool isOptional) const
 {
   gpu::TTextOutlinedStaticVertexBuffer staticBuffer;
   gpu::TTextDynamicVertexBuffer dynamicBuffer;

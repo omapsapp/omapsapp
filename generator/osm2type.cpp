@@ -1313,77 +1313,77 @@ void GetNameAndType(OsmElement * p, FeatureBuilderParams & params,
   feature::AddressData addr;
   TagProcessor(p).ApplyRules<void(string &, string &)>(
   {
-      {"addr:housenumber", "*", [&houseNumber](string & k, string & v)
+      {"addr:housenumber", "*", [&houseNumber](string & /* k */, string & v)
       {
         houseNumber = std::move(v);
       }},
-      {"addr:conscriptionnumber", "*", [&conscriptionHN](string & k, string & v)
+      {"addr:conscriptionnumber", "*", [&conscriptionHN](string & /* k */, string & v)
       {
         conscriptionHN = std::move(v);
       }},
-      {"addr:provisionalnumber", "*", [&conscriptionHN](string & k, string & v)
+      {"addr:provisionalnumber", "*", [&conscriptionHN](string & /* k */, string & v)
       {
         conscriptionHN = std::move(v);
       }},
-      {"addr:streetnumber", "*", [&streetHN](string & k, string & v)
+      {"addr:streetnumber", "*", [&streetHN](string & /* k */, string & v)
       {
         streetHN = std::move(v);
       }},
-      {"contact:housenumber", "*", [&houseNumber](string & k, string & v)
+      {"contact:housenumber", "*", [&houseNumber](string & /* k */, string & v)
       {
         if (houseNumber.empty())
           houseNumber = std::move(v);
       }},
-      {"addr:housename", "*", [&houseName](string & k, string & v)
+      {"addr:housename", "*", [&houseName](string & /* k */, string & v)
       {
         houseName = std::move(v);
       }},
-      {"addr:street", "*", [&addr](string & k, string & v)
+      {"addr:street", "*", [&addr](string & /* k */, string & v)
       {
         addr.Set(feature::AddressData::Type::Street, std::move(v));
       }},
-      {"contact:street", "*", [&addr](string & k, string & v)
+      {"contact:street", "*", [&addr](string & /* k */, string & v)
       {
         addr.SetIfAbsent(feature::AddressData::Type::Street, std::move(v));
       }},
-      {"addr:place", "*", [&addr](string & k, string & v)
+      {"addr:place", "*", [&addr](string & /* k */, string & v)
       {
         addr.Set(feature::AddressData::Type::Place, std::move(v));
       }},
-      {"addr:city", "*", [&addrCity](string & k, string & v)
+      {"addr:city", "*", [&addrCity](string & /* k */, string & v)
        {
          addrCity = std::move(v);
       }},
-      {"addr:suburb", "*", [&addrSuburb](string & k, string & v)
+      {"addr:suburb", "*", [&addrSuburb](string & /* k */, string & v)
       {
         addrSuburb = std::move(v);
       }},
-      {"addr:postcode", "*", [&addrPostcode](string & k, string & v)
+      {"addr:postcode", "*", [&addrPostcode](string & /* k */, string & v)
       {
         addrPostcode = std::move(v);
       }},
-      {"postal_code", "*", [&addrPostcode](string & k, string & v)
+      {"postal_code", "*", [&addrPostcode](string & /* k */, string & v)
       {
         addrPostcode = std::move(v);
       }},
-      {"contact:postcode", "*", [&addrPostcode](string & k, string & v)
+      {"contact:postcode", "*", [&addrPostcode](string & /* k */, string & v)
       {
         if (addrPostcode.empty())
           addrPostcode = std::move(v);
       }},
-      {"population", "*", [&params](string & k, string & v)
+      {"population", "*", [&params](string & /* k */, string & v)
       {
         // Get population rank.
         uint64_t const population = generator::osm_element::GetPopulation(v);
         if (population != 0)
           params.rank = feature::PopulationToRank(population);
       }},
-      {"ref", "*", [&params](string & k, string & v)
+      {"ref", "*", [&params](string & /* k */, string & v)
       {
         // Get reference; its used for selected types only, see FeatureBuilder::PreSerialize().
         params.ref = std::move(v);
       }},
-      {"layer", "*", [&params](string & k, string & v)
+      {"layer", "*", [&params](string & /* k */, string & v)
       {
         // Get layer.
         if (params.layer == feature::LAYER_EMPTY)
@@ -1469,12 +1469,12 @@ void GetNameAndType(OsmElement * p, FeatureBuilderParams & params,
   // Fetch piste:name and piste:ref if there are no other name/ref values.
   TagProcessor(p).ApplyRules<void(string &, string &)>(
   {
-      {"piste:ref", "*", [&params](string & k, string & v)
+      {"piste:ref", "*", [&params](string & /* k */, string & v)
       {
         if (params.ref.empty())
           params.ref = std::move(v);
       }},
-      {"piste:name", "*", [&params](string & k, string & v)
+      {"piste:name", "*", [&params](string & /* k */, string & v)
       {
         params.SetDefaultNameIfEmpty(std::move(v));
       }},

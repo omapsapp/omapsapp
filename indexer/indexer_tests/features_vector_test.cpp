@@ -68,7 +68,7 @@ UNIT_TEST(FeaturesVectorTest_ParseMetadata)
   FeaturesVector fv(value->m_cont, value->GetHeader(), value->m_table.get(), value->m_metaDeserializer.get());
 
   map<string, int> actual;
-  fv.ForEach([&](FeatureType & ft, uint32_t index)
+  fv.ForEach([&](FeatureType & ft, uint32_t)
   {
     string const postcode(ft.GetMetadata(feature::Metadata::FMD_POSTCODE));
     if (!postcode.empty())

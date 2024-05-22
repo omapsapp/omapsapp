@@ -329,7 +329,7 @@ bool SpeedCameraManager::SetNotificationFlags(double passedDistanceMeters, doubl
   UNREACHABLE();
 }
 
-bool SpeedCameraManager::NeedToUpdateClosestCamera(double passedDistanceMeters, double speedMpS,
+bool SpeedCameraManager::NeedToUpdateClosestCamera(double passedDistanceMeters, double,
                                                    SpeedCameraOnRoute const & nextCamera)
 {
   auto const distToNewCameraMeters = nextCamera.m_distFromBeginMeters - passedDistanceMeters;
@@ -371,8 +371,7 @@ void SpeedCameraManager::SendNotificationStat(double passedDistanceMeters, doubl
        mercator::ToLatLon(camera.m_position)));
 }
 
-void SpeedCameraManager::SendEnterZoneStat(double distToCameraMeters, double speedMpS,
-                                           SpeedCameraOnRoute const & camera)
+void SpeedCameraManager::SendEnterZoneStat(double, double, SpeedCameraOnRoute const &)
 {
   using strings::to_string;
 

@@ -58,12 +58,12 @@ bool SequenceAnimation::HasTargetProperty(Object object, ObjectProperty property
   return false;
 }
 
-void SequenceAnimation::SetMaxDuration(double maxDuration)
+void SequenceAnimation::SetMaxDuration(double)
 {
   ASSERT(false, ("Not implemented"));
 }
 
-void SequenceAnimation::SetMinDuration(double minDuration)
+void SequenceAnimation::SetMinDuration(double)
 {
   ASSERT(false, ("Not implemented"));
 }

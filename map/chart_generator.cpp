@@ -6,6 +6,11 @@
 
 #include <algorithm>
 
+#if defined(__GNUC__) && !defined(__INTEL_COMPILER)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif  // defined(__GNUC__) && !defined(__INTEL_COMPILER)
+
 #include "3party/agg/agg_conv_curve.h"
 #include "3party/agg/agg_conv_stroke.h"
 #include "3party/agg/agg_path_storage.h"
@@ -13,6 +18,10 @@
 #include "3party/agg/agg_rasterizer_scanline_aa.h"
 #include "3party/agg/agg_renderer_scanline.h"
 #include "3party/agg/agg_scanline_p.h"
+
+#if defined(__GNUC__) && !defined(__INTEL_COMPILER)
+#pragma GCC diagnostic pop
+#endif  // defined(__GNUC__) && !defined(__INTEL_COMPILER)
 
 namespace maps
 {

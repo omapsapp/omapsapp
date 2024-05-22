@@ -133,7 +133,7 @@ RoutingApi::RoutingApi(std::string name, std::string token, uint32_t maxRPS)
   , m_accessToken(std::move(token))
   , m_maxRPS(maxRPS) {}
 
-Response RoutingApi::CalculateRoute(Params const & params, int32_t startTimeZoneUTC) const
+Response RoutingApi::CalculateRoute(Params const &, int32_t) const
 {
   return {};
 }

@@ -204,7 +204,7 @@ public:
 
   RouteWeight GetAStarWeightEpsilon() { return RouteWeight(0.0); }
 
-  RouteWeight GetCrossBorderPenalty(NumMwmId mwmId1, NumMwmId mwmId2) { return RouteWeight(0); }
+  RouteWeight GetCrossBorderPenalty(NumMwmId /* mwmId1 */, NumMwmId /* mwmId2 */) { return RouteWeight(0); }
   /// @}
 
   ms::LatLon const & GetPoint(Segment const & s, bool forward)
@@ -277,7 +277,7 @@ public:
 /// and |VehicleType::Car|.
 void CalcCrossMwmTransitions(
     string const & mwmFile, string const & intermediateDir, string const & mappingFile,
-    vector<m2::RegionD> const & borders, string const & country,
+    vector<m2::RegionD> const & /* borders */, string const & country,
     CountryParentNameGetterFn const & countryParentNameGetterFn,
     CrossMwmConnectorBuilderEx<base::GeoObjectId> & builder)
 {
@@ -317,7 +317,7 @@ void CalcCrossMwmTransitions(
 /// |transitions| will be equal to VehicleType::Transit after call of this method.
 void CalcCrossMwmTransitions(
     string const & mwmFile, string const & intermediateDir, string const & mappingFile,
-    vector<m2::RegionD> const & borders, string const & country,
+    vector<m2::RegionD> const & borders, string const & /* country */,
     CountryParentNameGetterFn const & /* countryParentNameGetterFn */,
     CrossMwmConnectorBuilderEx<connector::TransitId> & builder)
 {
@@ -380,7 +380,7 @@ void CalcCrossMwmTransitions(
 /// \brief Fills |transitions| for experimental transit case. It means that Transition::m_roadMask
 /// for items in |transitions| will be equal to VehicleType::Transit after the call of this method.
 void CalcCrossMwmTransitionsExperimental(
-    string const & mwmFile, vector<m2::RegionD> const & borders, string const & country,
+    string const & mwmFile, vector<m2::RegionD> const & borders, string const & /* country */,
     CountryParentNameGetterFn const & /* countryParentNameGetterFn */,
     ::transit::experimental::EdgeIdToFeatureId const & edgeIdToFeatureId,
     CrossMwmConnectorBuilderEx<connector::TransitId> & builder)
@@ -443,10 +443,10 @@ void CalcCrossMwmTransitionsExperimental(
 
 // Dummy specialization. We need it to compile this function overload for experimental transit.
 void CalcCrossMwmTransitionsExperimental(
-    string const & mwmFile, vector<m2::RegionD> const & borders, string const & country,
-    CountryParentNameGetterFn const & countryParentNameGetterFn,
-    ::transit::experimental::EdgeIdToFeatureId const & edgeIdToFeatureId,
-    CrossMwmConnectorBuilderEx<base::GeoObjectId> & builder)
+    string const & /* mwmFile */, vector<m2::RegionD> const & /* borders */, string const & /* country */,
+    CountryParentNameGetterFn const & /* countryParentNameGetterFn */,
+    ::transit::experimental::EdgeIdToFeatureId const & /* edgeIdToFeatureId */,
+    CrossMwmConnectorBuilderEx<base::GeoObjectId> & /* builder */)
 {
   CHECK(false, ("This is dummy specialization and it shouldn't be called."));
 }

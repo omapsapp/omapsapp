@@ -69,8 +69,7 @@ void IndexRoadGraph::GetEdgeTypes(Edge const & edge, feature::TypesHolder & type
   types = feature::TypesHolder(*ft);
 }
 
-void IndexRoadGraph::GetJunctionTypes(geometry::PointWithAltitude const & junction,
-                                      feature::TypesHolder & types) const
+void IndexRoadGraph::GetJunctionTypes(geometry::PointWithAltitude const &, feature::TypesHolder & types) const
 {
   types = feature::TypesHolder();
 }

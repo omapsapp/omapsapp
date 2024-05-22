@@ -155,7 +155,7 @@ string LogAs2GisPath(Graph::EdgeVector const & path)
 
 string LogAs2GisPath(Graph::Edge const & e) { return LogAs2GisPath(Graph::EdgeVector({e})); }
 
-bool PassesRestriction(Graph::Edge const & e, FunctionalRoadClass restriction, FormOfWay formOfWay,
+bool PassesRestriction(Graph::Edge const & e, FunctionalRoadClass restriction, FormOfWay /* formOfWay */,
                        int frcThreshold, RoadInfoGetter & infoGetter)
 {
   if (e.IsFake() || restriction == FunctionalRoadClass::NotAValue)

@@ -41,8 +41,8 @@ struct VAOAcceptor
 class TestExtension : public dp::BaseRenderStateExtension
 {
 public:
-  bool Less(ref_ptr<dp::BaseRenderStateExtension> other) const override { return false; }
-  bool Equal(ref_ptr<dp::BaseRenderStateExtension> other) const override { return true; }
+  bool Less(ref_ptr<dp::BaseRenderStateExtension>) const override { return false; }
+  bool Equal(ref_ptr<dp::BaseRenderStateExtension>) const override { return true; }
 };
 
 class BatcherExpectations

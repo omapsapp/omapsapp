@@ -253,7 +253,7 @@ bool IsActive(WeekdayRange const & range, std::tm const & date)
   return range.HasWday(wday);
 }
 
-bool IsActive(Holiday const & holiday, std::tm const & date)
+bool IsActive(Holiday const & /* holiday */, std::tm const & /* date */)
 {
   return false;
 }

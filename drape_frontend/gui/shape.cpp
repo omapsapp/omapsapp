@@ -19,7 +19,7 @@ Handle::Handle(uint32_t id, dp::Anchor anchor, m2::PointF const & pivot, m2::Poi
   , m_size(size)
 {}
 
-bool Handle::Update(ScreenBase const & screen)
+bool Handle::Update(ScreenBase const &)
 {
   using namespace glsl;
 
@@ -40,7 +40,7 @@ bool Handle::IndexesRequired() const
   return false;
 }
 
-m2::RectD Handle::GetPixelRect(ScreenBase const & screen, bool perspective) const
+m2::RectD Handle::GetPixelRect(ScreenBase const &, bool perspective) const
 {
   // There is no need to check intersection of gui elements.
   UNUSED_VALUE(perspective);

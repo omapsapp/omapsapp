@@ -114,7 +114,7 @@ public:
   {}
 
 private:
-  void UpdateImpl(ScreenBase const & screen, RulerHelper const & helper) override
+  void UpdateImpl(ScreenBase const &, RulerHelper const & helper) override
   {
     if (!IsVisible())
       return;

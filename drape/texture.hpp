@@ -48,7 +48,7 @@ public:
   virtual ~Texture() = default;
 
   virtual ref_ptr<ResourceInfo> FindResource(Key const & key, bool & newResource) = 0;
-  virtual void UpdateState(ref_ptr<dp::GraphicsContext> context) {}
+  virtual void UpdateState(ref_ptr<dp::GraphicsContext> /* context */) {}
   virtual bool HasEnoughSpace(uint32_t /* newKeysCount */) const { return true; }
   using Params = HWTexture::Params;
 

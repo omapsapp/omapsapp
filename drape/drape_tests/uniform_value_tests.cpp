@@ -32,7 +32,7 @@ public:
     , m_size(size)
   {}
 
-  void Compare(int32_t id, T const * memory)
+  void Compare(int32_t /* id */, T const * memory)
   {
     m_result = memcmp(m_memory, memory, m_size) == 0;
   }
@@ -48,7 +48,7 @@ private:
   uint32_t m_size;
 };
 
-void mock_glGetActiveUniform(uint32_t programID, uint32_t index, int32_t * size,
+void mock_glGetActiveUniform(uint32_t /* programID */, uint32_t index, int32_t * size,
                              glConst * type, std::string & name)
 {
   *size = 1;

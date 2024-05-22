@@ -8,9 +8,9 @@ uint32_t constexpr IndexGraphSerializer::JointsFilter::kEmptyEntry;
 uint32_t constexpr IndexGraphSerializer::JointsFilter::kPushedEntry;
 
 // IndexGraphSerializer::SectionSerializer ---------------------------------------------------------
-void IndexGraphSerializer::SectionSerializer::PreSerialize(
-    IndexGraph const & graph, std::unordered_map<uint32_t, VehicleMask> const & masks,
-    JointIdEncoder & jointEncoder)
+void IndexGraphSerializer::SectionSerializer::PreSerialize(IndexGraph const & graph,
+                                                           std::unordered_map<uint32_t, VehicleMask> const &,
+                                                           JointIdEncoder & jointEncoder)
 {
   m_buffer.clear();
   MemWriter<std::vector<uint8_t>> memWriter(m_buffer);

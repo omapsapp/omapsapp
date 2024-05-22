@@ -50,7 +50,7 @@ public:
     virtual void RunUITask(std::function<void()> /* fn */) {}
 
     using ResultsIterT = search::Results::ConstIter;
-    virtual void ShowViewportSearchResults(ResultsIterT begin, ResultsIterT end, bool clear) {}
+    virtual void ShowViewportSearchResults(ResultsIterT /* begin */, ResultsIterT /* end */, bool /* clear */) {}
 
     virtual void ClearViewportSearchResults() {}
 
@@ -60,7 +60,7 @@ public:
 
     virtual m2::PointD GetMinDistanceBetweenResults() const { return {0, 0}; }
 
-    virtual search::ProductInfo GetProductInfo(search::Result const & result) const { return {}; }
+    virtual search::ProductInfo GetProductInfo(search::Result const & /* result */) const { return {}; }
   };
 
   SearchAPI(DataSource & dataSource, storage::Storage const & storage,

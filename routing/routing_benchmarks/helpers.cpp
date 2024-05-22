@@ -121,7 +121,7 @@ void RoutingTest::TestTwoPointsOnFeature(m2::PointD const & startPos, m2::PointD
   TestRouters(startPosOnFeature, finalPosOnFeature);
 }
 
-std::unique_ptr<routing::IRouter> RoutingTest::CreateRouter(std::string const & name)
+std::unique_ptr<routing::IRouter> RoutingTest::CreateRouter(std::string const &)
 {
   std::vector<platform::LocalCountryFile> neededLocalFiles;
   neededLocalFiles.reserve(m_neededMaps.size());

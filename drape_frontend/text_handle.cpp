@@ -57,7 +57,7 @@ void TextHandle::GetAttributeMutation(ref_ptr<dp::AttributeBufferMutator> mutato
   m_isLastVisible = isVisible;
 }
 
-bool TextHandle::Update(ScreenBase const & screen)
+bool TextHandle::Update(ScreenBase const &)
 {
   if (!m_glyphsReady)
     m_glyphsReady = m_textureManager->AreGlyphsReady(m_text);

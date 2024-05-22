@@ -71,7 +71,7 @@ public:
   }
 
   template <typename T>
-  std::enable_if_t<!HasCollectionMethods<T>::value> PerformActionIfPossible(T & t) {}
+  std::enable_if_t<!HasCollectionMethods<T>::value> PerformActionIfPossible(T &) {}
 
   template <typename T>
   std::enable_if_t<VisitedTypes<T>::value>
@@ -81,7 +81,7 @@ public:
   }
 
   template <typename T>
-  std::enable_if_t<!VisitedTypes<T>::value> VisitIfPossible(T & t) {}
+  std::enable_if_t<!VisitedTypes<T>::value> VisitIfPossible(T &) {}
 
   template <typename T>
   void operator()(T & t, char const * /* name */ = nullptr)
@@ -166,7 +166,7 @@ public:
   }
 
   template <typename...>
-  void Collect(LocalizableStringIndex & index) {}
+  void Collect(LocalizableStringIndex &) {}
 
   std::vector<std::string> && StealCollection() { return std::move(m_collection); }
 
@@ -778,7 +778,7 @@ public:
   }
 
   template <typename...>
-  void Collect(LocalizableStringIndex & index) {}
+  void Collect(LocalizableStringIndex &) {}
 
 private:
   bool SwitchSubIndexIfNeeded(LocalizableStringIndex & index)

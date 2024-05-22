@@ -183,7 +183,7 @@ uint32_t CountFeaturesInRect(MwmSet::MwmId const & mwmId, m2::RectD const & rect
   auto & editor = osm::Editor::Instance();
   int unused = 0;
   uint32_t counter = 0;
-  editor.ForEachCreatedFeature(mwmId, [&counter](uint32_t index) { ++counter; }, rect, unused);
+  editor.ForEachCreatedFeature(mwmId, [&counter](uint32_t) { ++counter; }, rect, unused);
 
   return counter;
 }
@@ -325,7 +325,7 @@ void EditorTest::SetIndexTest()
   });
 
   uint32_t counter = 0;
-  editor.ForEachFeatureAtPoint([&counter](FeatureType & ft)
+  editor.ForEachFeatureAtPoint([&counter](FeatureType &)
   {
     ++counter;
   }, {100.0, 100.0});
@@ -333,7 +333,7 @@ void EditorTest::SetIndexTest()
   TEST_EQUAL(counter, 0, ());
 
   counter = 0;
-  editor.ForEachFeatureAtPoint([&counter](FeatureType & ft)
+  editor.ForEachFeatureAtPoint([&counter](FeatureType &)
   {
     ++counter;
   }, {3.0, 3.0});
@@ -341,7 +341,7 @@ void EditorTest::SetIndexTest()
   TEST_EQUAL(counter, 1, ());
 
   counter = 0;
-  editor.ForEachFeatureAtPoint([&counter](FeatureType & ft)
+  editor.ForEachFeatureAtPoint([&counter](FeatureType &)
   {
     ++counter;
   }, {1.0, 1.0});
@@ -349,7 +349,7 @@ void EditorTest::SetIndexTest()
   TEST_EQUAL(counter, 2, ());
 
   counter = 0;
-  editor.ForEachFeatureAtPoint([&counter](FeatureType & ft)
+  editor.ForEachFeatureAtPoint([&counter](FeatureType &)
   {
     ++counter;
   }, {4.0, 4.0});
@@ -591,7 +591,7 @@ void EditorTest::OnMapDeregisteredTest()
     builder.Add(cafeMoscow);
   });
 
-  auto nzMwmId = BuildMwm("NZ", [](TestMwmBuilder & builder)
+  auto nzMwmId = BuildMwm("NZ", [](TestMwmBuilder &)
   {
   });
   m_dataSource.DeregisterMap(nzMwmId.GetInfo()->GetLocalFile().GetCountryFile());

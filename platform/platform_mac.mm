@@ -180,7 +180,7 @@ uint8_t Platform::GetBatteryLevel()
   return 100;
 }
 
-void Platform::GetSystemFontNames(FilesList & res) const
+void Platform::GetSystemFontNames(FilesList &) const
 {
 }
 

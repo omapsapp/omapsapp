@@ -36,8 +36,8 @@ public:
 
   TUnpackedPathSegments const & GetSegments() const override { return m_segments; }
 
-  void GetPossibleTurns(SegmentRange const & segmentRange, m2::PointD const & junctionPoint,
-                        size_t & ingoingCount, TurnCandidates & outgoingTurns) const override
+  void GetPossibleTurns(SegmentRange const & /* segmentRange */, m2::PointD const & /* junctionPoint */,
+                        size_t & /* ingoingCount */, TurnCandidates & outgoingTurns) const override
   {
     outgoingTurns.candidates.emplace_back(0.0, Segment(), ftypes::HighwayClass::Tertiary, false);
     outgoingTurns.isCandidatesAngleValid = false;

@@ -10,7 +10,7 @@ void RulerRouter::ClearState()
 {
 }
 
-void RulerRouter::SetGuides(GuidesTracks && guides) { /*m_guides = GuidesConnections(guides);*/ }
+void RulerRouter::SetGuides(GuidesTracks && /* guides */) { /*m_guides = GuidesConnections(guides);*/ }
 
 
 /* Ruler router doesn't read roads graph and uses only checkpoints to build a route.
@@ -45,10 +45,8 @@ void RulerRouter::SetGuides(GuidesTracks && guides) { /*m_guides = GuidesConnect
   *  m_subroutes.size() == m_routeSegments.size()-1
 
  */
-RouterResultCode RulerRouter::CalculateRoute(Checkpoints const & checkpoints,
-                                             m2::PointD const & startDirection,
-                                             bool adjustToPrevRoute,
-                                             RouterDelegate const & delegate, Route & route)
+RouterResultCode RulerRouter::CalculateRoute(Checkpoints const & checkpoints, m2::PointD const &, bool,
+                                             RouterDelegate const &, Route & route)
 {
   vector<m2::PointD> const & points = checkpoints.GetPoints();
   size_t const count = points.size();
@@ -120,9 +118,7 @@ RouterResultCode RulerRouter::CalculateRoute(Checkpoints const & checkpoints,
   return RouterResultCode::NoError;
 }
 
-bool RulerRouter::FindClosestProjectionToRoad(m2::PointD const & point,
-                                              m2::PointD const & direction, double radius,
-                                              EdgeProj & proj)
+bool RulerRouter::FindClosestProjectionToRoad(m2::PointD const &, m2::PointD const &, double, EdgeProj &)
 {
   // Ruler router has no connection to road graph.
   return false;

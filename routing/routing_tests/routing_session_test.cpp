@@ -70,8 +70,8 @@ public:
     return m_code;
   }
 
-  bool FindClosestProjectionToRoad(m2::PointD const & point, m2::PointD const & direction,
-                                   double radius, EdgeProj & proj) override
+  bool FindClosestProjectionToRoad(m2::PointD const & /* point */, m2::PointD const & /* direction */,
+                                   double /* radius */, EdgeProj & /* proj */) override
   {
     return false;
   }
@@ -102,8 +102,8 @@ public:
     return m_returnCodes[m_returnCodesIdx++];
   }
 
-  bool FindClosestProjectionToRoad(m2::PointD const & point, m2::PointD const & direction,
-                                   double radius, EdgeProj & proj) override
+  bool FindClosestProjectionToRoad(m2::PointD const & /* point */, m2::PointD const & /* direction */,
+                                   double /* radius */, EdgeProj & /* proj */) override
   {
     return false;
   }
@@ -209,7 +209,7 @@ void FillSubroutesInfo(Route & route, vector<turns::TurnItem> const & turns /* =
       {Route::SubrouteAttrs(junctions.front(), junctions.back(), 0, kTestSegments.size())}));
 }
 
-void TestMovingByUpdatingLat(SessionStateTest const & sessionState, vector<double> const & lats,
+void TestMovingByUpdatingLat(SessionStateTest const & /* sessionState */, vector<double> const & lats,
                              location::GpsInfo const & info, RoutingSession & session)
 {
   location::GpsInfo uptInfo(info);

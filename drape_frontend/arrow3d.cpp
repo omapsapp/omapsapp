@@ -69,12 +69,12 @@ void * FileOpen(char const * path, void * userData)
   return userData;
 }
 
-void FileClose(void * file, void * userData)
+void FileClose(void * /* file */, void * /* userData */)
 {
   // Do nothing.
 }
 
-size_t FileRead(void * file, void * dst, size_t bytes, void * userData)
+size_t FileRead(void * /* file */, void * dst, size_t bytes, void * userData)
 {
   auto reader = static_cast<ReaderSource<ReaderPtr<Reader>> *>(userData);
   CHECK(reader != nullptr, ());
@@ -91,7 +91,7 @@ size_t FileRead(void * file, void * dst, size_t bytes, void * userData)
   return static_cast<size_t>(reader->Pos() - p);
 }
 
-unsigned long FileSize(void * file, void * userData)
+unsigned long FileSize(void * /* file */, void * userData)
 {
   auto reader = static_cast<ReaderSource<ReaderPtr<Reader>> *>(userData);
   CHECK(reader != nullptr, ());

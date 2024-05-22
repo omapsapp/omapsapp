@@ -23,25 +23,25 @@ public:
     m_stream.SetTestBridge(std::bind(&UserEventStreamTest::TestBridge, this, _1));
   }
 
-  void OnTap(m2::PointD const & pt, bool isLong) override {}
-  void OnForceTap(m2::PointD const & pt) override {}
-  void OnDoubleTap(m2::PointD const & pt) override {}
+  void OnTap(m2::PointD const & /* pt */, bool /* isLong */) override {}
+  void OnForceTap(m2::PointD const & /* pt */) override {}
+  void OnDoubleTap(m2::PointD const & /* pt */) override {}
   void OnTwoFingersTap() override {}
-  bool OnSingleTouchFiltrate(m2::PointD const & pt, df::TouchEvent::ETouchType type) override { return m_filtrate; }
+  bool OnSingleTouchFiltrate(m2::PointD const & /* pt */, df::TouchEvent::ETouchType /* type */) override { return m_filtrate; }
   void OnDragStarted() override {}
   void OnDragEnded(m2::PointD const & /* distance */) override {}
   void OnRotated() override {}
-  void OnScrolled(m2::PointD const & distance) override {}
+  void OnScrolled(m2::PointD const & /* distance */) override {}
 
   void OnScaleStarted() override {}
-  void CorrectScalePoint(m2::PointD & pt) const override {}
-  void CorrectScalePoint(m2::PointD & pt1, m2::PointD & pt2) const override {}
-  void CorrectGlobalScalePoint(m2::PointD & pt) const override {}
+  void CorrectScalePoint(m2::PointD & /* pt */) const override {}
+  void CorrectScalePoint(m2::PointD & /* pt1 */, m2::PointD & /* pt2 */) const override {}
+  void CorrectGlobalScalePoint(m2::PointD & /* pt */) const override {}
   void OnScaleEnded() override {}
-  void OnTouchMapAction(df::TouchEvent::ETouchType touchType, bool isMapTouch) override {}
+  void OnTouchMapAction(df::TouchEvent::ETouchType /* touchType */, bool /* isMapTouch */) override {}
   void OnAnimatedScaleEnded() override {}
-  bool OnNewVisibleViewport(m2::RectD const & oldViewport, m2::RectD const & newViewport,
-                            bool needOffset, m2::PointD & gOffset) override
+  bool OnNewVisibleViewport(m2::RectD const & /* oldViewport */, m2::RectD const & /* newViewport */,
+                            bool /* needOffset */, m2::PointD & /* gOffset */) override
   {
     return false;
   }

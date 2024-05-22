@@ -44,8 +44,8 @@ void AddSymbols(std::string const & str, std::set<char> & symbols)
     symbols.insert(str[i]);
 }
 
-void DebugInfoLabels::AddLabel(ref_ptr<dp::TextureManager> tex, std::string const & caption,
-                               TUpdateDebugLabelFn const & onUpdateFn)
+void DebugInfoLabels::AddLabel(ref_ptr<dp::TextureManager>, std::string const & caption,
+                               TUpdateDebugLabelFn const &)
 {
   std::string alphabet;
   std::set<char> symbols;

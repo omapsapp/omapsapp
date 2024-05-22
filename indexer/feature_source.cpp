@@ -41,14 +41,8 @@ std::unique_ptr<FeatureType> FeatureSource::GetOriginalFeature(uint32_t index) c
   return ft;
 }
 
-FeatureStatus FeatureSource::GetFeatureStatus(uint32_t index) const
-{
-  return FeatureStatus::Untouched;
-}
+FeatureStatus FeatureSource::GetFeatureStatus(uint32_t) const { return FeatureStatus::Untouched; }
 
-std::unique_ptr<FeatureType> FeatureSource::GetModifiedFeature(uint32_t index) const { return {}; }
+std::unique_ptr<FeatureType> FeatureSource::GetModifiedFeature(uint32_t) const { return {}; }
 
-void FeatureSource::ForEachAdditionalFeature(m2::RectD const & rect, int scale,
-                                             std::function<void(uint32_t)> const & fn) const
-{
-}
+void FeatureSource::ForEachAdditionalFeature(m2::RectD const &, int, std::function<void(uint32_t)> const &) const {}

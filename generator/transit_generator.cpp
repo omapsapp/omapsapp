@@ -185,7 +185,7 @@ void DeserializeFromJson(OsmIdToFeatureIdsMap const & mapping,
 }
 
 void ProcessGraph(std::string const & mwmPath, CountryId const & countryId,
-                  OsmIdToFeatureIdsMap const & osmIdToFeatureIdsMap, GraphData & data)
+                  OsmIdToFeatureIdsMap const & /* osmIdToFeatureIdsMap */, GraphData & data)
 {
   CalculateBestPedestrianSegments(mwmPath, countryId, data);
   data.Sort();

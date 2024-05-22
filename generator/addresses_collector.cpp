@@ -156,7 +156,7 @@ AddressesCollector::AddressesCollector(std::string const & filename)
 {
 }
 
-std::shared_ptr<CollectorInterface> AddressesCollector::Clone(IDRInterfacePtr const & cache) const
+std::shared_ptr<CollectorInterface> AddressesCollector::Clone(IDRInterfacePtr const &) const
 {
   return std::make_shared<AddressesCollector>(GetFilename());
 }

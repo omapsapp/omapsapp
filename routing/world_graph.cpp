@@ -52,26 +52,23 @@ SpeedInUnits WorldGraph::GetSpeedLimit(Segment const &)
   return {};
 }
 
-void WorldGraph::SetAStarParents(bool forward, Parents<Segment> & parents) {}
-void WorldGraph::SetAStarParents(bool forward, Parents<JointSegment> & parents) {}
+void WorldGraph::SetAStarParents(bool, Parents<Segment> &) {}
+void WorldGraph::SetAStarParents(bool, Parents<JointSegment> &) {}
 void WorldGraph::DropAStarParents() {}
 
-bool WorldGraph::AreWavesConnectible(Parents<Segment> & forwardParents, Segment const & commonVertex,
-                                     Parents<Segment> & backwardParents)
+bool WorldGraph::AreWavesConnectible(Parents<Segment> &, Segment const &, Parents<Segment> &) {
+  return true;
+}
+
+bool WorldGraph::AreWavesConnectible(Parents<JointSegment> &, JointSegment const &, Parents<JointSegment> &,
+                                     FakeConverterT const &)
 {
   return true;
 }
 
-bool WorldGraph::AreWavesConnectible(Parents<JointSegment> & forwardParents, JointSegment const & commonVertex,
-                                     Parents<JointSegment> & backwardParents,
-                                     FakeConverterT const & fakeFeatureConverter)
-{
-  return true;
-}
+void WorldGraph::SetRoutingOptions(RoutingOptions) {}
 
-void WorldGraph::SetRoutingOptions(RoutingOptions /* routingOption */) {}
-
-void WorldGraph::ForEachTransition(NumMwmId numMwmId, bool isEnter, TransitionFnT const & fn)
+void WorldGraph::ForEachTransition(NumMwmId, bool, TransitionFnT const &)
 {
 }
 
@@ -80,7 +77,7 @@ CrossMwmGraph & WorldGraph::GetCrossMwmGraph()
   UNREACHABLE();
 }
 
-RouteWeight WorldGraph::GetCrossBorderPenalty(NumMwmId mwmId1, NumMwmId mwmId2)
+RouteWeight WorldGraph::GetCrossBorderPenalty(NumMwmId, NumMwmId)
 {
   return RouteWeight(0);
 }

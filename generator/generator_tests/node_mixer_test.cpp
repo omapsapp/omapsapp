@@ -8,17 +8,17 @@
 UNIT_TEST(NodeMixerTests)
 {
   std::istringstream stream1("");
-  generator::MixFakeNodes(stream1, [](OsmElement & p) {
+  generator::MixFakeNodes(stream1, [](OsmElement &) {
     TEST(false, ("Returned an object for an empty input stream."));
   });
 
   std::istringstream stream2("shop=gift\nname=Shop\n");
-  generator::MixFakeNodes(stream2, [](OsmElement & p) {
+  generator::MixFakeNodes(stream2, [](OsmElement &) {
     TEST(false, ("Returned an object for a source without coordinates."));
   });
 
   std::istringstream stream3("lat=4.0\nlon=-4.1\n");
-  generator::MixFakeNodes(stream3, [](OsmElement & p) {
+  generator::MixFakeNodes(stream3, [](OsmElement &) {
     TEST(false, ("Returned an object for a source without tags."));
   });
 

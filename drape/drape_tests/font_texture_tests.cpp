@@ -34,7 +34,7 @@ class UploadedRender
 public:
   explicit UploadedRender(QPoint const & pen) : m_pen(pen) {}
 
-  void glMemoryToQImage(int x, int y, int w, int h, glConst f, glConst t, void const * memory)
+  void glMemoryToQImage(int x, int /* y */, int w, int h, glConst f, glConst t, void const * memory)
   {
     TEST(f == gl_const::GLAlpha || f == gl_const::GLAlpha8 || f == gl_const::GLRed, ());
     TEST(t == gl_const::GLUnsignedByteType, ());

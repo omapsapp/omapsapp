@@ -45,7 +45,7 @@ public:
   
   bool Bind() override { return true; }
   void Unbind() override {}
-  void BindBuffers(dp::BuffersMap const & buffers) const override {}
+  void BindBuffers(dp::BuffersMap const &) const override {}
 
   void RenderRange(ref_ptr<GraphicsContext> context, bool drawAsLine,
                    IndicesRange const & range) override

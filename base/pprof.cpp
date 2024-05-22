@@ -12,6 +12,8 @@ PProf::PProf(std::string const & path)
 {
 #if defined(USE_PPROF)
   ProfilerStart(path.c_str());
+#else
+  UNUSED_VALUE(path);
 #endif
 }
 

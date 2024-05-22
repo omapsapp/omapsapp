@@ -361,7 +361,7 @@ bool UserEventStream::OnSetScale(ref_ptr<ScaleEvent> scaleEvent)
     ScreenBase const & startScreen = GetCurrentScreen();
 
     auto anim = GetScaleAnimation(startScreen, scaleCenter, glbScaleCenter, factor);
-    anim->SetOnFinishAction([this](ref_ptr<Animation> animation)
+    anim->SetOnFinishAction([this](const ref_ptr<Animation> &)
     {
       if (m_listener)
         m_listener->OnAnimatedScaleEnded();
@@ -1197,7 +1197,7 @@ void UserEventStream::DetectLongTap(Touch const & touch)
   }
 }
 
-bool UserEventStream::DetectDoubleTap(Touch const & touch)
+bool UserEventStream::DetectDoubleTap(Touch const &)
 {
   if (m_state != STATE_WAIT_DOUBLE_TAP || m_touchTimer.ElapsedMilliseconds() > kDoubleTapPauseMs)
     return false;
@@ -1227,7 +1227,7 @@ bool UserEventStream::DetectForceTap(Touch const & touch)
   return false;
 }
 
-void UserEventStream::EndTapDetector(Touch const & touch)
+void UserEventStream::EndTapDetector(Touch const &)
 {
   TEST_CALL(SHORT_TAP_DETECTED);
   ASSERT_EQUAL(m_state, STATE_TAP_DETECTION, ());
@@ -1273,7 +1273,7 @@ void UserEventStream::CancelFilter(Touch const & t)
     m_listener->OnSingleTouchFiltrate(m2::PointD(t.m_location), TouchEvent::TOUCH_CANCEL);
 }
 
-void UserEventStream::StartDoubleTapAndHold(Touch const & touch)
+void UserEventStream::StartDoubleTapAndHold(Touch const &)
 {
   TEST_CALL(BEGIN_DOUBLE_TAP_AND_HOLD);
   ASSERT_EQUAL(m_state, STATE_WAIT_DOUBLE_TAP_HOLD, ());
@@ -1298,7 +1298,7 @@ void UserEventStream::UpdateDoubleTapAndHold(Touch const & touch)
   m_navigator.Scale(scaleCenter, scaleFactor);
 }
 
-void UserEventStream::EndDoubleTapAndHold(Touch const & touch)
+void UserEventStream::EndDoubleTapAndHold(Touch const &)
 {
   TEST_CALL(END_DOUBLE_TAP_AND_HOLD);
   ASSERT_EQUAL(m_state, STATE_DOUBLE_TAP_HOLD, ());

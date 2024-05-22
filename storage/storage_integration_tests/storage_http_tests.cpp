@@ -41,14 +41,14 @@ string const GetMwmFullPath(string const & countryId, string const & version)
   return base::JoinPath(GetPlatform().WritableDir(), version, countryId + DATA_FILE_EXTENSION);
 }
 
-string const GetDownloadingFullPath(string const & countryId, string const & version)
+string const GetDownloadingFullPath(string const & /* countryId */, string const & version)
 {
   return base::JoinPath(
       GetPlatform().WritableDir(), version,
       kCountryId + DATA_FILE_EXTENSION READY_FILE_EXTENSION DOWNLOADING_FILE_EXTENSION);
 }
 
-string const GetResumeFullPath(string const & countryId, string const & version)
+string const GetResumeFullPath(string const & /* countryId */, string const & version)
 {
   return base::JoinPath(
       GetPlatform().WritableDir(), version,
@@ -66,7 +66,7 @@ void InitStorage(Storage & storage, Storage::UpdateCallback const & didDownload,
     }
   };
 
-  storage.Init(didDownload, [](CountryId const &, LocalFilePtr const) { return false; });
+  storage.Init(didDownload, [](CountryId const &, LocalFilePtr const &) { return false; });
   storage.RegisterAllLocalMaps();
   storage.Subscribe(changeCountryFunction, progress);
   storage.SetDownloadingServersForTesting({kTestWebServer});

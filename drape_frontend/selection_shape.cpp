@@ -68,7 +68,7 @@ bool SelectionShape::SelectionShape::IsVisible() const
   return (state == ShowHideAnimation::STATE_VISIBLE || state == ShowHideAnimation::STATE_SHOW_DIRECTION);
 }
 
-std::optional<m2::PointD> SelectionShape::GetPixelPosition(ScreenBase const & screen, int zoomLevel) const
+std::optional<m2::PointD> SelectionShape::GetPixelPosition(ScreenBase const & screen, int) const
 {
   if (!IsVisible())
     return {};

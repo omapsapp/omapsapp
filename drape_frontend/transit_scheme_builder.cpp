@@ -880,8 +880,8 @@ StopNodeParamsPT & TransitSchemeBuilder::GetStopOrTransfer(MwmSchemeData & schem
   return scheme.m_transfersPT[id];
 }
 
-void TransitSchemeBuilder::PrepareSchemePT(TransitDisplayInfo const & transitDisplayInfo,
-                                           LinesDataPT const & lineData, MwmSchemeData & scheme)
+void TransitSchemeBuilder::PrepareSchemePT(TransitDisplayInfo const & transitDisplayInfo, LinesDataPT const &,
+                                           MwmSchemeData & scheme)
 {
   m2::RectD boundingRect;
 

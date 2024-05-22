@@ -41,7 +41,7 @@ Blending::Blending(bool isEnabled)
   : m_isEnabled(isEnabled)
 {}
 
-void Blending::Apply(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram> program) const
+void Blending::Apply(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram>) const
 {
   // For Metal Rendering these settings must be set in the pipeline state.
   auto const apiVersion = context->GetApiVersion();

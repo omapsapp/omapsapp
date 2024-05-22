@@ -61,7 +61,7 @@ template <typename TVertex>
 class BaseLineBuilder : public LineShapeInfo
 {
 public:
-  BaseLineBuilder(BaseBuilderParams const & params, size_t geomsSize, size_t joinsSize)
+  BaseLineBuilder(BaseBuilderParams const & params, size_t geomsSize, size_t /* joinsSize */)
     : m_params(params)
     , m_colorCoord(glsl::ToVec2(params.m_color.GetTexRect().Center()))
   {
@@ -339,7 +339,7 @@ LineShape::LineShape(m2::SharedSpline const & spline, LineViewParams const & par
 }
 
 template <typename TBuilder>
-void LineShape::Construct(TBuilder & builder) const
+void LineShape::Construct(TBuilder & /* builder */) const
 {
   ASSERT(false, ("No implementation"));
 }
@@ -442,7 +442,7 @@ void LineShape::Construct<SolidLineBuilder>(SolidLineBuilder & builder) const
   bool const generateJoins = builder.GetHalfWidth() > 2.5f;
 
   ForEachSplineSection([&](glsl::vec2 const & p1, glsl::vec2 const & p2,
-                           glsl::vec2 const & tangent, double,
+                           glsl::vec2 const & /* tangent */, double,
                            glsl::vec2 const & leftNormal, glsl::vec2 const & rightNormal,
                            int flag)
   {

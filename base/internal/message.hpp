@@ -144,7 +144,7 @@ std::string DebugPrint(std::optional<T> const & p)
     return "nullopt";
 }
 
-std::string inline DebugPrint(std::nullopt_t const & p)
+std::string inline DebugPrint(std::nullopt_t const &)
 {
   return "nullopt";
 }

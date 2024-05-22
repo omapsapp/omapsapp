@@ -101,7 +101,7 @@ public:
 protected:
   MwmDataSource & m_dataSource;
 
-  virtual feature::AltitudeLoaderBase * GetAltitudesLoader(MwmSet::MwmId const & mwmId) const
+  virtual feature::AltitudeLoaderBase * GetAltitudesLoader(MwmSet::MwmId const &) const
   {
     // Don't retrieve altitudes here because FeaturesRoadGraphBase is used in IndexRouter for
     // IndexRouter::FindClosestProjectionToRoad and IndexRouter::FindBestEdges only.

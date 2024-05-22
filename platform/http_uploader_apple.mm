@@ -53,7 +53,7 @@
 - (NSData *)requestDataWithBoundary:(NSString *)boundary {
   NSMutableData * data = [NSMutableData data];
 
-  [self.params enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * value, BOOL * stop) {
+  [self.params enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * value, BOOL *) {
     [data appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary]
                          dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",
@@ -92,7 +92,7 @@
   NSString * contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
   [uploadRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
   
-  [self.headers enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * value, BOOL * stop) {
+  [self.headers enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * value, BOOL *) {
     [uploadRequest setValue:value forHTTPHeaderField:key];
   }];
 

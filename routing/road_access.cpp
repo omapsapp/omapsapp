@@ -14,7 +14,7 @@ namespace
 std::string const kNames[] = {"No", "Private", "Destination", "Yes", "Count"};
 
 template <typename KV>
-std::string DebugPrintKV(KV const & kvs, size_t maxKVToShow)
+std::string DebugPrintKV(KV const & kvs, size_t /* maxKVToShow */)
 {
   // Print all range for now.
   return DebugPrintSequence(kvs.begin(), kvs.end());

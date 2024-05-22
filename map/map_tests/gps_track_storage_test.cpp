@@ -98,7 +98,7 @@ UNIT_TEST(GpsTrackStorage_WriteReadWithoutTrunc)
     GpsTrackStorage stg(filePath, fileMaxItemCount);
 
     size_t i = 0;
-    stg.ForEach([&](location::GpsTrackInfo const & point)->bool{ ++i; return true; });
+    stg.ForEach([&](location::GpsTrackInfo const & /* point */)->bool{ ++i; return true; });
     TEST_EQUAL(i, 0, ());
   }
 }
@@ -182,7 +182,7 @@ UNIT_TEST(GpsTrackStorage_WriteReadWithTrunc)
     GpsTrackStorage stg(filePath, fileMaxItemCount);
 
     size_t i = 0;
-    stg.ForEach([&](location::GpsInfo const & point)->bool{ ++i; return true; });
+    stg.ForEach([&](location::GpsInfo const & /* point */)->bool{ ++i; return true; });
     TEST_EQUAL(i, 0, ());
   }
 }

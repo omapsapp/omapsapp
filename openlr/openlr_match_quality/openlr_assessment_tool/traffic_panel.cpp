@@ -16,8 +16,8 @@ ComboBoxDelegate::ComboBoxDelegate(QObject * parent)
 {
 }
 
-QWidget * ComboBoxDelegate::createEditor(QWidget * parent, QStyleOptionViewItem const & option,
-                                         QModelIndex const & index) const
+QWidget * ComboBoxDelegate::createEditor(QWidget * parent, QStyleOptionViewItem const & /* option */,
+                                         QModelIndex const & /* index */) const
 {
   auto * editor = new QComboBox(parent);
   editor->setFrame(false);
@@ -40,7 +40,7 @@ void ComboBoxDelegate::setModelData(QWidget * editor, QAbstractItemModel * model
 }
 
 void ComboBoxDelegate::updateEditorGeometry(QWidget * editor, QStyleOptionViewItem const & option,
-                                            QModelIndex const & index) const
+                                            QModelIndex const & /* index */) const
 {
   editor->setGeometry(option.rect);
 }

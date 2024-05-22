@@ -80,7 +80,7 @@ VkBufferImageCopy BufferCopyRegion(uint32_t x, uint32_t y, uint32_t width, uint3
 }
 }  // namespace
 
-drape_ptr<HWTexture> VulkanTextureAllocator::CreateTexture(ref_ptr<dp::GraphicsContext> context)
+drape_ptr<HWTexture> VulkanTextureAllocator::CreateTexture(ref_ptr<dp::GraphicsContext>)
 {
   return make_unique_dp<VulkanTexture>(make_ref(this));
 }

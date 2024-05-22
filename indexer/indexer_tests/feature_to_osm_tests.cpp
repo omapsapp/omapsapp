@@ -58,7 +58,7 @@ UNIT_CLASS_TEST(FeatureIdToGeoObjectIdTest, Smoke)
     origM.Add(e.first, e.second);
 
   // TestMwmBuilder will create the section but we will rewrite it right away.
-  auto testWorldId = BuildWorld([&](TestMwmBuilder & builder) {});
+  auto testWorldId = BuildWorld([&](TestMwmBuilder &) {});
   auto const testWorldPath = testWorldId.GetInfo()->GetLocalFile().GetPath(MapFileType::Map);
 
   std::vector<uint8_t> buf;

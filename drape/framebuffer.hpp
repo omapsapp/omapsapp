@@ -13,7 +13,7 @@ namespace dp
 class FramebufferTexture : public Texture
 {
 public:
-  ref_ptr<ResourceInfo> FindResource(Key const & key, bool & newResource) override { return nullptr; }
+  ref_ptr<ResourceInfo> FindResource(Key const &, bool &) override { return nullptr; }
 };
 
 using FramebufferFallback = std::function<bool()>;

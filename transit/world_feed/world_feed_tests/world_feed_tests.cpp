@@ -60,7 +60,7 @@ void TestInterval(WeekdaysInterval const & interval, size_t start, size_t end,
   TEST_EQUAL(interval.m_status, status, ());
 }
 
-void TestExceptionIntervals(gtfs::CalendarDates const & dates, size_t intervalsCount,
+void TestExceptionIntervals(gtfs::CalendarDates const & dates, size_t /* intervalsCount */,
                             std::string const & resOpeningHoursStr)
 {
   osmoh::TRuleSequences rules;

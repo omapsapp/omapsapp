@@ -37,7 +37,7 @@ public:
     , m_descriptorUpdater(objectManager)
   {}
 
-  void Build(ref_ptr<dp::GraphicsContext> context, ref_ptr<dp::GpuProgram> program) override
+  void Build(ref_ptr<dp::GraphicsContext>, ref_ptr<dp::GpuProgram>) override
   {
     m_geometryBuffers.resize(m_mesh->m_buffers.size());
     m_bindingInfoCount = static_cast<uint8_t>(m_mesh->m_buffers.size());
@@ -165,7 +165,7 @@ public:
     vkCmdDraw(commandBuffer, verticesCount, 1, 0, 0);
   }
 
-  void Bind(ref_ptr<dp::GpuProgram> program) override {}
+  void Bind(ref_ptr<dp::GpuProgram>) override {}
   void Unbind() override {}
 
 private:

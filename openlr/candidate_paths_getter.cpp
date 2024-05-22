@@ -117,10 +117,8 @@ void CandidatePathsGetter::GetStartLines(vector<m2::PointD> const & points, bool
   base::SortUnique(edges, less<Graph::Edge>(), EdgesAreAlmostEqual);
 }
 
-void CandidatePathsGetter::GetAllSuitablePaths(Graph::EdgeVector const & startLines,
-                                               bool isLastPoint, double bearDistM,
-                                               FunctionalRoadClass functionalRoadClass,
-                                               FormOfWay formOfWay, double distanceToNextPointM,
+void CandidatePathsGetter::GetAllSuitablePaths(Graph::EdgeVector const & startLines, bool isLastPoint, double bearDistM,
+                                               FunctionalRoadClass functionalRoadClass, FormOfWay formOfWay, double,
                                                vector<LinkPtr> & allPaths)
 {
   queue<LinkPtr> q;

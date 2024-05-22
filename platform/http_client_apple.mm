@@ -181,7 +181,7 @@ bool HttpClient::RunHttpRequest()
 
     if (m_loadHeaders)
     {
-      [response.allHeaderFields enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * obj, BOOL * stop)
+      [response.allHeaderFields enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * obj, BOOL *)
       {
         m_headers.emplace(key.lowercaseString.UTF8String, obj.UTF8String);
       }];

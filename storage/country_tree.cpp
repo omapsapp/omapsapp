@@ -34,9 +34,8 @@ public:
   virtual void InsertOldMwmMapping(CountryId const & newId, CountryId const & oldId) = 0;
   virtual void InsertAffiliation(CountryId const & countryId, string const & affilation) = 0;
   virtual void InsertCountryNameSynonym(CountryId const & countryId, string const & synonym) = 0;
-  virtual void InsertMwmTopCityGeoId(CountryId const & countryId, uint64_t const & geoObjectId) {}
-  virtual void InsertTopCountryGeoIds(CountryId const & countryId,
-                                      vector<uint64_t> const & geoObjectIds)
+  virtual void InsertMwmTopCityGeoId(CountryId const & /* countryId */, uint64_t const & /* geoObjectId */) {}
+  virtual void InsertTopCountryGeoIds(CountryId const & /* countryId */, vector<uint64_t> const & /* geoObjectIds */)
   {
   }
   virtual OldMwmMapping GetMapping() const = 0;

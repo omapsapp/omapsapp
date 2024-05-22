@@ -87,7 +87,7 @@ public:
 
   virtual ~Animation() = default;
 
-  virtual void Init(ScreenBase const & screen, TPropertyCache const & properties) {}
+  virtual void Init(ScreenBase const & /* screen */, TPropertyCache const & /* properties */) {}
   virtual void OnStart() { if (m_onStartAction != nullptr) m_onStartAction(this); }
   virtual void OnFinish() { if (m_onFinishAction != nullptr) m_onFinishAction(this); }
   virtual void Interrupt() { if (m_onInterruptAction != nullptr) m_onInterruptAction(this); }

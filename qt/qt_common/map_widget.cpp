@@ -185,7 +185,7 @@ df::Touch MapWidget::GetSymmetrical(df::Touch const & touch) const
   return result;
 }
 
-void MapWidget::OnViewportChanged(ScreenBase const & screen)
+void MapWidget::OnViewportChanged(ScreenBase const &)
 {
   UpdateScaleControl();
 }

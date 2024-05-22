@@ -147,7 +147,7 @@ struct TraitsPacket<Packet>
     return Packet(lat, lon, timestamp);
   }
 
-  static traffic::SpeedGroup GetSpeedGroup(Packet const & packet)
+  static traffic::SpeedGroup GetSpeedGroup(Packet const & /* packet */)
   {
     return traffic::SpeedGroup::Unknown;
   }

@@ -72,7 +72,7 @@ public:
       m_duration = maxDuration;
   }
 
-  void SetMinDuration(double minDuration) override {}
+  void SetMinDuration(double /* minDuration */) override {}
   double GetMaxDuration() const override { return Animation::kInvalidAnimationDuration; }
   double GetMinDuration() const override { return Animation::kInvalidAnimationDuration; }
 

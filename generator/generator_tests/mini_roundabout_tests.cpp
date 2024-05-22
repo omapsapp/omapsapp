@@ -50,7 +50,7 @@ OsmElement RoadNode(uint64_t id, double lat, double lon)
 }
 
 void TestRunCmpPoints(std::vector<m2::PointD> const & pointsFact,
-                      std::vector<m2::PointD> const & pointsPlan, double r)
+                      std::vector<m2::PointD> const & pointsPlan, double /* r */)
 {
   TEST_EQUAL(pointsFact.size(), pointsPlan.size(), ());
   TEST_GREATER(pointsFact.size(), 2, ());

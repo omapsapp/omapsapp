@@ -145,8 +145,8 @@ double WeightedEdgeEstimator::CalcSegmentWeight(Segment const & segment,
   return it->second;
 }
 
-double WeightedEdgeEstimator::GetUTurnPenalty(Purpose purpose) const { return 0.0; }
-double WeightedEdgeEstimator::GetFerryLandingPenalty(Purpose purpose) const { return 0.0; }
+double WeightedEdgeEstimator::GetUTurnPenalty(Purpose) const { return 0.0; }
+double WeightedEdgeEstimator::GetFerryLandingPenalty(Purpose) const { return 0.0; }
 
 // TestIndexGraphTopology --------------------------------------------------------------------------
 TestIndexGraphTopology::TestIndexGraphTopology(uint32_t numVertices) : m_numVertices(numVertices) {}

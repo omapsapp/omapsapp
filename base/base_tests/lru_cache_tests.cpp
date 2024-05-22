@@ -126,7 +126,7 @@ UNIT_TEST(LruCacheSmokeTest)
   using Value = int;
 
   {
-    LruCacheTest<Key, Value> cache(1 /* maxCacheSize */, [](Key k, Value & v) { v = 1; } /* loader */);
+    LruCacheTest<Key, Value> cache(1 /* maxCacheSize */, [](Key, Value & v) { v = 1; } /* loader */);
     TEST_EQUAL(cache.GetValue(1), 1, ());
     TEST_EQUAL(cache.GetValue(2), 1, ());
     TEST_EQUAL(cache.GetValue(3), 1, ());

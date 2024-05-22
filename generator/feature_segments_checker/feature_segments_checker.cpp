@@ -157,7 +157,7 @@ public:
   {
   }
 
-  void operator()(FeatureType & f, uint32_t const & id)
+  void operator()(FeatureType & f, uint32_t const & /* id */)
   {
     f.ParseHeader2();
     if (!GetBicycleModel().IsRoad(feature::TypesHolder(f)))

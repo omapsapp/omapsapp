@@ -447,7 +447,7 @@ private:
   bool m_finished;
 };
 
-void OnCountryDownloaded(CountryId const & countryId, LocalFilePtr const localFile)
+void OnCountryDownloaded(CountryId const & /* countryId */, LocalFilePtr const localFile)
 {
   LOG(LINFO, ("OnCountryDownloaded:", *localFile));
 }

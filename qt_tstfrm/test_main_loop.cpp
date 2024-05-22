@@ -22,7 +22,7 @@ public:
   {}
 
 protected:
-  void paintEvent(QPaintEvent * e) override
+  void paintEvent(QPaintEvent *) override
   {
     m_fn(this);
   }

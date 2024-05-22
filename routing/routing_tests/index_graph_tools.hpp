@@ -131,7 +131,7 @@ public:
   IndexGraph & GetIndexGraph(NumMwmId mwmId) override;
   Geometry & GetGeometry(NumMwmId mwmId) override;
 
-  std::vector<RouteSegment::SpeedCamera> GetSpeedCameraInfo(Segment const & segment) override
+  std::vector<RouteSegment::SpeedCamera> GetSpeedCameraInfo(Segment const &) override
   {
     return {};
   }

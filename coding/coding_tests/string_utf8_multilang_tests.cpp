@@ -81,7 +81,7 @@ UNIT_TEST(MultilangString_ForEach)
     size_t index = 0;
     vector<string> const expected = {"default", "en", "ru"};
     vector<string> actual;
-    s.ForEach([&index, &actual](char lang, string_view)
+    s.ForEach([&index, &actual](char, string_view)
     {
       actual.push_back(gArr[index].m_lang);
       ++index;
