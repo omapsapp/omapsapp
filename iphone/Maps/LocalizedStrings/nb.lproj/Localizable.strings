@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Attraksjon";
 
+"type.tourism.camp_pitch" = "Campingplass";
+
 "type.tourism.camp_site" = "Campingplass";
 
 "type.tourism.caravan_site" = "Camping";

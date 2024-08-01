@@ -1866,6 +1866,7 @@
 	<string name="type.tourism.attraction">Atrakce</string>
 	<string name="type.attraction.animal">Ohrada pro zvířata</string>
 	<string name="type.tourism.attraction.specified">Atrakce</string>
+	<string name="type.tourism.camp_pitch">Kemp</string>
 	<string name="type.tourism.camp_site">Kempování</string>
 	<string name="type.tourism.caravan_site">Kemp pro obytné přívěsy</string>
 	<!-- A rentable countryside vacation house. -->

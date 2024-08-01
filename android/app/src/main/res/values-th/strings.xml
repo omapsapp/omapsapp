@@ -1860,6 +1860,7 @@
 	<string name="type.tourism.attraction">การท่องเที่ยว</string>
 	<string name="type.attraction.animal">สิ่งที่แนบมากับสัตว์</string>
 	<string name="type.tourism.attraction.specified">การท่องเที่ยว</string>
+	<string name="type.tourism.camp_pitch">สนามกางเต็นท์</string>
 	<string name="type.tourism.camp_site">การตั้งแคมป์</string>
 	<string name="type.tourism.caravan_site">ขบวนนักเดินทาง</string>
 	<!-- A rentable countryside vacation house. -->

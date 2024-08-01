@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Atrakcia";
 
+"type.tourism.camp_pitch" = "Kempingové ihrisko";
+
 "type.tourism.camp_site" = "Kemp";
 
 "type.tourism.caravan_site" = "Kemp pre karavany";

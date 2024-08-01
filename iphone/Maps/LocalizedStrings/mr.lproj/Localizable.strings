@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "आकर्षण";
 
+"type.tourism.camp_pitch" = "कॅम्पिंग खेळपट्टी";
+
 "type.tourism.camp_site" = "शिबिरवास(कॅम्पिंग)";
 
 "type.tourism.caravan_site" = "RV Park";

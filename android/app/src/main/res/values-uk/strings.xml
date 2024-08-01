@@ -2062,6 +2062,7 @@
 	<string name="type.tourism.attraction">Пам’ятне місце</string>
 	<string name="type.attraction.animal">Вольєр для тварин</string>
 	<string name="type.tourism.attraction.specified">Пам’ятне місце</string>
+	<string name="type.tourism.camp_pitch">Місце для кемпінгу</string>
 	<string name="type.tourism.camp_site">Кемпінг</string>
 	<string name="type.tourism.caravan_site">Кемпінг для автобудинків</string>
 	<!-- A rentable countryside vacation house. -->

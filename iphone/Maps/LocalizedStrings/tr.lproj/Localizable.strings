@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Görülecek Yerler";
 
+"type.tourism.camp_pitch" = "Kamp Alanı";
+
 "type.tourism.camp_site" = "Kamp Alanı";
 
 "type.tourism.caravan_site" = "Karavan Parkı";

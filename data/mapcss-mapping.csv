@@ -582,7 +582,7 @@ railway|monorail|bridge;[railway=monorail][bridge?];;name;int_name;469;
 area:highway|steps;470;
 # ~90k usages.
 amenity|telephone;471;
-deprecated|deprecated;472;x
+tourism|camp_pitch;472;
 deprecated|deprecated;473;x
 natural|grassland;474;
 deprecated|deprecated;475;x

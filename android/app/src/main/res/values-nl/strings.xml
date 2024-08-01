@@ -2055,6 +2055,7 @@
 	<string name="type.tourism.attraction">Attractie</string>
 	<string name="type.attraction.animal">Dierenverblijf</string>
 	<string name="type.tourism.attraction.specified">Attractie</string>
+	<string name="type.tourism.camp_pitch">Kampeerplaats</string>
 	<string name="type.tourism.camp_site">Kampeerterrein</string>
 	<string name="type.tourism.caravan_site">Caravan site</string>
 	<!-- A rentable countryside vacation house. -->

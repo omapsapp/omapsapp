@@ -2011,6 +2011,7 @@
 	<string name="type.tourism.attraction">مكان جذاب</string>
 	<string name="type.attraction.animal">الضميمة الحيوانية</string>
 	<string name="type.tourism.attraction.specified">مكان جذاب</string>
+	<string name="type.tourism.camp_pitch">ملعب للتخييم</string>
 	<string name="type.tourism.camp_site">مخيّم</string>
 	<string name="type.tourism.caravan_site">موقع لمراكب ترفيه</string>
 	<!-- A rentable countryside vacation house. -->

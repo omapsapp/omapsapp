@@ -1782,6 +1782,7 @@
 	<string name="type.tourism.alpine_hut">Alojamento na montanha</string>
 	<string name="type.tourism.apartment">Apartamento de temporada</string>
 	<string name="type.tourism.artwork.architecture">Arte arquitetônica</string>
+	<string name="type.tourism.camp_pitch">Parcela de acampamento</string>
 	<string name="type.tourism.camp_site">Local de camping</string>
 	<string name="type.tourism.caravan_site">Área de trailers</string>
 	<string name="type.tourism.guest_house">Pousada</string>

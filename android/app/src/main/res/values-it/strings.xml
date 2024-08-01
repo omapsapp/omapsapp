@@ -2007,6 +2007,7 @@
 	<string name="type.tourism.attraction">Attrattiva</string>
 	<string name="type.attraction.animal">Recinto per animali</string>
 	<string name="type.tourism.attraction.specified">Attrattiva</string>
+	<string name="type.tourism.camp_pitch">Piazzola da campeggio</string>
 	<string name="type.tourism.camp_site">Campeggio</string>
 	<string name="type.tourism.caravan_site">Area per campeggiatori</string>
 	<!-- A rentable countryside vacation house. -->

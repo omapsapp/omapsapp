@@ -1959,6 +1959,7 @@
 	<string name="type.tourism.attraction">Erakarpen turistikoa</string>
 	<string name="type.attraction.animal">Animalien itxitura</string>
 	<string name="type.tourism.attraction.specified">Erakarpen turistikoa</string>
+	<string name="type.tourism.camp_pitch">Kanpin-zelaia</string>
 	<string name="type.tourism.camp_site">Kanpalekua</string>
 	<string name="type.tourism.caravan_site">Karabana gunea</string>
 	<!-- A rentable countryside vacation house. -->

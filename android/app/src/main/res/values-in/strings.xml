@@ -1852,6 +1852,7 @@
 	<string name="type.tourism.attraction">Atraksi</string>
 	<string name="type.attraction.animal">Kandang Hewan</string>
 	<string name="type.tourism.attraction.specified">Atraksi</string>
+	<string name="type.tourism.camp_pitch">Tempat berkemah</string>
 	<string name="type.tourism.camp_site">Perkemahan</string>
 	<string name="type.tourism.caravan_site">Lokasi perkemahan</string>
 	<!-- A rentable countryside vacation house. -->

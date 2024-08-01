@@ -1774,6 +1774,7 @@
 	<string name="type.tourism.attraction">گردشگری</string>
 	<string name="type.attraction.animal">محوطه حیوانات</string>
 	<string name="type.tourism.attraction.specified">گردشگری</string>
+	<string name="type.tourism.camp_pitch">زمین کمپینگ</string>
 	<string name="type.tourism.camp_site">محل چادر زنی</string>
 	<!-- A rentable countryside vacation house. -->
 	<string name="type.tourism.chalet">کلبه تعطیلات</string>

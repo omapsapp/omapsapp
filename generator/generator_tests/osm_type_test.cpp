@@ -2689,6 +2689,7 @@ UNIT_CLASS_TEST(TestWithClassificator, OsmType_SimpleTypesSmoke)
     {"tourism", "apartment"},
     {"tourism", "artwork"},
     {"tourism", "attraction"},
+    {"tourism", "camp_pitch"},
     {"tourism", "camp_site"},
     {"tourism", "caravan_site"},
     {"tourism", "chalet"},

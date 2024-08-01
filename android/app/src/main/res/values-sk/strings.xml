@@ -2015,6 +2015,7 @@
 	<string name="type.tourism.attraction">Atrakcia</string>
 	<string name="type.attraction.animal">Zvieracia ohrada</string>
 	<string name="type.tourism.attraction.specified">Atrakcia</string>
+	<string name="type.tourism.camp_pitch">Kempingové ihrisko</string>
 	<string name="type.tourism.camp_site">Kemp</string>
 	<string name="type.tourism.caravan_site">Kemp pre karavany</string>
 	<!-- A rentable countryside vacation house. -->

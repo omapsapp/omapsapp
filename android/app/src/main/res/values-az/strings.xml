@@ -2021,6 +2021,7 @@
 	<string name="type.tourism.attraction">Attraksionlar</string>
 	<string name="type.attraction.animal">Heyvan mühafizəsi</string>
 	<string name="type.tourism.attraction.specified">Attraksionlar</string>
+	<string name="type.tourism.camp_pitch">Düşərgə meydançası</string>
 	<string name="type.tourism.camp_site">Düşərgə sahəsi</string>
 	<string name="type.tourism.caravan_site">Treyler parkı</string>
 	<!-- A rentable countryside vacation house. -->

@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Atraksi";
 
+"type.tourism.camp_pitch" = "Tempat berkemah";
+
 "type.tourism.camp_site" = "Perkemahan";
 
 "type.tourism.caravan_site" = "Lokasi perkemahan";

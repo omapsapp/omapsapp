@@ -2018,6 +2018,7 @@
 	<string name="type.tourism.artwork.sculpture">Œuvre</string>
 	<string name="type.tourism.artwork.statue">Œuvre</string>
 	<string name="type.attraction.animal">Enclos pour animaux</string>
+	<string name="type.tourism.camp_pitch">Emplacement de camping</string>
 	<string name="type.tourism.camp_site">Camping</string>
 	<string name="type.tourism.caravan_site">Aire de camping-car</string>
 	<!-- A rentable countryside vacation house. -->

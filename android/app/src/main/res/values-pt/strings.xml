@@ -2001,6 +2001,7 @@
 	<string name="type.tourism.attraction">Atração turística</string>
 	<string name="type.attraction.animal">Recinto para animais</string>
 	<string name="type.tourism.attraction.specified">Atração turística</string>
+	<string name="type.tourism.camp_pitch">Campo de acampamento</string>
 	<string name="type.tourism.camp_site">Parque de campismo</string>
 	<string name="type.tourism.caravan_site">Parque de caravanas</string>
 	<!-- A rentable countryside vacation house. -->

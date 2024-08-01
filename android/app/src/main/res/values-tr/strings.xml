@@ -2055,6 +2055,7 @@
 	<string name="type.tourism.attraction">Görülecek Yerler</string>
 	<string name="type.attraction.animal">Hayvan Muhafazası</string>
 	<string name="type.tourism.attraction.specified">Görülecek Yerler</string>
+	<string name="type.tourism.camp_pitch">Kamp Alanı</string>
 	<string name="type.tourism.camp_site">Kamp Alanı</string>
 	<string name="type.tourism.caravan_site">Karavan Parkı</string>
 	<!-- A rentable countryside vacation house. -->

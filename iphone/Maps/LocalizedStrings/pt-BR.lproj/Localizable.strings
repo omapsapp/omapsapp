@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Atração turística";
 
+"type.tourism.camp_pitch" = "Parcela de acampamento";
+
 "type.tourism.camp_site" = "Local de camping";
 
 "type.tourism.caravan_site" = "Área de trailers";

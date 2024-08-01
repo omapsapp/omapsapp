@@ -1866,6 +1866,7 @@
 	<string name="type.tourism.attraction">आकर्षण</string>
 	<string name="type.attraction.animal">प्राणी संलग्न</string>
 	<string name="type.tourism.attraction.specified">आकर्षण</string>
+	<string name="type.tourism.camp_pitch">कॅम्पिंग खेळपट्टी</string>
 	<string name="type.tourism.camp_site">शिबिरवास(कॅम्पिंग)</string>
 	<!-- A rentable countryside vacation house. -->
 	<string name="type.tourism.chalet">हॉलिडे कॉटेज</string>

@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Sehenswürdigkeit";
 
+"type.tourism.camp_pitch" = "Campingplatz";
+
 "type.tourism.camp_site" = "Campingplatz";
 
 "type.tourism.caravan_site" = "Wohnmobilstellplatz";

@@ -1917,6 +1917,7 @@
 	<string name="type.tourism.attraction">Attraksjon</string>
 	<string name="type.attraction.animal">Innhegning for dyr</string>
 	<string name="type.tourism.attraction.specified">Attraksjon</string>
+	<string name="type.tourism.camp_pitch">Campingplass</string>
 	<string name="type.tourism.camp_site">Campingplass</string>
 	<string name="type.tourism.caravan_site">Camping</string>
 	<!-- A rentable countryside vacation house. -->

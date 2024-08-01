@@ -1879,6 +1879,7 @@
 	<string name="type.tourism.attraction">Látnivaló</string>
 	<string name="type.attraction.animal">Állatok tartása</string>
 	<string name="type.tourism.attraction.specified">Látnivaló</string>
+	<string name="type.tourism.camp_pitch">Kemping pálya</string>
 	<string name="type.tourism.camp_site">Kemping</string>
 	<string name="type.tourism.caravan_site">Karaván pihenő</string>
 	<!-- A rentable countryside vacation house. -->

@@ -2035,6 +2035,7 @@
 	<string name="type.tourism.attraction">Sehenswürdigkeit</string>
 	<string name="type.attraction.animal">Tiergehege</string>
 	<string name="type.tourism.attraction.specified">Sehenswürdigkeit</string>
+	<string name="type.tourism.camp_pitch">Campingplatz</string>
 	<string name="type.tourism.camp_site">Campingplatz</string>
 	<string name="type.tourism.caravan_site">Wohnmobilstellplatz</string>
 	<!-- A rentable countryside vacation house. -->

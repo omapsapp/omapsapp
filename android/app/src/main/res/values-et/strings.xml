@@ -2051,6 +2051,7 @@
 	<string name="type.tourism.attraction">Turismiatraktsioon</string>
 	<string name="type.attraction.animal">Loomade aedik</string>
 	<string name="type.tourism.attraction.specified">Turismiatraktsioon</string>
+	<string name="type.tourism.camp_pitch">Telkimisplats</string>
 	<string name="type.tourism.camp_site">Telkimine</string>
 	<string name="type.tourism.caravan_site">Haagiselamute park</string>
 	<!-- A rentable countryside vacation house. -->

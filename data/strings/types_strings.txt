@@ -29855,6 +29855,41 @@
   [type.tourism.attraction.specified]
     ref = type.tourism.attraction
 
+  [type.tourism.camp_pitch]
+    en = Camp Pitch
+    en-GB = Camp Pitch
+    af = Kampeerplek
+    ar = ملعب للتخييم
+    az = Düşərgə meydançası
+    cs = Kemp
+    de = Campingplatz
+    el = Γήπεδο κάμπινγκ
+    es = Parcela de camping
+    et = Telkimisplats
+    eu = Kanpin-zelaia
+    fa = زمین کمپینگ
+    fi = Leirintäalue
+    fr = Emplacement de camping
+    hu = Kemping pálya
+    id = Tempat berkemah
+    it = Piazzola da campeggio
+    ja = キャンプ場
+    ko = 캠핑장
+    mr = कॅम्पिंग खेळपट्टी
+    nb = Campingplass
+    nl = Kampeerplaats
+    pl = Miejsce na kemping
+    pt = Campo de acampamento
+    pt-BR = Parcela de acampamento
+    ru = Место для кемпинга
+    sk = Kempingové ihrisko
+    th = สนามกางเต็นท์
+    tr = Kamp Alanı
+    uk = Місце для кемпінгу
+    vi = Sân cắm trại
+    zh-Hans = 露营地
+    zh-Hant = 露營地
+
   [type.tourism.camp_site]
     en = Campground
     en-GB = Campsite

@@ -331,6 +331,7 @@
 	<string name="type.shop.watches">Watch Shop</string>
 	<string name="type.shop.wholesale">Wholesale Shop</string>
 	<string name="type.sport.soccer">Football</string>
+	<string name="type.tourism.camp_pitch">Camp Pitch</string>
 	<string name="type.tourism.camp_site">Campsite</string>
 	<string name="type.tourism.caravan_site">Caravan Park</string>
 </resources>

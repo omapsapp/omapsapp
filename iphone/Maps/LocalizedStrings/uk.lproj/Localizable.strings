@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "Пам’ятне місце";
 
+"type.tourism.camp_pitch" = "Місце для кемпінгу";
+
 "type.tourism.camp_site" = "Кемпінг";
 
 "type.tourism.caravan_site" = "Кемпінг для автобудинків";

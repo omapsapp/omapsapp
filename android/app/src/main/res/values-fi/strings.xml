@@ -1984,6 +1984,7 @@
 	<string name="type.tourism.attraction">Nähtävyys</string>
 	<string name="type.attraction.animal">Eläinsuoja</string>
 	<string name="type.tourism.attraction.specified">Nähtävyys</string>
+	<string name="type.tourism.camp_pitch">Leirintäalue</string>
 	<string name="type.tourism.camp_site">Retkeily</string>
 	<string name="type.tourism.caravan_site">Asuntovaunupaikka</string>
 	<!-- A rentable countryside vacation house. -->

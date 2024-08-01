@@ -1911,6 +1911,7 @@
 	<string name="type.tourism.attraction">Αξιοθέατα</string>
 	<string name="type.attraction.animal">Περίφραξη ζώων</string>
 	<string name="type.tourism.attraction.specified">Αξιοθέατα</string>
+	<string name="type.tourism.camp_pitch">Γήπεδο κάμπινγκ</string>
 	<string name="type.tourism.camp_site">Κάμπινγκ</string>
 	<string name="type.tourism.caravan_site">Χώρος για τροχόσπιτα</string>
 	<!-- A rentable countryside vacation house. -->

@@ -2083,6 +2083,7 @@
 	<string name="type.tourism.attraction">Достопримечательность</string>
 	<string name="type.attraction.animal">Вольер для животных</string>
 	<string name="type.tourism.attraction.specified">Достопримечательность</string>
+	<string name="type.tourism.camp_pitch">Место для кемпинга</string>
 	<string name="type.tourism.camp_site">Кемпинг</string>
 	<string name="type.tourism.caravan_site">Кемпинг для автодомов</string>
 	<!-- A rentable countryside vacation house. -->

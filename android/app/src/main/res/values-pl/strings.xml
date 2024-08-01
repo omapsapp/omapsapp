@@ -2030,6 +2030,7 @@
 	<string name="type.tourism.attraction">Atrakcja turystyczna</string>
 	<string name="type.attraction.animal">Atrakcje zwierzęce</string>
 	<string name="type.tourism.attraction.specified">Atrakcja turystyczna</string>
+	<string name="type.tourism.camp_pitch">Miejsce na kemping</string>
 	<string name="type.tourism.camp_site">Kamping</string>
 	<string name="type.tourism.caravan_site">Pole namiotowe</string>
 	<!-- A rentable countryside vacation house. -->

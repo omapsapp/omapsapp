@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "アトラクション";
 
+"type.tourism.camp_pitch" = "キャンプ場";
+
 "type.tourism.camp_site" = "キャンプ場";
 
 "type.tourism.caravan_site" = "オートキャンプ場";

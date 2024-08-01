@@ -3826,6 +3826,8 @@
 
 "type.tourism.attraction.specified" = "景点";
 
+"type.tourism.camp_pitch" = "露营地";
+
 "type.tourism.camp_site" = "宿营场地";
 
 "type.tourism.caravan_site" = "房车宿营地";

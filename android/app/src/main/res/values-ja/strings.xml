@@ -2019,6 +2019,7 @@
 	<string name="type.tourism.attraction">アトラクション</string>
 	<string name="type.attraction.animal">アニマル・エンクロージャー</string>
 	<string name="type.tourism.attraction.specified">アトラクション</string>
+	<string name="type.tourism.camp_pitch">キャンプ場</string>
 	<string name="type.tourism.camp_site">キャンプ場</string>
 	<string name="type.tourism.caravan_site">オートキャンプ場</string>
 	<!-- A rentable countryside vacation house. -->

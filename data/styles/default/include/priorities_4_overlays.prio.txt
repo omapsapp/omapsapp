@@ -1504,6 +1504,7 @@ leisure-swimming_pool-private                       # icon z17- (also has captio
 # === -6100
 
 # highway-rest_area                                 # caption(optional) z15- (also has icon z15-)
+# tourism-camp_pitch                                # caption(optional) z16-
 # tourism-camp_site                                 # caption(optional) z16- (also has icon z16-)
 # tourism-caravan_site                              # caption(optional) z16- (also has icon z16-)
 # tourism-chalet                                    # caption(optional) z16- (also has icon z16-)
