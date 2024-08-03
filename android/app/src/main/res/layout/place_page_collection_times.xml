@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/ll__place_collection_times"
+  style="@style/PlacePageItemFrame"
+  android:tag="collection_times"
+  tools:background="#4000FFFF"
+  tools:visibility="visible">
+
+  <ImageView
+    android:id="@+id/iv__place_collection_times"
+    style="@style/PlacePageMetadataIcon"
+    app:srcCompat="@drawable/ic_collection_icon" />
+
+  <TextView
+      android:id="@+id/tv__place_collection_times"
+      style="@style/PlacePageMetadataText"
+      tools:text="Mo-Fr 9:00; Sa 11:00" />
+
+</LinearLayout>

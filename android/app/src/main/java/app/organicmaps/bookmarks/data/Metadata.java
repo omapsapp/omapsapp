@@ -64,7 +64,8 @@ public class Metadata implements Parcelable
     FMD_WHEELCHAIR(43),
     FMD_LOCAL_REF(44),
     FMD_DRIVE_THROUGH(45),
-    FMD_WEBSITE_MENU(46);
+    FMD_WEBSITE_MENU(46),
+    FMD_COLLECTION_TIMES(47);
     private final int mMetaType;
 
     MetadataType(int metadataType)

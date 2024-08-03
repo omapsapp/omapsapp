@@ -80,7 +80,11 @@ public:
   std::string FormatRoadShields() const;
 
   std::string_view GetOpeningHours() const;
+  
+  std::string_view GetCollectionTimes() const;
+  
   feature::Internet GetInternet() const;
+  
   int GetStars() const;
 
   /// @returns true if feature has ATM type.

@@ -148,6 +148,11 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_opening_hours(std::strin
   return v;
 }
 
+std::string MetadataTagProcessorImpl::ValidateAndFormat_collection_times(std::string const & v)
+{
+  return v;
+}
+
 std::string MetadataTagProcessorImpl::ValidateAndFormat_ele(std::string const & v) const
 {
   if (IsNoNameNoAddressBuilding(m_params))
@@ -506,6 +511,7 @@ void MetadataTagProcessor::operator()(std::string const & k, std::string const &
   switch (mdType)
   {
   case Metadata::FMD_OPEN_HOURS: valid = ValidateAndFormat_opening_hours(v); break;
+  case Metadata::FMD_COLLECTION_TIMES: valid = ValidateAndFormat_collection_times(v); break;
   case Metadata::FMD_FAX_NUMBER:  // The same validator as for phone.
   case Metadata::FMD_PHONE_NUMBER: valid = ValidateAndFormat_phone(v); break;
   case Metadata::FMD_STARS: valid = ValidateAndFormat_stars(v); break;

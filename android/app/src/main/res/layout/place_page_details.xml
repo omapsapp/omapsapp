@@ -35,6 +35,8 @@
       android:layout_height="wrap_content"
       tools:layout="@layout/place_page_opening_hours_fragment" />
 
+    <include layout="@layout/place_page_collection_times" />
+
     <include layout="@layout/place_page_cuisine"/>
 
     <include layout="@layout/place_page_entrance"/>

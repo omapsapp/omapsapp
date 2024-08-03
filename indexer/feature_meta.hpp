@@ -152,6 +152,7 @@ public:
     FMD_LOCAL_REF = 44,
     FMD_DRIVE_THROUGH = 45,
     FMD_WEBSITE_MENU = 46,
+    FMD_COLLECTION_TIMES = 47,
     FMD_COUNT
   };
 

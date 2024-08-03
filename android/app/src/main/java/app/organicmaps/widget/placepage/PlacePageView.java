@@ -114,6 +114,8 @@ public class PlacePageView extends Fragment implements View.OnClickListener,
   private View mAddOrganisation;
   private View mAddPlace;
   private View mEditTopSpace;
+  private View mCollectionTimes;
+  private TextView mTvCollectionTimes;
 
   // Data
   private CoordinatesFormat mCoordsFormat = CoordinatesFormat.LatLonDecimal;
@@ -267,6 +269,9 @@ public class PlacePageView extends Fragment implements View.OnClickListener,
     mCapacity.setOnLongClickListener(this);
     mWheelchair.setOnLongClickListener(this);
     mDriveThrough.setOnLongClickListener(this);
+    mCollectionTimes = mFrame.findViewById(R.id.ll__place_collection_times);
+    mTvCollectionTimes = mFrame.findViewById(R.id.tv__place_collection_times);
+    mCollectionTimes.setOnLongClickListener(this);
 
     mDownloaderIcon = new DownloaderStatusIcon(mPreview.findViewById(R.id.downloader_status_frame));
 
@@ -407,6 +412,9 @@ public class PlacePageView extends Fragment implements View.OnClickListener,
     refreshMetadataOrHide(mMapObject.getMetadata(Metadata.MetadataType.FMD_FLATS), mEntrance, mTvEntrance);
     final String level = Utils.getLocalizedLevel(getContext(), mMapObject.getMetadata(Metadata.MetadataType.FMD_LEVEL));
     refreshMetadataOrHide(level, mLevel, mTvLevel);
+
+    final String collectionTimes = mMapObject.getMetadata(Metadata.MetadataType.FMD_COLLECTION_TIMES);
+    refreshMetadataOrHide(collectionTimes, mCollectionTimes, mTvCollectionTimes);
 
     final String cap = mMapObject.getMetadata(Metadata.MetadataType.FMD_CAPACITY);
     refreshMetadataOrHide(!TextUtils.isEmpty(cap) ? getString(R.string.capacity, cap) : "", mCapacity, mTvCapacity);

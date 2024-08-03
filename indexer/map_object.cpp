@@ -146,6 +146,11 @@ std::string_view MapObject::GetOpeningHours() const
   return m_metadata.Get(MetadataID::FMD_OPEN_HOURS);
 }
 
+std::string_view MapObject::GetCollectionTimes() const
+{
+  return m_metadata.Get(MetadataID::FMD_COLLECTION_TIMES);
+}
+
 feature::Internet MapObject::GetInternet() const
 {
   return feature::InternetFromString(m_metadata.Get(MetadataID::FMD_INTERNET));

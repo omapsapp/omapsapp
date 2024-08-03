@@ -63,6 +63,8 @@ bool Metadata::TypeFromString(string_view k, Metadata::EType & outType)
 {
   if (k == "opening_hours")
     outType = Metadata::FMD_OPEN_HOURS;
+  else if (k == "collection_times")
+    outType = Metadata::FMD_COLLECTION_TIMES;
   else if (k == "phone" || k == "contact:phone" || k == "contact:mobile" || k == "mobile")
     outType = Metadata::FMD_PHONE_NUMBER;
   else if (k == "fax" || k == "contact:fax")
@@ -213,6 +215,7 @@ string ToString(Metadata::EType type)
   {
   case Metadata::FMD_CUISINE: return "cuisine";
   case Metadata::FMD_OPEN_HOURS: return "opening_hours";
+  case Metadata::FMD_COLLECTION_TIMES: return "collection_times";
   case Metadata::FMD_PHONE_NUMBER: return "phone";
   case Metadata::FMD_FAX_NUMBER: return "fax";
   case Metadata::FMD_STARS: return "stars";
