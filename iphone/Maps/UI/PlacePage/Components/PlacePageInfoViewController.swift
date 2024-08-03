@@ -108,6 +108,7 @@ class PlacePageInfoViewController: UIViewController {
   private var phoneView: InfoItemViewController?
   private var websiteView: InfoItemViewController?
   private var websiteMenuView: InfoItemViewController?
+  private var checkDateView: InfoItemViewController?
   private var kayakView: InfoItemViewController?
   private var wikipediaView: InfoItemViewController?
   private var wikimediaCommonsView: InfoItemViewController?
@@ -176,6 +177,9 @@ class PlacePageInfoViewController: UIViewController {
                                  longPressHandler: { [weak self] in
         self?.delegate?.didCopy(phone)
       })
+    }
+    if let checkDate = placePageInfoData.checkDate {
+      checkDateView = createInfoItem(checkDate, icon: UIImage(named: "ic_placepage_operator"))
     }
 
     if let ppOperator = placePageInfoData.ppOperator {

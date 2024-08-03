@@ -50,6 +50,7 @@ using namespace osm;
           break;
         }
         case MetadataID::FMD_WEBSITE: _website = ToNSString(value); break;
+        case MetadataID::FMD_CHECK_DATE: _checkDate = ToNSString(value); break;
         case MetadataID::FMD_EXTERNAL_URI:
         {
           NSString *countryIsoCode = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode] ?: @"US";

@@ -516,6 +516,7 @@ void MetadataTagProcessor::operator()(std::string const & k, std::string const &
     break;
   case Metadata::FMD_WEBSITE: valid = ValidateAndFormat_url(v); break;
   case Metadata::FMD_WEBSITE_MENU: valid = ValidateAndFormat_url(v); break;
+  case Metadata::FMD_CHECK_DATE: valid = ValidateAndFormat_url(v); break;
   case Metadata::FMD_CONTACT_FACEBOOK: valid = osm::ValidateAndFormat_facebook(v); break;
   case Metadata::FMD_CONTACT_INSTAGRAM: valid = osm::ValidateAndFormat_instagram(v); break;
   case Metadata::FMD_CONTACT_TWITTER: valid = osm::ValidateAndFormat_twitter(v); break;
