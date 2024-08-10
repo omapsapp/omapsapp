@@ -12176,8 +12176,43 @@ amenity-charging_station|@charging_station
 
 amenity-charging_station-bicycle|@charging_station
 en:4Bicycle Charging|4Bike Charging
-ru:4Велозарядка
-tr:4Bisiklet Şarj Etme
+ar:شحن الدراجات الهوائية
+be:Зарадка ровара
+bg:Зареждане на велосипеди
+ca:Càrrega de bicicletes
+cs:Nabíjení jízdních kol
+da:Opladning af cykler
+de:Fahrrad aufladen
+el:Φόρτιση ποδηλάτων
+es:Carga de bicicletas
+et:Jalgratta laadimine
+eu:Bizikleta kargatzea
+fa:شارژ دوچرخه
+fi:Polkupyörän lataus
+fr:Chargement des vélos
+he:טעינת אופניים
+hi:साइकिल चार्जिंग
+hu:Kerékpár töltés
+id:Pengisian Daya Sepeda
+it:Ricarica delle biciclette
+ja:自転車充電
+ko:자전거 충전
+mr:सायकल चार्जिंग
+nb:Lading av sykler
+nl:Fiets opladen
+pl:Ładowanie rowerów
+pt:Carregamento de bicicletas
+ro:Încărcarea bicicletelor
+ru:Велозарядка|Зарядка для велосипедов
+sk:Nabíjanie bicyklov
+sv:Laddning av cyklar
+sw:Kuchaji Baiskeli
+th:การชาร์จจักรยาน
+tr:Bisiklet Şarjı
+uk:Зарядка для велосипедів
+vi:Sạc xe đạp
+zh-Hans:自行车充电
+zh-Hant:自行車充電
 
 amenity-charging_station-motorcar|@charging_station
 en:4Motorcar Charging|3Car Charging|Charger
