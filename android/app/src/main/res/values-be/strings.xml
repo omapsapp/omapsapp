@@ -602,8 +602,8 @@
 	<string name="bookmark_lists_hide_all">Схаваць усе</string>
 	<string name="bookmark_lists_show_all">Паказаць усе</string>
 	<plurals name="bookmarks_places">
-	  <item quantity="few">%d закладкі</item>
 	  <item quantity="one">%d закладка</item>
+	  <item quantity="few">%d закладкі</item>
 	  <item quantity="other">%d закладак</item>
 	</plurals>
 	<string name="bookmarks_create_new_group">Стварыць новы спіс</string>
@@ -622,8 +622,8 @@
 	<string name="profile">Профіль OpenStreetMap</string>
 	<string name="restore">Аднавіць</string>
 	<plurals name="tracks">
-	  <item quantity="few">%d сцежкі</item>
 	  <item quantity="one">%d сцежка</item>
+	  <item quantity="few">%d сцежкі</item>
 	  <item quantity="other">%d сцежак</item>
 	</plurals>
 	<!-- Settings privacy group in settings screen -->

@@ -19,10 +19,10 @@
       <string>NSStringPluralRuleType</string>
       <key>NSStringFormatValueTypeKey</key>
       <string>d</string>
-      <key>few</key>
-      <string>%d закладкі</string>
       <key>one</key>
       <string>%d закладка</string>
+      <key>few</key>
+      <string>%d закладкі</string>
       <key>other</key>
       <string>%d закладак</string>
     </dict>
@@ -53,10 +53,10 @@
       <string>NSStringPluralRuleType</string>
       <key>NSStringFormatValueTypeKey</key>
       <string>d</string>
-      <key>few</key>
-      <string>%d сцежкі</string>
       <key>one</key>
       <string>%d сцежка</string>
+      <key>few</key>
+      <string>%d сцежкі</string>
       <key>other</key>
       <string>%d сцежак</string>
     </dict>

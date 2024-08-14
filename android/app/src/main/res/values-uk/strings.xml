@@ -610,8 +610,8 @@
 	<string name="bookmark_lists_hide_all">Приховати всі</string>
 	<string name="bookmark_lists_show_all">Показати всі</string>
 	<plurals name="bookmarks_places">
-	  <item quantity="few">%d мітки</item>
 	  <item quantity="one">%d мітка</item>
+	  <item quantity="few">%d мітки</item>
 	  <item quantity="other">%d міток</item>
 	</plurals>
 	<string name="bookmarks_create_new_group">Створити новий список</string>
@@ -629,8 +629,8 @@
 	<string name="phone_number">Номер телефону</string>
 	<string name="profile">Профіль OpenStreetMap</string>
 	<plurals name="bookmarks_detect_message">
-	  <item quantity="few">%d файлу були знайдені. Ви побачите їх після конвертації.</item>
 	  <item quantity="one">%d файл був знайдений. Ви побачите його після перетворення.</item>
+	  <item quantity="few">%d файлу були знайдені. Ви побачите їх після конвертації.</item>
 	  <item quantity="other">%d файлів було знайдено. Ви побачите їх після конвертації.</item>
 	</plurals>
 	<string name="restore">Відновити</string>

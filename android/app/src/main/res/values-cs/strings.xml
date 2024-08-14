@@ -597,8 +597,8 @@
 	<string name="phone_number">Telefonní číslo</string>
 	<string name="profile">Profil OpenStreetMap</string>
 	<plurals name="bookmarks_detect_message">
-	  <item quantity="few">%d byly nalezeny soubory. Uvidíte je po konverzi.</item>
 	  <item quantity="one">%d soubor byl nalezen. Uvidíte ji po konverzi.</item>
+	  <item quantity="few">%d byly nalezeny soubory. Uvidíte je po konverzi.</item>
 	  <item quantity="other">Bylo nalezeno %d souborů. Uvidíte je po konverzi.</item>
 	</plurals>
 	<string name="restore">Obnovit</string>

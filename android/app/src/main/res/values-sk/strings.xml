@@ -622,8 +622,8 @@
 	<string name="phone_number">Telefónne číslo</string>
 	<string name="profile">Profil OpenStreetMap</string>
 	<plurals name="bookmarks_detect_message">
-	  <item quantity="few">Boli nájdené %d súbory. Uvidíte ich po konverzii.</item>
 	  <item quantity="one">Bol nájdený %d súbor. Uvidíte to po konverzii.</item>
+	  <item quantity="few">Boli nájdené %d súbory. Uvidíte ich po konverzii.</item>
 	  <item quantity="other">Bolo nájdených %d súborov. Uvidíte ich po konverzii.</item>
 	</plurals>
 	<string name="restore">Obnoviť</string>

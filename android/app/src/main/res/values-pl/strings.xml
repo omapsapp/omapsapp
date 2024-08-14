@@ -625,14 +625,14 @@
 	<string name="profile">Profil OpenStreetMap</string>
 	<plurals name="bookmarks_detect_message">
 	  <item quantity="one">Znaleziono %d plik. Zobaczysz to po konwersji.</item>
-	  <item quantity="other">Znaleziono %d plików. Zobaczysz je po konwersji.</item>
 	  <item quantity="two">Znaleziono %d pliki. Zobaczysz je po konwersji.</item>
+	  <item quantity="other">Znaleziono %d plików. Zobaczysz je po konwersji.</item>
 	</plurals>
 	<string name="restore">Przywróć</string>
 	<plurals name="tracks">
+	  <item quantity="one">%d trasa</item>
 	  <item quantity="few">%d trasy</item>
 	  <item quantity="many">%d tras</item>
-	  <item quantity="one">%d trasa</item>
 	  <item quantity="other">%d trasy</item>
 	</plurals>
 	<!-- Settings privacy group in settings screen -->

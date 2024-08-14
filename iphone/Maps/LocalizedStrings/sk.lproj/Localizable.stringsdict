@@ -34,10 +34,10 @@
       <string>NSStringPluralRuleType</string>
       <key>NSStringFormatValueTypeKey</key>
       <string>d</string>
-      <key>few</key>
-      <string>Boli nájdené %d súbory. Uvidíte ich po konverzii.</string>
       <key>one</key>
       <string>Bol nájdený %d súbor. Uvidíte to po konverzii.</string>
+      <key>few</key>
+      <string>Boli nájdené %d súbory. Uvidíte ich po konverzii.</string>
       <key>other</key>
       <string>Bolo nájdených %d súborov. Uvidíte ich po konverzii.</string>
     </dict>

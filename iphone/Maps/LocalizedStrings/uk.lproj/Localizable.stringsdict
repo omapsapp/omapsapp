@@ -19,10 +19,10 @@
       <string>NSStringPluralRuleType</string>
       <key>NSStringFormatValueTypeKey</key>
       <string>d</string>
-      <key>few</key>
-      <string>%d мітки</string>
       <key>one</key>
       <string>%d мітка</string>
+      <key>few</key>
+      <string>%d мітки</string>
       <key>other</key>
       <string>%d міток</string>
     </dict>
@@ -38,10 +38,10 @@
       <string>NSStringPluralRuleType</string>
       <key>NSStringFormatValueTypeKey</key>
       <string>d</string>
-      <key>few</key>
-      <string>%d файлу були знайдені. Ви побачите їх після конвертації.</string>
       <key>one</key>
       <string>%d файл був знайдений. Ви побачите його після перетворення.</string>
+      <key>few</key>
+      <string>%d файлу були знайдені. Ви побачите їх після конвертації.</string>
       <key>other</key>
       <string>%d файлів було знайдено. Ви побачите їх після конвертації.</string>
     </dict>
