@@ -439,22 +439,18 @@ public class Holders
     static final float SPACING_MULTIPLE = 1.0f;
     static final float SPACING_ADD = 0.0f;
     @NonNull
-    private final TextView mTitle;
-    @NonNull
     private final TextView mDescText;
 
     DescriptionViewHolder(@NonNull View itemView, @NonNull BookmarkCategory category)
     {
       super(itemView);
       mDescText = itemView.findViewById(R.id.text);
-      mTitle = itemView.findViewById(R.id.title);
     }
 
     @Override
     void bind(@NonNull SectionPosition position,
               @NonNull BookmarkListAdapter.SectionsDataSource sectionsDataSource)
     {
-      mTitle.setText(sectionsDataSource.getCategory().getName());
       bindDescriptionIfEmpty(sectionsDataSource.getCategory());
     }
 

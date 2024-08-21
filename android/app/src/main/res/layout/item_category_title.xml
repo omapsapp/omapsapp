@@ -7,8 +7,9 @@
   android:layout_height="wrap_content"
   android:background="?windowBackgroundForced"
   android:gravity="start|center_vertical"
+  android:textSize="18sp"
   android:paddingStart="@dimen/margin_base"
-  android:paddingTop="@dimen/margin_base_plus"
+  android:paddingTop="@dimen/margin_half_plus"
   android:paddingEnd="@dimen/margin_base"
   android:paddingBottom="@dimen/margin_half_plus"
   android:text="@string/bookmarks" />

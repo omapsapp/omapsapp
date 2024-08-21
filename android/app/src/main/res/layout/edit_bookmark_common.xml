@@ -17,7 +17,7 @@
     android:orientation="vertical">
     <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/edit_bookmark_name_input"
-      style="?fontBody1"
+      style="@style/MwmWidget.Editor.CustomTextInput"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColorHint="?android:textColorSecondary"
@@ -83,7 +83,7 @@
       tools:src="@drawable/ic_bookmark_none" />
   </RelativeLayout>
   <com.google.android.material.textfield.TextInputLayout
-    style="?fontBody1"
+    style="@style/MwmWidget.Editor.CustomTextInput"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@id/rl__bookmark_set"
