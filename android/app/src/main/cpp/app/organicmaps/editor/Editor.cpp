@@ -369,6 +369,12 @@ Java_app_organicmaps_editor_Editor_nativeStartEdit(JNIEnv *, jclass)
 }
 
 JNIEXPORT void JNICALL
+Java_app_organicmaps_editor_Editor_nativeSetEditingLifecycle(JNIEnv *, jclass, int lifecycle)
+{
+  g_editableMapObject.SetEditingLifecycle((osm::EditingLifecycle) lifecycle);
+}
+
+JNIEXPORT void JNICALL
 Java_app_organicmaps_editor_Editor_nativeCreateMapObject(JNIEnv * env, jclass,
                                                              jstring featureType)
 {

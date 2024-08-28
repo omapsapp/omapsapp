@@ -64,6 +64,15 @@ struct LocalizedStreet
   bool operator==(LocalizedStreet const & st) const { return m_defaultName == st.m_defaultName; }
 };
 
+enum class EditingLifecycle
+{
+  CREATED,      //newly created and not synced with OSM
+  MODIFIED,     //modified and not synced with OSM
+  IN_SYNC       //synced with OSM (including never edited)
+};
+
+static EditingLifecycle editingLifecycle = EditingLifecycle::IN_SYNC;
+
 class EditableMapObject : public MapObject
 {
 public:
@@ -86,6 +95,9 @@ public:
 
   // Used only in testing framework.
   void SetTestId(uint64_t id);
+
+  static void SetEditingLifecycle(EditingLifecycle lifecycle) ;
+  static EditingLifecycle GetEditingLifecycle() ;
 
   void SetEditableProperties(osm::EditableProperties const & props);
   //  void SetFeatureID(FeatureID const & fid);

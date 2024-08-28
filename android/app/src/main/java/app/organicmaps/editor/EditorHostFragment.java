@@ -45,6 +45,13 @@ public class EditorHostFragment extends BaseMwmToolbarFragment implements View.O
   @Nullable
   private View mSave;
 
+  enum EditingLifecycle
+  {
+    CREATED,      //newly created and not synced with OSM
+    MODIFIED,     //modified and not synced with OSM
+    IN_SYNC       //synced with OSM (including never edited)
+  }
+
   enum Mode
   {
     MAP_OBJECT,
@@ -343,6 +350,9 @@ public class EditorHostFragment extends BaseMwmToolbarFragment implements View.O
 
   private void saveMapObjectEdits()
   {
+    int lifecycle = mIsNewObject ? EditingLifecycle.CREATED.ordinal() : EditingLifecycle.MODIFIED.ordinal();
+    Editor.nativeSetEditingLifecycle(lifecycle);
+
     if (Editor.nativeSaveEditedFeature())
       processEditedFeatures();
     else

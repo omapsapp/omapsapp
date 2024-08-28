@@ -646,9 +646,18 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
               }
               else
               {
-                LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
-                changeset.AddChangesetTag("info:features_merged", "yes");
-                changeset.Modify(osmFeature);
+                if (fti.m_object.GetEditingLifecycle() == EditingLifecycle::CREATED) {
+                  //New OSM feature for edits with lifecycle CREADED
+                  LOG(LDEBUG, ("Create case: uploading new feature", feature));
+                  changeset.AddChangesetTag("info:feature_created", "yes");
+                  changeset.Create(feature);
+                }
+                else {
+                  //Update existing OSM feature
+                  LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
+                  changeset.AddChangesetTag("info:features_merged", "yes");
+                  changeset.Modify(osmFeature);
+                }
               }
             }
             catch (ChangesetWrapper::OsmObjectWasDeletedException const &)
@@ -754,6 +763,8 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                                 // Call Save every time we modify each feature's information.
                                 SaveUploadedInformation(id, uploadInfo);
                               });
+
+        fti.m_object.SetEditingLifecycle(EditingLifecycle::IN_SYNC);
       }
     }
 

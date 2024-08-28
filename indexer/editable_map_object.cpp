@@ -167,6 +167,18 @@ void EditableMapObject::SetTestId(uint64_t id)
   m_metadata.Set(feature::Metadata::FMD_TEST_ID, std::to_string(id));
 }
 
+void EditableMapObject::SetEditingLifecycle(EditingLifecycle lifecycle) {
+  //switching from CREATED to MODIFIED with out syncing first is not allowed
+  if (editingLifecycle == EditingLifecycle::CREATED && lifecycle == EditingLifecycle::MODIFIED) {
+    return;
+  }
+  editingLifecycle = (EditingLifecycle) lifecycle;
+}
+
+EditingLifecycle EditableMapObject::GetEditingLifecycle() {
+  return editingLifecycle;
+}
+
 void EditableMapObject::SetEditableProperties(osm::EditableProperties const & props)
 {
   m_editableProperties = props;
