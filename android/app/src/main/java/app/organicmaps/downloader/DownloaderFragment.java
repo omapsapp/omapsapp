@@ -1,6 +1,7 @@
 package app.organicmaps.downloader;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,6 +20,7 @@ import app.organicmaps.search.SearchEngine;
 import app.organicmaps.widget.PlaceholderView;
 import app.organicmaps.util.bottomsheet.MenuBottomSheetFragment;
 import app.organicmaps.util.bottomsheet.MenuBottomSheetItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,8 @@ public class DownloaderFragment extends BaseMwmRecyclerFragment<DownloaderAdapte
   private boolean mSearchRunning;
 
   private int mSubscriberSlot;
+
+  private FloatingActionButton mFab;
 
   private final RecyclerView.OnScrollListener mScrollListener = new RecyclerView.OnScrollListener() {
     @Override
@@ -125,6 +129,16 @@ public class DownloaderFragment extends BaseMwmRecyclerFragment<DownloaderAdapte
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
   {
     super.onViewCreated(view, savedInstanceState);
+    mFab = view.findViewById(R.id.fab);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+    {
+      getRecyclerView().setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+        if (scrollY > oldScrollY)
+          mFab.hide();
+        else
+          mFab.show();
+      });
+    }
     mSubscriberSlot = MapManager.nativeSubscribe(new MapManager.StorageCallback()
     {
       @Override
