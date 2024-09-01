@@ -5,6 +5,7 @@
 #include "indexer/feature_meta.hpp"
 #include "indexer/feature_utils.hpp"
 #include "indexer/map_object.hpp"
+#include "indexer/edit_journal.hpp"
 
 #include "coding/string_utf8_multilang.hpp"
 
@@ -71,12 +72,12 @@ enum class EditingLifecycle
   IN_SYNC       //synced with OSM (including never edited)
 };
 
-static EditingLifecycle editingLifecycle = EditingLifecycle::IN_SYNC;
-
 class EditableMapObject : public MapObject
 {
 public:
   static uint8_t constexpr kMaximumLevelsEditableByUsers = 50;
+  EditingLifecycle editingLifecycle = EditingLifecycle::IN_SYNC;
+  EditJournal journal;
 
   bool IsNameEditable() const;
   bool IsAddressEditable() const;
@@ -96,8 +97,8 @@ public:
   // Used only in testing framework.
   void SetTestId(uint64_t id);
 
-  static void SetEditingLifecycle(EditingLifecycle lifecycle) ;
-  static EditingLifecycle GetEditingLifecycle() ;
+  void SetEditingLifecycle(EditingLifecycle lifecycle);
+  EditingLifecycle GetEditingLifecycle();
 
   void SetEditableProperties(osm::EditableProperties const & props);
   //  void SetFeatureID(FeatureID const & fid);
