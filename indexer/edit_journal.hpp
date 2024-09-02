@@ -1,3 +1,5 @@
+#pragma once
+
 #include "indexer/feature_decl.hpp"
 #include "indexer/feature_meta.hpp"
 #include "indexer/feature_utils.hpp"
@@ -21,9 +23,9 @@ namespace osm
   {
     JournalEntryType editingAction = JournalEntryType::TagModification;
     time_t timestamp;
-    std::string tag;
-    std::string old_value;
-    std::string new_value;
+    feature::Metadata::EType tag;
+    std::string_view old_value;
+    std::string_view new_value;
   };
 
   //using EditJournal = std::list<JournalEntry>;
@@ -34,6 +36,14 @@ namespace osm
 
     void addJournalEntry(const JournalEntry& entry) {
       journal.push_back(entry);
+    }
+
+    public: void addTagChange(feature::Metadata::EType type, std::string_view old_value, std::string_view new_value)
+    {
+      JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), type, old_value, new_value};
+      addJournalEntry(entry);
+      //std::string old =
+      LOG(LDEBUG, ("Tag ", ToString(type), "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
     }
 
     void clearJournal() {

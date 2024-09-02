@@ -167,7 +167,8 @@ void EditableMapObject::SetTestId(uint64_t id)
   m_metadata.Set(feature::Metadata::FMD_TEST_ID, std::to_string(id));
 }
 
-void EditableMapObject::SetEditingLifecycle(EditingLifecycle lifecycle) {
+void EditableMapObject::SetEditingLifecycle(EditingLifecycle lifecycle)
+{
   //switching from CREATED to MODIFIED with out syncing first is not allowed
   if (editingLifecycle == EditingLifecycle::CREATED && lifecycle == EditingLifecycle::MODIFIED) {
     return;
@@ -175,7 +176,8 @@ void EditableMapObject::SetEditingLifecycle(EditingLifecycle lifecycle) {
   editingLifecycle = (EditingLifecycle) lifecycle;
 }
 
-EditingLifecycle EditableMapObject::GetEditingLifecycle() {
+EditingLifecycle EditableMapObject::GetEditingLifecycle()
+{
   return editingLifecycle;
 }
 
@@ -298,7 +300,11 @@ void EditableMapObject::SetMetadata(MetadataID type, std::string value)
   default: break;
   }
 
-  m_metadata.Set(type, std::move(value));
+  std::string_view old_value = m_metadata.Get(type);
+  if (value != old_value) {
+    journal.addTagChange(type, old_value, value);
+    m_metadata.Set(type, std::move(value));
+  }
 }
 
 bool EditableMapObject::UpdateMetadataValue(string_view key, string value)

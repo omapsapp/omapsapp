@@ -26,6 +26,7 @@ namespace
 {
 using TCuisine = std::pair<std::string, std::string>;
 osm::EditableMapObject g_editableMapObject;
+FeatureStatus g_featureStatus;
 
 jclass g_localNameClazz;
 jmethodID g_localNameCtor;
@@ -361,11 +362,15 @@ JNIEXPORT void JNICALL
 Java_app_organicmaps_editor_Editor_nativeStartEdit(JNIEnv *, jclass)
 {
   ::Framework * frm = g_framework->NativeFramework();
-  if (!frm->HasPlacePageInfo())
+  if (!frm->HasPlacePageInfo()) {
+    ASSERT(g_featureStatus == FeatureStatus::Created, ("No feature found."));
     return;
+  }
 
   place_page::Info const & info = g_framework->GetPlacePageInfo();
   CHECK(frm->GetEditableMapObject(info.GetID(), g_editableMapObject), ("Invalid feature in the place page."));
+  // TODO: load old status
+  g_featureStatus = FeatureStatus::Modified;
 }
 
 JNIEXPORT void JNICALL
@@ -382,6 +387,7 @@ Java_app_organicmaps_editor_Editor_nativeCreateMapObject(JNIEnv * env, jclass,
   auto const type = classif().GetTypeByReadableObjectName(jni::ToNativeString(env, featureType));
   CHECK(frm->CreateMapObject(frm->GetViewportCenter(), type, g_editableMapObject),
         ("Couldn't create mapobject, wrong coordinates of missing mwm"));
+  g_featureStatus = FeatureStatus::Created;
 }
 
 // static void nativeCreateNote(String text);

@@ -605,7 +605,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
       for (auto const & index : id.second)
       {
-        FeatureTypeInfo const & fti = index.second;
+        FeatureTypeInfo fti = index.second;
         // Do not process already uploaded features or those failed permanently.
         if (!NeedsUpload(fti.m_uploadStatus))
           continue;
