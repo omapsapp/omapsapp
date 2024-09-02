@@ -65,19 +65,12 @@ struct LocalizedStreet
   bool operator==(LocalizedStreet const & st) const { return m_defaultName == st.m_defaultName; }
 };
 
-enum class EditingLifecycle
-{
-  CREATED,      //newly created and not synced with OSM
-  MODIFIED,     //modified and not synced with OSM
-  IN_SYNC       //synced with OSM (including never edited)
-};
-
 class EditableMapObject : public MapObject
 {
 public:
   static uint8_t constexpr kMaximumLevelsEditableByUsers = 50;
-  EditingLifecycle editingLifecycle = EditingLifecycle::IN_SYNC;
-  EditJournal journal;
+  //EditingLifecycle editingLifecycle = EditingLifecycle::IN_SYNC;
+  osm::EditJournal journal;
 
   bool IsNameEditable() const;
   bool IsAddressEditable() const;
@@ -97,7 +90,8 @@ public:
   // Used only in testing framework.
   void SetTestId(uint64_t id);
 
-  void SetEditingLifecycle(EditingLifecycle lifecycle);
+  void MarkAsCreated();
+  void ClearJournal();
   EditingLifecycle GetEditingLifecycle();
 
   void SetEditableProperties(osm::EditableProperties const & props);

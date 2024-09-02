@@ -185,10 +185,7 @@ private:
   struct FeatureTypeInfo
   {
     FeatureStatus m_status = FeatureStatus::Untouched;
-    EditingLifecycle m_editingLifecycle = EditingLifecycle::IN_SYNC;
     EditableMapObject m_object;
-    /// Local object modification history
-    EditJournal m_editJournal;
     /// If not empty contains Feature's addr:street, edited by user.
     std::string m_street;
     time_t m_modificationTimestamp = base::INVALID_TIME_STAMP;

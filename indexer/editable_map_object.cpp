@@ -4,6 +4,8 @@
 #include "indexer/ftypes_matcher.hpp"
 #include "indexer/postcodes_matcher.hpp"
 #include "indexer/validate_and_format_contacts.hpp"
+#include "indexer/edit_journal.hpp"
+#include "indexer/edit_journal.cpp"
 
 #include "platform/preferred_languages.hpp"
 
@@ -167,18 +169,24 @@ void EditableMapObject::SetTestId(uint64_t id)
   m_metadata.Set(feature::Metadata::FMD_TEST_ID, std::to_string(id));
 }
 
-void EditableMapObject::SetEditingLifecycle(EditingLifecycle lifecycle)
+void EditableMapObject::MarkAsCreated()
 {
   //switching from CREATED to MODIFIED with out syncing first is not allowed
-  if (editingLifecycle == EditingLifecycle::CREATED && lifecycle == EditingLifecycle::MODIFIED) {
-    return;
-  }
-  editingLifecycle = (EditingLifecycle) lifecycle;
+  //if (editingLifecycle == EditingLifecycle::CREATED && lifecycle == EditingLifecycle::MODIFIED) {
+  //  return;
+  //}
+  //editingLifecycle = (EditingLifecycle) lifecycle;
+  journal.MarkAsCreated();
+}
+
+void EditableMapObject::ClearJournal()
+{
+  journal.Clear();
 }
 
 EditingLifecycle EditableMapObject::GetEditingLifecycle()
 {
-  return editingLifecycle;
+  return journal.GetEditingLifecycle();
 }
 
 void EditableMapObject::SetEditableProperties(osm::EditableProperties const & props)
@@ -302,7 +310,7 @@ void EditableMapObject::SetMetadata(MetadataID type, std::string value)
 
   std::string_view old_value = m_metadata.Get(type);
   if (value != old_value) {
-    journal.addTagChange(type, old_value, value);
+    journal.AddTagChange(type, old_value, value);
     m_metadata.Set(type, std::move(value));
   }
 }

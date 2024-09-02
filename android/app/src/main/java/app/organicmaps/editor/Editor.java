@@ -146,7 +146,6 @@ public final class Editor
    */
   public static native void nativeStartEdit();
 
-  public static native void nativeSetEditingLifecycle(int lifecycle);
   /**
    * @return true if feature was saved. False if some error occurred (eg. no space)
    */

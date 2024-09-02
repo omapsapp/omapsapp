@@ -3,9 +3,6 @@
 #include "indexer/feature_decl.hpp"
 #include "indexer/feature_meta.hpp"
 #include "indexer/feature_utils.hpp"
-#include "indexer/map_object.hpp"
-
-#include "coding/string_utf8_multilang.hpp"
 
 #include <functional>
 #include <string>
@@ -16,6 +13,7 @@ namespace osm
 {
   enum class JournalEntryType {
     TagModification,
+    ObjectCreated,
     //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused
   };
 
@@ -28,30 +26,30 @@ namespace osm
     std::string_view new_value;
   };
 
+  enum class EditingLifecycle
+  {
+    CREATED,      //newly created and not synced with OSM
+    MODIFIED,     //modified and not synced with OSM
+    IN_SYNC       //synced with OSM (including never edited)
+  };
+
   //using EditJournal = std::list<JournalEntry>;
 
   class EditJournal
   {
     std::list<JournalEntry> journal{};
 
-    void addJournalEntry(const JournalEntry& entry) {
-      journal.push_back(entry);
-    }
+  public:
+    void AddJournalEntry(const JournalEntry& entry);
 
-    public: void addTagChange(feature::Metadata::EType type, std::string_view old_value, std::string_view new_value)
-    {
-      JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), type, old_value, new_value};
-      addJournalEntry(entry);
-      //std::string old =
-      LOG(LDEBUG, ("Tag ", ToString(type), "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
-    }
+    void AddTagChange(feature::Metadata::EType type, std::string_view old_value, std::string_view new_value);
 
-    void clearJournal() {
-      journal = {};
-    }
+    void Clear();
 
-    const std::list<JournalEntry> & getJournal() {
-      return journal;
-    }
+    const std::list<JournalEntry> & GetJournal();
+
+    void MarkAsCreated();
+
+    osm::EditingLifecycle GetEditingLifecycle();
   };
 }

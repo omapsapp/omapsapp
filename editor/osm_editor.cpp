@@ -764,7 +764,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                                 SaveUploadedInformation(id, uploadInfo);
                               });
 
-        fti.m_object.SetEditingLifecycle(EditingLifecycle::IN_SYNC);
+        fti.m_object.ClearJournal();
       }
     }
 
