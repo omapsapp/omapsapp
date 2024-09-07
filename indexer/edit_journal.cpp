@@ -14,11 +14,11 @@ namespace osm
     journal.push_back(entry);
   }
 
-  void EditJournal::AddTagChange(feature::Metadata::EType type, std::string old_value, std::string new_value)
+  void EditJournal::AddTagChange(std::string key, std::string old_value, std::string new_value)
   {
-    JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), type, old_value, new_value};
+    JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), key, old_value, new_value};
     AddJournalEntry(entry);
-    LOG(LDEBUG, ("Tag ", feature::ToString(type), "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
+    LOG(LDEBUG, ("Key ", key, "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
   }
 
   void EditJournal::Clear() {
@@ -32,7 +32,7 @@ namespace osm
   void EditJournal::MarkAsCreated()
   {
     ASSERT(journal.empty(), ("Only empty journals can be marked as created"));
-    JournalEntry entry = {JournalEntryType::ObjectCreated, time(nullptr), feature::Metadata::FMD_TEST_ID, "", ""};
+    JournalEntry entry = {JournalEntryType::ObjectCreated, time(nullptr), "", "", ""};
     AddJournalEntry(entry);
   }
 
@@ -41,7 +41,7 @@ namespace osm
     if (journal.empty()) {
       return EditingLifecycle::IN_SYNC;
     }
-    else if (journal.front().editingAction == JournalEntryType::ObjectCreated) {
+    else if (journal.front().journalEntryType == JournalEntryType::ObjectCreated) {
       return EditingLifecycle::CREATED;
     }
     return EditingLifecycle::MODIFIED;
@@ -58,14 +58,14 @@ namespace osm
 
   string EditJournal::ToString(osm::JournalEntry journalEntry)
   {
-    switch (journalEntry.editingAction) {
+    switch (journalEntry.journalEntryType) {
       case osm::JournalEntryType::TagModification:
-        return ToString(journalEntry.editingAction)
-          .append(": Tag ").append(feature::ToString(journalEntry.tag))
+        return ToString(journalEntry.journalEntryType)
+          .append(": Key ").append(journalEntry.key)
           .append(" changed from \"").append(journalEntry.old_value)
           .append("\" to \"").append(journalEntry.new_value).append("\"");
       case osm::JournalEntryType::ObjectCreated:
-        return ToString(journalEntry.editingAction) + ": -";
+        return ToString(journalEntry.journalEntryType) + ": -";
     }
   }
 

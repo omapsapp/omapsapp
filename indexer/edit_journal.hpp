@@ -20,9 +20,9 @@ namespace osm
 
   struct JournalEntry
   {
-    JournalEntryType editingAction = JournalEntryType::TagModification;
+    JournalEntryType journalEntryType = JournalEntryType::TagModification;
     time_t timestamp;
-    feature::Metadata::EType tag;
+    std::string key;
     std::string old_value;
     std::string new_value;
   };
@@ -43,7 +43,7 @@ namespace osm
   public:
     void AddJournalEntry(const JournalEntry& entry);
 
-    void AddTagChange(feature::Metadata::EType type, std::string old_value, std::string new_value);
+    void AddTagChange(std::string key, std::string old_value, std::string new_value);
 
     void Clear();
 
