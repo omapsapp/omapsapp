@@ -264,14 +264,19 @@ void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 
 void EditableMapObject::SetHouseNumber(string const & houseNumber)
 {
-  //TODO: Log in Journal
-  m_houseNumber = houseNumber;
+  if (houseNumber != m_houseNumber) {
+    journal.AddTagChange("addr:housenumber", m_houseNumber, houseNumber);
+    m_houseNumber = houseNumber;
+  }
 }
 
 void EditableMapObject::SetPostcode(std::string const & postcode)
 {
-  //TODO: Log in Journal
-  m_metadata.Set(MetadataID::FMD_POSTCODE, postcode);
+  std::string old_postcode = std::string(m_metadata.Get(MetadataID::FMD_POSTCODE));
+  if (postcode != old_postcode) {
+    journal.AddTagChange(ToString(MetadataID::FMD_POSTCODE), old_postcode, postcode);
+    m_metadata.Set(MetadataID::FMD_POSTCODE, postcode);
+  }
 }
 
 bool EditableMapObject::IsValidMetadata(MetadataID type, std::string const & value)
@@ -323,7 +328,7 @@ void EditableMapObject::SetMetadata(MetadataID type, std::string value)
   default: break;
   }
 
-  std::string old_value{m_metadata.Get(type)};
+  std::string old_value = std::string(m_metadata.Get(type));
   if (value != old_value) {
     journal.AddTagChange(ToString(type), old_value, value);
     m_metadata.Set(type, std::move(value));
@@ -342,14 +347,21 @@ bool EditableMapObject::UpdateMetadataValue(string_view key, string value)
 
 void EditableMapObject::SetOpeningHours(std::string oh)
 {
-  //TODO: Log in Journal
-  m_metadata.Set(MetadataID::FMD_OPEN_HOURS, std::move(oh));
+  std::string old_oh = std::string(m_metadata.Get(MetadataID::FMD_OPEN_HOURS));
+  if (oh != old_oh) {
+    journal.AddTagChange(ToString(MetadataID::FMD_OPEN_HOURS), old_oh, oh);
+    m_metadata.Set(MetadataID::FMD_OPEN_HOURS, std::move(oh));
+  }
 }
 
 void EditableMapObject::SetInternet(feature::Internet internet)
 {
-  //TODO: Log in Journal
-  m_metadata.Set(MetadataID::FMD_INTERNET, DebugPrint(internet));
+  std::string old_internet = std::string(m_metadata.Get(MetadataID::FMD_INTERNET));
+  std::string new_internet = DebugPrint(internet);
+  if (new_internet != old_internet) {
+    journal.AddTagChange(ToString(MetadataID::FMD_INTERNET), old_internet, new_internet);
+    m_metadata.Set(MetadataID::FMD_INTERNET, new_internet);
+  }
 
   uint32_t const wifiType = ftypes::IsWifiChecker::Instance().GetType();
   bool const hasWiFi = m_types.Has(wifiType);
