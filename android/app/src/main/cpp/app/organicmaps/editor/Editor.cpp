@@ -369,8 +369,6 @@ Java_app_organicmaps_editor_Editor_nativeStartEdit(JNIEnv *, jclass)
 
   place_page::Info const & info = g_framework->GetPlacePageInfo();
   CHECK(frm->GetEditableMapObject(info.GetID(), g_editableMapObject), ("Invalid feature in the place page."));
-  ASSERT(g_editableMapObject.GetEditingLifecycle() != osm::EditingLifecycle::CREATED,
-         ("PlacePageInfo should not contain new features."));
 }
 
 JNIEXPORT void JNICALL

@@ -51,5 +51,11 @@ namespace osm
     void MarkAsCreated();
 
     osm::EditingLifecycle GetEditingLifecycle();
+
+    std::string JournalToString();
+
+    std::string ToString(osm::JournalEntry journalEntry);
+
+    std::string ToString(osm::JournalEntryType journalEntryType);
   };
 }

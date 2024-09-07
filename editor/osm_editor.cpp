@@ -473,6 +473,18 @@ std::optional<osm::EditableMapObject> Editor::GetEditedFeature(FeatureID const &
   return featureInfo->m_object;
 }
 
+std::optional<osm::EditJournal> Editor::GetEditedFeatureJournal(FeatureID const & fid) const
+{
+  auto const features = m_features.Get();
+  auto const * featureInfo = GetFeatureTypeInfo(*features, fid.m_mwmId, fid.m_index);
+  if (featureInfo == nullptr)
+    return {};
+
+  EditableMapObject emo = featureInfo->m_object;
+
+  return emo.GetJournal();
+}
+
 bool Editor::GetEditedFeatureStreet(FeatureID const & fid, string & outFeatureStreet) const
 {
   auto const features = m_features.Get();
@@ -612,6 +624,8 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
         // TODO(a): Use UploadInfo as part of FeatureTypeInfo.
         UploadInfo uploadInfo = {fti.m_uploadAttemptTimestamp, fti.m_uploadStatus, fti.m_uploadError};
+
+        LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
         try
         {
@@ -763,8 +777,6 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                                 // Call Save every time we modify each feature's information.
                                 SaveUploadedInformation(id, uploadInfo);
                               });
-
-        fti.m_object.ClearJournal();
       }
     }
 
@@ -814,6 +826,10 @@ void Editor::SaveUploadedInformation(FeatureID const & fid, UploadInfo const & u
   fti.m_uploadAttemptTimestamp = uploadInfo.m_uploadAttemptTimestamp;
   fti.m_uploadStatus = uploadInfo.m_uploadStatus;
   fti.m_uploadError = uploadInfo.m_uploadError;
+
+  if (!NeedsUpload(uploadInfo.m_uploadStatus)) {
+    fti.m_object.ClearJournal();
+  }
 
   SaveTransaction(editableFeatures);
 }

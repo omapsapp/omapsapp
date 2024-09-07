@@ -184,6 +184,16 @@ void EditableMapObject::ClearJournal()
   journal.Clear();
 }
 
+EditJournal EditableMapObject::GetJournal()
+{
+  return journal;
+}
+
+void EditableMapObject::SetJournal(EditJournal editJournal)
+{
+  journal = editJournal;
+}
+
 EditingLifecycle EditableMapObject::GetEditingLifecycle()
 {
   return journal.GetEditingLifecycle();

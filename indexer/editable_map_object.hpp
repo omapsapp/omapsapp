@@ -92,6 +92,8 @@ public:
 
   void MarkAsCreated();
   void ClearJournal();
+  EditJournal GetJournal();
+  void SetJournal(EditJournal editJournal);
   EditingLifecycle GetEditingLifecycle();
 
   void SetEditableProperties(osm::EditableProperties const & props);

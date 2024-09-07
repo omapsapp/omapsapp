@@ -132,6 +132,9 @@ public:
   /// @returns empty object if feature wasn't edited.
   std::optional<osm::EditableMapObject> GetEditedFeature(FeatureID const & fid) const;
 
+  /// @returns empty object if feature wasn't edited.
+  std::optional<osm::EditJournal> GetEditedFeatureJournal(FeatureID const & fid) const;
+
   /// @returns false if feature wasn't edited.
   /// @param outFeatureStreet is valid only if true was returned.
   bool GetEditedFeatureStreet(FeatureID const & fid, std::string & outFeatureStreet) const;

@@ -18,15 +18,14 @@ namespace osm
   {
     JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), type, old_value, new_value};
     AddJournalEntry(entry);
-    //std::string old =
-    LOG(LDEBUG, ("Tag ", ToString(type), "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
+    LOG(LDEBUG, ("Tag ", feature::ToString(type), "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
   }
 
   void EditJournal::Clear() {
     journal = {};
   }
 
-  const std::list<JournalEntry> & EditJournal::GetJournal() {
+  const std::list<JournalEntry> &EditJournal::GetJournal() {
     return journal;
   }
 
@@ -46,5 +45,38 @@ namespace osm
       return EditingLifecycle::CREATED;
     }
     return EditingLifecycle::MODIFIED;
+  }
+
+  std::string EditJournal::JournalToString()
+  {
+    std::string string;
+    std::for_each(journal.begin(), journal.end(), [&](const auto &journalEntry) {
+      string += ToString(journalEntry) + "\n";
+    });
+    return string;
+  }
+
+  string EditJournal::ToString(osm::JournalEntry journalEntry)
+  {
+    switch (journalEntry.editingAction) {
+      case osm::JournalEntryType::TagModification:{
+        std::string old_v{journalEntry.old_value};
+        std::string new_v{journalEntry.new_value};
+        return ToString(journalEntry.editingAction) + ": Tag " + feature::ToString(journalEntry.tag);
+               //+ "changed from \"" + old_v + "\" to \"" + new_v + "\"";
+      }
+      case osm::JournalEntryType::ObjectCreated:
+        return ToString(journalEntry.editingAction) + ": -";
+    }
+  }
+
+  string EditJournal::ToString(osm::JournalEntryType journalEntryType)
+  {
+    switch (journalEntryType) {
+      case osm::JournalEntryType::TagModification:
+        return "TAG MODIFICATION";
+      case osm::JournalEntryType::ObjectCreated:
+        return "OBJECT CREATED";
+    }
   }
 }
