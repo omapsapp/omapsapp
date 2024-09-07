@@ -199,10 +199,14 @@ void EditableMapObject::SetEditableProperties(osm::EditableProperties const & pr
   m_editableProperties = props;
 }
 
-void EditableMapObject::SetName(StringUtf8Multilang const & name) { m_name = name; }
+void EditableMapObject::SetName(StringUtf8Multilang const & name) {
+  //TODO: Log in Journal
+  m_name = name;
+}
 
 void EditableMapObject::SetName(string_view name, int8_t langCode)
 {
+  //TODO: Log in Journal
   strings::Trim(name);
   m_name.AddString(langCode, name);
 }
@@ -247,7 +251,11 @@ void EditableMapObject::SetType(uint32_t featureType)
 void EditableMapObject::SetTypes(feature::TypesHolder const & types) { m_types = types; }
 
 void EditableMapObject::SetID(FeatureID const & fid) { m_featureID = fid; }
-void EditableMapObject::SetStreet(LocalizedStreet const & st) { m_street = st; }
+void EditableMapObject::SetStreet(LocalizedStreet const & st)
+{
+  //TODO: Log in Journal
+  m_street = st;
+}
 
 void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 {
@@ -256,11 +264,13 @@ void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 
 void EditableMapObject::SetHouseNumber(string const & houseNumber)
 {
+  //TODO: Log in Journal
   m_houseNumber = houseNumber;
 }
 
 void EditableMapObject::SetPostcode(std::string const & postcode)
 {
+  //TODO: Log in Journal
   m_metadata.Set(MetadataID::FMD_POSTCODE, postcode);
 }
 
@@ -332,11 +342,13 @@ bool EditableMapObject::UpdateMetadataValue(string_view key, string value)
 
 void EditableMapObject::SetOpeningHours(std::string oh)
 {
+  //TODO: Log in Journal
   m_metadata.Set(MetadataID::FMD_OPEN_HOURS, std::move(oh));
 }
 
 void EditableMapObject::SetInternet(feature::Internet internet)
 {
+  //TODO: Log in Journal
   m_metadata.Set(MetadataID::FMD_INTERNET, DebugPrint(internet));
 
   uint32_t const wifiType = ftypes::IsWifiChecker::Instance().GetType();
@@ -353,6 +365,7 @@ LocalizedStreet const & EditableMapObject::GetStreet() const { return m_street; 
 template <class T>
 void EditableMapObject::SetCuisinesImpl(vector<T> const & cuisines)
 {
+  //TODO: Log in Journal
   FeatureParams params;
 
   // Ignore cuisine types as these will be set from the cuisines param

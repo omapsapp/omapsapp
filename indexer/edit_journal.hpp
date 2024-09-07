@@ -15,7 +15,7 @@ namespace osm
     TagModification,
     ObjectCreated,
     //LegacyObject,   //object without full history journal, only used for transition
-    //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused
+    //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused, LocationChanged
   };
 
   struct JournalEntry
