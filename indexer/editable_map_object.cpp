@@ -171,11 +171,6 @@ void EditableMapObject::SetTestId(uint64_t id)
 
 void EditableMapObject::MarkAsCreated()
 {
-  //switching from CREATED to MODIFIED with out syncing first is not allowed
-  //if (editingLifecycle == EditingLifecycle::CREATED && lifecycle == EditingLifecycle::MODIFIED) {
-  //  return;
-  //}
-  //editingLifecycle = (EditingLifecycle) lifecycle;
   journal.MarkAsCreated();
 }
 

@@ -145,7 +145,6 @@ public final class Editor
    * could refresh.
    */
   public static native void nativeStartEdit();
-
   /**
    * @return true if feature was saved. False if some error occurred (eg. no space)
    */

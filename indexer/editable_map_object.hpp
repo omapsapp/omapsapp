@@ -69,7 +69,6 @@ class EditableMapObject : public MapObject
 {
 public:
   static uint8_t constexpr kMaximumLevelsEditableByUsers = 50;
-  //EditingLifecycle editingLifecycle = EditingLifecycle::IN_SYNC;
   osm::EditJournal journal;
 
   bool IsNameEditable() const;
