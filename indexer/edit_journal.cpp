@@ -14,7 +14,7 @@ namespace osm
     journal.push_back(entry);
   }
 
-  void EditJournal::AddTagChange(feature::Metadata::EType type, std::string_view old_value, std::string_view new_value)
+  void EditJournal::AddTagChange(feature::Metadata::EType type, std::string old_value, std::string new_value)
   {
     JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), type, old_value, new_value};
     AddJournalEntry(entry);
@@ -59,16 +59,11 @@ namespace osm
   string EditJournal::ToString(osm::JournalEntry journalEntry)
   {
     switch (journalEntry.editingAction) {
-      case osm::JournalEntryType::TagModification:{
-        string res = ToString(journalEntry.editingAction) + ": Tag "
-            + feature::ToString(journalEntry.tag) + " changed from \"";
-        res.append(journalEntry.old_value).append("\" to \"").append("[[new_value]]").append("\"");
-        //std::string new_v = static_cast<string>(journalEntry.new_value);
-        return res;
-        //ToString(journalEntry.editingAction) + ": Tag " + feature::ToString(journalEntry.tag)
-               //+ "changed from \"" + old_v
-               //+ "\" to \""+ new_v + "\"";
-      }
+      case osm::JournalEntryType::TagModification:
+        return ToString(journalEntry.editingAction)
+          .append(": Tag ").append(feature::ToString(journalEntry.tag))
+          .append(" changed from \"").append(journalEntry.old_value)
+          .append("\" to \"").append(journalEntry.new_value).append("\"");
       case osm::JournalEntryType::ObjectCreated:
         return ToString(journalEntry.editingAction) + ": -";
     }

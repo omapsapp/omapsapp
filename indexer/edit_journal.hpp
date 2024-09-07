@@ -22,8 +22,8 @@ namespace osm
     JournalEntryType editingAction = JournalEntryType::TagModification;
     time_t timestamp;
     feature::Metadata::EType tag;
-    std::string_view old_value;
-    std::string_view new_value;
+    std::string old_value;
+    std::string new_value;
   };
 
   enum class EditingLifecycle
@@ -42,7 +42,7 @@ namespace osm
   public:
     void AddJournalEntry(const JournalEntry& entry);
 
-    void AddTagChange(feature::Metadata::EType type, std::string_view old_value, std::string_view new_value);
+    void AddTagChange(feature::Metadata::EType type, std::string old_value, std::string new_value);
 
     void Clear();
 

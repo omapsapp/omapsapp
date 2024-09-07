@@ -318,7 +318,7 @@ void EditableMapObject::SetMetadata(MetadataID type, std::string value)
   default: break;
   }
 
-  std::string_view old_value = m_metadata.Get(type);
+  std::string old_value{m_metadata.Get(type)};
   if (value != old_value) {
     journal.AddTagChange(type, old_value, value);
     m_metadata.Set(type, std::move(value));
