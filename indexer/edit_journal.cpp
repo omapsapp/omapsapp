@@ -60,10 +60,14 @@ namespace osm
   {
     switch (journalEntry.editingAction) {
       case osm::JournalEntryType::TagModification:{
-        std::string old_v{journalEntry.old_value};
-        std::string new_v{journalEntry.new_value};
-        return ToString(journalEntry.editingAction) + ": Tag " + feature::ToString(journalEntry.tag);
-               //+ "changed from \"" + old_v + "\" to \"" + new_v + "\"";
+        string res = ToString(journalEntry.editingAction) + ": Tag "
+            + feature::ToString(journalEntry.tag) + " changed from \"";
+        res.append(journalEntry.old_value).append("\" to \"").append("[[new_value]]").append("\"");
+        //std::string new_v = static_cast<string>(journalEntry.new_value);
+        return res;
+        //ToString(journalEntry.editingAction) + ": Tag " + feature::ToString(journalEntry.tag)
+               //+ "changed from \"" + old_v
+               //+ "\" to \""+ new_v + "\"";
       }
       case osm::JournalEntryType::ObjectCreated:
         return ToString(journalEntry.editingAction) + ": -";
