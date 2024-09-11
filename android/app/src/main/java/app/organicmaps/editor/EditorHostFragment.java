@@ -25,6 +25,7 @@ import app.organicmaps.editor.data.LocalizedName;
 import app.organicmaps.editor.data.LocalizedStreet;
 import app.organicmaps.editor.data.NamesDataSource;
 import app.organicmaps.editor.data.PhoneFragment;
+import app.organicmaps.util.InputUtils;
 import app.organicmaps.widget.SearchToolbarController;
 import app.organicmaps.widget.ToolbarController;
 import app.organicmaps.util.ConnectionState;
@@ -132,6 +133,7 @@ public class EditorHostFragment extends BaseMwmToolbarFragment implements View.O
     mSave.setOnClickListener(this);
     UiUtils.setupHomeUpButtonAsNavigationIcon(getToolbarController().getToolbar(),
                                               v -> onBackPressed());
+    InputUtils.hideKeyboard(requireView());
 
     if (getArguments() != null)
       mIsNewObject = getArguments().getBoolean(EditorActivity.EXTRA_NEW_OBJECT, false);

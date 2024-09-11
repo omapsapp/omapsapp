@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true">
 
     <FrameLayout
         style="@style/MwmWidget.FrameLayout.Elevation"
@@ -20,25 +19,13 @@
             android:background="?cardBackground"
             android:scrollbars="vertical" />
 
+        <include
+          android:id="@+id/tv__append_phone"
+          layout="@layout/add_phone_fab"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|end"
+          android:layout_margin="@dimen/margin_base" />
     </FrameLayout>
-
-    <TextView
-        android:id="@+id/tv__append_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?clickableBackground"
-        android:gravity="center_vertical"
-        android:padding="@dimen/margin_base"
-        android:text="@string/editor_add_phone"
-        android:textAllCaps="true"
-        android:textAppearance="@style/MwmTextAppearance.Body3"
-        android:textColor="?colorAccent"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout" />
-
-    <include
-        layout="@layout/shadow_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/tv__mode_switch"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
