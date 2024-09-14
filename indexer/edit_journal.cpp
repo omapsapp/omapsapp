@@ -56,7 +56,7 @@ namespace osm
     return string;
   }
 
-  string EditJournal::ToString(osm::JournalEntry journalEntry)
+  std::string EditJournal::ToString(osm::JournalEntry journalEntry)
   {
     switch (journalEntry.journalEntryType) {
       case osm::JournalEntryType::TagModification:
@@ -69,7 +69,7 @@ namespace osm
     }
   }
 
-  string EditJournal::ToString(osm::JournalEntryType journalEntryType)
+  std::string EditJournal::ToString(osm::JournalEntryType journalEntryType)
   {
     switch (journalEntryType) {
       case osm::JournalEntryType::TagModification:
