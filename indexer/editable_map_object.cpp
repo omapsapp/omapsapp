@@ -7,6 +7,8 @@
 #include "indexer/edit_journal.hpp"
 #include "indexer/edit_journal.cpp"
 
+#include "editor/xml_feature.hpp"
+
 #include "platform/preferred_languages.hpp"
 
 #include "base/control_flow.hpp"
@@ -206,9 +208,14 @@ void EditableMapObject::SetName(StringUtf8Multilang const & name) {
 
 void EditableMapObject::SetName(string_view name, int8_t langCode)
 {
-  //TODO: Log in Journal
   strings::Trim(name);
-  m_name.AddString(langCode, name);
+  std::string_view old_name;
+  m_name.GetString(langCode, old_name);
+  if (name != old_name) {
+    std::string osmLangName = editor::XMLFeature::NameToOSMTag(langCode);
+    journal.AddTagChange(osmLangName, std::string(old_name), std::string(name));
+    m_name.AddString(langCode, name);
+  }
 }
 
 // static
@@ -253,8 +260,11 @@ void EditableMapObject::SetTypes(feature::TypesHolder const & types) { m_types =
 void EditableMapObject::SetID(FeatureID const & fid) { m_featureID = fid; }
 void EditableMapObject::SetStreet(LocalizedStreet const & st)
 {
-  //TODO: Log in Journal
-  m_street = st;
+  if (st.m_defaultName != m_street.m_defaultName)
+  {
+    journal.AddTagChange("addr:street", m_street.m_defaultName, st.m_defaultName);
+    m_street = st;
+  }
 }
 
 void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
