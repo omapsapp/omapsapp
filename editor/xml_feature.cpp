@@ -209,6 +209,32 @@ void XMLFeature::ApplyPatch(XMLFeature const & featureWithChanges)
   });
 }
 
+void XMLFeature::AddFeatureType(uint32_t const type)
+{
+  if (ftypes::IsRecyclingCentreChecker::Instance()(type))
+  {
+    SetTagValue("amenity", "recycling");
+    SetTagValue("recycling_type", "centre");
+  }
+  else if (ftypes::IsRecyclingContainerChecker::Instance()(type))
+  {
+    SetTagValue("amenity", "recycling");
+    SetTagValue("recycling_type", "container");
+  }
+  else
+  {
+    string const strType = classif().GetReadableObjectName(uint32_t(type));
+    strings::SimpleTokenizer iter(strType, "-");
+    string_view const k = *iter;
+
+    ASSERT(++iter, ("Processing Type failed: ", strType));
+    // Main type is always stored as "k=amenity v=restaurant".
+    SetTagValue(k, *iter);
+  }
+}
+
+//void UpdateFromJournal()
+
 m2::PointD XMLFeature::GetMercatorCenter() const
 {
   return mercator::FromLatLon(GetLatLonFromNode(GetRootNode()));
@@ -633,6 +659,19 @@ XMLFeature ToXML(osm::EditableMapObject const & object, bool serializeType)
       toFeature.SetTagValue(tag, value);
   });
 
+  return toFeature;
+}
+
+XMLFeature ToXML_locationOnly(osm::EditableMapObject const & object) {
+  bool const isPoint = object.GetGeomType() == feature::GeomType::Point;
+  XMLFeature toFeature(isPoint ? XMLFeature::Type::Node : XMLFeature::Type::Way);
+
+  if (isPoint) {
+    toFeature.SetCenter(object.GetMercator());
+  } else {
+    auto const &triangles = object.GetTriangesAsPoints();
+    toFeature.SetGeometry(begin(triangles), end(triangles));
+  }
   return toFeature;
 }
 

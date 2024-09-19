@@ -73,6 +73,9 @@ public:
   /// Tags from featureWithChanges are applied to this(osm) feature.
   void ApplyPatch(XMLFeature const & featureWithChanges);
 
+  //void UpdateFromJournal()
+  void AddFeatureType(uint32_t const type);
+
   Type GetType() const;
   std::string GetTypeString() const;
 
@@ -204,6 +207,8 @@ void ApplyPatch(XMLFeature const & xml, osm::EditableMapObject & object);
 /// Useful for applying modifications to existing OSM features, to avoid issues when someone
 /// has changed a type in OSM, but our users uploaded invalid outdated type after modifying feature.
 XMLFeature ToXML(osm::EditableMapObject const & object, bool serializeType);
+
+XMLFeature ToXML_locationOnly(osm::EditableMapObject const & object);
 
 /// Creates new feature, including geometry and types.
 /// @Note: only nodes (points) are supported at the moment.

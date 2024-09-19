@@ -627,147 +627,188 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
         LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
-        try
+        bool useNewEditor = false;
+
+        if (useNewEditor)
         {
-          switch (fti.m_status)
-          {
-          case FeatureStatus::Untouched: CHECK(false, ("It's impossible.")); continue;
-          case FeatureStatus::Obsolete: continue;  // Obsolete features will be deleted by OSMers.
-          case FeatureStatus::Created:
-          {
-            XMLFeature feature = editor::ToXML(fti.m_object, true);
-            if (!fti.m_street.empty())
-              feature.SetTagValue(kAddrStreetTag, fti.m_street);
-
-            ASSERT_EQUAL(feature.GetType(), XMLFeature::Type::Node,
-                         ("Linear and area features creation is not supported yet."));
-            try
+          LOG(LDEBUG, ("New Editor used\n"));
+          switch (fti.m_object.GetEditingLifecycle()) {
+            case EditingLifecycle::CREATED:
             {
-              auto const center = fti.m_object.GetMercator();
-              // Throws, see catch below.
-              XMLFeature osmFeature = changeset.GetMatchingNodeFeatureFromOSM(center);
-
-              // If we are here, it means that object already exists at the given point.
-              // To avoid nodes duplication, merge and apply changes to it instead of creating a new one.
-              XMLFeature const osmFeatureCopy = osmFeature;
-              osmFeature.ApplyPatch(feature);
-              // Check to avoid uploading duplicates into OSM.
-              if (osmFeature == osmFeatureCopy)
+              XMLFeature feature = editor::ToXML_locationOnly(fti.m_object);
+              //feature.AddFeatureType();
+              //editor::XMLFeature::SetTagValue()
+              break;
+            }
+            case EditingLifecycle::MODIFIED:
+            {
+              auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
+              if (!originalObjectPtr)
               {
-                LOG(LWARNING, ("Local changes are equal to OSM, feature has not been uploaded.", osmFeatureCopy));
-                // Don't delete this local change right now for user to see it in profile.
-                // It will be automatically deleted by migration code on the next maps update.
+                LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
+                GetPlatform().RunTask(Platform::Thread::Gui,[this, fid = fti.m_object.GetID()]() {
+                  RemoveFeatureIfExists(fid);
+                });
+                continue;
               }
-              else
-              {
-                if (fti.m_object.GetEditingLifecycle() == EditingLifecycle::CREATED) {
-                  //New OSM feature for edits with lifecycle CREADED
-                  LOG(LDEBUG, ("Create case: uploading new feature", feature));
-                  changeset.AddChangesetTag("info:feature_created", "yes");
-                  changeset.Create(feature);
-                }
-                else {
-                  //Update existing OSM feature
-                  LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
-                  changeset.AddChangesetTag("info:features_merged", "yes");
-                  changeset.Modify(osmFeature);
-                }
-              }
-            }
-            catch (ChangesetWrapper::OsmObjectWasDeletedException const &)
-            {
-              // Object was never created by anyone else - it's safe to create it.
-              changeset.Create(feature);
-            }
-            catch (ChangesetWrapper::EmptyFeatureException const &)
-            {
-              // There is another node nearby, but it should be safe to create a new one.
-              changeset.Create(feature);
-            }
-            catch (...)
-            {
-              // Pass network or other errors to outside exception handler.
-              throw;
-            }
-          }
-          break;
 
-          case FeatureStatus::Modified:
-          {
-            // Do not serialize feature's type to avoid breaking OSM data.
-            // TODO: Implement correct types matching when we support modifying existing feature types.
-            XMLFeature feature = editor::ToXML(fti.m_object, false);
-            if (!fti.m_street.empty())
-              feature.SetTagValue(kAddrStreetTag, fti.m_street);
-
-            auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
-            if (!originalObjectPtr)
-            {
-              LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
-              GetPlatform().RunTask(Platform::Thread::Gui, [this, fid = fti.m_object.GetID()]() {
-                RemoveFeatureIfExists(fid);
-              });
+              XMLFeature osmFeature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
+              //osmFeature.UpdateFromJournal(fti.m_object.GetJournal());
+              //Todo
+              break;
+            }
+            case EditingLifecycle::IN_SYNC:
               continue;
-            }
-
-            XMLFeature osmFeature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
-            XMLFeature const osmFeatureCopy = osmFeature;
-            osmFeature.ApplyPatch(feature);
-            // Check to avoid uploading duplicates into OSM.
-            if (osmFeature == osmFeatureCopy)
-            {
-              LOG(LWARNING, ("Local changes are equal to OSM, feature has not been uploaded.", osmFeatureCopy));
-              // Don't delete this local change right now for user to see it in profile.
-              // It will be automatically deleted by migration code on the next maps update.
-            }
-            else
-            {
-              LOG(LDEBUG, ("Uploading patched feature", osmFeature));
-              changeset.Modify(osmFeature);
-            }
-          }
-          break;
-
-          case FeatureStatus::Deleted:
-            auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
-            if (!originalObjectPtr)
-            {
-              LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
-              GetPlatform().RunTask(Platform::Thread::Gui, [this, fid = fti.m_object.GetID()]() {
-                RemoveFeatureIfExists(fid);
-              });
-              continue;
-            }
-            changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
-            break;
           }
           uploadInfo.m_uploadStatus = kUploaded;
           uploadInfo.m_uploadError.clear();
           ++uploadedFeaturesCount;
         }
-        catch (ChangesetWrapper::OsmObjectWasDeletedException const & ex)
+          // don't use new editor
+        else
         {
-          uploadInfo.m_uploadStatus = kDeletedFromOSMServer;
-          uploadInfo.m_uploadError = ex.Msg();
-          ++errorsCount;
-          LOG(LWARNING, (ex.what()));
-          changeset.SetErrorDescription(ex.Msg());
-        }
-        catch (ChangesetWrapper::EmptyFeatureException const & ex)
-        {
-          uploadInfo.m_uploadStatus = kMatchedFeatureIsEmpty;
-          uploadInfo.m_uploadError = ex.Msg();
-          ++errorsCount;
-          LOG(LWARNING, (ex.what()));
-          changeset.SetErrorDescription(ex.Msg());
-        }
-        catch (RootException const & ex)
-        {
-          uploadInfo.m_uploadStatus = kNeedsRetry;
-          uploadInfo.m_uploadError = ex.Msg();
-          ++errorsCount;
-          LOG(LWARNING, (ex.what()));
-          changeset.SetErrorDescription(ex.Msg());
+          try
+          {
+            switch (fti.m_status)
+            {
+              case FeatureStatus::Untouched: CHECK(false, ("It's impossible.")); continue;
+              case FeatureStatus::Obsolete: continue;  // Obsolete features will be deleted by OSMers.
+              case FeatureStatus::Created:
+              {
+                XMLFeature feature = editor::ToXML(fti.m_object, true);
+                if (!fti.m_street.empty())
+                  feature.SetTagValue(kAddrStreetTag, fti.m_street);
+
+                ASSERT_EQUAL(feature.GetType(), XMLFeature::Type::Node,
+                             ("Linear and area features creation is not supported yet."));
+                try
+                {
+                  auto const center = fti.m_object.GetMercator();
+                  // Throws, see catch below.
+                  XMLFeature osmFeature = changeset.GetMatchingNodeFeatureFromOSM(center);
+
+                  // If we are here, it means that object already exists at the given point.
+                  // To avoid nodes duplication, merge and apply changes to it instead of creating a new one.
+                  XMLFeature const osmFeatureCopy = osmFeature;
+                  osmFeature.ApplyPatch(feature);
+                  // Check to avoid uploading duplicates into OSM.
+                  if (osmFeature == osmFeatureCopy)
+                  {
+                    LOG(LWARNING,("Local changes are equal to OSM, feature has not been uploaded.", osmFeatureCopy));
+                    // Don't delete this local change right now for user to see it in profile.
+                    // It will be automatically deleted by migration code on the next maps update.
+                  }
+                  else
+                  {
+                    if (fti.m_object.GetEditingLifecycle() == EditingLifecycle::CREATED) {
+                      //New OSM feature for edits with lifecycle CREADED
+                      LOG(LDEBUG, ("Create case: uploading new feature", feature));
+                      changeset.AddChangesetTag("info:feature_created", "yes");
+                      changeset.Create(feature);
+                    }
+                    else {
+                      //Update existing OSM feature
+                      LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
+                      changeset.AddChangesetTag("info:features_merged", "yes");
+                      changeset.Modify(osmFeature);
+                    }
+                  }
+                }
+                catch (ChangesetWrapper::OsmObjectWasDeletedException const &)
+                {
+                  // Object was never created by anyone else - it's safe to create it.
+                  changeset.Create(feature);
+                }
+                catch (ChangesetWrapper::EmptyFeatureException const &)
+                {
+                  // There is another node nearby, but it should be safe to create a new one.
+                  changeset.Create(feature);
+                }
+                catch (...)
+                {
+                  // Pass network or other errors to outside exception handler.
+                  throw;
+                }
+              }
+                break;
+
+              case FeatureStatus::Modified:
+              {
+                // Do not serialize feature's type to avoid breaking OSM data.
+                // TODO: Implement correct types matching when we support modifying existing feature types.
+                XMLFeature feature = editor::ToXML(fti.m_object, false);
+                if (!fti.m_street.empty())
+                  feature.SetTagValue(kAddrStreetTag, fti.m_street);
+
+                auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
+                if (!originalObjectPtr)
+                {
+                  LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
+                  GetPlatform().RunTask(Platform::Thread::Gui,[this, fid = fti.m_object.GetID()]() {
+                                          RemoveFeatureIfExists(fid);
+                                        });
+                  continue;
+                }
+
+                XMLFeature osmFeature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
+                XMLFeature const osmFeatureCopy = osmFeature;
+                osmFeature.ApplyPatch(feature);
+                // Check to avoid uploading duplicates into OSM.
+                if (osmFeature == osmFeatureCopy)
+                {
+                  LOG(LWARNING,("Local changes are equal to OSM, feature has not been uploaded.", osmFeatureCopy));
+                  // Don't delete this local change right now for user to see it in profile.
+                  // It will be automatically deleted by migration code on the next maps update.
+                }
+                else
+                {
+                  LOG(LDEBUG, ("Uploading patched feature", osmFeature));
+                  changeset.Modify(osmFeature);
+                }
+              }
+                break;
+
+              case FeatureStatus::Deleted:
+                auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
+                if (!originalObjectPtr)
+                {
+                  LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
+                  GetPlatform().RunTask(Platform::Thread::Gui,[this, fid = fti.m_object.GetID()]() {
+                                          RemoveFeatureIfExists(fid);
+                                        });
+                  continue;
+                }
+                changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
+                break;
+            }
+            uploadInfo.m_uploadStatus = kUploaded;
+            uploadInfo.m_uploadError.clear();
+            ++uploadedFeaturesCount;
+          }
+          catch (ChangesetWrapper::OsmObjectWasDeletedException const &ex)
+          {
+            uploadInfo.m_uploadStatus = kDeletedFromOSMServer;
+            uploadInfo.m_uploadError = ex.Msg();
+            ++errorsCount;
+            LOG(LWARNING, (ex.what()));
+            changeset.SetErrorDescription(ex.Msg());
+          }
+          catch (ChangesetWrapper::EmptyFeatureException const &ex)
+          {
+            uploadInfo.m_uploadStatus = kMatchedFeatureIsEmpty;
+            uploadInfo.m_uploadError = ex.Msg();
+            ++errorsCount;
+            LOG(LWARNING, (ex.what()));
+            changeset.SetErrorDescription(ex.Msg());
+          }
+          catch (RootException const &ex)
+          {
+            uploadInfo.m_uploadStatus = kNeedsRetry;
+            uploadInfo.m_uploadError = ex.Msg();
+            ++errorsCount;
+            LOG(LWARNING, (ex.what()));
+            changeset.SetErrorDescription(ex.Msg());
+          }
         }
         // TODO(AlexZ): Use timestamp from the server.
         uploadInfo.m_uploadAttemptTimestamp = time(nullptr);
