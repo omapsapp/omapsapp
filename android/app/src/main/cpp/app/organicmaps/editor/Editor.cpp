@@ -377,9 +377,10 @@ Java_app_organicmaps_editor_Editor_nativeCreateMapObject(JNIEnv * env, jclass,
 {
   ::Framework * frm = g_framework->NativeFramework();
   auto const type = classif().GetTypeByReadableObjectName(jni::ToNativeString(env, featureType));
-  CHECK(frm->CreateMapObject(frm->GetViewportCenter(), type, g_editableMapObject),
+  auto const mercator = frm->GetViewportCenter();
+  CHECK(frm->CreateMapObject(mercator, type, g_editableMapObject),
         ("Couldn't create mapobject, wrong coordinates of missing mwm"));
-  g_editableMapObject.MarkAsCreated();
+  g_editableMapObject.MarkAsCreated(type, feature::GeomType::Point, mercator);
 }
 
 // static void nativeCreateNote(String text);

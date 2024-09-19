@@ -171,9 +171,9 @@ void EditableMapObject::SetTestId(uint64_t id)
   m_metadata.Set(feature::Metadata::FMD_TEST_ID, std::to_string(id));
 }
 
-void EditableMapObject::MarkAsCreated()
+void EditableMapObject::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
 {
-  journal.MarkAsCreated();
+  journal.MarkAsCreated(type, geomType, mercator);
 }
 
 void EditableMapObject::ClearJournal()

@@ -18,13 +18,23 @@ namespace osm
     //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused, LocationChanged, FeatureTypeChanged
   };
 
+  struct TagModData {
+    std::string key;
+    std::string old_value;
+    std::string new_value;
+  };
+
+  struct ObjCreateData {
+    uint32_t type;
+    feature::GeomType geomType;
+    m2::PointD mercator;
+  };
+
   struct JournalEntry
   {
     JournalEntryType journalEntryType = JournalEntryType::TagModification;
     time_t timestamp;
-    std::string key;
-    std::string old_value;
-    std::string new_value;
+    std::variant<TagModData, ObjCreateData> data;
   };
 
   enum class EditingLifecycle
@@ -49,7 +59,7 @@ namespace osm
 
     const std::list<JournalEntry> & GetJournal();
 
-    void MarkAsCreated();
+    void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 
     osm::EditingLifecycle GetEditingLifecycle();
 

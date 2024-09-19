@@ -89,7 +89,7 @@ public:
   // Used only in testing framework.
   void SetTestId(uint64_t id);
 
-  void MarkAsCreated();
+  void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
   void ClearJournal();
   EditJournal GetJournal();
   void SetJournal(EditJournal editJournal);
