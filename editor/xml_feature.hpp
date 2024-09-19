@@ -2,6 +2,7 @@
 
 #include "geometry/mercator.hpp"
 #include "geometry/point2d.hpp"
+#include "indexer/feature_decl.hpp"
 
 #include "coding/string_utf8_multilang.hpp"
 
@@ -207,6 +208,8 @@ void ApplyPatch(XMLFeature const & xml, osm::EditableMapObject & object);
 /// Useful for applying modifications to existing OSM features, to avoid issues when someone
 /// has changed a type in OSM, but our users uploaded invalid outdated type after modifying feature.
 XMLFeature ToXML(osm::EditableMapObject const & object, bool serializeType);
+
+XMLFeature TypeToXML(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 
 XMLFeature ToXML_locationOnly(osm::EditableMapObject const & object);
 

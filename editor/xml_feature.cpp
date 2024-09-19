@@ -209,6 +209,7 @@ void XMLFeature::ApplyPatch(XMLFeature const & featureWithChanges)
   });
 }
 
+// TODO: not used
 void XMLFeature::AddFeatureType(uint32_t const type)
 {
   if (ftypes::IsRecyclingCentreChecker::Instance()(type))
@@ -662,6 +663,37 @@ XMLFeature ToXML(osm::EditableMapObject const & object, bool serializeType)
   return toFeature;
 }
 
+XMLFeature TypeToXML(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
+{
+  ASSERT(geomType == feature::GeomType::Point, ("Only point features can be added"));
+  XMLFeature toFeature(XMLFeature::Type::Node);
+  toFeature.SetCenter(mercator);
+
+  // Set Type
+  if (ftypes::IsRecyclingCentreChecker::Instance()(type))
+  {
+    toFeature.SetTagValue("amenity", "recycling");
+    toFeature.SetTagValue("recycling_type", "centre");
+  }
+  else if (ftypes::IsRecyclingContainerChecker::Instance()(type))
+  {
+    toFeature.SetTagValue("amenity", "recycling");
+    toFeature.SetTagValue("recycling_type", "container");
+  }
+  else
+  {
+    string const strType = classif().GetReadableObjectName(uint32_t(type));
+    strings::SimpleTokenizer iter(strType, "-");
+    string_view const k = *iter;
+
+    ASSERT(++iter, ("Processing Type failed: ", strType));
+    // Main type is always stored as "k=amenity v=restaurant".
+    toFeature.SetTagValue(k, *iter);
+  }
+  return toFeature;
+}
+
+//Todo: not used
 XMLFeature ToXML_locationOnly(osm::EditableMapObject const & object) {
   bool const isPoint = object.GetGeomType() == feature::GeomType::Point;
   XMLFeature toFeature(isPoint ? XMLFeature::Type::Node : XMLFeature::Type::Way);

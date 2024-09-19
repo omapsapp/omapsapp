@@ -73,7 +73,6 @@ namespace osm
         return ToString(journalEntry.journalEntryType)
             .append(": ").append(classif().GetFullObjectName(objCreatedData.type))
             .append(" (").append(to_string(objCreatedData.type)).append(")");
-
       }
     }
   }

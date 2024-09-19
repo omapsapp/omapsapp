@@ -627,19 +627,44 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
         LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
-        bool useNewEditor = false;
+        bool useNewEditor = true;
 
         if (useNewEditor)
         {
           LOG(LDEBUG, ("New Editor used\n"));
-          switch (fti.m_object.GetEditingLifecycle()) {
+          std::list<JournalEntry> journal = fti.m_object.GetJournal().GetJournal();
+
+          switch (fti.m_object.GetEditingLifecycle())
+          {
             case EditingLifecycle::CREATED:
             {
-              XMLFeature feature = editor::ToXML_locationOnly(fti.m_object);
-              //feature.AddFeatureType();
-              //editor::XMLFeature::SetTagValue()
+              // Generate XMLFeature for new object
+              JournalEntry createEntry = journal.front();
+              ASSERT(createEntry.journalEntryType == JournalEntryType::ObjectCreated, ("First item should have type ObjectCreated"));
+              ObjCreateData objCreateData = std::get<ObjCreateData>(createEntry.data);
+              XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
+
+              // Add tags to XMLFeature
+              for (JournalEntry entry : journal) {
+                switch (entry.journalEntryType) {
+                  case JournalEntryType::TagModification:
+                  {
+                    TagModData tagModData = std::get<TagModData>(entry.data);
+                    feature.SetTagValue(tagModData.key, tagModData.new_value);
+                    break;
+                  }
+                  case JournalEntryType::ObjectCreated:
+                    break;
+                }
+              }
+
+              // Upload XMLFeature to OSM
+              LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
+              changeset.AddChangesetTag("info:new_editor", "yes");
+              changeset.Create(feature);
               break;
             }
+
             case EditingLifecycle::MODIFIED:
             {
               auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
@@ -653,19 +678,42 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
               }
 
               XMLFeature osmFeature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
-              //osmFeature.UpdateFromJournal(fti.m_object.GetJournal());
-              //Todo
+
+              // Update tags of XMLFeature
+              // Todo: Handle identical keys (phone vs. contact:phone)
+              // Todo: Handle tag removal
+              for (JournalEntry entry : journal) {
+                switch (entry.journalEntryType) {
+                  case JournalEntryType::TagModification:
+                  {
+                    TagModData tagModData = std::get<TagModData>(entry.data);
+                    osmFeature.SetTagValue(tagModData.key, tagModData.new_value);
+                    break;
+                  }
+                  case JournalEntryType::ObjectCreated: {
+                    CHECK(false, ("ObjectCreated can only be the first entry"));
+                    break;
+                  }
+                }
+              }
+
+              // Upload XMLFeature to OSM
+              LOG(LDEBUG, ("MODIFIED Feature (newEditor)", osmFeature));
+              changeset.AddChangesetTag("info:new_editor", "yes");
+              changeset.Modify(osmFeature);
               break;
             }
-            case EditingLifecycle::IN_SYNC:
+
+            case EditingLifecycle::IN_SYNC: {
+              LOG(LDEBUG, ("Object already IN_SYNC"));
               continue;
+            }
           }
           uploadInfo.m_uploadStatus = kUploaded;
           uploadInfo.m_uploadError.clear();
           ++uploadedFeaturesCount;
         }
-          // don't use new editor
-        else
+        else // don't use new editor
         {
           try
           {
