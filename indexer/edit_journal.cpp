@@ -72,7 +72,7 @@ namespace osm
         ObjCreateData objCreatedData = std::get<ObjCreateData>(journalEntry.data);
         return ToString(journalEntry.journalEntryType)
             .append(": ").append(classif().GetFullObjectName(objCreatedData.type))
-            .append(" (").append(to_string(objCreatedData.type)).append(")");
+            .append(" (").append(std::to_string(objCreatedData.type)).append(")");
       }
     }
   }
