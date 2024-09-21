@@ -185,6 +185,8 @@ public:
   void SetTagValue(std::string_view key, std::string_view value);
   void RemoveTag(std::string_view key);
 
+  void UpdateOSMTag(std::string_view key, std::string_view value);
+
   std::string GetAttribute(std::string const & key) const;
   void SetAttribute(std::string const & key, std::string const & value);
 

@@ -650,7 +650,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                   case JournalEntryType::TagModification:
                   {
                     TagModData tagModData = std::get<TagModData>(entry.data);
-                    feature.SetTagValue(tagModData.key, tagModData.new_value);
+                    feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
                     break;
                   }
                   case JournalEntryType::ObjectCreated:
@@ -680,14 +680,12 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
               XMLFeature osmFeature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
 
               // Update tags of XMLFeature
-              // Todo: Handle identical keys (phone vs. contact:phone)
-              // Todo: Handle tag removal
               for (JournalEntry entry : journal) {
                 switch (entry.journalEntryType) {
                   case JournalEntryType::TagModification:
                   {
                     TagModData tagModData = std::get<TagModData>(entry.data);
-                    osmFeature.SetTagValue(tagModData.key, tagModData.new_value);
+                    osmFeature.UpdateOSMTag(tagModData.key, tagModData.new_value);
                     break;
                   }
                   case JournalEntryType::ObjectCreated: {
