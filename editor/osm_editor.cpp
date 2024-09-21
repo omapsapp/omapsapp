@@ -628,116 +628,113 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
         LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
         bool useNewEditor = true;
-
-        if (useNewEditor)
+                
+        try
         {
-          LOG(LDEBUG, ("New Editor used\n"));
+          if (useNewEditor)
+          {
+            LOG(LDEBUG, ("New Editor used\n"));
 
-          switch (fti.m_status) {
-            case FeatureStatus::Untouched:
-              CHECK(false, ("It's impossible."));
-              continue;
-            case FeatureStatus::Obsolete:
-              continue;  // Obsolete features will be deleted by OSMers.
-            case FeatureStatus::Created: // fallthrough
-            case FeatureStatus::Modified:
-            {
-              std::list<JournalEntry> journal = fti.m_object.GetJournal().GetJournal();
-
-              switch (fti.m_object.GetEditingLifecycle())
+            switch (fti.m_status) {
+              case FeatureStatus::Untouched:
+                CHECK(false, ("It's impossible."));
+                continue;
+              case FeatureStatus::Obsolete:
+                continue;  // Obsolete features will be deleted by OSMers.
+              case FeatureStatus::Created: // fallthrough
+              case FeatureStatus::Modified:
               {
-                case EditingLifecycle::CREATED:
-                {
-                  // Generate XMLFeature for new object
-                  JournalEntry createEntry = journal.front();
-                  ASSERT(createEntry.journalEntryType == JournalEntryType::ObjectCreated,("First item should have type ObjectCreated"));
-                  ObjCreateData objCreateData = std::get<ObjCreateData>(createEntry.data);
-                  XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
+                std::list<JournalEntry> journal = fti.m_object.GetJournal().GetJournal();
 
-                  // Add tags to XMLFeature
-                  for (JournalEntry entry: journal) {
-                    switch (entry.journalEntryType) {
-                      case JournalEntryType::TagModification:
-                      {
-                        TagModData tagModData = std::get<TagModData>(entry.data);
-                        feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
-                        break;
-                      }
-                      case JournalEntryType::ObjectCreated:
-                        break;
-                    }
-                  }
-
-                  // Upload XMLFeature to OSM
-                  LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
-                  changeset.AddChangesetTag("info:new_editor", "yes");
-                  changeset.Create(feature);
-                  break;
-                }
-                case EditingLifecycle::MODIFIED:
+                switch (fti.m_object.GetEditingLifecycle())
                 {
-                  // Load existing OSM object
-                  auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
-                  if (!originalObjectPtr)
+                  case EditingLifecycle::CREATED:
                   {
-                    LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
-                    GetPlatform().RunTask(Platform::Thread::Gui, [this, fid = fti.m_object.GetID()]() {
-                                            RemoveFeatureIfExists(fid);
-                                          });
+                    // Generate XMLFeature for new object
+                    JournalEntry createEntry = journal.front();
+                    ASSERT(createEntry.journalEntryType == JournalEntryType::ObjectCreated,("First item should have type ObjectCreated"));
+                    ObjCreateData objCreateData = std::get<ObjCreateData>(createEntry.data);
+                    XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
+
+                    // Add tags to XMLFeature
+                    for (JournalEntry entry: journal) {
+                      switch (entry.journalEntryType) {
+                        case JournalEntryType::TagModification:
+                        {
+                          TagModData tagModData = std::get<TagModData>(entry.data);
+                          feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
+                          break;
+                        }
+                        case JournalEntryType::ObjectCreated:
+                          break;
+                      }
+                    }
+
+                    // Upload XMLFeature to OSM
+                    LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
+                    changeset.AddChangesetTag("info:new_editor", "yes");
+                    changeset.Create(feature);
+                    break;
+                  }
+                  case EditingLifecycle::MODIFIED:
+                  {
+                    // Load existing OSM object
+                    auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
+                    if (!originalObjectPtr)
+                    {
+                      LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
+                      GetPlatform().RunTask(Platform::Thread::Gui, [this, fid = fti.m_object.GetID()]() {
+                        RemoveFeatureIfExists(fid);
+                      });
+                      continue;
+                    }
+
+                    XMLFeature feature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
+
+                    // Update tags of XMLFeature
+                    for (JournalEntry entry: journal) {
+                      switch (entry.journalEntryType) {
+                        case JournalEntryType::TagModification:
+                        {
+                          TagModData tagModData = std::get<TagModData>(entry.data);
+                          feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
+                          break;
+                        }
+                        case JournalEntryType::ObjectCreated:
+                          CHECK(false, ("ObjectCreated can only be the first entry"));
+                          break;
+                      }
+                    }
+
+                    // Upload XMLFeature to OSM
+                    LOG(LDEBUG, ("MODIFIED Feature (newEditor)", feature));
+                    changeset.AddChangesetTag("info:new_editor", "yes");
+                    changeset.Modify(feature);
+                    break;
+                  }
+                  case EditingLifecycle::IN_SYNC:
+                  {
+                    CHECK(false, ("Object already IN_SYNC should not be here"));
                     continue;
                   }
-
-                  XMLFeature feature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
-
-                  // Update tags of XMLFeature
-                  for (JournalEntry entry: journal) {
-                    switch (entry.journalEntryType) {
-                      case JournalEntryType::TagModification:
-                      {
-                        TagModData tagModData = std::get<TagModData>(entry.data);
-                        feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
-                        break;
-                      }
-                      case JournalEntryType::ObjectCreated:
-                        CHECK(false, ("ObjectCreated can only be the first entry"));
-                        break;
-                    }
-                  }
-
-                  // Upload XMLFeature to OSM
-                  LOG(LDEBUG, ("MODIFIED Feature (newEditor)", feature));
-                  changeset.AddChangesetTag("info:new_editor", "yes");
-                  changeset.Modify(feature);
-                  break;
                 }
-                case EditingLifecycle::IN_SYNC:
+                break;
+              }
+              case FeatureStatus::Deleted:
+                auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
+                if (!originalObjectPtr)
                 {
-                  CHECK(false, ("Object already IN_SYNC should not be here"));
+                  LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
+                  GetPlatform().RunTask(Platform::Thread::Gui,[this, fid = fti.m_object.GetID()]() {
+                    RemoveFeatureIfExists(fid);
+                  });
                   continue;
                 }
-              }
-              break;
+                changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
+                break;
             }
-            case FeatureStatus::Deleted:
-              auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
-              if (!originalObjectPtr)
-              {
-                LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
-                GetPlatform().RunTask(Platform::Thread::Gui,[this, fid = fti.m_object.GetID()]() {
-                  RemoveFeatureIfExists(fid);
-                });
-                continue;
-              }
-              changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
-              break;
           }
-          uploadInfo.m_uploadStatus = kUploaded;
-          uploadInfo.m_uploadError.clear();
-          ++uploadedFeaturesCount;
-        }
-        else // don't use new editor
-        {
-          try
+          else // don't use new editor
           {
             switch (fti.m_status)
             {
@@ -851,34 +848,34 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                 changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
                 break;
             }
-            uploadInfo.m_uploadStatus = kUploaded;
-            uploadInfo.m_uploadError.clear();
-            ++uploadedFeaturesCount;
           }
-          catch (ChangesetWrapper::OsmObjectWasDeletedException const &ex)
-          {
-            uploadInfo.m_uploadStatus = kDeletedFromOSMServer;
-            uploadInfo.m_uploadError = ex.Msg();
-            ++errorsCount;
-            LOG(LWARNING, (ex.what()));
-            changeset.SetErrorDescription(ex.Msg());
-          }
-          catch (ChangesetWrapper::EmptyFeatureException const &ex)
-          {
-            uploadInfo.m_uploadStatus = kMatchedFeatureIsEmpty;
-            uploadInfo.m_uploadError = ex.Msg();
-            ++errorsCount;
-            LOG(LWARNING, (ex.what()));
-            changeset.SetErrorDescription(ex.Msg());
-          }
-          catch (RootException const &ex)
-          {
-            uploadInfo.m_uploadStatus = kNeedsRetry;
-            uploadInfo.m_uploadError = ex.Msg();
-            ++errorsCount;
-            LOG(LWARNING, (ex.what()));
-            changeset.SetErrorDescription(ex.Msg());
-          }
+          uploadInfo.m_uploadStatus = kUploaded;
+          uploadInfo.m_uploadError.clear();
+          ++uploadedFeaturesCount;
+        }
+        catch (ChangesetWrapper::OsmObjectWasDeletedException const &ex)
+        {
+          uploadInfo.m_uploadStatus = kDeletedFromOSMServer;
+          uploadInfo.m_uploadError = ex.Msg();
+          ++errorsCount;
+          LOG(LWARNING, (ex.what()));
+          changeset.SetErrorDescription(ex.Msg());
+        }
+        catch (ChangesetWrapper::EmptyFeatureException const &ex)
+        {
+          uploadInfo.m_uploadStatus = kMatchedFeatureIsEmpty;
+          uploadInfo.m_uploadError = ex.Msg();
+          ++errorsCount;
+          LOG(LWARNING, (ex.what()));
+          changeset.SetErrorDescription(ex.Msg());
+        }
+        catch (RootException const &ex)
+        {
+          uploadInfo.m_uploadStatus = kNeedsRetry;
+          uploadInfo.m_uploadError = ex.Msg();
+          ++errorsCount;
+          LOG(LWARNING, (ex.what()));
+          changeset.SetErrorDescription(ex.Msg());
         }
         // TODO(AlexZ): Use timestamp from the server.
         uploadInfo.m_uploadAttemptTimestamp = time(nullptr);
