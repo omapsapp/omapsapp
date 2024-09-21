@@ -627,6 +627,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
         LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
+        // Todo: implement logic
         bool useNewEditor = true;
                 
         try
@@ -734,8 +735,9 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                 break;
             }
           }
-          else // don't use new editor
+          else // Use old editor
           {
+            // Todo: Remove old editor after transition period
             switch (fti.m_status)
             {
               case FeatureStatus::Untouched: CHECK(false, ("It's impossible.")); continue;
