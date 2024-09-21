@@ -679,18 +679,8 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                   }
                   case EditingLifecycle::MODIFIED:
                   {
-                    // Load existing OSM object
-                    auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
-                    if (!originalObjectPtr)
-                    {
-                      LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
-                      GetPlatform().RunTask(Platform::Thread::Gui, [this, fid = fti.m_object.GetID()]() {
-                        RemoveFeatureIfExists(fid);
-                      });
-                      continue;
-                    }
-
-                    XMLFeature feature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
+                    // Load existing OSM object (Throws, see catch below)
+                    XMLFeature feature = GetMatchingFeatureFromOSM(changeset, fti.m_object);
 
                     // Update tags of XMLFeature
                     for (JournalEntry entry: journal) {
