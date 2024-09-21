@@ -632,41 +632,93 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
         if (useNewEditor)
         {
           LOG(LDEBUG, ("New Editor used\n"));
-          std::list<JournalEntry> journal = fti.m_object.GetJournal().GetJournal();
 
-          switch (fti.m_object.GetEditingLifecycle())
-          {
-            case EditingLifecycle::CREATED:
+          switch (fti.m_status) {
+            case FeatureStatus::Untouched:
+              CHECK(false, ("It's impossible."));
+              continue;
+            case FeatureStatus::Obsolete:
+              continue;  // Obsolete features will be deleted by OSMers.
+            case FeatureStatus::Created: // fallthrough
+            case FeatureStatus::Modified:
             {
-              // Generate XMLFeature for new object
-              JournalEntry createEntry = journal.front();
-              ASSERT(createEntry.journalEntryType == JournalEntryType::ObjectCreated, ("First item should have type ObjectCreated"));
-              ObjCreateData objCreateData = std::get<ObjCreateData>(createEntry.data);
-              XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
+              std::list<JournalEntry> journal = fti.m_object.GetJournal().GetJournal();
 
-              // Add tags to XMLFeature
-              for (JournalEntry entry : journal) {
-                switch (entry.journalEntryType) {
-                  case JournalEntryType::TagModification:
-                  {
-                    TagModData tagModData = std::get<TagModData>(entry.data);
-                    feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
-                    break;
+              switch (fti.m_object.GetEditingLifecycle())
+              {
+                case EditingLifecycle::CREATED:
+                {
+                  // Generate XMLFeature for new object
+                  JournalEntry createEntry = journal.front();
+                  ASSERT(createEntry.journalEntryType == JournalEntryType::ObjectCreated,("First item should have type ObjectCreated"));
+                  ObjCreateData objCreateData = std::get<ObjCreateData>(createEntry.data);
+                  XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
+
+                  // Add tags to XMLFeature
+                  for (JournalEntry entry: journal) {
+                    switch (entry.journalEntryType) {
+                      case JournalEntryType::TagModification:
+                      {
+                        TagModData tagModData = std::get<TagModData>(entry.data);
+                        feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
+                        break;
+                      }
+                      case JournalEntryType::ObjectCreated:
+                        break;
+                    }
                   }
-                  case JournalEntryType::ObjectCreated:
-                    break;
+
+                  // Upload XMLFeature to OSM
+                  LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
+                  changeset.AddChangesetTag("info:new_editor", "yes");
+                  changeset.Create(feature);
+                  break;
+                }
+                case EditingLifecycle::MODIFIED:
+                {
+                  // Load existing OSM object
+                  auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
+                  if (!originalObjectPtr)
+                  {
+                    LOG(LERROR, ("A feature with id", fti.m_object.GetID(), "cannot be loaded."));
+                    GetPlatform().RunTask(Platform::Thread::Gui, [this, fid = fti.m_object.GetID()]() {
+                                            RemoveFeatureIfExists(fid);
+                                          });
+                    continue;
+                  }
+
+                  XMLFeature feature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
+
+                  // Update tags of XMLFeature
+                  for (JournalEntry entry: journal) {
+                    switch (entry.journalEntryType) {
+                      case JournalEntryType::TagModification:
+                      {
+                        TagModData tagModData = std::get<TagModData>(entry.data);
+                        feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
+                        break;
+                      }
+                      case JournalEntryType::ObjectCreated:
+                        CHECK(false, ("ObjectCreated can only be the first entry"));
+                        break;
+                    }
+                  }
+
+                  // Upload XMLFeature to OSM
+                  LOG(LDEBUG, ("MODIFIED Feature (newEditor)", feature));
+                  changeset.AddChangesetTag("info:new_editor", "yes");
+                  changeset.Modify(feature);
+                  break;
+                }
+                case EditingLifecycle::IN_SYNC:
+                {
+                  CHECK(false, ("Object already IN_SYNC should not be here"));
+                  continue;
                 }
               }
-
-              // Upload XMLFeature to OSM
-              LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
-              changeset.AddChangesetTag("info:new_editor", "yes");
-              changeset.Create(feature);
               break;
             }
-
-            case EditingLifecycle::MODIFIED:
-            {
+            case FeatureStatus::Deleted:
               auto const originalObjectPtr = GetOriginalMapObject(fti.m_object.GetID());
               if (!originalObjectPtr)
               {
@@ -676,36 +728,8 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                 });
                 continue;
               }
-
-              XMLFeature osmFeature = GetMatchingFeatureFromOSM(changeset, *originalObjectPtr);
-
-              // Update tags of XMLFeature
-              for (JournalEntry entry : journal) {
-                switch (entry.journalEntryType) {
-                  case JournalEntryType::TagModification:
-                  {
-                    TagModData tagModData = std::get<TagModData>(entry.data);
-                    osmFeature.UpdateOSMTag(tagModData.key, tagModData.new_value);
-                    break;
-                  }
-                  case JournalEntryType::ObjectCreated: {
-                    CHECK(false, ("ObjectCreated can only be the first entry"));
-                    break;
-                  }
-                }
-              }
-
-              // Upload XMLFeature to OSM
-              LOG(LDEBUG, ("MODIFIED Feature (newEditor)", osmFeature));
-              changeset.AddChangesetTag("info:new_editor", "yes");
-              changeset.Modify(osmFeature);
+              changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
               break;
-            }
-
-            case EditingLifecycle::IN_SYNC: {
-              LOG(LDEBUG, ("Object already IN_SYNC"));
-              continue;
-            }
           }
           uploadInfo.m_uploadStatus = kUploaded;
           uploadInfo.m_uploadError.clear();
