@@ -74,9 +74,6 @@ public:
   /// Tags from featureWithChanges are applied to this(osm) feature.
   void ApplyPatch(XMLFeature const & featureWithChanges);
 
-  //void UpdateFromJournal()
-  void AddFeatureType(uint32_t const type);
-
   Type GetType() const;
   std::string GetTypeString() const;
 
@@ -212,8 +209,6 @@ void ApplyPatch(XMLFeature const & xml, osm::EditableMapObject & object);
 XMLFeature ToXML(osm::EditableMapObject const & object, bool serializeType);
 
 XMLFeature TypeToXML(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
-
-XMLFeature ToXML_locationOnly(osm::EditableMapObject const & object);
 
 /// Creates new feature, including geometry and types.
 /// @Note: only nodes (points) are supported at the moment.
