@@ -181,7 +181,7 @@ void EditableMapObject::ClearJournal()
   journal.Clear();
 }
 
-EditJournal EditableMapObject::GetJournal()
+EditJournal EditableMapObject::GetJournal() const
 {
   return journal;
 }

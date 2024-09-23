@@ -63,10 +63,10 @@ namespace osm
 
     osm::EditingLifecycle GetEditingLifecycle();
 
-    std::string JournalToString();
+    std::string JournalToString() const;
 
-    std::string ToString(osm::JournalEntry journalEntry);
+    std::string ToString(osm::JournalEntry journalEntry) const;
 
-    std::string ToString(osm::JournalEntryType journalEntryType);
+    std::string ToString(osm::JournalEntryType journalEntryType) const;
   };
 }

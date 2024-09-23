@@ -434,6 +434,18 @@ string XMLFeature::GetUploadError() const { return GetRootNode().attribute(kUplo
 
 void XMLFeature::SetUploadError(string const & error) { SetAttribute(kUploadError, error); }
 
+osm::EditJournal XMLFeature::GetEditJournal() const
+{
+  osm::EditJournal journal = osm::EditJournal();
+  journal.AddTagChange("Loaded from dummy storage method", "", "");
+  return journal;
+}
+
+void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
+{
+  LOG(LDEBUG, ("Journal saved in dummy storage:\n", journal.JournalToString()));
+}
+
 bool XMLFeature::HasAnyTags() const { return GetRootNode().child("tag"); }
 
 bool XMLFeature::HasTag(string_view key) const { return FindTag(m_document, key); }

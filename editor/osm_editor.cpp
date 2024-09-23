@@ -227,6 +227,7 @@ bool Editor::Save(FeaturesContainer const & features) const
       // and meta fields are enough.
       XMLFeature xf =
           editor::ToXML(fti.m_object, true /* type serializing helps during migration */);
+      xf.SetEditJournal(fti.m_object.GetJournal());
       xf.SetMWMFeatureIndex(index.first);
       if (!fti.m_street.empty())
         xf.SetTagValue(kAddrStreetTag, fti.m_street);
@@ -954,6 +955,7 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
     editor::ApplyPatch(xml, fti.m_object);
   }
 
+  fti.m_object.SetJournal(xml.GetEditJournal());
   fti.m_object.SetID(fid);
   fti.m_street = xml.GetTagValue(kAddrStreetTag);
 

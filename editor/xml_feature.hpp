@@ -3,6 +3,7 @@
 #include "geometry/mercator.hpp"
 #include "geometry/point2d.hpp"
 #include "indexer/feature_decl.hpp"
+#include "indexer/edit_journal.hpp"
 
 #include "coding/string_utf8_multilang.hpp"
 
@@ -164,6 +165,9 @@ public:
 
   std::string GetUploadError() const;
   void SetUploadError(std::string const & error);
+
+  osm::EditJournal GetEditJournal() const;
+  void SetEditJournal(osm::EditJournal const & journal);
   //@}
 
   bool HasAnyTags() const;

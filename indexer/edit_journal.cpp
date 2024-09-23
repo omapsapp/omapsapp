@@ -49,7 +49,7 @@ namespace osm
     return EditingLifecycle::MODIFIED;
   }
 
-  std::string EditJournal::JournalToString()
+  std::string EditJournal::JournalToString() const
   {
     std::string string;
     std::for_each(journal.begin(), journal.end(), [&](const auto &journalEntry) {
@@ -58,7 +58,7 @@ namespace osm
     return string;
   }
 
-  std::string EditJournal::ToString(osm::JournalEntry journalEntry)
+  std::string EditJournal::ToString(osm::JournalEntry journalEntry) const
   {
     switch (journalEntry.journalEntryType) {
       case osm::JournalEntryType::TagModification: {
@@ -77,7 +77,7 @@ namespace osm
     }
   }
 
-  std::string EditJournal::ToString(osm::JournalEntryType journalEntryType)
+  std::string EditJournal::ToString(osm::JournalEntryType journalEntryType) const
   {
     switch (journalEntryType) {
       case osm::JournalEntryType::TagModification:
