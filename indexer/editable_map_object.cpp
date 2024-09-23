@@ -444,8 +444,8 @@ void EditableMapObject::SetCuisines(std::vector<std::string> const & cuisines)
     cuisinesModified = true;
   }
   else {
-    for (auto const new_cuisine : new_cuisines) {
-      for (auto const old_cuisine : old_cuisines) {
+    for (auto const & new_cuisine : new_cuisines) {
+      for (auto const & old_cuisine : old_cuisines) {
         if (new_cuisine == old_cuisine) {
           goto value_found;
         }
