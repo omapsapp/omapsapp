@@ -760,28 +760,22 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                   }
                   else
                   {
-                    if (fti.m_object.GetEditingLifecycle() == EditingLifecycle::CREATED) {
-                      //New OSM feature for edits with lifecycle CREADED
-                      LOG(LDEBUG, ("Create case: uploading new feature", feature));
-                      changeset.AddChangesetTag("info:feature_created", "yes");
-                      changeset.Create(feature);
-                    }
-                    else {
-                      //Update existing OSM feature
-                      LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
-                      changeset.AddChangesetTag("info:features_merged", "yes");
-                      changeset.Modify(osmFeature);
-                    }
+                    LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
+                    changeset.AddChangesetTag("info:oldEditor", "yes");
+                    changeset.AddChangesetTag("info:features_merged", "yes");
+                    changeset.Modify(osmFeature);
                   }
                 }
                 catch (ChangesetWrapper::OsmObjectWasDeletedException const &)
                 {
                   // Object was never created by anyone else - it's safe to create it.
+                  changeset.AddChangesetTag("info:oldEditor", "yes");
                   changeset.Create(feature);
                 }
                 catch (ChangesetWrapper::EmptyFeatureException const &)
                 {
                   // There is another node nearby, but it should be safe to create a new one.
+                  changeset.AddChangesetTag("info:oldEditor", "yes");
                   changeset.Create(feature);
                 }
                 catch (...)
@@ -823,6 +817,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                 else
                 {
                   LOG(LDEBUG, ("Uploading patched feature", osmFeature));
+                  changeset.AddChangesetTag("info:oldEditor", "yes");
                   changeset.Modify(osmFeature);
                 }
               }
@@ -838,6 +833,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                                         });
                   continue;
                 }
+                changeset.AddChangesetTag("info:oldEditor", "yes");
                 changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
                 break;
             }
