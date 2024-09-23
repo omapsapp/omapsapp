@@ -10,7 +10,8 @@
 
 namespace osm
 {
-  void EditJournal::AddJournalEntry(const JournalEntry& entry) {
+  void EditJournal::AddJournalEntry(const JournalEntry& entry)
+  {
     journal.push_back(entry);
   }
 
@@ -22,11 +23,13 @@ namespace osm
     LOG(LDEBUG, ("Key ", key, "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
   }
 
-  void EditJournal::Clear() {
+  void EditJournal::Clear()
+  {
     journal = {};
   }
 
-  const std::list<JournalEntry> &EditJournal::GetJournal() {
+  const std::list<JournalEntry> &EditJournal::GetJournal()
+  {
     return journal;
   }
 
@@ -36,6 +39,7 @@ namespace osm
     ObjCreateData objCreateData = {type, geomType, mercator};
     JournalEntry entry = {JournalEntryType::ObjectCreated, time(nullptr), objCreateData};
     AddJournalEntry(entry);
+    LOG(LDEBUG, ("Object of type ", classif().GetFullObjectName(type), " created"));
   }
 
   osm::EditingLifecycle EditJournal::GetEditingLifecycle()
