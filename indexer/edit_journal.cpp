@@ -42,7 +42,7 @@ namespace osm
     LOG(LDEBUG, ("Object of type ", classif().GetFullObjectName(type), " created"));
   }
 
-  osm::EditingLifecycle EditJournal::GetEditingLifecycle()
+  osm::EditingLifecycle EditJournal::GetEditingLifecycle() const
   {
     if (journal.empty()) {
       return EditingLifecycle::IN_SYNC;

@@ -61,7 +61,7 @@ namespace osm
 
     void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 
-    osm::EditingLifecycle GetEditingLifecycle();
+    osm::EditingLifecycle GetEditingLifecycle() const;
 
     std::string JournalToString() const;
 

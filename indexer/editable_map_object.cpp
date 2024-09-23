@@ -191,7 +191,7 @@ void EditableMapObject::SetJournal(EditJournal editJournal)
   journal = editJournal;
 }
 
-EditingLifecycle EditableMapObject::GetEditingLifecycle()
+EditingLifecycle EditableMapObject::GetEditingLifecycle() const
 {
   return journal.GetEditingLifecycle();
 }

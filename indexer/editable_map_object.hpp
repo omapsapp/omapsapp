@@ -93,7 +93,7 @@ public:
   void ClearJournal();
   EditJournal GetJournal() const;
   void SetJournal(EditJournal editJournal);
-  EditingLifecycle GetEditingLifecycle();
+  EditingLifecycle GetEditingLifecycle() const;
 
   void SetEditableProperties(osm::EditableProperties const & props);
   //  void SetFeatureID(FeatureID const & fid);

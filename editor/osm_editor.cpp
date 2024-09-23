@@ -105,7 +105,7 @@ bool NeedsUpload(string const & uploadStatus)
          uploadStatus != kMatchedFeatureIsEmpty;
 }
 
-XMLFeature GetMatchingFeatureFromOSM(osm::ChangesetWrapper & cw, osm::EditableMapObject & o)
+XMLFeature GetMatchingFeatureFromOSM(osm::ChangesetWrapper & cw, const osm::EditableMapObject & o)
 {
   ASSERT_NOT_EQUAL(o.GetGeomType(), feature::GeomType::Line,
                    ("Line features are not supported yet."));
@@ -618,7 +618,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
       for (auto const & index : id.second)
       {
-        FeatureTypeInfo fti = index.second;
+        FeatureTypeInfo const & fti = index.second;
         // Do not process already uploaded features or those failed permanently.
         if (!NeedsUpload(fti.m_uploadStatus))
           continue;
