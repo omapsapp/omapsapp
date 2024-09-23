@@ -202,8 +202,10 @@ void EditableMapObject::SetEditableProperties(osm::EditableProperties const & pr
 }
 
 void EditableMapObject::SetName(StringUtf8Multilang const & name) {
-  //TODO: Log in Journal
-  m_name = name;
+  name.ForEach([this](uint8_t const & langCode, string_view name)
+  {
+    this->SetName(name, langCode);
+  });
 }
 
 void EditableMapObject::SetName(string_view name, int8_t langCode)
