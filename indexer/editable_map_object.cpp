@@ -387,7 +387,6 @@ LocalizedStreet const & EditableMapObject::GetStreet() const { return m_street; 
 template <class T>
 void EditableMapObject::SetCuisinesImpl(vector<T> const & cuisines)
 {
-  //TODO: Log in Journal
   FeatureParams params;
 
   // Ignore cuisine types as these will be set from the cuisines param
@@ -415,6 +414,49 @@ void EditableMapObject::SetCuisines(std::vector<std::string_view> const & cuisin
 
 void EditableMapObject::SetCuisines(std::vector<std::string> const & cuisines)
 {
+  std::vector<std::string> new_cuisines = cuisines;
+  std::vector<std::string> old_cuisines = GetCuisines();
+
+  auto const findAndErase = [] (std::vector<std::string>* cuisinesPtr, std::string s){
+    auto it = std::find((*cuisinesPtr).begin(), (*cuisinesPtr).end(), s);
+    if (it != (*cuisinesPtr).end()) {
+      (*cuisinesPtr).erase(it);
+      return "yes";
+    }
+    return "";
+  };
+
+  std::string new_vegetarian = findAndErase(&new_cuisines, "vegetarian");
+  std::string old_vegetarian = findAndErase(&old_cuisines, "vegetarian");
+  if (new_vegetarian != old_vegetarian)
+    journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
+
+  std::string new_vegan = findAndErase(&new_cuisines, "vegan");
+  std::string old_vegan = findAndErase(&old_cuisines, "vegan");
+  if (new_vegan != old_vegan)
+    journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
+
+  bool cuisinesModified = false;
+
+  if (new_cuisines.size() != old_cuisines.size()) {
+    cuisinesModified = true;
+  }
+  else {
+    for (auto const new_cuisine : new_cuisines) {
+      for (auto const old_cuisine : old_cuisines) {
+        if (new_cuisine == old_cuisine) {
+          goto value_found;
+        }
+      }
+      cuisinesModified = true;
+      value_found:;
+    }
+  }
+
+  if (cuisinesModified) {
+    journal.AddTagChange("cuisine", strings::JoinStrings(old_cuisines, ";"), strings::JoinStrings(new_cuisines, ";"));
+  }
+
   SetCuisinesImpl(cuisines);
 }
 
