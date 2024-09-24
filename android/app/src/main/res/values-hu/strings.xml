@@ -110,7 +110,6 @@
     <string name="measurement_units">Mértékegységek</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Válasszon kilométer és mérföld között</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Hol lehet enni valamit</string>
@@ -158,7 +157,6 @@
     <string name="category_water">Víz</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">RV számára</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Jegyzetek</string>
@@ -348,7 +346,6 @@
     <string name="gray">Szürke</string>
     <!-- blue gray color -->
     <string name="blue_gray">Kékes Szürke</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Az útvonal követése során, kérjük, vegye figyelembe az alábbiakat:</string>
     <string name="dialog_routing_disclaimer_priority">— Az útviszonyok, forgalmi törvények és jelzőtáblák mindig elsőbbséget élveznek a navigációs útmutatásokkal szemben;</string>
@@ -378,7 +375,6 @@
     <string name="not_now">Most nem</string>
     <string name="dialog_routing_download_and_build_cross_route">Szeretné letölteni a térképet és létrehozni egy optimálisabb útvonalat, amely több, mint egy térképen terül el?</string>
     <string name="dialog_routing_download_cross_route">Töltse le a térképet, hogy létrehozzon egy optimálisabb útvonalat, amely áthalad a jelenlegi térkép szélén.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Útvonalak kereséséhez és létrehozásához, kérjük, töltsd le a térképet és többé nem lesz szükséged internetkapcsolatra.</string>
     <string name="search_select_map">Jelöld ki a térképet</string>
@@ -587,7 +583,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Kérjük, jelentkezzen be az OpenStreetMap rendszerébe, hogy automatikusan feltölthesse az összes térképszerkesztését. További információ <a href="https://github.com/organicmaps/organicmaps/issues/6144">itt</a>.</string>
     <string name="dialog_error_storage_title">Tároló hozzáférési hiba</string>
-    <string name="dialog_error_storage_message">Külső tároló nem áll rendelkezésre, valószínűleg az SD-kártyát eltávolították vagy sérült, vagy rendszerfájl csak olvasható. Ellenőrizze, és lépjen kapcsolatba velünk a support\@organicmaps.app címen</string>
+    <string name="dialog_error_storage_message">Külső tároló nem áll rendelkezésre, valószínűleg az SD-kártyát eltávolították vagy sérült, vagy rendszerfájl csak olvasható. Ellenőrizze, és lépjen kapcsolatba velünk a support@organicmaps.app címen</string>
     <string name="setting_emulate_bad_storage">Sérült tároló emulálása</string>
     <string name="core_entrance">Bejárat</string>
     <string name="error_enter_correct_name">Kérjük adja meg a helyes nevet</string>
@@ -596,6 +592,7 @@
     <string name="bookmark_lists_hide_all">Összes elrejtése</string>
     <string name="bookmark_lists_show_all">Összes megjelenítése</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
         <item quantity="other">könyvjelzők %d</item>
     </plurals>
     <string name="bookmarks_create_new_group">Új lista létrehozása</string>
@@ -618,6 +615,7 @@
     </plurals>
     <string name="restore">Visszaállítás</string>
     <plurals name="tracks">
+        <item quantity="one"/>
         <item quantity="other">%d út</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -704,7 +702,6 @@
     <string name="moreyear_ago_sorttype">Több mint egy éve</string>
     <string name="near_me_sorttype">Hozzám közel</string>
     <string name="others_sorttype">Más</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Étel</string>
     <string name="tourist_places">Látnivalók</string>
@@ -828,7 +825,6 @@
     <string name="track_recording_toast_nothing_to_save">Az útvonal üres - nincs mit menteni</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nem lehet megjeleníteni a mappaválasztó párbeszédpanelt, mert nincs megfelelő alkalmazás telepítve a készülékén. Kérjük, telepítsen egy fájlkezelő alkalmazást, és próbálja meg újra</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Cím/blokk</string>
     <string name="type.addr_interpolation.even">Cím/blokk</string>
@@ -942,7 +938,6 @@
     <string name="type.amenity.post_office">Posta</string>
     <string name="type.amenity.pub">Kocsma</string>
     <string name="type.amenity.public_bookcase">Nyilvános könyvespolc</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Újrahasznosító központ</string>
     <string name="type.amenity.recycling">Újrahasznosító konténer</string>
@@ -1143,7 +1138,6 @@
     <string name="type.healthcare.psychotherapist">Pszichoterápia</string>
     <string name="type.healthcare.sample_collection">Mintavétel</string>
     <string name="type.healthcare.speech_therapist">Logopédia</string>
-
     <!-- SECTION: Types: Roads -->
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.bridleway.bridge">Híd</string>
@@ -1301,7 +1295,6 @@
     <string name="type.area_highway.track">Utca</string>
     <string name="type.area_highway.trunk">Elsőrendű közlekedési út</string>
     <string name="type.area_highway.unclassified">Kis utca</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Történelmi tárgy</string>
     <string name="type.historic.aircraft">Történelmi Repülőgép</string>
@@ -1971,4 +1964,247 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Sportcsarnok</string>
+    <string name="menu">Menü</string>
+    <string name="github">GitHub</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VKontakte</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="read_in_wikipedia">Replace Wikipedia links</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="opens_in">Opens in %@</string>
+    <string name="closes_in">Closes in %@</string>
+    <string name="empty_street_name_error">Adjon meg egy új nevet</string>
+    <string name="editor_add_phone">Add Phone</string>
+    <string name="download_map_title">Download the world map</string>
+    <string name="connection_failure">Connection failure</string>
+    <string name="disconnect_usb_cable_title">Disconnect USB cable</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aerialway">Kötélpályás felvonó</string>
+    <string name="type.aerialway.cable_car">Sikló</string>
+    <string name="type.aerialway.drag_lift">Drag Lift</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.aeroway.taxiway">Gurulóút</string>
+    <string name="type.aeroway.terminal">Terminál</string>
+    <string name="type.amenity.bank">Bank</string>
+    <string name="type.amenity.prison">Prison</string>
+    <string name="type.recycling.cans">Fémdoboz</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">Karton</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine">Árusító automata</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.barrier">Akadály</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="type.barrier.cycle_barrier">Kerékpáros akadály</string>
+    <string name="type.boundary">Határvonal</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.building.warehouse">Raktár</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.emergency">Sürgősségi ellátás</string>
+    <string name="type.highway">Közút</string>
+    <string name="type.highway.bridleway">Lovaglóút</string>
+    <string name="type.highway.cycleway">Kerékpárút</string>
+    <string name="type.highway.cycleway.permissive">Kerékpárút</string>
+    <string name="type.highway.elevator">Elevator</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.junction.circular">Körhinta</string>
+    <string name="type.junction.roundabout">Körhinta</string>
+    <string name="type.landuse">Földhasználat</string>
+    <string name="type.landuse.allotments">Kisertek</string>
+    <string name="type.landuse.brownfield">Brownfield</string>
+    <string name="type.landuse.commercial">Commercial Area</string>
+    <string name="type.landuse.construction">Construction Area</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.landuse.farmyard">Tanyaudvar</string>
+    <string name="type.landuse.garages">Garazsak</string>
+    <string name="type.landuse.greenfield">Greenfield</string>
+    <string name="type.landuse.greenhouse_horticulture">Üvegház</string>
+    <string name="type.landuse.industrial">Industrial Area</string>
+    <string name="type.landuse.military">Military Area</string>
+    <string name="type.landuse.orchard">Gyümölcsös</string>
+    <string name="type.landuse.quarry">Kőfejtő</string>
+    <string name="type.landuse.residential">Residential Area</string>
+    <string name="type.landuse.retail">Retail Area</string>
+    <string name="type.landuse.salt_pond">Salt Pond</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.landuse.vineyard">Szőlős</string>
+    <string name="type.leisure">Szabadidő</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.leisure.marina">Kishajókikötő</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.leisure.track">Vezetősáv</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made">Építmények</string>
+    <string name="type.man_made.breakwater">Hullámtörő gát</string>
+    <string name="type.man_made.flagpole">Zászlórúd</string>
+    <string name="type.man_made.mast">Pózna</string>
+    <string name="type.man_made.pipeline">Csővezeték</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.military.bunker">Bunker</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.organic.only">Szerves hulladék</string>
+    <string name="type.organic.yes">Szerves hulladék</string>
+    <string name="type.power.generator">Áramfejlesztő</string>
+    <string name="type.power.minor_line">Elektromos vezeték</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.public_transport">Tömegközlekedés</string>
+    <string name="type.public_transport.platform">Peron</string>
+    <string name="type.railway.abandoned">Elhagyott vasútvonal</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.railway.disused">Használaton kívüli vasút</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge">Kisvasút</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.platform">Vasúti peron</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.route.ferry">Ferry</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.sport.bowls">Bowls</string>
+    <string name="type.tourism">Turizmus</string>
+    <string name="type.tourism.hostel">Turistaszálló</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.barrier.ditch">Árok</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.waterway.drain">Vízelvezető árok</string>
+    <string name="type.natural.water.drain">Vízelvezető árok</string>
+    <string name="type.waterway.weir">Bukógát</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Tányéros felvonó</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="current_location_unknown_error_title">Current location is unknown.</string>
+    <string name="self_service">Önkiszolgáló</string>
+    <string name="share_bookmarks_email_body">Hello!
+\n
+\nAttached are my bookmarks; please open them in Organic Maps. If you don\'t have it installed you can download it here: https://omaps.app/get?kmz
+\n
+\nEnjoy travelling with Organic Maps!</string>
+    <string name="prefs_group_general">Általános beállítások</string>
+    <string name="type.aeroway.apron">Forgalmi előtér</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.barrier.retaining_wall">Támfal</string>
+    <string name="type.power">Kikapcsolás</string>
+    <string name="type.highway.bridleway.permissive">Lovaglóút</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.route">Útvonal</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="telegram">Telegram</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.man_made.survey_point">Földmérési alappont</string>
+    <string name="type.power.line">Távvezeték</string>
+    <string name="type.leisure.track.area">Vezetősáv</string>
+    <string name="editor_line_social_network">VONAL</string>
+    <string name="type.aeroway.gate">Kapu</string>
+    <string name="type.aerialway.chair_lift">Ülőlift</string>
+    <string name="type.man_made.pier">Móló</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.waterway.dam">Gát</string>
+    <string name="facebook">Facebook</string>
+    <string name="type.wheelchair">Kerekesszék</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="type.landuse.field">Mező</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="type.barrier.hedge">Sövény</string>
+    <string name="mb">MB</string>
+    <string name="type.recycling.shoes">Cipő</string>
+    <string name="type.amenity.taxi">Taxiállomás</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.barrier.fence">Kerítés</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.junction">Csomópont</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">Katonai</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.aeroway.runway">Kifutópálya</string>
+    <string name="type.recycling.cardboard">Kartonpapír</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.aerialway.t.bar">Csákányos felvonó</string>
+    <string name="type.railway">Vasút</string>
+    <string name="type.aerialway.gondola">Gondola</string>
+    <string name="type.waterway">Vízfolyás</string>
+    <string name="type.boundary.administrative">Adminisztratív határvonal</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="gb">GB</string>
+    <string name="error_enter_correct_facebook_page">Enter a valid Facebook web address, account, or page name</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.highway.services">Service Area</string>
+    <string name="type.area_highway.cycleway">Kerékpárút</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.landuse.meadow">Rét</string>
+    <string name="type.landuse.recreation_ground">Recreation Ground</string>
+    <string name="type.leisure.slipway">Sólya</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.man_made.cutline">Cutline</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.barrier.wall">Fal</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="edit_track">Nyomvonal szerkesztése</string>
 </resources>

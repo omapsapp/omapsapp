@@ -113,7 +113,6 @@
     <string name="measurement_units">测量单位</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">选择公里或英里</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">在哪儿吃</string>
@@ -161,7 +160,6 @@
     <string name="category_water">水</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">房车设施</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">注释</string>
@@ -364,7 +362,6 @@
     <string name="gray">灰色</string>
     <!-- blue gray color -->
     <string name="blue_gray">蓝灰色</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">按照路线行进时，请谨记：</string>
     <string name="dialog_routing_disclaimer_priority">— 路况、交通法规和路标始终优先于导航建议；</string>
@@ -394,7 +391,6 @@
     <string name="not_now">以后再说</string>
     <string name="dialog_routing_download_and_build_cross_route">您是否要下载地图，以规划跨越边界的更佳路线？</string>
     <string name="dialog_routing_download_cross_route">下载地图，以规划一条跨越边界的更佳路线。</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">要开始搜索和规划路线，请下载地图，然后您就不再需要网络连接了。</string>
     <string name="search_select_map">选择地图</string>
@@ -624,7 +620,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">请登录 OpenStreetMap 以自动上传您的所有地图编辑。诺要了解更多信息请点击<a href="https://github.com/organicmaps/organicmaps/issues/6144">这里</a>。</string>
     <string name="dialog_error_storage_title">存储空间访问问题</string>
-    <string name="dialog_error_storage_message">外部存储空间不可用，很可能是因为 SD 卡已移除、损毁，或者文件系统为只读状态。请进行检查，然后通过 support\@organicmaps.app 联系我们。</string>
+    <string name="dialog_error_storage_message">外部存储空间不可用，很可能是因为 SD 卡已移除、损毁，或者文件系统为只读状态。请进行检查，然后通过 support@organicmaps.app 联系我们。</string>
     <string name="setting_emulate_bad_storage">模拟不良存储空间</string>
     <string name="core_entrance">入口</string>
     <string name="error_enter_correct_name">请输入正确的名称</string>
@@ -740,7 +736,6 @@
     <string name="moreyear_ago_sorttype">一年多以前</string>
     <string name="near_me_sorttype">在我附近</string>
     <string name="others_sorttype">其他</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">美食</string>
     <string name="tourist_places">旅游景点</string>
@@ -875,7 +870,6 @@
     <string name="track_recording_toast_nothing_to_save">轨迹是空的 - 没有要保存的内容</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">由于您的设备上未安装合适的应用程序，因此无法显示文件夹选择对话框。请安装文件管理器应用程序并重试。</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">地址/区块</string>
     <string name="type.addr_interpolation.even">地址/区块</string>
@@ -1004,7 +998,6 @@
     <string name="type.amenity.prison">监狱</string>
     <string name="type.amenity.pub">酒馆</string>
     <string name="type.amenity.public_bookcase">公共书架</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">资源回收设施</string>
     <string name="type.amenity.recycling">回收容器</string>
@@ -1238,7 +1231,6 @@
     <string name="type.healthcare.psychotherapist">心理治疗师</string>
     <string name="type.healthcare.sample_collection">样本采集设施</string>
     <string name="type.healthcare.speech_therapist">语言治疗师</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">道路</string>
     <string name="type.highway.bridleway">马道</string>
@@ -1404,7 +1396,6 @@
     <string name="type.area_highway.track">土路</string>
     <string name="type.area_highway.trunk">干线道路</string>
     <string name="type.area_highway.unclassified">道路</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">历史地点</string>
     <string name="type.historic.aircraft">历史悠久的飞机</string>
@@ -2168,4 +2159,79 @@
     <string name="type.amenity.dojo">道场</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">体育馆</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">电报</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="editor_line_social_network">线段</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.recycling.cardboard">纸板</string>
+    <string name="type.recycling.cans">罐头</string>
+    <string name="type.recycling.shoes">鞋</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.man_made.cairn">锥形石堆 / 石冢</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.natural.desert">沙漠</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.organic.only">有机的</string>
+    <string name="type.organic.yes">有机的</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.man_made.mast">桅杆</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">纸箱</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="edit_track">编辑轨迹</string>
 </resources>

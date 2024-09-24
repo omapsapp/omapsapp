@@ -98,7 +98,6 @@
     <string name="measurement_units">Längdenheter</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Välj mellan mile och kilometer</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Matmöjligheter</string>
@@ -144,7 +143,6 @@
     <string name="category_water">Vatten</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">För husbil</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Anteckningar</string>
@@ -332,7 +330,6 @@
     <string name="gray">Grå</string>
     <!-- blue gray color -->
     <string name="blue_gray">Ljusblå grå</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">När du följer vägen, kom ihåg att:</string>
     <string name="dialog_routing_disclaimer_priority">— Vägförhållanden, trafiklagar och vägskyltar alltid ska prioriteras över navigeringsråd;</string>
@@ -362,7 +359,6 @@
     <string name="not_now">Inte nu</string>
     <string name="dialog_routing_download_and_build_cross_route">Vill du ladda ned kartan och hitta en bättre sträcka via fler än en karta?</string>
     <string name="dialog_routing_download_cross_route">Ladda ned kartan för att skapa en bättre sträcka utanför den här kartan.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">För att börja söka och hitta rutter, ladda ner kartan. Efter det behöver du ingen internetanslutning längre.</string>
     <string name="search_select_map">Välj karta</string>
@@ -574,7 +570,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Logga in på OpenStreetMap för att automatiskt ladda upp alla dina kartredigeringar. Läs mer <a href="https://github.com/organicmaps/organicmaps/issues/6144">här</a>.</string>
     <string name="dialog_error_storage_title">Lagringsåtkomstproblem</string>
-    <string name="dialog_error_storage_message">Extern lagring är inte tillgänglig. SD-kortet är borttaget, skadat eller så är filsystemet skrivskyddat. Kontrollera det och kontakta oss på support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Extern lagring är inte tillgänglig. SD-kortet är borttaget, skadat eller så är filsystemet skrivskyddat. Kontrollera det och kontakta oss på support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Emulera dålig lagring</string>
     <string name="core_entrance">Ingång</string>
     <string name="error_enter_correct_name">Ange ett korrekt namn</string>
@@ -583,6 +579,7 @@
     <string name="bookmark_lists_hide_all">Dölj alla</string>
     <string name="bookmark_lists_show_all">Visa alla</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
         <item quantity="other">%d bokmärken</item>
     </plurals>
     <string name="bookmarks_create_new_group">Skapa ny lista</string>
@@ -605,6 +602,7 @@
     </plurals>
     <string name="restore">Återställa</string>
     <plurals name="tracks">
+        <item quantity="one">%d spår</item>
         <item quantity="other">%d spår</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -691,7 +689,6 @@
     <string name="moreyear_ago_sorttype">Över ett år sedan</string>
     <string name="near_me_sorttype">Nära mig</string>
     <string name="others_sorttype">Andra</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Mat</string>
     <string name="tourist_places">Sevärdheter</string>
@@ -811,7 +808,6 @@
     <string name="track_recording_toast_nothing_to_save">Routen är tom - inget att spara</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Det går inte att visa dialogrutan för val av mapp eftersom ingen lämplig app är installerad på din enhet. Installera en filhanteringsapp och försök igen</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adress/Block</string>
     <string name="type.addr_interpolation.even">Adress/Block</string>
@@ -923,7 +919,6 @@
     <string name="type.amenity.post_office">Postkontor</string>
     <string name="type.amenity.pub">Krog</string>
     <string name="type.amenity.public_bookcase">Bokskåp</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Återvinningscentral</string>
     <string name="type.amenity.recycling">Behållare för återvinningsbart avfall</string>
@@ -1122,7 +1117,6 @@
     <string name="type.healthcare.psychotherapist">Psykoterapi</string>
     <string name="type.healthcare.sample_collection">Provtagning</string>
     <string name="type.healthcare.speech_therapist">Logopedics</string>
-
     <!-- SECTION: Types: Roads -->
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.bridleway.bridge">Bro</string>
@@ -1280,7 +1274,6 @@
     <string name="type.area_highway.track">Gata</string>
     <string name="type.area_highway.trunk">Gata</string>
     <string name="type.area_highway.unclassified">Gata</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Historiskt objekt</string>
     <string name="type.historic.aircraft">Historiska flygplan</string>
@@ -1945,4 +1938,254 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Idrottshall</string>
+    <string name="mb">MB</string>
+    <string name="category_wifi">WiFi</string>
+    <string name="share_bookmarks_email_body">Hello!
+\n
+\nAttached are my bookmarks; please open them in Organic Maps. If you don\'t have it installed you can download it here: https://omaps.app/get?kmz
+\n
+\nEnjoy travelling with Organic Maps!</string>
+    <string name="prefs_group_general">Allmänna inställningar</string>
+    <string name="prefs_group_information">Information</string>
+    <string name="menu">Meny</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="read_in_wikipedia">Replace Wikipedia links</string>
+    <string name="opens_in">Öppna med %s</string>
+    <string name="error_enter_correct_facebook_page">Enter a valid Facebook web address, account, or page name</string>
+    <string name="download_map_title">Download the world map</string>
+    <string name="connection_failure">Connection failure</string>
+    <string name="disconnect_usb_cable_title">Disconnect USB cable</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aerialway">Lift</string>
+    <string name="type.aerialway.cable_car">Cable Car</string>
+    <string name="type.aerialway.chair_lift">Chair Lift</string>
+    <string name="type.aerialway.drag_lift">Drag Lift</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="type.aeroway.gate">Grind</string>
+    <string name="type.aeroway.runway">Landningsbana</string>
+    <string name="type.aeroway.taxiway">Taxiway</string>
+    <string name="type.aeroway.terminal">Terminal</string>
+    <string name="type.amenity.bank">Bank</string>
+    <string name="type.amenity.bar">Bar</string>
+    <string name="type.amenity.bicycle_repair_station">Bicycle Repair Station</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.amenity.prison">Fängelse</string>
+    <string name="type.recycling.cardboard">Kartong</string>
+    <string name="type.recycling.cans">Burkar</string>
+    <string name="type.recycling.shoes">Skor</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">Kartonger</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.taxi">Taxi Stand</string>
+    <string name="type.amenity.vending_machine">Vending Machine</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.barrier">Hinder</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="type.barrier.cycle_barrier">Cycle Barrier</string>
+    <string name="type.barrier.fence">Fence</string>
+    <string name="type.barrier.hedge">Hedge</string>
+    <string name="type.barrier.wall">Vägg</string>
+    <string name="type.boundary.administrative">Administrative Boundary</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.building.garage">Garage</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.emergency.defibrillator">Defibrillator</string>
+    <string name="type.highway.bridleway">Gångväg</string>
+    <string name="type.highway.cycleway">Cycle Path</string>
+    <string name="type.highway.cycleway.permissive">Cycle Path</string>
+    <string name="type.highway.elevator">Hiss</string>
+    <string name="type.highway.services">Service Area</string>
+    <string name="type.area_highway.cycleway">Cycle Path</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.junction.circular">Cirkulationsplats</string>
+    <string name="type.junction.roundabout">Cirkulationsplats</string>
+    <string name="type.landuse">Markanvändning</string>
+    <string name="type.landuse.brownfield">Tidigare exploaterad mark</string>
+    <string name="type.landuse.commercial">Commercial Area</string>
+    <string name="type.landuse.construction">Construction Area</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.landuse.farmyard">Gårdsområde</string>
+    <string name="type.landuse.field">Fält</string>
+    <string name="type.landuse.garages">Garagelänga</string>
+    <string name="type.landuse.greenfield">Mark för exploatering</string>
+    <string name="type.landuse.industrial">Industrial Area</string>
+    <string name="type.landuse.meadow">Äng</string>
+    <string name="type.landuse.military">Military Area</string>
+    <string name="type.landuse.orchard">Fruktodling</string>
+    <string name="type.landuse.quarry">Stenbrott</string>
+    <string name="type.landuse.recreation_ground">Recreation Ground</string>
+    <string name="type.landuse.residential">Residential Area</string>
+    <string name="type.landuse.retail">Retail Area</string>
+    <string name="type.landuse.salt_pond">Salt Pond</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.landuse.vineyard">Vingård</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.leisure.marina">Småbåtshamn</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.leisure.slipway">Slip</string>
+    <string name="type.leisure.track">Spår</string>
+    <string name="type.leisure.track.area">Spår</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="type.man_made.breakwater">Vågbrytare</string>
+    <string name="type.man_made.cairn">Röse</string>
+    <string name="type.man_made.cutline">Snittlinje</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.flagpole">Flaggstång</string>
+    <string name="type.man_made.mast">Mast</string>
+    <string name="type.man_made.pier">Brygga</string>
+    <string name="type.man_made.pipeline">Rörledning</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">Militärt</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.natural.desert">Öken</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.organic.only">Komposterbart</string>
+    <string name="type.organic.yes">Komposterbart</string>
+    <string name="type.power">Effekt</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.public_transport">Offentlig Transport</string>
+    <string name="type.public_transport.platform">Platform</string>
+    <string name="type.railway">Järnväg</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.route">Rutt</string>
+    <string name="type.route.ferry">Färja</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.bookmaker">Vadhållningsagent</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.shop.kiosk">Kiosk</string>
+    <string name="type.sport.australian_football">Australian Football</string>
+    <string name="type.sport.cricket">Cricket</string>
+    <string name="type.tourism.camp_site">Campground</string>
+    <string name="type.tourism.museum">Museum</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.barrier.ditch">Ditch</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.wheelchair">Rullstol</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.building.warehouse">Warehouse</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.barrier.retaining_wall">Retaining Wall</string>
+    <string name="type.military.bunker">Bunker</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.landuse.allotments">Kolonilotter</string>
+    <string name="type.junction">Knutpunkt</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="closes_in">Closes in %@</string>
+    <string name="type.highway.bridleway.permissive">Gångväg</string>
+    <string name="gb">GB</string>
+    <string name="editor_add_phone">Add Phone</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="type.aerialway.gondola">Gondol</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.aeroway.apron">Apron</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.boundary">Boundary</string>
+    <string name="type.emergency">Nödsituationer</string>
+    <string name="type.tourism">Turism</string>
+    <string name="type.waterway.weir">Damm</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.landuse.greenhouse_horticulture">Greenhouse</string>
+    <string name="type.leisure">Fritid</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.highway">Highway</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.waterway.dam">Damm</string>
+    <string name="edit_track">Redigera spår</string>
 </resources>

@@ -23,9 +23,9 @@
     <!-- View and button titles for accessibility, please also edit it in iphone/plist.txt -->
     <string name="search">Buscar</string>
     <!-- Search box placeholder text; Used when searching on the map itself, not when searching for a map -->
-    <string name="search_map">Procurar mapa</string>
+    <string name="search_map">Buscar mapa</string>
     <!-- Location services are disabled by user alert - message -->
-    <string name="location_is_disabled_long_text">Atualmente todos os serviços de localização para este dispositivo ou aplicativo estão desativados. Por favor ative-os em configurações.</string>
+    <string name="location_is_disabled_long_text">Atualmente todos os Serviços de Localização para este dispositivo ou aplicativo estão desativados. Por favor, ative-os em Configurações.</string>
     <!-- View and button titles for accessibility -->
     <string name="zoom_to_country">Mostrar no mapa</string>
     <!-- Message to display at the center of the screen when the country download has failed -->
@@ -34,7 +34,7 @@
     <string name="try_again">Tentar novamente</string>
     <string name="about_menu_title">Sobre o Organic Maps</string>
     <!-- Text in About screen -->
-    <string name="about_headline">Grátis para todos, feito com amor</string>
+    <string name="about_headline">Livre para todos, feito com amor</string>
     <!-- Text in About screen -->
     <string name="about_proposition_1">• Sem anúncios, rastreamento ou coleta de dados</string>
     <!-- Text in About screen -->
@@ -45,9 +45,9 @@
     <string name="unsupported_phone">É necessário OpenGL acelerado por hardware. Infelizmente o seu dispositivo não é compatível.</string>
     <string name="download">Baixar</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">Por favor desconecte o cabo USB ou insira um cartão de memória para utilizar o Organic Maps</string>
+    <string name="disconnect_usb_cable">Por favor, desconecte o cabo USB ou insira um cartão de memória para utilizar o Organic Maps</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="not_enough_free_space_on_sdcard">Por favor libere primeiro algum espaço no cartão SD/armazenamento USB para utilizar o app</string>
+    <string name="not_enough_free_space_on_sdcard">Por favor, libere primeiro algum espaço no cartão SD/armazenamento USB para utilizar o app</string>
     <string name="download_resources">Antes de começar, vamos baixar um mapa mundial geral para o seu dispositivo.
 \n%s de memória serão utilizados.</string>
     <string name="download_resources_continue">Ir para o mapa</string>
@@ -101,12 +101,11 @@
     <string name="move_maps_error">Erro ao mover arquivos de mapas</string>
     <!-- Ask user to wait several minutes (some long process in modal dialog). -->
     <string name="wait_several_minutes">Isto pode demorar alguns minutos.
-\nPor favor aguarde…</string>
+\nPor favor, aguarde…</string>
     <!-- Measurement units title in settings activity -->
     <string name="measurement_units">Unidades de medida</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Escolha entre milhas e quilômetros</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Onde comer</string>
@@ -154,7 +153,6 @@
     <string name="category_water">Água</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Para trailers</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Anotações</string>
@@ -203,7 +201,7 @@
     <!-- Share by email button text, also used in editor and About. -->
     <string name="email">Email</string>
     <!-- Text for message when used successfully copied something -->
-    <string name="copied_to_clipboard">Copiado para a área de transferência: %s</string>
+    <string name="copied_to_clipboard">Copiado para área de transferência: %s</string>
     <!-- Used for bookmark editing -->
     <string name="done">Feito</string>
     <!-- Data version in «About» screen, %@ is replaced by a local, human readable date. -->
@@ -335,7 +333,6 @@
     <string name="gray">Cinza</string>
     <!-- blue gray color -->
     <string name="blue_gray">Azul escuro</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Ao seguir a rota, lembre-se que:</string>
     <string name="dialog_routing_disclaimer_priority">— As condições da estrada, as leis de trânsito e as sinalizações da pista sempre terão prioridade acima das sugestões de navegação;</string>
@@ -364,7 +361,6 @@
     <string name="not_now">Agora não</string>
     <string name="dialog_routing_download_and_build_cross_route">Deseja baixar o mapa e traçar uma rota melhor, mas que se estenda por mais de um mapa?</string>
     <string name="dialog_routing_download_cross_route">Baixe o mapa para traçar uma rota melhor que vai além dos limites desse mapa.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Para começar a pesquisar e criar rotas, por favor, baixe o mapa. Assim, você não precisará mais de uma conexão com a internet.</string>
     <string name="search_select_map">Selecionar mapa</string>
@@ -555,7 +551,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Faça login no OpenStreetMap para carregar automaticamente todas as edições de mapas que você fizer. Saiba mais <a href="https://github.com/organicmaps/organicmaps/issues/6144">aqui</a>.</string>
     <string name="dialog_error_storage_title">Problema de acesso ao armazenamento</string>
-    <string name="dialog_error_storage_message">O armazenamento externo não está disponível, é provável que o cartão SD tenha sido removido, danificado ou o sistema de arquivo seja apenas para leitura. Verifique e entre em contato conosco em support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">O armazenamento externo não está disponível, é provável que o cartão SD tenha sido removido, danificado ou o sistema de arquivo seja apenas para leitura. Verifique e entre em contato conosco em support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Emular memória ruim</string>
     <string name="core_entrance">Entrada</string>
     <string name="error_enter_correct_name">Por favor, digite um nome correto</string>
@@ -565,6 +561,7 @@
     <string name="bookmark_lists_show_all">Exibir tudo</string>
     <plurals name="bookmarks_places">
         <item quantity="one">%d favorito</item>
+        <item quantity="many"/>
         <item quantity="other">%d favoritos</item>
     </plurals>
     <string name="bookmarks_create_new_group">Criar nova lista</string>
@@ -583,11 +580,13 @@
     <string name="profile">Perfil do OpenStreetMap</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">%d arquivo foi encontrado. Você vai ver depois da conversão.</item>
+        <item quantity="many"/>
         <item quantity="other">%d arquivos foram encontrados. Você os verá depois da conversão.</item>
     </plurals>
     <string name="restore">Restaurar</string>
     <plurals name="tracks">
         <item quantity="one">%d percurso</item>
+        <item quantity="many"/>
         <item quantity="other">%d percursos</item>
     </plurals>
     <string name="privacy_policy">Política de privacidade</string>
@@ -661,7 +660,6 @@
     <string name="moreyear_ago_sorttype">Mais de um ano atrás</string>
     <string name="near_me_sorttype">Próximo de mim</string>
     <string name="others_sorttype">Outros</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Comida</string>
     <string name="tourist_places">Pontos turíticos</string>
@@ -784,7 +782,6 @@
     <string name="track_recording_toast_nothing_to_save">A rota está vazia - não há nada para salvar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Não é possível exibir a caixa de diálogo de seleção de pastas porque nenhum aplicativo adequado está instalado no seu dispositivo. Instale um aplicativo gerenciador de arquivos e tente novamente</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Endereço/Bloco</string>
     <string name="type.addr_interpolation.even">Endereço/Bloco</string>
@@ -892,7 +889,6 @@
     <string name="type.amenity.prison">Prisão</string>
     <string name="type.amenity.pub">Bar ou boteco</string>
     <string name="type.amenity.public_bookcase">Biblioteca livre</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Centro de reciclagem</string>
     <string name="type.amenity.recycling">Contêiner de reciclagem</string>
@@ -1103,7 +1099,6 @@
     <string name="type.healthcare.psychotherapist">Psicoterapia</string>
     <string name="type.healthcare.sample_collection">Amostragem</string>
     <string name="type.healthcare.speech_therapist">Terapia da fala</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Rodovia</string>
     <string name="type.highway.bridleway">Caminho para cavaleiros</string>
@@ -1267,7 +1262,6 @@
     <string name="type.area_highway.track">Pista para desportos não motorizados</string>
     <string name="type.area_highway.trunk">Via expressa</string>
     <string name="type.area_highway.unclassified">Estrada sem classificação</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic.aircraft">Aeronaves Históricas</string>
     <string name="type.historic.anchor">Âncora Histórica</string>
@@ -1872,4 +1866,329 @@
     <string name="type.emergency.emergency_ward_entrance">Entrada da ala de emergência</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Salão de esportes</string>
+    <string name="type.place.city.capital.7">Cidade</string>
+    <string name="editor_time_open">Abrir</string>
+    <string name="editor_add_select_location">Localização</string>
+    <string name="error_enter_correct_facebook_page">Coloque um endereço da web do Facebook válido ou nome da página</string>
+    <string name="navigation_stop_button">Parar</string>
+    <string name="by_name">Por nome</string>
+    <string name="type.natural.bare_rock">Zona rochosa</string>
+    <string name="type.place.suburb">Bairro</string>
+    <string name="type.waterway.lock_gate">Comporta de eclusa</string>
+    <string name="type.amenity.dojo">Dojo</string>
+    <string name="type.amenity.parking_space">Lugar de estacionamento subterrâneo</string>
+    <string name="type.amenity.parking_space.permissive">Lugar de estacionamento subterrâneo</string>
+    <string name="type.amenity.parking_space.disabled">Estacionamento para deficientes</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="type.craft.gardener">Jardineiro</string>
+    <string name="type.craft.sawmill">Serraria</string>
+    <string name="type.craft.shoemaker">Sapateiro</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.area_highway.path">Caminho</string>
+    <string name="type.historic.memorial.war_memorial">Memorial de guerra</string>
+    <string name="type.historic.wayside_cross">Cruzeiro</string>
+    <string name="type.historic.pillory">Pelourinho</string>
+    <string name="type.historic.ruins">Ruínas</string>
+    <string name="type.historic.ship">Barco histórico</string>
+    <string name="type.natural.coastline">Linha costeira</string>
+    <string name="type.natural.water.basin">Bacia</string>
+    <string name="type.sport.gymnastics">Ginástica</string>
+    <string name="type.sport.skiing">Esqui</string>
+    <string name="type.leisure.resort">Resort</string>
+    <string name="type.tourism.theme_park">Parque de diversão</string>
+    <string name="export_file_gpx">Exportar GPX</string>
+    <string name="type.shop.auction">Leilão</string>
+    <string name="long_tap_toast">Dê um toque longo no mapa novamente para ver a interface</string>
+    <string name="type.tourism.artwork.painting">Pintura</string>
+    <string name="type.tourism.information.board">Painel de informações</string>
+    <string name="type.sport.shooting">Tiro esportivo</string>
+    <string name="type.historic.castle.castrum">Castro</string>
+    <string name="type.railway.rail.service">Linha de serviço</string>
+    <string name="type.craft.blacksmith">Ferraria</string>
+    <string name="type.place.city.capital.8">Cidade</string>
+    <string name="type.natural.meadow">Pradaria</string>
+    <string name="type.place.locality">Localidade</string>
+    <string name="type.fee.no">Livre</string>
+    <string name="type.amenity.shelter.basic_hut">Cabana Básica</string>
+    <string name="type.craft.metal_construction">Serralheiro metálico</string>
+    <string name="telegram">Telegram</string>
+    <string name="type.amenity.public_bath">Banho público</string>
+    <string name="editor_example_values">Valores de exemplo</string>
+    <string name="type.barrier.ditch">Vala</string>
+    <string name="type.waterway.drain.tunnel">Bueiro</string>
+    <string name="gb">GB</string>
+    <string name="type.amenity.stripclub">Clube de striptease</string>
+    <string name="type.natural">Natural</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.natural.land">Campo</string>
+    <string name="type.railway.funicular">Funicular</string>
+    <string name="type.railway.station.funicular">Funicular</string>
+    <string name="pref_map_style_title">Modo noturno</string>
+    <string name="type.craft.painter">Pintor</string>
+    <string name="type.amenity.parking">Estacionamento</string>
+    <string name="type.traffic_calming">Redutor de velocidade</string>
+    <string name="type.sport.badminton">Badminton</string>
+    <string name="dialog_routing_change_intermediate">Não é possível localizar o ponto intermediário.</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.railway.rail.main">Ferrovia</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.natural.volcano">Vulcão</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.railway.rail.branch.bridge">Ponte ferroviária</string>
+    <string name="type.railway.rail.utility.tunnel">Túnel ferroviário</string>
+    <string name="type.natural.wetland">Zona úmida</string>
+    <string name="type.leisure.miniature_golf">Minigolfe</string>
+    <string name="type.waterway.ditch.tunnel">Bueiro</string>
+    <string name="type.place.city.capital.9">Cidade</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="elevation_profile_difficulty">Dificuldade</string>
+    <string name="type.tourism.attraction.specified">Atração turística</string>
+    <string name="type.railway.rail.branch">Ramal ferroviário</string>
+    <string name="type.waterway.fish_pass">Escada de peixes</string>
+    <string name="type.railway.rail.main.bridge">Ponte ferroviária</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.place.island">Ilhéu</string>
+    <string name="type.historic.memorial.plaque">Placa comemorativa</string>
+    <string name="type.historic.memorial.sculpture">Escultura</string>
+    <string name="editor_default_language_hint">Como escrito na língua local</string>
+    <string name="type.amenity.parking_space.underground">Lugar de estacionamento subterrâneo</string>
+    <string name="type.sport.beachvolleyball">Voleibol de praia</string>
+    <string name="type.craft.electrician">Eletricista</string>
+    <string name="type.tourism.picnic_site">Local de piqueniques</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.natural.scrub">Matagal</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.tourism.chalet">Casa de férias</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.natural.rock">Rock</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.natural.water.lock">Câmara de Eclusa</string>
+    <string name="type.railway.rail.spur.bridge">Ponte ferroviária</string>
+    <string name="type.amenity.parking_entrance">Entrada do estacionamento</string>
+    <string name="type.historic.memorial">Estátua memorial</string>
+    <string name="type.place.isolated_dwelling">Habitação isolada</string>
+    <string name="type.natural.beach.sand">Praia de areia</string>
+    <string name="type.amenity.place_of_worship.christian.mormon">Igreja de Jesus Cristo dos Santos dos Últimos Dias</string>
+    <string name="editor_time_add">Adicionar horário</string>
+    <string name="type.natural.water.pond">Lagoa</string>
+    <string name="type.historic.castle.palace">Palácio</string>
+    <string name="type.railway.rail.branch.tunnel">Túnel ferroviário</string>
+    <string name="type.craft.beekeeper">Apicultor</string>
+    <string name="type.sport.futsal">Futsal</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.natural.grassland">Relvado</string>
+    <string name="type.historic.memorial.statue">Estátua</string>
+    <string name="type.tourism.attraction">Atração turística</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.sport.bowls">Bowls</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.railway.rail.utility.bridge">Ponte ferroviária</string>
+    <string name="zoom_out">Diminuir o zoom</string>
+    <string name="type.place.region">Região</string>
+    <string name="type.tourism.artwork.sculpture">Escultura</string>
+    <string name="type.craft">Ofícios</string>
+    <string name="type.natural.heath">Charneca</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="type.historic.fort">Forte histórico</string>
+    <string name="type.historic.castle">Château</string>
+    <string name="type.tourism.museum">Museu</string>
+    <string name="layers_title">Estilos e camadas de mapas</string>
+    <string name="type.natural.water.reservoir">Lago artificial</string>
+    <string name="type.place.city.capital.5">Cidade</string>
+    <string name="type.place.ocean">Oceano</string>
+    <string name="capacity">Capacidade: %@</string>
+    <string name="editor_correct_mistake">Corrigir erro</string>
+    <string name="type.railway.rail.main.tunnel">Túnel ferroviário</string>
+    <string name="type.railway.rail.spur">Ramal de inserção</string>
+    <string name="type.place.city.capital.6">Cidade</string>
+    <string name="type.historic.castle.shiro">Castelo japonês</string>
+    <string name="type.natural.cliff">Falésia</string>
+    <string name="type.place.islet">Ilhéu</string>
+    <string name="type.natural.water.river">Ribeiro sasonal</string>
+    <string name="type.historic.castle.manor">Solar</string>
+    <string name="editor_hours_closed">Horas Sem Funcionamento</string>
+    <string name="type.sport.field_hockey">Hóquei em campo</string>
+    <string name="type.historic.castle.kremlin">Kremlin</string>
+    <string name="dialog_kayak_button">Detalhes em Kayak</string>
+    <string name="type.historic.battlefield">Campo de batalha</string>
+    <string name="type.sport.volleyball">Voleibol</string>
+    <string name="type.natural.shingle">Cascalho</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.craft.handicraft">Artesão</string>
+    <string name="type.railway.rail.service.bridge">Ponte ferroviária</string>
+    <string name="type.place.city.capital.3">Cidade</string>
+    <string name="type.railway.rail.service.tunnel">Túnel ferroviário</string>
+    <string name="type.historic.archaeological_site">Sítio arqueológico</string>
+    <string name="type.historic">Objeto histórico</string>
+    <string name="type.waterway.canal">Canal</string>
+    <string name="type.natural.strait">Estreito</string>
+    <string name="off">Desativado</string>
+    <string name="type.natural.orchard">Pomar</string>
+    <string name="type.sport.soccer">Futebol</string>
+    <string name="type.tourism.artwork.statue">Estátua</string>
+    <string name="type.railway.rail.tourism">Ferrovia turística</string>
+    <string name="type.natural.cape">Cabo</string>
+    <string name="type.place.city.capital.2">Capital</string>
+    <string name="type.railway.rail.utility">Ferrovia de serviços</string>
+    <string name="type.natural.cave_entrance">Caverna</string>
+    <string name="type.sport.ice_hockey">Hóquei no gelo</string>
+    <string name="type.tourism.wilderness_hut">Cabana</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.sport.curling">Curling</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.historic.memorial.stolperstein">Stolpersteine</string>
+    <string name="export_file">Exportar KMZ</string>
+    <string name="type.railway.rail.highspeed">Ferrovia de alta velocidade</string>
+    <string name="type.craft.confectionery">Confeitaria</string>
+    <string name="type.sport.9pin">Boliche</string>
+    <string name="type.tourism.information.map">Mapa turístico</string>
+    <string name="type.historic.city_gate">Portas da cidade</string>
+    <string name="editor_time_simple">Modo Simples</string>
+    <string name="type.natural.saddle">Mountain Saddle</string>
+    <string name="elevation_profile_descent">Descida</string>
+    <string name="type.natural.peak">Pico</string>
+    <string name="type.amenity.conference_centre">Centro de conferências</string>
+    <string name="type.railway.rail.spur.tunnel">Túnel ferroviário</string>
+    <string name="type.natural.bay">Baía</string>
+    <string name="type.sport.golf">Golfe</string>
+    <string name="network">Rede: %@</string>
+    <string name="type.place.city">Cidade</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.place.town">Cidade pequena</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="privacy">Privacidade</string>
+    <string name="type.place.state">Estado</string>
+    <string name="type.waterway.canal.tunnel">Túnel de canal</string>
+    <string name="type.man_made.embankment">Aterro</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.historic.castle.stately">Château</string>
+    <string name="type.place.country">País</string>
+    <string name="type.amenity.language_school">Escola de idiomas</string>
+    <string name="editor_time_advanced">Modo Avançado</string>
+    <string name="editor_time_close">Fechado</string>
+    <string name="type.historic.monument">Monumento</string>
+    <string name="type.leisure.outdoor_seating">Assentos ao ar livre</string>
+    <string name="type.tourism.hotel">Hotel</string>
+    <string name="type.sport.pelota">Pelota basca</string>
+    <string name="outdoor_seating">Assentos ao ar livre</string>
+    <string name="type.emergency.assembly_point">Ponto de Reunião de Emergência</string>
+    <string name="elevation_profile_ascent">Subida</string>
+    <string name="type.historic.wayside_shrine">Alminhas</string>
+    <string name="type.tourism.artwork">Estátua</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="type.amenity.vehicle_inspection">Inspeção veicular</string>
+    <string name="type.place.city.capital.11">Cidade</string>
+    <string name="level">Andar</string>
+    <string name="type.piste_type.snow_park">Parque de neve</string>
+    <string name="type.tourism.hostel">Hostel</string>
+    <string name="type.sport.chess">Xadrez</string>
+    <string name="type.craft.photographer">Fotógrafo</string>
+    <string name="type.attraction.animal">Recinto para animais</string>
+    <string name="type.historic.castle.fortified_church">Igreja fortificada</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Pt:Sobre_o_OpenStreetMap</string>
+    <string name="pref_tts_speedcams_auto">Avisar se exceder limite de velocidade</string>
+    <string name="type.natural.wetland.marsh">Charco</string>
+    <string name="type.railway.rail.tourism.tunnel">Túnel ferroviário</string>
+    <string name="type.historic.boundary_stone">Marco fronteiriço</string>
+    <string name="type.place.continent">Continente</string>
+    <string name="type.amenity.arts_centre">Centro de artes</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.sport.skateboard">Skate</string>
+    <string name="faq">Perguntas frequentes</string>
+    <string name="type.amenity.parking.underground.fee">Estacionamento subterrâneo</string>
+    <string name="type.amenity.parking.street_side.fee">Estacionamento ao lado da rua</string>
+    <string name="type.natural.water.moat">Fosso</string>
+    <string name="type.boundary.aboriginal_lands">Terras indígenas</string>
+    <string name="type.natural.wetland.bog">Pântano</string>
+    <string name="type.amenity.parking_space.private">Lugar de estacionamento subterrâneo</string>
+    <string name="type.amenity.bbq">Churrasqueira</string>
+    <string name="editor_other_info">Nota para os voluntários do OpenStreetMap (opcional)</string>
+    <string name="type.place.city.capital">Capital</string>
+    <string name="type.man_made.flagpole">Mastro de bandeira</string>
+    <string name="type.historic.castle.fortress">Fortaleza</string>
+    <string name="editor_add_phone">Adicionar número de telefone</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.waterway">Curso de água</string>
+    <string name="type.amenity.parking.underground">Estacionamento subterrâneo</string>
+    <string name="type.place.state.USA">Estado</string>
+    <string name="editor_time_from">De</string>
+    <string name="type.amenity.compressed_air">Ar comprimido</string>
+    <string name="type.craft.carpenter">Carpinteiro</string>
+    <string name="type.tourism.information.visitor_centre">Centro de visitantes</string>
+    <string name="type.railway.rail.bridge">Ponte ferroviária</string>
+    <string name="type.natural.spring">Nascente</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.place.city.capital.10">Cidade</string>
+    <string name="type.natural.water.drain">Valeta de drenagem</string>
+    <string name="mb">MB</string>
+    <string name="type.craft.brewery">Cervejaria artesanal</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.tourism.information.guidepost">Poste com direções</string>
+    <string name="prefs_languages_information_off">Para alguns idiomas, você precisa instalar um sintetizador de fala ou um pacote adicional de linguagem da loja de aplicativo (Google Play Market, Samsung Apps).
+\nAbra as configurações do seu dispositivo → Idioma e entrada → Fala → Saída de texto para fala.
+\nAqui você pode gerenciar as configurações para o sintetizador de fala (por exemplo, baixar pacote de idioma para usar off-line) e selecionar outro motor de texto-para-fala.</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="type.railway.rail.highspeed.tunnel">Túnel ferroviário</string>
+    <string name="type.amenity.parking_entrance.permissive">Entrada do estacionamento</string>
+    <string name="type.natural.beach">Praia</string>
+    <string name="type.historic.castle.defensive">Castelo</string>
+    <string name="type.place.square">Quadrado</string>
+    <string name="type.amenity.exhibition_centre">Centro de exposições</string>
+    <string name="type.amenity.music_school">Escola de música</string>
+    <string name="type.entrance.exit">Sair</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.natural.beach.gravel">Praia de Cascalho</string>
+    <string name="type.natural.hot_spring">Nascente de água quente</string>
+    <string name="type.natural.water.lake">Lago</string>
+    <string name="type.railway.rail.highspeed.bridge">Ponte ferroviária</string>
+    <string name="type.railway.rail.tourism.bridge">Ponte ferroviária</string>
+    <string name="type.tourism.gallery">Galeria de arte</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="pref_tts_street_names_title">Anunciar nomes de ruas</string>
+    <string name="menu">Menu</string>
+    <string name="news">Novidades</string>
+    <string name="github">GitHub</string>
+    <string name="volume">Volume</string>
+    <string name="drive_through">Drive-through</string>
+    <string name="type.natural.vineyard">Vinha</string>
+    <string name="type.natural.water">Água</string>
+    <string name="type.waterway.dock">Doca</string>
+    <string name="type.amenity.parking.fee">Estacionamento</string>
+    <string name="type.amenity.parking.street_side">Estacionamento ao lado da rua</string>
+    <string name="type.highway.path">Caminho</string>
+    <string name="type.historic.tomb">Túmulo</string>
+    <string name="type.man_made.mast">Mastro</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.natural.desert">Deserto</string>
+    <string name="type.railway.rail.tunnel">Túnel ferroviário</string>
+    <string name="type.sport.cricket">Críquete</string>
+    <string name="type.sport.10pin">Boliche</string>
+    <string name="type.waterway.dam">Usina</string>
+    <string name="type.natural.tree_row">Linha de árvores</string>
+    <string name="type.waterway.drain">Valeta de drenagem</string>
+    <string name="type.sport.padel">Padel</string>
+    <string name="type.place.county">Condado</string>
+    <string name="type.craft.tailor">Alfaiate</string>
+    <string name="type.historic.castle.hillfort">Castro</string>
+    <string name="type.tourism.aquarium">Aquário</string>
+    <string name="type.place.city.capital.4">Cidade</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="type.natural.earth_bank">Penhasco</string>
+    <string name="editor_time_title">Horário de Funcionamento</string>
+    <string name="about_proposition_3">• Rápido, minimalista, desenvolvido pela comunidade</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="editor_line_social_network">LINE</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="about_developed_by_enthusiasts">Aplicação de código aberto criada por entusiastas e voluntários.</string>
+    <string name="on">Ativado</string>
+    <string name="matrix">[Matrix]</string>
+    <string name="choose_color">Escolha uma cor</string>
+    <string name="edit_track">Editar trilha</string>
 </resources>

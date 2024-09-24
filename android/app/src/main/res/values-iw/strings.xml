@@ -49,7 +49,7 @@
     <string name="unsupported_phone">נדרש מאיץ חומרה OpenGL. לצערינו מכשיר זה אינו נתמך.</string>
     <string name="download">הורדה</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">אנא נתק כבל USB או הכנס כרטיס זכרון כדי להשתמש  ב-Organic Maps.</string>
+    <string name="disconnect_usb_cable">אנא נתק כבל USB או הכנס כרטיס זכרון כדי להשתמש ב-Organic Maps.</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="not_enough_free_space_on_sdcard">אנא פנה שטח אחסון בכרטיס הזיכרון או בכונן USB כדי להשתמש בישום</string>
     <string name="download_resources">תחילה, נוריד למכשירך מפה כללית של העולם.
@@ -107,10 +107,9 @@
     <string name="wait_several_minutes">פעולה זו יכולה להמשך מספר דקות.
 \nהמתן בבקשה…</string>
     <!-- Measurement units title in settings activity -->
-    <string name="measurement_units">יחידות  מדידה</string>
+    <string name="measurement_units">יחידות מדידה</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">בחר בין מיילים לקילומטרים</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">איפה לאכול</string>
@@ -156,7 +155,6 @@
     <string name="category_water">מים</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">עבור קרוואנים</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">הערות</string>
@@ -351,7 +349,6 @@
     <string name="gray">אפור</string>
     <!-- blue gray color -->
     <string name="blue_gray">כחול אפרפר</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">בעת נסיעה לאורך המסלול, שים לב לדברים הבאים:</string>
     <string name="dialog_routing_disclaimer_priority">— תנאי הכביש, חוקי התנועה והתמרורים תמיד מקבלים עדיפות על פני הנחיות הניווט;</string>
@@ -381,7 +378,6 @@
     <string name="not_now">לא עכשיו</string>
     <string name="dialog_routing_download_and_build_cross_route">האם ברצונך להוריד את המפה וליצור מסלול מיטבי יותר, הכולל יותר מאשר מפה אחת?</string>
     <string name="dialog_routing_download_cross_route">הורד מפות נוספות כדי ליצור מסלול יותר טוב שחוצה את גבולות המפה הזו.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">על מנת להתחיל לחפש וליצור מסלולים, הורידו בבקשה את המפה. לאחר מכן לא תזדקקו יותר לחיבור לאינטרנט.</string>
     <string name="search_select_map">בחר מפה</string>
@@ -604,7 +600,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">התחבר ל-OpenStreetMap כדי להעלות אוטומטית את כל עריכות המפה שלך. למידע נוסף <a href="https://github.com/organicmaps/organicmaps/issues/6144">כאן</a>.</string>
     <string name="dialog_error_storage_title">בעיית גישה לאחסון</string>
-    <string name="dialog_error_storage_message">לא ניתן לגשת לאחסון החיצוני. ייתכן כי כרטיס הזיכרון הוסר, נפגם, או שמערכת הקבצים היא לקריאה בלבד. נא לבדוק את כרטיס הזיכרון או ליצור איתנו קשר בכתובת support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">לא ניתן לגשת לאחסון החיצוני. ייתכן כי כרטיס הזיכרון הוסר, נפגם, או שמערכת הקבצים היא לקריאה בלבד. נא לבדוק את כרטיס הזיכרון או ליצור איתנו קשר בכתובת support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">בצע אמולציה לאחסון רע</string>
     <string name="core_entrance">כניסה</string>
     <string name="error_enter_correct_name">נא להזין שם תקין</string>
@@ -614,6 +610,7 @@
     <string name="bookmark_lists_show_all">הצג הכל</string>
     <plurals name="bookmarks_places">
         <item quantity="one">סימניה %d</item>
+        <item quantity="two"/>
         <item quantity="other">%d סימניות</item>
     </plurals>
     <string name="bookmarks_create_new_group">צור רשימה חדשה</string>
@@ -632,11 +629,13 @@
     <string name="profile">פרופיל OpenStreetMap</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">נמצא קובץ %d. יהיה ניתן לראות אותו לאחר ההמרה.</item>
+        <item quantity="two"/>
         <item quantity="other">נמצאו %d קבצים. יהיה ניתן לראות אותם לאחר ההמרה.</item>
     </plurals>
     <string name="restore">שחזור</string>
     <plurals name="tracks">
         <item quantity="one">מסלול %d</item>
+        <item quantity="two"/>
         <item quantity="other">%d מסלולים</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -664,7 +663,7 @@
     <!-- "Speed cameras" settings menu option (should be short! no more than 47-50 chars) to warn a driver if there is a risk of exceeding the speed limit -->
     <string name="pref_tts_speedcams_auto">הזהר כשהמהירות מופרזת</string>
     <!-- Speed camera settings menu option - Always warn (about speedcams) -->
-    <string name="pref_tts_speedcams_always">הזהר  תמיד</string>
+    <string name="pref_tts_speedcams_always">הזהר תמיד</string>
     <!-- Speed camera settings menu option - Never warn (about speedcams) -->
     <string name="pref_tts_speedcams_never">אל תזהיר אף פעם</string>
     <string name="power_managment_title">מצב חיסכון בסוללה</string>
@@ -723,7 +722,6 @@
     <string name="moreyear_ago_sorttype">לפני יותר משנה</string>
     <string name="near_me_sorttype">קרוב אלי</string>
     <string name="others_sorttype">אחרים</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">אוכל</string>
     <string name="tourist_places">תיירות</string>
@@ -854,7 +852,6 @@
     <string name="track_recording_toast_nothing_to_save">המסלול ריק - אין מה לשמור</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">לא ניתן להציג תיבת דו-שיח לבחירת תיקיות מכיוון שלא מותקנת אפליקציה מתאימה במכשיר שלך. אנא התקן אפליקציית מנהל קבצים ונסה שוב</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">כתובת/שכונה</string>
     <string name="type.addr_interpolation.even">כתובת/שכונה</string>
@@ -981,7 +978,6 @@
     <string name="type.amenity.prison">בית כלא</string>
     <string name="type.amenity.pub">פאב</string>
     <string name="type.amenity.public_bookcase">כוננית ספרים ציבורית</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">מרכז מיחזור</string>
     <string name="type.amenity.recycling">מיכל מיחזור</string>
@@ -1219,7 +1215,6 @@
     <string name="type.healthcare.psychotherapist">פסיכותרפיה</string>
     <string name="type.healthcare.sample_collection">מרכז איסוף דגימות</string>
     <string name="type.healthcare.speech_therapist">ריפוי בדיבור</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">כביש</string>
     <string name="type.highway.bridleway">שביל סוסים</string>
@@ -1385,7 +1380,6 @@
     <string name="type.area_highway.track">מסלול</string>
     <string name="type.area_highway.trunk">כביש בין עירוני</string>
     <string name="type.area_highway.unclassified">כביש לא מסומן/מזערי</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">חפץ היסטורי</string>
     <string name="type.historic.aircraft">מטוס היסטורי</string>
@@ -1885,4 +1879,352 @@
     <string name="type.amenity.dojo">דוג\'ו</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">אולם ספורט</string>
+    <string name="mb">מ״ב</string>
+    <string name="category_wifi">WiFi</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">טלגרם</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">אינסטגרם</string>
+    <string name="vk">VK</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="cyan">ציאן</string>
+    <string name="teal">טורקיז ירקרק</string>
+    <string name="lime">ליים</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aerialway">דרך אווירית</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.landuse.garages">מוסכים</string>
+    <string name="type.leisure.track.area">מסלול ללא גישה</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.halt">Rail Halt</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.rail">מסילת רכבת</string>
+    <string name="type.railway.station">תחנת רכבת</string>
+    <string name="type.railway.station.light_rail">Train Station</string>
+    <string name="type.railway.station.light_rail.london">Train Station</string>
+    <string name="type.railway.station.light_rail.porto">Train Station</string>
+    <string name="type.railway.station.monorail">Train Station</string>
+    <string name="type.railway.station.subway">Subway Station</string>
+    <string name="type.railway.station.subway.adana">Subway Station</string>
+    <string name="type.railway.station.subway.algiers">Subway Station</string>
+    <string name="type.railway.station.subway.almaty">Subway Station</string>
+    <string name="type.railway.station.subway.bangkok">Subway Station</string>
+    <string name="type.railway.station.subway.barcelona">Subway Station</string>
+    <string name="type.railway.station.subway.beijing">Subway Station</string>
+    <string name="type.railway.station.subway.bengalore">Subway Station</string>
+    <string name="type.railway.station.subway.berlin">Subway Station</string>
+    <string name="type.railway.station.subway.bilbao">Subway Station</string>
+    <string name="type.railway.station.subway.brasilia">Subway Station</string>
+    <string name="type.railway.station.subway.brussels">Subway Station</string>
+    <string name="type.railway.station.subway.bucharest">Subway Station</string>
+    <string name="type.railway.station.subway.budapest">Subway Station</string>
+    <string name="type.railway.station.subway.cairo">Subway Station</string>
+    <string name="type.railway.station.subway.caracas">Subway Station</string>
+    <string name="type.railway.station.subway.catania">Subway Station</string>
+    <string name="type.railway.station.subway.chicago">Subway Station</string>
+    <string name="type.railway.station.subway.delhi">Subway Station</string>
+    <string name="type.railway.station.subway.dnepro">Subway Station</string>
+    <string name="type.railway.station.subway.dubai">Subway Station</string>
+    <string name="type.railway.station.subway.fukuoka">Subway Station</string>
+    <string name="type.railway.station.subway.glasgow">Subway Station</string>
+    <string name="type.railway.station.subway.guangzhou">Subway Station</string>
+    <string name="type.railway.station.subway.hamburg">Subway Station</string>
+    <string name="type.railway.station.subway.helsinki">Subway Station</string>
+    <string name="type.railway.station.subway.isfahan">Subway Station</string>
+    <string name="type.railway.station.subway.istanbul">Subway Station</string>
+    <string name="type.railway.station.subway.izmir">Subway Station</string>
+    <string name="type.railway.station.subway.kazan">Subway Station</string>
+    <string name="type.railway.station.subway.kharkiv">Subway Station</string>
+    <string name="type.railway.station.subway.kiev">Subway Station</string>
+    <string name="type.railway.station.subway.kobe">Subway Station</string>
+    <string name="type.railway.station.subway.kolkata">Subway Station</string>
+    <string name="type.railway.station.subway.kunming">Subway Station</string>
+    <string name="type.railway.station.subway.kyoto">Subway Station</string>
+    <string name="type.railway.station.subway.la">Subway Station</string>
+    <string name="type.railway.station.subway.lausanne">Subway Station</string>
+    <string name="type.railway.station.subway.lille">Subway Station</string>
+    <string name="type.railway.station.subway.lima">Subway Station</string>
+    <string name="type.railway.station.subway.lisboa">Subway Station</string>
+    <string name="type.railway.station.subway.lyon">Subway Station</string>
+    <string name="type.railway.station.subway.malaga">Subway Station</string>
+    <string name="type.railway.station.subway.manila">Subway Station</string>
+    <string name="type.railway.station.subway.maracaibo">Subway Station</string>
+    <string name="type.railway.station.subway.mashhad">Subway Station</string>
+    <string name="type.railway.station.subway.medellin">Subway Station</string>
+    <string name="type.railway.station.subway.minsk">Subway Station</string>
+    <string name="type.railway.station.subway.montreal">Subway Station</string>
+    <string name="type.railway.station.subway.moscow">Subway Station</string>
+    <string name="type.railway.station.subway.munchen">Subway Station</string>
+    <string name="type.railway.station.subway.nagoya">Subway Station</string>
+    <string name="type.railway.station.subway.newyork">Subway Station</string>
+    <string name="type.railway.station.subway.panama">Subway Station</string>
+    <string name="type.railway.station.subway.paris">Subway Station</string>
+    <string name="type.railway.station.subway.pyongyang">Subway Station</string>
+    <string name="type.railway.station.subway.rennes">Subway Station</string>
+    <string name="type.railway.station.subway.rio">Subway Station</string>
+    <string name="type.railway.station.subway.roma">Subway Station</string>
+    <string name="type.railway.station.subway.rotterdam">Subway Station</string>
+    <string name="type.railway.station.subway.santiago">Subway Station</string>
+    <string name="type.railway.station.subway.santo_domingo">Subway Station</string>
+    <string name="type.railway.station.subway.saopaulo">Subway Station</string>
+    <string name="type.railway.station.subway.sapporo">Subway Station</string>
+    <string name="type.railway.station.subway.sendai">Subway Station</string>
+    <string name="type.railway.station.subway.shanghai">Subway Station</string>
+    <string name="type.railway.station.subway.shiraz">Subway Station</string>
+    <string name="type.railway.station.subway.singapore">Subway Station</string>
+    <string name="type.railway.station.subway.sofia">Subway Station</string>
+    <string name="type.railway.station.subway.stockholm">Subway Station</string>
+    <string name="type.railway.station.subway.tabriz">Subway Station</string>
+    <string name="type.railway.station.subway.taoyuan">Subway Station</string>
+    <string name="type.railway.station.subway.tashkent">Subway Station</string>
+    <string name="type.railway.station.subway.tianjin">Subway Station</string>
+    <string name="type.railway.station.subway.tokyo">Subway Station</string>
+    <string name="type.railway.station.subway.valencia">Subway Station</string>
+    <string name="type.railway.station.subway.vienna">Subway Station</string>
+    <string name="type.railway.station.subway.warszawa">Subway Station</string>
+    <string name="type.railway.station.subway.washington">Subway Station</string>
+    <string name="type.railway.station.subway.wuhan">Subway Station</string>
+    <string name="type.railway.station.subway.yerevan">Subway Station</string>
+    <string name="type.railway.station.subway.yokohama">Subway Station</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.railway.subway_entrance">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.adana">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.algiers">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.ankara">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.bangkok">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.beijing">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.bengalore">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.bilbao">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.brasilia">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.brescia">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.brussels">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.bucharest">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.budapest">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.buenos_aires">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.bursa">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.caracas">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.catania">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.changchun">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.chicago">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.chongqing">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.dalian">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.delhi">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.dnepro">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.dubai">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.ekb">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.fukuoka">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.glasgow">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.guangzhou">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.hamburg">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.helsinki">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.hiroshima">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.isfahan">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.istanbul">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.izmir">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.kazan">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.kharkiv">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.kiev">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.kobe">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.kolkata">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.kunming">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.lausanne">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.lille">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.lima">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.lisboa">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.london">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.madrid">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.malaga">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.manila">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.maracaibo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.mashhad">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.mecca">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.medellin">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.mexico">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.milan">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.montreal">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.moscow">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.nagoya">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.newyork">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.nnov">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.novosibirsk">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.osaka">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.palma">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.panama">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.philadelphia">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.pyongyang">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.roma">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.rotterdam">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.samara">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.santiago">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.saopaulo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.shanghai">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.shiraz">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.spb">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.stockholm">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.tabriz">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.taoyuan">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.tashkent">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.tbilisi">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.tehran">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.tianjin">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.tokyo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.valencia">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.vienna">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.warszawa">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.washington">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.wuhan">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.yokohama">Subway Entrance</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.railway.tram_stop">Tram Stop</string>
+    <string name="type.route">מסלול</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop">חנות</string>
+    <string name="type.shop.alcohol">Liquor Shop</string>
+    <string name="type.shop.beauty">Beauty Shop</string>
+    <string name="type.shop.beverages">Beverages</string>
+    <string name="type.shop.bicycle">Bicycle Shop</string>
+    <string name="type.shop.bookmaker">כריכת ספרים</string>
+    <string name="type.shop.books">חנות ספרים</string>
+    <string name="type.shop.car">Car Dealership</string>
+    <string name="type.shop.car_parts">Car Parts Shop</string>
+    <string name="type.shop.car_repair">Car Repair Workshop</string>
+    <string name="type.shop.confectionery">Candy Shop</string>
+    <string name="type.shop.garden_centre">Garden Center</string>
+    <string name="type.shop.sports">Sports Shop</string>
+    <string name="type.shop.video">Video Shop</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.waterway.river">נהר</string>
+    <string name="type.waterway.river.tunnel">נהר</string>
+    <string name="type.waterway.weir">Weir</string>
+    <string name="type.wheelchair">כסא גלגלים</string>
+    <string name="type.wheelchair.limited">Limited Wheelchair Access</string>
+    <string name="type.wheelchair.yes">Full Wheelchair Access</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.shop.butcher">Butcher</string>
+    <string name="type.waterway.waterfall">מפל</string>
+    <string name="type.leisure.track">מסלול ללא גישה</string>
+    <string name="type.railway.subway_entrance.baku">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.chengdu">Subway Entrance</string>
+    <string name="type.shop.video_games">Video Game Shop</string>
+    <string name="type.railway.subway_entrance.lyon">Subway Entrance</string>
+    <string name="type.shop.outdoor">Outdoor Equipment Shop</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.route.ferry">מסוף מעבורות</string>
+    <string name="type.wheelchair.no">No Wheelchair Access</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.railway.monorail">מונורייל</string>
+    <string name="type.railway.subway_entrance.cairo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.berlin">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.athens">Subway Entrance</string>
+    <string name="type.waterway.stream.intermittent">Intermittent Stream</string>
+    <string name="type.railway.station.subway.samara">Subway Station</string>
+    <string name="type.waterway.lock_gate">Lock Gate</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.subway_entrance.rennes">Subway Entrance</string>
+    <string name="gb">ג״ב</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.railway.level_crossing">Level Crossing</string>
+    <string name="type.railway.station.subway.amsterdam">Subway Station</string>
+    <string name="type.railway.subway_entrance.kyoto">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.la">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.minsk">Subway Entrance</string>
+    <string name="type.shop.wine">Wine Shop</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.subway_entrance.barcelona">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.singapore">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.yerevan">Subway Entrance</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.railway.station.subway.hiroshima">Subway Station</string>
+    <string name="type.waterway.stream.tunnel">להזרים טורנט</string>
+    <string name="type.railway.station.subway.ankara">Subway Station</string>
+    <string name="type.railway.station.subway.athens">Subway Station</string>
+    <string name="type.railway.station.subway.baku">Subway Station</string>
+    <string name="type.railway.station.subway.brescia">Subway Station</string>
+    <string name="type.railway.station.subway.buenos_aires">Subway Station</string>
+    <string name="type.railway.station.subway.bursa">Subway Station</string>
+    <string name="type.railway.station.subway.changchun">Subway Station</string>
+    <string name="type.railway.station.subway.chengdu">Subway Station</string>
+    <string name="type.railway.station.subway.dalian">Subway Station</string>
+    <string name="type.railway.station.subway.london">Subway Station</string>
+    <string name="type.railway.station.subway.madrid">Subway Station</string>
+    <string name="type.railway.station.subway.mecca">Subway Station</string>
+    <string name="type.railway.station.subway.mexico">Subway Station</string>
+    <string name="type.railway.station.subway.milan">Subway Station</string>
+    <string name="type.railway.station.subway.nnov">Subway Station</string>
+    <string name="type.railway.station.subway.novosibirsk">Subway Station</string>
+    <string name="type.railway.station.subway.osaka">Subway Station</string>
+    <string name="type.railway.station.subway.oslo">Subway Station</string>
+    <string name="type.railway.station.subway.palma">Subway Station</string>
+    <string name="type.railway.station.subway.philadelphia">Subway Station</string>
+    <string name="type.railway.station.subway.sf">Subway Station</string>
+    <string name="type.railway.station.subway.spb">Subway Station</string>
+    <string name="type.railway.station.subway.taipei">Subway Station</string>
+    <string name="type.railway.station.subway.tbilisi">Subway Station</string>
+    <string name="type.railway.station.subway.tehran">Subway Station</string>
+    <string name="type.railway.subway_entrance.almaty">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.amsterdam">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.munchen">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.oslo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.paris">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.rio">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.santo_domingo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.sapporo">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.sendai">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.sf">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.sofia">Subway Entrance</string>
+    <string name="type.railway.subway_entrance.taipei">Subway Entrance</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.shop.bakery">מאפיה</string>
+    <string name="type.shop.chemist">כימאי</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.waterway.stream">להזרים טורנט</string>
+    <string name="type.waterway.stream.ephemeral">Ephemeral Stream</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.railway.station.subway.ekb">Subway Station</string>
+    <string name="type.railway.station.subway.chongqing">Subway Station</string>
+    <string name="choose_color">נא לבחור צבע</string>
+    <string name="edit_track">עריכת מסלול</string>
 </resources>

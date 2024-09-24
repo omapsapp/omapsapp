@@ -109,7 +109,6 @@
     <string name="measurement_units">距離の単位</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">マイルまたはキロメートルを選択</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">食事場所</string>
@@ -157,7 +156,6 @@
     <string name="category_water">水</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">RV用</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">メモ</string>
@@ -358,7 +356,6 @@
     <string name="gray">灰色</string>
     <!-- blue gray color -->
     <string name="blue_gray">青灰色</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">案内ルートに従う際は、以下の点にご留意ください：</string>
     <string name="dialog_routing_disclaimer_priority">— 道路の状況や道路交通法、道路標識をナビゲーションよりも常に優先してください。;</string>
@@ -388,7 +385,6 @@
     <string name="not_now">後で</string>
     <string name="dialog_routing_download_and_build_cross_route">マップをダウンロードし、複数マップを利用してより最適なルートを作成しますか？</string>
     <string name="dialog_routing_download_cross_route">このマップの境界を越えて複数マップを利用し、より最適なルートを作成するには、マップをダウンロードしてください。</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">検索とルート作成を開始するには、地図をダウンロードしてください。地図をダウンロードすると、インターネット接続は不要です。</string>
     <string name="search_select_map">地図を選択</string>
@@ -614,7 +610,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">すべてのマップ編集を自動的にアップロードするには、OpenStreetMapにログインしてください。詳しくは <a href="https://github.com/organicmaps/organicmaps/issues/6144">こちら</a>.</string>
     <string name="dialog_error_storage_title">ストレージアクセスの問題</string>
-    <string name="dialog_error_storage_message">外部ストレージは使用できません。おそらく SD カードが取り外されたか、破損しているか、あるいはファイルシステムが読み取り専用になっています。確認後、support\@organicmaps.app までご連絡ください。</string>
+    <string name="dialog_error_storage_message">外部ストレージは使用できません。おそらく SD カードが取り外されたか、破損しているか、あるいはファイルシステムが読み取り専用になっています。確認後、support@organicmaps.app までご連絡ください。</string>
     <string name="setting_emulate_bad_storage">壊れたストレージをシミュレートする</string>
     <string name="core_entrance">入口</string>
     <string name="error_enter_correct_name">正しい名前を入力してください</string>
@@ -730,7 +726,6 @@
     <string name="moreyear_ago_sorttype">1年以上前</string>
     <string name="near_me_sorttype">近隣</string>
     <string name="others_sorttype">その他</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">食べ物</string>
     <string name="tourist_places">観光地</string>
@@ -863,7 +858,6 @@
     <string name="track_recording_toast_nothing_to_save">ルートが空です - 保存するものがありません</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">デバイスに適切なアプリがインストールされていないため、フォルダ選択ダイアログを表示できません。ファイルマネージャーアプリをインストールして再度お試しください。</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">アドレス/ブロック</string>
     <string name="type.addr_interpolation.even">アドレス/ブロック</string>
@@ -991,7 +985,6 @@
     <string name="type.amenity.prison">刑務所</string>
     <string name="type.amenity.pub">バー</string>
     <string name="type.amenity.public_bookcase">街角文庫</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">リサイクルセンター</string>
     <string name="type.amenity.recycling">リサイクルボックス</string>
@@ -1202,7 +1195,6 @@
     <string name="type.healthcare.psychotherapist">心理療法</string>
     <string name="type.healthcare.sample_collection">サンプリング</string>
     <string name="type.healthcare.speech_therapist">ロゴペディックス</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">道路</string>
     <string name="type.highway.bridleway">馬道</string>
@@ -1367,7 +1359,6 @@
     <string name="type.area_highway.track">ストリート</string>
     <string name="type.area_highway.trunk">ストリート</string>
     <string name="type.area_highway.unclassified">ストリート</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">史跡</string>
     <string name="type.historic.aircraft">歴史的な航空機</string>
@@ -2132,4 +2123,103 @@
     <string name="type.amenity.dojo">道場</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">スポーツホール</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VKontakte(SNS)</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.amenity.atm">ATM</string>
+    <string name="type.recycling.cans">空き缶</string>
+    <string name="type.recycling.shoes">靴</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">飲食物用段ボール</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.building.warehouse">倉庫</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.landuse.field">フィールド</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.man_made.flagpole">掲揚ポール</string>
+    <string name="type.man_made.mast">柱</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.organic.only">生ごみ</string>
+    <string name="type.organic.yes">生ごみ</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.psurface">psurface</string>
+    <string name="editor_line_social_network">直線</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="type.emergency">救急</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.highway.elevator">Elevator</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.recycling.cardboard">段ボール</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="edit_track">経路の編集</string>
 </resources>

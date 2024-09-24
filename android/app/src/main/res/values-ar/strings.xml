@@ -54,7 +54,7 @@
     <!-- Used in DownloadResources startup screen -->
     <string name="disconnect_usb_cable">الرجاء فصل كابل الناقل التسلسلي الشامل أو إدخال بطاقة الذاكرة من أجل استخدام Organic Maps.</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="not_enough_free_space_on_sdcard">الرجاء إخلاء بعض المساحة في تخزين البطاقة الرقمية الآمنة\الناقل التسلسلي الشامل أولا من أجل استخدام هذا التطبيق.</string>
+    <string name="not_enough_free_space_on_sdcard">الرجاء إخلاء بعض المساحة في تخزين البطاقة الرقمية الآمنةلناقل التسلسلي الشامل أولا من أجل استخدام هذا التطبيق.</string>
     <string name="download_resources">قبل أن تبدأ باستخدام التطبيق، سنقوم بتنزيل خريطة العالم العامة على جهازك.
 \nستحتاج إلى %s من البيانات.</string>
     <string name="download_resources_continue">الذهاب الى الخريطة</string>
@@ -113,7 +113,6 @@
     <string name="measurement_units">وحدات القياس</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">اختر من بين الأميال و الكيلومترات.</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">أمكان لتناول الطعام</string>
@@ -161,7 +160,6 @@
     <string name="category_water">ماء</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">منشآت للمنازل المتنقلة</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">ملاحظات</string>
@@ -169,7 +167,7 @@
     <string name="share_bookmarks_email_subject">تم مشاركة إشارات Organic Maps المرجعية معك</string>
     <string name="share_bookmarks_email_body">مرحباً! ْ
 \n
-\n تم إرفاق إشاراتي المرجعية من تطبيق Organic Maps. الرجاء فتحهم إذا لديك تطبيق Organic Maps مثبتاً. أو، إذا لم يكن مثبتاً، قم بتنزيل التطبيق لنظام iOS أو أندرويد من خلال الضغط على هذا الرابط: https://omaps.app/get?kmz 
+\n تم إرفاق إشاراتي المرجعية من تطبيق Organic Maps. الرجاء فتحهم إذا لديك تطبيق Organic Maps مثبتاً. أو، إذا لم يكن مثبتاً، قم بتنزيل التطبيق لنظام iOS أو أندرويد من خلال الضغط على هذا الرابط: https://omaps.app/get?kmz
 \n
 \nاستمتع بالسفر مع Organic Maps!</string>
     <!-- message title of loading file -->
@@ -182,7 +180,7 @@
     <string name="unknown_file_type">لم يتعرف التطبيق على نوع الملف:
 \n%1$s</string>
     <!-- Failed to open a bookmarks or tracks file in Organic Maps. -->
-    <string name="failed_to_open_file">فشل فتح ملف  %1$s
+    <string name="failed_to_open_file">فشل فتح ملف %1$s
 \n
 \n%2$s</string>
     <!-- resource for context menu -->
@@ -370,13 +368,12 @@
     <string name="gray">رمادي</string>
     <!-- blue gray color -->
     <string name="blue_gray">رمادي أزرق</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">عند اتباع المسار، يُرجى الانتباه إلى ما يلي:</string>
     <string name="dialog_routing_disclaimer_priority">— إن ظروف الطريق وقوانين وإشارات المرور لها الأولوية على المشورة الملاحية دائماً;</string>
-    <string name="dialog_routing_disclaimer_precision">—  قد تكون الخريطة غير دقيقة وقد لا يكون المسار المقترح هو المسار الأمثل دائمًا للوصول إلى الوجهة.;</string>
+    <string name="dialog_routing_disclaimer_precision">— قد تكون الخريطة غير دقيقة وقد لا يكون المسار المقترح هو المسار الأمثل دائمًا للوصول إلى الوجهة.;</string>
     <string name="dialog_routing_disclaimer_recommendations">— يجب التعامل مع المسارات المقترحة كتوصيات فقط;</string>
-    <string name="dialog_routing_disclaimer_borders">— تحذير بشأن المسارات في المناطق الحدودية: المسارات التي تم إنشاؤها بواسطة تطبيقنا قد تعبر  أحياناً حدود الدول في أماكن غير مصرح بها;</string>
+    <string name="dialog_routing_disclaimer_borders">— تحذير بشأن المسارات في المناطق الحدودية: المسارات التي تم إنشاؤها بواسطة تطبيقنا قد تعبر أحياناً حدود الدول في أماكن غير مصرح بها;</string>
     <string name="dialog_routing_disclaimer_beware">يجب أن تظل يقظًا وآمنًا على الطريق!</string>
     <string name="dialog_routing_check_gps">تحقق من إشارة نظام تحديد الموقع الجغرافي</string>
     <string name="dialog_routing_error_location_not_found">تعذر إنشاء مسار. لم نستطع تحديد الإحداثيات الجغرافية الحالية.</string>
@@ -400,9 +397,8 @@
     <string name="not_now">ليس الآن</string>
     <string name="dialog_routing_download_and_build_cross_route">هل ترغب في تنزيل الخريطة وإنشاء مسار أفضل يمتد عبر أكثر من خريطة؟</string>
     <string name="dialog_routing_download_cross_route">تنزيل خرائط إضافية لإنشاء مسار أفضل يعبر حافة هذه الخريطة.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
-    <string name="search_without_internet_advertisement">لبدء البحث وإنشاء الطرق، يرجى تنزيل الخريطة،  ولن تحتاج إلى اتصال بالإنترنت بعد ذلك.</string>
+    <string name="search_without_internet_advertisement">لبدء البحث وإنشاء الطرق، يرجى تنزيل الخريطة، ولن تحتاج إلى اتصال بالإنترنت بعد ذلك.</string>
     <string name="search_select_map">اختيار الخريطة</string>
     <!-- «Show» context menu -->
     <string name="show">عرض</string>
@@ -626,7 +622,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">برجاء تسجيل الدخول إلى OpenStreetMap لتحميل جميع تعديلات الخريطة تلقائيًا. تعرف على المزيد <a href="https://github.com/organicmaps/organicmaps/issues/6144">هنا</a>.</string>
     <string name="dialog_error_storage_title">مشكلة الوصول للتخزين</string>
-    <string name="dialog_error_storage_message">التخزين الخارجي غير متوفر، ربما تمت إزالة بطاقة SD، أو أنها تالفة أو نظام الملفات للقراءة فقط. افحصه أو راسلنا على support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">التخزين الخارجي غير متوفر، ربما تمت إزالة بطاقة SD، أو أنها تالفة أو نظام الملفات للقراءة فقط. افحصه أو راسلنا على support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">محاكاة التخزين السيء</string>
     <string name="core_entrance">المدخل</string>
     <string name="error_enter_correct_name">الرجاء إدخال اسم صحيح</string>
@@ -635,6 +631,11 @@
     <string name="bookmark_lists_hide_all">إخفاء الكل</string>
     <string name="bookmark_lists_show_all">إظهار الكل</string>
     <plurals name="bookmarks_places">
+        <item quantity="zero"/>
+        <item quantity="one"/>
+        <item quantity="two"/>
+        <item quantity="few"/>
+        <item quantity="many"/>
         <item quantity="other">%d من الإشارات المرجعية</item>
     </plurals>
     <string name="bookmarks_create_new_group">إنشاء قائمة جديدة</string>
@@ -652,11 +653,21 @@
     <string name="phone_number">رقم الهاتف</string>
     <string name="profile">ملف الشخصي على خريطة الشارع المفتوحة</string>
     <plurals name="bookmarks_detect_message">
+        <item quantity="zero"/>
+        <item quantity="one"/>
+        <item quantity="two"/>
+        <item quantity="few"/>
+        <item quantity="many"/>
         <item quantity="other">تم العثور على %d ملفات. سوف تراهم بعد التحويل.</item>
     </plurals>
     <string name="restore">استعادة</string>
     <plurals name="tracks">
-        <item quantity="other">مسار %d</item>
+        <item quantity="zero">%d المسارات</item>
+        <item quantity="one">%d المسارات</item>
+        <item quantity="two">%d المسارات</item>
+        <item quantity="few"/>
+        <item quantity="many"/>
+        <item quantity="other">%d المسارات</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">خصوصية</string>
@@ -742,7 +753,6 @@
     <string name="moreyear_ago_sorttype">منذ أكثر من سنة</string>
     <string name="near_me_sorttype">قريب مني</string>
     <string name="others_sorttype">أخرى</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">طعام</string>
     <string name="tourist_places">أماكن سياحية</string>
@@ -789,7 +799,7 @@
     <!-- Description in preferences -->
     <string name="enable_keep_screen_on_description">عند التمكين، ستكون الشاشة قيد التشغيل دائمًا عند عرض الخريطة.</string>
     <!-- A preference title; keep short! -->
-    <string name="enable_show_on_lock_screen">إظهار  التطبيق فوق شاشة القفل</string>
+    <string name="enable_show_on_lock_screen">إظهار التطبيق فوق شاشة القفل</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">عند التفعيل، لن تحتاج لفتح قفل جهازك كل مرة أثناء تشغيل التطبيق</string>
     <!-- OpenStreetMap text on splash screen -->
@@ -875,7 +885,6 @@
     <string name="track_recording_toast_nothing_to_save">المسار فارغ - لا يوجد شيء للحفظ</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">غير قادر على عرض مربع حوار تحديد المجلد لأنه لا يوجد تطبيق مناسب مثبت على جهازك. يرجى تثبيت تطبيق مدير الملفات والمحاولة مرة أخرى.</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">العنوان / البلوك</string>
     <string name="type.addr_interpolation.even">العنوان / البلوك</string>
@@ -1003,7 +1012,6 @@
     <string name="type.amenity.prison">سجن</string>
     <string name="type.amenity.pub">حانة</string>
     <string name="type.amenity.public_bookcase">مكتبة، تبادل كتب</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">مركز إعادة تدوير</string>
     <string name="type.amenity.recycling">حاوية لإعادة التدوير</string>
@@ -1238,7 +1246,6 @@
     <string name="type.healthcare.psychotherapist">العلاج النفسي</string>
     <string name="type.healthcare.sample_collection">أخذ العينات</string>
     <string name="type.healthcare.speech_therapist">علاج النطق</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">طريق السريع</string>
     <string name="type.highway.bridleway">طريق خيول</string>
@@ -1404,7 +1411,6 @@
     <string name="type.area_highway.track">شارع</string>
     <string name="type.area_highway.trunk">شارع وطني</string>
     <string name="type.area_highway.unclassified">شارع صغير</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">مكان تاريخي</string>
     <string name="type.historic.aircraft">الطائرات التاريخية</string>
@@ -2120,4 +2126,125 @@
     <string name="type.amenity.dojo">دوجو</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">الصالة الرياضية</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.organic.yes">عضوي</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.public_transport">Public Transport</string>
+    <string name="type.public_transport.platform">Platform</string>
+    <string name="type.railway">خط سكة حديد</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="github">جت‌هب</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.waterway.weir">سدّ غاطس</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="type.leisure">أوقات الفراغ</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.power">مصادر الطاقة الكهربائية</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.leisure.track.area">مسار</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.route">طريق</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.cuisine.heuriger">هيوريجر</string>
+    <string name="type.leisure.miniature_golf">Minigolf</string>
+    <string name="type.leisure.slipway">مزلقة سفن</string>
+    <string name="type.tourism">السياحة</string>
+    <string name="type.landuse.brownfield">أرض صناعية سابقة</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.leisure.track">مسار</string>
+    <string name="type.man_made.cutline">خط مقطوع في الغابة</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.man_made.breakwater">كاسر الأمواج</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.organic.only">عضوي</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.barrier.ditch">Ditch</string>
+    <string name="type.route.ferry">عبّارة</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="editor_line_social_network">خط</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="vk">VK</string>
+    <string name="type.landuse.farmyard">مرافق مزرعة</string>
+    <string name="type.landuse.greenhouse_horticulture">Greenhouse</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="edit_track">تحرير المسار</string>
 </resources>

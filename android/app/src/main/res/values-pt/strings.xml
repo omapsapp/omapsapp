@@ -98,7 +98,6 @@
     <string name="measurement_units">Unidades de medida</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Escolha entre milhas e quilómetros</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Onde comer</string>
@@ -146,7 +145,6 @@
     <string name="category_water">Água</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Para trailers</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Notas</string>
@@ -343,7 +341,6 @@
     <string name="gray">Cinza</string>
     <!-- blue gray color -->
     <string name="blue_gray">Azul-cinza</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Ao seguir o trajeto, lembre-se que:</string>
     <string name="dialog_routing_disclaimer_priority">— As condições da estrada, as leis de trânsito e os sinais de trânsito têm sempre prioridade sobre as indicações de navegação;</string>
@@ -373,7 +370,6 @@
     <string name="not_now">Agora não</string>
     <string name="dialog_routing_download_and_build_cross_route">Quer descarregar o mapa e traçar uma rota melhor, mas que se estenda por mais de um mapa?</string>
     <string name="dialog_routing_download_cross_route">Descarregue o mapa para traçar uma rota melhor que vai além dos limites deste mapa.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Para começar a pesquisar e criar rotas, por favor, descarregue o mapa. Desta forma não irá precisra mais de uma ligação à Internet.</string>
     <string name="search_select_map">Selecionar mapa</string>
@@ -585,7 +581,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Por favor, faz o login no OpenStreetMap para carregar automaticamente todas as tuas edições de mapas. Sabe mais <a href="https://github.com/organicmaps/organicmaps/issues/6144">aqui</a>.</string>
     <string name="dialog_error_storage_title">Problema de acesso ao armazenamento</string>
-    <string name="dialog_error_storage_message">O armazenamento externo não está disponível. Provavelmente porque o cartão SD foi removido, danificado ou o sistema de ficheiros é apenas para leitura. Verifique e contacte-nos através do email support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">O armazenamento externo não está disponível. Provavelmente porque o cartão SD foi removido, danificado ou o sistema de ficheiros é apenas para leitura. Verifique e contacte-nos através do email support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Emular o armazenamento defeituoso</string>
     <string name="core_entrance">Entrada</string>
     <string name="error_enter_correct_name">Introduza um nome correto</string>
@@ -595,6 +591,7 @@
     <string name="bookmark_lists_show_all">Mostrar tudo</string>
     <plurals name="bookmarks_places">
         <item quantity="one">%d favorito</item>
+        <item quantity="many"/>
         <item quantity="other">%d favoritos</item>
     </plurals>
     <string name="bookmarks_create_new_group">Criar nova lista</string>
@@ -613,11 +610,13 @@
     <string name="profile">Perfil no OpenStreetMap</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">%d ficheiro encontrado. Pode vê-lo depois da conversão.</item>
+        <item quantity="many"/>
         <item quantity="other">%d ficheiros encontrados. Pode vê-los depois da conversão.</item>
     </plurals>
     <string name="restore">Restaurar</string>
     <plurals name="tracks">
         <item quantity="one">%d percurso</item>
+        <item quantity="many"/>
         <item quantity="other">%d percursos</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -704,7 +703,6 @@
     <string name="moreyear_ago_sorttype">Mais de um ano atrás</string>
     <string name="near_me_sorttype">Perto de mim</string>
     <string name="others_sorttype">Outros</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Comida</string>
     <string name="tourist_places">Atrações turísticas</string>
@@ -827,7 +825,6 @@
     <string name="track_recording_toast_nothing_to_save">O trajeto está vazio - não há nada para guardar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Não é possível apresentar a caixa de diálogo de seleção de pastas porque não está instalada nenhuma aplicação adequada no seu dispositivo. Instale uma aplicação de gestão de ficheiros e tente novamente</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Morada/Bloco</string>
     <string name="type.addr_interpolation.even">Morada/Bloco</string>
@@ -956,7 +953,6 @@
     <string name="type.amenity.prison">Prisão</string>
     <string name="type.amenity.pub">Pub ou taberna</string>
     <string name="type.amenity.public_bookcase">Biblioteca livre</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Centro de reciclagem</string>
     <string name="type.amenity.recycling">Contentor de reciclagem</string>
@@ -1178,7 +1174,6 @@
     <string name="type.healthcare.psychotherapist">Psicoterapia</string>
     <string name="type.healthcare.sample_collection">Amostragem</string>
     <string name="type.healthcare.speech_therapist">Terapia da fala</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Rodovia</string>
     <string name="type.highway.bridleway">Caminho para cavaleiros</string>
@@ -1343,7 +1338,6 @@
     <string name="type.area_highway.track">Pista para desportos não motorizados</string>
     <string name="type.area_highway.trunk">Via rápida</string>
     <string name="type.area_highway.unclassified">Estrada sem classificação</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Objeto histórico</string>
     <string name="type.historic.aircraft">Aeronaves Históricas</string>
@@ -2134,4 +2128,76 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Pavilhão desportivo</string>
+    <string name="error_enter_correct_facebook_page">Enter a valid Facebook web address, account, or page name</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.recycling.cardboard">Papelão / cartão</string>
+    <string name="type.recycling.cans">Latas</string>
+    <string name="type.recycling.shoes">Calçados</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">Papel cartonado de comida e bebida</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.highway.elevator">Elevador</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.flagpole">Mastro de bandeira</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="mb">MB</string>
+    <string name="menu">Menu</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="editor_add_phone">Add Phone</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="opens_in">Opens in %@</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="disconnect_usb_cable_title">Disconnect USB cable</string>
+    <string name="type.man_made.mast">Mastro</string>
+    <string name="facebook">Facebook</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="gb">GB</string>
+    <string name="closes_in">Closes in %@</string>
+    <string name="edit_track">Editar trilho</string>
 </resources>

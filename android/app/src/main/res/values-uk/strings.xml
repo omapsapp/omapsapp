@@ -113,7 +113,6 @@
     <string name="measurement_units">Одиниці виміру</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Використовувати милі чи кілометри</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Де поїсти</string>
@@ -161,7 +160,6 @@
     <string name="category_water">Вода</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Для автобудинків</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Примітка</string>
@@ -360,7 +358,6 @@
     <string name="gray">Сірий</string>
     <!-- blue gray color -->
     <string name="blue_gray">Сіро-блакитний</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Під час руху за маршрутом пам\'ятайте:</string>
     <string name="dialog_routing_disclaimer_priority">— Дорожня обстановка, правила дорожнього руху і знаки пріоритетніші, ніж поради програми;</string>
@@ -390,7 +387,6 @@
     <string name="not_now">Не зараз</string>
     <string name="dialog_routing_download_and_build_cross_route">Завантажити мапу і побудувати більш оптимальний маршрут з перетином межі мапи?</string>
     <string name="dialog_routing_download_cross_route">Для побудови більш оптимального маршруту з перетином межі потрібно завантажити мапу.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Щоб розпочати пошук та створення маршрутів, будь ласка, завантажте мапу і вам більше ніколи не знадобиться інтернет-з’єднання.</string>
     <string name="search_select_map">Вибрати мапу</string>
@@ -615,7 +611,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Будь ласка увійдіть в акаунт OpenStreetMap.org, щоб автоматично публікувати зміни до мапи. Подробиці за <a href="https://github.com/organicmaps/organicmaps/issues/6144">посиланням</a>.</string>
     <string name="dialog_error_storage_title">Не вдалося отримати доступ до сховища</string>
-    <string name="dialog_error_storage_message">Зовнішнє сховище не доступно. Ймовірно, SD-картку пам\'яті було вилучено, пошкоджено, або система файлів доступна тільки для читання. Будь ласка, перевірте та зв\'яжіться з нами, написавши на адресу електронну пошту support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Зовнішнє сховище не доступно. Ймовірно, SD-картку пам\'яті було вилучено, пошкоджено, або система файлів доступна тільки для читання. Будь ласка, перевірте та зв\'яжіться з нами, написавши на адресу електронну пошту support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Емулювати проблемне сховище</string>
     <string name="core_entrance">Вхід</string>
     <string name="error_enter_correct_name">Будь ласка, введіть коректне ім\'я</string>
@@ -626,7 +622,8 @@
     <plurals name="bookmarks_places">
         <item quantity="one">%d мітка</item>
         <item quantity="few">%d мітки</item>
-        <item quantity="other">%d міток</item>
+        <item quantity="many"/>
+        <item quantity="other"/>
     </plurals>
     <string name="bookmarks_create_new_group">Створити новий список</string>
     <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
@@ -645,12 +642,10 @@
     <plurals name="bookmarks_detect_message">
         <item quantity="one">%d файл був знайдений. Ви побачите його після перетворення.</item>
         <item quantity="few">%d файлу були знайдені. Ви побачите їх після конвертації.</item>
-        <item quantity="other">%d файлів було знайдено. Ви побачите їх після конвертації.</item>
+        <item quantity="many"/>
+        <item quantity="other"/>
     </plurals>
     <string name="restore">Відновити</string>
-    <plurals name="tracks">
-        <item quantity="other">%d треків</item>
-    </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">Приватність</string>
     <string name="privacy_policy">Політика конфіденційності</string>
@@ -735,7 +730,6 @@
     <string name="moreyear_ago_sorttype">Понад рік тому</string>
     <string name="near_me_sorttype">Поруч зі мною</string>
     <string name="others_sorttype">Інші</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Їжа</string>
     <string name="tourist_places">Пам’ятки</string>
@@ -870,7 +864,6 @@
     <string name="track_recording_toast_nothing_to_save">Маршрут порожній - нічого зберігати</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Неможливо відобразити діалогове вікно вибору папки, оскільки на вашому пристрої не встановлено відповідну програму. Будь ласка, встановіть файловий менеджер і спробуйте ще раз</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Адреса/блок</string>
     <string name="type.addr_interpolation.even">Адреса/блок</string>
@@ -999,7 +992,6 @@
     <string name="type.amenity.prison">В\'язниця</string>
     <string name="type.amenity.pub">Паб</string>
     <string name="type.amenity.public_bookcase">Книгообмін</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Прийом вторсировини</string>
     <string name="type.amenity.recycling">Контейнер для вторсировини</string>
@@ -1234,7 +1226,6 @@
     <string name="type.healthcare.psychotherapist">Психотерапія</string>
     <string name="type.healthcare.sample_collection">Збір аналізів</string>
     <string name="type.healthcare.speech_therapist">Логопедія</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Дорога</string>
     <string name="type.highway.bridleway">Кінна доріжка</string>
@@ -1400,7 +1391,6 @@
     <string name="type.area_highway.track">Ґрунтівка</string>
     <string name="type.area_highway.trunk">Траса</string>
     <string name="type.area_highway.unclassified">Невелика дорога</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Історичний об\'єкт</string>
     <string name="type.historic.aircraft">Історичний літак</string>
@@ -2197,4 +2187,54 @@
     <string name="type.amenity.dojo">Додзьо</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Спортивний зал</string>
+    <string name="github">Github</string>
+    <string name="telegram">Telegram</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.barrier.hedge">Hedge</string>
+    <string name="type.barrier.retaining_wall">Retaining Wall</string>
+    <string name="type.emergency">Екстрені служби</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.leisure.hackerspace">Творчий простір (хакерспейс)</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">Військові</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.public_transport.platform">Платформа</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="editor_add_phone">Add Phone</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <plurals name="tracks">
+        <item quantity="one"/>
+        <item quantity="few"/>
+        <item quantity="many">%d треків</item>
+        <item quantity="other">%d треків</item>
+    </plurals>
+    <string name="edit_track">Редагувати трек</string>
 </resources>

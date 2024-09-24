@@ -99,19 +99,18 @@
     <!-- Generic external storage type in Maps Storage settings -->
     <string name="maps_storage_external">Xarici paylaşılan yaddaş</string>
     <!-- Free space out of total storage size in Maps Storage settings, e.g. "300 MB free of 2 GB" -->
-    <string name="maps_storage_free_size">%2$s-nin  %1$s-i boşdur</string>
+    <string name="maps_storage_free_size">%2$s-nin %1$s-i boşdur</string>
     <!-- Question dialog for transferring maps from one storage to another -->
     <string name="move_maps">Xəritələr köçürülsün?</string>
     <!-- Error moving map files from one storage to another -->
     <string name="move_maps_error">Xəritə fayllarının köçürülmə xətası</string>
     <!-- Ask user to wait several minutes (some long process in modal dialog). -->
-    <string name="wait_several_minutes">Bu proses bir neçə dəqiqə çəkə bilər. 
+    <string name="wait_several_minutes">Bu proses bir neçə dəqiqə çəkə bilər.
 \nZəhmət olmasa gözləyin.</string>
     <!-- Measurement units title in settings activity -->
     <string name="measurement_units">Ölçü vahidləri</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Mil və ya kilometr seçin</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Harada yemək</string>
@@ -159,7 +158,6 @@
     <string name="category_water">Su</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Karvan qurğuları</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Qeydlər</string>
@@ -356,7 +354,6 @@
     <string name="gray">Boz</string>
     <!-- blue gray color -->
     <string name="blue_gray">Mavi-boz</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Marşrutunuzu izləyərkən aşağıdakıları yadda saxlayın:</string>
     <string name="dialog_routing_disclaimer_priority">— Yol şəraiti, yol hərəkəti qaydaları və yol nişanları həmişə naviqasiya məsləhətindən üstündür;</string>
@@ -386,7 +383,6 @@
     <string name="not_now">İndi yox</string>
     <string name="dialog_routing_download_and_build_cross_route">Xəritəni endirmək və çoxsaylı xəritələr arasında daha rahat marşrut yaratmaq istərdinizmi?</string>
     <string name="dialog_routing_download_cross_route">Bu xəritənin sərhədlərini keçən daha rahat marşrut yaratmaq üçün xəritəni endirin.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Axtarmaq və marşrut yaratmağa başlamaq üçün xəritəni endirin. Yüklədikdən sonra artıq internet bağlantısına ehtiyacınız olmayacaq.</string>
     <string name="search_select_map">Xəritə seçin</string>
@@ -595,8 +591,8 @@
     <!-- Settings: "Send general feedback" button -->
     <string name="feedback_general">Ümumi rəy</string>
     <string name="prefs_languages_information">Biz səsli təlimatlar üçün TTS sistemindən istifadə edirik. Əksər Android cihazları Google TTS-dən istifadə edir. Siz proqramı Google Play-dən yükləyə və ya yeniləyə bilərsiniz (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
-    <string name="prefs_languages_information_off">Bəzi dillər üçün proqram mağazasından (Google Play, Galaxy Store, App Gallery, FDroid) fərqli nitq sintezatoru və ya əlavə dil paketi quraşdırmalı ola bilərsiniz. 
-\nCihaz parametrləri → Dil və Daxiletmə → Nitq → Mətndən nitqə funksiyasını yandırın. 
+    <string name="prefs_languages_information_off">Bəzi dillər üçün proqram mağazasından (Google Play, Galaxy Store, App Gallery, FDroid) fərqli nitq sintezatoru və ya əlavə dil paketi quraşdırmalı ola bilərsiniz.
+\nCihaz parametrləri → Dil və Daxiletmə → Nitq → Mətndən nitqə funksiyasını yandırın.
 \nBuradan siz nitq sintezi parametrlərini idarə edə bilərsiniz (məsələn, oflayn istifadə üçün dil paketini endirə bilərsiniz) və başqa mətndən-nitqə mühərrik seçə bilərsiniz.</string>
     <string name="prefs_languages_information_off_link">Əlavə məlumat üçün bu təlimatı nəzərdən keçirin.</string>
     <string name="transliteration_title">Latın transliterasiyası</string>
@@ -612,7 +608,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Bütün xəritə redaktələrinizi avtomatik yükləmək üçün OpenStreetMap-a daxil olun. <a href="https://github.com/organicmaps/organicmaps/issues/6144">burada</a> ətraflı məlumat əldə edin.</string>
     <string name="dialog_error_storage_title">Yaddaş giriş problemi</string>
-    <string name="dialog_error_storage_message">Xarici yaddaş mövcud deyil, ola bilsin ki, SD Kart çıxarılıb, zədələnib və ya fayl sistemi yalnız oxunur. Zəhmət olmasa yoxlayın və ya support\@organicmaps.app ünvanında bizimlə əlaqə saxlayın</string>
+    <string name="dialog_error_storage_message">Xarici yaddaş mövcud deyil, ola bilsin ki, SD Kart çıxarılıb, zədələnib və ya fayl sistemi yalnız oxunur. Zəhmət olmasa yoxlayın və ya support@organicmaps.app ünvanında bizimlə əlaqə saxlayın</string>
     <string name="setting_emulate_bad_storage">Zədələnmiş yaddaşı təqlid edin</string>
     <string name="core_entrance">Giriş</string>
     <string name="error_enter_correct_name">Düzgün ad daxil edin</string>
@@ -621,6 +617,7 @@
     <string name="bookmark_lists_hide_all">Hamısını gizlət</string>
     <string name="bookmark_lists_show_all">Hamısını göstər</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
         <item quantity="other">%d əlfəcin</item>
     </plurals>
     <string name="bookmarks_create_new_group">Yeni siyahı yaradın</string>
@@ -638,10 +635,12 @@
     <string name="phone_number">Telefon nömrəsi</string>
     <string name="profile">OpenStreetMap profili</string>
     <plurals name="bookmarks_detect_message">
+        <item quantity="one"/>
         <item quantity="other">%d fayl tapıldı. Dönüşümdən sonra onları görəcəksiniz.</item>
     </plurals>
     <string name="restore">Bərpa</string>
     <plurals name="tracks">
+        <item quantity="one"/>
         <item quantity="other">%d istiqamətlər</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -726,7 +725,6 @@
     <string name="moreyear_ago_sorttype">Bir ildən çox əvvəl</string>
     <string name="near_me_sorttype">Mənə yaxın</string>
     <string name="others_sorttype">Digərləri</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Qida</string>
     <string name="tourist_places">Görməli yerlər</string>
@@ -843,7 +841,6 @@
     <string name="track_recording_toast_nothing_to_save">Marşrut boşdur - saxlamaq üçün heç nə yoxdur</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Qovluq seçimi dialoqunu göstərmək mümkün deyil, çünki cihazınızda uyğun proqram quraşdırılmayıb. Lütfən, fayl meneceri proqramı quraşdırın və yenidən cəhd edin</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Ünvan/Blok</string>
     <string name="type.addr_interpolation.even">Ünvan/Blok</string>
@@ -972,7 +969,6 @@
     <string name="type.amenity.prison">Həbsxana</string>
     <string name="type.amenity.pub">Pub</string>
     <string name="type.amenity.public_bookcase">Kitab mübadiləsi</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Təkrar Emal Mərkəzi</string>
     <string name="type.amenity.recycling">Təkrar emal konteyneri</string>
@@ -1196,7 +1192,6 @@
     <string name="type.healthcare.psychotherapist">Psixoterapiya</string>
     <string name="type.healthcare.sample_collection">Nümunə götürmə</string>
     <string name="type.healthcare.speech_therapist">Loqopediya</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Avtomobil yolu</string>
     <string name="type.highway.bridleway">Atlı yolu</string>
@@ -1362,7 +1357,6 @@
     <string name="type.area_highway.track">Uçuş zolağı</string>
     <string name="type.area_highway.trunk">Dövlət şossesi</string>
     <string name="type.area_highway.unclassified">Yan yol</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Tarix</string>
     <string name="type.historic.aircraft">Tarixi Təyyarə</string>
@@ -2141,4 +2135,82 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">İdman zalı</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.snow_park">Snow Park</string>
+    <string name="vk">VK</string>
+    <string name="capacity">Capacity: %@</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="app_tip_02">Do you like our app? Please donate to support the development! Don\'t like it yet? Please let us know why, and we will fix it!</string>
+    <string name="app_tip_03">If you know a software developer, you can ask him or her to implement a feature that you need.</string>
+    <string name="app_tip_05">Did you know that your current location on the map can be selected?</string>
+    <string name="app_tip_06">You can help to translate our app into your language.</string>
+    <string name="app_tip_07">Our app is developed by a few enthusiasts and the community.</string>
+    <string name="app_tip_08">You can easily fix and improve the map data.</string>
+    <string name="app_tip_09">Our main goal is to build fast, privacy-focused, easy-to-use maps that you will love.</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.natural.scree">Scree</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.organic.yes">Organic</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.amenity.vending_machine.drinks">Drinks Dispenser</string>
+    <string name="type.piste_type.hike">Snow Hiking Trail</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.amenity.vending_machine">Vending Machine</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="app_tip_04">Do you know that you can long-tap any place on the map to select it?</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.organic.only">Organic</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.building.address">Ünvan</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.piste_type.skitour">Skitour Trail</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.piste_type.connection">Piste Connection</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="telegram">Telegram</string>
+    <string name="type.fee.yes">$</string>
+    <string name="type.natural.desert">Desert</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="menu">Menyu</string>
+    <string name="app_tip_01">With your donations and support, we can create the best maps in the World!</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="type.psurface">psurface</string>
+    <string name="edit_track">İzə düzəliş et</string>
 </resources>

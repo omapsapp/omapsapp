@@ -113,7 +113,6 @@
     <string name="measurement_units">Единицы измерения</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Использовать километры или мили</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Где поесть</string>
@@ -161,7 +160,6 @@
     <string name="category_water">Вода</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Для автодомов</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Примечание</string>
@@ -360,7 +358,6 @@
     <string name="gray">Серый</string>
     <!-- blue gray color -->
     <string name="blue_gray">Серо-голубой</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">При движении по маршруту помните:</string>
     <string name="dialog_routing_disclaimer_priority">— Дорожная обстановка, ПДД и знаки приоритетнее советов приложения;</string>
@@ -390,7 +387,6 @@
     <string name="not_now">Не сейчас</string>
     <string name="dialog_routing_download_and_build_cross_route">Загрузить карту и построить более оптимальный маршрут с пересечением границы карты?</string>
     <string name="dialog_routing_download_cross_route">Для построения более оптимального маршрута с пересечением границы требуется загрузить карту.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Для поиска мест и построения маршрутов скачайте карту, и интернет вам больше не понадобится.</string>
     <string name="search_select_map">Выбрать карту</string>
@@ -618,7 +614,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Пожалуйста войдите в аккаунт OpenStreetMap.org, чтобы публиковать ваши изменения карты. Подробности по <a href="https://github.com/organicmaps/organicmaps/issues/6144">ссылке</a>.</string>
     <string name="dialog_error_storage_title">Проблема с доступом к хранилищу</string>
-    <string name="dialog_error_storage_message">Внешняя память устройства недоступна, возможно SD карта была удалена, повреждена или файловая система доступна только для чтения. Проверьте это и свяжитесь, пожалуйста, с нами support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Внешняя память устройства недоступна, возможно SD карта была удалена, повреждена или файловая система доступна только для чтения. Проверьте это и свяжитесь, пожалуйста, с нами support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Эмуляция ошибки с внешней памятью</string>
     <string name="core_entrance">Вход</string>
     <string name="error_enter_correct_name">Пожалуйста, введите название правильно</string>
@@ -629,7 +625,8 @@
     <plurals name="bookmarks_places">
         <item quantity="one">%d метка</item>
         <item quantity="few">%d метки</item>
-        <item quantity="other">%d меток</item>
+        <item quantity="many"/>
+        <item quantity="other"/>
     </plurals>
     <string name="bookmarks_create_new_group">Создать новый список</string>
     <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
@@ -648,13 +645,15 @@
     <plurals name="bookmarks_detect_message">
         <item quantity="one">%d файл был найден. Вы увидите его после конвертации.</item>
         <item quantity="few">%d файла были найдены. Вы увидите их после конвертации.</item>
-        <item quantity="other">%d файлов было найдено. Вы увидите их после конвертации.</item>
+        <item quantity="many"/>
+        <item quantity="other"/>
     </plurals>
     <string name="restore">Восстановить</string>
     <plurals name="tracks">
         <item quantity="one">%d трек</item>
         <item quantity="few">%d трека</item>
-        <item quantity="other">%d треков</item>
+        <item quantity="many"/>
+        <item quantity="other"/>
     </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">Приватность</string>
@@ -740,7 +739,6 @@
     <string name="moreyear_ago_sorttype">Больше года назад</string>
     <string name="near_me_sorttype">Рядом со мной</string>
     <string name="others_sorttype">Другие</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Еда</string>
     <string name="tourist_places">Достопримечательности</string>
@@ -879,7 +877,6 @@
     <string name="track_recording_toast_nothing_to_save">Трек пуст - нечего сохранять</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Невозможно отобразить диалог выбора папки, потому что на вашем устройстве не установлено подходящее приложение. Пожалуйста, установите менеджер файлов и повторите попытку</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Адрес/Блок</string>
     <string name="type.addr_interpolation.even">Адрес/Блок</string>
@@ -1008,7 +1005,6 @@
     <string name="type.amenity.prison">Тюрьма</string>
     <string name="type.amenity.pub">Паб</string>
     <string name="type.amenity.public_bookcase">Книгообмен</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Приём вторсырья</string>
     <string name="type.amenity.recycling">Контейнер для вторсырья</string>
@@ -1246,7 +1242,6 @@
     <string name="type.healthcare.psychotherapist">Психотерапия</string>
     <string name="type.healthcare.sample_collection">Сбор анализов</string>
     <string name="type.healthcare.speech_therapist">Логопедия</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Дорога</string>
     <string name="type.highway.bridleway">Конная дорожка</string>
@@ -1412,7 +1407,6 @@
     <string name="type.area_highway.track">Грунтовка</string>
     <string name="type.area_highway.trunk">Трасса</string>
     <string name="type.area_highway.unclassified">Небольшая дорога</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Исторический объект</string>
     <string name="type.historic.aircraft">Исторический самолет</string>
@@ -2218,4 +2212,36 @@
     <string name="type.amenity.dojo">Додзё</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Спортивный зал</string>
+    <string name="github">GitHub</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="facebook">Facebook о нас</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">ВК</string>
+    <string name="editor_line_social_network">ЛИНИЯ</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="telegram">Telegram</string>
+    <string name="choose_color">Выберите цвет</string>
+    <string name="edit_track">Редактировать трек</string>
 </resources>

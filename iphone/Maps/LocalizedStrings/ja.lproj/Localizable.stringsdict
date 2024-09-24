@@ -2,9 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-
-<!-- ********** Strings for downloading map from search **********/ -->
-
 	<key>bookmarks_places</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -19,7 +16,6 @@
 			<string>%d個のブックマーク</string>
 		</dict>
 	</dict>
-
 	<key>bookmarks_detect_message</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -34,7 +30,6 @@
 			<string>%d ファイルが見つかりました。 あなたは変換後にそれらを見るでしょう。</string>
 		</dict>
 	</dict>
-
 	<key>tracks</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -46,7 +41,7 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>other</key>
-			<string>%dの追跡</string>
+			<string>%d件の経路</string>
 		</dict>
 	</dict>
 </dict>

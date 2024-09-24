@@ -52,7 +52,7 @@
     <!-- Used in DownloadResources startup screen -->
     <string name="disconnect_usb_cable">Αποσυνδέστε το καλώδιο USB ή τοποθετήστε την κάρτα μνήμης για να χρησιμοποιήσετε το Organic Maps</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="not_enough_free_space_on_sdcard">Ελευθερώσετε  χώρο αποθήκευσης στην SD κάρτα/USB πρώτα προκειμένου να χρησιμοποιήσετε την εφαρμογή</string>
+    <string name="not_enough_free_space_on_sdcard">Ελευθερώσετε χώρο αποθήκευσης στην SD κάρτα/USB πρώτα προκειμένου να χρησιμοποιήσετε την εφαρμογή</string>
     <string name="download_resources">Πριν ξεκινήσετε τη χρήση της εφαρμογής, επιτρέψτε μας να κατεβάσουμε το γενικό παγκόσμιο χάρτη στη συσκευή σας.
 \nΘα χρησιμοποιήσει %s αποθηκευτικού χώρου.</string>
     <string name="download_resources_continue">Μετάβαση στο χάρτη</string>
@@ -111,7 +111,6 @@
     <string name="measurement_units">Μονάδες μέτρησης</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Επιλέξετε ανάμεσα σε μίλια και χιλιόμετρα</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Μέρη για φαγητό</string>
@@ -159,7 +158,6 @@
     <string name="category_water">Νερό</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Για RV</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Σημειώσεις</string>
@@ -358,7 +356,6 @@
     <string name="gray">Γκρι</string>
     <!-- blue gray color -->
     <string name="blue_gray">Γκρίζο μπλε</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Όταν ακολουθείτε την διαδρομή, να θυμάστε:</string>
     <string name="dialog_routing_disclaimer_priority">— Οι οδικές συνθήκες, ο κώδικας οδικής κυκλοφορίας και οι σημάνσεις στο δρόμο έχουν πάντα μεγαλύτερη προτεραιότητα από τις συμβουλές πλοήγησης,</string>
@@ -388,7 +385,6 @@
     <string name="not_now">Όχι τώρα</string>
     <string name="dialog_routing_download_and_build_cross_route">Θέλετε να κατεβάσετε το χάρτη και να δημιουργήσετε μια πιο βέλτιστη διαδρομή που εκτείνεται σε περισσότερους από έναν χάρτες;</string>
     <string name="dialog_routing_download_cross_route">Κατεβάστε επιπλέον χάρτες για να δημιουργηθεί μια καλύτερη διαδρομή που διασχίζει τα όρια αυτού του χάρτη.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Για να ξεκινήσετε την αναζήτηση και τη δημιουργία διαδρομών, κατεβάστε το χάρτη. Μετά από αυτό δεν θα χρειάζεστε πλέον σύνδεση στο Internet.</string>
     <string name="search_select_map">Επιλογή χάρτη</string>
@@ -609,7 +605,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Παρακαλούμε συνδεθείτε στο OpenStreetMap για να ανεβάσετε αυτόματα όλες τις επεξεργασίες του χάρτη σας. Μάθετε περισσότερα <a href="https://github.com/organicmaps/organicmaps/issues/6144">εδώ</a>.</string>
     <string name="dialog_error_storage_title">Πρόβλημα πρόσβασης στον αποθηκευτικό χώρο</string>
-    <string name="dialog_error_storage_message">Ο εξωτερικός απθηκευτικός χώρος δεν είναι διαθέσιμος, πιθανότατα έχει αφαιρεθεί η κάρτα SD, είναι κατεστραμμένη ή το σύστημα αρχείων είναι μόνο για ανάγνωση. Ελέγξτε το και επικοινωνήστε μαζί μας στη διεύθυνση support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Ο εξωτερικός απθηκευτικός χώρος δεν είναι διαθέσιμος, πιθανότατα έχει αφαιρεθεί η κάρτα SD, είναι κατεστραμμένη ή το σύστημα αρχείων είναι μόνο για ανάγνωση. Ελέγξτε το και επικοινωνήστε μαζί μας στη διεύθυνση support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Εξομείωση κακού αποθηκευτικού χώρου</string>
     <string name="core_entrance">Είσοδος</string>
     <string name="error_enter_correct_name">Εισάγετε ένα σωστό όνομα</string>
@@ -728,7 +724,6 @@
     <string name="moreyear_ago_sorttype">Περισσότερο από ένα χρόνο πριν</string>
     <string name="near_me_sorttype">Δίπλα μου</string>
     <string name="others_sorttype">Άλλα</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Φαγητό</string>
     <string name="tourist_places">Αξιοθέατα</string>
@@ -861,7 +856,6 @@
     <string name="track_recording_toast_nothing_to_save">Η διαδρομή είναι άδεια - δεν υπάρχει τίποτα να αποθηκεύσετε</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Δεν είναι δυνατή η εμφάνιση του διαλόγου επιλογής φακέλου επειδή δεν είναι εγκατεστημένη η κατάλληλη εφαρμογή στη συσκευή σας. Εγκαταστήστε μια εφαρμογή διαχείρισης αρχείων και δοκιμάστε ξανά</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Διεύθυνση/Μπλοκ</string>
     <string name="type.addr_interpolation.even">Διεύθυνση/Μπλοκ</string>
@@ -980,7 +974,6 @@
     <string name="type.amenity.post_office">Ταχυδρομείο</string>
     <string name="type.amenity.pub">Παμπ</string>
     <string name="type.amenity.public_bookcase">Ανταλλαγή βιβλίων</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Κέντρο ανακύκλωσης</string>
     <string name="type.amenity.recycling">Κάδος ανακύκλωσης</string>
@@ -1182,7 +1175,6 @@
     <string name="type.healthcare.psychotherapist">Ψυχοθεραπεία</string>
     <string name="type.healthcare.sample_collection">Δειγματοληψία</string>
     <string name="type.healthcare.speech_therapist">Λογοθεραπεία</string>
-
     <!-- SECTION: Types: Roads -->
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.bridleway.bridge">Γέφυρα</string>
@@ -1340,7 +1332,6 @@
     <string name="type.area_highway.track">Οδός</string>
     <string name="type.area_highway.trunk">Οδός</string>
     <string name="type.area_highway.unclassified">Οδός</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Ιστορικό αντικείμενο</string>
     <string name="type.historic.aircraft">Ιστορικό αεροσκάφος</string>
@@ -2014,4 +2005,220 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Αθλητική αίθουσα</string>
+    <string name="mb">MB</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="editor_line_social_network">ΓΡΑΜΜΗ</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aeroway.apron">Apron</string>
+    <string name="type.aeroway.terminal">Τερματικό</string>
+    <string name="type.amenity.atm">ATM</string>
+    <string name="type.amenity.bicycle_repair_station">Bicycle Repair Station</string>
+    <string name="type.amenity.prison">Prison</string>
+    <string name="type.recycling.cans">Κονσέρβες</string>
+    <string name="type.recycling.shoes">Παπούτσια</string>
+    <string name="type.recycling.cartons">Κουτιά</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="type.barrier.fence">Fence</string>
+    <string name="type.barrier.retaining_wall">Retaining Wall</string>
+    <string name="type.barrier.wall">Wall</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.building.warehouse">Warehouse</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.emergency">Έκτακτη ανάγκη</string>
+    <string name="type.highway">Highway</string>
+    <string name="type.highway.bridleway.permissive">Διαδρομή</string>
+    <string name="type.highway.elevator">Elevator</string>
+    <string name="type.highway.services">Service Area</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.junction">Κόμβος</string>
+    <string name="type.junction.circular">Κυκλικός κόμβος</string>
+    <string name="type.landuse">Χρήσης γης</string>
+    <string name="type.landuse.allotments">Allotments</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.landuse.field">Πεδίο</string>
+    <string name="type.landuse.garages">Garages</string>
+    <string name="type.landuse.greenfield">Greenfield</string>
+    <string name="type.landuse.greenhouse_horticulture">Greenhouse</string>
+    <string name="type.landuse.military">Military Area</string>
+    <string name="type.landuse.recreation_ground">Recreation Ground</string>
+    <string name="type.landuse.residential">Residential Area</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.leisure.miniature_golf">Minigolf</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.leisure.marina">Marina</string>
+    <string name="type.leisure.slipway">Slipway</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made.breakwater">Breakwater</string>
+    <string name="type.man_made.cutline">Cutline</string>
+    <string name="type.man_made.flagpole">Ιστός σημαίας</string>
+    <string name="type.man_made.pier">Pier</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.military">Στρατιωτικά</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.organic.yes">Οργανικό</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway">Σιδηρόδρομος</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.route.ferry">Ferry</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.sport.cricket">Cricket</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.boundary">Boundary</string>
+    <string name="type.man_made.pipeline">Pipeline</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.public_transport">Δημόσια Συγκοινωνία</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.man_made.mast">Ιστός</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.public_transport.platform">Platform</string>
+    <string name="type.landuse.farmyard">Farmyard</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.aeroway.taxiway">Taxiway</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.landuse.quarry">Quarry</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.landuse.industrial">Industrial Area</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.waterway.weir">Weir</string>
+    <string name="type.landuse.orchard">Orchard</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.barrier.ditch">Ditch</string>
+    <string name="github">GitHub</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.organic.only">Οργανικό</string>
+    <string name="type.barrier.hedge">Hedge</string>
+    <string name="type.landuse.brownfield">Brownfield</string>
+    <string name="type.leisure.track">Διάδρομος</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.amenity.vending_machine">Vending Machine</string>
+    <string name="type.highway.cycleway">Cycle Path</string>
+    <string name="type.junction.roundabout">Κυκλικός κόμβος</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.power">Ισχύς</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.route">Διαδρομή</string>
+    <string name="type.aeroway.gate">Πύλη</string>
+    <string name="type.highway.bridleway">Διαδρομή</string>
+    <string name="type.landuse.commercial">Commercial Area</string>
+    <string name="type.landuse.construction">Construction Area</string>
+    <string name="type.landuse.meadow">Meadow</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.barrier.cycle_barrier">Cycle Barrier</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.highway.cycleway.permissive">Cycle Path</string>
+    <string name="type.leisure.track.area">Διάδρομος</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.sport.bowls">Bowls</string>
+    <string name="type.tourism">Τουρισμός</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.waterway.dam">Dam</string>
+    <string name="type.area_highway.cycleway">Cycle Path</string>
+    <string name="telegram">Telegram</string>
+    <string name="type.barrier">Φράκτης</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.landuse.retail">Retail Area</string>
+    <string name="type.landuse.salt_pond">Salt Pond</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="miles_per_hour">μαω</string>
+    <string name="type.recycling.cardboard">Χαρτόνι</string>
+    <string name="type.leisure">Αναψυχή</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.wheelchair">Αμαξίδιο</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.aeroway.runway">Αεροδιάδρομος</string>
+    <string name="type.boundary.administrative">Administrative Boundary</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.leisure.hackerspace">Χώρος δημιουργικών ασχολιών</string>
+    <string name="type.landuse.vineyard">Vineyard</string>
+    <string name="edit_track">Επεξεργασία ίχνους</string>
 </resources>

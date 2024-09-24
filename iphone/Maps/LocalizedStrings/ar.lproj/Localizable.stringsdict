@@ -2,9 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-
-<!-- ********** Strings for downloading map from search **********/ -->
-
 	<key>bookmarks_places</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -19,7 +16,6 @@
 			<string>%d من الإشارات المرجعية</string>
 		</dict>
 	</dict>
-
 	<key>bookmarks_detect_message</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -34,7 +30,6 @@
 			<string>تم العثور على %d ملفات. سوف تراهم بعد التحويل.</string>
 		</dict>
 	</dict>
-
 	<key>tracks</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
@@ -46,7 +41,7 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>other</key>
-			<string>مسار %d</string>
+			<string>%d المسارات</string>
 		</dict>
 	</dict>
 </dict>

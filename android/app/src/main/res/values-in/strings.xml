@@ -99,7 +99,6 @@
     <string name="measurement_units">Unit Pengukuran</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Pilihlah antara mil dan kilometer</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Tempat makan</string>
@@ -147,7 +146,6 @@
     <string name="category_water">Air</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Untuk RV</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Catatan</string>
@@ -335,7 +333,6 @@
     <string name="gray">Abu-abu</string>
     <!-- blue gray color -->
     <string name="blue_gray">Biru Keabu-abuan</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Saat mengikuti rute, harap diingat:</string>
     <string name="dialog_routing_disclaimer_priority">— Kondisi jalan, peraturan lalu lintas, dan marka jalan harus selalu didahulukan daripada saran navigasi;</string>
@@ -365,7 +362,6 @@
     <string name="not_now">Jangan Sekarang</string>
     <string name="dialog_routing_download_and_build_cross_route">Apakah Anda ingin mengunduh peta dan membuat rute yang lebih optimal yang meliputi lebih dari satu peta?</string>
     <string name="dialog_routing_download_cross_route">Unduh peta untuk membuat rute yang lebih optimal yang melewati ujung peta ini.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Untuk mulai mencari dan membuat rute, silakan unduh peta, dan Anda tidak akan membutuhkan koneksi internet lagi.</string>
     <string name="search_select_map">Pilih Peta</string>
@@ -577,7 +573,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Silahkan login ke OpenStreetMap untuk mengupload semua hasil edit peta Anda secara otomatis. Pelajari lebih lanjut <a href="https://github.com/organicmaps/organicmaps/issues/6144">di sini</a>.</string>
     <string name="dialog_error_storage_title">Masalah akses penyimpanan</string>
-    <string name="dialog_error_storage_message">Penyimpanan eksternal tidak tersedia, mungkin Kartu SD sudah dilepaskan, rusak, atau sistem berkasnya hanya dapat dibaca. Silakan periksa dan beri tahu kami di alamat support\@ maps.me</string>
+    <string name="dialog_error_storage_message">Penyimpanan eksternal tidak tersedia, mungkin Kartu SD sudah dilepaskan, rusak, atau sistem berkasnya hanya dapat dibaca. Silakan periksa dan beri tahu kami di alamat support@ maps.me</string>
     <string name="setting_emulate_bad_storage">Emulasi penyimpanan yang buruk</string>
     <string name="core_entrance">Tempat masuk</string>
     <string name="error_enter_correct_name">Harap masukkan nama yang benar</string>
@@ -693,7 +689,6 @@
     <string name="moreyear_ago_sorttype">Lebih dari setahun yang lalu</string>
     <string name="near_me_sorttype">Dekat dengan saya</string>
     <string name="others_sorttype">Lainnya</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Makanan</string>
     <string name="tourist_places">Tempat Rekreasi</string>
@@ -813,7 +808,6 @@
     <string name="track_recording_toast_nothing_to_save">Jalur kosong - tidak ada yang bisa disimpan</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Tidak dapat menampilkan dialog pemilihan folder karena tidak ada aplikasi yang sesuai yang diinstal pada perangkat Anda. Instal aplikasi pengelola file dan coba lagi</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Alamat/Blokir</string>
     <string name="type.addr_interpolation.even">Alamat/Blokir</string>
@@ -922,7 +916,6 @@
     <string name="type.amenity.post_box">Kotak pos</string>
     <string name="type.amenity.post_office">Kantor pos</string>
     <string name="type.amenity.public_bookcase">Rak Buku</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">TPA</string>
     <string name="type.amenity.recycling">Wadah daur ulang</string>
@@ -1122,7 +1115,6 @@
     <string name="type.healthcare.psychotherapist">Psikoterapi</string>
     <string name="type.healthcare.sample_collection">Pengambilan sampel</string>
     <string name="type.healthcare.speech_therapist">Logopedik</string>
-
     <!-- SECTION: Types: Roads -->
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.bridleway.bridge">Menjembatani</string>
@@ -1280,7 +1272,6 @@
     <string name="type.area_highway.track">Jalan</string>
     <string name="type.area_highway.trunk">Jalan</string>
     <string name="type.area_highway.unclassified">Jalan</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Objek bersejarah</string>
     <string name="type.historic.aircraft">Pesawat Bersejarah</string>
@@ -1945,4 +1936,255 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Ruang olahraga</string>
+    <string name="gb">GB</string>
+    <string name="maps_storage_removable">Kartu SD</string>
+    <string name="share_bookmarks_email_body">Hello!
+\n
+\nAttached are my bookmarks; please open them in Organic Maps. If you don\'t have it installed you can download it here: https://omaps.app/get?kmz
+\n
+\nEnjoy travelling with Organic Maps!</string>
+    <string name="prefs_group_general">Pengaturan umum</string>
+    <string name="prefs_group_information">Informasi</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook">Facebook</string>
+    <string name="openstreetmap">BukaPetaJalan</string>
+    <string name="read_in_wikipedia">Replace Wikipedia links</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="editor_add_phone">Add Phone</string>
+    <string name="error_enter_correct_facebook_page">Enter a valid Facebook web address, account, or page name</string>
+    <string name="download_map_title">Download the world map</string>
+    <string name="connection_failure">Connection failure</string>
+    <string name="disconnect_usb_cable_title">Disconnect USB cable</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aerialway">Jalur udara</string>
+    <string name="type.aerialway.drag_lift">Drag Lift</string>
+    <string name="type.aerialway.gondola">Gondola</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.aeroway.gate">Gerbang</string>
+    <string name="type.aeroway.runway">Landasan pacu</string>
+    <string name="type.aeroway.taxiway">Taxiway</string>
+    <string name="type.aeroway.terminal">Terminal</string>
+    <string name="type.amenity.atm">ATM</string>
+    <string name="type.amenity.bank">Bank</string>
+    <string name="type.amenity.bar">Bar</string>
+    <string name="type.amenity.bicycle_repair_station">Bicycle Repair Station</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.amenity.prison">Penjara</string>
+    <string name="type.recycling.cardboard">Kardus</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.toilets.yes">Toilet</string>
+    <string name="type.amenity.vending_machine">Mesin Penjual Otomatis</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.barrier.wall">Wall</string>
+    <string name="type.boundary.administrative">Administrative Boundary</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.highway">Highway</string>
+    <string name="type.highway.bridleway">Jalur</string>
+    <string name="type.highway.bridleway.permissive">Jalur</string>
+    <string name="type.highway.cycleway">Cycle Path</string>
+    <string name="type.highway.cycleway.permissive">Cycle Path</string>
+    <string name="type.highway.elevator">Elevator</string>
+    <string name="type.highway.services">Service Area</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.junction.circular">Roundabout</string>
+    <string name="type.junction.roundabout">Roundabout</string>
+    <string name="type.landuse">Penggunaan tanah</string>
+    <string name="type.landuse.allotments">Penjatahan</string>
+    <string name="type.landuse.commercial">Commercial Area</string>
+    <string name="type.landuse.construction">Construction Area</string>
+    <string name="type.landuse.field">Ladang</string>
+    <string name="type.landuse.garages">Garages</string>
+    <string name="type.landuse.greenhouse_horticulture">Greenhouse</string>
+    <string name="type.landuse.industrial">Industrial Area</string>
+    <string name="type.landuse.quarry">Tambang</string>
+    <string name="type.landuse.recreation_ground">Recreation Ground</string>
+    <string name="type.landuse.residential">Residential Area</string>
+    <string name="type.landuse.retail">Retail Area</string>
+    <string name="type.landuse.salt_pond">Salt Pond</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.leisure">Santai</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.leisure.miniature_golf">Minigolf</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.leisure.marina">Marina</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.leisure.track">Jejak</string>
+    <string name="type.leisure.track.area">Jejak</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="type.man_made.breakwater">Pemecah gelombang</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.man_made.cutline">Garis potong</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.flagpole">Flagpole</string>
+    <string name="type.man_made.mast">Tiang kapal</string>
+    <string name="type.man_made.pier">Pier</string>
+    <string name="type.man_made.pipeline">Pipeline</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.military.bunker">Bunker</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.organic.only">Organik</string>
+    <string name="type.organic.yes">Organik</string>
+    <string name="type.power">Power</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.public_transport.platform">Platform</string>
+    <string name="type.railway">Kereta</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.shop.hardware">Toko perangkat keras</string>
+    <string name="type.shop.mall">Mall</string>
+    <string name="type.tourism">Pariwisata</string>
+    <string name="type.tourism.hostel">Hostel</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="type.tourism.museum">Museum</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.waterway.dam">Dam</string>
+    <string name="type.barrier.ditch">Ditch</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.waterway.weir">Bendung</string>
+    <string name="type.wheelchair">Kursi Roda</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.aerialway.cable_car">Cable Car</string>
+    <string name="type.aerialway.chair_lift">Chair Lift</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.military">Tentara</string>
+    <string name="type.landuse.orchard">Kebun orchard</string>
+    <string name="type.landuse.military">Military Area</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.amenity.biergarten">Biergarten</string>
+    <string name="type.public_transport">Transportasi umum</string>
+    <string name="type.landuse.greenfield">Padang hijau</string>
+    <string name="type.landuse.vineyard">Kebun anggur</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="closes_in">Closes in %@</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.boundary">Boundary</string>
+    <string name="type.barrier.cycle_barrier">Cycle Barrier</string>
+    <string name="type.landuse.meadow">Padang rumput</string>
+    <string name="type.junction">Junction</string>
+    <string name="type.barrier.fence">Pagar</string>
+    <string name="type.aeroway.apron">Apron</string>
+    <string name="type.recycling.cans">Kaleng</string>
+    <string name="opens_in">Buka di %s</string>
+    <string name="type.barrier.chain">Chain</string>
+    <string name="type.barrier.retaining_wall">Retaining Wall</string>
+    <string name="type.building.warehouse">Gudang</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.landuse.farmyard">Peternakan</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.route.ferry">Ferry</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.supermarket">Supermarket</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.emergency">Darurat</string>
+    <string name="type.route">Rute</string>
+    <string name="type.recycling.shoes">Sepatu</string>
+    <string name="type.leisure.slipway">Tempat peluncuran kapal</string>
+    <string name="menu">Menu</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="type.recycling.cartons">Karton</string>
+    <string name="type.amenity.toilets">Toilet</string>
+    <string name="type.area_highway.cycleway">Cycle Path</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.landuse.brownfield">Padang cokelat</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.tourism.hotel">Hotel</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.barrier.hedge">Hedge</string>
+    <string name="type.barrier">Penghalang</string>
+    <string name="edit_track">Sunting trek</string>
 </resources>

@@ -110,7 +110,6 @@
     <string name="measurement_units">Maßeinheiten</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Wählen Sie zwischen Kilometern und Meilen</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Essmöglichkeiten</string>
@@ -158,7 +157,6 @@
     <string name="category_water">Wasser</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Einrichtungen für Wohnmobile</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Notizen</string>
@@ -355,7 +353,6 @@
     <string name="gray">Grau</string>
     <!-- blue gray color -->
     <string name="blue_gray">Graublau</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Wenn Sie der Route folgen, beachten Sie bitte:</string>
     <string name="dialog_routing_disclaimer_priority">– Zustand der Straßen, die Verkehrsordnung und Straßenschilder haben stets Vorrang vor Navigationsanweisungen;</string>
@@ -385,7 +382,6 @@
     <string name="not_now">Nicht jetzt</string>
     <string name="dialog_routing_download_and_build_cross_route">Möchten Sie die Karte herunterladen und eine bessere Route erstellen, die mehr als eine Karte umfasst?</string>
     <string name="dialog_routing_download_cross_route">Laden Sie zusätzliche Karten herunter, um eine bessere Route zu erstellen, die die Grenzen dieser Karte überschreitet.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Um mit der Suche und dem Erstellen von Routen zu beginnen, laden Sie bitte die Karte herunter. Sie benötigen danach keine Internetverbindung mehr.</string>
     <string name="search_select_map">Karte auswählen</string>
@@ -594,7 +590,7 @@
     <!-- Settings: "Send general feedback" button -->
     <string name="feedback_general">Allgemeines Feedback</string>
     <string name="prefs_languages_information">Wir verwenden Text-to-Speech-Systeme für Sprachanweisungen. Viele Android-Geräte nutzen Google-TTS, das Sie bei Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts) herunterladen oder aktualisieren können.</string>
-    <string name="prefs_languages_information_off">Für einige Sprachen müssen Sie einen anderen Sprachgenerator oder ein zusätzliches Sprachpaket aus dem App Store installieren (Google Play, Galaxy Store, App Gallery, FDroid). 
+    <string name="prefs_languages_information_off">Für einige Sprachen müssen Sie einen anderen Sprachgenerator oder ein zusätzliches Sprachpaket aus dem App Store installieren (Google Play, Galaxy Store, App Gallery, FDroid).
 \nÖffnen Sie die Einstellungen Ihres Gerätes → Sprache und Eingabe → Sprache → Text-to-Speech-Ausgabe. Hier können Sie die Einstellungen für Sprachsynthese verwalten (beispielsweise ein Sprachpaket für die Offline-Verwendung herunterladen) und ein anderes Sprachausgabeprogramm auswählen.</string>
     <string name="prefs_languages_information_off_link">Weitere Informationen finden Sie in dieser Anleitung.</string>
     <string name="transliteration_title">Transliteration ins Lateinische</string>
@@ -610,7 +606,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Bitte melde dich bei OpenStreetMap an, um alle deine Kartenbearbeitungen automatisch hochzuladen. Erfahre mehr <a href="https://github.com/organicmaps/organicmaps/issues/6144">hier</a>.</string>
     <string name="dialog_error_storage_title">Problem mit dem Zugreifen auf den Speicher</string>
-    <string name="dialog_error_storage_message">Der externe Speicher ist nicht verfügbar, möglicherweise wurde die SD-Karte entfernt oder sie ist beschädigt oder das Dateisystem ist schreibgeschützt. Überprüfen Sie das bitte oder kontaktieren Sie uns unter support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Der externe Speicher ist nicht verfügbar, möglicherweise wurde die SD-Karte entfernt oder sie ist beschädigt oder das Dateisystem ist schreibgeschützt. Überprüfen Sie das bitte oder kontaktieren Sie uns unter support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Fehlerhaften Speicher emulieren</string>
     <string name="core_entrance">Eingang</string>
     <string name="error_enter_correct_name">Bitte geben Sie einen korrekten Namen ein</string>
@@ -619,6 +615,7 @@
     <string name="bookmark_lists_hide_all">Alle ausblenden</string>
     <string name="bookmark_lists_show_all">Alle anzeigen</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
         <item quantity="other">%d Lesezeichen</item>
     </plurals>
     <string name="bookmarks_create_new_group">Neue Liste erstellen</string>
@@ -728,7 +725,6 @@
     <string name="moreyear_ago_sorttype">Vor über einem Jahr</string>
     <string name="near_me_sorttype">In meiner Nähe</string>
     <string name="others_sorttype">Sonstiges</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Essen</string>
     <string name="tourist_places">Sehenswürdigkeiten</string>
@@ -863,7 +859,6 @@
     <string name="track_recording_toast_nothing_to_save">Route ist leer - nichts zu speichern</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Das Dialogfeld zur Ordnerauswahl kann nicht angezeigt werden, da keine geeignete App auf Ihrem Gerät installiert ist. Bitte installieren Sie eine Dateimanager-App und versuchen Sie es erneut</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresse/Block</string>
     <string name="type.addr_interpolation.even">Adresse/Block</string>
@@ -986,7 +981,6 @@
     <string name="type.amenity.prison">Gefängnis</string>
     <string name="type.amenity.pub">Kneipe</string>
     <string name="type.amenity.public_bookcase">Bücherschrank</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Recyclinghof</string>
     <string name="type.amenity.recycling">Wertstoffcontainer</string>
@@ -1214,7 +1208,6 @@
     <string name="type.healthcare.psychotherapist">Psychotherapie</string>
     <string name="type.healthcare.sample_collection">Probenahme</string>
     <string name="type.healthcare.speech_therapist">Logopädie</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Straße</string>
     <string name="type.highway.bridleway">Reitweg</string>
@@ -1380,7 +1373,6 @@
     <string name="type.area_highway.track">Forst-/Feldweg</string>
     <string name="type.area_highway.trunk">Schnellstraße</string>
     <string name="type.area_highway.unclassified">Nebenstraße</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Historisches Objekt</string>
     <string name="type.historic.aircraft">Historisches Flugzeug</string>
@@ -2169,4 +2161,70 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Sporthalle</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.sport.yoga">Yoga Studio</string>
+    <string name="gb">GB</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.amenity.kindergarten">Kindergarten</string>
+    <string name="type.amenity.restaurant">Restaurant</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.building.garage">Garage</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.man_made.mast">Mast</string>
+    <string name="type.man_made.pipeline">Pipeline</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.hardware">Eisenwarengeschäft</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="editor_line_social_network">LINIE</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="type.cuisine.fish_and_chips">Fish and Chips</string>
+    <string name="menu">Menü</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.amenity.bank">Bank</string>
+    <string name="type.psurface">psurface</string>
+    <string name="vk">VKontakte</string>
+    <string name="type.shop.kiosk">Kiosk</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.amenity.biergarten">Biergarten</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="mb">MB</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="read_in_wikipedia">Replace Wikipedia links</string>
+    <string name="instagram">Instagram</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="facebook">Facebook</string>
+    <string name="type.public_transport.platform">Platform</string>
+    <string name="type.aeroway.gate">Gate</string>
+    <string name="choose_color">Farbe auswählen</string>
+    <string name="edit_track">Track editieren</string>
 </resources>

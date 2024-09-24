@@ -104,7 +104,6 @@
     <string name="measurement_units">Mõõtühikud</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Vali miilide ja kilomeetrite vahel</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Kus süüa</string>
@@ -152,7 +151,6 @@
     <string name="category_water">Vesi</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Haagiselamud</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Märkmed</string>
@@ -348,7 +346,6 @@
     <string name="gray">Hall</string>
     <!-- blue gray color -->
     <string name="blue_gray">Hallikas-sinine</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Marsruuti järgides palun pea meeles:</string>
     <string name="dialog_routing_disclaimer_priority">- Teeolud, liikluseeskirjad ja liiklusmärgid omavad alati prioriteeti navigeerimisjuhiste üle;</string>
@@ -378,7 +375,6 @@
     <string name="not_now">Mitte praegu</string>
     <string name="dialog_routing_download_and_build_cross_route">Kas sooviksid kaardi alla laadida ja luua optimaalsema rohkem kui ühte kaarti hõlmava marsruudi?</string>
     <string name="dialog_routing_download_cross_route">Lae alla täiendavad kaardid, et luua parem, selle kaardi piire ületav marsruut.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Marsruutide otsimise ja loomise alustamiseks lae kaart alla. Pärast seda ei ole Interneti-ühendus enam vajalik.</string>
     <string name="search_select_map">Vali kaart</string>
@@ -604,7 +600,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Palun logige sisse OpenStreetMap\'i, et laadida automaatselt üles kõik oma kaarditööd. Lisateave <a href="https://github.com/organicmaps/organicmaps/issues/6144">kuskil</a>.</string>
     <string name="dialog_error_storage_title">Salvestusruumi ligipääsu probleem</string>
-    <string name="dialog_error_storage_message">Välismälu pole juurdepääsetav. SD-kaart võib olla eemaldatud, kahjustatud või failisüsteem on kirjutuskaitstud. Palun kontrollige oma SD-kaarti või võtke meiega ühendust aadressil support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Välismälu pole juurdepääsetav. SD-kaart võib olla eemaldatud, kahjustatud või failisüsteem on kirjutuskaitstud. Palun kontrollige oma SD-kaarti või võtke meiega ühendust aadressil support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Jäljenda vigast salvestusruumi</string>
     <string name="core_entrance">Sissepääs</string>
     <string name="error_enter_correct_name">Palun sisesta korrektne nimi</string>
@@ -636,7 +632,8 @@
     </plurals>
     <string name="restore">Taasta</string>
     <plurals name="tracks">
-        <item quantity="other">%d rada</item>
+        <item quantity="one">%d rada?</item>
+        <item quantity="other">%d rada?</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">Privaatsus</string>
@@ -722,7 +719,6 @@
     <string name="moreyear_ago_sorttype">Üle aasta tagasi</string>
     <string name="near_me_sorttype">Minu lähedal</string>
     <string name="others_sorttype">Muud</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Toit</string>
     <string name="tourist_places">Vaatamisväärsused</string>
@@ -853,7 +849,6 @@
     <string name="track_recording_toast_nothing_to_save">Rada on tühi - ei ole midagi salvestada</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kaustavaliku dialoogi ei ole võimalik kuvada, sest teie seadmesse ei ole paigaldatud sobivat rakendust. Palun installige failihaldurirakendus ja proovige uuesti.</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Aadress/plokk</string>
     <string name="type.addr_interpolation.even">Aadress/plokk</string>
@@ -982,7 +977,6 @@
     <string name="type.amenity.prison">Vangla</string>
     <string name="type.amenity.pub">Pubi</string>
     <string name="type.amenity.public_bookcase">Raamatuvahetus</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Taaskasutuskeskus</string>
     <string name="type.amenity.recycling">Taaskasutuskonteiner</string>
@@ -1218,7 +1212,6 @@
     <string name="type.healthcare.psychotherapist">Psühhoteraapia</string>
     <string name="type.healthcare.sample_collection">Proovivõtmine</string>
     <string name="type.healthcare.speech_therapist">Logopeedia</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Maantee</string>
     <string name="type.highway.bridleway">Valjarada</string>
@@ -1384,7 +1377,6 @@
     <string name="type.area_highway.track">Rada</string>
     <string name="type.area_highway.trunk">Magistraaltee</string>
     <string name="type.area_highway.unclassified">Vähetähtis tee</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Ajalooline objekt</string>
     <string name="type.historic.aircraft">Ajalooline lennuk</string>
@@ -2185,4 +2177,47 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Spordisaal</string>
+    <string name="mb">MB</string>
+    <string name="about_headline">Free for everyone, made with love</string>
+    <string name="menu">Menüü</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="instagram">Instagram</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.leisure.hackerspace">Häkkeriruum</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="about_proposition_1">• No ads, no tracking, no data collection</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="gb">GB</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="vk">VK</string>
+    <string name="facebook">Facebook</string>
+    <string name="edit_track">Muuda rada</string>
 </resources>

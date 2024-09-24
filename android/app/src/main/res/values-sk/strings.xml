@@ -110,7 +110,6 @@
     <string name="measurement_units">Meracie jednotky</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Vyberte si míle alebo kilometre</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Kde sa najesť</string>
@@ -158,7 +157,6 @@
     <string name="category_water">Voda</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Pre RV</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Poznámky</string>
@@ -355,7 +353,6 @@
     <string name="gray">Sivá</string>
     <!-- blue gray color -->
     <string name="blue_gray">Modro sivá</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Pri sledovaní trasy majte na pamäti nasledujúce:</string>
     <string name="dialog_routing_disclaimer_priority">— Podmienky na ceste, dopravné predpisy a značenie majú vždy prednosť pred pokynmi z navigácie;</string>
@@ -385,7 +382,6 @@
     <string name="not_now">Nie teraz</string>
     <string name="dialog_routing_download_and_build_cross_route">Chcete si prevziať mapu a vytvoriť optimálnejšiu trasu, ktorá si vyžaduje viac ako jednu mapu?</string>
     <string name="dialog_routing_download_cross_route">Prevezmite si mapu na vytvorenie optimálnejšej trasy, ktorá prekračuje okraje tejto mapy.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Stiahnutím mapy už nebudete potrebovať pripojenie k internetu a môžete si začať vyhľadávať a vytvárať trasy.</string>
     <string name="search_select_map">Vybrať mapu</string>
@@ -608,7 +604,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Prihláste sa do OpenStreetMap, aby ste mohli automaticky nahrať všetky svoje úpravy mapy. Viac informácií sa dozviete <a href="https://github.com/organicmaps/organicmaps/issues/6144">tade</a>.</string>
     <string name="dialog_error_storage_title">Problém s prístupom k úložisku</string>
-    <string name="dialog_error_storage_message">Externý úložný priestor nie je dostupný, pravdepodobne je vytiahnutá alebo poškodená SD karta alebo je systém súborov určený iba na čítanie. Skontrolujte to, prosím, a kontaktujte nás na support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Externý úložný priestor nie je dostupný, pravdepodobne je vytiahnutá alebo poškodená SD karta alebo je systém súborov určený iba na čítanie. Skontrolujte to, prosím, a kontaktujte nás na support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Imitovať poškodené úložisko</string>
     <string name="core_entrance">Vchod | vjazd</string>
     <string name="error_enter_correct_name">Prosím, zadajte správne meno</string>
@@ -617,6 +613,8 @@
     <string name="bookmark_lists_hide_all">Skryť všetko</string>
     <string name="bookmark_lists_show_all">Zobraziť všetko</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
+        <item quantity="few"/>
         <item quantity="other">%d záložiek</item>
     </plurals>
     <string name="bookmarks_create_new_group">Vytvoriť nový zoznam</string>
@@ -640,6 +638,8 @@
     </plurals>
     <string name="restore">Obnoviť</string>
     <plurals name="tracks">
+        <item quantity="one"/>
+        <item quantity="few"/>
         <item quantity="other">%d sledovania</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -726,7 +726,6 @@
     <string name="moreyear_ago_sorttype">Pred viac ako rokom</string>
     <string name="near_me_sorttype">Blízko mňa</string>
     <string name="others_sorttype">Iné</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Jedlo</string>
     <string name="tourist_places">Pamiatky</string>
@@ -855,7 +854,6 @@
     <string name="track_recording_toast_nothing_to_save">Trasa je prázdna - nie je čo ukladať</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nie je možné zobraziť dialógové okno výberu priečinka, pretože v zariadení nie je nainštalovaná žiadna vhodná aplikácia. Nainštalujte si aplikáciu správcu súborov a skúste to znova</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresa/blok</string>
     <string name="type.addr_interpolation.even">Adresa/blok</string>
@@ -978,7 +976,6 @@
     <string name="type.amenity.prison">Väznica</string>
     <string name="type.amenity.pub">Pohostinstvo</string>
     <string name="type.amenity.public_bookcase">Knižná búdka</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Zberné suroviny</string>
     <string name="type.amenity.recycling">Recyklačný kontajner</string>
@@ -1212,7 +1209,6 @@
     <string name="type.healthcare.psychotherapist">Psychoterapia</string>
     <string name="type.healthcare.sample_collection">Odber vzoriek</string>
     <string name="type.healthcare.speech_therapist">Logopédia</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Cesta</string>
     <string name="type.highway.bridleway">Cesta pre jazdca na zvierati</string>
@@ -1378,7 +1374,6 @@
     <string name="type.area_highway.track">Poľná cesta</string>
     <string name="type.area_highway.trunk">Cesta</string>
     <string name="type.area_highway.unclassified">Cesta bez administratívneho zaradenia</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Historický objekt</string>
     <string name="type.historic.aircraft">Historické lietadlo</string>
@@ -2145,4 +2140,88 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Športová hala</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="menu">Menu</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook">Facebook</string>
+    <string name="vk">VK</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="type.aerialway">Lanovka</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="type.amenity.bar">Bar</string>
+    <string name="type.amenity.bicycle_repair_station">Bicycle Repair Station</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.landuse.brownfield">Brownfield</string>
+    <string name="type.landuse.greenfield">Greenfield</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">Armáda</string>
+    <string name="type.organic.yes">Prírodné materiály</string>
+    <string name="type.power">Napájení</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.supermarket">Supermarket</string>
+    <string name="type.sport.bowls">Bowls</string>
+    <string name="type.tourism.hotel">Hotel</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="github">GitHub</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.tourism.hostel">Hostel</string>
+    <string name="navigation_stop_button">Zastaviť</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.organic.only">Prírodné materiály</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="instagram">Instagram</string>
+    <string name="edit_track">Upraviť stopu</string>
 </resources>

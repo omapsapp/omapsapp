@@ -110,7 +110,6 @@
     <string name="measurement_units">Afstandseenheid</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Kies tussen mijlen en kilometers</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Waar iets gaan eten</string>
@@ -158,7 +157,6 @@
     <string name="category_water">Water</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Caravanfaciliteiten</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Notities</string>
@@ -355,7 +353,6 @@
     <string name="gray">Grijs</string>
     <!-- blue gray color -->
     <string name="blue_gray">Grijsblauw</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Belangrijk bij het volgen van een route:</string>
     <string name="dialog_routing_disclaimer_priority">— De toestand van het wegdek, de verkeersregels en de -borden hebben altijd voorrang op het advies van het navigatiesysteem;</string>
@@ -385,7 +382,6 @@
     <string name="not_now">Niet nu</string>
     <string name="dialog_routing_download_and_build_cross_route">Wilt u de kaart downloaden en een betere route samenstellen die meer dan één kaart beslaat?</string>
     <string name="dialog_routing_download_cross_route">Download de kaart om een betere route samen te stellen die de grenzen van deze kaart overschrijdt.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Om te beginnen met zoeken en om routebeschrijvingen te kunnen maken, moet u de kaart downloaden. U heeft vervolgens geen internetverbinding meer nodig.</string>
     <string name="search_select_map">Selecteer de kaart</string>
@@ -609,7 +605,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Log in op OpenStreetMap om al je kaartbewerkingen automatisch te uploaden. Meer informatie <a href="https://github.com/organicmaps/organicmaps/issues/6144">hier</a>.</string>
     <string name="dialog_error_storage_title">Probleem met opslagtoegang</string>
-    <string name="dialog_error_storage_message">Externe opslag is niet beschikbaar, wellicht is de SD-kaart verwijderd, beschadigd of is het bestandssysteem alleen-lezen. Gelieve dit te controleren en ons te contacteren via support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Externe opslag is niet beschikbaar, wellicht is de SD-kaart verwijderd, beschadigd of is het bestandssysteem alleen-lezen. Gelieve dit te controleren en ons te contacteren via support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Slechte opslag emuleren</string>
     <string name="core_entrance">Ingang</string>
     <string name="error_enter_correct_name">Voer een geldige naam in</string>
@@ -618,6 +614,7 @@
     <string name="bookmark_lists_hide_all">Verberg alles</string>
     <string name="bookmark_lists_show_all">Toon alles</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
         <item quantity="other">%d bladwijzers</item>
     </plurals>
     <string name="bookmarks_create_new_group">Maak een nieuwe lijst</string>
@@ -640,6 +637,7 @@
     </plurals>
     <string name="restore">Zet terug</string>
     <plurals name="tracks">
+        <item quantity="one"/>
         <item quantity="other">%d tracks</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -726,7 +724,6 @@
     <string name="moreyear_ago_sorttype">Meer dan een jaar geleden</string>
     <string name="near_me_sorttype">Dicht bij mij</string>
     <string name="others_sorttype">Andere</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Eten</string>
     <string name="tourist_places">Bezienswaardigheden</string>
@@ -861,7 +858,6 @@
     <string name="track_recording_toast_nothing_to_save">Route is leeg - niets om op te slaan</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kan het dialoogvenster voor het selecteren van mappen niet weergeven omdat er geen geschikte app op uw apparaat is geïnstalleerd. Installeer een app voor bestandsbeheer en probeer het opnieuw</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adres/blok</string>
     <string name="type.addr_interpolation.even">Adres/blok</string>
@@ -989,7 +985,6 @@
     <string name="type.amenity.prison">Gevangenis</string>
     <string name="type.amenity.pub">Kroeg</string>
     <string name="type.amenity.public_bookcase">Boekenkast</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Milieustraat</string>
     <string name="type.amenity.recycling">Recycling container</string>
@@ -1223,7 +1218,6 @@
     <string name="type.healthcare.psychotherapist">Psychotherapie</string>
     <string name="type.healthcare.sample_collection">Bemonstering</string>
     <string name="type.healthcare.speech_therapist">Logopedie</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Straat</string>
     <string name="type.highway.bridleway">Ruiterpad</string>
@@ -1389,7 +1383,6 @@
     <string name="type.area_highway.track">Straat</string>
     <string name="type.area_highway.trunk">Straat</string>
     <string name="type.area_highway.unclassified">Straat</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Historisch object</string>
     <string name="type.historic.aircraft">Historische vliegtuigen</string>
@@ -2189,4 +2182,49 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Sporthal</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="editor_line_social_network">LIJN</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="read_in_wikipedia">Replace Wikipedia links</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.cuisine.fish_and_chips">Fish and chips</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.landuse.brownfield">Brownfield</string>
+    <string name="type.landuse.reservoir">Reservoir</string>
+    <string name="type.leisure.hackerspace">Hackerspace</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="vk">VK</string>
+    <string name="menu">Menu</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.landuse.greenfield">Greenfield</string>
+    <string name="edit_track">GPX-track bewerken</string>
 </resources>

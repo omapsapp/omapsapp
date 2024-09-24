@@ -97,7 +97,6 @@
     <string name="measurement_units">측정 단위</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">마일과 킬로미터 중에서 선택하십시오</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">어디서먹을까</string>
@@ -145,7 +144,6 @@
     <string name="category_water">물</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">RV용</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">메모</string>
@@ -333,7 +331,6 @@
     <string name="gray">회색</string>
     <!-- blue gray color -->
     <string name="blue_gray">청회색</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">경로를 따라갈 때는 다음 사항에 주의해 주세요:</string>
     <string name="dialog_routing_disclaimer_priority">— 도로 상황, 교통법, 도로 표지판을 항상 내비게이션 안내보다 먼저 고려하세요;</string>
@@ -363,7 +360,6 @@
     <string name="not_now">나중에</string>
     <string name="dialog_routing_download_and_build_cross_route">지도를 다운로드하여, 두 개 이상의 지도를 통과하는 더 최적화된 경로를 설정하시겠습니까?</string>
     <string name="dialog_routing_download_cross_route">이 지도의 경계를 통과하는 더 최적화된 경로를 설정하려면 지도를 다운로드하세요.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">경로를 검색하고 만들기시작하려면, 지도를 다운로드하십시오. 그러면, 더 이상 인터넷 연결이 필요하지 않습니다.</string>
     <string name="search_select_map">지도 선택</string>
@@ -575,7 +571,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">모든 지도 편집 내용을 자동으로 업로드하려면 오픈스트리트맵에 로그인하세요. 자세히 알아보기 <a href="https://github.com/organicmaps/organicmaps/issues/6144">여기</a>.</string>
     <string name="dialog_error_storage_title">저장소 액세스 문제</string>
-    <string name="dialog_error_storage_message">외부 저장소를 사용할 수 없습니다. SD 카드가 제거되었거나 손상되었거나 파일 시스템이 읽기 전용일 수 있습니다. 확인 후 support\@organicmaps.app로 문의하세요.</string>
+    <string name="dialog_error_storage_message">외부 저장소를 사용할 수 없습니다. SD 카드가 제거되었거나 손상되었거나 파일 시스템이 읽기 전용일 수 있습니다. 확인 후 support@organicmaps.app로 문의하세요.</string>
     <string name="setting_emulate_bad_storage">불량 저장소 에뮬레이션</string>
     <string name="core_entrance">입구</string>
     <string name="error_enter_correct_name">올바른 이름을 입력하세요.</string>
@@ -691,7 +687,6 @@
     <string name="moreyear_ago_sorttype">1년 그 이상 전</string>
     <string name="near_me_sorttype">나와 가까운 곳</string>
     <string name="others_sorttype">기타</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">음식</string>
     <string name="tourist_places">명소</string>
@@ -811,7 +806,6 @@
     <string name="track_recording_toast_nothing_to_save">경로가 비어 있음 - 저장할 항목이 없음</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">장치에 적합한 앱이 설치되어 있지 않아 폴더 선택 대화 상자를 표시할 수 없습니다. 파일 관리자 앱을 설치한 후 다시 시도하세요</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">주소/블록</string>
     <string name="type.addr_interpolation.even">주소/블록</string>
@@ -925,7 +919,6 @@
     <string name="type.amenity.post_office">우체국</string>
     <string name="type.amenity.pub">술집</string>
     <string name="type.amenity.public_bookcase">도서 교환</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">재활용센터</string>
     <string name="type.amenity.recycling">재활용 쓰레기통</string>
@@ -1127,7 +1120,6 @@
     <string name="type.healthcare.psychotherapist">심리치료</string>
     <string name="type.healthcare.sample_collection">견본 추출</string>
     <string name="type.healthcare.speech_therapist">대화 요법</string>
-
     <!-- SECTION: Types: Roads -->
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.bridleway.bridge">다리</string>
@@ -1284,7 +1276,6 @@
     <string name="type.area_highway.track">거리</string>
     <string name="type.area_highway.trunk">거리</string>
     <string name="type.area_highway.unclassified">거리</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">역사적 물건</string>
     <string name="type.historic.aircraft">\"역사적인 항공기\"</string>
@@ -1960,4 +1951,241 @@
     <string name="type.amenity.dojo">도장</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">스포츠 홀</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="maps_storage_removable">SD 카드</string>
+    <string name="share_bookmarks_email_body">Hello!
+\n
+\nAttached are my bookmarks; please open them in Organic Maps. If you don\'t have it installed you can download it here: https://omaps.app/get?kmz
+\n
+\nEnjoy travelling with Organic Maps!</string>
+    <string name="prefs_group_general">일반 설정</string>
+    <string name="prefs_group_information">정보</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">텔레그램</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="read_in_wikipedia">Replace Wikipedia links</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="closes_in">Closes in %@</string>
+    <string name="empty_street_name_error">새 이름을 입력하세요.</string>
+    <string name="editor_add_phone">Add Phone</string>
+    <string name="download_map_title">Download the world map</string>
+    <string name="connection_failure">Connection failure</string>
+    <string name="disconnect_usb_cable_title">Disconnect USB cable</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="type.aerialway">항공노선</string>
+    <string name="type.aerialway.chair_lift">Chair Lift</string>
+    <string name="type.aerialway.drag_lift">Drag Lift</string>
+    <string name="type.aerialway.gondola">곤돌라</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.aeroway.apron">Apron</string>
+    <string name="type.aeroway.gate">게이트</string>
+    <string name="type.aeroway.taxiway">Taxiway</string>
+    <string name="type.aeroway.terminal">명령 터미널</string>
+    <string name="type.amenity.atm">ATM</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.amenity.prison">감옥</string>
+    <string name="type.recycling.cardboard">Cardboard</string>
+    <string name="type.recycling.cans">Cans</string>
+    <string name="type.recycling.shoes">Shoes</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">Cartons</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine">자판기</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.barrier">배리어(Barrier)</string>
+    <string name="type.barrier.cycle_barrier">Cycle Barrier</string>
+    <string name="type.barrier.retaining_wall">Retaining Wall</string>
+    <string name="type.barrier.wall">Wall</string>
+    <string name="type.boundary">경계</string>
+    <string name="type.boundary.administrative">Administrative Boundary</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.emergency">비상</string>
+    <string name="type.highway">Highway</string>
+    <string name="type.highway.bridleway">길</string>
+    <string name="type.highway.bridleway.permissive">길</string>
+    <string name="type.highway.cycleway">Cycle Path</string>
+    <string name="type.highway.cycleway.permissive">Cycle Path</string>
+    <string name="type.highway.elevator">Elevator</string>
+    <string name="type.highway.motorway_junction">Road Exit</string>
+    <string name="type.highway.services">Service Area</string>
+    <string name="type.area_highway.cycleway">Cycle Path</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.junction">접합부</string>
+    <string name="type.junction.circular">원형 교차로</string>
+    <string name="type.junction.roundabout">원형 교차로</string>
+    <string name="type.landuse">사유지</string>
+    <string name="type.landuse.brownfield">Brownfield</string>
+    <string name="type.landuse.commercial">Commercial Area</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.landuse.farmyard">Farmyard</string>
+    <string name="type.landuse.field">필드</string>
+    <string name="type.landuse.garages">Garages</string>
+    <string name="type.landuse.greenhouse_horticulture">Greenhouse</string>
+    <string name="type.landuse.industrial">Industrial Area</string>
+    <string name="type.landuse.meadow">Meadow</string>
+    <string name="type.landuse.military">Military Area</string>
+    <string name="type.landuse.orchard">Orchard</string>
+    <string name="type.landuse.quarry">채석장</string>
+    <string name="type.landuse.recreation_ground">Recreation Ground</string>
+    <string name="type.landuse.residential">Residential Area</string>
+    <string name="type.landuse.retail">Retail Area</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.leisure.marina">마리나</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.leisure.track">배선</string>
+    <string name="type.leisure.track.area">배선</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made.breakwater">Breakwater</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.man_made.cutline">Cutline</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.flagpole">Flagpole</string>
+    <string name="type.man_made.mast">돛대</string>
+    <string name="type.man_made.pier">Pier</string>
+    <string name="type.man_made.pipeline">Pipeline</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">군대</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.organic.only">Organic</string>
+    <string name="type.organic.yes">Organic</string>
+    <string name="type.power">위력</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.public_transport">Public Transport</string>
+    <string name="type.public_transport.platform">Platform</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.route.ferry">Ferry</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.waterway.weir">Weir</string>
+    <string name="type.wheelchair">휠체어</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="error_enter_correct_facebook_page">Enter a valid Facebook web address, account, or page name</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.landuse.construction">Construction Area</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.shop.hardware">철물점</string>
+    <string name="type.leisure">레저</string>
+    <string name="type.landuse.salt_pond">Salt Pond</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="menu">메뉴</string>
+    <string name="type.barrier.chain">사슬</string>
+    <string name="type.landuse.allotments">Allotments</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.leisure.slipway">Slipway</string>
+    <string name="type.railway">철로</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="comma_separated_pair">%1$s %2$s</string>
+    <string name="type.aerialway.cable_car">Cable Car</string>
+    <string name="type.aeroway.runway">활주로</string>
+    <string name="type.barrier.fence">장물아비</string>
+    <string name="type.barrier.hedge">Hedge</string>
+    <string name="type.building.warehouse">창고</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.landuse.greenfield">Greenfield</string>
+    <string name="type.landuse.vineyard">Vineyard</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.tourism">관광지</string>
+    <string name="type.waterway.dam">Dam</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="facebook">페이스북</string>
+    <string name="opens_in">%s에서 열기</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.barrier.ditch">Ditch</string>
+    <string name="type.route">경로</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="edit_track">트랙 수정</string>
 </resources>

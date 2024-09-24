@@ -110,7 +110,6 @@
     <string name="measurement_units">Unidades de medida</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Elija entre millas y kilómetros</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Dónde comer</string>
@@ -158,14 +157,13 @@
     <string name="category_water">Agua</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Caravanas</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Notas</string>
     <!-- Email Subject when sharing bookmark list -->
     <string name="share_bookmarks_email_subject">Marcadores de Organic Maps compartidos con usted</string>
     <string name="share_bookmarks_email_body">Hola!
-\n\Adjunto mis marcadores de la aplicación Organic Maps. Por favor, ábralos si tiene instalado Organic Maps. O, si no lo tiene, descargue la aplicación para su dispositivo iOS o Android siguiendo este enlace: https://omaps.app/get?kmz
+\ndjunto mis marcadores de la aplicación Organic Maps. Por favor, ábralos si tiene instalado Organic Maps. O, si no lo tiene, descargue la aplicación para su dispositivo iOS o Android siguiendo este enlace: https://omaps.app/get?kmz
 \n¡Disfrute viajando con Organic Maps!</string>
     <!-- message title of loading file -->
     <string name="load_kmz_title">Cargando marcadores</string>
@@ -355,7 +353,6 @@
     <string name="gray">Gris</string>
     <!-- blue gray color -->
     <string name="blue_gray">Gris azulado</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Al seguir la ruta, tenga en cuenta:</string>
     <string name="dialog_routing_disclaimer_priority">— Las condiciones de la ruta, las reglas de tráfico y las señales de carretera siempre tienen prioridad sobre las sugerencias de navegación;</string>
@@ -385,7 +382,6 @@
     <string name="not_now">No ahora</string>
     <string name="dialog_routing_download_and_build_cross_route">¿Desea descargar el mapa y crear una ruta mejor que abarque más de un mapa?</string>
     <string name="dialog_routing_download_cross_route">Descargue mapas adicionales para crear una ruta mejor que cruce los límites de este mapa.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Para empezar a buscar y crear rutas, descargue el mapa. Después de eso, ya no necesitará una conexión a Internet.</string>
     <string name="search_select_map">Seleccionar mapa</string>
@@ -609,7 +605,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Inicia sesión en OpenStreetMap para cargar automáticamente todas tus ediciones de mapas. Más información <a href="https://github.com/organicmaps/organicmaps/issues/6144">aquí</a>.</string>
     <string name="dialog_error_storage_title">Problema de acceso al almacenamiento</string>
-    <string name="dialog_error_storage_message">El almacenamiento externo no está disponible; puede que se haya quitado o dañado la tarjeta SD, o el sistema de archivos solo permite lectura. Por favor, compruébelo ó escríbanos a support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">El almacenamiento externo no está disponible; puede que se haya quitado o dañado la tarjeta SD, o el sistema de archivos solo permite lectura. Por favor, compruébelo ó escríbanos a support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Emular almacenamiento dañado</string>
     <string name="core_entrance">Entrada</string>
     <string name="error_enter_correct_name">Por favor, introduzca el nombre correcto</string>
@@ -618,6 +614,8 @@
     <string name="bookmark_lists_hide_all">Ocultar todo</string>
     <string name="bookmark_lists_show_all">Mostrar todo</string>
     <plurals name="bookmarks_places">
+        <item quantity="one"/>
+        <item quantity="many"/>
         <item quantity="other">%d marcadores</item>
     </plurals>
     <string name="bookmarks_create_new_group">Crear nueva lista</string>
@@ -636,11 +634,13 @@
     <string name="profile">Perfil de OpenStreetMap</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">Se encontró %d archivo. Lo verá después de la conversión.</item>
+        <item quantity="many"/>
         <item quantity="other">Se han encontrado %d archivos. Los verá después de la conversión.</item>
     </plurals>
     <string name="restore">Restaurar</string>
     <plurals name="tracks">
         <item quantity="one">%d ruta</item>
+        <item quantity="many"/>
         <item quantity="other">%d rutas</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -727,7 +727,6 @@
     <string name="moreyear_ago_sorttype">Hace más de un año</string>
     <string name="near_me_sorttype">Cerca de mí</string>
     <string name="others_sorttype">Otros</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Comida</string>
     <string name="tourist_places">Sitios de interés</string>
@@ -864,7 +863,6 @@
     <string name="track_recording_toast_nothing_to_save">La ruta está vacía - no hay nada que guardar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">No se puede mostrar el diálogo de selección de carpetas porque no hay ninguna app adecuada instalada en su dispositivo. Instale una aplicación de gestión de archivos e inténtelo de nuevo</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Dirección/Bloque</string>
     <string name="type.addr_interpolation.even">Dirección/Bloque</string>
@@ -993,7 +991,6 @@
     <string name="type.amenity.prison">Prisión</string>
     <string name="type.amenity.pub">Pub</string>
     <string name="type.amenity.public_bookcase">Intercambio de libros</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Centro de reciclaje</string>
     <string name="type.amenity.recycling">Contenedor de reciclaje</string>
@@ -1231,7 +1228,6 @@
     <string name="type.healthcare.psychotherapist">Psicoterapia</string>
     <string name="type.healthcare.sample_collection">Muestreo</string>
     <string name="type.healthcare.speech_therapist">Logopedia</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Carretera</string>
     <string name="type.highway.bridleway">Camino de caballos</string>
@@ -1397,7 +1393,6 @@
     <string name="type.area_highway.track">Pista</string>
     <string name="type.area_highway.trunk">Vía troncal</string>
     <string name="type.area_highway.unclassified">Carretera sin clasificar</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Objeto histórico</string>
     <string name="type.historic.aircraft">Avión histórico</string>
@@ -2185,4 +2180,58 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Pabellón deportivo</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="telegram">Telegram</string>
+    <string name="matrix">[Matrix]</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.railway.monorail.tunnel">Túnel del Monorraíl</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="facebook">Facebook</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="vk">VK</string>
+    <string name="github">GitHub</string>
+    <string name="editor_line_social_network">LINE</string>
+    <string name="choose_color">Elige el color</string>
+    <string name="edit_track">Editar traza</string>
 </resources>

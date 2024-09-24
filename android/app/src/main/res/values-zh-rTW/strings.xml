@@ -113,7 +113,6 @@
     <string name="measurement_units">測量單位</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">選擇公里或英哩</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">在哪裡吃</string>
@@ -161,7 +160,6 @@
     <string name="category_water">水</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">露營車設施</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">註釋</string>
@@ -364,7 +362,6 @@
     <string name="gray">灰色</string>
     <!-- blue gray color -->
     <string name="blue_gray">藍灰色</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">依照路線行進時，請牢記：</string>
     <string name="dialog_routing_disclaimer_priority">— 路況、交通法規和路標始終優先於導航建議；</string>
@@ -394,7 +391,6 @@
     <string name="not_now">以後再說</string>
     <string name="dialog_routing_download_and_build_cross_route">您是否要下載地圖，以規劃跨越邊界的更佳路線？</string>
     <string name="dialog_routing_download_cross_route">下載地圖，以規劃一條跨越邊界的更佳路線。</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">要開始搜索和規劃路線，請下載地圖，然後您就不再需要網絡連接了。</string>
     <string name="search_select_map">選擇地圖</string>
@@ -624,7 +620,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">請登入 OpenStreetMap 以自動上傳您的所有地圖編輯。若要了解更多資訊請點擊<a href="https://github.com/organicmaps/organicmaps/issues/6144">這裡</a>。</string>
     <string name="dialog_error_storage_title">儲存空間存儲問題</string>
-    <string name="dialog_error_storage_message">外部儲存空間不可用，很可能是因為 SD 卡已移除、毀損，或檔案系統處於唯讀狀態。請進行檢查，然後透過 support\@organicmaps.app 聯絡我們。</string>
+    <string name="dialog_error_storage_message">外部儲存空間不可用，很可能是因為 SD 卡已移除、毀損，或檔案系統處於唯讀狀態。請進行檢查，然後透過 support@organicmaps.app 聯絡我們。</string>
     <string name="setting_emulate_bad_storage">模擬不良儲存空間</string>
     <string name="core_entrance">入口</string>
     <string name="error_enter_correct_name">請輸入正確的名稱</string>
@@ -740,7 +736,6 @@
     <string name="moreyear_ago_sorttype">一年多以前</string>
     <string name="near_me_sorttype">在我附近</string>
     <string name="others_sorttype">其他</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">食物</string>
     <string name="tourist_places">旅遊景點</string>
@@ -875,7 +870,6 @@
     <string name="track_recording_toast_nothing_to_save">軌跡為空 - 沒有可保存的內容</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">無法顯示資料夾選擇對話框，因為您的裝置上沒有安裝合適的應用程式。請安裝檔案總管應用程式並重試</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">地址/區塊</string>
     <string name="type.addr_interpolation.even">地址/區塊</string>
@@ -1004,7 +998,6 @@
     <string name="type.amenity.prison">監獄</string>
     <string name="type.amenity.pub">酒館</string>
     <string name="type.amenity.public_bookcase">書架</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">回收中心</string>
     <string name="type.amenity.recycling">回收箱</string>
@@ -1236,7 +1229,6 @@
     <string name="type.healthcare.psychotherapist">心理治療</string>
     <string name="type.healthcare.sample_collection">採樣</string>
     <string name="type.healthcare.speech_therapist">言語治療</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">道路</string>
     <string name="type.highway.bridleway">馬道</string>
@@ -1402,7 +1394,6 @@
     <string name="type.area_highway.track">土路</string>
     <string name="type.area_highway.trunk">主幹道</string>
     <string name="type.area_highway.unclassified">道路</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">歷史地點</string>
     <string name="type.historic.aircraft">歷史悠久的飛機</string>
@@ -2121,4 +2112,126 @@
     <string name="type.amenity.dojo">道場</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">體育館</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="instagram">Instagram</string>
+    <string name="editor_line_social_network">線段</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.recycling.cardboard">紙板</string>
+    <string name="type.recycling.cans">罐頭</string>
+    <string name="type.recycling.shoes">鞋子</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.recycling.cartons">紙箱</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.leisure.slipway">Slipway</string>
+    <string name="type.leisure.track">佈線</string>
+    <string name="type.leisure.track.area">佈線</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="type.man_made.breakwater">Breakwater</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.man_made.cutline">Cutline</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.pier">Pier</string>
+    <string name="type.man_made.pipeline">Pipeline</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">軍事地</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="type.natural.desert">沙漠</string>
+    <string name="type.organic.yes">有機的</string>
+    <string name="type.power">電源</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.public_transport">Public Transport</string>
+    <string name="type.public_transport.platform">平台</string>
+    <string name="type.railway">鐵路軌道</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.route">導航路線</string>
+    <string name="type.route.ferry">Ferry</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.tourism">旅遊、住宿</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.waterway.dam">Dam</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.wheelchair">輪椅</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.waterway.weir">Weir</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.man_made.mast">通信基地台</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="vk">VK</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.leisure">休閒</string>
+    <string name="type.organic.only">有機的</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.boundary.administrative">Administrative Boundary</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="edit_track">編輯軌跡</string>
 </resources>

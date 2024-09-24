@@ -110,7 +110,6 @@
     <string name="measurement_units">Jednostki miary</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Wybiera pomiędzy milami, a kilometrami</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Gdzie zjeść</string>
@@ -158,7 +157,6 @@
     <string name="category_water">Woda</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Kamper</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Notatki</string>
@@ -357,7 +355,6 @@
     <string name="gray">Szary</string>
     <!-- blue gray color -->
     <string name="blue_gray">Szaroniebieski</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Jadąc wyznaczoną trasą, pamiętaj, że:</string>
     <string name="dialog_routing_disclaimer_priority">— Warunki na drodze, przepisy ruchu drogowego i znaki drogowe zawsze są ważniejsze niż wskazówki nawigacji;</string>
@@ -387,7 +384,6 @@
     <string name="not_now">Nie teraz</string>
     <string name="dialog_routing_download_and_build_cross_route">Chcesz pobrać mapę i wyznaczyć lepszą trasę, obejmującą więcej map?</string>
     <string name="dialog_routing_download_cross_route">Pobierz mapę i wyznacz lepszą trasę, wykraczającą poza granice bieżącej mapy.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Aby rozpocząć wyszukiwanie i tworzenie tras, pobierz mapę, a nie będzie ci już potrzebne połączenie z Internetem.</string>
     <string name="search_select_map">Wybierz mapę</string>
@@ -611,7 +607,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Zaloguj się do OpenStreetMap, aby automatycznie przesyłać wszystkie zmiany na mapie. Dowiedz się więcej <a href="https://github.com/organicmaps/organicmaps/issues/6144">tutaj</a>.</string>
     <string name="dialog_error_storage_title">Problem z dostępem do pamięci masowej</string>
-    <string name="dialog_error_storage_message">Zewnętrzny nośnik pamięci masowej jest niedostępny. Prawdopodobnie usunięto lub uszkodzono kartę SD bądź jej system plików służy tylko do odczytu. Zweryfikuj to i skontaktuj się z nami pod adresem support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Zewnętrzny nośnik pamięci masowej jest niedostępny. Prawdopodobnie usunięto lub uszkodzono kartę SD bądź jej system plików służy tylko do odczytu. Zweryfikuj to i skontaktuj się z nami pod adresem support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Emuluj wadliwą pamięć masową</string>
     <string name="core_entrance">Wejście</string>
     <string name="error_enter_correct_name">Wprowadź poprawną nazwę</string>
@@ -619,9 +615,6 @@
     <!-- Do not display all bookmark lists on the map -->
     <string name="bookmark_lists_hide_all">Ukryj wszystkie</string>
     <string name="bookmark_lists_show_all">Pokaż wszystkie</string>
-    <plurals name="bookmarks_places">
-        <item quantity="other">Zakładki: %d</item>
-    </plurals>
     <string name="bookmarks_create_new_group">Utwórz nową listę</string>
     <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
     <string name="bookmarks_import">Importuj zakładki i trasy</string>
@@ -638,15 +631,16 @@
     <string name="profile">Profil OpenStreetMap</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">Znaleziono %d plik. Zobaczysz to po konwersji.</item>
-        <item quantity="two">Znaleziono %d pliki. Zobaczysz je po konwersji.</item>
-        <item quantity="other">Znaleziono %d plików. Zobaczysz je po konwersji.</item>
+        <item quantity="few"/>
+        <item quantity="many"/>
+        <item quantity="other"/>
     </plurals>
     <string name="restore">Przywróć</string>
     <plurals name="tracks">
         <item quantity="one">%d trasa</item>
         <item quantity="few">%d trasy</item>
         <item quantity="many">%d tras</item>
-        <item quantity="other">%d trasy</item>
+        <item quantity="other">%d tras</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">Prywatność</string>
@@ -732,7 +726,6 @@
     <string name="moreyear_ago_sorttype">Ponad rok temu</string>
     <string name="near_me_sorttype">W pobliżu</string>
     <string name="others_sorttype">Inne</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Jedzenie</string>
     <string name="tourist_places">Zabytki</string>
@@ -867,7 +860,6 @@
     <string name="track_recording_toast_nothing_to_save">Trasa jest pusta - nic do zapisania</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nie można wyświetlić okna dialogowego wyboru folderu, ponieważ na urządzeniu nie zainstalowano odpowiedniej aplikacji. Proszę zainstalować aplikację menedżera plików i spróbować ponownie</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adres/Blok</string>
     <string name="type.addr_interpolation.even">Adres/Blok</string>
@@ -996,7 +988,6 @@
     <string name="type.amenity.prison">Więzienie</string>
     <string name="type.amenity.pub">Pub</string>
     <string name="type.amenity.public_bookcase">Wymiana książek</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Centrum przetwórstwa odpadów</string>
     <string name="type.amenity.recycling">Pojemnik do recyklingu</string>
@@ -1230,7 +1221,6 @@
     <string name="type.healthcare.psychotherapist">Psychoterapia</string>
     <string name="type.healthcare.sample_collection">Punkt pobrań laboratoryjnych</string>
     <string name="type.healthcare.speech_therapist">Logopeda</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">Droga</string>
     <string name="type.highway.bridleway">Droga dla koni</string>
@@ -1396,7 +1386,6 @@
     <string name="type.area_highway.track">Droga na pola lub do lasu</string>
     <string name="type.area_highway.trunk">Ulica</string>
     <string name="type.area_highway.unclassified">Ulica</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Obiekt historyczny</string>
     <string name="type.historic.aircraft">Historyczny samolot</string>
@@ -2138,4 +2127,106 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Hala sportowa</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VK</string>
+    <string name="editor_line_social_network">LINIA</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="navigation_stop_button">Zatrzymaj</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.landuse.greenhouse_horticulture">Szklarnia</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.leisure.hackerspace">Kreatywna przestrzeń (hackerspace)</string>
+    <string name="type.leisure.track">Utwór</string>
+    <string name="type.leisure.track.area">Utwór</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made">Stworzone przez człowieka</string>
+    <string name="type.mountain_pass">Przełęcz</string>
+    <string name="type.organic.only">Organiczne</string>
+    <string name="type.organic.yes">Organiczne</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.waterway.weir">Weir</string>
+    <string name="type.wheelchair">Wózek inwalidzki</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="type.route">Trasa</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.leisure.marina">Przystań</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.power">Port zasilania</string>
+    <string name="type.man_made.storage_tank">Zbiornik magazynowy</string>
+    <string name="edit_track">Edytuj trasę</string>
 </resources>

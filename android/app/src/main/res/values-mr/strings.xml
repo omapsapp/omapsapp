@@ -25,7 +25,7 @@
     <!-- Search box placeholder text; Used when searching on the map itself, not when searching for a map -->
     <string name="search_map">नकाश्यात शोधा</string>
     <!-- Location services are disabled by user alert - message -->
-    <string name="location_is_disabled_long_text">आपल्या उपकरणात किंवा ऍप मध्ये स्थानसेवा सध्या बंद आहेत. कृपया सेटिंग मधून त्यांना चालू  करा.</string>
+    <string name="location_is_disabled_long_text">आपल्या उपकरणात किंवा ऍप मध्ये स्थानसेवा सध्या बंद आहेत. कृपया सेटिंग मधून त्यांना चालू करा.</string>
     <!-- View and button titles for accessibility -->
     <string name="zoom_to_country">नकाशावर दाखवा</string>
     <!-- Message to display at the center of the screen when the country download has failed -->
@@ -90,7 +90,6 @@
     <string name="measurement_units">मापन एकके</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">मैल की किलोमीटर ह्यामध्ये निवडा</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">जेवायचे ठिकाण</string>
@@ -136,7 +135,6 @@
     <string name="category_recycling">भंगारवाला</string>
     <!-- Search category for water; any changes should be duplicated in categories.txt @category_water! also used to sort bookmarks by type -->
     <string name="category_water">पाणी</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">चिठ्ठया</string>
@@ -327,7 +325,6 @@
     <string name="gray">राखाडी</string>
     <!-- blue gray color -->
     <string name="blue_gray">निळा राखाडी</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">प्रवास करताना, कृपात लक्षात ठेवा:</string>
     <string name="dialog_routing_disclaimer_priority">— मार्गनिर्देशक संकेतांपेक्षा रस्त्याची परिस्थिती, वाहतुकीचे नियम व वाहतुकीचे चिन्ह ह्यांना जास्त प्राधान्य द्या;</string>
@@ -357,7 +354,6 @@
     <string name="not_now">आता नाही</string>
     <string name="dialog_routing_download_and_build_cross_route">एकापेक्षा जास्त नकाशात पसरलेला अधिक चांगला मार्ग तयार करण्यासाठी, नकाशा डाउनलोड केलेला चालेल का?</string>
     <string name="dialog_routing_download_cross_route">या नकाशाच्या सीमा ओलांडणारा एक चांगला मार्ग तयार करण्यासाठी अधिक नकाशे डाउनलोड करा.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">ठिकाण व मार्ग शोध सुरु करण्यासाठी, कृपया नकाशा डाउनलोड करा. त्यानंतर तुम्हाला इंटरनेटची आवश्यकता भासणार नाही.</string>
     <string name="search_select_map">नकाशा निवडा</string>
@@ -577,7 +573,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">तुमची सर्व नकाशा संपादने स्वयंचलितपणे अपलोड करण्यासाठी कृपया OpenStreetMap वर लॉग इन करा. <a href="https://github.com/organicmaps/organicmaps/issues/6144">येथे</a> अधिक जाणून घ्या.</string>
     <string name="dialog_error_storage_title">स्टोरेज प्रवेश समस्या</string>
-    <string name="dialog_error_storage_message">बाह्य साठ्याचा प्रवेश अपयशी. SD कार्ड कदाचित काढले गेले असेल, खराब झाले असेल किंवा फाइल सिस्टम ही केवळ-वाचनीय असावी. कृपया, तुमचे SD कार्ड तपासा किंवा support\@organicmaps.app वर आमच्याशी संपर्क साधा</string>
+    <string name="dialog_error_storage_message">बाह्य साठ्याचा प्रवेश अपयशी. SD कार्ड कदाचित काढले गेले असेल, खराब झाले असेल किंवा फाइल सिस्टम ही केवळ-वाचनीय असावी. कृपया, तुमचे SD कार्ड तपासा किंवा support@organicmaps.app वर आमच्याशी संपर्क साधा</string>
     <string name="setting_emulate_bad_storage">खराब साठ्याचे अनुकरण करा</string>
     <string name="core_entrance">प्रवेशद्वार</string>
     <string name="error_enter_correct_name">कृपया योग्य नाव प्रविष्ट करा</string>
@@ -609,6 +605,7 @@
     </plurals>
     <string name="restore">पूर्ववत् करा</string>
     <plurals name="tracks">
+        <item quantity="one"/>
         <item quantity="other">%d ट्रॅक</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -695,7 +692,6 @@
     <string name="moreyear_ago_sorttype">एक वर्षांपूर्वी</string>
     <string name="near_me_sorttype">माझ्या जवळ</string>
     <string name="others_sorttype">इतर</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">अन्न</string>
     <string name="tourist_places">पर्यटन स्थळ</string>
@@ -806,10 +802,10 @@
     <!-- Title for the "Open In Another App" button on the PlacePage. -->
     <string name="open_in_app">दुसऱ्या ॲपमध्ये उघडा</string>
     <!-- To indicate if the place proposed self service... -->
-    <string name="self_service">स्व: सेवा    nb = Selvbetjening</string>
-    <string name="select_option">पर्याय निवडा    nb = Velg alternativ</string>
+    <string name="self_service">स्व: सेवा nb = Selvbetjening</string>
+    <string name="select_option">पर्याय निवडा nb = Velg alternativ</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
-    <string name="outdoor_seating">बाहेरची आसनव्यवस्था    nb = Uteservering</string>
+    <string name="outdoor_seating">बाहेरची आसनव्यवस्था nb = Uteservering</string>
     <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
     <string name="power_save_dialog_summary">सर्वात अचूक नेव्हिगेशनसाठी, आम्ही फोनच्या बॅटरी सेटिंग्जमध्ये पॉवर सेव्हिंग मोड अक्षम करण्याची शिफारस करतो.</string>
     <!-- Prompt to start recording a track. -->
@@ -826,7 +822,6 @@
     <string name="track_recording_toast_nothing_to_save">मार्ग रिकामा आहे - जतन करण्यासाठी काहीही नाही</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">फोल्डर निवड संवाद प्रदर्शित करण्यात अक्षम कारण आपल्या डिव्हाइसवर कोणतेही योग्य ॲप स्थापित केलेले नाही. कृपया फाइल व्यवस्थापक ॲप स्थापित करा आणि पुन्हा प्रयत्न करा</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">पत्ता/ब्लॉक</string>
     <string name="type.addr_interpolation.even">पत्ता/ब्लॉक</string>
@@ -936,7 +931,6 @@
     <string name="type.amenity.post_office">टपालघर</string>
     <string name="type.amenity.prison">तुरुंग</string>
     <string name="type.amenity.pub">पब</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">भंगार केंद्र</string>
     <string name="type.amenity.recycling">रीसायकलिंग कंटेनर</string>
@@ -1102,7 +1096,6 @@
     <string name="type.healthcare.psychotherapist">मानसोपचार</string>
     <string name="type.healthcare.sample_collection">नमुना</string>
     <string name="type.healthcare.speech_therapist">स्पीच थेरपी</string>
-
     <!-- SECTION: Types: Roads -->
     <string name="type.highway">महामार्ग</string>
     <!-- These translations are used for all type.highway.*.bridge. -->
@@ -1265,7 +1258,6 @@
     <string name="type.area_highway.track">ट्रॅक</string>
     <string name="type.area_highway.trunk">राष्ट्रीय महामार्ग</string>
     <string name="type.area_highway.unclassified">किरकोळ रस्ता</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">ऐतिहासिक</string>
     <string name="type.historic.aircraft">ऐतिहासिक विमान</string>
@@ -1974,4 +1966,236 @@
     <string name="type.amenity.dojo">डोजो</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">क्रीडा हॉल</string>
+    <string name="mb">एम.बी.</string>
+    <string name="gb">जी.बी.</string>
+    <string name="about_headline">Free for everyone, made with love</string>
+    <string name="about_proposition_1">• No ads, no tracking, no data collection</string>
+    <string name="maps_storage_downloaded">नकाशे डाउनलोड करा</string>
+    <string name="category_rv">RV Facilities</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">टेलीग्राम</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="opens_in">Opens in %@</string>
+    <string name="closes_in">Closes in %@</string>
+    <string name="login_osm">Login to OpenStreetMap</string>
+    <string name="editor_share_to_all_dialog_message_2">OpenStreetMap editors will check the changes and contact you if they have any questions.</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="type.aeroway.apron">Apron</string>
+    <string name="type.amenity.bicycle_repair_station">Bicycle Repair Station</string>
+    <string name="type.amenity.biergarten">Biergarten</string>
+    <string name="type.amenity.music_school">Music School</string>
+    <string name="type.amenity.language_school">Language School</string>
+    <string name="type.amenity.hunting_stand">Hunting Stand</string>
+    <string name="type.amenity.parking.multi.storey">Multi Storey Parking</string>
+    <string name="type.amenity.parking.multi.storey.fee">Multi Storey Parking</string>
+    <string name="type.amenity.parking.no.access">Private Parking</string>
+    <string name="type.amenity.parking.permissive">Private Parking</string>
+    <string name="type.amenity.parking.private">Private Parking</string>
+    <string name="type.amenity.parking.underground">Underground Parking</string>
+    <string name="type.amenity.parking.underground.fee">Underground Parking</string>
+    <string name="type.amenity.parking_entrance.permissive">Parking Entrance</string>
+    <string name="type.amenity.parking_space.disabled">Disabled Parking Space</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.water_point">Water Tank Refill Point</string>
+    <string name="type.natural.water.moat">Moat</string>
+    <string name="type.barrier.stile">Stile</string>
+    <string name="type.craft.hvac">HVAC Shop</string>
+    <string name="type.cuisine.asian">Asian</string>
+    <string name="type.cuisine.austrian">Austrian</string>
+    <string name="type.cuisine.bagel">Bagel</string>
+    <string name="type.cuisine.balkan">Balkan</string>
+    <string name="type.cuisine.bavarian">बव्हेरियन</string>
+    <string name="type.cuisine.beef_bowl">Beef Bowl</string>
+    <string name="type.cuisine.brazilian">Brazilian</string>
+    <string name="type.cuisine.bubble_tea">Bubble Tea</string>
+    <string name="type.cuisine.buschenschank">Buschenschank</string>
+    <string name="type.cuisine.crepe">Crepe</string>
+    <string name="type.cuisine.croatian">क्रोएशियन</string>
+    <string name="type.cuisine.ethiopian">Ethiopian</string>
+    <string name="type.cuisine.filipino">फिलिपिनो</string>
+    <string name="type.cuisine.fine_dining">Fine Dining</string>
+    <string name="type.cuisine.fish_and_chips">Fish and Chips</string>
+    <string name="type.cuisine.french">फ्रेंच</string>
+    <string name="type.cuisine.friture">Friture</string>
+    <string name="type.cuisine.georgian">जॉर्जियन</string>
+    <string name="type.cuisine.german">जर्मन</string>
+    <string name="type.cuisine.greek">ग्रीक</string>
+    <string name="type.cuisine.grill">Grill</string>
+    <string name="type.cuisine.heuriger">Heuriger</string>
+    <string name="type.cuisine.hotdog">Hotdog</string>
+    <string name="type.cuisine.hungarian">हंगेरियन</string>
+    <string name="type.cuisine.indonesian">इंडोनेशियन</string>
+    <string name="type.cuisine.irish">आयरिश</string>
+    <string name="type.cuisine.kebab">Kebab</string>
+    <string name="type.cuisine.korean">कोरियन</string>
+    <string name="type.cuisine.lao">लाओ</string>
+    <string name="type.cuisine.lebanese">Lebanese</string>
+    <string name="type.cuisine.malagasy">मलागसी</string>
+    <string name="type.cuisine.mediterranean">Mediterranean</string>
+    <string name="type.cuisine.mexican">Mexican</string>
+    <string name="type.cuisine.moroccan">Moroccan</string>
+    <string name="type.cuisine.ramen">Ramen</string>
+    <string name="type.cuisine.russian">रशियन</string>
+    <string name="type.cuisine.savory_pancakes">Savory Pancakes</string>
+    <string name="type.cuisine.soba">Soba</string>
+    <string name="type.cuisine.spanish">स्पॅनिश</string>
+    <string name="type.cuisine.steak_house">Steak House</string>
+    <string name="type.cuisine.sushi">Sushi</string>
+    <string name="type.cuisine.tapas">Tapas</string>
+    <string name="type.cuisine.thai">थाई</string>
+    <string name="type.cuisine.turkish">तुर्की</string>
+    <string name="type.cuisine.vegan">Vegan</string>
+    <string name="type.cuisine.vietnamese">व्हिएतनामी</string>
+    <string name="type.highway.bridleway.permissive">पथ</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="type.landuse.brownfield">Brownfield</string>
+    <string name="type.landuse.churchyard">Churchyard</string>
+    <string name="type.leisure.fitness_station">Fitness Station</string>
+    <string name="type.leisure.dance">Dance Hall</string>
+    <string name="type.leisure.marina">Marina</string>
+    <string name="type.leisure.slipway">Slipway</string>
+    <string name="type.man_made.breakwater">Breakwater</string>
+    <string name="type.man_made.cutline">Cutline</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.bookmaker">Bookmaker</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.shop.copyshop">Copyshop</string>
+    <string name="type.shop.deli">Delicatessen</string>
+    <string name="type.shop.erotic">Erotic Shop</string>
+    <string name="type.shop.farm">Farm Food Shop</string>
+    <string name="type.shop.grocery">Grocery Store</string>
+    <string name="type.shop.hardware">Hardware Store</string>
+    <string name="type.shop.health_food">Health Food Shop</string>
+    <string name="type.shop.houseware">Housewares Store</string>
+    <string name="type.shop.pawnbroker">Pawnbroker</string>
+    <string name="type.shop.second_hand">Second Hand Shop</string>
+    <string name="type.shop.antiques">Antiques Shop</string>
+    <string name="type.shop.baby_goods">Baby Goods Shop</string>
+    <string name="type.shop.bag">Bag Shop</string>
+    <string name="type.shop.charity">Charity Shop</string>
+    <string name="type.shop.cheese">Cheese Shop</string>
+    <string name="type.shop.craft">Craft Supplies Store</string>
+    <string name="type.shop.dairy">Dairy Shop</string>
+    <string name="type.shop.electrical">Electrical Supplies Store</string>
+    <string name="type.shop.fishing">Fishing Store</string>
+    <string name="type.shop.interior_decoration">Interior Decorations Store</string>
+    <string name="type.shop.lottery">Lottery Tickets</string>
+    <string name="type.shop.medical_supply">Medical Supplies Store</string>
+    <string name="type.shop.nutrition_supplements">Nutrition Supplement Store</string>
+    <string name="type.shop.perfumery">Perfume Shop</string>
+    <string name="type.shop.sewing">Sewing Supplies Shop</string>
+    <string name="type.shop.storage_rental">Storage Rental</string>
+    <string name="type.shop.tobacco">Smoke Shop</string>
+    <string name="type.shop.trade">Trade Supplies</string>
+    <string name="type.shop.watches">Watch Store</string>
+    <string name="type.shop.wholesale">Wholesale Store</string>
+    <string name="type.sport.futsal">Futsal</string>
+    <string name="type.sport.ice_hockey">Ice Hockey</string>
+    <string name="type.sport.field_hockey">Field Hockey</string>
+    <string name="type.sport.badminton">बॅडमिंटन</string>
+    <string name="type.sport.pelota">Basque Pelota</string>
+    <string name="type.tourism.caravan_site">RV Park</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="type.tourism.wilderness_hut">Wilderness Hut</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="pref_tts_street_names_title">Announce Street Names</string>
+    <string name="pref_tts_street_names_description">When enabled, the name of the street or exit to turn onto will be spoken aloud.</string>
+    <string name="donate">दान करा</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="vk">VK</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.cuisine.sausage">Sausage</string>
+    <string name="type.cuisine.pancake">Pancake</string>
+    <string name="type.cuisine.donut">Donut</string>
+    <string name="type.cuisine.argentinian">Argentinian</string>
+    <string name="type.cuisine.american">American</string>
+    <string name="type.cuisine.oriental">East Asian</string>
+    <string name="type.cuisine.persian">फारसी</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.shop.kitchen">Kitchen Store</string>
+    <string name="type.shop.art">Artwork Shop</string>
+    <string name="error_enter_correct_vk_page">वैध Twitter वेब पत्ता किंवा वापरकर्तानाव प्रविष्ट करा</string>
+    <string name="type.amenity.public_bookcase">Book Exchange</string>
+    <string name="type.cuisine.arab">Arab</string>
+    <string name="type.highway.ford">Ford</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.amenity.parking_entrance">Parking Entrance</string>
+    <string name="type.cuisine.african">African</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="menu">मेनू</string>
+    <string name="type.amenity.atm">ATM</string>
+    <string name="type.cuisine.caribbean">Caribbean</string>
+    <string name="type.aeroway.taxiway">Taxiway</string>
+    <string name="type.cemetery.grave">Grave</string>
+    <string name="type.cuisine.deli">Deli</string>
+    <string name="type.cuisine.diner">Diner</string>
+    <string name="type.cuisine.peruvian">Peruvian</string>
+    <string name="type.cuisine.polish">पोलिश</string>
+    <string name="type.cuisine.portuguese">पोर्तुगीज</string>
+    <string name="type.highway.bridleway">पथ</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.leisure.sauna">Sauna</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.natural.desert">Desert</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.sport.padel">Padel</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.fee.yes">$</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.shop.paint">Paint Shop</string>
+    <string name="type.cuisine.malaysian">Malaysian</string>
+    <string name="type.shop.boutique">Boutique</string>
+    <string name="type.landuse.farmyard">Farmyard</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="edit_track">ट्रॅक संपादा</string>
 </resources>

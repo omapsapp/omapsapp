@@ -98,7 +98,6 @@
     <string name="measurement_units">Unități de măsură</string>
     <!-- Detailed description of Measurement Units settings button -->
     <string name="measurement_units_summary">Alege între mile și kilometri</string>
-
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Unde să mănânci</string>
@@ -146,7 +145,6 @@
     <string name="category_water">Apă</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
     <string name="category_rv">Pentru rulote</string>
-
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Detalii</string>
@@ -341,7 +339,6 @@
     <string name="gray">Gri</string>
     <!-- blue gray color -->
     <string name="blue_gray">Gri albăstriu</string>
-
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Când parcurgi traseul, ai în vedere următoarele:</string>
     <string name="dialog_routing_disclaimer_priority">— Condițiile de drum, legile și semnele rutiere sunt mai importante decât indicațiile navigatorului;</string>
@@ -371,7 +368,6 @@
     <string name="not_now">Nu acum</string>
     <string name="dialog_routing_download_and_build_cross_route">Vrei să descarci harta și să creezi un traseu mai bun care include mai multe hărți?</string>
     <string name="dialog_routing_download_cross_route">Descarcă hărți suplimentare pentru a crea un traseu mai bun care să traverseze limitele acestei hărți.</string>
-
     <!-- SECTION: Strings for downloading map from search -->
     <string name="search_without_internet_advertisement">Pentru a putea începe căutarea și crearea unor trasee, descarcă harta. După aceasta nu vei mai avea nevoie de conexiune la internet.</string>
     <string name="search_select_map">Alege harta</string>
@@ -595,7 +591,7 @@
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Vă rugăm să vă conectați la OpenStreetMap pentru a încărca automat toate modificările aduse hărții. Aflați mai multe <a href="https://github.com/organicmaps/organicmaps/issues/6144">aici</a>.</string>
     <string name="dialog_error_storage_title">Problemă de acces la spațiul de stocare</string>
-    <string name="dialog_error_storage_message">Spațiul de stocare extern nu este disponibil. Probabil cardul SD nu este introdus, este deteriorat sau sistemul de fișiere este doar pentru citire. Verifică sau contactează-ne la support\@organicmaps.app</string>
+    <string name="dialog_error_storage_message">Spațiul de stocare extern nu este disponibil. Probabil cardul SD nu este introdus, este deteriorat sau sistemul de fișiere este doar pentru citire. Verifică sau contactează-ne la support@organicmaps.app</string>
     <string name="setting_emulate_bad_storage">Simulare arhivă deteriorată</string>
     <string name="core_entrance">Intrare</string>
     <string name="error_enter_correct_name">Introdu un nume corect</string>
@@ -605,6 +601,7 @@
     <string name="bookmark_lists_show_all">Arată tot</string>
     <plurals name="bookmarks_places">
         <item quantity="one">%d preferat</item>
+        <item quantity="few"/>
         <item quantity="other">%d preferate</item>
     </plurals>
     <string name="bookmarks_create_new_group">Creează o listă nouă</string>
@@ -623,11 +620,13 @@
     <string name="profile">Profil OpenStreetMap</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">A fost găsit %d fișier. Îl vei vedea după conversiune.</item>
+        <item quantity="few"/>
         <item quantity="other">Au fost găsite %d fișiere. Le vei vedea după conversiune.</item>
     </plurals>
     <string name="restore">Restabilește</string>
     <plurals name="tracks">
         <item quantity="one">%d traseu</item>
+        <item quantity="few"/>
         <item quantity="other">%d trasee</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
@@ -714,7 +713,6 @@
     <string name="moreyear_ago_sorttype">Cu mai mult de un an în urmă</string>
     <string name="near_me_sorttype">Lângă mine</string>
     <string name="others_sorttype">Altele</string>
-
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Mâncare</string>
     <string name="tourist_places">Obiective turistice</string>
@@ -841,7 +839,6 @@
     <string name="track_recording_toast_nothing_to_save">Traseul este gol - nu este nimic de salvat</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nu se poate afișa dialogul de selectare a dosarelor deoarece pe dispozitivul dvs. nu este instalată nicio aplicație adecvată. Vă rugăm să instalați o aplicație de gestionare a fișierelor și să încercați din nou</string>
-
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresă/Bloc</string>
     <string name="type.addr_interpolation.even">Adresă/Bloc</string>
@@ -948,7 +945,6 @@
     <string name="type.amenity.post_box">Cutie poștală</string>
     <string name="type.amenity.post_office">Oficiu poștal</string>
     <string name="type.amenity.public_bookcase">Bibliotecă</string>
-
     <!-- SECTION: Types: Recycling -->
     <string name="type.amenity.recycling.centre">Centru de reciclare</string>
     <string name="type.amenity.recycling">Containere pentru reciclare</string>
@@ -1149,7 +1145,6 @@
     <string name="type.healthcare.psychotherapist">Psihoterapie</string>
     <string name="type.healthcare.sample_collection">Eșantionare</string>
     <string name="type.healthcare.speech_therapist">Logopedie</string>
-
     <!-- SECTION: Types: Roads -->
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.bridleway.bridge">Pod</string>
@@ -1307,7 +1302,6 @@
     <string name="type.area_highway.track">Stradă</string>
     <string name="type.area_highway.trunk">Stradă</string>
     <string name="type.area_highway.unclassified">Stradă</string>
-
     <!-- SECTION: Types: Historic -->
     <string name="type.historic">Obiect istoric</string>
     <string name="type.historic.aircraft">Avioane istorice</string>
@@ -1971,4 +1965,243 @@
     <string name="type.amenity.dojo">Dojo</string>
     <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
     <string name="type.leisure.sports_hall">Sală de sport</string>
+    <string name="menu">Meniu</string>
+    <string name="github">GitHub</string>
+    <string name="telegram">Telegram</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="vk">VContacte</string>
+    <string name="openstreetmap">OpenStreetMap</string>
+    <string name="wikimedia_commons">Wikimedia Commons</string>
+    <string name="mb">MB</string>
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
+    <string name="comma_separated_pair">%1$s, %2$s</string>
+    <string name="type.aerialway">Calea aeriană</string>
+    <string name="type.aerialway.cable_car">Cable Car</string>
+    <string name="type.aerialway.chair_lift">Chair Lift</string>
+    <string name="type.aerialway.drag_lift">Drag Lift</string>
+    <string name="type.aerialway.gondola">Gondolă</string>
+    <string name="type.aerialway.mixed_lift">Mixed Lift</string>
+    <string name="type.aeroway">Airspace Infrastructure</string>
+    <string name="type.aeroway.apron">Apron</string>
+    <string name="type.aeroway.gate">Poartă</string>
+    <string name="type.aeroway.runway">Pistă de decolare-aterizare</string>
+    <string name="type.aeroway.taxiway">Taxiway</string>
+    <string name="type.aeroway.terminal">Terminal</string>
+    <string name="type.amenity.car_sharing">Car Sharing</string>
+    <string name="type.amenity.cinema">Cinema</string>
+    <string name="type.amenity.dentist">Dentist</string>
+    <string name="type.amenity.doctors">Doctor</string>
+    <string name="type.amenity.food_court">Food Court</string>
+    <string name="type.amenity.internet_cafe">Internet Cafe</string>
+    <string name="type.amenity.prison">Prison</string>
+    <string name="type.recycling.cardboard">Cartoane (groase)</string>
+    <string name="type.recycling.cans">Conserve</string>
+    <string name="type.recycling.shoes">Pantofi</string>
+    <string name="type.recycling.green_waste">Green/Organic Waste</string>
+    <string name="type.amenity.restaurant">Restaurant</string>
+    <string name="type.amenity.sanitary_dump_station">Holding Tank Dump Station</string>
+    <string name="type.amenity.taxi">Taxi Stand</string>
+    <string name="type.amenity.vending_machine.coffee">Coffee Dispenser</string>
+    <string name="type.amenity.vending_machine.condoms">Condoms Dispenser</string>
+    <string name="type.amenity.vending_machine.food">Food Dispenser</string>
+    <string name="type.amenity.vending_machine.newspapers">Newspaper Dispenser</string>
+    <string name="type.amenity.vending_machine.sweets">Sweets Dispenser</string>
+    <string name="type.amenity.vending_machine.fuel">Fuel Pump</string>
+    <string name="type.amenity.waste_transfer_station">Waste Transfer Station</string>
+    <string name="type.barrier">Bariere</string>
+    <string name="type.barrier.chain">Lanț</string>
+    <string name="type.barrier.cycle_barrier">Cycle Barrier</string>
+    <string name="type.barrier.fence">Fence</string>
+    <string name="type.barrier.hedge">Hedge</string>
+    <string name="type.boundary.administrative">Administrative Boundary</string>
+    <string name="type.boundary.administrative.2">National Border</string>
+    <string name="type.boundary.administrative.3">Regional Boundary</string>
+    <string name="type.boundary.administrative.4">Regional Boundary</string>
+    <string name="type.building.warehouse">Warehouse</string>
+    <string name="type.highway">Highway</string>
+    <string name="type.highway.bridleway">Cale</string>
+    <string name="type.highway.bridleway.permissive">Cale</string>
+    <string name="type.highway.cycleway">Cycle Path</string>
+    <string name="type.highway.cycleway.permissive">Cycle Path</string>
+    <string name="type.highway.elevator">Ascensor</string>
+    <string name="type.highway.services">Service Area</string>
+    <string name="type.area_highway.cycleway">Cycle Path</string>
+    <string name="type.highway.world_level">highway-world_level</string>
+    <string name="type.highway.world_towns_level">highway-world_towns_level</string>
+    <string name="type.hwtag">hwtag</string>
+    <string name="type.hwtag.onedir_bicycle">hwtag-onedir_bicycle</string>
+    <string name="type.hwtag.lit">hwtag-lit</string>
+    <string name="type.hwtag.nobicycle">hwtag-nobicycle</string>
+    <string name="type.hwtag.nocar">hwtag-nocar</string>
+    <string name="type.hwtag.nofoot">hwtag-nofoot</string>
+    <string name="type.hwtag.oneway">hwtag-oneway</string>
+    <string name="type.hwtag.private">hwtag-private</string>
+    <string name="type.hwtag.yescar">hwtag-yescar</string>
+    <string name="type.hwtag.yesfoot">hwtag-yesfoot</string>
+    <string name="type.internet_access.wlan">Internet</string>
+    <string name="type.junction">Intersecție</string>
+    <string name="type.junction.circular">Carusel</string>
+    <string name="type.junction.roundabout">Carusel</string>
+    <string name="type.landuse">Utilizare terenuri</string>
+    <string name="type.landuse.allotments">Loturi de teren</string>
+    <string name="type.landuse.brownfield">Fostă zonă industrială</string>
+    <string name="type.landuse.commercial">Commercial Area</string>
+    <string name="type.landuse.construction">Construction Area</string>
+    <string name="type.landuse.education">Educational Facility</string>
+    <string name="type.landuse.farmyard">Farmyard</string>
+    <string name="type.landuse.field">Câmp</string>
+    <string name="type.landuse.garages">Garages</string>
+    <string name="type.landuse.greenfield">Greenfield</string>
+    <string name="type.landuse.greenhouse_horticulture">Greenhouse</string>
+    <string name="type.landuse.industrial">Industrial Area</string>
+    <string name="type.landuse.meadow">Meadow</string>
+    <string name="type.landuse.military">Military Area</string>
+    <string name="type.landuse.orchard">Orchard</string>
+    <string name="type.landuse.quarry">Quarry</string>
+    <string name="type.landuse.recreation_ground">Recreation Ground</string>
+    <string name="type.landuse.residential">Residential Area</string>
+    <string name="type.landuse.retail">Retail Area</string>
+    <string name="type.landuse.vineyard">Vineyard</string>
+    <string name="type.leisure">Locuri de relaxare</string>
+    <string name="type.leisure.common">Public Land</string>
+    <string name="type.leisure.hackerspace">Spațiu pentru hackeri</string>
+    <string name="type.leisure.ice_rink">Ice Rink</string>
+    <string name="type.leisure.marina">Marina</string>
+    <string name="type.leisure.track.area">Traseu</string>
+    <string name="type.leisure.beach_resort">Beach Resort</string>
+    <string name="type.man_made">Man Made</string>
+    <string name="type.man_made.breakwater">Breakwater</string>
+    <string name="type.man_made.cairn">Cairn</string>
+    <string name="type.man_made.cutline">Cutline</string>
+    <string name="type.man_made.survey_point">Survey Point</string>
+    <string name="type.man_made.flagpole">Catarg pentru steag</string>
+    <string name="type.man_made.mast">Catarg (antenă)</string>
+    <string name="type.man_made.pier">Ponton</string>
+    <string name="type.man_made.pipeline">Pipeline</string>
+    <string name="type.man_made.pipeline.overground">Overground Pipeline</string>
+    <string name="type.man_made.storage_tank">Storage Tank</string>
+    <string name="type.man_made.wastewater_plant">Wastewater Treatment Plant</string>
+    <string name="type.man_made.works">Industrial Works</string>
+    <string name="type.mapswithme">mapswithme</string>
+    <string name="type.mapswithme.grid">mapswithme-grid</string>
+    <string name="type.military">Militar</string>
+    <string name="type.organic.only">Organic</string>
+    <string name="type.organic.yes">Organic</string>
+    <string name="type.power">Power</string>
+    <string name="type.power.line">Power Line</string>
+    <string name="type.power.line.underground">Underground Power Line</string>
+    <string name="type.power.minor_line">Minor Power Line</string>
+    <string name="type.power.station">Power Station</string>
+    <string name="type.psurface">psurface</string>
+    <string name="type.psurface.paved_bad">psurface-paved_bad</string>
+    <string name="type.psurface.unpaved_bad">psurface-unpaved_bad</string>
+    <string name="type.public_transport">Public Transport</string>
+    <string name="type.public_transport.platform">Platformă</string>
+    <string name="type.railway">Cale ferată</string>
+    <string name="type.railway.abandoned">Abandoned Railway</string>
+    <string name="type.railway.abandoned.bridge">Abandoned Railway Bridge</string>
+    <string name="type.railway.abandoned.tunnel">Abandoned Railway Tunnel</string>
+    <string name="type.railway.construction">Railway Construction</string>
+    <string name="type.railway.crossing">Railway Crossing</string>
+    <string name="type.railway.disused">Disused Railway</string>
+    <string name="type.railway.funicular.bridge">Funicular Bridge</string>
+    <string name="type.railway.funicular.tunnel">Funicular Tunnel</string>
+    <string name="type.railway.light_rail">Light Rail</string>
+    <string name="type.railway.light_rail.bridge">Light Rail Bridge</string>
+    <string name="type.railway.light_rail.tunnel">Light Rail Tunnel</string>
+    <string name="type.railway.monorail.bridge">Monorail Bridge</string>
+    <string name="type.railway.monorail.tunnel">Monorail Tunnel</string>
+    <string name="type.railway.narrow_gauge">Narrow Gauge Rail</string>
+    <string name="type.railway.narrow_gauge.bridge">Narrow Gauge Rail Bridge</string>
+    <string name="type.railway.narrow_gauge.tunnel">Narrow Gauge Rail Tunnel</string>
+    <string name="type.railway.preserved.bridge">Preserved Rail Bridge</string>
+    <string name="type.railway.preserved.tunnel">Preserved Rail Tunnel</string>
+    <string name="type.railway.subway">Subway Line</string>
+    <string name="type.railway.subway.bridge">Subway Line Bridge</string>
+    <string name="type.railway.subway.tunnel">Subway Line Tunnel</string>
+    <string name="type.railway.tram">Tram Line</string>
+    <string name="type.railway.tram.bridge">Tram Line Bridge</string>
+    <string name="type.railway.tram.tunnel">Tram Line Tunnel</string>
+    <string name="type.route.ferry">Ferry</string>
+    <string name="type.route.shuttle_train">route-shuttle_train</string>
+    <string name="type.shop.supermarket">Supermarket</string>
+    <string name="type.sport.bowls">Bowls</string>
+    <string name="type.tourism">Atracții turistice</string>
+    <string name="type.tourism.hostel">Hostel</string>
+    <string name="type.tourism.hotel">Hotel</string>
+    <string name="type.traffic_calming">Traffic Calming</string>
+    <string name="type.traffic_calming.bump">Traffic Bump</string>
+    <string name="type.traffic_calming.hump">Traffic Hump</string>
+    <string name="type.waterway.canal">Canal</string>
+    <string name="type.waterway.canal.tunnel">Canal Tunnel</string>
+    <string name="type.barrier.ditch">Ditch</string>
+    <string name="type.waterway.dock">Waterway Dock</string>
+    <string name="type.waterway.drain">Drain</string>
+    <string name="type.natural.water.drain">Drain</string>
+    <string name="type.aerialway.j.bar">J-bar Lift</string>
+    <string name="type.aerialway.magic_carpet">Magic Carpet</string>
+    <string name="type.aerialway.platter">Platter Lift</string>
+    <string name="type.aerialway.rope_tow">Rope Tow</string>
+    <string name="type.aerialway.t.bar">T-bar Lift</string>
+    <string name="type.piste_type.downhill">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.advanced.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.easy.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.expert.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.freeride">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.intermediate.area">Downhill Ski Run</string>
+    <string name="type.piste_type.downhill.novice.area">Downhill Ski Run</string>
+    <string name="type.piste_type.nordic">Nordic Ski Trail</string>
+    <string name="type.psurface.unpaved_good">psurface-unpaved_good</string>
+    <string name="type.psurface.paved_good">psurface-paved_good</string>
+    <string name="type.leisure.slipway">Cale de lansare</string>
+    <string name="type.sport.cricket">Cricket</string>
+    <string name="type.hwtag.yesbicycle">hwtag-yesbicycle</string>
+    <string name="gb">GO</string>
+    <string name="type.route">Rută</string>
+    <string name="type.shop.caravan">RV Dealership</string>
+    <string name="type.recycling.cartons">Cartoane</string>
+    <string name="type.natural.desert">Deșert</string>
+    <string name="type.noexit">Dead End</string>
+    <string name="type.tourism.camp_site">Campground</string>
+    <string name="type.waterway">Waterway</string>
+    <string name="type.piste_type.sled.area">Sledding Piste</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
+    <string name="type.amenity.bar">Bar</string>
+    <string name="type.amenity.shelter.lean_to">Lean-to Shelter</string>
+    <string name="type.amenity.vending_machine">Vending Machine</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Excrement Bags Dispenser</string>
+    <string name="type.amenity.parcel_locker">Parcel Locker</string>
+    <string name="type.barrier.retaining_wall">Retaining Wall</string>
+    <string name="type.emergency">Urgențe</string>
+    <string name="type.hwtag.bidir_bicycle">hwtag-bidir_bicycle</string>
+    <string name="type.hwtag.toll">hwtag-toll</string>
+    <string name="type.landuse.salt_pond">Salt Pond</string>
+    <string name="type.landuse.village_green">Land</string>
+    <string name="type.power.generator">Power Generator</string>
+    <string name="type.amenity.bicycle_repair_station">Bicycle Repair Station</string>
+    <string name="type.boundary">Delimitare</string>
+    <string name="type.internet_access">Internet</string>
+    <string name="type.leisure.recreation_ground">Recreation Ground</string>
+    <string name="type.leisure.track">Traseu</string>
+    <string name="type.man_made.silo">Silo</string>
+    <string name="type.railway.platform">Railway Platform</string>
+    <string name="type.tourism.motel">Motel</string>
+    <string name="type.waterway.dam">Dam</string>
+    <string name="type.waterway.weir">Stăvilar</string>
+    <string name="type.wheelchair">Scaun cu rotile</string>
+    <string name="type.piste_type.downhill.novice">Downhill Ski Run</string>
+    <string name="type.barrier.wall">Wall</string>
+    <string name="type.piste_type.sled">Sledding Piste</string>
+    <string name="type.railway.preserved">Preserved Rail</string>
+    <string name="type.mountain_pass">Mountain Pass</string>
+    <string name="edit_track">Editează traseu</string>
 </resources>
