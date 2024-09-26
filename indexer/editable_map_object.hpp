@@ -91,7 +91,7 @@ public:
 
   void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
   void ClearJournal();
-  EditJournal GetJournal() const;
+  EditJournal const & GetJournal() const;
   void SetJournal(EditJournal editJournal);
   EditingLifecycle GetEditingLifecycle() const;
 

@@ -173,7 +173,7 @@ void EditableMapObject::SetTestId(uint64_t id)
 
 void EditableMapObject::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
 {
-  journal.MarkAsCreated(type, geomType, mercator);
+  journal.MarkAsCreated(type, geomType, std::move(mercator));
 }
 
 void EditableMapObject::ClearJournal()
@@ -181,7 +181,7 @@ void EditableMapObject::ClearJournal()
   journal.Clear();
 }
 
-EditJournal EditableMapObject::GetJournal() const
+EditJournal const & EditableMapObject::GetJournal() const
 {
   return journal;
 }

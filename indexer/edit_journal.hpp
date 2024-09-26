@@ -15,6 +15,7 @@ namespace osm
     TagModification,
     ObjectCreated,
     //LegacyObject,   //object without full history journal, only used for transition
+    //Info,
     //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused, LocationChanged, FeatureTypeChanged
   };
 
@@ -51,13 +52,13 @@ namespace osm
     std::list<JournalEntry> journal{};
 
   public:
-    void AddJournalEntry(const JournalEntry& entry);
+    void AddJournalEntry(JournalEntry const & entry);
 
     void AddTagChange(std::string key, std::string old_value, std::string new_value);
 
     void Clear();
 
-    const std::list<JournalEntry> & GetJournal();
+    std::list<JournalEntry> const & GetJournal() const;
 
     void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 

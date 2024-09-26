@@ -10,7 +10,7 @@
 
 namespace osm
 {
-  void EditJournal::AddJournalEntry(const JournalEntry& entry)
+  void EditJournal::AddJournalEntry(JournalEntry const & entry)
   {
     journal.push_back(entry);
   }
@@ -28,7 +28,7 @@ namespace osm
     journal = {};
   }
 
-  const std::list<JournalEntry> &EditJournal::GetJournal()
+  std::list<JournalEntry> const & EditJournal::GetJournal() const
   {
     return journal;
   }

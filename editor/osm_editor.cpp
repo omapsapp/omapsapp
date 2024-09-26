@@ -481,9 +481,7 @@ std::optional<osm::EditJournal> Editor::GetEditedFeatureJournal(FeatureID const 
   if (featureInfo == nullptr)
     return {};
 
-  EditableMapObject emo = featureInfo->m_object;
-
-  return emo.GetJournal();
+  return featureInfo->m_object.GetJournal();
 }
 
 bool Editor::GetEditedFeatureStreet(FeatureID const & fid, string & outFeatureStreet) const
@@ -646,24 +644,24 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
               case FeatureStatus::Created: // fallthrough
               case FeatureStatus::Modified:
               {
-                std::list<JournalEntry> journal = fti.m_object.GetJournal().GetJournal();
+                std::list<JournalEntry> const & journal = fti.m_object.GetJournal().GetJournal();
 
                 switch (fti.m_object.GetEditingLifecycle())
                 {
                   case EditingLifecycle::CREATED:
                   {
                     // Generate XMLFeature for new object
-                    JournalEntry createEntry = journal.front();
+                    JournalEntry const & createEntry = journal.front();
                     ASSERT(createEntry.journalEntryType == JournalEntryType::ObjectCreated,("First item should have type ObjectCreated"));
-                    ObjCreateData objCreateData = std::get<ObjCreateData>(createEntry.data);
+                    ObjCreateData const & objCreateData = std::get<ObjCreateData>(createEntry.data);
                     XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
 
                     // Add tags to XMLFeature
-                    for (JournalEntry entry: journal) {
+                    for (JournalEntry const & entry: journal) {
                       switch (entry.journalEntryType) {
                         case JournalEntryType::TagModification:
                         {
-                          TagModData tagModData = std::get<TagModData>(entry.data);
+                          TagModData const & tagModData = std::get<TagModData>(entry.data);
                           feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
                           break;
                         }
@@ -684,11 +682,11 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                     XMLFeature feature = GetMatchingFeatureFromOSM(changeset, fti.m_object);
 
                     // Update tags of XMLFeature
-                    for (JournalEntry entry: journal) {
+                    for (JournalEntry const & entry: journal) {
                       switch (entry.journalEntryType) {
                         case JournalEntryType::TagModification:
                         {
-                          TagModData tagModData = std::get<TagModData>(entry.data);
+                          TagModData const & tagModData = std::get<TagModData>(entry.data);
                           feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
                           break;
                         }
