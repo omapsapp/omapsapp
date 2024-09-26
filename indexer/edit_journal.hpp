@@ -66,7 +66,7 @@ namespace osm
 
     std::string JournalToString() const;
 
-    std::string ToString(osm::JournalEntry journalEntry) const;
+    std::string ToString(osm::JournalEntry const & journalEntry) const;
 
     std::string ToString(osm::JournalEntryType journalEntryType) const;
   };
