@@ -10,36 +10,9 @@
 
 namespace osm
 {
-  void EditJournal::AddJournalEntry(JournalEntry const & entry)
-  {
-    journal.push_back(entry);
-  }
-
-  void EditJournal::AddTagChange(std::string key, std::string old_value, std::string new_value)
-  {
-    TagModData tagModData = {key, old_value, new_value};
-    JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), std::move(tagModData)};
-    AddJournalEntry(entry);
-    LOG(LDEBUG, ("Key ", key, "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
-  }
-
-  void EditJournal::Clear()
-  {
-    journal = {};
-  }
-
   std::list<JournalEntry> const & EditJournal::GetJournal() const
   {
     return journal;
-  }
-
-  void EditJournal::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
-  {
-    ASSERT(journal.empty(), ("Only empty journals can be marked as created"));
-    ObjCreateData objCreateData = {type, geomType, std::move(mercator)};
-    JournalEntry entry = {JournalEntryType::ObjectCreated, time(nullptr), std::move(objCreateData)};
-    AddJournalEntry(entry);
-    LOG(LDEBUG, ("Object of type ", classif().GetFullObjectName(type), " created"));
   }
 
   osm::EditingLifecycle EditJournal::GetEditingLifecycle() const
@@ -51,6 +24,33 @@ namespace osm
       return EditingLifecycle::CREATED;
     }
     return EditingLifecycle::MODIFIED;
+  }
+
+  void EditJournal::AddTagChange(std::string key, std::string old_value, std::string new_value)
+  {
+    TagModData tagModData = {key, old_value, new_value};
+    JournalEntry entry = {JournalEntryType::TagModification, time(nullptr), std::move(tagModData)};
+    AddJournalEntry(entry);
+    LOG(LDEBUG, ("Key ", key, "changed from \"", (std::string) old_value, "\" to \"", (std::string) new_value, "\""));
+  }
+
+  void EditJournal::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
+  {
+    ASSERT(journal.empty(), ("Only empty journals can be marked as created"));
+    ObjCreateData objCreateData = {type, geomType, std::move(mercator)};
+    JournalEntry entry = {JournalEntryType::ObjectCreated, time(nullptr), std::move(objCreateData)};
+    AddJournalEntry(entry);
+    LOG(LDEBUG, ("Object of type ", classif().GetFullObjectName(type), " created"));
+  }
+
+  void EditJournal::AddJournalEntry(JournalEntry const & entry)
+  {
+    journal.push_back(entry);
+  }
+
+  void EditJournal::Clear()
+  {
+    journal = {};
   }
 
   std::string EditJournal::JournalToString() const

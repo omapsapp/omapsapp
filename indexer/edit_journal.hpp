@@ -7,7 +7,6 @@
 #include <functional>
 #include <string>
 #include <vector>
-//TODO: clean up imports
 
 namespace osm
 {
@@ -38,6 +37,7 @@ namespace osm
     std::variant<TagModData, ObjCreateData> data;
   };
 
+  /// Used to determine whether existing OSM object should be updated or new one created
   enum class EditingLifecycle
   {
     CREATED,      //newly created and not synced with OSM
@@ -45,24 +45,25 @@ namespace osm
     IN_SYNC       //synced with OSM (including never edited)
   };
 
-  //using EditJournal = std::list<JournalEntry>;
-
   class EditJournal
   {
     std::list<JournalEntry> journal{};
 
   public:
-    void AddJournalEntry(JournalEntry const & entry);
-
-    void AddTagChange(std::string key, std::string old_value, std::string new_value);
-
-    void Clear();
-
     std::list<JournalEntry> const & GetJournal() const;
 
+    osm::EditingLifecycle GetEditingLifecycle() const;
+
+    /// Log object edits in the journal
+    void AddTagChange(std::string key, std::string old_value, std::string new_value);
+
+    /// Log object creation in the journal
     void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 
-    osm::EditingLifecycle GetEditingLifecycle() const;
+    void AddJournalEntry(JournalEntry const & entry);
+
+    /// Clear Journal, used after upload to OSM
+    void Clear();
 
     std::string JournalToString() const;
 

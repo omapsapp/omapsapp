@@ -171,31 +171,6 @@ void EditableMapObject::SetTestId(uint64_t id)
   m_metadata.Set(feature::Metadata::FMD_TEST_ID, std::to_string(id));
 }
 
-void EditableMapObject::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
-{
-  journal.MarkAsCreated(type, geomType, std::move(mercator));
-}
-
-void EditableMapObject::ClearJournal()
-{
-  journal.Clear();
-}
-
-EditJournal const & EditableMapObject::GetJournal() const
-{
-  return journal;
-}
-
-void EditableMapObject::SetJournal(EditJournal editJournal)
-{
-  journal = editJournal;
-}
-
-EditingLifecycle EditableMapObject::GetEditingLifecycle() const
-{
-  return journal.GetEditingLifecycle();
-}
-
 void EditableMapObject::SetEditableProperties(osm::EditableProperties const & props)
 {
   m_editableProperties = props;
@@ -686,6 +661,31 @@ bool EditableMapObject::ValidateName(string const & name)
       return false;
   }
   return true;
+}
+
+EditJournal const & EditableMapObject::GetJournal() const
+{
+  return journal;
+}
+
+void EditableMapObject::SetJournal(EditJournal editJournal)
+{
+  journal = editJournal;
+}
+
+EditingLifecycle EditableMapObject::GetEditingLifecycle() const
+{
+  return journal.GetEditingLifecycle();
+}
+
+void EditableMapObject::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
+{
+  journal.MarkAsCreated(type, geomType, std::move(mercator));
+}
+
+void EditableMapObject::ClearJournal()
+{
+  journal.Clear();
 }
 
 bool AreObjectsEqualIgnoringStreet(EditableMapObject const & lhs, EditableMapObject const & rhs)

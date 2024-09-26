@@ -186,6 +186,7 @@ public:
   void SetTagValue(std::string_view key, std::string_view value);
   void RemoveTag(std::string_view key);
 
+  /// Wrapper for SetTagValue and RemoveTag, avoids duplication for similar alternative osm tags
   void UpdateOSMTag(std::string_view key, std::string_view value);
 
   std::string GetAttribute(std::string const & key) const;
@@ -212,6 +213,7 @@ void ApplyPatch(XMLFeature const & xml, osm::EditableMapObject & object);
 /// has changed a type in OSM, but our users uploaded invalid outdated type after modifying feature.
 XMLFeature ToXML(osm::EditableMapObject const & object, bool serializeType);
 
+/// Used to generate XML for created objects in the new editor
 XMLFeature TypeToXML(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 
 /// Creates new feature, including geometry and types.

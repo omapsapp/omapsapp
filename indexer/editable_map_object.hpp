@@ -89,12 +89,6 @@ public:
   // Used only in testing framework.
   void SetTestId(uint64_t id);
 
-  void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
-  void ClearJournal();
-  EditJournal const & GetJournal() const;
-  void SetJournal(EditJournal editJournal);
-  EditingLifecycle GetEditingLifecycle() const;
-
   void SetEditableProperties(osm::EditableProperties const & props);
   //  void SetFeatureID(FeatureID const & fid);
   void SetName(StringUtf8Multilang const & name);
@@ -136,6 +130,13 @@ public:
   static bool ValidateEmail(std::string const & email);
   static bool ValidateLevel(std::string const & level);
   static bool ValidateName(std::string const & name);
+
+  /// Journal that stores changes to map object
+  EditJournal const & GetJournal() const;
+  void SetJournal(EditJournal editJournal);
+  EditingLifecycle GetEditingLifecycle() const;
+  void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
+  void ClearJournal();
 
   /// Check whether langCode can be used as default name.
   static bool CanUseAsDefaultName(int8_t const langCode, std::vector<int8_t> const & nativeMwmLanguages);
