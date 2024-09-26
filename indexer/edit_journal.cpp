@@ -85,9 +85,18 @@ namespace osm
   {
     switch (journalEntryType) {
       case osm::JournalEntryType::TagModification:
-        return "TAG MODIFICATION";
+        return "TagModification";
       case osm::JournalEntryType::ObjectCreated:
-        return "OBJECT CREATED";
+        return "ObjectCreated";
     }
+  }
+
+  std::optional<JournalEntryType> EditJournal::TypeFromString(std::string const & entryType) {
+    if (entryType == "TagModification")
+      return JournalEntryType::TagModification;
+    else if (entryType == "ObjectCreated")
+      return JournalEntryType::ObjectCreated;
+    else
+      return {};
   }
 }

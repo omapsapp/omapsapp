@@ -436,14 +436,105 @@ void XMLFeature::SetUploadError(string const & error) { SetAttribute(kUploadErro
 
 osm::EditJournal XMLFeature::GetEditJournal() const
 {
+  // debug print
+  std::ostringstream ost;
+  Save(ost);
+  LOG(LDEBUG, ("XMLFeature (GetEditJournal):\n", ost.str()));
+
   osm::EditJournal journal = osm::EditJournal();
-  journal.AddTagChange("Loaded from dummy storage method", "", "");
-  return journal;
+  auto xmlJournal = GetRootNode().child("journal");
+
+  for (auto xmlEntry = xmlJournal.child("entry"); xmlEntry; xmlEntry = xmlEntry.next_sibling("entry"))
+  {
+    osm::JournalEntry entry;
+
+    std::string strType = xmlEntry.attribute("type").value();
+    std::optional<osm::JournalEntryType> type = osm::EditJournal::TypeFromString(strType);
+    ASSERT(type.has_value(), ("Invalid JournalEntryType ", strType));
+    entry.journalEntryType = *type;
+
+    entry.timestamp = base::StringToTimestamp(xmlEntry.attribute("timestamp").value());
+
+    auto xmlData = xmlEntry.child("data");
+
+    switch (entry.journalEntryType) {
+      case osm::JournalEntryType::TagModification:
+      {
+        osm::TagModData tagModData;
+        tagModData.key = xmlData.attribute("key").value();
+        tagModData.old_value = xmlData.attribute("old_value").value();
+        tagModData.new_value = xmlData.attribute("new_value").value();
+        entry.data = tagModData;
+        break;
+      }
+      case osm::JournalEntryType::ObjectCreated:
+      {
+        osm::ObjCreateData objCreateData;
+        objCreateData.type = std::stoi(xmlData.attribute("type").value());
+        int8_t geomType = std::stoi(xmlData.attribute("geomType").value());
+        objCreateData.geomType = feature::GeomType(geomType);
+        objCreateData.mercator = mercator::FromLatLon(GetLatLonFromNode(xmlData));
+        entry.data = objCreateData;
+        break;
+      }
+    }
+    journal.AddJournalEntry(entry);
+  }
+
+  LOG(LDEBUG, ("Red in journal:\n", journal.JournalToString()));
+
+  bool use_read_in = true;
+
+  if (use_read_in) {
+    return journal;
+  }
+  else {
+    // Todo: remove
+    osm::EditJournal testJournal = osm::EditJournal();
+    testJournal.AddTagChange("Loaded from dummy storage method", "", "");
+    return testJournal;
+  }
 }
 
 void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
 {
   LOG(LDEBUG, ("Journal saved in dummy storage:\n", journal.JournalToString()));
+
+  auto xmlJournal = GetRootNode().append_child("journal");
+
+  for (osm::JournalEntry const & entry : journal.GetJournal()) {
+    auto xmlEntry = xmlJournal.append_child("entry");
+    xmlEntry.append_attribute("type") = journal.ToString(entry.journalEntryType).data();
+    xmlEntry.append_attribute("timestamp") = base::TimestampToString(entry.timestamp).data();
+
+    auto xmlData = xmlEntry.append_child("data");
+    switch (entry.journalEntryType) {
+      case osm::JournalEntryType::TagModification:
+      {
+        osm::TagModData const & tagModData = std::get<osm::TagModData>(entry.data);
+        xmlData.append_attribute("key") = tagModData.key.data();
+        xmlData.append_attribute("old_value") = tagModData.old_value.data();
+        xmlData.append_attribute("new_value") = tagModData.new_value.data();
+        break;
+      }
+      case osm::JournalEntryType::ObjectCreated:
+      {
+        osm::ObjCreateData const & objCreateData = std::get<osm::ObjCreateData>(entry.data);
+        xmlData.append_attribute("type") = std::to_string(objCreateData.type).data();
+        int8_t geomType = int8_t(objCreateData.geomType);
+        xmlData.append_attribute("geomType") = std::to_string(geomType).data();
+        ms::LatLon ll = mercator::ToLatLon(objCreateData.mercator);
+        xmlData.append_attribute("lat") = strings::to_string_dac(ll.m_lat, kLatLonTolerance).data();
+        xmlData.append_attribute("lon") = strings::to_string_dac(ll.m_lon, kLatLonTolerance).data();
+        break;
+      }
+    }
+  }
+
+  // debug print
+  std::ostringstream ost;
+  Save(ost);
+  LOG(LDEBUG, ("XMLFeature (SetEditJournal):\n", ost.str()));
 }
 
 bool XMLFeature::HasAnyTags() const { return GetRootNode().child("tag"); }
@@ -528,6 +619,7 @@ string XMLFeature::GetAttribute(string const & key) const
 }
 
 void XMLFeature::SetAttribute(string const & key, string const & value)
+
 {
   auto node = HasAttribute(key) ? GetRootNode().attribute(key.data())
                                 : GetRootNode().append_attribute(key.data());
