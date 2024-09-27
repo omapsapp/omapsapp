@@ -483,17 +483,7 @@ osm::EditJournal XMLFeature::GetEditJournal() const
 
   LOG(LDEBUG, ("Red in journal:\n", journal.JournalToString()));
 
-  bool use_read_in = true;
-
-  if (use_read_in) {
-    return journal;
-  }
-  else {
-    // Todo: remove
-    osm::EditJournal testJournal = osm::EditJournal();
-    testJournal.AddTagChange("Loaded from dummy storage method", "", "");
-    return testJournal;
-  }
+  return journal;
 }
 
 void XMLFeature::SetEditJournal(osm::EditJournal const & journal)

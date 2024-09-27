@@ -840,7 +840,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
           uploadInfo.m_uploadError.clear();
           ++uploadedFeaturesCount;
         }
-        catch (ChangesetWrapper::OsmObjectWasDeletedException const &ex)
+        catch (ChangesetWrapper::OsmObjectWasDeletedException const & ex)
         {
           uploadInfo.m_uploadStatus = kDeletedFromOSMServer;
           uploadInfo.m_uploadError = ex.Msg();
@@ -848,7 +848,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
           LOG(LWARNING, (ex.what()));
           changeset.SetErrorDescription(ex.Msg());
         }
-        catch (ChangesetWrapper::EmptyFeatureException const &ex)
+        catch (ChangesetWrapper::EmptyFeatureException const & ex)
         {
           uploadInfo.m_uploadStatus = kMatchedFeatureIsEmpty;
           uploadInfo.m_uploadError = ex.Msg();
@@ -856,7 +856,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
           LOG(LWARNING, (ex.what()));
           changeset.SetErrorDescription(ex.Msg());
         }
-        catch (RootException const &ex)
+        catch (RootException const & ex)
         {
           uploadInfo.m_uploadStatus = kNeedsRetry;
           uploadInfo.m_uploadError = ex.Msg();
