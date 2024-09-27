@@ -5,7 +5,6 @@
 #include "indexer/postcodes_matcher.hpp"
 #include "indexer/validate_and_format_contacts.hpp"
 #include "indexer/edit_journal.hpp"
-#include "indexer/edit_journal.cpp"
 
 #include "editor/xml_feature.hpp"
 
