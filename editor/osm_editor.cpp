@@ -759,7 +759,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                   else
                   {
                     LOG(LDEBUG, ("Create case: uploading patched feature", osmFeature));
-                    changeset.AddChangesetTag("info:oldEditor", "yes");
+                    changeset.AddChangesetTag("info:old_editor", "yes");
                     changeset.AddChangesetTag("info:features_merged", "yes");
                     changeset.Modify(osmFeature);
                   }
@@ -767,13 +767,13 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                 catch (ChangesetWrapper::OsmObjectWasDeletedException const &)
                 {
                   // Object was never created by anyone else - it's safe to create it.
-                  changeset.AddChangesetTag("info:oldEditor", "yes");
+                  changeset.AddChangesetTag("info:old_editor", "yes");
                   changeset.Create(feature);
                 }
                 catch (ChangesetWrapper::EmptyFeatureException const &)
                 {
                   // There is another node nearby, but it should be safe to create a new one.
-                  changeset.AddChangesetTag("info:oldEditor", "yes");
+                  changeset.AddChangesetTag("info:old_editor", "yes");
                   changeset.Create(feature);
                 }
                 catch (...)
@@ -815,7 +815,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                 else
                 {
                   LOG(LDEBUG, ("Uploading patched feature", osmFeature));
-                  changeset.AddChangesetTag("info:oldEditor", "yes");
+                  changeset.AddChangesetTag("info:old_editor", "yes");
                   changeset.Modify(osmFeature);
                 }
               }
@@ -831,7 +831,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                                         });
                   continue;
                 }
-                changeset.AddChangesetTag("info:oldEditor", "yes");
+                changeset.AddChangesetTag("info:old_editor", "yes");
                 changeset.Delete(GetMatchingFeatureFromOSM(changeset, *originalObjectPtr));
                 break;
             }

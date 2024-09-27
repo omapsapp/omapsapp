@@ -441,7 +441,7 @@ osm::EditJournal XMLFeature::GetEditJournal() const
   Save(ost);
   LOG(LDEBUG, ("XMLFeature (GetEditJournal):\n", ost.str()));
 
-  auto readEditJournalList = [] (xml_node & xmlNode, osm::EditJournal & journal, bool isHistory)
+  auto readEditJournalList = [] (pugi::xml_node & xmlNode, osm::EditJournal & journal, bool isHistory)
   {
     for (auto xmlEntry = xmlNode.child("entry"); xmlEntry; xmlEntry = xmlEntry.next_sibling("entry"))
     {
@@ -501,7 +501,7 @@ void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
 {
   LOG(LDEBUG, ("Journal saved in dummy storage:\n", journal.JournalToString()));
 
-  auto const insertEditJournalList = [] (xml_node & xmlNode, std::list<osm::JournalEntry> const & journalList){
+  auto const insertEditJournalList = [] (pugi::xml_node & xmlNode, std::list<osm::JournalEntry> const & journalList){
     for (osm::JournalEntry const & entry : journalList) {
       auto xmlEntry = xmlNode.append_child("entry");
       xmlEntry.append_attribute("type") = osm::EditJournal::ToString(entry.journalEntryType).data();
