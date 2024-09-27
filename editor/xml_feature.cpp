@@ -441,45 +441,56 @@ osm::EditJournal XMLFeature::GetEditJournal() const
   Save(ost);
   LOG(LDEBUG, ("XMLFeature (GetEditJournal):\n", ost.str()));
 
-  osm::EditJournal journal = osm::EditJournal();
-  auto xmlJournal = GetRootNode().child("journal");
-
-  for (auto xmlEntry = xmlJournal.child("entry"); xmlEntry; xmlEntry = xmlEntry.next_sibling("entry"))
+  auto readEditJournalList = [] (xml_node & xmlNode, osm::EditJournal & journal, bool isHistory)
   {
-    osm::JournalEntry entry;
+    for (auto xmlEntry = xmlNode.child("entry"); xmlEntry; xmlEntry = xmlEntry.next_sibling("entry"))
+    {
+      osm::JournalEntry entry;
 
-    std::string strType = xmlEntry.attribute("type").value();
-    std::optional<osm::JournalEntryType> type = osm::EditJournal::TypeFromString(strType);
-    ASSERT(type.has_value(), ("Invalid JournalEntryType ", strType));
-    entry.journalEntryType = *type;
+      std::string strType = xmlEntry.attribute("type").value();
+      std::optional<osm::JournalEntryType> type = osm::EditJournal::TypeFromString(strType);
+      ASSERT(type.has_value(), ("Invalid JournalEntryType ", strType));
+      entry.journalEntryType = *type;
 
-    entry.timestamp = base::StringToTimestamp(xmlEntry.attribute("timestamp").value());
+      entry.timestamp = base::StringToTimestamp(xmlEntry.attribute("timestamp").value());
 
-    auto xmlData = xmlEntry.child("data");
+      auto xmlData = xmlEntry.child("data");
 
-    switch (entry.journalEntryType) {
-      case osm::JournalEntryType::TagModification:
-      {
-        osm::TagModData tagModData;
-        tagModData.key = xmlData.attribute("key").value();
-        tagModData.old_value = xmlData.attribute("old_value").value();
-        tagModData.new_value = xmlData.attribute("new_value").value();
-        entry.data = tagModData;
-        break;
+      switch (entry.journalEntryType) {
+        case osm::JournalEntryType::TagModification:
+        {
+          osm::TagModData tagModData;
+          tagModData.key = xmlData.attribute("key").value();
+          tagModData.old_value = xmlData.attribute("old_value").value();
+          tagModData.new_value = xmlData.attribute("new_value").value();
+          entry.data = tagModData;
+          break;
+        }
+        case osm::JournalEntryType::ObjectCreated:
+        {
+          osm::ObjCreateData objCreateData;
+          objCreateData.type = std::stoi(xmlData.attribute("type").value());
+          int8_t geomType = std::stoi(xmlData.attribute("geomType").value());
+          objCreateData.geomType = feature::GeomType(geomType);
+          objCreateData.mercator = mercator::FromLatLon(GetLatLonFromNode(xmlData));
+          entry.data = objCreateData;
+          break;
+        }
       }
-      case osm::JournalEntryType::ObjectCreated:
-      {
-        osm::ObjCreateData objCreateData;
-        objCreateData.type = std::stoi(xmlData.attribute("type").value());
-        int8_t geomType = std::stoi(xmlData.attribute("geomType").value());
-        objCreateData.geomType = feature::GeomType(geomType);
-        objCreateData.mercator = mercator::FromLatLon(GetLatLonFromNode(xmlData));
-        entry.data = objCreateData;
-        break;
-      }
+      if (isHistory)
+        journal.AddJournalHistoryEntry(entry);
+      else
+        journal.AddJournalEntry(entry);
     }
-    journal.AddJournalEntry(entry);
-  }
+  };
+
+  osm::EditJournal journal = osm::EditJournal();
+
+  auto xmlJournal = GetRootNode().child("journal");
+  readEditJournalList(xmlJournal, journal, false);
+
+  auto xmlJournalHistory = GetRootNode().child("journalHistory");
+  readEditJournalList(xmlJournalHistory, journal, true);
 
   LOG(LDEBUG, ("Red in journal:\n", journal.JournalToString()));
 
@@ -490,36 +501,42 @@ void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
 {
   LOG(LDEBUG, ("Journal saved in dummy storage:\n", journal.JournalToString()));
 
-  auto xmlJournal = GetRootNode().append_child("journal");
+  auto const insertEditJournalList = [] (xml_node & xmlNode, std::list<osm::JournalEntry> const & journalList){
+    for (osm::JournalEntry const & entry : journalList) {
+      auto xmlEntry = xmlNode.append_child("entry");
+      xmlEntry.append_attribute("type") = osm::EditJournal::ToString(entry.journalEntryType).data();
+      xmlEntry.append_attribute("timestamp") = base::TimestampToString(entry.timestamp).data();
 
-  for (osm::JournalEntry const & entry : journal.GetJournal()) {
-    auto xmlEntry = xmlJournal.append_child("entry");
-    xmlEntry.append_attribute("type") = journal.ToString(entry.journalEntryType).data();
-    xmlEntry.append_attribute("timestamp") = base::TimestampToString(entry.timestamp).data();
-
-    auto xmlData = xmlEntry.append_child("data");
-    switch (entry.journalEntryType) {
-      case osm::JournalEntryType::TagModification:
-      {
-        osm::TagModData const & tagModData = std::get<osm::TagModData>(entry.data);
-        xmlData.append_attribute("key") = tagModData.key.data();
-        xmlData.append_attribute("old_value") = tagModData.old_value.data();
-        xmlData.append_attribute("new_value") = tagModData.new_value.data();
-        break;
-      }
-      case osm::JournalEntryType::ObjectCreated:
-      {
-        osm::ObjCreateData const & objCreateData = std::get<osm::ObjCreateData>(entry.data);
-        xmlData.append_attribute("type") = std::to_string(objCreateData.type).data();
-        int8_t geomType = int8_t(objCreateData.geomType);
-        xmlData.append_attribute("geomType") = std::to_string(geomType).data();
-        ms::LatLon ll = mercator::ToLatLon(objCreateData.mercator);
-        xmlData.append_attribute("lat") = strings::to_string_dac(ll.m_lat, kLatLonTolerance).data();
-        xmlData.append_attribute("lon") = strings::to_string_dac(ll.m_lon, kLatLonTolerance).data();
-        break;
+      auto xmlData = xmlEntry.append_child("data");
+      switch (entry.journalEntryType) {
+        case osm::JournalEntryType::TagModification:
+        {
+          osm::TagModData const & tagModData = std::get<osm::TagModData>(entry.data);
+          xmlData.append_attribute("key") = tagModData.key.data();
+          xmlData.append_attribute("old_value") = tagModData.old_value.data();
+          xmlData.append_attribute("new_value") = tagModData.new_value.data();
+          break;
+        }
+        case osm::JournalEntryType::ObjectCreated:
+        {
+          osm::ObjCreateData const & objCreateData = std::get<osm::ObjCreateData>(entry.data);
+          xmlData.append_attribute("type") = std::to_string(objCreateData.type).data();
+          int8_t geomType = int8_t(objCreateData.geomType);
+          xmlData.append_attribute("geomType") = std::to_string(geomType).data();
+          ms::LatLon ll = mercator::ToLatLon(objCreateData.mercator);
+          xmlData.append_attribute("lat") = strings::to_string_dac(ll.m_lat, kLatLonTolerance).data();
+          xmlData.append_attribute("lon") = strings::to_string_dac(ll.m_lon, kLatLonTolerance).data();
+          break;
+        }
       }
     }
-  }
+  };
+
+  auto xmlJournal = GetRootNode().append_child("journal");
+  insertEditJournalList(xmlJournal, journal.GetJournal());
+
+  auto xmlJournalHistory = GetRootNode().append_child("journalHistory");
+  insertEditJournalList(xmlJournalHistory, journal.GetJournalHistory());
 
   // debug print
   std::ostringstream ost;

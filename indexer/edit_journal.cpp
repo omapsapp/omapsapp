@@ -50,7 +50,20 @@ namespace osm
 
   void EditJournal::Clear()
   {
+    for (JournalEntry const & entry : journal) {
+      journalHistory.push_back(entry);
+    }
     journal = {};
+  }
+
+  std::list<JournalEntry> const & EditJournal::GetJournalHistory() const
+  {
+    return journalHistory;
+  }
+
+  void EditJournal::AddJournalHistoryEntry(JournalEntry const & entry)
+  {
+    journalHistory.push_back(entry);
   }
 
   std::string EditJournal::JournalToString() const
@@ -62,7 +75,7 @@ namespace osm
     return string;
   }
 
-  std::string EditJournal::ToString(osm::JournalEntry const & journalEntry) const
+  std::string EditJournal::ToString(osm::JournalEntry const & journalEntry)
   {
     switch (journalEntry.journalEntryType) {
       case osm::JournalEntryType::TagModification: {
@@ -81,7 +94,7 @@ namespace osm
     }
   }
 
-  std::string EditJournal::ToString(osm::JournalEntryType journalEntryType) const
+  std::string EditJournal::ToString(osm::JournalEntryType journalEntryType)
   {
     switch (journalEntryType) {
       case osm::JournalEntryType::TagModification:

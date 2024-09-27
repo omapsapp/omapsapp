@@ -48,6 +48,7 @@ namespace osm
   class EditJournal
   {
     std::list<JournalEntry> journal{};
+    std::list<JournalEntry> journalHistory{};
 
   public:
     std::list<JournalEntry> const & GetJournal() const;
@@ -62,14 +63,18 @@ namespace osm
 
     void AddJournalEntry(JournalEntry const & entry);
 
-    /// Clear Journal, used after upload to OSM
+    /// Clear Journal and move content to journalHistory, used after upload to OSM
     void Clear();
+
+    std::list<JournalEntry> const & GetJournalHistory() const;
+
+    void AddJournalHistoryEntry(JournalEntry const & entry);
 
     std::string JournalToString() const;
 
-    std::string ToString(osm::JournalEntry const & journalEntry) const;
+    static std::string ToString(osm::JournalEntry const & journalEntry);
 
-    std::string ToString(osm::JournalEntryType journalEntryType) const;
+    static std::string ToString(osm::JournalEntryType journalEntryType);
 
     static std::optional<JournalEntryType> TypeFromString(std::string const & entryType);
   };
