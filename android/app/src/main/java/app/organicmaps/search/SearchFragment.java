@@ -299,6 +299,8 @@ public class SearchFragment extends BaseMwmFragment
 
     SearchEngine.INSTANCE.addListener(this);
 
+    // Call refresh() on SearchRecents, to calculate size of the list correctly, to set the list size correctly on app restart
+    SearchRecents.refresh();
     if (SearchRecents.getSize() == 0 && Config.isSearchHistoryEnabled())
       pager.setCurrentItem(TabAdapter.Tab.CATEGORIES.ordinal());
 
