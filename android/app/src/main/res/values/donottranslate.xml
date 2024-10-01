@@ -69,4 +69,5 @@
   <string name="car_notification_channel_name" translatable="false">CAR_NOTIFICATION_CHANNEL</string>
 
   <string name="android_auto_fgs_explanation_for_special_use" translatable="false">Since Android 14, every Foreground Service must have a type. There is no specific service type for Android Auto.</string>
+  <string name="last_selected_tab" translatable="false">lastSelectedTab</string>
 </resources>
