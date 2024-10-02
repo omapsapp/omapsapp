@@ -687,6 +687,22 @@ void EditableMapObject::ClearJournal()
   journal.Clear();
 }
 
+void EditableMapObject::ApplyEditsFromJournal(EditJournal editJournal)
+{
+  for (JournalEntry const & entry : editJournal.GetJournalHistory()) {
+    ApplyJournalEntry(entry);
+  }
+  for (JournalEntry const & entry : editJournal.GetJournal()) {
+    ApplyJournalEntry(entry);
+  }
+}
+
+void EditableMapObject::ApplyJournalEntry(JournalEntry entry)
+{
+  LOG(LDEBUG, ("Applying Journal Entry: ", osm::EditJournal::ToString(entry)));
+  //Todo
+}
+
 bool AreObjectsEqualIgnoringStreet(EditableMapObject const & lhs, EditableMapObject const & rhs)
 {
   feature::TypesHolder const & lhsTypes = lhs.GetTypes();

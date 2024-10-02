@@ -932,6 +932,8 @@ void Editor::SaveUploadedInformation(FeatureID const & fid, UploadInfo const & u
 bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, FeatureID const & fid,
                              FeatureTypeInfo & fti) const
 {
+  EditJournal journal = xml.GetEditJournal();
+
   if (status == FeatureStatus::Created)
   {
     editor::FromXML(xml, fti.m_object);
@@ -946,10 +948,19 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
     }
 
     fti.m_object = *originalObjectPtr;
-    editor::ApplyPatch(xml, fti.m_object);
+
+    bool loadFromJournal = true;
+
+    if (loadFromJournal) {
+      fti.m_object.ApplyEditsFromJournal(journal);
+    }
+    else {
+      editor::ApplyPatch(xml, fti.m_object);
+    }
   }
 
-  fti.m_object.SetJournal(xml.GetEditJournal());
+  //fti.m_object.SetJournal(xml.GetEditJournal());
+  fti.m_object.SetJournal(journal);
   fti.m_object.SetID(fid);
   fti.m_street = xml.GetTagValue(kAddrStreetTag);
 
