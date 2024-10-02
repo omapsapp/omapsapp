@@ -40,7 +40,7 @@ namespace osm
     ObjCreateData objCreateData = {type, geomType, std::move(mercator)};
     JournalEntry entry = {JournalEntryType::ObjectCreated, time(nullptr), std::move(objCreateData)};
     AddJournalEntry(entry);
-    LOG(LDEBUG, ("Object of type ", classif().GetFullObjectName(type), " created"));
+    LOG(LDEBUG, ("Object of type ", classif().GetReadableObjectName(type), " created"));
   }
 
   void EditJournal::AddJournalEntry(JournalEntry const & entry)
@@ -88,7 +88,7 @@ namespace osm
       case osm::JournalEntryType::ObjectCreated: {
         ObjCreateData const & objCreatedData = std::get<ObjCreateData>(journalEntry.data);
         return ToString(journalEntry.journalEntryType)
-            .append(": ").append(classif().GetFullObjectName(objCreatedData.type))
+            .append(": ").append(classif().GetReadableObjectName(objCreatedData.type))
             .append(" (").append(std::to_string(objCreatedData.type)).append(")");
       }
     }
