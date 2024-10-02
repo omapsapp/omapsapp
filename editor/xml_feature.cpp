@@ -469,7 +469,7 @@ osm::EditJournal XMLFeature::GetEditJournal() const
         case osm::JournalEntryType::ObjectCreated:
         {
           osm::ObjCreateData objCreateData;
-          objCreateData.type = std::stoi(xmlData.attribute("type").value());
+          objCreateData.type = classif().GetTypeByReadableObjectName(xmlData.attribute("type").value());
           objCreateData.geomType = feature::TypeFromString(xmlData.attribute("geomType").value());
           objCreateData.mercator = mercator::FromLatLon(GetLatLonFromNode(xmlData));
           entry.data = objCreateData;
@@ -519,7 +519,7 @@ void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
         case osm::JournalEntryType::ObjectCreated:
         {
           osm::ObjCreateData const & objCreateData = std::get<osm::ObjCreateData>(entry.data);
-          xmlData.append_attribute("type") = std::to_string(objCreateData.type).data();
+          xmlData.append_attribute("type") = classif().GetReadableObjectName(objCreateData.type).data();
           xmlData.append_attribute("geomType") = ToString(objCreateData.geomType).data();
           ms::LatLon ll = mercator::ToLatLon(objCreateData.mercator);
           xmlData.append_attribute("lat") = strings::to_string_dac(ll.m_lat, kLatLonTolerance).data();
