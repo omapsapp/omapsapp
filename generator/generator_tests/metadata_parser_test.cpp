@@ -154,8 +154,8 @@ UNIT_TEST(Metadata_ValidateAndFormat_wikipedia)
     char const * url;
   };
   constexpr Test tests[] = {
-    {"en:Bad %20Data", "en:Bad %20Data", "https://en." WIKIHOST "/wiki/Bad_%2520Data"},
-    {"ru:Это тест_со знаками %, ? (и скобками)", "ru:Это тест со знаками %, ? (и скобками)", "https://ru." WIKIHOST "/wiki/Это_тест_со_знаками_%25,_%3F_(и_скобками)"},
+    {"en:Bad %20Data", "en:Bad %20Data", "https://en." WIKIHOST "/wiki/Bad_%20Data"},
+    {"ru:Это тест_со знаками %, ? (и скобками)", "ru:Это тест со знаками %, ? (и скобками)", "https://ru." WIKIHOST "/wiki/Это_тест_со_знаками_%,_%3F_(и_скобками)"},
     {"https://be-tarask.wikipedia.org/wiki/Вялікае_Княства_Літоўскае", "be-tarask:Вялікае Княства Літоўскае", "https://be-tarask." WIKIHOST "/wiki/Вялікае_Княства_Літоўскае"},
     // Final link points to https and mobile version.
     {"http://en.wikipedia.org/wiki/A#id", "en:A#id", "https://en." WIKIHOST "/wiki/A#id"},
@@ -211,6 +211,8 @@ UNIT_TEST(Metadata_ValidateAndFormat_wikimedia_commons)
 
   p(kWikiKey, "Category:Bosphorus");
   TEST_EQUAL(md.Get(Metadata::FMD_WIKIMEDIA_COMMONS), "Category:Bosphorus", ());
+
+  TEST_EQUAL(md.ToWikimediaCommonsURL("Category:What If? (Bonn)"), "https://commons.wikimedia.org/wiki/Category:What_If%3F_(Bonn)", ());
 
   md.Drop(Metadata::FMD_WIKIMEDIA_COMMONS);
   p(kWikiKey, "incorrect_wikimedia_content");
