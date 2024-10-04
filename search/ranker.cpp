@@ -302,7 +302,7 @@ ftypes::LocalityType GetLocalityIndex(feature::TypesHolder const & types)
 // TODO: Format street and house number according to local country's rules.
 string FormatStreetAndHouse(ReverseGeocoder::Address const & addr)
 {
-  return addr.GetStreetName() + ", " + addr.GetHouseNumber();
+  return addr.GetStreetName() + ", " + addr.GetReadableHouseNumber();
 }
 
 // TODO: Share common formatting code for search results and place page.
@@ -494,7 +494,7 @@ private:
         {
           string streetName;
           m_ranker.GetBestMatchName(*streetFeature, streetName);
-          name = streetName + ", " + addr.GetHouseNumber();
+          name = streetName + ", " + addr.GetReadableHouseNumber();
         }
       }
     }

@@ -11,6 +11,7 @@
 #include <optional>
 #include <string>
 #include <vector>
+#include <regex>
 
 class FeatureType;
 class DataSource;
@@ -86,6 +87,15 @@ public:
     Building m_building;
     Street m_street;
 
+    std::string const GetReadableHouseNumber() const {
+        std::string out;
+        if (GetHouseNumber().find(':') != std::string::npos)
+            // Instead of 123:456 for house number ranges, do 123 - 456 except with thin spaces and an en-dash
+            out = std::regex_replace(GetHouseNumber(), std::regex("^(\\d+):(\\d+)$"), "$1 – $2");
+        else
+            out = GetHouseNumber();
+        return (std::string const)out;
+    }
     std::string const & GetHouseNumber() const { return m_building.m_name; }
     std::string const & GetStreetName() const { return m_street.m_name; }
     double GetDistance() const { return m_building.m_distanceMeters; }
