@@ -302,7 +302,7 @@ public class SearchFragment extends BaseMwmFragment
     SearchEngine.INSTANCE.addListener(this);
 
     SharedPreferences preferences = MwmApplication.prefs(requireContext());
-    int lastSelectedTabPosition = preferences.getInt("lastSelectedTab", 0);
+    int lastSelectedTabPosition = preferences.getInt(requireContext().getString(R.string.last_selected_tab), 0);
     if (SearchRecents.getSize() == 0 && Config.isSearchHistoryEnabled())
       pager.setCurrentItem(lastSelectedTabPosition);
 

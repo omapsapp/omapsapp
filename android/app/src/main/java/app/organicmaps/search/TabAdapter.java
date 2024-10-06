@@ -75,9 +75,8 @@ class TabAdapter extends FragmentPagerAdapter
     public void onPageSelected(int position)
     {
       super.onPageSelected(position);
-      if (mTabSelectedListener != null) {
+      if (mTabSelectedListener != null)
         mTabSelectedListener.onTabSelected(Tab.values()[position]);
-      }
     }
   }
 
@@ -96,7 +95,7 @@ class TabAdapter extends FragmentPagerAdapter
     public void onTabSelected(TabLayout.Tab tab)
     {
       SharedPreferences.Editor editor = MwmApplication.prefs(mContext).edit();
-      editor.putInt("lastSelectedTab", tab.getPosition());
+      editor.putInt(mContext.getString(R.string.last_selected_tab), tab.getPosition());
       editor.apply();
       super.onTabSelected(tab);
       Graphics.tint(mContext, tab.getIcon(), androidx.appcompat.R.attr.colorAccent);
@@ -159,7 +158,7 @@ class TabAdapter extends FragmentPagerAdapter
     mPager.addOnPageChangeListener(listener);
     tabs.setOnTabSelectedListener(new OnTabSelectedListenerForViewPager(mPager));
     SharedPreferences preferences = MwmApplication.prefs(mPager.getContext());
-    int lastSelectedTabPosition = preferences.getInt("lastSelectedTab", 0);
+    int lastSelectedTabPosition = preferences.getInt(mPager.getContext().getString(R.string.last_selected_tab), 0);
     listener.onPageSelected(lastSelectedTabPosition);
   }
 
