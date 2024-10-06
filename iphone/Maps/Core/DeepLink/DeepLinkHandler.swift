@@ -2,6 +2,7 @@
   static let shared = DeepLinkHandler()
 
   private(set) var isLaunchedByDeeplink = false
+  private(set) var isLaunchedByUniversalLink = false
   private(set) var url: URL?
 
   private override init() {
@@ -35,11 +36,13 @@
     self.url = URL(string: universalLink.absoluteString
                     .replacingOccurrences(of: "http://omaps.app", with: "om:/")
                     .replacingOccurrences(of: "https://omaps.app", with: "om:/"))
+    isLaunchedByUniversalLink = true
     return handleDeepLink(url: self.url!)
   }
 
   func reset() {
     isLaunchedByDeeplink = false
+    isLaunchedByUniversalLink = false
     url = nil
   }
 
@@ -49,8 +52,14 @@
     return (url.queryItems?.first(where: { $0.name == "backurl" })?.value ?? nil)
   }
 
+  func getInAppFeatureHighlightData() -> DeepLinkInAppFeatureHighlightData? {
+    guard (isLaunchedByUniversalLink || isLaunchedByDeeplink), let url else { return nil }
+    reset()
+    return DeepLinkInAppFeatureHighlightData(DeepLinkParser.parseAndSetApiURL(url))
+  }
+
   func handleDeepLinkAndReset() -> Bool {
-    if let url = self.url {
+    if let url {
       let result = handleDeepLink(url: url)
       reset()
       return result

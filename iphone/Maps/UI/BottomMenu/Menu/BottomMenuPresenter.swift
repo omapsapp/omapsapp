@@ -1,5 +1,7 @@
 protocol BottomMenuPresenterProtocol: UITableViewDelegate, UITableViewDataSource {
   func onClosePressed()
+  func cellToHighlightIndexPath() -> IndexPath?
+  func setCellHighlighted(_ highlighted: Bool)
 }
 
 class BottomMenuPresenter: NSObject {
@@ -22,6 +24,7 @@ class BottomMenuPresenter: NSObject {
   private let sections: [Sections]
   private let menuCells: [CellType]
   private let trackRecorder = TrackRecordingManager.shared
+  private var cellToHighlight: CellType?
 
   init(view: BottomMenuViewProtocol,
        interactor: BottomMenuInteractorProtocol,
@@ -31,7 +34,17 @@ class BottomMenuPresenter: NSObject {
     self.sections = sections
     let disableDonate = Settings.donateUrl() == nil
     self.menuCells = CellType.allCases.filter { disableDonate ? $0 != .donate : true }
+    self.cellToHighlight = Self.getCellToHighlight()
     super.init()
+  }
+
+  private static func getCellToHighlight() -> CellType? {
+    let featureToHighlightData = DeepLinkHandler.shared.getInAppFeatureHighlightData()
+    guard let featureToHighlightData, featureToHighlightData.urlType == .menu else { return nil }
+    switch featureToHighlightData.feature {
+    case .trackRecorder: return .recordTrack
+    default: return nil
+    }
   }
 }
 
@@ -39,9 +52,21 @@ extension BottomMenuPresenter: BottomMenuPresenterProtocol {
   func onClosePressed() {
     interactor.close()
   }
+
+  func cellToHighlightIndexPath() -> IndexPath? {
+    // Highlighting is enabled only for the .items section.
+    guard let cellToHighlight,
+          let sectionIndex = sections.firstIndex(of: .items),
+          let cellIndex = menuCells.firstIndex(of: cellToHighlight) else { return nil }
+    return IndexPath(row: cellIndex, section: sectionIndex)
+  }
+
+  func setCellHighlighted(_ highlighted: Bool) {
+    cellToHighlight = nil
+  }
 }
 
-//MARK: -- UITableDataSource
+//MARK: -- UITableViewDataSource
 
 extension BottomMenuPresenter {
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -98,7 +123,7 @@ extension BottomMenuPresenter {
   }
 }
 
-//MARK: -- UITableDelegate
+//MARK: -- UITableViewDelegate
 
 extension BottomMenuPresenter {
   func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

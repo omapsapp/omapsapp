@@ -1845,6 +1845,11 @@ ms::LatLon Framework::GetParsedCenterLatLon() const
   return m_parsedMapApi.GetCenterLatLon();
 }
 
+url_scheme::InAppFeatureHighlightRequest Framework::GetInAppFeatureHighlightRequest() const
+{
+  return m_parsedMapApi.GetInAppFeatureHighlightRequest();
+}
+
 FeatureID Framework::GetFeatureAtPoint(m2::PointD const & mercator,
                                        FeatureMatcher && matcher /* = nullptr */) const
 {

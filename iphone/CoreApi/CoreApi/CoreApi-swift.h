@@ -7,6 +7,7 @@ FOUNDATION_EXPORT const unsigned char CoreApiVersionString[];
 #import <CoreApi/AppInfo.h>
 #import <CoreApi/DeepLinkParser.h>
 #import <CoreApi/DeepLinkSearchData.h>
+#import <CoreApi/DeepLinkInAppFeatureHighlightData.h>
 #import <CoreApi/Logger.h>
 #import <CoreApi/MWMBookmark.h>
 #import <CoreApi/MWMBookmarkGroup.h>

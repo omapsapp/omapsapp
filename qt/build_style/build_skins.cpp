@@ -23,8 +23,8 @@ enum SkinType
   SkinMDPI,
   SkinHDPI,
   SkinXHDPI,
-  SkinXXHDPI,
   Skin6Plus,
+  SkinXXHDPI,
   SkinXXXHDPI,
 
   // SkinCount MUST BE last
@@ -37,8 +37,8 @@ SkinInfo const g_skinInfo[SkinCount] =
   std::make_tuple("mdpi", 18, false),
   std::make_tuple("hdpi", 27, false),
   std::make_tuple("xhdpi", 36, false),
+  std::make_tuple("6plus", 43, false),
   std::make_tuple("xxhdpi", 54, false),
-  std::make_tuple("6plus", 54, false),
   std::make_tuple("xxxhdpi", 64, false),
 };
 
@@ -47,8 +47,8 @@ std::array<SkinType, SkinCount> const g_skinTypes =
   SkinMDPI,
   SkinHDPI,
   SkinXHDPI,
-  SkinXXHDPI,
   Skin6Plus,
+  SkinXXHDPI,
   SkinXXXHDPI,
 }};
 

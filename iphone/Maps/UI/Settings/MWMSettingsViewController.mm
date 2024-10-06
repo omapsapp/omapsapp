@@ -48,6 +48,32 @@ static NSString * const kUDDidShowICloudSynchronizationEnablingAlert = @"kUDDidS
   [self configCells];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self highlightFeatureIfNeeded];
+}
+
+- (void)highlightFeatureIfNeeded {
+  UITableViewCell * cell = nil;
+  DeepLinkInAppFeatureHighlightData * featureToHighlight = [DeepLinkHandler.shared getInAppFeatureHighlightData];
+  if (!featureToHighlight || featureToHighlight.urlType != DeeplinkUrlTypeSettings)
+    return;
+  switch (featureToHighlight.feature) {
+    case InAppFeatureHighlightTypeNone:
+    case InAppFeatureHighlightTypeTrackRecorder:
+      // Еhere is no options for the track recorder yet.
+      break;
+    case InAppFeatureHighlightTypeICloud:
+      cell = self.iCloudSynchronizationCell;
+      break;
+  }
+  NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+  if (!cell || !indexPath)
+    return;
+  [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+  [cell highlight];
+}
+
 - (void)configCells {
   [self configProfileSection];
   [self configCommonSection];

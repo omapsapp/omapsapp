@@ -36,7 +36,7 @@ void RulerRouter::SetGuides(GuidesTracks && guides) { /*m_guides = GuidesConnect
     | 1     | 2      | 2               | 4             |
     | 2     | 2      | 3               | 4             |
     | 2     | F      | 4               | 6             |
-    | 2     | F      | 4               | 6             |
+    | F     | F      | 5               | 6             |
     +-------+--------+-----------------+---------------+
 
   Constraints:
@@ -91,18 +91,8 @@ RouterResultCode RulerRouter::CalculateRoute(Checkpoints const & checkpoints,
   vector<Route::SubrouteAttrs> subroutes;
   for(size_t i = 1; i < count; ++i)
   {
-    if (i < count-1)
-    {
-      // Note: endSegmentIdx in decreased in Route::IsSubroutePassed(size_t) method. See routing/route.cpp:448
-      subroutes.emplace_back(ToPointWA(points[i-1]), ToPointWA(points[i]), i*2-2, i*2);
-      subroutes.emplace_back(ToPointWA(points[i-1]), ToPointWA(points[i]), i*2-1, i*2);
-    }
-    else
-    {
-      // Duplicate last subroute attrs.
-      subroutes.emplace_back(ToPointWA(points[i-1]), ToPointWA(points[i+1]), i*2-2, i*2);
-      subroutes.emplace_back(ToPointWA(points[i-1]), ToPointWA(points[i+1]), i*2-2, i*2);
-    }
+    subroutes.emplace_back(ToPointWA(points[i-1]), ToPointWA(points[i]), i*2-2, i*2);
+    subroutes.emplace_back(ToPointWA(points[i-1]), ToPointWA(points[i]), i*2-1, i*2);
   }
 
   route.SetCurrentSubrouteIdx(checkpoints.GetPassedIdx());

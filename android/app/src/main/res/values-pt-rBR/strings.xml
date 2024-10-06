@@ -211,7 +211,7 @@
     <!-- Confirmation for OpenStreetMap log out. -->
     <string name="osm_log_out_confirmation">Você tem certeza de que deseja sair da sua conta do OpenStreetMap?</string>
     <!-- Title for tracks category in bookmarks manager -->
-    <string name="tracks_title">Percursos</string>
+    <string name="tracks_title">Trilhas</string>
     <!-- Length of track in cell that describes route -->
     <string name="length">Comprimento</string>
     <string name="share_my_location">Compartilhar a minha localização</string>
@@ -587,8 +587,8 @@
     </plurals>
     <string name="restore">Restaurar</string>
     <plurals name="tracks">
-        <item quantity="one">%d percurso</item>
-        <item quantity="other">%d percursos</item>
+        <item quantity="one">%d trajeto</item>
+        <item quantity="other">%d trajetos</item>
     </plurals>
     <string name="privacy_policy">Política de privacidade</string>
     <string name="terms_of_use">Termos de uso</string>
@@ -771,17 +771,17 @@
     <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
     <string name="power_save_dialog_summary">Para obter uma navegação mais precisa, recomendamos que você desative o modo de economia de energia nas configurações de bateria do telefone.</string>
     <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Gravar rota</string>
+    <string name="start_track_recording">Gravar trilha</string>
     <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Parar gravação de rota</string>
+    <string name="stop_track_recording">Parar gravação de trilha</string>
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
     <string name="stop_without_saving">Parar sem salvar</string>
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
     <string name="continue_recording">Continuar gravação</string>
     <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Salvar em Favoritos e trilhas?</string>
+    <string name="track_recording_alert_title">Salvar em Favoritos e Trilhas?</string>
     <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">A rota está vazia - não há nada para salvar</string>
+    <string name="track_recording_toast_nothing_to_save">A trilha está vazia - não há nada para salvar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Não é possível exibir a caixa de diálogo de seleção de pastas porque nenhum aplicativo adequado está instalado no seu dispositivo. Instale um aplicativo gerenciador de arquivos e tente novamente</string>
     <string name="uri_open_location_failed">Nenhum aplicativo instalado que possa abrir o local</string>

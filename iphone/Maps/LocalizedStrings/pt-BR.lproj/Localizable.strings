@@ -205,7 +205,7 @@
 "version" = "Versão do Organic Maps: %@";
 
 /* Title for tracks category in bookmarks manager */
-"tracks_title" = "Percursos";
+"tracks_title" = "Trilhas";
 
 /* Length of track in cell that describes route */
 "length" = "Comprimento";
@@ -856,14 +856,14 @@
 "navigation_stop_button" = "Parar";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
-"recent_track_background_dialog_title" = "Desabilitar registro de sua rota recente?";
+"recent_track_background_dialog_title" = "Desativar gravação da sua rota recente?";
 
 "off_recent_track_background_button" = "Desabilitar";
 
 /* For sharing via SMS and so on */
 "sharing_call_action_look" = "Procure";
 
-"recent_track_background_dialog_message" = "O Organic Maps usa sua localização geográfica em segundo plano para registrar sua rota recente.";
+"recent_track_background_dialog_message" = "O Organic Maps usa sua localização geográfica em segundo plano para gravar a sua rota recente.";
 
 "general_settings" = "Definições gerais";
 
@@ -1098,7 +1098,7 @@
 
 "keyboard_availability_alert" = "O teclado não está disponível enquanto dirige";
 
-"dialog_routing_change_start_carplay" = "Desativar rota demarcada pela sua localização atual";
+"dialog_routing_change_start_carplay" = "Não foi possível construir uma rota a partir da sua localização atual";
 
 "dialog_routing_change_end_carplay" = "Incapaz de traçar rota para o seu destino. Por favor, escolha outro ponto de destino";
 
@@ -1240,16 +1240,16 @@
 "whats_new_auto_update_button_later" = "Atualizar manualmente mais tarde";
 
 /* Delete track button on track edit screen */
-"placepage_delete_track_button" = "Apagar rota";
+"placepage_delete_track_button" = "Apagar trilha";
 
 /* Placeholder for track name input on track edit screen */
-"placepage_track_name_hint" = "Nome da rota";
+"placepage_track_name_hint" = "Nome da trilha";
 
 /* move track or bookmark from the list button text */
 "move" = "Mover";
 
 /* edit track screen title */
-"track_title" = "Percurso";
+"track_title" = "Trilha";
 
 /* Telegram group url for the "?" About page */
 "telegram_url" = "https://t.me/OrganicMapsApp";
@@ -1312,7 +1312,7 @@
 "bookmarks_export" = "Exportar todos os favoritos e trilhas";
 
 /* Text for the editing the Track's color button. */
-"change_color" = "Mudança de cor";
+"change_color" = "Alterar cor";
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Mapa";
@@ -1377,10 +1377,10 @@
 "recover_all" = "Recuperar tudo";
 
 /* Prompt to start recording a track. */
-"start_track_recording" = "Gravar rota";
+"start_track_recording" = "Gravar trilha";
 
 /* Prompt for stopping a track recording. */
-"stop_track_recording" = "Parar gravação de rota";
+"stop_track_recording" = "Parar gravação de trilha";
 
 /* Title for the "Stop Without Saving" action for the alert when saving a track recording. */
 "stop_without_saving" = "Parar sem salvar";
@@ -1389,10 +1389,10 @@
 "continue_recording" = "Continuar gravação";
 
 /* Title for the alert when saving a track recording. */
-"track_recording_alert_title" = "Salvar em Favoritos e trilhas?";
+"track_recording_alert_title" = "Salvar em Favoritos e Trilhas?";
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
-"track_recording_toast_nothing_to_save" = "A rota está vazia - não há nada para salvar";
+"track_recording_toast_nothing_to_save" = "A trilha está vazia - não há nada para salvar";
 
 
 /********** Types **********/

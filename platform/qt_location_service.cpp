@@ -110,20 +110,30 @@ void QtLocationService::OnLocationUpdate(QGeoPositionInfo const & info)
   auto const & coordinate = info.coordinate();
   LOG(LDEBUG, ("Location updated with valid coordinates:", coordinate.longitude(), coordinate.latitude()));
   m_observer.OnLocationUpdated(gpsInfoFromQGeoPositionInfo(info, qStringToTLocationSource(m_positionSource->sourceName())));
+  if (!m_clientIsActive)
+  {
+    m_clientIsActive = true;
+    m_positionSource->startUpdates();
+  }
 }
 
 void QtLocationService::OnErrorOccurred(QGeoPositionInfoSource::Error positioningError)
 {
   LOG(LWARNING, ("Location error occured QGeoPositionInfoSource::Error code:", positioningError));
+  m_clientIsActive = false;
   m_observer.OnLocationError(tLocationErrorFromQGeoPositionInfoError(positioningError));
 }
 
 void QtLocationService::OnSupportedPositioningMethodsChanged()
 {
-  LOG(LWARNING, ("Supported Positioning Method changed:", m_positionSource->sourceName().toStdString()));
-  // In certain cases propagating GPSIsOff would make sense,
-  // but this signal can also mean GPSISOn ... or something entirely different.
-  // m_observer.OnLocationError(location::TLocationError::EGPSIsOff);
+  auto positioningMethods = m_positionSource->supportedPositioningMethods();
+  LOG(LDEBUG, ("Supported Positioning Method changed for:", m_positionSource->sourceName().toStdString(),
+	       "to:", positioningMethods));
+  if (positioningMethods == QGeoPositionInfoSource::NoPositioningMethods)
+  {
+    m_clientIsActive = false;
+    m_observer.OnLocationError(location::TLocationError::EGPSIsOff);
+  }
 }
 
 void QtLocationService::Start()
@@ -131,15 +141,15 @@ void QtLocationService::Start()
   if (m_positionSource)
   {
     LOG(LDEBUG, ("Starting Updates from:", m_positionSource->sourceName().toStdString()));
-    m_positionSource->startUpdates();
-    QGeoPositionInfo info = m_positionSource->lastKnownPosition();
-    m_positionSource->requestUpdate();
+    // Request the first update with a timeout to 30 minutes which is needed on devices that don't make use of `A-GNSS`
+    // and can't get a lock within Qt's default `UPDATE_TIMEOUT_COLDSTART` (currently 2 minutes).
+    m_positionSource->requestUpdate(1800000);
   }
 }
 
 void QtLocationService::Stop()
 {
-  if (m_positionSource)
+  if (m_positionSource && m_clientIsActive)
   {
     LOG(LDEBUG, ("Stopping Updates from:", m_positionSource->sourceName().toStdString()));
     m_positionSource->stopUpdates();

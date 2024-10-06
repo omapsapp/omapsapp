@@ -205,7 +205,7 @@
 "version" = "Versão do Organic Maps: %@";
 
 /* Title for tracks category in bookmarks manager */
-"tracks_title" = "Percursos";
+"tracks_title" = "Trajetos";
 
 /* Length of track in cell that describes route */
 "length" = "Comprimento";
@@ -449,17 +449,17 @@
 
 "dialog_routing_check_gps" = "Verifique o sinal do GPS";
 
-"dialog_routing_error_location_not_found" = "A rota não foi criada, porque não foi possível identificar as coordenadas do GPS.";
+"dialog_routing_error_location_not_found" = "O trajeto não foi criado porque não foi possível identificar as coordenadas do GPS.";
 
 "dialog_routing_location_turn_wifi" = "Verifique o sinal do GPS. Ative o Wi-Fi para melhorar a precisão da localização.";
 
 "dialog_routing_location_turn_on" = "Ative os serviços de localização";
 
-"dialog_routing_location_unknown_turn_on" = "Não foi possível localizar as coordenadas do GPS. Ative os serviços de localização para que a rota seja criada.";
+"dialog_routing_location_unknown_turn_on" = "Não foi possível localizar as coordenadas do GPS. Ative os serviços de localização para que o trajeto seja criado.";
 
 "dialog_routing_download_files" = "Descarregar os ficheiros necessários";
 
-"dialog_routing_download_and_update_all" = "Descarregue e atualize todos os dados do mapa e roteamento ao longo do trajeto desejado para que a rota seja criada.";
+"dialog_routing_download_and_update_all" = "Descarregue e atualize todos os dados do mapa e roteamento ao longo do trajeto desejado para que o trajeto seja criado.";
 
 "dialog_routing_unable_locate_route" = "Não foi possível encontrar uma rota";
 
@@ -856,14 +856,14 @@
 "navigation_stop_button" = "Parar";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
-"recent_track_background_dialog_title" = "Desativar gravação da sua rota recente?";
+"recent_track_background_dialog_title" = "Desativar gravação do seu trajeto recente?";
 
 "off_recent_track_background_button" = "Desativar";
 
 /* For sharing via SMS and so on */
 "sharing_call_action_look" = "Verificar";
 
-"recent_track_background_dialog_message" = "O Organic Maps usa a sua localização geográfica em segundo plano para gravar a sua rota recente.";
+"recent_track_background_dialog_message" = "O Organic Maps usa a sua localização geográfica em segundo plano para gravar o seu trajeto recente.";
 
 "general_settings" = "Configurações gerais";
 
@@ -1191,7 +1191,7 @@
 
 "transit_not_found" = "A navegação de metropolitano ainda não está disponível nesta região";
 
-"dialog_pedestrian_route_is_long_header" = "Não foi encontrada nenhuma rota de metropolitano";
+"dialog_pedestrian_route_is_long_header" = "Não foi encontrada nenhuma rota de metro";
 
 "dialog_pedestrian_route_is_long_message" = "Escolha um ponto inicial ou final do percurso próximo da estação de metropolitano";
 
@@ -1240,16 +1240,16 @@
 "whats_new_auto_update_button_later" = "Atualizar manualmente mais tarde";
 
 /* Delete track button on track edit screen */
-"placepage_delete_track_button" = "Delete Track";
+"placepage_delete_track_button" = "Apagar trajeto";
 
 /* Placeholder for track name input on track edit screen */
-"placepage_track_name_hint" = "Track Name";
+"placepage_track_name_hint" = "Nome do trajeto";
 
 /* move track or bookmark from the list button text */
-"move" = "Move";
+"move" = "Mover";
 
 /* edit track screen title */
-"track_title" = "Percurso";
+"track_title" = "Trajeto";
 
 /* Telegram group url for the "?" About page */
 "telegram_url" = "https://t.me/OrganicMapsApp";
@@ -1312,7 +1312,7 @@
 "bookmarks_export" = "Exportar todos os favoritos e trajetos";
 
 /* Text for the editing the Track's color button. */
-"change_color" = "Muda de cor";
+"change_color" = "Alterar cor";
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Mapa";
@@ -1389,7 +1389,7 @@
 "continue_recording" = "Continuar gravação";
 
 /* Title for the alert when saving a track recording. */
-"track_recording_alert_title" = "Guardar em Favoritos e trajetos?";
+"track_recording_alert_title" = "Guardar em Favoritos e Trajetos?";
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "O trajeto está vazio - não há nada para guardar";

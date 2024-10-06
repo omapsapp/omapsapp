@@ -33,7 +33,14 @@ class BottomMenuViewController: MWMViewController {
     tableView.registerNib(cell: BottomMenuItemCell.self)
     tableView.registerNib(cell: BottomMenuLayersCell.self)
   }
-  
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if let cellToHighlight = presenter?.cellToHighlightIndexPath() {
+      tableView.cellForRow(at: cellToHighlight)?.highlight()
+    }
+  }
+
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     tableView.layoutIfNeeded()

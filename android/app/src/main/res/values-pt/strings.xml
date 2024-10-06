@@ -203,7 +203,7 @@
     <!-- Confirmation for OpenStreetMap log out. -->
     <string name="osm_log_out_confirmation">Tem certeza de que deseja sair da sua conta do OpenStreetMap?</string>
     <!-- Title for tracks category in bookmarks manager -->
-    <string name="tracks_title">Percursos</string>
+    <string name="tracks_title">Trajetos</string>
     <!-- Length of track in cell that describes route -->
     <string name="length">Comprimento</string>
     <string name="share_my_location">Partilhar a minha localização</string>
@@ -352,10 +352,10 @@
     <string name="dialog_routing_disclaimer_borders">— Use com cautela em rotas de zonas fronteiriças: as rotas criadas pela nossa aplicação podem algumas vezes cruzar fronteiras nacionais em locais não autorizados;</string>
     <string name="dialog_routing_disclaimer_beware">Fique sempre atento nas estradas!</string>
     <string name="dialog_routing_check_gps">Verifique o sinal do GPS</string>
-    <string name="dialog_routing_error_location_not_found">A rota não foi criada, porque não foi possível identificar as coordenadas do GPS.</string>
+    <string name="dialog_routing_error_location_not_found">O trajeto não foi criado porque não foi possível identificar as coordenadas do GPS.</string>
     <string name="dialog_routing_location_turn_wifi">Verifique o sinal do GPS. Ative o Wi-Fi para melhorar a precisão da localização.</string>
     <string name="dialog_routing_location_turn_on">Ative os serviços de localização</string>
-    <string name="dialog_routing_location_unknown_turn_on">Não foi possível localizar as coordenadas do GPS. Ative os serviços de localização para que a rota seja criada.</string>
+    <string name="dialog_routing_location_unknown_turn_on">Não foi possível localizar as coordenadas do GPS. Ative os serviços de localização para que o trajeto seja criado.</string>
     <string name="dialog_routing_unable_locate_route">Não foi possível encontrar uma rota</string>
     <string name="dialog_routing_cant_build_route">Não foi possível criar uma rota.</string>
     <string name="dialog_routing_change_start_or_end">Ajuste o ponto de partida ou o ponto de chegada.</string>
@@ -617,8 +617,8 @@
     </plurals>
     <string name="restore">Restaurar</string>
     <plurals name="tracks">
-        <item quantity="one">%d percurso</item>
-        <item quantity="other">%d percursos</item>
+        <item quantity="one">%d trilha</item>
+        <item quantity="other">%d trilhas</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">Privacidade</string>
@@ -724,7 +724,7 @@
     <string name="religious_places">Lugares religiosos</string>
     <string name="select_list">Selecionar lista</string>
     <string name="transit_not_found">A navegação de metropolitano ainda não está disponível nesta região</string>
-    <string name="dialog_pedestrian_route_is_long_header">Não foi encontrada nenhuma rota de metropolitano</string>
+    <string name="dialog_pedestrian_route_is_long_header">Não foi encontrada nenhuma rota de metro</string>
     <string name="dialog_pedestrian_route_is_long_message">Escolha um ponto inicial ou final do percurso próximo da estação de metropolitano</string>
     <string name="button_layer_isolines">Terreno</string>
     <string name="isolines_activation_error_dialog">Para ativar e usar a camada Terreno, por favor atualize ou descarregue o mapa da área</string>
@@ -822,7 +822,7 @@
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
     <string name="continue_recording">Continuar gravação</string>
     <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Guardar em Favoritos e trajetos?</string>
+    <string name="track_recording_alert_title">Guardar em Favoritos e Trajetos?</string>
     <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
     <string name="track_recording_toast_nothing_to_save">O trajeto está vazio - não há nada para guardar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->

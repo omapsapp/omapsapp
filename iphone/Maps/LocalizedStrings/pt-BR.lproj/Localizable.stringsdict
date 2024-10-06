@@ -50,9 +50,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d percurso</string>
+			<string>%d trajeto</string>
 			<key>other</key>
-			<string>%d percursos</string>
+			<string>%d trajetos</string>
 		</dict>
 	</dict>
 </dict>

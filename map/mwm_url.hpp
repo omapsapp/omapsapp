@@ -34,6 +34,18 @@ struct SearchRequest
   bool m_isSearchOnMap = false;
 };
 
+struct InAppFeatureHighlightRequest
+{
+  enum class InAppFeatureType
+  {
+    None = 0,
+    TrackRecorder = 1,
+    iCloud = 2,
+  };
+
+  InAppFeatureType m_feature = InAppFeatureType::None;
+};
+
 /// Handles [mapswithme|mwm|mapsme]://map|route|search?params - everything related to displaying info on a map
 class ParsedMapApi
 {
@@ -102,18 +114,27 @@ public:
     return m_oauth2code;
   }
 
+  InAppFeatureHighlightRequest const & GetInAppFeatureHighlightRequest() const
+  {
+    ASSERT_EQUAL(m_requestType, UrlType::Menu, ("Expected Menu API"));
+    ASSERT_EQUAL(m_requestType, UrlType::Settings, ("Expected Settings API"));
+    return m_inAppFeatureHighlightRequest;
+  }
+
 private:
   void ParseMapParam(std::string const & key, std::string const & value,
                      bool & correctOrder);
   void ParseRouteParam(std::string const & key, std::string const & value,
                        std::vector<std::string_view> & pattern);
   void ParseSearchParam(std::string const & key, std::string const & value);
+  void ParseInAppFeatureHighlightParam(std::string const & key, std::string const & value);
   void ParseCommonParam(std::string const & key, std::string const & value);
 
   UrlType m_requestType;
   std::vector<MapPoint> m_mapPoints;
   std::vector<RoutePoint> m_routePoints;
   SearchRequest m_searchRequest;
+  InAppFeatureHighlightRequest m_inAppFeatureHighlightRequest;
   std::string m_globalBackUrl;
   std::string m_appName;
   std::string m_oauth2code;

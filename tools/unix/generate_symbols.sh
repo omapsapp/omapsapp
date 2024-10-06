@@ -82,15 +82,15 @@ done
 BuildSkin default  dark mdpi    18 _dark symbols
 BuildSkin default  dark hdpi    27 _dark symbols
 BuildSkin default  dark xhdpi   36 _dark symbols
+BuildSkin default  dark 6plus   43 _dark symbols
 BuildSkin default  dark xxhdpi  54 _dark symbols
-BuildSkin default  dark 6plus   54 _dark symbols
 BuildSkin default  dark xxxhdpi 64 _dark symbols
 
 BuildSkin default  light mdpi    18 _light symbols
 BuildSkin default  light hdpi    27 _light symbols
 BuildSkin default  light xhdpi   36 _light symbols
+BuildSkin default  light 6plus   43 _light symbols
 BuildSkin default  light xxhdpi  54 _light symbols
-BuildSkin default  light 6plus   54 _light symbols
 BuildSkin default  light xxxhdpi 64 _light symbols
 
 rm -rf "$OMIM_PATH"/data/resources-{*}
