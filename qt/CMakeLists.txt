@@ -107,13 +107,7 @@ endfunction()
 
 copy_resources(
   countries-strings
-  resources-default
-  resources-mdpi_light
-  resources-hdpi_light
-  resources-xhdpi_light
-  resources-xxhdpi_light
-  resources-xxxhdpi_light
-  resources-6plus_light
+  symbols
   welcome.html
 
   categories.txt
@@ -194,12 +188,12 @@ endif()
 
 if (BUILD_DESIGNER)
   execute_process(
-    COMMAND cp -rf ${OMIM_ROOT}/data/resources-mdpi_light/ ${OMIM_ROOT}/data/resources-mdpi_design/
-    COMMAND cp -rf ${OMIM_ROOT}/data/resources-hdpi_light/ ${OMIM_ROOT}/data/resources-hdpi_design/
-    COMMAND cp -rf ${OMIM_ROOT}/data/resources-xhdpi_light/ ${OMIM_ROOT}/data/resources-xhdpi_design/
-    COMMAND cp -rf ${OMIM_ROOT}/data/resources-xxhdpi_light/ ${OMIM_ROOT}/data/resources-xxhdpi_design/
-    COMMAND cp -rf ${OMIM_ROOT}/data/resources-6plus_light/ ${OMIM_ROOT}/data/resources-6plus_design/
-    COMMAND cp -rf ${OMIM_ROOT}/data/resources-xxxhdpi_light/ ${OMIM_ROOT}/data/resources-xxxhdpi_design/
+    COMMAND cp -rf ${OMIM_ROOT}/data/symbols/mdpi/light/ ${OMIM_ROOT}/data/symbols/mdpi/design/
+    COMMAND cp -rf ${OMIM_ROOT}/data/symbols/hdpi/light/ ${OMIM_ROOT}/data/symbols/hdpi/design/
+    COMMAND cp -rf ${OMIM_ROOT}/data/symbols/xhdpi/light/ ${OMIM_ROOT}/data/symbols/xhdpi/design/
+    COMMAND cp -rf ${OMIM_ROOT}/data/symbols/xxhdpi/light/ ${OMIM_ROOT}/data/symbols/xxhdpi/design/
+    COMMAND cp -rf ${OMIM_ROOT}/data/symbols/6plus/light/ ${OMIM_ROOT}/data/symbols/6plus/design/
+    COMMAND cp -rf ${OMIM_ROOT}/data/symbols/xxxhdpi/light/ ${OMIM_ROOT}/data/symbols/xxxhdpi/design/
     COMMAND cp -f ${OMIM_ROOT}/data/drules_proto_default_light.bin ${OMIM_ROOT}/data/drules_proto_default_design.bin
     COMMAND cp -f ${OMIM_ROOT}/data/colors.txt ${OMIM_ROOT}/data/colors_design.txt
     COMMAND cp -f ${OMIM_ROOT}/data/patterns.txt ${OMIM_ROOT}/data/patterns_design.txt
@@ -211,12 +205,12 @@ if (BUILD_DESIGNER)
     mapcss-dynamic.txt
     mapcss-mapping.csv
     patterns_design.txt
-    resources-mdpi_design
-    resources-hdpi_design
-    resources-xhdpi_design
-    resources-xxhdpi_design
-    resources-xxxhdpi_design
-    resources-6plus_design
+    symbols/mdpi/design
+    symbols/hdpi/design
+    symbols/xhdpi/design
+    symbols/xxhdpi/design
+    symbols/xxxhdpi/design
+    symbols/6plus/design
   )
 
   execute_process(

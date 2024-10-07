@@ -7,19 +7,19 @@
 
 namespace
 {
-std::string const kSuffixDark = "_dark";
-std::string const kSuffixLight = "_light";
-std::string const kSuffixDefaultDark = "_default_dark";
-std::string const kSuffixDefaultLight = "_default_light";
-std::string const kSuffixVehicleDark = "_vehicle_dark";
-std::string const kSuffixVehicleLight = "_vehicle_light";
-std::string const kSuffixOutdoorsLight = "_outdoors_light";
-std::string const kSuffixOutdoorsDark = "_outdoors_dark";
+std::string const kSuffixDark = "dark";
+std::string const kSuffixLight = "light";
+std::string const kSuffixDefaultDark = "default_dark";
+std::string const kSuffixDefaultLight = "default_light";
+std::string const kSuffixVehicleDark = "vehicle_dark";
+std::string const kSuffixVehicleLight = "vehicle_light";
+std::string const kSuffixOutdoorsLight = "outdoors_light";
+std::string const kSuffixOutdoorsDark = "outdoors_dark";
 
 std::string const kStylesOverrideDir = "styles";
 
 #ifdef BUILD_DESIGNER
-std::string const kSuffixDesignTool = "_design";
+std::string const kSuffixDesignTool = "design";
 #endif // BUILD_DESIGNER
 
 std::string GetStyleRulesSuffix(MapStyle mapStyle)
@@ -42,7 +42,7 @@ std::string GetStyleRulesSuffix(MapStyle mapStyle)
   case MapStyleOutdoorsDark:
     return kSuffixOutdoorsDark;
   case MapStyleMerged:
-    return std::string();
+    return "";
 
   case MapStyleCount:
     break;
@@ -70,7 +70,7 @@ std::string GetStyleResourcesSuffix(MapStyle mapStyle)
   case MapStyleOutdoorsLight:
     return kSuffixLight;
   case MapStyleMerged:
-    return std::string();
+    return "";
 
   case MapStyleCount:
     break;
@@ -103,8 +103,7 @@ bool StyleReader::IsCarNavigationStyle() const
 
 ReaderPtr<Reader> StyleReader::GetDrawingRulesReader() const
 {
-  std::string rulesFile =
-      std::string("drules_proto") + GetStyleRulesSuffix(GetCurrentStyle()) + ".bin";
+  std::string rulesFile = std::string("drules_proto_") + GetStyleRulesSuffix(GetCurrentStyle()) + ".bin";
 
   auto overriddenRulesFile =
       base::JoinPath(GetPlatform().WritableDir(), kStylesOverrideDir, rulesFile);
@@ -122,9 +121,7 @@ ReaderPtr<Reader> StyleReader::GetDrawingRulesReader() const
 ReaderPtr<Reader> StyleReader::GetResourceReader(std::string const & file,
                                                  std::string_view density) const
 {
-  std::string const resourceDir =
-      std::string("resources-").append(density) + GetStyleResourcesSuffix(GetCurrentStyle());
-  std::string resFile = base::JoinPath(resourceDir, file);
+  std::string resFile = base::JoinPath("symbols", std::string{density}, GetStyleResourcesSuffix(GetCurrentStyle()), file);
 
   auto overriddenResFile = base::JoinPath(GetPlatform().WritableDir(), kStylesOverrideDir, resFile);
   if (GetPlatform().IsFileExistsByFullPath(overriddenResFile))
@@ -140,7 +137,7 @@ ReaderPtr<Reader> StyleReader::GetResourceReader(std::string const & file,
 
 ReaderPtr<Reader> StyleReader::GetDefaultResourceReader(std::string const & file) const
 {
-  return GetPlatform().GetReader(base::JoinPath("resources-default", file));
+  return GetPlatform().GetReader(base::JoinPath("symbols/default", file));
 }
 
 StyleReader & GetStyleReader()

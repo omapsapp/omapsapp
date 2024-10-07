@@ -177,7 +177,7 @@ void BuildSkins(QString const & styleDir, QString const & outputDir)
   for (SkinType s : g_skinTypes)
   {
     QString const suffix = SkinSuffix(s);
-    QString const outputSkinDir = JoinPathQt({outputDir, "resources-" + suffix + "_design"});
+    QString const outputSkinDir = JoinPathQt({outputDir, "symbols", suffix, "design"});
     int const size = resolution2size.at(suffix.toStdString()); // SkinSize(s);
     bool const colorCorrection = SkinCoorrectColor(s);
 
@@ -192,8 +192,8 @@ void ApplySkins(QString const & outputDir)
   for (SkinType s : g_skinTypes)
   {
     QString const suffix = SkinSuffix(s);
-    QString const outputSkinDir = JoinPathQt({outputDir, "resources-" + suffix + "_design"});
-    QString const resourceSkinDir = JoinPathQt({resourceDir, "resources-" + suffix + "_design"});
+    QString const outputSkinDir = JoinPathQt({outputDir, "symbols", suffix, "design"});
+    QString const resourceSkinDir = JoinPathQt({resourceDir, "symbols", suffix, "design"});
 
     if (!QFileInfo::exists(resourceSkinDir) && !QDir().mkdir(resourceSkinDir))
       throw std::runtime_error("Cannot create resource skin directory: " + resourceSkinDir.toStdString());

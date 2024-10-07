@@ -15,7 +15,7 @@ stxxl.log
 screenlog.0
 
 data/styles/*/*/out/*
-data/resources-*_design/*
+data/symbols/*/design/*
 data/drules_proto_default_design.bin
 data/colors_design.txt
 data/patterns_design.txt

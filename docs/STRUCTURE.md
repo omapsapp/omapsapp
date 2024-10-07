@@ -43,13 +43,14 @@ Automatically generated:
 
 ### Styles and icons
 
-- `resources-default/` -
-- `resources-svg/` - social networks icons
+- `symbols/` - symbols for different screen DPIs
+- `symbols/default/` - default resources used on all sceen DPIs
+- `symbols-svg/` - social networks icons
 - `search-icons/svg/` - source SVG files for search categories icons
 - `styles/` - map [style files](STYLES.md#files)
 
 Automatically [generated](STYLES.md#technical-details):
-- `resources-*/` - icons skin files in various resolutions for `dark` and `clear` (light) themes.
+- `symbols/` - icons skin files in various resolutions for `dark` and `light` themes.
 - `drules_proto*` - binary drawing rules files.
 - `colors.txt`,`patterns.txt`,`visibility.txt`
 

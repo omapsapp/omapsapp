@@ -288,7 +288,7 @@ ReaderPtr<Reader> ResolveGuiSkinFile(std::string const & deviceType)
   std::unique_ptr<Reader> reader;
   try
   {
-    reader = pl.GetReader("resources-default/" + deviceType + ".ui");
+    reader = pl.GetReader("symbols/default/" + deviceType + ".ui");
   }
   catch(FileAbsentException & e)
   {
@@ -299,7 +299,7 @@ ReaderPtr<Reader> ResolveGuiSkinFile(std::string const & deviceType)
   {
     try
     {
-      reader = pl.GetReader("resources-default/default.ui");
+      reader = pl.GetReader("symbols/default/default.ui");
     }
     catch(FileAbsentException & e)
     {
