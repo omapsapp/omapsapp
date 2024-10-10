@@ -809,6 +809,8 @@
     <string name="view_menu">Menü megtekintése</string>
     <!-- Title for the "Open In Another App" button on the PlacePage. -->
     <string name="open_in_app">Megnyitás egy másik alkalmazásban</string>
+    <!-- To indicate if the place proposed self service... -->
+    <string name="self_service">Önkiszolgáló</string>
     <string name="select_option">Válassza ki a lehetőséget</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Kültéri ülőhelyek</string>

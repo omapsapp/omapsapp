@@ -1359,7 +1359,7 @@
 "open_in_app" = "Åpne i en annen app";
 
 /* To indicate if restaurant or other place has outdoor seating */
-"outdoor_seating" = "Outdoor seating";
+"outdoor_seating" = "Uteservering";
 
 /* Title for the "Recently Deleted Lists" button on the Bookmarks and Lists screen. */
 "bookmarks_recently_deleted" = "Nylig slettede lister";

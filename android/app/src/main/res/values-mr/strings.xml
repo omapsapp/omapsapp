@@ -806,10 +806,10 @@
     <!-- Title for the "Open In Another App" button on the PlacePage. -->
     <string name="open_in_app">दुसऱ्या ॲपमध्ये उघडा</string>
     <!-- To indicate if the place proposed self service... -->
-    <string name="self_service">स्व: सेवा    nb = Selvbetjening</string>
-    <string name="select_option">पर्याय निवडा    nb = Velg alternativ</string>
+    <string name="self_service">स्व: सेवा</string>
+    <string name="select_option">पर्याय निवडा</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
-    <string name="outdoor_seating">बाहेरची आसनव्यवस्था    nb = Uteservering</string>
+    <string name="outdoor_seating">बाहेरची आसनव्यवस्था</string>
     <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
     <string name="power_save_dialog_summary">सर्वात अचूक नेव्हिगेशनसाठी, आम्ही फोनच्या बॅटरी सेटिंग्जमध्ये पॉवर सेव्हिंग मोड अक्षम करण्याची शिफारस करतो.</string>
     <!-- Prompt to start recording a track. -->

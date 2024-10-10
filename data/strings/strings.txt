@@ -759,7 +759,7 @@
     ja = 位置情報サービスが無効になっているか、このアプリからの位置情報利用が制限されています。端末の設定を有効化してください。
     ko = 현재 이 기기 또는 애플리케이션에 대한 모든 위치 서비스가 비활성화되어 있습니다. 설정에서 활성화하십시오.
     lt = Šiuo metu jūsų įrenginio ar programėlės visos vietovės tarnybos yra išjungtos. Įjunkite jas nustatymuose.
-    mr = आपल्या उपकरणात किंवा ऍप मध्ये स्थानसेवा सध्या बंद आहेत. कृपया सेटिंग मधून त्यांना चालू  करा.
+    mr = आपल्या उपकरणात किंवा ऍप मध्ये स्थानसेवा सध्या बंद आहेत. कृपया सेटिंग मधून त्यांना चालू करा.
     mt = Bħalissa għandek kull Servizzi tal-Lokażżjoni fuq dan l-apparat jew l-applikazzjoni mitfijin. Jekk jogħġbok erġa ixgħelhom ġos-Settings.
     nb = Du har for øyeblikket deaktivert alle posisjonstjenester for denne enheten eller applikasjonen. Slå dem på i «Innstillinger».
     nl = U heeft momenteel alle locatieservices voor dit apparaat of deze app uitgeschakeld. Schakel ze in bij Instellingen.
@@ -1007,8 +1007,8 @@
     zh-Hant = 關於 Organic Maps
 
   [about_headline]
-    tags = android,ios
     comment = Text in About screen
+    tags = android,ios
     en = Free for everyone, made with love
     af = Gratis vir almal, gemaak met liefde
     ar = مجاني للجميع ، مصنوع من الحب
@@ -1052,8 +1052,8 @@
     zh-Hant = 對每個人都免費，用愛製成
 
   [about_proposition_1]
-    tags = android,ios
     comment = Text in About screen
+    tags = android,ios
     en = • No ads, no tracking, no data collection
     af = • Geen advertensies, geen nasporing, geen dataversameling
     ar = • لا إعلانات ، لا تتبع ، لا جمع البيانات
@@ -1097,8 +1097,8 @@
     zh-Hant = • 沒有廣告，不會跟蹤您，更不會收集您的數據
 
   [about_proposition_2]
-    tags = android,ios
     comment = Text in About screen
+    tags = android,ios
     en = • No battery drain, works offline
     af = • Geen battery dreineer, werk vanlyn
     ar = • لا يوجد استنزاف للبطارية، يعمل دون اتصال بالإنترنت
@@ -1144,8 +1144,8 @@
     zh-Hant = • 無需耗費太多電量，可離線工作
 
   [about_proposition_3]
-    tags = android,ios
     comment = Text in About screen
+    tags = android,ios
     en = • Fast, minimalist, developed by community
     af = • Vinnig, minimalisties, ontwikkel deur die gemeenskap
     ar = • سريع وبسيط، تم تطويره بواسطة المجتمع
@@ -1190,8 +1190,8 @@
     zh-Hant = • 快速且簡約，由社區開發
 
   [about_developed_by_enthusiasts]
-    tags = android
     comment = Text in About screen
+    tags = android
     en = Open-source application created by enthusiasts and volunteers.
     af = Oopbrontoepassing geskep deur entoesiaste en vrywilligers.
     ar = تطبيق مفتوح المصدر الذي أنشأه المتحمسون والمتطوعون.
@@ -1234,8 +1234,8 @@
     zh-Hant = 由愛好者和志願者開發的開源應用程式。
 
   [location_settings]
-    tags = android
     comment = The button that opens system location settings
+    tags = android
     en = Location Settings
     ar = إعدادات الموقع
     az = Məkan parametrləri
@@ -1433,7 +1433,7 @@
     eu = Mesedez, deskonektatu USB kablea edo sartu SD memoria Organic Maps erabiltzeko
     fi = Irrota USB-kaapeli tai syötä muistikortti käyttääksesi Organic Maps -sovellusta
     fr = Veuillez débrancher le câble USB ou insérer la carte SD pour utiliser Organic Maps
-    he = אנא נתק כבל USB או הכנס כרטיס זכרון כדי להשתמש  ב-Organic Maps.
+    he = אנא נתק כבל USB או הכנס כרטיס זכרון כדי להשתמש ב-Organic Maps.
     hi = ऑर्गेनिक मैप्स का उपयोग करने के लिए कृपया यूएसबी केबल को डिस्कनेक्ट करें या मेमोरी कार्ड डालें
     hu = Kérjük bontsa az USB kapcsolatot vagy helyezzen be memóriakártyát a Organic Maps használatához
     id = Mohon lepas kabel USB atau masukkan kartu memori untuk menggunakan Organic Maps
@@ -1472,7 +1472,7 @@
     cs = Prosím, uvolněte nejprve místo na SD kartě/USB uložišti
     da = Frigør venligst plads på dit SD-kort/USB lager først for at bruge denne app
     de = Bitte zuerst Speicherplatz auf SD-Karte/USB-Speicher freigeben, um die Anwendung zu nutzen
-    el = Ελευθερώσετε  χώρο αποθήκευσης στην SD κάρτα/USB πρώτα προκειμένου να χρησιμοποιήσετε την εφαρμογή
+    el = Ελευθερώσετε χώρο αποθήκευσης στην SD κάρτα/USB πρώτα προκειμένου να χρησιμοποιήσετε την εφαρμογή
     es = Libere primero espacio en la memoria SD o almacenamiento USB para usar la aplicación
     et = Rakenduse kasutamiseks palun vabasta kõigepealt piisavalt ruumi mälukaardil/USB salvestusseadmel
     eu = Mesedez, egin lekua SD memorian/USB biltegian aplikazioa erabiltzeko
@@ -1656,7 +1656,7 @@
     es = ¿Descargar %@?
     et = Laadida alla %@?
     eu = %@ deskargatu?
-    fa = دانلود  %@?
+    fa = دانلود %@?
     fi = Ladataanko %@?
     fr = Télécharger %@ ?
     he = להוריד %@?
@@ -2599,7 +2599,7 @@
     en = %1$@ free of %2$@
     af = %1$@ van %2$@ beskikbaar
     ar = %1$@ فارغ من %2$@
-    az = %2$@-nin  %1$@-i boşdur
+    az = %2$@-nin %1$@-i boşdur
     be = %1$@ вольна з %2$@
     ca = %1$@ lliures de %2$@
     de = %1$@ frei von %2$@
@@ -2770,7 +2770,7 @@
     fa = واحد اندازه‌گیری
     fi = Mittayksiköt
     fr = Unités de mesure
-    he = יחידות  מדידה
+    he = יחידות מדידה
     hi = नाप की इकाइयां
     hu = Mértékegységek
     id = Unit Pengukuran
@@ -4224,7 +4224,7 @@
     tags = android
     en = Failed to open file %1$@\n\n%2$@
     af = Kon nie lêer oopmaak nie %1$@\n\n%2$@
-    ar = فشل فتح ملف  %1$@\n\n%2$@
+    ar = فشل فتح ملف %1$@\n\n%2$@
     az = Faylı açmaq alınmadı %1$@\n\n%2$@
     be = Не ўдалося адкрыць файл %1$@\n\n%2$@
     bg = Неуспешно отваряне на файл %1$@\n\n%2$@
@@ -8431,7 +8431,7 @@
     es = Sus descripciones (texto o html)
     et = Sinu kirjeldused (tekst või html)
     eu = Zure deskribapenak (testua edo html)
-    fa = توضیحات شما (متن یا  (html
+    fa = توضیحات شما (متن یا (html
     fi = Kuvauksesi (teksti tai html)
     fr = Vos descriptions (version texte ou html)
     he = התיאור שלך (טקסט או HTML)
@@ -9315,7 +9315,7 @@
     tags = android,ios
     en = — The map might be inaccurate, and the suggested route might not always be the most optimal way to reach the destination;
     af = – Die kaart kan onakkuraat wees en die voorgestelde roete is dalk nie die mees optimale manier om die bestemming te bereik nie;
-    ar = —  قد تكون الخريطة غير دقيقة وقد لا يكون المسار المقترح هو المسار الأمثل دائمًا للوصول إلى الوجهة.;
+    ar = — قد تكون الخريطة غير دقيقة وقد لا يكون المسار المقترح هو المسار الأمثل دائمًا للوصول إلى الوجهة.;
     az = — Xəritə dəqiq olmaya bilər və tövsiyə olunan marşrut təyinat yerinə çatmağın ən yaxşı yolu olmaya bilər;
     be = — Мапа можа быць недакладнай, а прапанаваны маршрут не заўжды найлепшым;
     bg = - Картата може да е неточна, а предложеният маршрут невинаги е най-оптималният начин за достигане до дестинацията;
@@ -9404,7 +9404,7 @@
     en = — Exercise caution with routes in border zones: the routes created by our app may sometimes cross country borders in unauthorized places.
     en-GB = — Exercise caution with routes in border zones: the routes created by our app may sometimes cross country borders in unauthorised places.
     af = Wees versigtig met die roetes in die grenssones: die roetes wat deur ons toep geskep word kan soms oor landsgrense in onwettige areas gaan.
-    ar = — تحذير بشأن المسارات في المناطق الحدودية: المسارات التي تم إنشاؤها بواسطة تطبيقنا قد تعبر  أحياناً حدود الدول في أماكن غير مصرح بها;
+    ar = — تحذير بشأن المسارات في المناطق الحدودية: المسارات التي تم إنشاؤها بواسطة تطبيقنا قد تعبر أحياناً حدود الدول في أماكن غير مصرح بها;
     az = — Sərhəd bölgələrində marşrutlarla diqqətli olun: tətbiqimiz yaradılan marşrutlar bəzən icazə verilməyən yerlərdə ölkə sərhədlərini keçə bilər.
     be = — Будзьце ўважлівы з маршрутамі ў памежных зонах: маршруты, пракладзеныя нашай праграмай, часам могуць перасякаць мяжу ў недазволеных месцах.
     bg = - Бъдете внимателни с маршрутите в гранични зони: маршрутите, създадени от нашето приложение, понякога могат да пресичат границите на страната на неразрешени места.
@@ -9634,7 +9634,7 @@
     es = Activar servicios de ubicación
     et = Luba asukoha teenused
     eu = Aktibatu kokapen zerbitzuak
-    fa = فعال کردن سرویس موقعیت مکانی  (GPS)
+    fa = فعال کردن سرویس موقعیت مکانی (GPS)
     fi = Ota sijaintipalvelut käyttöön
     fr = Activez les services de localisation
     he = הפעל שירותי מיקום
@@ -10534,8 +10534,8 @@
   [search_without_internet_advertisement]
     tags = android
     en = To start searching and creating routes, please download the map. After that you will no longer need an Internet connection.
-    af = Om te begin met soek en  roetebeskrywings te kan maak moet u die kaart aflaai. U het daarna nie meer ’n internetverbinding nodig nie.
-    ar = لبدء البحث وإنشاء الطرق، يرجى تنزيل الخريطة،  ولن تحتاج إلى اتصال بالإنترنت بعد ذلك.
+    af = Om te begin met soek en roetebeskrywings te kan maak moet u die kaart aflaai. U het daarna nie meer ’n internetverbinding nodig nie.
+    ar = لبدء البحث وإنشاء الطرق، يرجى تنزيل الخريطة، ولن تحتاج إلى اتصال بالإنترنت بعد ذلك.
     az = Axtarmaq və marşrut yaratmağa başlamaq üçün xəritəni endirin. Yüklədikdən sonra artıq internet bağlantısına ehtiyacınız olmayacaq.
     be = Каб шукаць месцы і пракладваць маршруты, спампуйце карту. Пасля гэтага падключэнне да інтэрнэту вам больш не спатрэбіцца.
     bg = За да започнете да търсите и създавате маршрути, изтеглете картата. Това ще ви позволи да пътувате без интернет връзка.
@@ -10973,8 +10973,8 @@
     zh-Hant = 很抱歉，沒有搜尋到任何地點。
 
   [search_not_found_query]
-    tags = android,ios
     comment = The message when user did not find anything in the search.
+    tags = android,ios
     en = Download the region where you are searching or try adding a nearby town/village name.
     af = Laai die streek af waar jy soek of probeer om 'n nabygeleë dorp/dorpnaam by te voeg.
     ar = قم بتنزيل المنطقة التي تبحث فيها أو حاول إضافة اسم بلدة/قرية قريبة.
@@ -14434,7 +14434,7 @@
     de = Stock: %s
     fr = Niveau : %s
     ru = Этаж: %s
-    tr = Kat sayısı:  %s
+    tr = Kat sayısı: %s
     zh-Hans = 楼层：%s
     zh-Hant = 樓層：%s
 
@@ -14583,7 +14583,7 @@
     es = Para crear una ruta, es necesario actualizar todos los mapas y volver a planificar la ruta.
     et = Marsruudi loomiseks tuleb värskendada kõiki kaarte ja seejärel planeerida marsruuti uuesti.
     eu = Ibilbide bat sortzeko, beharrezkoa da mapa guztiak eguneratzea eta ibilbidea berriro planifikatzea.
-    fa = برای ایجاد مسیر شما نیازمند بروزرسانی تمامی  نقشه‌ها هستید سپس می توانید دوباره مسیرتان را برنامه ریزی کنید
+    fa = برای ایجاد مسیر شما نیازمند بروزرسانی تمامی نقشه‌ها هستید سپس می توانید دوباره مسیرتان را برنامه ریزی کنید
     fi = Sinun täytyy päivittää kaikki kartat ja suunnitella reitti uudelleen luodaksesi uuden reitin.
     fr = Pour créer un itinéraire, vous devez mettre à jour toutes les cartes puis reprogrammer l'itinéraire.
     he = ליצירת מסלול, יש לעדכן את כל המפות ולתכנן מסלול שנית.
@@ -15220,8 +15220,8 @@
     zh-Hant = 該地點的名稱
 
   [editor_default_language_hint]
-    tags = android,ios
     comment = The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name
+    tags = android,ios
     en = As it is written in the local language
     af = Soos dit in die plaaslike taal geskryf is
     ar = كما هو مكتوب باللغة المحلية
@@ -15763,7 +15763,7 @@
     es = %1$d de %2$d
     et = %1$d/%2$d
     eu = %1$d/%2$d
-    fa = %1$d  از  %2$d
+    fa = %1$d از %2$d
     fi = %1$d/%2$d
     fr = %1$d de %2$d
     he = %1$d מתוך %2$d
@@ -17155,8 +17155,8 @@
     zh-Hant = 或繼續使用 Organic Maps，但無法定位到您目前所在的位置。
 
   [m]
-    tags = android,ios
     comment = abbreviation for meters
+    tags = android,ios
     en = m
     af = m
     ar = متر
@@ -17200,8 +17200,8 @@
     zh-Hant = 公尺
 
   [km]
-    tags = android,ios
     comment = abbreviation for kilometers
+    tags = android,ios
     en = km
     af = km
     ar = كم
@@ -17245,8 +17245,8 @@
     zh-Hant = 公里
 
   [kilometers_per_hour]
-    tags = android,ios
     comment = abbreviation for kilometers per hour
+    tags = android,ios
     en = km/h
     af = km/h
     ar = كم/ساعة
@@ -17288,8 +17288,8 @@
     zh-Hant = 公里每小時
 
   [mi]
-    tags = android,ios
     comment = abbreviation for mile(s)
+    tags = android,ios
     en = mi
     af = myl
     ar = ميل
@@ -18846,8 +18846,8 @@
     zh-Hant = 停止
 
   [recent_track_background_dialog_title]
-    tags = ios
     comment = iOS dialog for the case when recent track recording is on and the app comes back from background
+    tags = ios
     en = Disable recording of your recently travelled route?
     af = Deaktiveer opname van u onlangs berese roete?
     ar = هل تريد تعطيل تسجيل مسارات سفرك؟
@@ -18992,7 +18992,7 @@
     es = Organic Maps usa su geolocalización en segundo plano para registrar su ruta recorrida recientemente.
     et = Organic Maps kasutab Sinu geograafilist asukohta taustal Sinu hiljuti läbitud teekonna salvestamiseks.
     eu = Organic Maps-ek zure geokokapena erabiltzen du atzeko planoan egindako azken ibilbidea erregistratzeko.
-    fa = Organic Maps  از اطلاعات موقعیت مکانی شما در پس ضمینه برای ذخیره مسیر‌هایی که اخیرا سفر کرده اید استفاده می کند.
+    fa = Organic Maps از اطلاعات موقعیت مکانی شما در پس ضمینه برای ذخیره مسیر‌هایی که اخیرا سفر کرده اید استفاده می کند.
     fi = Organic Maps käyttää sijaintipalveluita taustalla viimeisimmän reittisi tallentamiseksi.
     fr = Organic Maps utilise votre géolocalisation en arrière-plan pour enregistrer vos itinéraires récents.
     he = האפליקצייה Organic Maps משתמשת במיקום שלך ברקע כדי להקליט את המסלול האחרון שלך.
@@ -20216,8 +20216,8 @@
     zh-Hant = 退出
 
   [routing_add_start_point]
-    tags = android,ios
     comment = User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From".
+    tags = android,ios
     en = Use search or tap on the map to add a route starting point
     af = Gebruik soek of tik op die kaart om 'n roetebeginpunt by te voeg
     ar = استخدام البحث أو النقر على الخريطة لإضافة نقطة بداية الطريق
@@ -20262,8 +20262,8 @@
     zh-Hant = 請搜尋地點或點擊地圖以新增路線起點
 
   [routing_add_finish_point]
-    tags = android,ios
     comment = User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To".
+    tags = android,ios
     en = Use search or tap on the map to add a destination point
     af = Gebruik soek of tik op die kaart om 'n bestemmingspunt by te voeg
     ar = استخدام البحث أو النقر على الخريطة لإضافة نقطة وجهة
@@ -21186,8 +21186,8 @@
     zh-Hant = 創建新的列表
 
   [bookmarks_import]
-    tags = android,ios
     comment = Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files
+    tags = android,ios
     en = Import Bookmarks and Tracks
     af = Voer leidrade en snitte in
     ar = استيراد الإشارات المرجعية والمسارات
@@ -23516,7 +23516,7 @@
     fa = همیشه هشدار دهد
     fi = Varoita aina
     fr = Toujours avertir
-    he = הזהר  תמיד
+    he = הזהר תמיד
     hu = Mindig figyelmeztet
     id = Selalu peringatkan
     it = Avvisare sempre
@@ -23559,7 +23559,7 @@
     es-MX = Nunca dar aviso
     et = Ära kunagi hoiata eest
     eu = Inoiz ez abisatu
-    fa = هرگز  هشدار ندهد
+    fa = هرگز هشدار ندهد
     fi = Älä koskaan varoita
     fr = Jamais avertir
     he = אל תזהיר אף פעם
@@ -28174,8 +28174,8 @@
     zh-Hant = 下載世界地圖
 
   [disk_error]
-    tags = android
     comment = Used in DownloadResources startup screen
+    tags = android
     en = Unable to create folder and move files on internal device's memory or sdcard
     af = Kan nie vouer skep en lêers op internetoestelgeheue of SD-kaart skuif nie
     ar = تعذر إنشاء المجلد ونقل الملفات على الذاكرة الداخلية للجهاز أو على بطاقة SD
@@ -28204,8 +28204,8 @@
     zh-Hant = 無法在內部儲存或 SD 卡上建立資料夾和移動檔案
 
   [disk_error_title]
-    tags = android
     comment = Used in DownloadResources startup screen
+    tags = android
     en = Disk error
     af = Skyffout
     ar = حدث خطأ في التخزين
@@ -28392,11 +28392,11 @@
     zh-Hant = 啟用後，顯示地圖時畫面將始終開啟。
 
   [enable_show_on_lock_screen]
-    tags = android
     comment = A preference title; keep short!
+    tags = android
     en = Show on the lock screen
     af = Toon op grendelskerm
-    ar = إظهار  التطبيق فوق شاشة القفل
+    ar = إظهار التطبيق فوق شاشة القفل
     az = Kilid ekranında göstərin
     be = Паказваць на экране блакіроўкі
     ca = Mostra en la pantalla de bloqueig
@@ -28428,8 +28428,8 @@
     zh-Hant = 在鎖定螢幕上顯示
 
   [enable_show_on_lock_screen_description]
-    tags = android
     comment = Description in preferences
+    tags = android
     en = When enabled, the app will work on the lockscreen even when the device is locked.
     af = Indien geaktiveer, sal die toep op die grendelskerm werk selfs indien die toestel vergrendel is.
     ar = عند التفعيل، لن تحتاج لفتح قفل جهازك كل مرة أثناء تشغيل التطبيق
@@ -29851,8 +29851,8 @@
     zh-Hant = 音量
 
   [bookmarks_export]
-    tags = android,ios
     comment = Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks
+    tags = android,ios
     en = Export all Bookmarks and Tracks
     af = Voer alle boekmerke en snitte uit
     ar = تصدير كافة الإشارات المرجعية والمسارات
@@ -30921,13 +30921,15 @@
     fi = Itsepalvelu
     fr = Libre-service
     he = שירות עצמי
-    hi = स्वयं सेवा    hu = Önkiszolgáló
+    hi = स्वयं सेवा
+    hu = Önkiszolgáló
     id = Layanan mandiri
     it = Self service
     ja = セルフサービス
     ko = 셀프 서비스
     lt = Savitarna
-    mr = स्व: सेवा    nb = Selvbetjening
+    mr = स्व: सेवा
+    nb = Selvbetjening
     nl = Zelfbediening
     pl = Samoobsługa
     pt = Autosserviço
@@ -30971,7 +30973,8 @@
     ja = オプションを選択する
     ko = 옵션 선택
     lt = Pasirinkite parinktį
-    mr = पर्याय निवडा    nb = Velg alternativ
+    mr = पर्याय निवडा
+    nb = Velg alternativ
     nl = Selecteer optie
     pl = Wybierz opcję
     pt = Selecionar opção
@@ -31016,7 +31019,8 @@
     ja = 屋外席
     ko = 야외 좌석
     lt = Lauko sėdimosios vietos
-    mr = बाहेरची आसनव्यवस्था    nb = Uteservering
+    mr = बाहेरची आसनव्यवस्था
+    nb = Uteservering
     nl = Zitplaatsen buiten
     pl = Siedzenia na zewnątrz
     pt = Assentos ao ar livre

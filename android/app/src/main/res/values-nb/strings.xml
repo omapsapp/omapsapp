@@ -836,6 +836,11 @@
     <string name="view_menu">Vis meny</string>
     <!-- Title for the "Open In Another App" button on the PlacePage. -->
     <string name="open_in_app">Åpne i en annen app</string>
+    <!-- To indicate if the place proposed self service... -->
+    <string name="self_service">Selvbetjening</string>
+    <string name="select_option">Velg alternativ</string>
+    <!-- To indicate if restaurant or other place has outdoor seating -->
+    <string name="outdoor_seating">Uteservering</string>
     <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
     <string name="power_save_dialog_summary">For å få mest mulig nøyaktig navigering anbefaler vi at du deaktiverer strømsparingsmodus i telefonens batteriinnstillinger.</string>
     <!-- Prompt to start recording a track. -->

@@ -576,7 +576,7 @@
     <!-- Title for the "Open In Another App" button on the PlacePage. -->
     <string name="open_in_app">किसी अन्य ऐप में खोलें</string>
     <!-- To indicate if the place proposed self service... -->
-    <string name="self_service">स्वयं सेवा    hu = Önkiszolgáló</string>
+    <string name="self_service">स्वयं सेवा</string>
     <string name="select_option">विकल्प चुनें</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">घर के बाहर बैठने</string>

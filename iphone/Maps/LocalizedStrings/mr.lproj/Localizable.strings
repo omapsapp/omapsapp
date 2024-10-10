@@ -1359,7 +1359,7 @@
 "open_in_app" = "दुसऱ्या ॲपमध्ये उघडा";
 
 /* To indicate if restaurant or other place has outdoor seating */
-"outdoor_seating" = "बाहेरची आसनव्यवस्था    nb = Uteservering";
+"outdoor_seating" = "बाहेरची आसनव्यवस्था";
 
 /* Title for the "Recently Deleted Lists" button on the Bookmarks and Lists screen. */
 "bookmarks_recently_deleted" = "अलीकडे हटवलेल्या याद्या";
