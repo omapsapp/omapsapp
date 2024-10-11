@@ -135,8 +135,6 @@ public:
     }
   }
 
-  static std::string NameToOSMTag(uint8_t const langCode);
-
   void SetName(std::string_view name);
   void SetName(std::string_view lang, std::string_view name);
   void SetName(uint8_t const langCode, std::string_view name);

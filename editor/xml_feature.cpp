@@ -268,31 +268,6 @@ string XMLFeature::GetName(uint8_t const langCode) const
   return GetName(StringUtf8Multilang::GetLangByCode(langCode));
 }
 
-std::string XMLFeature::NameToOSMTag(uint8_t const langCode)
-{
-  std::string_view lang = StringUtf8Multilang::GetLangByCode(langCode);
-  if (lang == kIntlLang)
-  {
-    return std::string(kIntlName);
-  }
-  else if (lang == kAltLang)
-  {
-    return std::string(kAltName);
-  }
-  else if (lang == kOldLang)
-  {
-    return std::string(kOldName);
-  }
-  else if (lang == kDefaultLang)
-  {
-    return std::string(kDefaultName);
-  }
-  else
-  {
-    return std::string{kDefaultName}.append(kColon).append(lang);
-  }
-}
-
 void XMLFeature::SetName(string_view name) { SetName(kDefaultLang, name); }
 
 void XMLFeature::SetName(string_view lang, string_view name)
