@@ -6,8 +6,6 @@
 #include "indexer/validate_and_format_contacts.hpp"
 #include "indexer/edit_journal.hpp"
 
-#include "editor/xml_feature.hpp"
-
 #include "platform/preferred_languages.hpp"
 
 #include "base/control_flow.hpp"
@@ -188,7 +186,7 @@ void EditableMapObject::SetName(string_view name, int8_t langCode)
   std::string_view old_name;
   m_name.GetString(langCode, old_name);
   if (name != old_name) {
-    std::string osmLangName = editor::XMLFeature::NameToOSMTag(langCode);
+    std::string osmLangName = StringUtf8Multilang::GetOSMTagByCode(langCode);
     journal.AddTagChange(osmLangName, std::string(old_name), std::string(name));
     m_name.AddString(langCode, name);
   }
