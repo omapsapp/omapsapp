@@ -4,6 +4,7 @@
 #include "indexer/ftypes_matcher.hpp"
 #include "indexer/postcodes_matcher.hpp"
 #include "indexer/validate_and_format_contacts.hpp"
+#include "indexer/edit_journal.hpp"
 
 #include "platform/preferred_languages.hpp"
 
@@ -728,6 +729,7 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         m_name.AddString(langCode, tagModData.new_value);
 
       else if (tagModData.key == "addr:street");  //Street is stored somewhere else
+        //Todo
 
       else if (tagModData.key == "addr:housenumber")
         m_houseNumber = tagModData.new_value;
@@ -748,6 +750,11 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
     }
     case JournalEntryType::ObjectCreated:
     {
+      ObjCreateData const & objCreatedData = std::get<ObjCreateData>(entry.data);
+      ASSERT_EQUAL(feature::GeomType::Point, objCreatedData.geomType, ("At the moment only new nodes (points) can be created."));
+      SetPointType();
+      SetMercator(objCreatedData.mercator);
+      m_types.Add(objCreatedData.type);
       break;
     }
   }

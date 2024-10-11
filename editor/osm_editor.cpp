@@ -933,10 +933,14 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
                              FeatureTypeInfo & fti) const
 {
   EditJournal journal = xml.GetEditJournal();
+  bool loadFromJournal = true;
 
   if (status == FeatureStatus::Created)
   {
-    editor::FromXML(xml, fti.m_object);
+    if (loadFromJournal)
+      fti.m_object.ApplyEditsFromJournal(journal);
+    else
+      editor::FromXML(xml, fti.m_object);
   }
   else
   {
@@ -949,14 +953,10 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
 
     fti.m_object = *originalObjectPtr;
 
-    bool loadFromJournal = true;
-
-    if (loadFromJournal) {
+    if (loadFromJournal)
       fti.m_object.ApplyEditsFromJournal(journal);
-    }
-    else {
+    else
       editor::ApplyPatch(xml, fti.m_object);
-    }
   }
 
   //fti.m_object.SetJournal(xml.GetEditJournal());
