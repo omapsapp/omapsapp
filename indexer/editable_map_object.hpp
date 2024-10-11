@@ -99,8 +99,10 @@ public:
   void SetID(FeatureID const & fid);
 
   void SetStreet(LocalizedStreet const & st);
+  void SetStreetNoJournalLogging(LocalizedStreet const & st);
   void SetNearbyStreets(std::vector<LocalizedStreet> && streets);
   void SetHouseNumber(std::string const & houseNumber);
+  void SetHouseNumberNoJournalLogging(std::string const & houseNumber);
   void SetPostcode(std::string const & postcode);
 
   static bool IsValidMetadata(MetadataID type, std::string const & value);

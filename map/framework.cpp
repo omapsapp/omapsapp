@@ -2839,7 +2839,7 @@ void SetStreet(search::ReverseGeocoder const & coder, DataSource const & dataSou
       if (!LocalizeStreet(dataSource, it->m_id, ls))
         ls.m_defaultName = street;
 
-      emo.SetStreet(ls);
+      emo.SetStreetNoJournalLogging(ls);
 
       // A street that a feature belongs to should always be in the first place in the list.
       auto it =
@@ -2854,12 +2854,12 @@ void SetStreet(search::ReverseGeocoder const & coder, DataSource const & dataSou
     }
     else
     {
-      emo.SetStreet({street, ""});
+      emo.SetStreetNoJournalLogging({street, ""});
     }
   }
   else
   {
-    emo.SetStreet({});
+    emo.SetStreetNoJournalLogging({});
   }
 
   emo.SetNearbyStreets(std::move(localizedStreets));
@@ -2880,10 +2880,10 @@ void SetHostingBuildingAddress(FeatureID const & hostingBuildingFid, DataSource 
   if (coder.GetExactAddress(*hostingBuildingFeature, address))
   {
     if (emo.GetHouseNumber().empty())
-      emo.SetHouseNumber(address.GetHouseNumber());
+      emo.SetHouseNumberNoJournalLogging(address.GetHouseNumber());
     if (emo.GetStreet().m_defaultName.empty())
       // TODO(mgsergio): Localize if localization is required by UI.
-      emo.SetStreet({address.GetStreetName(), ""});
+      emo.SetStreetNoJournalLogging({address.GetStreetName(), ""});
   }
 }
 }  // namespace
@@ -3033,10 +3033,10 @@ osm::Editor::SaveResult Framework::SaveEditedMapObject(osm::EditableMapObject em
 
     // Do not save street if it was taken from hosting building.
     if ((originalFeatureStreet.empty() || isCreatedFeature) && !isStreetOverridden)
-        emo.SetStreet({});
+        emo.SetStreetNoJournalLogging({});
     // Do not save house number if it was taken from hosting building.
     if ((originalFeature->GetHouseNumber().empty() || isCreatedFeature) && !isHouseNumberOverridden)
-      emo.SetHouseNumber("");
+      emo.SetHouseNumberNoJournalLogging("");
 
     if (!isStreetOverridden && !isHouseNumberOverridden)
     {

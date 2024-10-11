@@ -241,6 +241,12 @@ void EditableMapObject::SetStreet(LocalizedStreet const & st)
   }
 }
 
+void EditableMapObject::SetStreetNoJournalLogging(LocalizedStreet const & st)
+{
+  m_street = st;
+  LOG(LDEBUG, ("Street changed without Journal Logging"));
+}
+
 void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 {
   m_nearbyStreets = std::move(streets);
@@ -252,6 +258,12 @@ void EditableMapObject::SetHouseNumber(string const & houseNumber)
     journal.AddTagChange("addr:housenumber", m_houseNumber, houseNumber);
     m_houseNumber = houseNumber;
   }
+}
+
+void EditableMapObject::SetHouseNumberNoJournalLogging(string const & houseNumber)
+{
+  m_houseNumber = houseNumber;
+  LOG(LDEBUG, ("HouseNumber changed without Journal Logging"));
 }
 
 void EditableMapObject::SetPostcode(std::string const & postcode)
