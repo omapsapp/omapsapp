@@ -4,7 +4,6 @@
 #include "indexer/ftypes_matcher.hpp"
 #include "indexer/postcodes_matcher.hpp"
 #include "indexer/validate_and_format_contacts.hpp"
-#include "indexer/edit_journal.hpp"
 
 #include "platform/preferred_languages.hpp"
 
