@@ -149,6 +149,32 @@ std::vector<std::string_view> const * StringUtf8Multilang::GetTransliteratorsIds
   return &kLanguages[langCode].m_transliteratorsIds;
 }
 
+std::string StringUtf8Multilang::GetOSMTagByCode(uint8_t const langCode)
+{
+  std::string_view lang = StringUtf8Multilang::GetLangByCode(langCode);
+  if (lang == "")
+    return "";
+  else if (lang == "int_name" || lang == "alt_name" || lang == "old_name")
+    return std::string{lang};
+  else if (lang == "default")
+    return "name";
+  else
+    return std::string{"name:"}.append(lang);
+}
+
+uint8_t StringUtf8Multilang::GetCodeByOSMTag(std::string const & name)
+{
+  std::string lang;
+  if (name.substr(0, 5) == "name:")
+    lang = name.substr(5);
+  else if (name == "name")
+    lang = "default";
+  else
+    lang = name;
+
+  return StringUtf8Multilang::GetLangIndex(lang);
+}
+
 size_t StringUtf8Multilang::GetNextIndex(size_t i) const
 {
   ++i;

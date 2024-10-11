@@ -687,7 +687,7 @@ void EditableMapObject::ClearJournal()
   journal.Clear();
 }
 
-void EditableMapObject::ApplyEditsFromJournal(EditJournal editJournal)
+void EditableMapObject::ApplyEditsFromJournal(EditJournal const & editJournal)
 {
   for (JournalEntry const & entry : editJournal.GetJournalHistory()) {
     ApplyJournalEntry(entry);
@@ -697,10 +697,51 @@ void EditableMapObject::ApplyEditsFromJournal(EditJournal editJournal)
   }
 }
 
-void EditableMapObject::ApplyJournalEntry(JournalEntry entry)
+void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
 {
   LOG(LDEBUG, ("Applying Journal Entry: ", osm::EditJournal::ToString(entry)));
   //Todo
+  switch (entry.journalEntryType) {
+    case JournalEntryType::TagModification:
+    {
+      TagModData const & tagModData = std::get<TagModData>(entry.data);
+
+      //Metadata
+      MetadataID type;
+      if (feature::Metadata::TypeFromString(tagModData.key, type)) {
+        m_metadata.Set(type, tagModData.new_value);
+        break;
+      }
+
+      //Names
+      uint8_t langCode = StringUtf8Multilang::GetCodeByOSMTag(tagModData.key);
+      if (langCode != 255) //not UnsupportedLanguageCode
+        m_name.AddString(langCode, tagModData.new_value);
+
+      else if (tagModData.key == "addr:street");  //Street is stored somewhere else
+
+      else if (tagModData.key == "addr:housenumber")
+        m_houseNumber = tagModData.new_value;
+
+      else if (tagModData.key == "cuisine") {
+        //Todo
+      }
+      else if (tagModData.key == "diet:vegetarian") {
+        //Todo
+      }
+      else if (tagModData.key == "diet:vegan") {
+        //Todo
+      }
+      else {
+        LOG(LWARNING, ("OSM key \"" , tagModData.key, "\" is unknown, skipped"));
+      }
+      break;
+    }
+    case JournalEntryType::ObjectCreated:
+    {
+      break;
+    }
+  }
 }
 
 bool AreObjectsEqualIgnoringStreet(EditableMapObject const & lhs, EditableMapObject const & rhs)

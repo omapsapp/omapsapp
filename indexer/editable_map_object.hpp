@@ -137,8 +137,8 @@ public:
   EditingLifecycle GetEditingLifecycle() const;
   void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
   void ClearJournal();
-  void ApplyEditsFromJournal(EditJournal journal);
-  void ApplyJournalEntry(JournalEntry entry);
+  void ApplyEditsFromJournal(EditJournal const & journal);
+  void ApplyJournalEntry(JournalEntry const & entry);
 
   /// Check whether langCode can be used as default name.
   static bool CanUseAsDefaultName(int8_t const langCode, std::vector<int8_t> const & nativeMwmLanguages);
