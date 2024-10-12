@@ -413,7 +413,7 @@ void RoutingManager::OnBuildRouteReady(Route const & route, RouterResultCode cod
 
   // Validate route (in case of bicycle routing it can be invalid).
   ASSERT(route.IsValid(), ());
-  if (route.IsValid() && m_currentRouterType != routing::RouterType::Ruler)
+  if (route.IsValid() && m_currentRouterType != routing::RouterType::Ruler && route.GetSubrouteCount() == 1)
   {
     m2::RectD routeRect = route.GetPoly().GetLimitRect();
     routeRect.Scale(kRouteScaleMultiplier);
