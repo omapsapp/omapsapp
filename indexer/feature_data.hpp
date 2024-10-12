@@ -73,6 +73,16 @@ namespace feature
       m_types[m_size++] = type;
     }
 
+    void SaveAdd(uint32_t type)
+    {
+      if (!Has(type)) {
+        if (m_size < kMaxTypesCount)
+          Add(type);
+        else
+          LOG(LWARNING, ("Type could not be added, MaxTypesCount exceeded"));
+      }
+    }
+
     GeomType GetGeomType() const { return m_geomType; }
 
     size_t Size() const { return m_size; }

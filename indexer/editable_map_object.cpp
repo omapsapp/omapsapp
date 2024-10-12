@@ -365,7 +365,7 @@ void EditableMapObject::SetInternet(feature::Internet internet)
   if (hasWiFi && internet != feature::Internet::Wlan)
     m_types.Remove(wifiType);
   else if (!hasWiFi && internet == feature::Internet::Wlan)
-    m_types.Add(wifiType);
+    m_types.SaveAdd(wifiType);
 }
 
 LocalizedStreet const & EditableMapObject::GetStreet() const { return m_street; }
@@ -720,28 +720,55 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
       MetadataID type;
       if (feature::Metadata::TypeFromString(tagModData.key, type)) {
         m_metadata.Set(type, tagModData.new_value);
+        if (type == MetadataID::FMD_INTERNET) {
+          uint32_t const wifiType = ftypes::IsWifiChecker::Instance().GetType();
+          if (tagModData.new_value == "wifi")
+            m_types.SaveAdd(wifiType);
+          else
+            m_types.Remove(wifiType);
+        }
         break;
       }
 
       //Names
       uint8_t langCode = StringUtf8Multilang::GetCodeByOSMTag(tagModData.key);
-      if (langCode != 255) //not UnsupportedLanguageCode
+      if (langCode != 255) { //not UnsupportedLanguageCode
         m_name.AddString(langCode, tagModData.new_value);
+        break;
+      }
 
-      else if (tagModData.key == "addr:street");  //Street is stored somewhere else
-        //Todo
-
-      else if (tagModData.key == "addr:housenumber")
+      if (tagModData.key == "addr:street") {
+        m_street.m_defaultName = tagModData.new_value;
+      }
+      else if (tagModData.key == "addr:housenumber") {
         m_houseNumber = tagModData.new_value;
-
+      }
       else if (tagModData.key == "cuisine") {
-        //Todo
+        Classificator const & cl = classif();
+        // Remove old cuisine values
+        vector<std::string_view> oldCuisines = strings::Tokenize(tagModData.old_value, ";");
+        for (std::string_view const & cuisine : oldCuisines)
+          m_types.Remove(cl.GetTypeByPath({string_view("cuisine"), cuisine}));
+        // Add new cuisine values
+        vector<std::string_view> newCuisines = strings::Tokenize(tagModData.new_value, ";");
+        for (std::string_view const & cuisine : newCuisines)
+          m_types.SaveAdd(cl.GetTypeByPath({string_view("cuisine"), cuisine}));
       }
       else if (tagModData.key == "diet:vegetarian") {
-        //Todo
+        Classificator const & cl = classif();
+        uint32_t const vegetarianType = cl.GetTypeByPath({string_view("cuisine"), "vegetarian"});
+        if (tagModData.new_value == "yes")
+          m_types.SaveAdd(vegetarianType);
+        else
+          m_types.Remove(vegetarianType);
       }
       else if (tagModData.key == "diet:vegan") {
-        //Todo
+        Classificator const & cl = classif();
+        uint32_t const veganType = cl.GetTypeByPath({string_view("cuisine"), "vegan"});
+        if (tagModData.new_value == "yes")
+          m_types.SaveAdd(veganType);
+        else
+          m_types.Remove(veganType);
       }
       else {
         LOG(LWARNING, ("OSM key \"" , tagModData.key, "\" is unknown, skipped"));
