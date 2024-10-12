@@ -279,8 +279,6 @@ namespace qt
 
   void UpdateDialog::FillTree(optional<Filter> const & filter, uint64_t timestamp)
   {
-    CHECK_THREAD_CHECKER(m_threadChecker, ());
-
     if (m_fillTreeTimestamp != timestamp)
       return;
 

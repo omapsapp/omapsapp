@@ -4,8 +4,6 @@
 
 #include "platform/downloader_defines.hpp"
 
-#include "base/thread_checker.hpp"
-
 #include <cstdint>
 #include <optional>
 #include <string>
@@ -82,7 +80,5 @@ namespace qt
     uint64_t m_fillTreeTimestamp = 0;
 
     std::unordered_multimap<storage::CountryId, QTreeWidgetItem *> m_treeItemByCountryId;
-
-    DECLARE_THREAD_CHECKER(m_threadChecker);
   };
 }  // namespace qt
