@@ -149,7 +149,8 @@ Java_app_organicmaps_editor_Editor_nativeHasWifi(JNIEnv *, jclass)
 JNIEXPORT void JNICALL
 Java_app_organicmaps_editor_Editor_nativeSetHasWifi(JNIEnv *, jclass, jboolean hasWifi)
 {
-  g_editableMapObject.SetInternet(hasWifi ? feature::Internet::Wlan : feature::Internet::Unknown);
+  if (hasWifi != (g_editableMapObject.GetInternet() == feature::Internet::Wlan))
+    g_editableMapObject.SetInternet(hasWifi ? feature::Internet::Wlan : feature::Internet::Unknown);
 }
 
 JNIEXPORT jboolean JNICALL
