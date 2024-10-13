@@ -620,7 +620,6 @@ string XMLFeature::GetAttribute(string const & key) const
 }
 
 void XMLFeature::SetAttribute(string const & key, string const & value)
-
 {
   auto node = HasAttribute(key) ? GetRootNode().attribute(key.data())
                                 : GetRootNode().append_attribute(key.data());
