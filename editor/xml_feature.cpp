@@ -799,7 +799,7 @@ XMLFeature TypeToXML(uint32_t type, feature::GeomType geomType, m2::PointD merca
     strings::SimpleTokenizer iter(strType, "-");
     string_view const k = *iter;
 
-    ASSERT(++iter, ("Processing Type failed: ", strType));
+    CHECK(++iter, ("Processing Type failed: ", strType));
     // Main type is always stored as "k=amenity v=restaurant".
     toFeature.SetTagValue(k, *iter);
   }
