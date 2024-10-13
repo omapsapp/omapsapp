@@ -626,9 +626,9 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
         LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
-        // Todo: implement logic
-        bool useNewEditor = true;
-                
+        // Don't use new editor for Legacy Objects
+        bool useNewEditor = fti.m_object.GetJournal().GetJournalHistory().front().journalEntryType != JournalEntryType::LegacyObject;
+
         try
         {
           if (useNewEditor)
@@ -667,6 +667,9 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                         }
                         case JournalEntryType::ObjectCreated:
                           break;
+                        case JournalEntryType::LegacyObject:
+                          ASSERT_FAIL(("Legacy Objects can not be edited with the new editor"));
+                          break;
                       }
                     }
 
@@ -692,6 +695,9 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                         }
                         case JournalEntryType::ObjectCreated:
                           CHECK(false, ("ObjectCreated can only be the first entry"));
+                          break;
+                        case JournalEntryType::LegacyObject:
+                          ASSERT_FAIL(("Legacy Objects can not be edited with the new editor"));
                           break;
                       }
                     }
@@ -933,7 +939,10 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
                              FeatureTypeInfo & fti) const
 {
   EditJournal journal = xml.GetEditJournal();
-  bool loadFromJournal = true;
+
+  // Do not load Legacy Objects form Journal
+  bool loadFromJournal = journal.GetJournalHistory().front().journalEntryType != JournalEntryType::LegacyObject;
+  LOG(LDEBUG, ("loadFromJournal: ", loadFromJournal));
 
   if (status == FeatureStatus::Created)
   {
@@ -959,7 +968,6 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
       editor::ApplyPatch(xml, fti.m_object);
   }
 
-  //fti.m_object.SetJournal(xml.GetEditJournal());
   fti.m_object.SetJournal(journal);
   fti.m_object.SetID(fid);
   fti.m_street = xml.GetTagValue(kAddrStreetTag);

@@ -784,6 +784,11 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
       m_types.Add(objCreatedData.type);
       break;
     }
+    case JournalEntryType::LegacyObject:
+    {
+      ASSERT_FAIL(("Legacy Objects can not be loaded from Journal"));
+      break;
+    }
   }
 }
 

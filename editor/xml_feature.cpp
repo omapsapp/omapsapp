@@ -468,7 +468,14 @@ osm::EditJournal XMLFeature::GetEditJournal() const
   osm::EditJournal journal = osm::EditJournal();
 
   auto xmlJournal = GetRootNode().child("journal");
-  readEditJournalList(xmlJournal, journal, false);
+  if (xmlJournal)
+    readEditJournalList(xmlJournal, journal, false);
+  else {
+    // Mark as Legacy Object
+    osm::LegacyObjData legacyObjData = {"1.0"};
+    journal.AddJournalEntry({osm::JournalEntryType::LegacyObject, time(nullptr), legacyObjData});
+    journal.AddJournalHistoryEntry({osm::JournalEntryType::LegacyObject, time(nullptr), std::move(legacyObjData)});
+  }
 
   auto xmlJournalHistory = GetRootNode().child("journalHistory");
   readEditJournalList(xmlJournalHistory, journal, true);
