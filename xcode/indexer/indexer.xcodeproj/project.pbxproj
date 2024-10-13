@@ -69,6 +69,8 @@
 		456E1B181F90E5B7009C32E1 /* cities_boundaries_serdes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 456E1B141F90E5B6009C32E1 /* cities_boundaries_serdes.hpp */; };
 		456E1B1B1F90E5B7009C32E1 /* city_boundary.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 456E1B171F90E5B7009C32E1 /* city_boundary.hpp */; };
 		467F34202BCAB6DE00CDC7DE /* yes_no_unknown.h in Headers */ = {isa = PBXBuildFile; fileRef = 467F341F2BCAB6DE00CDC7DE /* yes_no_unknown.h */; };
+		46CB685D2CBC17F2003E40AB /* edit_journal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 46CB685B2CBC17F2003E40AB /* edit_journal.hpp */; };
+		46CB685E2CBC17F2003E40AB /* edit_journal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46CB685C2CBC17F2003E40AB /* edit_journal.cpp */; };
 		56C74C1C1C749E4700B71B9F /* categories_holder_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56C74C121C749E4700B71B9F /* categories_holder_loader.cpp */; };
 		56C74C1D1C749E4700B71B9F /* categories_holder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56C74C131C749E4700B71B9F /* categories_holder.cpp */; };
 		56C74C1E1C749E4700B71B9F /* categories_holder.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 56C74C141C749E4700B71B9F /* categories_holder.hpp */; };
@@ -303,6 +305,8 @@
 		456E1B141F90E5B6009C32E1 /* cities_boundaries_serdes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cities_boundaries_serdes.hpp; sourceTree = "<group>"; };
 		456E1B171F90E5B7009C32E1 /* city_boundary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = city_boundary.hpp; sourceTree = "<group>"; };
 		467F341F2BCAB6DE00CDC7DE /* yes_no_unknown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yes_no_unknown.h; sourceTree = "<group>"; };
+		46CB685B2CBC17F2003E40AB /* edit_journal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = edit_journal.hpp; sourceTree = "<group>"; };
+		46CB685C2CBC17F2003E40AB /* edit_journal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = edit_journal.cpp; sourceTree = "<group>"; };
 		56C74C121C749E4700B71B9F /* categories_holder_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = categories_holder_loader.cpp; sourceTree = "<group>"; };
 		56C74C131C749E4700B71B9F /* categories_holder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = categories_holder.cpp; sourceTree = "<group>"; };
 		56C74C141C749E4700B71B9F /* categories_holder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = categories_holder.hpp; sourceTree = "<group>"; };
@@ -603,6 +607,8 @@
 		6753409C1A3F53CB00A0A8C3 /* indexer */ = {
 			isa = PBXGroup;
 			children = (
+				46CB685B2CBC17F2003E40AB /* edit_journal.hpp */,
+				46CB685C2CBC17F2003E40AB /* edit_journal.cpp */,
 				30FE368A2AF994E600DAC107 /* kayak.cpp */,
 				30FE368B2AF994E600DAC107 /* kayak.hpp */,
 				34664CEE1D49FEC1003D7096 /* altitude_loader.cpp */,
@@ -796,6 +802,7 @@
 				675341001A3F540F00A0A8C3 /* cell_id.hpp in Headers */,
 				3D74ABBC1EA67C1E0063A898 /* ftypes_mapping.hpp in Headers */,
 				67BC92F51D21476500A4A378 /* string_slice.hpp in Headers */,
+				46CB685D2CBC17F2003E40AB /* edit_journal.hpp in Headers */,
 				F6F1DABE1F13D8B4006A69B7 /* ftraits.hpp in Headers */,
 				675341271A3F540F00A0A8C3 /* features_vector.hpp in Headers */,
 				408FE47624FEB95600F5D06D /* metadata_serdes.hpp in Headers */,
@@ -1010,6 +1017,7 @@
 				675341211A3F540F00A0A8C3 /* feature_utils.cpp in Sources */,
 				4099F6491FC7142A002A7B05 /* fake_feature_ids.cpp in Sources */,
 				FA7F9B85273F32680093EA08 /* validate_and_format_contacts.cpp in Sources */,
+				46CB685E2CBC17F2003E40AB /* edit_journal.cpp in Sources */,
 				675341231A3F540F00A0A8C3 /* feature_visibility.cpp in Sources */,
 				56C74C221C749E4700B71B9F /* search_delimiters.cpp in Sources */,
 				347F337B1C454242009758CC /* rank_table.cpp in Sources */,
