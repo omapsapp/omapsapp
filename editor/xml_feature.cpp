@@ -450,6 +450,13 @@ osm::EditJournal XMLFeature::GetEditJournal() const
           entry.data = objCreateData;
           break;
         }
+        case osm::JournalEntryType::LegacyObject:
+        {
+          osm::LegacyObjData legacyObjData;
+          legacyObjData.version = xmlData.attribute("version").value();
+          entry.data = legacyObjData;
+          break;
+        }
       }
       if (isHistory)
         journal.AddJournalHistoryEntry(entry);
@@ -500,6 +507,12 @@ void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
           ms::LatLon ll = mercator::ToLatLon(objCreateData.mercator);
           xmlData.append_attribute("lat") = strings::to_string_dac(ll.m_lat, kLatLonTolerance).data();
           xmlData.append_attribute("lon") = strings::to_string_dac(ll.m_lon, kLatLonTolerance).data();
+          break;
+        }
+        case osm::JournalEntryType::LegacyObject:
+        {
+          osm::LegacyObjData const & legacyObjData = std::get<osm::LegacyObjData>(entry.data);
+          xmlData.append_attribute("version") = legacyObjData.version.data();
           break;
         }
       }

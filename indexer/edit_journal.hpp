@@ -13,7 +13,7 @@ namespace osm
   enum class JournalEntryType {
     TagModification,
     ObjectCreated,
-    //LegacyObject,   //object without full history journal, only used for transition
+    LegacyObject,   //object without full journal history, used for transition to new editor
     //Info,
     //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused, LocationChanged, FeatureTypeChanged
   };
@@ -30,11 +30,15 @@ namespace osm
     m2::PointD mercator;
   };
 
+  struct LegacyObjData {
+    std::string version;
+  };
+
   struct JournalEntry
   {
     JournalEntryType journalEntryType = JournalEntryType::TagModification;
     time_t timestamp;
-    std::variant<TagModData, ObjCreateData> data;
+    std::variant<TagModData, ObjCreateData, LegacyObjData> data;
   };
 
   /// Used to determine whether existing OSM object should be updated or new one created

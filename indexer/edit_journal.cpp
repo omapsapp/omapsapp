@@ -91,6 +91,11 @@ namespace osm
             .append(": ").append(classif().GetReadableObjectName(objCreatedData.type))
             .append(" (").append(std::to_string(objCreatedData.type)).append(")");
       }
+      case osm::JournalEntryType::LegacyObject: {
+        LegacyObjData const & legacyObjData = std::get<LegacyObjData>(journalEntry.data);
+        return ToString(journalEntry.journalEntryType)
+            .append(": version=\"").append(legacyObjData.version).append("\"");
+      }
     }
   }
 
@@ -101,6 +106,8 @@ namespace osm
         return "TagModification";
       case osm::JournalEntryType::ObjectCreated:
         return "ObjectCreated";
+      case osm::JournalEntryType::LegacyObject:
+        return "LegacyObject";
     }
   }
 
@@ -109,6 +116,8 @@ namespace osm
       return JournalEntryType::TagModification;
     else if (entryType == "ObjectCreated")
       return JournalEntryType::ObjectCreated;
+    else if (entryType == "LegacyObject")
+      return JournalEntryType::LegacyObject;
     else
       return {};
   }
