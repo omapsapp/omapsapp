@@ -187,7 +187,7 @@ void EditableMapObject::SetName(string_view name, int8_t langCode)
   m_name.GetString(langCode, old_name);
   if (name != old_name) {
     std::string osmLangName = StringUtf8Multilang::GetOSMTagByCode(langCode);
-    journal.AddTagChange(osmLangName, std::string(old_name), std::string(name));
+    //journal.AddTagChange(osmLangName, std::string(old_name), std::string(name));
     m_name.AddString(langCode, name);
   }
 }
@@ -236,7 +236,7 @@ void EditableMapObject::SetStreet(LocalizedStreet const & st)
 {
   if (st.m_defaultName != m_street.m_defaultName)
   {
-    journal.AddTagChange("addr:street", m_street.m_defaultName, st.m_defaultName);
+    //journal.AddTagChange("addr:street", m_street.m_defaultName, st.m_defaultName);
     m_street = st;
   }
 }
@@ -255,7 +255,7 @@ void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 void EditableMapObject::SetHouseNumber(string const & houseNumber)
 {
   if (houseNumber != m_houseNumber) {
-    journal.AddTagChange("addr:housenumber", m_houseNumber, houseNumber);
+    //journal.AddTagChange("addr:housenumber", m_houseNumber, houseNumber);
     m_houseNumber = houseNumber;
   }
 }
@@ -270,7 +270,7 @@ void EditableMapObject::SetPostcode(std::string const & postcode)
 {
   std::string old_postcode = std::string(m_metadata.Get(MetadataID::FMD_POSTCODE));
   if (postcode != old_postcode) {
-    journal.AddTagChange(ToString(MetadataID::FMD_POSTCODE), old_postcode, postcode);
+    //journal.AddTagChange(ToString(MetadataID::FMD_POSTCODE), old_postcode, postcode);
     m_metadata.Set(MetadataID::FMD_POSTCODE, postcode);
   }
 }
@@ -326,7 +326,7 @@ void EditableMapObject::SetMetadata(MetadataID type, std::string value)
 
   std::string old_value = std::string(m_metadata.Get(type));
   if (value != old_value) {
-    journal.AddTagChange(ToString(type), old_value, value);
+    //journal.AddTagChange(ToString(type), old_value, value);
     m_metadata.Set(type, std::move(value));
   }
 }
@@ -345,7 +345,7 @@ void EditableMapObject::SetOpeningHours(std::string oh)
 {
   std::string old_oh = std::string(m_metadata.Get(MetadataID::FMD_OPEN_HOURS));
   if (oh != old_oh) {
-    journal.AddTagChange(ToString(MetadataID::FMD_OPEN_HOURS), old_oh, oh);
+    //journal.AddTagChange(ToString(MetadataID::FMD_OPEN_HOURS), old_oh, oh);
     m_metadata.Set(MetadataID::FMD_OPEN_HOURS, std::move(oh));
   }
 }
@@ -355,7 +355,7 @@ void EditableMapObject::SetInternet(feature::Internet internet)
   std::string old_internet = std::string(m_metadata.Get(MetadataID::FMD_INTERNET));
   std::string new_internet = DebugPrint(internet);
   if (new_internet != old_internet) {
-    journal.AddTagChange(ToString(MetadataID::FMD_INTERNET), old_internet, new_internet);
+    //journal.AddTagChange(ToString(MetadataID::FMD_INTERNET), old_internet, new_internet);
     m_metadata.Set(MetadataID::FMD_INTERNET, new_internet);
   }
 
@@ -414,13 +414,13 @@ void EditableMapObject::SetCuisines(std::vector<std::string> const & cuisines)
 
   std::string new_vegetarian = findAndErase(&new_cuisines, "vegetarian");
   std::string old_vegetarian = findAndErase(&old_cuisines, "vegetarian");
-  if (new_vegetarian != old_vegetarian)
-    journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
+  //if (new_vegetarian != old_vegetarian)
+    //journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
 
   std::string new_vegan = findAndErase(&new_cuisines, "vegan");
   std::string old_vegan = findAndErase(&old_cuisines, "vegan");
-  if (new_vegan != old_vegan)
-    journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
+  //if (new_vegan != old_vegan)
+    //journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
 
   bool cuisinesModified = false;
 
@@ -440,7 +440,7 @@ void EditableMapObject::SetCuisines(std::vector<std::string> const & cuisines)
   }
 
   if (cuisinesModified) {
-    journal.AddTagChange("cuisine", strings::JoinStrings(old_cuisines, ";"), strings::JoinStrings(new_cuisines, ";"));
+    //journal.AddTagChange("cuisine", strings::JoinStrings(old_cuisines, ";"), strings::JoinStrings(new_cuisines, ";"));
   }
 
   SetCuisinesImpl(cuisines);
@@ -790,6 +790,19 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
       break;
     }
   }
+}
+
+void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
+{
+  LOG(LDEBUG, ("Executing LogDiffInJournal"));
+
+  m_metadata.ForEach([&](feature::Metadata::EType type, std::string const & value)
+  {
+    std::string const & old_value = std::string(unedited_emo.GetMetadata(type));
+    if (value != old_value) {
+      journal.AddTagChange(ToString(type), old_value, value);
+    }
+  });
 }
 
 bool AreObjectsEqualIgnoringStreet(EditableMapObject const & lhs, EditableMapObject const & rhs)

@@ -141,6 +141,7 @@ public:
   void ClearJournal();
   void ApplyEditsFromJournal(EditJournal const & journal);
   void ApplyJournalEntry(JournalEntry const & entry);
+  void LogDiffInJournal(EditableMapObject const & unedited_emo);
 
   /// Check whether langCode can be used as default name.
   static bool CanUseAsDefaultName(int8_t const langCode, std::vector<int8_t> const & nativeMwmLanguages);
