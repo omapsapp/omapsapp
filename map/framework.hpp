@@ -629,6 +629,7 @@ private:
 
 public:
   search::ReverseGeocoder::Address GetAddressAtPoint(m2::PointD const & pt) const;
+  search::ReverseGeocoder::Street GetNearestStreet(m2::PointD const & pt) const;
 
   /// Get "best for the user" feature at given point even if it's invisible on the screen.
   /// Ignores coastlines and prefers buildings over other area features.

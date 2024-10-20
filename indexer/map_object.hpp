@@ -94,11 +94,14 @@ public:
   feature::GeomType GetGeomType() const { return m_geomType; };
   int8_t GetLayer() const { return m_layer; };
 
-  /// @returns true if object is of building type.
+  /// @returns true if object is a building type.
   bool IsBuilding() const;
 
   /// @returns true if object is a public transport stop type.
   bool IsPublicTransportStop() const;
+
+  /// @returns true if object is a sidewalk/pavement type.
+  bool IsSidewalk() const;
 
   void AssignMetadata(feature::Metadata & dest) const { dest = m_metadata; }
 

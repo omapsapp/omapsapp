@@ -1458,6 +1458,22 @@ UNIT_CLASS_TEST(TestWithClassificator, OsmType_OldName)
   }
 }
 
+UNIT_CLASS_TEST(TestWithClassificator, OsmType_NoName)
+{
+  {
+    Tags const tags = {
+      {"highway", "footway"},
+      {"footway", "sidewalk"},
+      {"name", "Testing Street"},
+      {"name:de", "Teststraße"},
+    };
+
+    auto const params = GetFeatureBuilderParams(tags);
+
+    TEST(params.name.IsEmpty(), ("Sidewalk names are queried at runtime, they shouldn't be in map data"));
+  }
+}
+
 UNIT_CLASS_TEST(TestWithClassificator, OsmType_AltName)
 {
   {

@@ -1483,6 +1483,13 @@ void GetNameAndType(OsmElement * p, FeatureBuilderParams & params,
   // Stage4: Match tags to classificator feature types via mapcss-mapping.csv.
   MatchTypes(p, params, filterType);
 
+  // Sidewalk names are queried at runtime, they shouldn't be in map data
+  if (params.IsTypeExist(classif().GetTypeByPath({"highway","footway","sidewalk"})))
+  {
+    params.ClearName();
+  }
+  //TODO: road names seem to be re-added in MatchTypes??
+
   // Stage5: Postprocess feature types.
   PostprocessElement(p, params);
 

@@ -660,6 +660,14 @@ search::ReverseGeocoder::Address Framework::GetAddressAtPoint(m2::PointD const &
   return addr;
 }
 
+search::ReverseGeocoder::Street Framework::GetNearestStreet(m2::PointD const & pt) const
+{
+  auto const & dataSource = m_featuresFetcher.GetDataSource();
+  search::ReverseGeocoder const coder(dataSource);
+  MwmSet::MwmId const mwmId = dataSource.GetMwmIdByCountryFile(platform::CountryFile(m_infoGetter->GetRegionCountryId(pt)));
+  return coder.GetNearbyStreets(mwmId, pt)[0];
+}
+
 void Framework::FillFeatureInfo(FeatureID const & fid, place_page::Info & info) const
 {
   if (!fid.IsValid())
@@ -725,7 +733,7 @@ void Framework::FillInfoFromFeatureType(FeatureType & ft, place_page::Info & inf
   if (ftypes::IsAddressObjectChecker::Instance()(ft))
     info.SetAddress(GetAddressAtPoint(feature::GetCenter(ft)).FormatAddress());
 
-  info.SetFromFeatureType(ft);
+  info.SetFromFeatureType(ft, this);
 
   FillDescription(ft, info);
 

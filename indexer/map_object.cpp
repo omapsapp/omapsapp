@@ -207,5 +207,6 @@ int MapObject::GetStars() const
 bool MapObject::IsPointType() const { return m_geomType == feature::GeomType::Point; }
 bool MapObject::IsBuilding() const { return ftypes::IsBuildingChecker::Instance()(m_types); }
 bool MapObject::IsPublicTransportStop() const { return ftypes::IsPublicTransportStopChecker::Instance()(m_types); }
+bool MapObject::IsSidewalk() const { return ftypes::IsSidewalkChecker::Instance()(m_types); }
 
 }  // namespace osm

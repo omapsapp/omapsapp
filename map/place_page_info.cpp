@@ -1,5 +1,5 @@
 #include "map/place_page_info.hpp"
-
+#include "map/framework.hpp"
 #include "map/bookmark_helpers.hpp"
 
 #include "indexer/feature_utils.hpp"
@@ -32,7 +32,7 @@ bool Info::ShouldShowAddPlace() const
   return !(IsFeature() && isPointOrBuilding);
 }
 
-void Info::SetFromFeatureType(FeatureType & ft)
+void Info::SetFromFeatureType(FeatureType & ft, Framework const * framework)
 {
   MapObject::SetFromFeatureType(ft);
   m_hasMetadata = true;
@@ -71,18 +71,15 @@ void Info::SetFromFeatureType(FeatureType & ft)
     m_uiTitle = m_primaryFeatureName;
     m_uiSecondaryTitle = out.secondary;
   }
-  else
+  else if (IsBuilding())
   {
-    if (IsBuilding())
-    {
-      emptyTitle = m_address.empty();
-      if (!emptyTitle)
-        m_uiTitle = m_address;
-      m_uiAddress.clear();    // already in main title
-    }
-    else
-      emptyTitle = true;
+    emptyTitle = m_address.empty();
+    if (!emptyTitle)
+      m_uiTitle = m_address;
+    m_uiAddress.clear();    // already in main title
   }
+  else
+    emptyTitle = true;
 
   // Assign Feature's type if main title is empty.
   if (emptyTitle)
@@ -93,7 +90,19 @@ void Info::SetFromFeatureType(FeatureType & ft)
   {
     auto const lRef = GetMetadata(feature::Metadata::FMD_LOCAL_REF);
     if (!lRef.empty())
+    {
+      // TODO: replace with std::format and add string in strings.txt
       m_uiTitle.append(" (").append(lRef).append(")");
+      emptyTitle = false;
+    }
+  }
+
+  // Fetch name from nearest road
+  if (IsSidewalk())
+  {
+    search::ReverseGeocoder::Street nearestStreet = framework -> GetNearestStreet(m_buildInfo.m_mercator);
+    m_uiTitle = nearestStreet.m_name;
+    emptyTitle = false;
   }
 
   m_uiSubtitle = FormatSubtitle(IsFeature() /* withTypes */, !emptyTitle /* withMainType */);

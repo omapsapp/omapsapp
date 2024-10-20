@@ -449,6 +449,13 @@ public:
   DECLARE_CHECKER_INSTANCE(IsPublicTransportStopChecker);
 };
 
+class IsSidewalkChecker : public BaseChecker
+{
+  IsSidewalkChecker();
+public:
+  DECLARE_CHECKER_INSTANCE(IsSidewalkChecker);
+};
+
 class IsMotorwayJunctionChecker : public BaseChecker
 {
   IsMotorwayJunctionChecker();

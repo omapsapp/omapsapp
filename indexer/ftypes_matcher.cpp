@@ -713,6 +713,11 @@ IsPublicTransportStopChecker::IsPublicTransportStopChecker()
   m_types.push_back(c.GetTypeByPath({"railway", "tram_stop"}));
 }
 
+IsSidewalkChecker::IsSidewalkChecker() : BaseChecker(3 /* level */)
+{
+  m_types.push_back(classif().GetTypeByPath({"highway", "footway", "sidewalk"}));
+}
+
 IsMotorwayJunctionChecker::IsMotorwayJunctionChecker()
 {
   m_types.push_back(classif().GetTypeByPath({"highway", "motorway_junction"}));
