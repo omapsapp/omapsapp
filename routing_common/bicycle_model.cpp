@@ -26,33 +26,37 @@ using namespace routing;
 HighwayBasedFactors const kDefaultFactors = GetOneFactorsForBicycleAndPedestrianModel();
 
 SpeedKMpH constexpr kSpeedOffroadKMpH = {1.5 /* weight */, 3.0 /* eta */};
-SpeedKMpH constexpr kSpeedDismountKMpH = {2.0 /* weight */, 2.0 /* eta */};
-SpeedKMpH constexpr kSpeedOnFootwayKMpH = {5.0 /* weight */, 7.0 /* eta */};
+SpeedKMpH constexpr kSpeedDismountKMpH = {2.0 /* weight */, 4.0 /* eta */};
+// Applies only to contries where cycling is allowed on footways (by default the above dismount speed is used).
+SpeedKMpH constexpr kSpeedOnFootwayKMpH = {8.0 /* weight */, 10.0 /* eta */};
 
 HighwayBasedSpeeds const kDefaultSpeeds = {
     // {highway class : InOutCitySpeedKMpH(in city(weight, eta), out city(weight eta))}
-    /// @see Russia_UseTrunk for Trunk weights.
-    {HighwayType::HighwayTrunk, InOutCitySpeedKMpH(SpeedKMpH(5.5, 18.0))},
-    {HighwayType::HighwayTrunkLink, InOutCitySpeedKMpH(SpeedKMpH(5.5, 18.0))},
-    {HighwayType::HighwayPrimary, InOutCitySpeedKMpH(SpeedKMpH(10.0, 18.0), SpeedKMpH(14.0, 18.0))},
-    {HighwayType::HighwayPrimaryLink, InOutCitySpeedKMpH(SpeedKMpH(10.0, 18.0), SpeedKMpH(14.0, 18.0))},
-    {HighwayType::HighwaySecondary, InOutCitySpeedKMpH(SpeedKMpH(15.0, 18.0), SpeedKMpH(20.0, 18.0))},
-    {HighwayType::HighwaySecondaryLink, InOutCitySpeedKMpH(SpeedKMpH(15.0, 18.0), SpeedKMpH(20.0, 18.0))},
-    {HighwayType::HighwayTertiary, InOutCitySpeedKMpH(SpeedKMpH(15.0, 18.0), SpeedKMpH(20.0, 18.0))},
-    {HighwayType::HighwayTertiaryLink, InOutCitySpeedKMpH(SpeedKMpH(15.0, 18.0), SpeedKMpH(20.0, 18.0))},
-    {HighwayType::HighwayUnclassified, InOutCitySpeedKMpH(SpeedKMpH(12.0, 18.0))},
+    // Note that roads with hwtag=yesbicycle get high speed of 0.9 * Cycleway.
+    /// @see Russia_UseTrunk test for Trunk weights.
+    {HighwayType::HighwayTrunk, InOutCitySpeedKMpH(SpeedKMpH(7.0, 17.0), SpeedKMpH(9.0, 19.0))},
+    // Presence of link roads usually means that connected roads are high traffic.
+    // And complex intersections themselves are not nice for cyclists. We can't
+    // easily extrapolate this to the main roads, but at least penalize the link roads a bit.
+    // https://github.com/organicmaps/organicmaps/pull/9692#discussion_r1851442568
+    {HighwayType::HighwayTrunkLink, InOutCitySpeedKMpH(SpeedKMpH(6.0, 17.0), SpeedKMpH(8.0, 19.0))},
+    {HighwayType::HighwayPrimary, InOutCitySpeedKMpH(SpeedKMpH(10.0, 17.0), SpeedKMpH(12.0, 19.0))},
+    {HighwayType::HighwayPrimaryLink, InOutCitySpeedKMpH(SpeedKMpH(8.0, 17.0), SpeedKMpH(11.0, 19.0))},
+    {HighwayType::HighwaySecondary, InOutCitySpeedKMpH(SpeedKMpH(13.0, 17.0), SpeedKMpH(15.0, 19.0))},
+    {HighwayType::HighwaySecondaryLink, InOutCitySpeedKMpH(SpeedKMpH(11.0, 17.0), SpeedKMpH(13.0, 19.0))},
+    {HighwayType::HighwayTertiary, InOutCitySpeedKMpH(SpeedKMpH(14.0, 17.0), SpeedKMpH(17.0, 19.0))},
+    {HighwayType::HighwayTertiaryLink, InOutCitySpeedKMpH(SpeedKMpH(13.0, 17.0), SpeedKMpH(16.0, 19.0))},
+    {HighwayType::HighwayUnclassified, InOutCitySpeedKMpH(SpeedKMpH(13.0, 17.0), SpeedKMpH(15.0, 19.0))},
+    {HighwayType::HighwayResidential, InOutCitySpeedKMpH(SpeedKMpH(12.0, 14.0), SpeedKMpH(14.0, 17.0))},
+    {HighwayType::HighwayService, InOutCitySpeedKMpH(SpeedKMpH(13.0, 15.0), SpeedKMpH(15.0, 17.0))},
+    {HighwayType::HighwayRoad, InOutCitySpeedKMpH(SpeedKMpH(11.0, 15.0), SpeedKMpH(14.0, 17.0))},
 
-    // https://github.com/organicmaps/organicmaps/issues/3881
-    // Set equal speeds here to avoid useless detours via service roads (Batumi_AvoidServiceDetour test).
-    {HighwayType::HighwayService, InOutCitySpeedKMpH(SpeedKMpH(10.0, 14.0))},
-    {HighwayType::HighwayResidential, InOutCitySpeedKMpH(SpeedKMpH(10.0, 14.0))},
+    {HighwayType::HighwayTrack, InOutCitySpeedKMpH(SpeedKMpH(8.0, 12.0), SpeedKMpH(10.0, 14.0))},
+    {HighwayType::HighwayPath, InOutCitySpeedKMpH(SpeedKMpH(6.0, 10.0), SpeedKMpH(7.0, 12.0))},
+    {HighwayType::HighwayBridleway, InOutCitySpeedKMpH(SpeedKMpH(4.0, 10.0), SpeedKMpH(5.0, 12.0))},
 
-    {HighwayType::HighwayRoad, InOutCitySpeedKMpH(SpeedKMpH(10.0, 12.0))},
-    {HighwayType::HighwayTrack, InOutCitySpeedKMpH(SpeedKMpH(8.0, 12.0))},
-    {HighwayType::HighwayPath, InOutCitySpeedKMpH(SpeedKMpH(6.0, 12.0))},
-    {HighwayType::HighwayBridleway, InOutCitySpeedKMpH(SpeedKMpH(4.0, 12.0))},
-    {HighwayType::HighwayCycleway, InOutCitySpeedKMpH(SpeedKMpH(30.0, 20.0))},
-    {HighwayType::HighwayLivingStreet, InOutCitySpeedKMpH(SpeedKMpH(7.0, 8.0))},
+    {HighwayType::HighwayCycleway, InOutCitySpeedKMpH(SpeedKMpH(21.0, 18.0), SpeedKMpH(23.0, 20.0))},
+    {HighwayType::HighwayLivingStreet, InOutCitySpeedKMpH(SpeedKMpH(12.0, 10.0), SpeedKMpH(14.0, 12.0))},
     // Steps have obvious inconvenience of a bike in hands.
     {HighwayType::HighwaySteps, InOutCitySpeedKMpH(SpeedKMpH(1.0, 1.0))},
     {HighwayType::HighwayPedestrian, InOutCitySpeedKMpH(kSpeedDismountKMpH)},
@@ -140,14 +144,14 @@ HighwayBasedSpeeds PreferFootwaysToRoads()
   HighwayBasedSpeeds res = kDefaultSpeeds;
 
   // Decrease secondary/tertiary weight speed (-20% from default).
-  InOutCitySpeedKMpH roadSpeed = InOutCitySpeedKMpH(SpeedKMpH(12.0, 18.0), SpeedKMpH(16.0, 18.0));
+  InOutCitySpeedKMpH roadSpeed = InOutCitySpeedKMpH(SpeedKMpH(11.0, 17.0), SpeedKMpH(16.0, 19.0));
   res.Replace(HighwayType::HighwaySecondary, roadSpeed);
   res.Replace(HighwayType::HighwaySecondaryLink, roadSpeed);
   res.Replace(HighwayType::HighwayTertiary, roadSpeed);
   res.Replace(HighwayType::HighwayTertiaryLink, roadSpeed);
 
   // Increase footway speed to make bigger than other roads (+20% from default roads).
-  InOutCitySpeedKMpH footSpeed = InOutCitySpeedKMpH(SpeedKMpH(18.0, 18.0), SpeedKMpH(20.0, 18.0));
+  InOutCitySpeedKMpH footSpeed = InOutCitySpeedKMpH(SpeedKMpH(17.0, 12.0), SpeedKMpH(20.0, 15.0));
   res.Replace(HighwayType::HighwayPedestrian, footSpeed);
   res.Replace(HighwayType::HighwayFootway, footSpeed);
 
@@ -170,10 +174,13 @@ VehicleModel::SurfaceInitList const kBicycleSurface = {
   // {{surfaceType}, {weightFactor, etaFactor}}
   {{"psurface", "paved_good"}, {1.0, 1.0}},
   {{"psurface", "paved_bad"}, {0.8, 0.8}},
-  {{"psurface", "unpaved_good"}, {1.0, 1.0}},
+  {{"psurface", "unpaved_good"}, {0.9, 0.9}},
   {{"psurface", "unpaved_bad"}, {0.3, 0.3}},
   // no dedicated cycleway, doesn't mean that bicycle is not allowed, just lower weight
-  {{"hwtag", "nocycleway"}, {0.8, 0.8}},
+  // But why? If nocycleway is tagged explicitly means there is no cycling infra for sure.
+  // Otherwise there is a small chance cycling infra is present though not mapped?
+  /// @todo(pastk): this heuristic is controversial, maybe remove completely?
+  {{"hwtag", "nocycleway"}, {0.95, 0.95}},
 };
 }  // namespace bicycle_model
 
