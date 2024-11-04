@@ -473,7 +473,7 @@ void BookmarkManager::DeleteCompilations(kml::GroupIdCollection const & compilat
 Track * BookmarkManager::CreateTrack(kml::TrackData && trackData)
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
-  return AddTrack(std::make_unique<Track>(std::move(trackData), false /* interactive */));
+  return AddTrack(std::make_unique<Track>(std::move(trackData)));
 }
 
 Track const * BookmarkManager::GetTrack(kml::TrackId trackId) const
@@ -838,6 +838,9 @@ void BookmarkManager::UpdateElevationMyPosition(kml::TrackId const & trackId)
   }
 
   auto const markId = GetTrackSelectionMarkId(trackId);
+  if (markId == kml::kInvalidTrackId)
+    return;
+
   auto es = GetEditSession();
   auto trackSelectionMark = GetMarkForEdit<TrackSelectionMark>(markId);
 
@@ -870,15 +873,12 @@ void BookmarkManager::SetElevationMyPositionChangedCallback(
   m_elevationMyPositionChanged = cb;
 }
 
-void BookmarkManager::SetElevationActivePoint(kml::TrackId const & trackId, double targetDistance)
+void BookmarkManager::SetElevationActivePoint(kml::TrackId const & trackId, m2::PointD pt, double targetDistance)
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
 
   auto const track = GetTrack(trackId);
   CHECK(track != nullptr, ());
-
-  m2::PointD pt;
-  VERIFY(track->GetPoint(targetDistance, pt), (trackId, targetDistance));
 
   SetTrackSelectionInfo({trackId, pt, targetDistance}, false /* notifyListeners */);
 
@@ -921,7 +921,7 @@ Track::TrackSelectionInfo BookmarkManager::FindNearestTrack(
     for (auto trackId : category.GetUserLines())
     {
       auto const track = GetTrack(trackId);
-      if (!track->IsInteractive() || (tracksFilter && !tracksFilter(track)))
+      if (tracksFilter && !tracksFilter(track))
         continue;
 
       track->UpdateSelectionInfo(touchRect, selectionInfo);
@@ -1028,8 +1028,14 @@ void BookmarkManager::SetTrackSelectionInfo(Track::TrackSelectionInfo const & tr
   CHECK_THREAD_CHECKER(m_threadChecker, ());
   CHECK_NOT_EQUAL(trackSelectionInfo.m_trackId, kml::kInvalidTrackId, ());
 
-  auto es = GetEditSession();
   auto const markId = GetTrackSelectionMarkId(trackSelectionInfo.m_trackId);
+  if (markId == kml::kInvalidMarkId)
+  {
+    SetTrackSelectionMark(trackSelectionInfo.m_trackId,
+                          trackSelectionInfo.m_trackPoint,
+                          trackSelectionInfo.m_distFromBegM);
+    return;
+  }
   CHECK_NOT_EQUAL(markId, kml::kInvalidMarkId, ());
 
   auto trackSelectionMark = GetMarkForEdit<TrackSelectionMark>(markId);
@@ -1038,22 +1044,6 @@ void BookmarkManager::SetTrackSelectionInfo(Track::TrackSelectionInfo const & tr
 
   if (notifyListeners && m_elevationActivePointChanged != nullptr)
     m_elevationActivePointChanged();
-}
-
-void BookmarkManager::SetDefaultTrackSelection(kml::TrackId trackId, bool showInfoSign)
-{
-  CHECK_THREAD_CHECKER(m_threadChecker, ());
-
-  auto track = GetTrack(trackId);
-  CHECK(track != nullptr, ());
-  CHECK(track->IsInteractive(), ());
-
-  auto const [pt, distance] = track->GetCenterPoint();
-
-  auto es = GetEditSession();
-  if (showInfoSign)
-    SetTrackInfoMark(trackId, pt);
-  SetTrackSelectionMark(trackId, pt, distance);
 }
 
 void BookmarkManager::OnTrackSelected(kml::TrackId trackId)
@@ -2820,12 +2810,10 @@ void BookmarkManager::CreateCategories(KMLDataCollection && dataCollection, bool
     }
     for (auto & trackData : fileData.m_tracksData)
     {
-      auto track = std::make_unique<Track>(std::move(trackData), group->HasElevationProfile());
+      auto track = std::make_unique<Track>(std::move(trackData));
       auto * t = AddTrack(std::move(track));
       t->Attach(groupId);
       group->m_tracks.insert(t->GetId());
-      if (t->IsInteractive())
-        SetDefaultTrackSelection(t->GetId(), false /* showInfoSign */);
     }
     UpdateTrackMarksVisibility(groupId);
     UserMarkIdStorage::Instance().EnableSaving(true);
