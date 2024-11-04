@@ -1073,8 +1073,7 @@ void BookmarkManager::OnTrackDeselected()
 
   auto es = GetEditSession();
   auto * trackSelectionMark = GetMarkForEdit<TrackSelectionMark>(markId);
-  auto const isVisible = IsVisible(GetTrack(m_selectedTrackId)->GetGroupId());
-  trackSelectionMark->SetIsVisible(isVisible);
+  trackSelectionMark->SetIsVisible(false);
 
   m_selectedTrackId = kml::kInvalidTrackId;
 }
