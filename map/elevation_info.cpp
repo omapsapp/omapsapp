@@ -2,70 +2,54 @@
 
 #include "geometry/mercator.hpp"
 
-#include "base/string_utils.hpp"
-
-namespace
+ElevationInfo::ElevationInfo(kml::MultiGeometry const & geometry)
 {
-static uint8_t constexpr kMaxDifficulty = ElevationInfo::Difficulty::Hard;
+  double distance = 0;
 
-std::string const kAscentKey = "ascent";
-std::string const kDescentKey = "descent";
-std::string const kLowestPointKey = "lowest_point";
-std::string const kHighestPointKey = "highest_point";
-std::string const kDifficultyKey = "difficulty";
-std::string const kDurationKey = "duration";
-
-template <typename T>
-void FillProperty(kml::Properties const & properties, std::string const & key, T & value)
-{
-  auto const it = properties.find(key);
-  if (it == properties.cend())
-    LOG(LERROR, ("Property not found for key:", key));
-  else
+  // Concatenate all segments.
+  for (size_t i = 0; i < geometry.m_lines.size(); ++i)
   {
-    if (!strings::to_any(it->second, value))
-      LOG(LERROR, ("Conversion is not possible for key", key, "string representation is", it->second));
+    auto const & points = geometry.m_lines[i];
+    if (points.empty())
+      continue;
+
+    double distanceToSegmentBegin = 0;
+    if (i == 0)
+    {
+      m_minAltitude = points[i].GetAltitude();
+      m_maxAltitude = m_minAltitude;
+    }
+    else
+    {
+      distanceToSegmentBegin = m_points.back().m_distance;
+      m_segmentsDistances.emplace_back(distanceToSegmentBegin);
+    }
+
+    m_points.emplace_back(points[i], distanceToSegmentBegin);
+
+    for (size_t j = 0; j < points.size(); ++j)
+    {
+      auto const & currentPoint = points[j];
+      auto const & currentPointAltitude = currentPoint.GetAltitude();
+      if (currentPointAltitude < m_minAltitude)
+        m_minAltitude = currentPointAltitude;
+      if (currentPointAltitude > m_maxAltitude)
+        m_maxAltitude = currentPointAltitude;
+
+      if (j == 0)
+        continue;
+
+      auto const & previousPoint = points[j - 1];
+      distance += mercator::DistanceOnEarth(previousPoint.GetPoint(), currentPoint.GetPoint());
+      m_points.emplace_back(currentPoint, distance);
+
+      auto const deltaAltitude = currentPointAltitude - previousPoint.GetAltitude();
+      if (deltaAltitude > 0)
+        m_ascent += deltaAltitude;
+      else
+        m_descent -= deltaAltitude;
+    }
   }
-}
-}  // namespace
-
-ElevationInfo::ElevationInfo(Track const & track)
-  : m_id(track.GetId())
-  , m_name(track.GetName())
-{
-  // (Distance, Elevation) chart doesn't have a sence for multiple track's geometry.
-  auto const & points = track.GetSingleGeometry();
-  if (points.empty())
-    return;
-
-  m_points.reserve(points.size());
-  m_points.emplace_back(0, points[0].GetAltitude());
-  double distance = 0.0;
-  for (size_t i = 1; i < points.size(); ++i)
-  {
-    distance += mercator::DistanceOnEarth(points[i - 1].GetPoint(), points[i].GetPoint());
-    m_points.emplace_back(distance, points[i].GetAltitude());
-  }
-
-  auto const & properties = track.GetData().m_properties;
-
-  FillProperty(properties, kAscentKey, m_ascent);
-  FillProperty(properties, kDescentKey, m_descent);
-  FillProperty(properties, kLowestPointKey, m_minAltitude);
-  FillProperty(properties, kHighestPointKey, m_maxAltitude);
-
-  uint8_t difficulty;
-  FillProperty(properties, kDifficultyKey, difficulty);
-
-  if (difficulty > kMaxDifficulty)
-  {
-    LOG(LWARNING, ("Invalid difficulty value", m_difficulty, "in track", track.GetName()));
-    m_difficulty = Difficulty ::Unknown;
-  }
-  else
-  {
-    m_difficulty = static_cast<Difficulty>(difficulty);
-  }
-
-  FillProperty(properties, kDurationKey, m_duration);
+  /// @todo(KK) Implement difficulty calculation.
+  m_difficulty = Difficulty::Unknown;
 }

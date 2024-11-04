@@ -812,15 +812,6 @@ std::string BookmarkManager::GetLocalizedRegionAddress(m2::PointD const & pt)
   return m_regionAddressGetter->GetLocalizedRegionAddress(pt);
 }
 
-ElevationInfo BookmarkManager::MakeElevationInfo(kml::TrackId trackId) const
-{
-  CHECK_THREAD_CHECKER(m_threadChecker, ());
-  auto const track = GetTrack(trackId);
-  CHECK(track != nullptr, ());
-
-  return ElevationInfo(*track);
-}
-
 void BookmarkManager::UpdateElevationMyPosition(kml::TrackId const & trackId)
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
