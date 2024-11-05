@@ -74,7 +74,6 @@ class InfoItemViewController: UIViewController {
 protocol PlacePageInfoViewControllerDelegate: AnyObject {
   var shouldShowOpenInApp: Bool { get }
 
-  func viewWillAppear()
   func didPressCall()
   func didPressWebsite()
   func didPressWebsiteMenu()
@@ -142,11 +141,6 @@ class PlacePageInfoViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViews()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    delegate?.viewWillAppear()
   }
 
   // MARK: private

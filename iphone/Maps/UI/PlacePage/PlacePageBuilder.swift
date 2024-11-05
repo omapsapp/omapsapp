@@ -9,16 +9,15 @@
     let interactor = PlacePageInteractor(viewController: viewController,
                                          data: data,
                                          mapViewController: MapViewController.shared()!)
-    let layout:IPlacePageLayout
-    if data.elevationProfileData != nil {
+    let layout: IPlacePageLayout
+    if data.isTrack {
       layout = PlacePageElevationLayout(interactor: interactor, storyboard: storyboard, data: data)
     } else {
       layout = PlacePageCommonLayout(interactor: interactor, storyboard: storyboard, data: data)
     }
-    let presenter = PlacePagePresenter(view: viewController, interactor: interactor)
-
+    let presenter = PlacePagePresenter(view: viewController)
     viewController.setLayout(layout)
-    viewController.presenter = presenter
+    viewController.interactor = interactor
     interactor.presenter = presenter
     layout.presenter = presenter
     return viewController
@@ -30,15 +29,14 @@
     let interactor = PlacePageInteractor(viewController: viewController,
                                          data: data,
                                          mapViewController: MapViewController.shared()!)
-    let layout:IPlacePageLayout
-    if data.elevationProfileData != nil {
+    let layout: IPlacePageLayout
+    if data.isTrack {
       layout = PlacePageElevationLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
     } else {
       layout = PlacePageCommonLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
     }
-    let presenter = PlacePagePresenter(view: viewController, interactor: interactor)
-
-    viewController.presenter = presenter
+    let presenter = PlacePagePresenter(view: viewController)
+    viewController.interactor = interactor
     interactor.presenter = presenter
     layout.presenter = presenter
     viewController.updateWithLayout(layout)

@@ -3,18 +3,14 @@ protocol PlacePagePresenterProtocol: AnyObject {
   func layoutIfNeeded()
   func showNextStop()
   func closeAnimated()
-  func updateTopBound(_ bound: CGFloat, duration: TimeInterval)
   func showAlert(_ alert: UIAlertController)
 }
 
 class PlacePagePresenter: NSObject {
   private weak var view: PlacePageViewProtocol!
-  private let interactor: PlacePageInteractorProtocol
 
-  init(view: PlacePageViewProtocol,
-       interactor: PlacePageInteractorProtocol) {
+  init(view: PlacePageViewProtocol) {
     self.view = view
-    self.interactor = interactor
   }
 }
 
@@ -35,10 +31,6 @@ extension PlacePagePresenter: PlacePagePresenterProtocol {
 
   func closeAnimated() {
     view.closeAnimated(completion: nil)
-  }
-
-  func updateTopBound(_ bound: CGFloat, duration: TimeInterval) {
-    interactor.updateTopBound(bound, duration: duration)
   }
 
   func showAlert(_ alert: UIAlertController) {
