@@ -48,11 +48,10 @@ static ElevationDifficulty convertDifficulty(uint8_t difficulty) {
     _activePoint = activePoint;
     _myPosition = myPosition;
 
-    NSMutableArray * segmentDistances = [NSMutableArray array];
-    for (auto const & segment : elevationInfo.GetSegmentDistances()) {
-      [segmentDistances addObject:[NSNumber numberWithDouble:segment]];
-    }
-    _segmentDistances = [segmentDistances copy];
+    NSMutableArray * segmentsDistances = [NSMutableArray array];
+    for (auto const & segment : elevationInfo.GetSegmentsDistances())
+      [segmentsDistances addObject:[NSNumber numberWithDouble:segment]];
+    _segmentsDistances = [segmentsDistances copy];
   }
   return self;
 }

@@ -1,8 +1,14 @@
 protocol PlacePageBookmarkViewControllerDelegate: AnyObject {
   func bookmarkDidPressEdit()
+  func trackDidPressEdit()
 }
 
-class PlacePageBookmarkViewController: UIViewController {
+final class PlacePageBookmarkViewController: UIViewController {
+  enum BookmarkData {
+    case bookmark(PlacePageBookmarkData)
+    case track(PlacePageTrackData)
+  }
+
   @IBOutlet var stackView: UIStackView!
   @IBOutlet var spinner: UIImageView!
   @IBOutlet var editButton: UIButton!
@@ -17,7 +23,7 @@ class PlacePageBookmarkViewController: UIViewController {
     }
   }
 
-  var bookmarkData: PlacePageBookmarkData? {
+  var bookmarkData: BookmarkData? {
     didSet {
       updateViews()
     }
@@ -30,17 +36,25 @@ class PlacePageBookmarkViewController: UIViewController {
   }
 
   func updateViews() {
-    guard let bookmarkData = bookmarkData else { return }
+    guard let bookmarkData else { return }
     editButton.isEnabled = true
-    if let description = bookmarkData.bookmarkDescription {
-      if bookmarkData.isHtmlDescription {
-        setHtmlDescription(description)
-        topConstraint.constant = 16
+    switch bookmarkData {
+    case .bookmark(let bookmark):
+      editButton.setTitle(L("placepage_edit_bookmark_button"), for: .normal)
+      if let description = bookmark.bookmarkDescription {
+        if bookmark.isHtmlDescription {
+          setHtmlDescription(description)
+          topConstraint.constant = 16
+        } else {
+          expandableLabel.text = description
+          topConstraint.constant = description.count > 0 ? 16 : 0
+        }
       } else {
-        expandableLabel.text = description
-        topConstraint.constant = description.count > 0 ? 16 : 0
+        topConstraint.constant = 0
       }
-    } else {
+    case .track:
+      editButton.setTitle(L("edit_track"), for: .normal)
+      expandableLabel.isHidden = true
       topConstraint.constant = 0
     }
   }
@@ -86,7 +100,13 @@ class PlacePageBookmarkViewController: UIViewController {
   }
 
   @IBAction func onEdit(_ sender: UIButton) {
-    delegate?.bookmarkDidPressEdit()
+    guard let bookmarkData else { return }
+    switch bookmarkData {
+    case .bookmark:
+      delegate?.bookmarkDidPressEdit()
+    case .track:
+      delegate?.trackDidPressEdit()
+    }
   }
   
   override func applyTheme() {

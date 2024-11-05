@@ -5,10 +5,8 @@ protocol ElevationProfileViewProtocol: AnyObject {
   
   var isExtendedDifficultyLabelHidden: Bool { get set }
   var isDifficultyHidden: Bool { get set }
-  var isTimeHidden: Bool { get set }
   var isBottomPanelHidden: Bool { get set }
   func setExtendedDifficultyGrade(_ value: String)
-  func setTrackTime(_ value: String?)
   func setDifficulty(_ value: ElevationDifficulty)
   func setChartData(_ data: ChartPresentationData)
   func setActivePoint(_ distance: Double)
@@ -24,15 +22,12 @@ class ElevationProfileViewController: UIViewController {
   @IBOutlet private var difficultyView: DifficultyView!
   @IBOutlet private var difficultyTitle: UILabel!
   @IBOutlet private var extendedDifficultyGradeLabel: UILabel!
-  @IBOutlet private var trackTimeLabel: UILabel!
-  @IBOutlet private var trackTimeTitle: UILabel!
   @IBOutlet private var extendedGradeButton: UIButton!
-  @IBOutlet private var diffucultyConstraint: NSLayoutConstraint!
+  @IBOutlet private var difficultyConstraint: NSLayoutConstraint!
 
-  private let diffucultiVisibleConstraint: CGFloat = 60
-  private let diffucultyHiddenConstraint: CGFloat = 10
+  private let difficultyVisibleConstraint: CGFloat = 60
+  private let difficultyHiddenConstraint: CGFloat = 20
   private var difficultyHidden: Bool = false
-  private var timeHidden: Bool = false
   private var bottomPanelHidden: Bool = false
 
   override func viewDidLoad() {
@@ -77,34 +72,20 @@ extension ElevationProfileViewController: ElevationProfileViewProtocol {
     }
   }
 
-  var isTimeHidden: Bool {
-    get { timeHidden }
-    set {
-      timeHidden = newValue
-      trackTimeLabel.isHidden = newValue
-      trackTimeTitle.isHidden = newValue
-    }
-  }
-
   var isBottomPanelHidden: Bool {
     get { bottomPanelHidden }
     set {
       bottomPanelHidden = newValue
       if newValue == true {
-        isTimeHidden = true
         isExtendedDifficultyLabelHidden = true
         isDifficultyHidden = true
       }
-      diffucultyConstraint.constant = newValue ? diffucultyHiddenConstraint : diffucultiVisibleConstraint
+      difficultyConstraint.constant = newValue ? difficultyHiddenConstraint : difficultyVisibleConstraint
     }
   }
   
   func setExtendedDifficultyGrade(_ value: String) {
     extendedDifficultyGradeLabel.text = value
-  }
-
-  func setTrackTime(_ value: String?) {
-    trackTimeLabel.text = value
   }
 
   func setDifficulty(_ value: ElevationDifficulty) {

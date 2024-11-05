@@ -20,8 +20,6 @@ class ElevationDetailsPresenter {
 extension ElevationDetailsPresenter: ElevationDetailsPresenterProtocol {
   func configure() {
     view?.setDifficulty(data.difficulty)
-//    view?.setExtendedDifficultyGrade(data.extendedDifficultyGrade ?? "")
-//    view?.setDifficultyDescription(data.extendedDifficultyDescription ?? "")
   }
 
   func onOkButtonPressed() {

@@ -63,8 +63,8 @@ NSString * httpGe0Url(NSString * shortUrl)
       return data.previewData.title;
     else if (data.previewData.subtitle.length)
       return data.previewData.subtitle;
-    else if (data.previewData.address.length)
-      return data.previewData.address;
+    else if (data.previewData.secondarySubtitle.length)
+      return data.previewData.secondarySubtitle;
     else
       return @"";
   };
@@ -138,7 +138,7 @@ NSString * httpGe0Url(NSString * shortUrl)
   NSMutableString * result = [L(@"sharing_call_action_look") mutableCopy];
   std::vector<NSString *> strings{self.data.previewData.title,
                                  self.data.previewData.subtitle,
-                                 self.data.previewData.address,
+                                 self.data.previewData.secondarySubtitle,
                                  self.data.infoData.phone,
                                  url,
                                  ge0Url};

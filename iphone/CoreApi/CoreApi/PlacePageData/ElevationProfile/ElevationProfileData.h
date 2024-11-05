@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, ElevationDifficulty) {
 @property(nonatomic, readonly) NSUInteger minAttitude;
 @property(nonatomic, readonly) ElevationDifficulty difficulty;
 @property(nonatomic, readonly) NSArray<ElevationHeightPoint *> * points;
-@property(nonatomic, readonly) NSArray<NSNumber *> * segmentDistances;
+@property(nonatomic, readonly) NSArray<NSNumber *> * segmentsDistances;
 @property(nonatomic, readonly) double activePoint;
 @property(nonatomic, readonly) double myPosition;
 

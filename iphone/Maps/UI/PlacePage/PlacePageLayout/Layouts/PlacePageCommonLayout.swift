@@ -103,7 +103,7 @@ class PlacePageCommonLayout: NSObject, IPlacePageLayout {
 
     viewControllers.append(bookmarkViewController)
     if let bookmarkData = placePageData.bookmarkData {
-      bookmarkViewController.bookmarkData = bookmarkData
+      bookmarkViewController.bookmarkData = .bookmark(bookmarkData)
       bookmarkViewController.view.isHidden = false
     }
 
@@ -183,7 +183,7 @@ extension PlacePageCommonLayout {
   func updateBookmarkRelatedSections() {
     var isBookmark = false
     if let bookmarkData = placePageData.bookmarkData {
-      bookmarkViewController.bookmarkData = bookmarkData
+      bookmarkViewController.bookmarkData = .bookmark(bookmarkData)
       isBookmark = true
     }
     if let title = placePageData.previewData.title, let headerViewController = headerViewControllers.compactMap({ $0 as? PlacePageHeaderViewController }).first {

@@ -340,7 +340,7 @@
 		990F33B624BC915200D0F426 /* SearchActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990F33B524BC915200D0F426 /* SearchActionBarView.swift */; };
 		9917D17F2397B1D600A7E06E /* IPadModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9917D17E2397B1D600A7E06E /* IPadModalPresentationController.swift */; };
 		991FCA2423B11E61009AD684 /* BookmarksStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCA2323B11E61009AD684 /* BookmarksStyleSheet.swift */; };
-		993DF0B523F6B2EF00AC231A /* PlacePageElevationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DF0B423F6B2EF00AC231A /* PlacePageElevationLayout.swift */; };
+		993DF0B523F6B2EF00AC231A /* PlacePageTrackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DF0B423F6B2EF00AC231A /* PlacePageTrackLayout.swift */; };
 		993DF0C823F6BD0600AC231A /* ElevationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DF0C323F6BD0600AC231A /* ElevationDetailsViewController.swift */; };
 		993DF0C923F6BD0600AC231A /* ElevationDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DF0C423F6BD0600AC231A /* ElevationDetailsBuilder.swift */; };
 		993DF0CA23F6BD0600AC231A /* ElevationDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993DF0C523F6BD0600AC231A /* ElevationDetailsViewController.xib */; };
@@ -495,6 +495,7 @@
 		ED8270F02C2071A3005966DA /* SettingsTableViewDetailedSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8270EF2C2071A3005966DA /* SettingsTableViewDetailedSwitchCell.swift */; };
 		ED9857082C4ED02D00694F6C /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9857072C4ED02D00694F6C /* MailComposer.swift */; };
 		ED9966802B94FBC20083CE55 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99667D2B94FBC20083CE55 /* ColorPicker.swift */; };
+		EDA1EAA42CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1EAA32CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift */; };
 		EDBD68072B625724005DD151 /* LocationServicesDisabledAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDBD68062B625724005DD151 /* LocationServicesDisabledAlert.xib */; };
 		EDBD680B2B62572E005DD151 /* LocationServicesDisabledAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD680A2B62572E005DD151 /* LocationServicesDisabledAlert.swift */; };
 		EDC3573B2B7B5029001AE9CA /* CALayer+SetCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3573A2B7B5029001AE9CA /* CALayer+SetCorner.swift */; };
@@ -1226,7 +1227,7 @@
 		990F33B524BC915200D0F426 /* SearchActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActionBarView.swift; sourceTree = "<group>"; };
 		9917D17E2397B1D600A7E06E /* IPadModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPadModalPresentationController.swift; sourceTree = "<group>"; };
 		991FCA2323B11E61009AD684 /* BookmarksStyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksStyleSheet.swift; sourceTree = "<group>"; };
-		993DF0B423F6B2EF00AC231A /* PlacePageElevationLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePageElevationLayout.swift; sourceTree = "<group>"; };
+		993DF0B423F6B2EF00AC231A /* PlacePageTrackLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePageTrackLayout.swift; sourceTree = "<group>"; };
 		993DF0C323F6BD0600AC231A /* ElevationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevationDetailsViewController.swift; sourceTree = "<group>"; };
 		993DF0C423F6BD0600AC231A /* ElevationDetailsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevationDetailsBuilder.swift; sourceTree = "<group>"; };
 		993DF0C523F6BD0600AC231A /* ElevationDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElevationDetailsViewController.xib; sourceTree = "<group>"; };
@@ -1426,6 +1427,7 @@
 		ED8270EF2C2071A3005966DA /* SettingsTableViewDetailedSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDetailedSwitchCell.swift; sourceTree = "<group>"; };
 		ED9857072C4ED02D00694F6C /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		ED99667D2B94FBC20083CE55 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		EDA1EAA32CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationProfileFormatter.swift; sourceTree = "<group>"; };
 		EDBD68062B625724005DD151 /* LocationServicesDisabledAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationServicesDisabledAlert.xib; sourceTree = "<group>"; };
 		EDBD680A2B62572E005DD151 /* LocationServicesDisabledAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicesDisabledAlert.swift; sourceTree = "<group>"; };
 		EDC3573A2B7B5029001AE9CA /* CALayer+SetCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+SetCorner.swift"; sourceTree = "<group>"; };
@@ -2959,7 +2961,7 @@
 			children = (
 				99C6532123F2F506004322F3 /* IPlacePageLayout.swift */,
 				99F3EB0223F4178200C713F8 /* PlacePageCommonLayout.swift */,
-				993DF0B423F6B2EF00AC231A /* PlacePageElevationLayout.swift */,
+				993DF0B423F6B2EF00AC231A /* PlacePageTrackLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -2980,6 +2982,7 @@
 			isa = PBXGroup;
 			children = (
 				99514BB223E82B450085D3A7 /* ElevationProfilePresenter.swift */,
+				EDA1EAA32CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift */,
 				99514BB423E82B450085D3A7 /* ElevationProfileViewController.swift */,
 				99514BB523E82B450085D3A7 /* ElevationProfileBuilder.swift */,
 				99DEF9D623E420F6006BFD21 /* ElevationProfileDescriptionCell.swift */,
@@ -4399,7 +4402,7 @@
 				47E3C72D2111E6A2008B3B27 /* FadeTransitioning.swift in Sources */,
 				34845DAF1E1649F6003D55B9 /* DownloaderNoResultsEmbedViewController.swift in Sources */,
 				EDFDFB482B7139670013A44C /* SocialMedia.swift in Sources */,
-				993DF0B523F6B2EF00AC231A /* PlacePageElevationLayout.swift in Sources */,
+				993DF0B523F6B2EF00AC231A /* PlacePageTrackLayout.swift in Sources */,
 				44360A0D2A7D34990016F412 /* TransportRuler.swift in Sources */,
 				CD6E8677226774C700D1EDF7 /* CPConstants.swift in Sources */,
 				99A906DE23F6F7030005872B /* PlacePageBookmarkViewController.swift in Sources */,
@@ -4579,6 +4582,7 @@
 				3444DFCD1F1760B900E73099 /* WidgetsArea.swift in Sources */,
 				34D3B03C1E389D05004100F9 /* MWMEditorSwitchTableViewCell.m in Sources */,
 				34AB66411FC5AA330078E451 /* RouteManagerTransitioningManager.swift in Sources */,
+				EDA1EAA42CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift in Sources */,
 				996D108A24E3DBF2002DD0E2 /* BookmarksCoordinator.swift in Sources */,
 				3454D7CE1E07F045004AF2AD /* UIFont+MapsMeFonts.m in Sources */,
 				99A906E123F6F7030005872B /* PlacePageButtonsViewController.swift in Sources */,

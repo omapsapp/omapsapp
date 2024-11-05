@@ -102,6 +102,9 @@
 		EDC4E3512C5D222D009286A2 /* RecentlyDeletedCategory.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDC4E34E2C5D222D009286A2 /* RecentlyDeletedCategory.mm */; };
 		EDC4E3522C5D222D009286A2 /* RecentlyDeletedCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC4E34F2C5D222D009286A2 /* RecentlyDeletedCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDC4E3532C5D222D009286A2 /* RecentlyDeletedCategory+Core.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC4E3502C5D222D009286A2 /* RecentlyDeletedCategory+Core.h */; };
+		EDCC8FCC2CF88E6F009E7480 /* PlacePageTrackData.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDCC8FCA2CF88E6F009E7480 /* PlacePageTrackData.mm */; };
+		EDCC8FCD2CF88E6F009E7480 /* PlacePageTrackData+Core.h in Headers */ = {isa = PBXBuildFile; fileRef = EDCC8FCB2CF88E6F009E7480 /* PlacePageTrackData+Core.h */; };
+		EDCC8FCE2CF88E6F009E7480 /* PlacePageTrackData.h in Headers */ = {isa = PBXBuildFile; fileRef = EDCC8FC92CF88E6F009E7480 /* PlacePageTrackData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +210,9 @@
 		EDC4E34E2C5D222D009286A2 /* RecentlyDeletedCategory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecentlyDeletedCategory.mm; sourceTree = "<group>"; };
 		EDC4E34F2C5D222D009286A2 /* RecentlyDeletedCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyDeletedCategory.h; sourceTree = "<group>"; };
 		EDC4E3502C5D222D009286A2 /* RecentlyDeletedCategory+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RecentlyDeletedCategory+Core.h"; sourceTree = "<group>"; };
+		EDCC8FC92CF88E6F009E7480 /* PlacePageTrackData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlacePageTrackData.h; sourceTree = "<group>"; };
+		EDCC8FCA2CF88E6F009E7480 /* PlacePageTrackData.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PlacePageTrackData.mm; sourceTree = "<group>"; };
+		EDCC8FCB2CF88E6F009E7480 /* PlacePageTrackData+Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlacePageTrackData+Core.h"; sourceTree = "<group>"; };
 		FAA6D8CF29205D2D00E8D50D /* libcppjansson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcppjansson.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -301,6 +307,9 @@
 		47942D5B237CC3B500DEFAE3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EDCC8FC92CF88E6F009E7480 /* PlacePageTrackData.h */,
+				EDCC8FCA2CF88E6F009E7480 /* PlacePageTrackData.mm */,
+				EDCC8FCB2CF88E6F009E7480 /* PlacePageTrackData+Core.h */,
 				47942D9A237D927800DEFAE3 /* PlacePageBookmarkData.h */,
 				47942D9E237D954400DEFAE3 /* PlacePageBookmarkData+Core.h */,
 				47942D9B237D927800DEFAE3 /* PlacePageBookmarkData.mm */,
@@ -522,6 +531,8 @@
 				EDC4E3532C5D222D009286A2 /* RecentlyDeletedCategory+Core.h in Headers */,
 				47F701F3238C877C00D18E95 /* PlacePageButtonsData+Core.h in Headers */,
 				47CA68E12506C01F00671019 /* MWMBookmark+Core.h in Headers */,
+				EDCC8FCD2CF88E6F009E7480 /* PlacePageTrackData+Core.h in Headers */,
+				EDCC8FCE2CF88E6F009E7480 /* PlacePageTrackData.h in Headers */,
 				471527392491EDAA00E91BBA /* MWMBookmarkColor.h in Headers */,
 				47F4F1F923A3336C0022FD56 /* MWMMapNodeAttributes.h in Headers */,
 				479F704A234F785B00011E2E /* MWMTypes.h in Headers */,
@@ -610,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCC8FCC2CF88E6F009E7480 /* PlacePageTrackData.mm in Sources */,
 				9957FADC237ACB1100855F48 /* DeepLinkSearchData.mm in Sources */,
 				ED0B1FF52CAAE3FF006E31A4 /* DeepLinkInAppFeatureHighlightData.mm in Sources */,
 				9957FACF237AB01400855F48 /* DeepLinkParser.mm in Sources */,

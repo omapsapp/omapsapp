@@ -11,7 +11,7 @@
                                          mapViewController: MapViewController.shared()!)
     let layout: IPlacePageLayout
     if data.isTrack {
-      layout = PlacePageElevationLayout(interactor: interactor, storyboard: storyboard, data: data)
+      layout = PlacePageTrackLayout(interactor: interactor, storyboard: storyboard, data: data)
     } else {
       layout = PlacePageCommonLayout(interactor: interactor, storyboard: storyboard, data: data)
     }
@@ -31,7 +31,7 @@
                                          mapViewController: MapViewController.shared()!)
     let layout: IPlacePageLayout
     if data.isTrack {
-      layout = PlacePageElevationLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
+      layout = PlacePageTrackLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
     } else {
       layout = PlacePageCommonLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
     }

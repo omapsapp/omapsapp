@@ -67,7 +67,7 @@ final class PlacePagePreviewViewController: UIViewController {
     updateViews()
   }
 
-  private func updateViews() {
+  func updateViews() {
     if placePagePreviewData.isMyPosition {
       if let speedAndAltitude = speedAndAltitude {
         subtitleLabel.text = speedAndAltitude
@@ -91,7 +91,7 @@ final class PlacePagePreviewViewController: UIViewController {
 
     placePageDirectionView = subtitleDirectionView
 
-    if let address = placePagePreviewData.address {
+    if let address = placePagePreviewData.secondarySubtitle {
       addressLabel.text = address
       placePageDirectionView = addressDirectionView
     } else {

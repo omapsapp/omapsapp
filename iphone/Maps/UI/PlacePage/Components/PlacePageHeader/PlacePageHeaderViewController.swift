@@ -2,6 +2,7 @@ protocol PlacePageHeaderViewProtocol: AnyObject {
   var presenter: PlacePageHeaderPresenterProtocol?  { get set }
   var isExpandViewHidden: Bool { get set }
   var isShadowViewHidden: Bool { get set }
+  var isShareButtonHidden: Bool { get set }
 
   func setTitle(_ title: String?, secondaryTitle: String?)
 }
@@ -69,6 +70,15 @@ extension PlacePageHeaderViewController: PlacePageHeaderViewProtocol {
     }
     set {
       shadowView.isHidden = newValue
+    }
+  }
+
+  var isShareButtonHidden: Bool {
+    get {
+      shareButton.isHidden
+    }
+    set {
+      shareButton.isHidden = newValue
     }
   }
 

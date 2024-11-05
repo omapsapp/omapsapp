@@ -87,8 +87,8 @@ using namespace storage;
   NSString *title = nil;
   if (data.previewData.title.length > 0) {
     title = data.previewData.title;
-  } else if (data.previewData.address.length > 0) {
-    title = data.previewData.address;
+  } else if (data.previewData.secondarySubtitle.length > 0) {
+    title = data.previewData.secondarySubtitle;
   } else if (data.previewData.subtitle.length > 0) {
     title = data.previewData.subtitle;
   } else if (data.bookmarkData != nil) {
@@ -121,8 +121,8 @@ using namespace storage;
   NSString *title = nil;
   if (data.previewData.title.length > 0) {
     title = data.previewData.title;
-  } else if (data.previewData.address.length > 0) {
-    title = data.previewData.address;
+  } else if (data.previewData.secondarySubtitle.length > 0) {
+    title = data.previewData.secondarySubtitle;
   } else if (data.previewData.subtitle.length > 0) {
     title = data.previewData.subtitle;
   } else if (data.bookmarkData != nil) {
@@ -185,10 +185,14 @@ using namespace storage;
 {
   auto &f = GetFramework();
   f.GetBookmarkManager().GetEditSession().DeleteBookmark(data.bookmarkData.bookmarkId);
-
   [MWMFrameworkHelper updateAfterDeleteBookmark];
-
   [data updateBookmarkStatus];
+}
+
+- (void)removeTrack:(PlacePageData *)data
+{
+  auto &f = GetFramework();
+  f.GetBookmarkManager().GetEditSession().DeleteTrack(data.trackData.trackId);
 }
 
 - (void)call:(PlacePageData *)data {
@@ -202,6 +206,19 @@ using namespace storage;
                                                        instantiateViewControllerWithIdentifier:@"MWMEditBookmarkController"];
   [editBookmarkController configureWithPlacePageData:data];
   [[MapViewController sharedController].navigationController pushViewController:editBookmarkController animated:YES];
+}
+
+- (void)editTrack:(PlacePageData *)data {
+  if (!data.isTrack) {
+    return;
+  }
+  EditTrackViewController * editTrackController = [[EditTrackViewController alloc] initWithTrackId:data.trackData.trackId editCompletion:^(BOOL edited) {
+    if (!edited)
+      return;
+    [MWMFrameworkHelper updatePlacePageData];
+    [data updateBookmarkStatus];
+  }];
+  [[MapViewController sharedController].navigationController pushViewController:editTrackController animated:YES];
 }
 
 - (void)showPlaceDescription:(NSString *)htmlString

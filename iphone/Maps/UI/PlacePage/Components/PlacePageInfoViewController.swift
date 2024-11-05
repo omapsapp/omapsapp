@@ -429,7 +429,8 @@ class PlacePageInfoViewController: UIViewController {
 private extension UIStackView {
   func addArrangedSubviewWithSeparator(_ view: UIView, insets: UIEdgeInsets = .zero) {
     if !arrangedSubviews.isEmpty {
-      view.addSeparator(thickness: CGFloat(1.0),
+      view.addSeparator(.top,
+                        thickness: CGFloat(1.0),
                         color: StyleManager.shared.theme?.colors.blackDividers,
                         insets: insets)
     }
