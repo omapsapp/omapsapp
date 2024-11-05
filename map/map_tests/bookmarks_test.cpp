@@ -1155,7 +1155,7 @@ UNIT_CLASS_TEST(Runner, TrackParsingTest_1)
   for (auto const trackId : bmManager.GetTrackIds(catId))
   {
     auto const * track = bmManager.GetTrack(trackId);
-    auto const & geom = track->GetSingleGeometry();
+    auto const & geom = track->GetGeometry();
 
     TEST_EQUAL(geom[0].GetAltitude(), altitudes[i], ());
     TEST_EQUAL(names[i], track->GetName(), ());

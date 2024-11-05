@@ -657,7 +657,9 @@ void Framework::FillTrackInfo(Track const & track, m2::PointD const & trackPoint
 {
   info.SetTrackId(track.GetId());
   info.SetBookmarkCategoryId(track.GetGroupId());
+  info.SetBookmarkCategoryName(GetBookmarkManager().GetCategoryName(track.GetGroupId()));
   info.SetMercator(trackPoint);
+  info.SetTitlesForTrack(track);
 }
 
 search::ReverseGeocoder::Address Framework::GetAddressAtPoint(m2::PointD const & pt) const
