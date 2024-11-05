@@ -61,8 +61,6 @@ fileprivate class ChartYAxisInnerView: UIView {
     upperLabel.translatesAutoresizingMaskIntoConstraints = false
     lowerLabelBackground.translatesAutoresizingMaskIntoConstraints = false
     upperLabelBackground.translatesAutoresizingMaskIntoConstraints = false
-    lowerLabelBackground.backgroundColor = UIColor(white: 1, alpha: 0.8)
-    upperLabelBackground.backgroundColor = UIColor(white: 1, alpha: 0.8)
 
     lowerLabelBackground.addSubview(lowerLabel)
     upperLabelBackground.addSubview(upperLabel)

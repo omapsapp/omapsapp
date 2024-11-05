@@ -1,18 +1,19 @@
 import UIKit
 
-class ChartPointInfoView: UIView {
+final class ChartPointInfoView: UIView {
   enum Alignment {
     case left
     case right
   }
 
-  let captionLabel = UILabel()
-  let distanceLabel = UILabel()
-  let altitudeLabel = UILabel()
-  let stackView = UIStackView()
+  private let distanceLabel = UILabel()
+  private let altitudeLabel = UILabel()
+  private let stackView = UIStackView()
 
-  let maskLayer = CAShapeLayer()
-  var maskPath: UIBezierPath?
+  private let maskLayer = CAShapeLayer()
+  private var maskPath: UIBezierPath?
+
+  private let isInterfaceRightToLeft = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
 
   var arrowY: CGFloat? {
     didSet {
@@ -28,7 +29,6 @@ class ChartPointInfoView: UIView {
 
   var font: UIFont = UIFont.systemFont(ofSize: 12, weight: .regular) {
     didSet {
-      captionLabel.font = font
       distanceLabel.font = font
       altitudeLabel.font = font
     }
@@ -36,7 +36,6 @@ class ChartPointInfoView: UIView {
 
   var textColor: UIColor = .lightGray {
     didSet {
-      captionLabel.textColor = textColor
       distanceLabel.textColor = textColor
       altitudeLabel.textColor = textColor
     }
@@ -72,18 +71,13 @@ class ChartPointInfoView: UIView {
       stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
     ])
 
-    stackView.addArrangedSubview(captionLabel)
     stackView.addArrangedSubview(distanceLabel)
     stackView.addArrangedSubview(altitudeLabel)
     stackView.setCustomSpacing(6, after: distanceLabel)
 
-    captionLabel.text = NSLocalizedString("placepage_distance", comment: "") + ":"
-
-    captionLabel.font = font
     distanceLabel.font = font
     altitudeLabel.font = font
 
-    captionLabel.textColor = textColor
     distanceLabel.textColor = textColor
     altitudeLabel.textColor = textColor
   }
@@ -94,13 +88,17 @@ class ChartPointInfoView: UIView {
 
   func set(x: CGFloat, label: String, points: [ChartLineInfo]) {
     distanceLabel.text = label
-    altitudeLabel.text = "▲ \(points[0].formattedValue)"
+    altitudeLabel.text = altitudeText(points[0])
   }
 
   func update(x: CGFloat, label: String, points: [ChartLineInfo]) {
     distanceLabel.text = label
-    altitudeLabel.text = "▲ \(points[0].formattedValue)"
+    altitudeLabel.text = altitudeText(points[0])
     layoutIfNeeded()
+  }
+
+  private func altitudeText(_ point: ChartLineInfo) -> String {
+    return String(isInterfaceRightToLeft ? "\(point.formattedValue) ▲" : "▲ \(point.formattedValue)")
   }
 
   override func layoutSubviews() {

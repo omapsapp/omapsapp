@@ -26,12 +26,12 @@ fileprivate class ChartXAxisInnerView: UIView {
     }
   }
 
-  func makeLabel(text: String) -> UILabel {
+  private func makeLabel(text: String) -> UILabel {
     let label = UILabel()
     label.font = font
     label.textColor = textColor
     label.text = text
-    label.frame = CGRect(x: 0, y: 0, width: 50, height: 15)
+    label.frame = CGRect(x: 0, y: 0, width: 60, height: 15)
     return label
   }
 
@@ -60,7 +60,7 @@ fileprivate class ChartXAxisInnerView: UIView {
     updateLabels()
   }
 
-  func updateLabels() {
+  private func updateLabels() {
     let step = CGFloat(upperBound - lowerBound) / CGFloat(labels.count - 1)
     for i in 0..<labels.count {
       let x = bounds.width * step * CGFloat(i) / CGFloat(upperBound - lowerBound)
@@ -68,16 +68,22 @@ fileprivate class ChartXAxisInnerView: UIView {
       var f = l.frame
       let adjust = bounds.width > 0 ? x / bounds.width : 0
       f.origin = CGPoint(x: x - f.width * adjust, y: 0)
-      l.frame = f.integral
+      l.frame = f
     }
   }
 }
 
 class ChartXAxisView: UIView {
+
+  struct Value {
+    let index: Int
+    let value: Double
+    let text: String
+  }
+
   var lowerBound = 0
   var upperBound = 0
-
-  var values: [String] = []
+  var values: [Value] = []
 
   var font: UIFont = UIFont.systemFont(ofSize: 12, weight: .regular) {
     didSet {
@@ -96,14 +102,17 @@ class ChartXAxisView: UIView {
   func setBounds(lower: Int, upper: Int) {
     lowerBound = lower
     upperBound = upper
-    let step = CGFloat(upper - lower) / 5
 
-    var steps: [String] = []
+    let begin = values[lower].value
+    let end = values[upper].value
+    let step = CGFloat(end - begin) / 5
+    var labels: [String] = []
     for i in 0..<5 {
-      let x = lower + Int(round(step * CGFloat(i)))
-      steps.append(values[x])
+      if let x = values.first(where: { $0.value >= (begin + step * CGFloat(i)) }) {
+        labels.append(x.text)
+      }
     }
-    steps.append(values[upper])
+    labels.append(values[upper].text)
 
     let lv = ChartXAxisInnerView()
     lv.frame = bounds
@@ -115,7 +124,7 @@ class ChartXAxisView: UIView {
       labelsView.removeFromSuperview()
     }
 
-    lv.setBounds(lower: lower, upper: upper, steps: steps)
+    lv.setBounds(lower: lower, upper: upper, steps: labels)
     labelsView = lv
   }
 }

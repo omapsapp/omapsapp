@@ -20,7 +20,40 @@
 		47375E522420E97100FFCC49 /* ChartYAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47375E472420E96F00FFCC49 /* ChartYAxisView.swift */; };
 		47375E542420E97100FFCC49 /* ChartPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47375E492420E97100FFCC49 /* ChartPreviewView.swift */; };
 		47D48BD324302FE200FEFB1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D48BD524302FE200FEFB1F /* Localizable.strings */; };
+		EDA1EAA02CC7E91300DBDCAA /* ChartPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1EA9F2CC7E91300DBDCAA /* ChartPathBuilder.swift */; };
+		EDA1EAA22CC7E96200DBDCAA /* ChartPresentationLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1EAA12CC7E96200DBDCAA /* ChartPresentationLine.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED2616CA2CD3716100F946DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 675343F81A3F640D00A0A8C3;
+			remoteInfo = routing;
+		};
+		ED2616CC2CD3716100F946DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6742AD0E1C68A91B009CB89E;
+			remoteInfo = routing_tests;
+		};
+		ED2616CE2CD3716100F946DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67BD35951C69F03E003AA26F;
+			remoteInfo = routing_integration_tests;
+		};
+		ED2616D02CD3716100F946DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56F0D75F1D896A5300045886;
+			remoteInfo = routing_benchmarks;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		472644DD24400C0300B9C053 /* ExpandedTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTouchView.swift; sourceTree = "<group>"; };
@@ -66,6 +99,9 @@
 		47D48BF12430333900FEFB1F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D48BF22430334B00FEFB1F /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D48BF32430335F00FEFB1F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDA1EA9F2CC7E91300DBDCAA /* ChartPathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPathBuilder.swift; sourceTree = "<group>"; };
+		EDA1EAA12CC7E96200DBDCAA /* ChartPresentationLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresentationLine.swift; sourceTree = "<group>"; };
+		EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = routing.xcodeproj; path = ../../xcode/routing/routing.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FA4C8E53263B1FA80048FA99 /* common-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "common-release.xcconfig"; path = "../../xcode/common-release.xcconfig"; sourceTree = "<group>"; };
 		FA4C8E54263B1FA80048FA99 /* common-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "common-debug.xcconfig"; path = "../../xcode/common-debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				47375E3B2420E94E00FFCC49 /* ChartData.swift */,
+				EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */,
 				47375E392420E94C00FFCC49 /* ChartPresentationData.swift */,
+				EDA1EAA12CC7E96200DBDCAA /* ChartPresentationLine.swift */,
+				EDA1EA9F2CC7E91300DBDCAA /* ChartPathBuilder.swift */,
 			);
 			path = ChartData;
 			sourceTree = "<group>";
@@ -142,6 +181,17 @@
 				47375E462420E96F00FFCC49 /* ChartMyPositionView.swift */,
 			);
 			path = ChartInfo;
+			sourceTree = "<group>";
+		};
+		ED2616C42CD3716100F946DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED2616CB2CD3716100F946DC /* librouting.a */,
+				ED2616CD2CD3716100F946DC /* routing_tests.app */,
+				ED2616CF2CD3716100F946DC /* routing_integration_tests.app */,
+				ED2616D12CD3716100F946DC /* routing_benchmarks.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,12 +280,49 @@
 			mainGroup = 47375D8C2420D4DB00FFCC49;
 			productRefGroup = 47375D972420D4DB00FFCC49 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = ED2616C42CD3716100F946DC /* Products */;
+					ProjectRef = EDA1EAB52CC9655100DBDCAA /* routing.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				47375D952420D4DB00FFCC49 /* Chart */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		ED2616CB2CD3716100F946DC /* librouting.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = librouting.a;
+			remoteRef = ED2616CA2CD3716100F946DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2616CD2CD3716100F946DC /* routing_tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = routing_tests.app;
+			remoteRef = ED2616CC2CD3716100F946DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2616CF2CD3716100F946DC /* routing_integration_tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = routing_integration_tests.app;
+			remoteRef = ED2616CE2CD3716100F946DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ED2616D12CD3716100F946DC /* routing_benchmarks.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = routing_benchmarks.app;
+			remoteRef = ED2616D02CD3716100F946DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		47375D942420D4DB00FFCC49 /* Resources */ = {
@@ -253,9 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA1EAA02CC7E91300DBDCAA /* ChartPathBuilder.swift in Sources */,
 				47375E512420E97100FFCC49 /* ChartMyPositionView.swift in Sources */,
 				47375E3E2420E94E00FFCC49 /* ChartData.swift in Sources */,
 				47375E4C2420E97100FFCC49 /* ChartLineView.swift in Sources */,
+				EDA1EAA22CC7E96200DBDCAA /* ChartPresentationLine.swift in Sources */,
 				47375E502420E97100FFCC49 /* ChartPointIntersectionView.swift in Sources */,
 				47375E522420E97100FFCC49 /* ChartYAxisView.swift in Sources */,
 				47375E4B2420E97100FFCC49 /* ChartXAxisView.swift in Sources */,

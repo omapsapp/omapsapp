@@ -13,7 +13,9 @@ public class ChartView: UIView {
   let xAxisView = ChartXAxisView()
   let chartInfoView = ChartInfoView()
   var lineViews: [ChartLineView] = []
+  var showPreview: Bool = false // Set true to show the preview
 
+  private var tapGR: UITapGestureRecognizer!
   private var panStartPoint = 0
   private var panGR: UIPanGestureRecognizer!
   private var pinchStartLower = 0
@@ -112,7 +114,7 @@ public class ChartView: UIView {
       chartInfoView.textColor = textColor
       chartsContainerView.addSubview(chartInfoView)
 
-      xAxisView.values = chartData.labels
+      xAxisView.values = chartData.xAxisValues.enumerated().map { ChartXAxisView.Value(index: $0.offset, value: $0.element, text: chartData.labels[$0.offset]) }
       chartPreviewView.chartData = chartData
       xAxisView.setBounds(lower: chartPreviewView.minX, upper: chartPreviewView.maxX)
       updateCharts()
@@ -144,12 +146,16 @@ public class ChartView: UIView {
     chartInfoView.tooltipBackgroundColor = backgroundColor ?? .white
     yAxisView.textBackgroundColor = infoBackgroundColor.withAlphaComponent(0.7)
 
+    tapGR = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+    chartsContainerView.addGestureRecognizer(tapGR)
     panGR = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
     chartsContainerView.addGestureRecognizer(panGR)
     pinchGR = UIPinchGestureRecognizer(target: self, action: #selector(onPinch(_:)))
     chartsContainerView.addGestureRecognizer(pinchGR)
     addSubview(chartsContainerView)
-    addSubview(chartPreviewView)
+    if showPreview {
+      addSubview(chartPreviewView)
+    }
     chartPreviewView.delegate = self
     addSubview(xAxisView)
   }
@@ -188,7 +194,7 @@ public class ChartView: UIView {
   override public func layoutSubviews() {
     super.layoutSubviews()
 
-    let previewFrame = CGRect(x: bounds.minX, y: bounds.maxY - 30, width: bounds.width, height: 30)
+    let previewFrame = showPreview ? CGRect(x: bounds.minX, y: bounds.maxY - 30, width: bounds.width, height: 30) : .zero
     chartPreviewView.frame = previewFrame
 
     let xAxisFrame = CGRect(x: bounds.minX, y: bounds.maxY - previewFrame.height - 26, width: bounds.width, height: 26)
@@ -204,6 +210,16 @@ public class ChartView: UIView {
   override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
     let rect = bounds.insetBy(dx: -30, dy: 0)
     return rect.contains(point)
+  }
+
+  @objc func onTap(_ sender: UITapGestureRecognizer) {
+    guard sender.state == .ended else {
+      return
+    }
+    let point = sender.location(in: chartInfoView)
+    updateCharts(animationStyle: .none)
+    chartInfoView.update(point.x)
+    chartInfoView(chartInfoView, didMoveToPoint: point.x)
   }
 
   @objc func onPinch(_ sender: UIPinchGestureRecognizer) {
@@ -262,30 +278,23 @@ public class ChartView: UIView {
       let line = chartData.lineAt(i)
       let subrange = line.aggregatedValues[xAxisView.lowerBound...xAxisView.upperBound]
       subrange.forEach {
-        upper = max($0, upper)
+        upper = max($0.y, upper)
         if line.type == .line || line.type == .lineArea {
-          lower = min($0, lower)
+          lower = min($0.y, lower)
         }
       }
     }
 
     let padding = round((upper - lower) / 10)
-    lower = max(0, lower - padding)
-    upper = upper + padding
-
-    let stepsCount = 3
-    let step = ceil((upper - lower) / CGFloat(stepsCount))
-    upper = lower + step * CGFloat(stepsCount)
-    var steps: [CGFloat] = []
-    for i in 0...stepsCount {
-      steps.append(lower + step * CGFloat(i))
-    }
+    lower = chartData.formatter.yAxisLowerBound(from: max(0, lower - padding))
+    upper = chartData.formatter.yAxisUpperBound(from: upper + padding)
+    let steps = chartData.formatter.yAxisSteps(lowerBound: lower, upperBound: upper)
 
     if yAxisView.upperBound != upper || yAxisView.lowerBound != lower {
       yAxisView.setBounds(lower: lower,
                           upper: upper,
-                          lowerLabel: chartData.formatter.altitudeString(from: Double(lower)),
-                          upperLabel: chartData.formatter.altitudeString(from: Double(upper)),
+                          lowerLabel: chartData.formatter.yAxisString(from: Double(lower)),
+                          upperLabel: chartData.formatter.yAxisString(from: Double(upper)),
                           steps: steps,
                           animationStyle: animationStyle)
     }
@@ -325,30 +334,28 @@ extension ChartView: ChartInfoViewDelegate {
   func chartInfoView(_ view: ChartInfoView, infoAtPointX pointX: CGFloat) -> (String, [ChartLineInfo])? {
     let p = convert(CGPoint(x: pointX, y: 0), from: view)
     let x = (p.x / bounds.width) * CGFloat(xAxisView.upperBound - xAxisView.lowerBound) + CGFloat(xAxisView.lowerBound)
-    let x1 = Int(floor(x))
-    let x2 = Int(ceil(x))
-    guard x1 < chartData.labels.count && x >= 0 else { return nil }
+    let x1 = floor(x)
+    let x2 = ceil(x)
+    guard Int(x1) < chartData.labels.count && x >= 0 else { return nil }
     let label = chartData.labelAt(x)
 
     var result: [ChartLineInfo] = []
     for i in 0..<chartData.linesCount {
       let line = chartData.lineAt(i)
       guard line.type != .lineArea else { continue }
-      let y1 = line.values[x1]
-      let y2 = line.values[x2]
+      let y1 = line.values.altitude(at: x1 / CGFloat(chartData.pointsCount))
+      let y2 = line.values.altitude(at: x2 / CGFloat(chartData.pointsCount))
 
-      let dx = x - CGFloat(x1)
+      let dx = x - x1
       let y = dx * (y2 - y1) + y1
       let py = round(chartsContainerView.bounds.height * CGFloat(y - yAxisView.lowerBound) /
         CGFloat(yAxisView.upperBound - yAxisView.lowerBound))
 
-      let v1 = line.originalValues[x1]
-      let v2 = line.originalValues[x2]
-      let v = round(dx * CGFloat(v2 - v1)) + CGFloat(v1)
+      let v = round(dx * CGFloat(y2 - y1)) + CGFloat(y1)
       result.append(ChartLineInfo(name: line.name,
                                   color: line.color,
                                   point: chartsContainerView.convert(CGPoint(x: p.x, y: py), to: view),
-                                  formattedValue: chartData.formatter.altitudeString(from: Double(v))))
+                                  formattedValue: chartData.formatter.yAxisString(from: Double(v))))
     }
 
     return (label, result)
