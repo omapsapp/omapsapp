@@ -6,7 +6,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PlacePagePreviewData (Core)
 
-- (instancetype)initWithElevationInfo:(ElevationInfo const &)elevationInfo;
 - (instancetype)initWithRawData:(place_page::Info const &)rawData;
 
 @end

@@ -831,7 +831,8 @@ static KmlFileType convertFileTypeToCore(MWMKmlFileType fileType) {
 }
 
 - (void)setElevationActivePoint:(double)distance trackId:(uint64_t)trackId {
-  self.bm.SetElevationActivePoint(trackId, distance);
+  // TODO: Pass correct coordinates to show mark point on the map
+  self.bm.SetElevationActivePoint(trackId, {0,0}, distance);
 }
 
 - (void)setElevationActivePointChanged:(uint64_t)trackId callback:(ElevationPointChangedBlock)callback {

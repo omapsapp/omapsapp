@@ -50,14 +50,6 @@ static PlacePageDataSchedule convertOpeningHours(std::string_view rawOH)
 
 @implementation PlacePagePreviewData (Core)
 
-- (instancetype)initWithElevationInfo:(ElevationInfo const &)elevationInfo {
-  self = [super init];
-  if (self) {
-     _title = @(elevationInfo.GetName().c_str());
-  }
-  return self;
-}
-
 - (instancetype)initWithRawData:(place_page::Info const &)rawData {
   self = [super init];
   if (self) {
@@ -65,7 +57,7 @@ static PlacePageDataSchedule convertOpeningHours(std::string_view rawOH)
     _secondaryTitle = rawData.GetSecondaryTitle().empty() ? nil : @(rawData.GetSecondaryTitle().c_str());
     _subtitle = rawData.GetSubtitle().empty() ? nil : @(rawData.GetSubtitle().c_str());
     _coordinates = @(rawData.GetFormattedCoordinate(place_page::CoordinatesFormat::LatLonDMS).c_str());
-    _address = rawData.GetAddress().empty() ? nil : @(rawData.GetAddress().c_str());
+    _address = rawData.GetSecondarySubtitle().empty() ? nil : @(rawData.GetSecondarySubtitle().c_str());
     _isMyPosition = rawData.IsMyPosition();
     //_isPopular = rawData.GetPopularity() > 0;
     _schedule = convertOpeningHours(rawData.GetOpeningHours());
