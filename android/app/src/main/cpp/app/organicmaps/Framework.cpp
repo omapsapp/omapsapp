@@ -931,13 +931,14 @@ Java_app_organicmaps_Framework_nativePlacePageActivationListener(JNIEnv *env, jc
     jni::TScopedLocalRef placePageDataRef(env, nullptr);
     if (info.IsTrack())
     {
-      auto const elevationInfo = frm()->GetBookmarkManager().MakeElevationInfo(info.GetTrackId());
-      placePageDataRef.reset(usermark_helper::CreateElevationInfo(env, elevationInfo));
+      // todo: (KK) implement elevation info handling for the proper track selection
+      auto const & track = frm()->GetBookmarkManager().GetTrack(info.GetTrackId());
+      auto const & elevationInfo = track->GetElevationInfo();
+      if (elevationInfo.has_value())
+        placePageDataRef.reset(usermark_helper::CreateElevationInfo(env, elevationInfo.value()));
     }
-    else
-    {
-      placePageDataRef.reset(usermark_helper::CreateMapObject(env, info));
-    }
+    placePageDataRef.reset(usermark_helper::CreateMapObject(env, info));
+
     env->CallVoidMethod(g_placePageActivationListener, activatedId, placePageDataRef.get());
   };
   auto const closePlacePage = [deactivateId]()

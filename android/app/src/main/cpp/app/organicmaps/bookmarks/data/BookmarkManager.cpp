@@ -900,6 +900,7 @@ Java_app_organicmaps_bookmarks_data_BookmarkManager_nativeSetElevationActivePoin
 {
   auto & bm = frm()->GetBookmarkManager();
   bm.SetElevationActivePoint(static_cast<kml::TrackId>(trackId),
+                             {0,0}, // todo(KK): replace with coordinates from the elevation profile point to show selection mark on the track
                              static_cast<double>(distanceInMeters));
 }
 
