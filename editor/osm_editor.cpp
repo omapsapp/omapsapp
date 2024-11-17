@@ -656,6 +656,22 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                     ObjCreateData const & objCreateData = std::get<ObjCreateData>(createEntry.data);
                     XMLFeature feature = editor::TypeToXML(objCreateData.type, objCreateData.geomType, objCreateData.mercator);
 
+                    // Check if place already exists
+                    bool mergeSameLocation = false;
+                    try {
+                      XMLFeature osmFeature = changeset.GetMatchingNodeFeatureFromOSM(objCreateData.mercator);
+                      if (objCreateData.mercator == osmFeature.GetMercatorCenter()) {
+                        changeset.AddChangesetTag("info:merged_same_location", "yes");
+                        feature = osmFeature;
+                        mergeSameLocation = true;
+                      }
+                      else {
+                        changeset.AddChangesetTag("info:feature_close_by", "yes");
+                      }
+                    }
+                    catch (ChangesetWrapper::OsmObjectWasDeletedException const &) {}
+                    catch (ChangesetWrapper::EmptyFeatureException const &) {}
+
                     // Add tags to XMLFeature
                     for (JournalEntry const & entry: journal) {
                       switch (entry.journalEntryType) {
@@ -676,7 +692,10 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                     // Upload XMLFeature to OSM
                     LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
                     changeset.AddChangesetTag("info:new_editor", "yes");
-                    changeset.Create(feature);
+                    if (!mergeSameLocation)
+                      changeset.Create(feature);
+                    else
+                      changeset.Modify(feature);
                     break;
                   }
                   case EditingLifecycle::MODIFIED:
