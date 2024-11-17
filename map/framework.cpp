@@ -2951,6 +2951,16 @@ osm::Editor::SaveResult Framework::SaveEditedMapObject(osm::EditableMapObject em
 {
   auto & editor = osm::Editor::Instance();
 
+  // Update EditJournal
+  osm::EditableMapObject unedited_emo;
+  if (emo.GetEditingLifecycle() == osm::EditingLifecycle::CREATED && emo.GetJournal().GetJournal().size() == 1) {
+    unedited_emo = {};
+  }
+  else {
+    CHECK(GetEditableMapObject(emo.GetID(), unedited_emo), ("Loading unedited EditableMapObject failed."));
+  }
+  emo.LogDiffInJournal(unedited_emo);
+
   ms::LatLon issueLatLon;
 
   auto shouldNotify = false;

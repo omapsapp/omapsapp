@@ -26,7 +26,6 @@ namespace
 {
 using TCuisine = std::pair<std::string, std::string>;
 osm::EditableMapObject g_editableMapObject;
-osm::EditableMapObject g_unedited_editableMapObject;
 
 jclass g_localNameClazz;
 jmethodID g_localNameCtor;
@@ -157,7 +156,6 @@ Java_app_organicmaps_editor_Editor_nativeSetHasWifi(JNIEnv *, jclass, jboolean h
 JNIEXPORT jboolean JNICALL
 Java_app_organicmaps_editor_Editor_nativeSaveEditedFeature(JNIEnv *, jclass)
 {
-  g_editableMapObject.LogDiffInJournal(g_unedited_editableMapObject);
   switch (g_framework->NativeFramework()->SaveEditedMapObject(g_editableMapObject))
   {
   case osm::Editor::SaveResult::NothingWasChanged:
@@ -372,7 +370,6 @@ Java_app_organicmaps_editor_Editor_nativeStartEdit(JNIEnv *, jclass)
 
   place_page::Info const & info = g_framework->GetPlacePageInfo();
   CHECK(frm->GetEditableMapObject(info.GetID(), g_editableMapObject), ("Invalid feature in the place page."));
-  g_unedited_editableMapObject = g_editableMapObject;
 }
 
 JNIEXPORT void JNICALL
@@ -381,11 +378,8 @@ Java_app_organicmaps_editor_Editor_nativeCreateMapObject(JNIEnv * env, jclass,
 {
   ::Framework * frm = g_framework->NativeFramework();
   auto const type = classif().GetTypeByReadableObjectName(jni::ToNativeString(env, featureType));
-  auto const mercator = frm->GetViewportCenter();
-  CHECK(frm->CreateMapObject(mercator, type, g_editableMapObject),
+  CHECK(frm->CreateMapObject(frm->GetViewportCenter(), type, g_editableMapObject),
         ("Couldn't create mapobject, wrong coordinates of missing mwm"));
-  //g_editableMapObject.MarkAsCreated(type, feature::GeomType::Point, mercator);
-  g_unedited_editableMapObject = g_editableMapObject;
 }
 
 // static void nativeCreateNote(String text);
