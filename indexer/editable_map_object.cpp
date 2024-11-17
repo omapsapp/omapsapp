@@ -796,13 +796,83 @@ void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
 {
   LOG(LDEBUG, ("Executing LogDiffInJournal"));
 
-  m_metadata.ForEach([&](feature::Metadata::EType type, std::string const & value)
-  {
+  // Name
+  for (StringUtf8Multilang::Lang language : StringUtf8Multilang::GetSupportedLanguages()) {
+    int8_t langCode = StringUtf8Multilang::GetLangIndex(language.m_code);
+    std::string_view new_name;
+    std::string_view old_name;
+    m_name.GetString(langCode, new_name);
+    unedited_emo.GetNameMultilang().GetString(langCode, old_name);
+
+    if (new_name != old_name) {
+      std::string osmLangName = StringUtf8Multilang::GetOSMTagByCode(langCode);
+      journal.AddTagChange(osmLangName, std::string(old_name), std::string(new_name));
+    }
+  }
+
+  // Address
+  if (m_street.m_defaultName != unedited_emo.GetStreet().m_defaultName) {
+    journal.AddTagChange("addr:street", unedited_emo.GetStreet().m_defaultName,  m_street.m_defaultName);
+  }
+
+  if (m_houseNumber != unedited_emo.GetHouseNumber()) {
+    journal.AddTagChange("addr:housenumber", unedited_emo.GetHouseNumber(), m_houseNumber);
+  }
+
+  // Metadata
+  for (uint8_t i = 0; i < static_cast<uint8_t>(feature::Metadata::FMD_COUNT); ++i) {
+    auto const type = static_cast<feature::Metadata::EType>(i);
+    std::string const & value = std::string(GetMetadata(type));
     std::string const & old_value = std::string(unedited_emo.GetMetadata(type));
+
     if (value != old_value) {
       journal.AddTagChange(ToString(type), old_value, value);
     }
-  });
+  }
+
+  // cuisine and diet
+  std::vector<std::string> new_cuisines = GetCuisines();
+  std::vector<std::string> old_cuisines = unedited_emo.GetCuisines();
+
+  auto const findAndErase = [] (std::vector<std::string>* cuisinesPtr, std::string s){
+    auto it = std::find((*cuisinesPtr).begin(), (*cuisinesPtr).end(), s);
+    if (it != (*cuisinesPtr).end()) {
+      (*cuisinesPtr).erase(it);
+      return "yes";
+    }
+    return "";
+  };
+
+  std::string new_vegetarian = findAndErase(&new_cuisines, "vegetarian");
+  std::string old_vegetarian = findAndErase(&old_cuisines, "vegetarian");
+  if (new_vegetarian != old_vegetarian)
+    journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
+
+  std::string new_vegan = findAndErase(&new_cuisines, "vegan");
+  std::string old_vegan = findAndErase(&old_cuisines, "vegan");
+  if (new_vegan != old_vegan)
+    journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
+
+  bool cuisinesModified = false;
+
+  if (new_cuisines.size() != old_cuisines.size()) {
+    cuisinesModified = true;
+  }
+  else {
+    for (auto const & new_cuisine : new_cuisines) {
+      for (auto const & old_cuisine : old_cuisines) {
+        if (new_cuisine == old_cuisine) {
+          goto value_found;
+        }
+      }
+      cuisinesModified = true;
+      value_found:;
+    }
+  }
+
+  if (cuisinesModified) {
+    journal.AddTagChange("cuisine", strings::JoinStrings(old_cuisines, ";"), strings::JoinStrings(new_cuisines, ";"));
+  }
 }
 
 bool AreObjectsEqualIgnoringStreet(EditableMapObject const & lhs, EditableMapObject const & rhs)
