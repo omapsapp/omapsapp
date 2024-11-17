@@ -1130,6 +1130,7 @@ bool Editor::CreatePoint(uint32_t type, m2::PointD const & mercator, MwmId const
   outFeature.SetEditableProperties(GetEditablePropertiesForTypes(outFeature.GetTypes()));
   // Only point type features can be created at the moment.
   outFeature.SetPointType();
+  outFeature.MarkAsCreated(type, feature::GeomType::Point, mercator);
   return true;
 }
 
