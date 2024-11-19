@@ -14,7 +14,6 @@ namespace osm
     TagModification,
     ObjectCreated,
     LegacyObject,   //object without full journal history, used for transition to new editor
-    //Info,
     //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused, LocationChanged, FeatureTypeChanged
   };
 

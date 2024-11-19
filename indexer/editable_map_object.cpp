@@ -223,12 +223,6 @@ void EditableMapObject::SetTypes(feature::TypesHolder const & types) { m_types =
 void EditableMapObject::SetID(FeatureID const & fid) { m_featureID = fid; }
 void EditableMapObject::SetStreet(LocalizedStreet const & st) { m_street = st; }
 
-void EditableMapObject::SetStreetNoJournalLogging(LocalizedStreet const & st)
-{
-  m_street = st;
-  LOG(LDEBUG, ("Street changed without Journal Logging"));
-}
-
 void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 {
   m_nearbyStreets = std::move(streets);
@@ -237,12 +231,6 @@ void EditableMapObject::SetNearbyStreets(vector<LocalizedStreet> && streets)
 void EditableMapObject::SetHouseNumber(string const & houseNumber)
 {
   m_houseNumber = houseNumber;
-}
-
-void EditableMapObject::SetHouseNumberNoJournalLogging(string const & houseNumber)
-{
-  m_houseNumber = houseNumber;
-  LOG(LDEBUG, ("HouseNumber changed without Journal Logging"));
 }
 
 void EditableMapObject::SetPostcode(std::string const & postcode)
@@ -327,7 +315,7 @@ void EditableMapObject::SetInternet(feature::Internet internet)
   if (hasWiFi && internet != feature::Internet::Wlan)
     m_types.Remove(wifiType);
   else if (!hasWiFi && internet == feature::Internet::Wlan)
-    m_types.SaveAdd(wifiType);
+    m_types.SafeAdd(wifiType);
 }
 
 LocalizedStreet const & EditableMapObject::GetStreet() const { return m_street; }
@@ -642,7 +630,7 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         if (type == MetadataID::FMD_INTERNET) {
           uint32_t const wifiType = ftypes::IsWifiChecker::Instance().GetType();
           if (tagModData.new_value == "wifi")
-            m_types.SaveAdd(wifiType);
+            m_types.SafeAdd(wifiType);
           else
             m_types.Remove(wifiType);
         }
@@ -671,13 +659,13 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         // Add new cuisine values
         vector<std::string_view> newCuisines = strings::Tokenize(tagModData.new_value, ";");
         for (std::string_view const & cuisine : newCuisines)
-          m_types.SaveAdd(cl.GetTypeByPath({string_view("cuisine"), cuisine}));
+          m_types.SafeAdd(cl.GetTypeByPath({string_view("cuisine"), cuisine}));
       }
       else if (tagModData.key == "diet:vegetarian") {
         Classificator const & cl = classif();
         uint32_t const vegetarianType = cl.GetTypeByPath({string_view("cuisine"), "vegetarian"});
         if (tagModData.new_value == "yes")
-          m_types.SaveAdd(vegetarianType);
+          m_types.SafeAdd(vegetarianType);
         else
           m_types.Remove(vegetarianType);
       }
@@ -685,7 +673,7 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         Classificator const & cl = classif();
         uint32_t const veganType = cl.GetTypeByPath({string_view("cuisine"), "vegan"});
         if (tagModData.new_value == "yes")
-          m_types.SaveAdd(veganType);
+          m_types.SafeAdd(veganType);
         else
           m_types.Remove(veganType);
       }

@@ -73,7 +73,7 @@ namespace feature
       m_types[m_size++] = type;
     }
 
-    void SaveAdd(uint32_t type)
+    void SafeAdd(uint32_t type)
     {
       if (!Has(type)) {
         if (m_size < kMaxTypesCount)
