@@ -32,13 +32,24 @@ UNIT_TEST(RussiaMoscowNahimovskyLongRoute)
       mercator::FromLatLon(55.67695, 37.56220), 5670.0);
 }
 
-UNIT_TEST(RussiaDomodedovoSteps)
+UNIT_TEST(Russia_UseSteps)
 {
   // Use the steps as the detour is way too long.
   CalculateRouteAndTestRouteLength(
       GetVehicleComponents(VehicleType::Bicycle),
       mercator::FromLatLon(55.4403114, 37.7740223), {0., 0.},
       mercator::FromLatLon(55.439703, 37.7725059), 139.058);
+}
+
+UNIT_TEST(Italy_AvoidSteps)
+{
+  // 690m detour instead of taking a 120m shortcut via steps.
+  // Same as Valhalla. But GraphHopper prefers steps.
+  // https://github.com/organicmaps/organicmaps/issues/2253
+  CalculateRouteAndTestRouteLength(
+      GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(42.4631, 14.21342), {0., 0.},
+      mercator::FromLatLon(42.46343, 14.2125), 687.788);
 }
 
 UNIT_TEST(SwedenStockholmCyclewayPriority)
@@ -48,6 +59,25 @@ UNIT_TEST(SwedenStockholmCyclewayPriority)
       GetVehicleComponents(VehicleType::Bicycle),
       mercator::FromLatLon(59.33151, 18.09347), {0., 0.},
       mercator::FromLatLon(59.33052, 18.09391), 113.0);
+}
+
+UNIT_TEST(Poland_PreferCyclewayDetour)
+{
+  // Prefer a longer cycleway route with a little uphill
+  // rather than a 130m shorter route via a residential.
+  CalculateRouteAndTestRouteLength(
+      GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(50.043813, 20.016456), {0., 0.},
+      mercator::FromLatLon(50.047522, 20.029986), 1354.04);
+}
+
+UNIT_TEST(Poland_PreferCycleway_AvoidPrimary)
+{
+  // Prefer a 180m longer and a little uphill cycleway detour to avoid a straight primary road.
+  CalculateRouteAndTestRouteLength(
+      GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(50.031478, 19.948912), {0., 0.},
+      mercator::FromLatLon(50.036289, 19.941198), 993.818);
 }
 
 UNIT_TEST(NetherlandsAmsterdamBicycleNo)
@@ -92,6 +122,19 @@ UNIT_TEST(RussiaMoscowKashirskoe16ToCapLongRoute)
       mercator::FromLatLon(55.68927, 37.70356), 6968.64);
 }
 
+UNIT_TEST(Germany_UseServiceCountrysideRoads)
+{
+  /// @todo(pastk): long service countryside roads is a mismapping probably.
+  /// https://github.com/organicmaps/organicmaps/pull/9692#discussion_r1850558462
+  // Goes by smaller roads, including service ones. Also avoids extra 60m uphill
+  // of the secondary road route. Most similar to Valhalla, but 2km shorter.
+  // https://github.com/organicmaps/organicmaps/issues/6027
+  CalculateRouteAndTestRouteLength(
+      GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(49.1423, 10.068), {0., 0.},
+      mercator::FromLatLon(49.3023, 10.5738), 47769.2);
+}
+
 UNIT_TEST(RussiaMoscowServicePassThrough)
 {
   // Passing through living_street and service is allowed in Russia.
@@ -100,6 +143,41 @@ UNIT_TEST(RussiaMoscowServicePassThrough)
                                   mercator::FromLatLon(55.79649, 37.53738), {0., 0.},
                                   mercator::FromLatLon(55.79618, 37.54071));
   TEST_EQUAL(route.second, RouterResultCode::NoError, ());
+}
+
+UNIT_TEST(Russia_Moscow_UseAllowedFootways)
+{
+  // Shortcut via footways if its allowed in the country.
+  CalculateRouteAndTestRouteLength(
+      GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(55.6572884, 37.6142816), {0., 0.},
+      mercator::FromLatLon(55.6576455, 37.6164412), 182.766);
+}
+
+UNIT_TEST(Spain_Barcelona_UsePedestrianAndLivingStreet)
+{
+  // Don't make long detours to avoid pedestrian and living streets.
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(41.40080, 2.16026), {0.0, 0.0},
+      mercator::FromLatLon(41.39937, 2.15735), 516.14 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Poland_UseLivingStreet)
+{
+  // Don't make a long detour via an uphill residential to avoid a living street.
+  // https://github.com/organicmaps/organicmaps/pull/9692#discussion_r1851446320
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(50.006085, 19.962158), {0.0, 0.0},
+      mercator::FromLatLon(50.006664, 19.957639), 335.978 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Poland_UseLivingStreet2)
+{
+  // Don't make a long detour via service and residential to avoid a living street.
+  // (a more strict and longer test than above)
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(50.096027, 19.90433), {0.0, 0.0},
+      mercator::FromLatLon(50.099875, 19.889867), 1124.7 /* expectedRouteMeters */);
 }
 
 UNIT_TEST(RussiaKerchStraitFerryRoute)
@@ -216,6 +294,55 @@ UNIT_TEST(Gdansk_AvoidLongCyclewayDetour)
       mercator::FromLatLon(54.2698882, 18.6765837), 760.749 /* expectedRouteMeters */);
 }
 
+UNIT_TEST(Netherlands_AvoidLongCyclewayDetour)
+{
+  // Same as GraphHopper.
+  // The first sample from https://github.com/organicmaps/organicmaps/issues/1772
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(52.253405,6.182288), {0.0, 0.0},
+      mercator::FromLatLon(52.247599,6.197973), 1440.8 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Poland_AvoidDetourAndExtraCrossings)
+{
+  // Avoid making a longer cycleway detour which involves extra road crossings.
+  // Same as GraphHopper. Valhalla suggests going by the road (worse for cyclists
+  // really preferring to avoid cars whenever possible, may be preferred
+  // for more aggressive ones depending on light phase to go through one traffic light only).
+  // https://github.com/organicmaps/organicmaps/issues/7954
+  // https://github.com/organicmaps/organicmaps/pull/9692#discussion_r1849627559
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(50.08227, 20.03348), {0.0, 0.0},
+      mercator::FromLatLon(50.08253, 20.03191), 157.7 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Germany_DontAvoidNocyclewayResidential)
+{
+  // No strange detours to avoid a nocycleway residential. Same as GraphHopper.
+  // https://github.com/organicmaps/organicmaps/issues/4059#issuecomment-1399338757
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(51.33772, 12.41432), {0.0, 0.0},
+      mercator::FromLatLon(51.33837, 12.40958), 359.495 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(UK_UseNocyclewayTertiary)
+{
+  // A preferred route is through nocycleway tertiary roads. Same as all OSM routers.
+  // The detour is via a shared cycleway and with 130m less alt gain, but is 4km longer.
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(51.3826906, -2.3481788), {0.0, 0.0},
+      mercator::FromLatLon(51.3615095, -2.3114138), 4468.83 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Germany_UseResidential)
+{
+  // No long detour to avoid a short residential.
+  // https://github.com/organicmaps/organicmaps/issues/9330
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(48.1464472, 11.5589919), {0.0, 0.0},
+      mercator::FromLatLon(48.1418297, 11.5602123), 614.963 /* expectedRouteMeters */);
+}
+
 UNIT_TEST(Belarus_StraightFootway)
 {
   // Prefer footways over roads in Belarus due to local laws.
@@ -243,6 +370,17 @@ UNIT_TEST(Spain_Madrid_ElevationsDetour)
 
   TEST_LESS(r1.first->GetTotalDistanceMeters(), r2.first->GetTotalDistanceMeters(), ());
   TEST_LESS(r1.first->GetTotalTimeSec(), r2.first->GetTotalTimeSec(), ());
+}
+
+UNIT_TEST(Seoul_ElevationDetour)
+{
+  // The longer 664m route has less uphill Ascent: 25 Descent: 17
+  // vs Ascent: 37 Descent: 29n of the shorter 545m route.
+  // Valhalla and GraphHopper prefer a longer route also.
+  // https://github.com/organicmaps/organicmaps/issues/7047
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(37.510519, 127.101251), {0.0, 0.0},
+      mercator::FromLatLon(37.513874, 127.099234), 663.547 /* expectedRouteMeters */);
 }
 
 UNIT_TEST(Spain_Zaragoza_Fancy_NoBicycle_Crossings)
@@ -284,7 +422,7 @@ UNIT_TEST(Belarus_Stolbcy_Use_Unpaved)
       mercator::FromLatLon(53.454082, 26.7560061), 4620.81 /* expectedRouteMeters */);
 }
 
-UNIT_TEST(Russia_UseTrunk)
+UNIT_TEST(Russia_UseTrunk_Long)
 {
   // Prefer riding via a straight trunk road instead of taking a long +30% detour via smaller roads.
   /// @todo(pastk): DELETE: This test is controversial as this route has sections with longer relative trunk-avoiding detours
@@ -292,6 +430,24 @@ UNIT_TEST(Russia_UseTrunk)
   CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
                                    mercator::FromLatLon(66.271, 33.048), {0.0, 0.0},
                                    mercator::FromLatLon(68.95, 33.045), 404262 /* expectedRouteMeters */);
+}
+
+/// @todo(pastk): find a good "avoid trunk" test case where trunk allows cycling.
+UNIT_TEST(Russia_UseTrunk)
+{
+  // Prefer riding via a straight trunk road instead of taking weird detours via smaller roads
+  // (651m via a tertiaty + service in this case).
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+                                   mercator::FromLatLon(68.0192918, 32.9576269), {0.0, 0.0},
+                                   mercator::FromLatLon(68.0212968, 32.9632167), 323.951 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Russia_UseTrunk_AvoidGasStationsDetours)
+{
+  /// @todo(pastk): still OM detours into many petrol stations along the trunk.
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+                                   mercator::FromLatLon(55.9132468, 39.1453188), {0.0, 0.0},
+                                   mercator::FromLatLon(55.9146268, 39.153307), 613.721 /* expectedRouteMeters */);
 }
 
 UNIT_TEST(Netherlands_IgnoreCycleBarrier_WithoutAccess)
