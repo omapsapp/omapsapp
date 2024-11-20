@@ -351,7 +351,6 @@ UNIT_CLASS_TEST(VehicleModelTest, BicycleModel_Smoke)
 UNIT_CLASS_TEST(VehicleModelTest, BicycleModel_Speeds)
 {
   auto const & model = BicycleModel::AllLimitsInstance();
-  auto const & c = classif();
   auto const p = DefaultParams();
 
   std::vector<std::vector<uint32_t>> const highways = {
@@ -363,12 +362,10 @@ UNIT_CLASS_TEST(VehicleModelTest, BicycleModel_Speeds)
     {path, yesBicycle}, // TODO: unpaved by default, so should be lower than shared footways or cycleways, but is equal
     {cycleway, pavedBad},
     {footway, yesBicycle, pavedBad},
+    {footway}, // If allowed in the region.
     {cycleway, unpavedBad},
+    {path, unpavedGood}, // Its controversial what is preferrable: a good path or a bad cycleway
     {path, yesBicycle, unpavedBad},
-    {path, unpavedGood}, // TODO: should be faster than bad surface cycleway (mtb?), but weight is less while eta is faster
-    {footway},
-    {footway, c.GetTypeByPath({"hwtag", "nobicycle"})}, // TODO: should be lower than previous, but is equal
-    // {path, c.GetTypeByPath({"hwtag", "nobicycle"})}, //TODO: should be lower than previous, but is higher
     {path, unpavedBad},
   };
 
