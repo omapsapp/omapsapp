@@ -113,7 +113,7 @@ RulerHelper::RulerHelper()
 void RulerHelper::Update(ScreenBase const & screen)
 {
   m2::PointD pivot = screen.PixelRect().Center();
-  int const minPxWidth = base::SignedRound(kMinPixelWidth * df::VisualParams::Instance().GetVisualScale());
+  int const minPxWidth = math::SignedRound(kMinPixelWidth * df::VisualParams::Instance().GetVisualScale());
   m2::PointD pt1 = screen.PtoG(pivot);
   m2::PointD pt0 = screen.PtoG(pivot - m2::PointD(minPxWidth, 0));
 
@@ -133,7 +133,7 @@ void RulerHelper::Update(ScreenBase const & screen)
     double const a = ang::AngleTo(pt1, pt0);
     pt0 = mercator::GetSmPoint(pt1, cos(a) * metersDiff, sin(a) * metersDiff);
 
-    m_pixelLength = base::SignedRound(pivot.Length(screen.GtoP(pt0)));
+    m_pixelLength = math::SignedRound(pivot.Length(screen.GtoP(pt0)));
   }
 
   int drawScale = df::GetDrawTileScale(screen);

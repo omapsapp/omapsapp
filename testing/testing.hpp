@@ -159,12 +159,12 @@ CommandLineOptions const & GetTestingOptions();
 #define TEST_ALMOST_EQUAL_ULPS(X, Y, msg)                                                       \
   do                                                                                            \
   {                                                                                             \
-    if (::base::AlmostEqualULPs(X, Y))                                                          \
+    if (AlmostEqualULPs(X, Y))                                                          \
     {                                                                                           \
     }                                                                                           \
     else                                                                                        \
     {                                                                                           \
-      ::base::OnTestFailed(SRC(), ::base::Message("TEST(base::AlmostEqualULPs(" #X ", " #Y ")", \
+      ::base::OnTestFailed(SRC(), ::base::Message("TEST(AlmostEqualULPs(" #X ", " #Y ")", \
                                                   ::base::Message(X, Y), ::base::Message msg)); \
     }                                                                                           \
   } while (0)
@@ -172,12 +172,12 @@ CommandLineOptions const & GetTestingOptions();
 #define TEST_NOT_ALMOST_EQUAL_ULPS(X, Y, msg)                                                    \
   do                                                                                             \
   {                                                                                              \
-    if (!::base::AlmostEqualULPs(X, Y))                                                          \
+    if (!AlmostEqualULPs(X, Y))                                                          \
     {                                                                                            \
     }                                                                                            \
     else                                                                                         \
     {                                                                                            \
-      ::base::OnTestFailed(SRC(), ::base::Message("TEST(!base::AlmostEqualULPs(" #X ", " #Y ")", \
+      ::base::OnTestFailed(SRC(), ::base::Message("TEST(!AlmostEqualULPs(" #X ", " #Y ")", \
                                                   ::base::Message(X, Y), ::base::Message msg));  \
     }                                                                                            \
   } while (0)
@@ -185,13 +185,13 @@ CommandLineOptions const & GetTestingOptions();
 #define TEST_ALMOST_EQUAL_ABS(X, Y, eps, msg)                                                      \
   do                                                                                               \
   {                                                                                                \
-    if (::base::AlmostEqualAbs(X, Y, eps))                                                         \
+    if (AlmostEqualAbs(X, Y, eps))                                                         \
     {                                                                                              \
     }                                                                                              \
     else                                                                                           \
     {                                                                                              \
       ::base::OnTestFailed(SRC(),                                                                  \
-                           ::base::Message("TEST(!base::AlmostEqualAbs(" #X ", " #Y ", " #eps ")", \
+                           ::base::Message("TEST(!AlmostEqualAbs(" #X ", " #Y ", " #eps ")", \
                            ::base::Message(X, Y, eps), ::base::Message msg));                      \
     }                                                                                              \
   } while (0)

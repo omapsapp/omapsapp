@@ -402,10 +402,10 @@ size_t constexpr GetOptimalBatchSize()
 {
   // This code computes the most optimal (in the sense of cache lines
   // occupancy) batch size.
-  size_t constexpr a = base::LCM(sizeof(LinearSegment), kCacheLineSize) / sizeof(LinearSegment);
+  size_t constexpr a = math::LCM(sizeof(LinearSegment), kCacheLineSize) / sizeof(LinearSegment);
   size_t constexpr b =
-      base::LCM(sizeof(IRoadGraph::EdgeVector), kCacheLineSize) / sizeof(IRoadGraph::EdgeVector);
-  return base::LCM(a, b);
+      math::LCM(sizeof(IRoadGraph::EdgeVector), kCacheLineSize) / sizeof(IRoadGraph::EdgeVector);
+  return math::LCM(a, b);
 }
 }  // namespace
 

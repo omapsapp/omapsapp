@@ -163,7 +163,7 @@ UNIT_TEST(TrieBuilder_Build)
   vector<string> possibleStrings(1, string{});
   for (int len = 1; len <= kMaxLen; ++len)
   {
-    for (uint32_t i = 0, p = base::PowUint(kBase, len); i < p; ++i)
+    for (uint32_t i = 0, p = math::PowUint(kBase, len); i < p; ++i)
     {
       string s(len, 'A');
       uint32_t t = i;

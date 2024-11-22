@@ -123,7 +123,7 @@ bool CheckPolygonExistance(std::vector<std::vector<m2::PointD>> const & polygons
 
     for (size_t i = 0; i < polygon.size(); ++i)
     {
-      if (!m2::AlmostEqualAbs(polygon[i], polygonToFind[i], 1e-6))
+      if (!AlmostEqualAbs(polygon[i], polygonToFind[i], 1e-6))
       {
         same = false;
         break;
@@ -262,7 +262,7 @@ UNIT_TEST(AreaOnEarth_Convex_Polygon_1)
 
   double const areaOnEarth = generator::AreaOnEarth(points);
 
-  TEST(base::AlmostEqualRel(areaTriangulated,
+  TEST(AlmostEqualRel(areaTriangulated,
                             areaOnEarth,
                             1e-6), (areaTriangulated, areaOnEarth));
 }
@@ -286,7 +286,7 @@ UNIT_TEST(AreaOnEarth_Convex_Polygon_2)
   double const areaOnEarth = generator::AreaOnEarth(points);
   double const areaForConvexPolygon = CalculateEarthAreaForConvexPolygon(latlons);
 
-  TEST(base::AlmostEqualRel(areaForConvexPolygon,
+  TEST(AlmostEqualRel(areaForConvexPolygon,
                             areaOnEarth,
                             1e-6), (areaForConvexPolygon, areaOnEarth));
 }
@@ -319,7 +319,7 @@ UNIT_TEST(AreaOnEarth_Concave_Polygon)
 
   double const areaOnEarth = generator::AreaOnEarth(points);
 
-  TEST(base::AlmostEqualRel(areaTriangulated,
+  TEST(AlmostEqualRel(areaTriangulated,
                             areaOnEarth,
                             1e-6), ());
 }

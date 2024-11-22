@@ -70,12 +70,12 @@ public:
     explicit ContainsCompareFn(double eps) : m_eps(eps), m_squareEps(eps*eps) {}
     bool EqualPoints(m2::PointD const & p1, m2::PointD const & p2) const
     {
-      return base::AlmostEqualAbs(p1.x, p2.x, m_eps) &&
-             base::AlmostEqualAbs(p1.y, p2.y, m_eps);
+      return AlmostEqualAbs(p1.x, p2.x, m_eps) &&
+             AlmostEqualAbs(p1.y, p2.y, m_eps);
     }
     bool EqualZeroSquarePrecision(double val) const
     {
-      return base::AlmostEqualAbs(val, 0.0, m_squareEps);
+      return AlmostEqualAbs(val, 0.0, m_squareEps);
     }
   };
 

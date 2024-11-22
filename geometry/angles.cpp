@@ -9,7 +9,7 @@ double AngleIn2PI(double ang)
   if (ang < 0.0)
     ang += period;
 
-  if (base::AlmostEqualULPs(period, ang))
+  if (AlmostEqualULPs(period, ang))
     return 0.0;
 
   return ang;

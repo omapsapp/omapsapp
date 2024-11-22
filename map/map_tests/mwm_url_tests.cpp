@@ -538,8 +538,8 @@ void generateRandomTest(uint32_t numberOfPoints, size_t stringLength)
     MapPoint const & p = api.GetMapPoints()[i];
     TEST_EQUAL(p.m_name, vect[i].m_name, ());
     TEST_EQUAL(p.m_id, vect[i].m_id, ());
-    TEST(base::AlmostEqualULPs(p.m_lat, vect[i].m_lat), ());
-    TEST(base::AlmostEqualULPs(p.m_lon, vect[i].m_lon), ());
+    TEST(AlmostEqualULPs(p.m_lat, vect[i].m_lat), ());
+    TEST(AlmostEqualULPs(p.m_lon, vect[i].m_lon), ());
   }
 }
 

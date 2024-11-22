@@ -190,7 +190,7 @@ OsmOAuth::Response ServerApi06::GetXmlFeaturesAtLatLon(double lat, double lon, d
   double const latDegreeOffset = radiusInMeters * mercator::Bounds::kDegreesInMeter;
   double const minLat = std::max(-90.0, lat - latDegreeOffset);
   double const maxLat = std::min( 90.0, lat + latDegreeOffset);
-  double const cosL = std::max(cos(base::DegToRad(std::max(fabs(minLat), fabs(maxLat)))), 0.00001);
+  double const cosL = std::max(cos(math::DegToRad(std::max(fabs(minLat), fabs(maxLat)))), 0.00001);
   double const lonDegreeOffset = radiusInMeters * mercator::Bounds::kDegreesInMeter / cosL;
   double const minLon = std::max(-180.0, lon - lonDegreeOffset);
   double const maxLon = std::min( 180.0, lon + lonDegreeOffset);

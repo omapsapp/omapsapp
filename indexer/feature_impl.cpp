@@ -7,7 +7,7 @@ namespace feature
 
 uint8_t PopulationToRank(uint64_t p)
 {
-  return static_cast<uint8_t>(std::min(0xFF, base::SignedRound(log(double(p)) / log(1.1))));
+  return static_cast<uint8_t>(std::min(0xFF, math::SignedRound(log(double(p)) / log(1.1))));
 }
 
 uint64_t RankToPopulation(uint8_t r)

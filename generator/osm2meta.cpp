@@ -375,7 +375,7 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_duration(std::string con
     return {};
 
   auto const format = [](double hours) -> std::string {
-    if (base::AlmostEqualAbs(hours, 0.0, 1e-5))
+    if (AlmostEqualAbs(hours, 0.0, 1e-5))
       return {};
 
     std::stringstream ss;

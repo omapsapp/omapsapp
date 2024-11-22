@@ -144,7 +144,7 @@ void ColorPalette::UploadResources(ref_ptr<dp::GraphicsContext> context, ref_ptr
 
     size_t const pixelStride = uploadRect.SizeX();
     size_t const byteCount = kBytesPerPixel * uploadRect.SizeX() * uploadRect.SizeY();
-    size_t const bufferSize = static_cast<size_t>(base::NextPowOf2(static_cast<uint32_t>(byteCount)));
+    size_t const bufferSize = static_cast<size_t>(math::NextPowOf2(static_cast<uint32_t>(byteCount)));
 
     SharedBufferManager::shared_buffer_ptr_t buffer = SharedBufferManager::instance().reserveSharedBuffer(bufferSize);
     uint8_t * pointer = SharedBufferManager::GetRawPointer(buffer);

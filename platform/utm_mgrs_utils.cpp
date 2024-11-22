@@ -101,7 +101,7 @@ UTMPoint LatLonToUtm(double lat, double lon)
 {
   using std::sin, std::cos, std::sqrt;
 
-  double const latRad = base::DegToRad(lat);
+  double const latRad = math::DegToRad(lat);
   double const latSin = sin(latRad);
   double const latCos = cos(latRad);
 
@@ -113,9 +113,9 @@ UTMPoint LatLonToUtm(double lat, double lon)
   auto const zoneLetter = LatitudeToZoneLetter(lat);
   ASSERT(zoneLetter, (lat));
 
-  double const lonRad = base::DegToRad(lon);
+  double const lonRad = math::DegToRad(lon);
   double const centralLon = ZoneNumberToCentralLon(zoneNumber);
-  double const centralLonRad = base::DegToRad(centralLon);
+  double const centralLonRad = math::DegToRad(centralLon);
 
   double const n = R / sqrt(1.0 - E * latSin * latSin);
   double const c = E_P2 * latCos * latCos;
@@ -299,9 +299,9 @@ std::optional<ms::LatLon> UTMtoLatLon(int easting, int northing, int zoneNumber,
                       d3 / 6.0 * (1.0 + 2.0 * p_tan2 + c) +
                       d5 / 120.0 * (5.0 - 2.0 * c + 28.0 * p_tan2 - 3.0 * c2 + 8.0 * E_P2 + 24.0 * p_tan4)) / p_cos;
 
-  longitude = NormalizeAngle(longitude + base::DegToRad(static_cast<double>(ZoneNumberToCentralLon(zoneNumber))));
+  longitude = NormalizeAngle(longitude + math::DegToRad(static_cast<double>(ZoneNumberToCentralLon(zoneNumber))));
 
-  return ms::LatLon(base::RadToDeg(latitude), base::RadToDeg(longitude));
+  return ms::LatLon(math::RadToDeg(latitude), math::RadToDeg(longitude));
 }
 
 namespace

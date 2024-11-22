@@ -36,7 +36,7 @@ namespace generator
 {
 bool operator==(HierarchyEntry const & lhs, HierarchyEntry const & rhs)
 {
-  return base::AlmostEqualAbs(lhs.m_center, rhs.m_center, 1e-7) &&
+  return AlmostEqualAbs(lhs.m_center, rhs.m_center, 1e-7) &&
       (std::tie(lhs.m_id, lhs.m_parentId, lhs.m_depth, lhs.m_name, lhs.m_country, lhs.m_type) ==
        std::tie(rhs.m_id, rhs.m_parentId, rhs.m_depth, rhs.m_name, rhs.m_country, rhs.m_type));
 }

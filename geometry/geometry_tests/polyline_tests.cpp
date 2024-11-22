@@ -33,7 +33,7 @@ UNIT_TEST(Rect_PolylineSmokeTest)
 
   auto const limitRect = poly.GetLimitRect();
   TEST_ALMOST_EQUAL_ABS(limitRect.LeftBottom(), m2::PointD(0.0, 0.0), kEps, ());
-  TEST(base::AlmostEqualAbs(limitRect.RightTop(), m2::PointD(1.0, 1.0), kEps), ());
+  TEST(AlmostEqualAbs(limitRect.RightTop(), m2::PointD(1.0, 1.0), kEps), ());
 
   poly.PopBack();
   TEST_EQUAL(poly.GetSize(), 2, ());

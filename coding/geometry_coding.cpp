@@ -14,8 +14,8 @@ namespace
 inline m2::PointU ClampPoint(m2::PointD const & maxPoint, m2::PointD const & point)
 {
   using uvalue_t = m2::PointU::value_type;
-  return { static_cast<uvalue_t>(base::Clamp(point.x, 0.0, maxPoint.x)),
-           static_cast<uvalue_t>(base::Clamp(point.y, 0.0, maxPoint.y)) };
+  return { static_cast<uvalue_t>(math::Clamp(point.x, 0.0, maxPoint.x)),
+           static_cast<uvalue_t>(math::Clamp(point.y, 0.0, maxPoint.y)) };
 }
 
 struct edge_less_p0

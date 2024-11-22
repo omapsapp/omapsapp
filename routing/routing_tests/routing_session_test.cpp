@@ -531,25 +531,25 @@ UNIT_CLASS_TEST(AsyncGuiThreadTestWithRoutingSession, TestFollowRoutePercentTest
     info.m_longitude = 0.;
     info.m_latitude = 1.;
     m_session->OnLocationPositionChanged(info);
-    TEST(base::AlmostEqualAbs(m_session->GetCompletionPercent(), 0., 0.5),
+    TEST(AlmostEqualAbs(m_session->GetCompletionPercent(), 0., 0.5),
          (m_session->GetCompletionPercent()));
 
     info.m_longitude = 0.;
     info.m_latitude = 2.;
     m_session->OnLocationPositionChanged(info);
-    TEST(base::AlmostEqualAbs(m_session->GetCompletionPercent(), 33.3, 0.5),
+    TEST(AlmostEqualAbs(m_session->GetCompletionPercent(), 33.3, 0.5),
          (m_session->GetCompletionPercent()));
 
     info.m_longitude = 0.;
     info.m_latitude = 3.;
     m_session->OnLocationPositionChanged(info);
-    TEST(base::AlmostEqualAbs(m_session->GetCompletionPercent(), 66.6, 0.5),
+    TEST(AlmostEqualAbs(m_session->GetCompletionPercent(), 66.6, 0.5),
          (m_session->GetCompletionPercent()));
 
     info.m_longitude = 0.;
     info.m_latitude = 3.99;
     m_session->OnLocationPositionChanged(info);
-    TEST(base::AlmostEqualAbs(m_session->GetCompletionPercent(), 100., 0.5),
+    TEST(AlmostEqualAbs(m_session->GetCompletionPercent(), 100., 0.5),
          (m_session->GetCompletionPercent()));
     checkTimedSignal.Signal();
   });

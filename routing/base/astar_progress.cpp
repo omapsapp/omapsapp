@@ -48,7 +48,7 @@ double AStarSubProgress::UpdateProgress(ms::LatLon const & current, ms::LatLon c
   toUpdate = std::min(toUpdate, dist);
 
   double part = 2.0 - (m_forwardDistance + m_backwardDistance) / m_fullDistance;
-  part = base::Clamp(part, 0.0, 1.0);
+  part = math::Clamp(part, 0.0, 1.0);
   double const newProgress =  m_contributionCoef * part;
 
   m_currentProgress = std::max(newProgress, m_currentProgress);
@@ -108,7 +108,7 @@ double AStarProgress::UpdateProgress(ms::LatLon const & current, ms::LatLon cons
   m_lastPercentValue = std::max(m_lastPercentValue, newProgress);
 
   ASSERT(m_lastPercentValue < kMaxPercent ||
-             base::AlmostEqualAbs(m_lastPercentValue, kMaxPercent, 1e-5 /* eps */),
+             AlmostEqualAbs(m_lastPercentValue, kMaxPercent, 1e-5 /* eps */),
          (m_lastPercentValue, kMaxPercent));
 
   m_lastPercentValue = std::min(m_lastPercentValue, kMaxPercent);

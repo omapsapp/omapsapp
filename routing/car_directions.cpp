@@ -576,7 +576,7 @@ size_t CheckUTurnOnRoute(IRoutingResult const & result, size_t const outgoingSeg
 
       auto angle = ang::TwoVectorsAngle(m2::PointD::Zero(), v1, v2);
 
-      if (!base::AlmostEqualAbs(angle, math::pi, kUTurnHeadingSensitivity))
+      if (!AlmostEqualAbs(angle, math::pi, kUTurnHeadingSensitivity))
         return 0;
 
       // Determine turn direction.

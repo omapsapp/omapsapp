@@ -192,7 +192,7 @@ std::optional<ms::LatLon> MatchMGRSCoords(std::string const & query)
   if (eastingStr.size() < 5)
   {
     uint64_t const decShift = 5 - eastingStr.size();
-    easting *= base::PowUint(10, decShift);
+    easting *= math::PowUint(10, decShift);
   }
 
   if (!strings::to_int32(northingStr, northing))
@@ -200,7 +200,7 @@ std::optional<ms::LatLon> MatchMGRSCoords(std::string const & query)
   if (northingStr.size() < 5)
   {
     uint64_t const decShift = 5 - northingStr.size();
-    northing *= base::PowUint(10, decShift);
+    northing *= math::PowUint(10, decShift);
   }
 
   return utm_mgrs_utils::MGRStoLatLon(easting, northing, zoneCode, zoneLetter, squareCode);

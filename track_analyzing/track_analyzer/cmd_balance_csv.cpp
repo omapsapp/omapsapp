@@ -78,7 +78,7 @@ MwmToDataPoints CalcsMatchedDataPointsToKeepDistribution(
   CHECK(!matchedDataPoints.empty(), ());
   CHECK(AreKeysEqual(matchedDataPoints, distributionFractions),
         ("Mwms in |matchedDataPoints| and in |distributionFractions| should have the same set of keys."));
-  CHECK(base::AlmostEqualAbs(ValueSum(distributionFractions), 1.0, kSumFractionEps),
+  CHECK(AlmostEqualAbs(ValueSum(distributionFractions), 1.0, kSumFractionEps),
         (ValueSum(distributionFractions)));
 
   auto const matchedFractions = GetMwmToDataPointFraction(matchedDataPoints);

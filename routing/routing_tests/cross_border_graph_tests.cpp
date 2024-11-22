@@ -100,10 +100,10 @@ void TestEqualSegments(CrossBorderSegments const & s1, CrossBorderSegments const
 
     static double constexpr epsCoord = 1e-5;
 
-    TEST(base::AlmostEqualAbs(data1.m_start.m_point.GetLatLon(), data2.m_start.m_point.GetLatLon(),
+    TEST(AlmostEqualAbs(data1.m_start.m_point.GetLatLon(), data2.m_start.m_point.GetLatLon(),
                               epsCoord),
          ());
-    TEST(base::AlmostEqualAbs(data1.m_end.m_point.GetLatLon(), data2.m_end.m_point.GetLatLon(),
+    TEST(AlmostEqualAbs(data1.m_end.m_point.GetLatLon(), data2.m_end.m_point.GetLatLon(),
                               epsCoord),
          ());
     TEST_EQUAL(static_cast<uint32_t>(std::ceil(data1.m_weight)),

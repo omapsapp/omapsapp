@@ -195,7 +195,7 @@ void StipplePenIndex::UploadResources(ref_ptr<dp::GraphicsContext> context, ref_
   for (auto const & n : pendingNodes)
     height += n.second.GetSize().y;
 
-  uint32_t const reserveBufferSize = base::NextPowOf2(height * kMaxStipplePenLength);
+  uint32_t const reserveBufferSize = math::NextPowOf2(height * kMaxStipplePenLength);
 
   SharedBufferManager & mng = SharedBufferManager::instance();
   SharedBufferManager::shared_buffer_ptr_t ptr = mng.reserveSharedBuffer(reserveBufferSize);

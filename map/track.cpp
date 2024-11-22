@@ -17,13 +17,13 @@ bool GetTrackPoint(std::vector<geometry::PointWithAltitude> const & points,
   CHECK_EQUAL(points.size(), lengths.size(), ());
 
   double const kEpsMeters = 1e-2;
-  if (base::AlmostEqualAbs(distanceInMeters, lengths.front(), kEpsMeters))
+  if (AlmostEqualAbs(distanceInMeters, lengths.front(), kEpsMeters))
   {
     pt = points.front().GetPoint();
     return true;
   }
 
-  if (base::AlmostEqualAbs(distanceInMeters, lengths.back(), kEpsMeters))
+  if (AlmostEqualAbs(distanceInMeters, lengths.back(), kEpsMeters))
   {
     pt = points.back().GetPoint();
     return true;

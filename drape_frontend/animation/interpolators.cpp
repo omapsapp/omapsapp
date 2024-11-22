@@ -12,7 +12,7 @@ double CalcAnimSpeedDuration(double pxDiff, double pxSpeed)
 {
   double constexpr kEps = 1e-5;
 
-  if (base::AlmostEqualAbs(pxDiff, 0.0, kEps))
+  if (AlmostEqualAbs(pxDiff, 0.0, kEps))
     return 0.0;
 
   return fabs(pxDiff) / pxSpeed;

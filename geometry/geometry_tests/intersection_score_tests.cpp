@@ -25,7 +25,7 @@ UNIT_TEST(IntersectionScore_PointsToPolygon)
 
     auto const score = geometry::GetIntersectionScoreForPoints(corners1, corners2);
 
-    TEST(base::AlmostEqualAbs(score, 0.9, 1e-10), ());
+    TEST(AlmostEqualAbs(score, 0.9, 1e-10), ());
   }
   {
     m2::RectD rectD = {0, 0, 10, 10};
@@ -41,7 +41,7 @@ UNIT_TEST(IntersectionScore_PointsToPolygon)
 
     auto const score = geometry::GetIntersectionScoreForPoints(corners1, corners2);
 
-    TEST(base::AlmostEqualAbs(score, 0.0, 1e-10), ());
+    TEST(AlmostEqualAbs(score, 0.0, 1e-10), ());
   }
   {
     m2::RectD rectD = {0, 0, 10, 10};
@@ -53,7 +53,7 @@ UNIT_TEST(IntersectionScore_PointsToPolygon)
     m2::AnyRectD::Corners corners2 = {m2::PointD{10.0, 10.0}, {10.0, 0.0}, {0.0, 0.0}, {0.0, 10.0}};
     auto const score = geometry::GetIntersectionScoreForPoints(corners1, corners2);
 
-    TEST(base::AlmostEqualAbs(score, 1.0, 1e-10), ());
+    TEST(AlmostEqualAbs(score, 1.0, 1e-10), ());
   }
 }
 
@@ -68,7 +68,7 @@ UNIT_TEST(IntersectionScore_TrianglesToPolygon)
     auto const score =
         geometry::GetIntersectionScoreForTriangulated(triangiulated1, triangiulated2);
 
-    TEST(base::AlmostEqualAbs(score, 0.9, 1e-10), ());
+    TEST(AlmostEqualAbs(score, 0.9, 1e-10), ());
   }
   {
     m2::RectD rectD = {0, 0, 10, 10};
@@ -90,6 +90,6 @@ UNIT_TEST(IntersectionScore_TrianglesToPolygon)
     auto const score =
         geometry::GetIntersectionScoreForTriangulated(triangiulated1, triangiulated2);
 
-    TEST(base::AlmostEqualAbs(score, 0.0, 1e-10), ());
+    TEST(AlmostEqualAbs(score, 0.0, 1e-10), ());
   }
 }

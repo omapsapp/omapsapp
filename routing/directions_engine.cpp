@@ -127,7 +127,7 @@ void DirectionsEngine::GetSegmentRangeAndAdjacentEdges(IRoadGraph::EdgeListT con
     {
       ASSERT_LESS(mercator::DistanceOnEarth(junctionPoint, edge.GetStartJunction().GetPoint()),
                   turns::kFeaturesNearTurnMeters, ());
-      angle = base::RadToDeg(turns::PiMinusTwoVectorsAngle(junctionPoint, ingoingPoint,
+      angle = math::RadToDeg(turns::PiMinusTwoVectorsAngle(junctionPoint, ingoingPoint,
                                                            edge.GetEndJunction().GetPoint()));
     }
     else

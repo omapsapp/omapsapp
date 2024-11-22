@@ -60,15 +60,15 @@ traffic::TrafficInfo::Coloring TransformToSpeedGroups(SegmentMapping const & seg
     double const ws = kv.second.m_weightedSpeed;
     double const wrs = kv.second.m_weightedRefSpeed;
     double const w = kv.second.m_weight;
-    if (base::AlmostEqualAbs(w, 0.0, kEps))
+    if (AlmostEqualAbs(w, 0.0, kEps))
     {
       LOG(LWARNING, ("A traffic segment has zero weight."));
       continue;
     }
     double const u = ws / w;
     double const v = wrs / w;
-    bool const uz = base::AlmostEqualAbs(u, 0.0, kEps);
-    bool const vz = base::AlmostEqualAbs(v, 0.0, kEps);
+    bool const uz = AlmostEqualAbs(u, 0.0, kEps);
+    bool const vz = AlmostEqualAbs(v, 0.0, kEps);
     if (uz && vz)
     {
       result[kv.first] = traffic::SpeedGroup::TempBlock;
@@ -81,7 +81,7 @@ traffic::TrafficInfo::Coloring TransformToSpeedGroups(SegmentMapping const & seg
     else
     {
       double p = 100.0 * u / v;
-      p = base::Clamp(p, 0.0, 100.0);
+      p = math::Clamp(p, 0.0, 100.0);
       result[kv.first] = traffic::GetSpeedGroupByPercentage(p);
     }
   }

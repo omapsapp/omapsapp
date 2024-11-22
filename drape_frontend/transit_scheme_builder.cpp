@@ -851,8 +851,8 @@ void UpdateShapeInfos(std::vector<ShapeInfoPT> & shapeInfos, m2::PointD const & 
 
   for (ShapeInfoPT & info : shapeInfos)
   {
-    if (base::AlmostEqualAbs(info.m_direction, newDir, kEps) ||
-        base::AlmostEqualAbs(info.m_direction, newDirReverse, kEps))
+    if (AlmostEqualAbs(info.m_direction, newDir, kEps) ||
+        AlmostEqualAbs(info.m_direction, newDirReverse, kEps))
     {
       for (auto const & color : colors)
         info.m_colors.insert(color);
@@ -1249,7 +1249,7 @@ bool StopHasMultipleShapes(std::vector<ShapeInfoPT> const & shapeInfosIn,
   {
     auto const it =
         std::find_if(shapeInfosOut.begin(), shapeInfosOut.end(), [&si](ShapeInfoPT const & so) {
-          return base::AlmostEqualAbs(si.m_direction, so.m_direction, kEps);
+          return AlmostEqualAbs(si.m_direction, so.m_direction, kEps);
         });
     if (it != shapeInfosOut.end())
       ++count;

@@ -64,28 +64,28 @@ UNIT_CLASS_TEST(PostcodePointsTest, SmokeUK)
     vector<m2::PointD> points;
     p.Get(NormalizeAndSimplifyString("aa11 0bb"), points);
     TEST_EQUAL(points.size(), 1, ());
-    TEST(base::AlmostEqualAbs(points[0], mercator::FromLatLon(1.0, 1.0), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[0], mercator::FromLatLon(1.0, 1.0), kMwmPointAccuracy), ());
   }
   {
     vector<m2::PointD> points;
     p.Get(NormalizeAndSimplifyString("aa11 1bb"), points);
     TEST_EQUAL(points.size(), 1, ());
-    TEST(base::AlmostEqualAbs(points[0], mercator::FromLatLon(2.0, 2.0), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[0], mercator::FromLatLon(2.0, 2.0), kMwmPointAccuracy), ());
   }
   {
     vector<m2::PointD> points;
     p.Get(NormalizeAndSimplifyString("aa11 2bb"), points);
     TEST_EQUAL(points.size(), 1, ());
-    TEST(base::AlmostEqualAbs(points[0], mercator::FromLatLon(3.0, 3.0), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[0], mercator::FromLatLon(3.0, 3.0), kMwmPointAccuracy), ());
   }
   {
     vector<m2::PointD> points;
     p.Get(NormalizeAndSimplifyString("aa11"), points);
     TEST_EQUAL(points.size(), 3, ());
     sort(points.begin(), points.end());
-    TEST(base::AlmostEqualAbs(points[0], mercator::FromLatLon(1.0, 1.0), kMwmPointAccuracy), ());
-    TEST(base::AlmostEqualAbs(points[1], mercator::FromLatLon(2.0, 2.0), kMwmPointAccuracy), ());
-    TEST(base::AlmostEqualAbs(points[2], mercator::FromLatLon(3.0, 3.0), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[0], mercator::FromLatLon(1.0, 1.0), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[1], mercator::FromLatLon(2.0, 2.0), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[2], mercator::FromLatLon(3.0, 3.0), kMwmPointAccuracy), ());
   }
 }
 
@@ -122,7 +122,7 @@ UNIT_CLASS_TEST(PostcodePointsTest, SmokeUS)
     vector<m2::PointD> points;
     p.Get(NormalizeAndSimplifyString("00601"), points);
     TEST_EQUAL(points.size(), 1, ());
-    TEST(base::AlmostEqualAbs(points[0], mercator::FromLatLon(18.18027, -66.75266), kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(points[0], mercator::FromLatLon(18.18027, -66.75266), kMwmPointAccuracy), ());
   }
 }
 
@@ -161,7 +161,7 @@ UNIT_CLASS_TEST(PostcodePointsTest, SearchPostcode)
     TEST(result.HasPoint(), ());
 
     auto const actual = result.GetFeatureCenter();
-    TEST(base::AlmostEqualAbs(expected, actual, kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(expected, actual, kMwmPointAccuracy), ());
   };
 
   test("BA6 7JP", mercator::FromLatLon(5.0, 4.0));

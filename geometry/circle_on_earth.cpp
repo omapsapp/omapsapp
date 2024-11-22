@@ -16,7 +16,7 @@ std::vector<m3::PointD> CreateCircleOnNorth(double radiusMeters, double angleSte
   double const z = ms::kEarthRadiusMeters * cos(angle);
 
   std::vector<m3::PointD> result;
-  double const stepRad = base::DegToRad(angleStepDegree);
+  double const stepRad = math::DegToRad(angleStepDegree);
   for (double angleRad = 0; angleRad < 2 * math::pi; angleRad += stepRad)
   {
     result.emplace_back(circleRadiusMeters * cos(angleRad),
@@ -28,25 +28,25 @@ std::vector<m3::PointD> CreateCircleOnNorth(double radiusMeters, double angleSte
 
 ms::LatLon FromEarth3dToSpherical(m3::PointD const & vec)
 {
-  ASSERT(base::AlmostEqualAbs(vec.Length(), ms::kEarthRadiusMeters, 1e-5),
+  ASSERT(AlmostEqualAbs(vec.Length(), ms::kEarthRadiusMeters, 1e-5),
          (vec.Length(), ms::kEarthRadiusMeters));
 
   double sinLatRad = vec.z / ms::kEarthRadiusMeters;
-  sinLatRad = base::Clamp(sinLatRad, -1.0, 1.0);
+  sinLatRad = math::Clamp(sinLatRad, -1.0, 1.0);
   double const cosLatRad = std::sqrt(1 - sinLatRad * sinLatRad);
   CHECK(-1.0 <= cosLatRad && cosLatRad <= 1.0, (cosLatRad));
 
   double const latRad = asin(sinLatRad);
   double sinLonRad = vec.y / ms::kEarthRadiusMeters / cosLatRad;
-  sinLonRad = base::Clamp(sinLonRad, -1.0, 1.0);
+  sinLonRad = math::Clamp(sinLonRad, -1.0, 1.0);
   double lonRad = asin(sinLonRad);
   if (vec.y > 0 && vec.x < 0)
     lonRad = math::pi - lonRad;
   else if (vec.y < 0 && vec.x < 0)
     lonRad = -(math::pi - fabs(lonRad));
 
-  auto const lat = base::RadToDeg(latRad);
-  auto const lon = base::RadToDeg(lonRad);
+  auto const lat = math::RadToDeg(latRad);
+  auto const lon = math::RadToDeg(lonRad);
 
   return {lat, lon};
 }

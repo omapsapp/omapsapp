@@ -20,28 +20,25 @@ public:
   double m_lat = kInvalid;
   double m_lon = kInvalid;
 
-  LatLon() = default;
-  LatLon(double lat, double lon) : m_lat(lat), m_lon(lon) {}
+  constexpr LatLon() = default;
+  constexpr LatLon(double lat, double lon) : m_lat(lat), m_lon(lon) {}
 
-  static LatLon Invalid() { return LatLon(kInvalid, kInvalid); }
-  static LatLon Zero() { return LatLon(0.0, 0.0); }
+  static constexpr LatLon Invalid() { return LatLon(kInvalid, kInvalid); }
+  static constexpr LatLon Zero() { return LatLon(0.0, 0.0); }
 
-  bool IsValid() const { return m_lat != kInvalid && m_lon != kInvalid; }
-  bool operator==(ms::LatLon const & rhs) const;
-  bool operator<(ms::LatLon const & rhs) const;
+  bool constexpr IsValid() const { return m_lat != kInvalid && m_lon != kInvalid; }
+  bool operator==(LatLon const & rhs) const;
+  bool operator<(LatLon const & rhs) const;
 
   bool EqualDxDy(LatLon const & p, double eps) const;
 
   struct Hash
   {
-    size_t operator()(ms::LatLon const & p) const { return base::Hash(p.m_lat, p.m_lon); }
+    size_t operator()(ms::LatLon const & p) const { return math::Hash(p.m_lat, p.m_lon); }
   };
 };
 
+bool AlmostEqualAbs(LatLon const & ll1, LatLon const & ll2, double const & eps);
+
 std::string DebugPrint(LatLon const & t);
 }  // namespace ms
-
-namespace base
-{
-bool AlmostEqualAbs(ms::LatLon const & ll1, ms::LatLon const & ll2, double const & eps);
-}  // namespace base

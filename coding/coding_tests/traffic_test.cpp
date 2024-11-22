@@ -12,10 +12,10 @@
 #include <cstdint>
 #include <vector>
 
-using namespace std;
-
-namespace coding
+namespace traffic_test
 {
+using std::vector;
+
 double CalculateLength(vector<TrafficGPSEncoder::DataPoint> const & path)
 {
   double res = 0;
@@ -30,7 +30,7 @@ double CalculateLength(vector<TrafficGPSEncoder::DataPoint> const & path)
 
 void Test(vector<TrafficGPSEncoder::DataPoint> & points)
 {
-  double const kEps = 1e-5;
+  double constexpr kEps = 1e-5;
 
   for (uint32_t version = 0; version <= TrafficGPSEncoder::kLatestVersion; ++version)
   {
@@ -48,9 +48,9 @@ void Test(vector<TrafficGPSEncoder::DataPoint> & points)
     {
       TEST_EQUAL(points[i].m_timestamp, result[i].m_timestamp,
                  (points[i].m_timestamp, result[i].m_timestamp));
-      TEST(base::AlmostEqualAbsOrRel(points[i].m_latLon.m_lat, result[i].m_latLon.m_lat, kEps),
+      TEST(AlmostEqualAbsOrRel(points[i].m_latLon.m_lat, result[i].m_latLon.m_lat, kEps),
            (points[i].m_latLon.m_lat, result[i].m_latLon.m_lat));
-      TEST(base::AlmostEqualAbsOrRel(points[i].m_latLon.m_lon, result[i].m_latLon.m_lon, kEps),
+      TEST(AlmostEqualAbsOrRel(points[i].m_latLon.m_lon, result[i].m_latLon.m_lon, kEps),
            (points[i].m_latLon.m_lon, result[i].m_latLon.m_lon));
     }
 
@@ -150,4 +150,4 @@ UNIT_TEST(Traffic_Serialization_ExtremeLatLon)
   };
   Test(path);
 }
-}  // namespace coding
+}  // namespace traffic_test

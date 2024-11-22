@@ -69,7 +69,7 @@ namespace tesselator
       {
         size_t operator()(std::pair<T1, T2> const & p) const
         {
-          return base::Hash(p.first, p.second);
+          return math::Hash(p.first, p.second);
         }
       };
 

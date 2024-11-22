@@ -549,7 +549,7 @@ void CacheUserLines(ref_ptr<dp::GraphicsContext> context, TileKey const & tileKe
   // This var is used only if simplify == true.
   double minSegmentSqrLength = 1.0;
   if (simplify)
-    minSegmentSqrLength = base::Pow2(4.0 * vs * GetScreenScale(tileKey.m_zoomLevel));
+    minSegmentSqrLength = math::Pow2(4.0 * vs * GetScreenScale(tileKey.m_zoomLevel));
 
   m2::RectD const tileRect = tileKey.GetGlobalRect();
 

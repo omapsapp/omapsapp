@@ -202,7 +202,7 @@ void FeaturesRoadGraphBase::GetJunctionTypes(geometry::PointWithAltitude const &
   m_dataSource.ForEachStreet([&](FeatureType & ft)
   {
     if (types.Empty() && ft.GetGeomType() == feature::GeomType::Point &&
-        base::AlmostEqualAbs(ft.GetCenter(), cross, kMwmPointAccuracy))
+        AlmostEqualAbs(ft.GetCenter(), cross, kMwmPointAccuracy))
     {
       types = feature::TypesHolder(ft);
     }

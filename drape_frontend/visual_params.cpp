@@ -61,7 +61,7 @@ double VisualParams::GetFontScale() const
 void VisualParams::SetFontScale(double fontScale)
 {
   ASSERT_INITED;
-  m_fontScale = base::Clamp(fontScale, 0.5, 2.0);
+  m_fontScale = math::Clamp(fontScale, 0.5, 2.0);
 }
 
 void VisualParams::SetVisualScale(double visualScale)
@@ -186,7 +186,7 @@ int GetTileScaleBase(m2::RectD const & r)
 {
   double const sz = std::max(r.SizeX(), r.SizeY());
   ASSERT_GREATER(sz, 0., ("Rect should not be a point:", r));
-  return std::max(1, base::SignedRound(std::log2(mercator::Bounds::kRangeX / sz)));
+  return std::max(1, math::SignedRound(std::log2(mercator::Bounds::kRangeX / sz)));
 }
 
 double GetTileScaleBase(double drawScale)
@@ -224,12 +224,12 @@ m2::RectD GetRectForDrawScale(int drawScale, m2::PointD const & center)
 
 m2::RectD GetRectForDrawScale(double drawScale, m2::PointD const & center, uint32_t tileSize, double visualScale)
 {
-  return GetRectForDrawScale(base::SignedRound(drawScale), center, tileSize, visualScale);
+  return GetRectForDrawScale(math::SignedRound(drawScale), center, tileSize, visualScale);
 }
 
 m2::RectD GetRectForDrawScale(double drawScale, m2::PointD const & center)
 {
-  return GetRectForDrawScale(base::SignedRound(drawScale), center);
+  return GetRectForDrawScale(math::SignedRound(drawScale), center);
 }
 
 uint32_t CalculateTileSize(uint32_t screenWidth, uint32_t screenHeight)
@@ -257,9 +257,9 @@ uint32_t CalculateTileSize(uint32_t screenWidth, uint32_t screenHeight)
   }
 
 #ifndef OMIM_OS_DESKTOP
-  return static_cast<uint32_t>(base::Clamp(res / 2, 256, 1024));
+  return static_cast<uint32_t>(math::Clamp(res / 2, 256, 1024));
 #else
-  return static_cast<uint32_t>(base::Clamp(res / 2, 512, 1024));
+  return static_cast<uint32_t>(math::Clamp(res / 2, 512, 1024));
 #endif
 }
 
@@ -312,7 +312,7 @@ void ExtractZoomFactors(ScreenBase const & s, double & zoom, int & index, float 
 double GetNormalizedZoomLevel(double screenScale, int minZoom)
 {
   double const kMaxZoom = scales::GetUpperStyleScale() + 1.0;
-  return base::Clamp((GetZoomLevel(screenScale) - minZoom) / (kMaxZoom - minZoom), 0.0, 1.0);
+  return math::Clamp((GetZoomLevel(screenScale) - minZoom) / (kMaxZoom - minZoom), 0.0, 1.0);
 }
 
 double GetScreenScale(double zoomLevel)
@@ -330,7 +330,7 @@ double GetZoomLevel(double screenScale)
   auto const pxLen = static_cast<double>(p.GetTileSize());
   auto const len = pxLen * screenScale;
   auto const factor = mercator::Bounds::kRangeX / len;
-  return base::Clamp(GetDrawTileScale(fabs(std::log2(factor))), 1.0, scales::GetUpperStyleScale() + 1.0);
+  return math::Clamp(GetDrawTileScale(fabs(std::log2(factor))), 1.0, scales::GetUpperStyleScale() + 1.0);
 }
 
 float CalculateRadius(ScreenBase const & screen, ArrayView<float> const & zoom2radius)

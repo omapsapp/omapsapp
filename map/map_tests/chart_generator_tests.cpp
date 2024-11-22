@@ -8,13 +8,14 @@
 #include <cstdint>
 #include <vector>
 
-using namespace std;
+namespace chart_generator_tests
+{
+using std::vector;
+using maps::kAltitudeChartBPP;
 
 namespace
 {
 double constexpr kEpsilon = 0.00001;
-
-using namespace maps;
 
 bool AlmostEqualAbs(vector<double> const & v1, vector<double> const & v2)
 {
@@ -23,7 +24,7 @@ bool AlmostEqualAbs(vector<double> const & v1, vector<double> const & v2)
 
   for (size_t i = 0; i < v1.size(); ++i)
   {
-    if (!base::AlmostEqualAbs(v1[i], v2[i], kEpsilon))
+    if (!::AlmostEqualAbs(v1[i], v2[i], kEpsilon))
       return false;
   }
   return true;
@@ -50,6 +51,7 @@ void TestAngleColors(size_t width, size_t height, vector<uint8_t> const & frameB
   TEST(IsColor(frameBuffer, kAltitudeChartBPP * height * width - kAltitudeChartBPP /* startColorIdx */,
                expectedR, expectedG, expectedB, expectedA), ());
 }
+}  // namespace
 
 UNIT_TEST(ScaleChartData_Test)
 {
@@ -261,4 +263,4 @@ UNIT_TEST(GenerateChart_Test)
                230 /* expectedG */, 140 /* expectedB */, 255 /* expectedA */),
        ());
 }
-}  // namespace
+}  // namespace chart_generator_tests

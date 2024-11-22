@@ -150,7 +150,7 @@ bool RestrictionCollector::FeatureHasPointWithCoords(uint32_t featureId,
   for (uint32_t i = 0; i < pointsCount; ++i)
   {
     static double constexpr kEps = 1e-5;
-    if (base::AlmostEqualAbs(mercator::FromLatLon(roadGeometry.GetPoint(i)), coords, kEps))
+    if (AlmostEqualAbs(mercator::FromLatLon(roadGeometry.GetPoint(i)), coords, kEps))
       return true;
   }
 
@@ -246,9 +246,9 @@ bool RestrictionCollector::CheckAndProcessUTurn(Restriction::Type & restrictionT
     // https://wiki.openstreetmap.org/wiki/Relation:restriction
     static auto constexpr kEps = 1e-5;
     bool const viaIsFirstNode =
-        base::AlmostEqualAbs(coords, mercator::FromLatLon(road.GetPoint(0)), kEps);
+        AlmostEqualAbs(coords, mercator::FromLatLon(road.GetPoint(0)), kEps);
     bool const viaIsLastNode =
-        base::AlmostEqualAbs(coords, mercator::FromLatLon(road.GetPoint(n - 1)), kEps);
+        AlmostEqualAbs(coords, mercator::FromLatLon(road.GetPoint(n - 1)), kEps);
 
     if (viaIsFirstNode)
     {

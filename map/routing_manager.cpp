@@ -289,7 +289,7 @@ drape_ptr<df::Subroute> CreateDrapeSubroute(vector<RouteSegment> const & segment
     // To prevent visual artefacts, in the case when all head segments are real
     // m_headFakeDistance must be less than 0.0.
     auto const headLen = (firstReal > 0) ? segments[firstReal - 1].GetDistFromBeginningMerc() - baseDistance : 0.0;
-    if (base::AlmostEqualAbs(headLen, 0.0, kEps))
+    if (AlmostEqualAbs(headLen, 0.0, kEps))
       subroute->m_headFakeDistance = -kBias;
     else
       subroute->m_headFakeDistance = headLen;
@@ -298,7 +298,7 @@ drape_ptr<df::Subroute> CreateDrapeSubroute(vector<RouteSegment> const & segment
     // m_tailFakeDistance must be greater than the length of the subroute.
     auto const subrouteLen = segments.back().GetDistFromBeginningMerc() - baseDistance;
     auto const tailLen = segments[lastReal].GetDistFromBeginningMerc() - baseDistance;
-    if (base::AlmostEqualAbs(tailLen, subrouteLen, kEps))
+    if (AlmostEqualAbs(tailLen, subrouteLen, kEps))
       subroute->m_tailFakeDistance = subrouteLen + kBias;
     else
       subroute->m_tailFakeDistance = tailLen;
@@ -1242,7 +1242,7 @@ void RoutingManager::DistanceAltitude::Simplify(double altitudeDeviation)
 //                      eps, distFn, AccumulateSkipSmallTrg(distFn, out, eps));
 
   // 2. Default square distance from segment.
-  SimplifyDefault(IterT(*this, true), IterT(*this, false), base::Pow2(altitudeDeviation), out);
+  SimplifyDefault(IterT(*this, true), IterT(*this, false), math::Pow2(altitudeDeviation), out);
 
   size_t const count = out.size();
   m_distances.resize(count);

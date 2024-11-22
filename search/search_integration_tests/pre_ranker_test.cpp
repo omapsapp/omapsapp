@@ -163,7 +163,7 @@ UNIT_CLASS_TEST(PreRankerTest, Smoke)
     TEST_LESS(index, pois.size(), ());
 
     TEST(!checked[index], (index));
-    TEST(base::AlmostEqualAbs(distances[index], results[i].GetDistance(), 1.0 /* 1 meter epsilon */),
+    TEST(AlmostEqualAbs(distances[index], results[i].GetDistance(), 1.0 /* 1 meter epsilon */),
          (distances[index], results[i].GetDistance()));
     checked[index] = true;
   }

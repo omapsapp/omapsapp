@@ -36,7 +36,7 @@ struct hash<generator::CompositeId>
 {
   size_t operator()(generator::CompositeId const & id) const
   {
-    return base::Hash(id.m_mainId, id.m_additionalId);
+    return math::Hash(id.m_mainId, id.m_additionalId);
   }
 };
 }  // namespace std

@@ -23,7 +23,7 @@ public:
   {
     ASSERT_GREATER(m_windowSize, 0, ());
     m_windowSize = windowSize;
-    m_removeMultiplier = base::PowUint(m_multiplier, m_windowSize - 1);
+    m_removeMultiplier = math::PowUint(m_multiplier, m_windowSize - 1);
 #ifdef DEBUG
     while (!m_queue.empty()) m_queue.pop();
 #endif

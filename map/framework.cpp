@@ -2335,7 +2335,7 @@ void Framework::PredictLocation(double & lat, double & lon, double accuracy,
                                 double bearing, double speed, double elapsedSeconds)
 {
   double offsetInM = speed * elapsedSeconds;
-  double angle = base::DegToRad(90.0 - bearing);
+  double angle = math::DegToRad(90.0 - bearing);
 
   m2::PointD mercatorPt = mercator::MetersToXY(lon, lat, accuracy).Center();
   mercatorPt = mercator::GetSmPoint(mercatorPt, offsetInM * cos(angle), offsetInM * sin(angle));

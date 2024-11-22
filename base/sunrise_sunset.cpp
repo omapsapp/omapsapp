@@ -118,13 +118,13 @@ std::pair<DayEventType, time_t> CalculateDayEventTime(time_t timeUtc,
 
   // 4. calculate the Sun's true longitude
 
-  double L = M + (1.916 * sin(base::DegToRad(M))) + (0.020 * sin(2 * base::DegToRad(M))) + 282.634;
+  double L = M + (1.916 * sin(math::DegToRad(M))) + (0.020 * sin(2 * math::DegToRad(M))) + 282.634;
   // NOTE: L potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
   L = NormalizeAngle(L);
 
   // 5a. calculate the Sun's right ascension
 
-  double RA = base::RadToDeg( atan(0.91764 * tan(base::DegToRad(L))) );
+  double RA = math::RadToDeg( atan(0.91764 * tan(math::DegToRad(L))) );
   // NOTE: RA potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
   RA = NormalizeAngle(RA);
 
@@ -140,12 +140,12 @@ std::pair<DayEventType, time_t> CalculateDayEventTime(time_t timeUtc,
 
   // 6. calculate the Sun's declination
 
-  double sinDec = 0.39782 * sin(base::DegToRad(L));
+  double sinDec = 0.39782 * sin(math::DegToRad(L));
   double cosDec = cos(asin(sinDec));
 
   // 7a. calculate the Sun's local hour angle
 
-  double cosH = (cos(base::DegToRad(kZenith)) - (sinDec * sin(base::DegToRad(latitude)))) / (cosDec * cos(base::DegToRad(latitude)));
+  double cosH = (cos(math::DegToRad(kZenith)) - (sinDec * sin(math::DegToRad(latitude)))) / (cosDec * cos(math::DegToRad(latitude)));
 
   // if cosH > 1 then sun is never rises on this location on specified date (polar night)
   // if cosH < -1 then sun is never sets on this location on specified date (polar day)
@@ -163,9 +163,9 @@ std::pair<DayEventType, time_t> CalculateDayEventTime(time_t timeUtc,
 
   double H = 0;
   if (sunrise)
-    H = 360 - base::RadToDeg(acos(cosH));
+    H = 360 - math::RadToDeg(acos(cosH));
   else
-    H = base::RadToDeg(acos(cosH));
+    H = math::RadToDeg(acos(cosH));
 
   H = H / 15;
 

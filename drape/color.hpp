@@ -38,9 +38,9 @@ struct Color
 
   constexpr Color operator*(float s) const
   {
-    return {static_cast<uint8_t>(base::Clamp(GetRedF() * s, 0.0f, 1.0f) * 255.0f),
-            static_cast<uint8_t>(base::Clamp(GetGreenF() * s, 0.0f, 1.0f) * 255.0f),
-            static_cast<uint8_t>(base::Clamp(GetBlueF() * s, 0.0f, 1.0f) * 255.0f), GetAlpha()};
+    return {static_cast<uint8_t>(math::Clamp(GetRedF() * s, 0.0f, 1.0f) * 255.0f),
+            static_cast<uint8_t>(math::Clamp(GetGreenF() * s, 0.0f, 1.0f) * 255.0f),
+            static_cast<uint8_t>(math::Clamp(GetBlueF() * s, 0.0f, 1.0f) * 255.0f), GetAlpha()};
   }
 
   constexpr static Color Black() { return {0, 0, 0, 255}; }

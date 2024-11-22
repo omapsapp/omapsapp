@@ -97,7 +97,7 @@ void CheckCameraMapsEquality(CameraMap const & lhs, CameraMap const & rhs, doubl
     // It can differ on Jenknins and local computer.
     TEST_EQUAL(vectorL[i].first.GetPointId(), vectorR[i].first.GetPointId(), ());
     TEST_EQUAL(vectorL[i].second.m_maxSpeedKmPH, vectorR[i].second.m_maxSpeedKmPH, ());
-    TEST(base::AlmostEqualAbs(vectorL[i].second.m_coef, vectorR[i].second.m_coef, epsilon), ());
+    TEST(AlmostEqualAbs(vectorL[i].second.m_coef, vectorR[i].second.m_coef, epsilon), ());
   }
 }
 
@@ -352,7 +352,7 @@ UNIT_TEST(SpeedCameraGenerationTest_CameraIsNearFeature_1)
   auto epsilon = mercator::DistanceOnEarth({0, 0}, {kMwmPointAccuracy, kMwmPointAccuracy}) /
                  mercator::DistanceOnEarth(mercator::FromLatLon(55.7793100, 37.3699100),
                                            mercator::FromLatLon(55.7793300, 37.3699300));
-  epsilon = base::Clamp(epsilon, 0.0, 1.0);
+  epsilon = math::Clamp(epsilon, 0.0, 1.0);
   CameraMap const answer = {
       {SegmentCoord(0, 0), std::vector<RouteSegment::SpeedCamera>{{0.5, 100}}}};
   TestSpeedCameraSectionBuilding(osmContent, answer, epsilon);
@@ -389,7 +389,7 @@ UNIT_TEST(SpeedCameraGenerationTest_CameraIsNearFeature_2)
   auto epsilon = mercator::DistanceOnEarth({0, 0}, {kMwmPointAccuracy, kMwmPointAccuracy}) /
                  mercator::DistanceOnEarth(mercator::FromLatLon(55.7793100, 37.3699100),
                                            mercator::FromLatLon(55.7793300, 37.3699300));
-  epsilon = base::Clamp(epsilon, 0.0, 1.0);
+  epsilon = math::Clamp(epsilon, 0.0, 1.0);
 
   CameraMap const answer = {
     {SegmentCoord(0, 0), std::vector<RouteSegment::SpeedCamera>{{0.25, 100}}}

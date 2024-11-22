@@ -204,7 +204,7 @@ void TestRouteLength(Route const & route, double expectedRouteMeters, double rel
 {
   double const delta = max(expectedRouteMeters * relativeError, kErrorMeters);
   double const routeMeters = route.GetTotalDistanceMeters();
-  TEST(base::AlmostEqualAbs(routeMeters, expectedRouteMeters, delta),
+  TEST(AlmostEqualAbs(routeMeters, expectedRouteMeters, delta),
        ("Route length test failed. Expected:", expectedRouteMeters, "have:", routeMeters,
         "delta:", delta));
 }
@@ -213,7 +213,7 @@ void TestRouteTime(Route const & route, double expectedRouteSeconds, double rela
 {
   double const delta = max(expectedRouteSeconds * relativeError, kErrorSeconds);
   double const routeSeconds = route.GetTotalTimeSec();
-  TEST(base::AlmostEqualAbs(routeSeconds, expectedRouteSeconds, delta),
+  TEST(AlmostEqualAbs(routeSeconds, expectedRouteSeconds, delta),
        ("Route time test failed. Expected:", expectedRouteSeconds, "have:", routeSeconds,
         "delta:", delta));
 }
@@ -222,7 +222,7 @@ void TestRoutePointsNumber(Route const & route, size_t expectedPointsNumber, dou
 {
   CHECK_GREATER_OR_EQUAL(relativeError, 0.0, ());
   size_t const routePoints = route.GetPoly().GetSize();
-  TEST(base::AlmostEqualRel(static_cast<double>(routePoints),
+  TEST(AlmostEqualRel(static_cast<double>(routePoints),
                             static_cast<double>(expectedPointsNumber), relativeError),
        ("Route points test failed. Expected:", expectedPointsNumber, "have:", routePoints,
         "relative error:", relativeError));

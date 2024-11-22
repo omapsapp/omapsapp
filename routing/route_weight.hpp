@@ -67,8 +67,8 @@ public:
     return m_numPassThroughChanges == rhs.m_numPassThroughChanges &&
            m_numAccessChanges == rhs.m_numAccessChanges &&
            m_numAccessConditionalPenalties == rhs.m_numAccessConditionalPenalties &&
-           base::AlmostEqualAbs(m_weight, rhs.m_weight, epsilon) &&
-           base::AlmostEqualAbs(m_transitTime, rhs.m_transitTime, epsilon);
+           AlmostEqualAbs(m_weight, rhs.m_weight, epsilon) &&
+           AlmostEqualAbs(m_transitTime, rhs.m_transitTime, epsilon);
   }
 
   friend std::ostream & operator<<(std::ostream & os, RouteWeight const & routeWeight);

@@ -26,11 +26,11 @@ UNIT_TEST(TurnNotificationSettings_MetersTest)
                           measurement_utils::Units::Metric /* lengthUnits */);
 
   TEST(settings.IsValid(), ());
-  TEST(base::AlmostEqualAbs(
+  TEST(AlmostEqualAbs(
       settings.ConvertMetersPerSecondToUnitsPerSecond(20.), 20., kEps), ());
-  TEST(base::AlmostEqualAbs(
+  TEST(AlmostEqualAbs(
       settings.ConvertMetersPerSecondToUnitsPerSecond(0.), 0., kEps), ());
-  TEST(base::AlmostEqualAbs(settings.ConvertUnitsToMeters(300. /* distanceInUnits */), 300., kEps), ());
+  TEST(AlmostEqualAbs(settings.ConvertUnitsToMeters(300. /* distanceInUnits */), 300., kEps), ());
   TEST_EQUAL(settings.RoundByPresetSoundedDistancesUnits(300 /* distanceInUnits */), 300, ());
   TEST_EQUAL(settings.RoundByPresetSoundedDistancesUnits(0 /* distanceInUnits */), 100, ());
 
@@ -57,11 +57,11 @@ UNIT_TEST(TurnNotificationSettings_FeetTest)
                           measurement_utils::Units::Imperial /* lengthUnits */);
 
   TEST(settings.IsValid(), ());
-  TEST(base::AlmostEqualAbs(
+  TEST(AlmostEqualAbs(
       settings.ConvertMetersPerSecondToUnitsPerSecond(20.), 65., kEps), ());
-  TEST(base::AlmostEqualAbs(
+  TEST(AlmostEqualAbs(
       settings.ConvertMetersPerSecondToUnitsPerSecond(0.), 0., kEps), ());
-  TEST(base::AlmostEqualAbs(settings.ConvertUnitsToMeters(300. /* distanceInUnits */), 91., kEps), ());
+  TEST(AlmostEqualAbs(settings.ConvertUnitsToMeters(300. /* distanceInUnits */), 91., kEps), ());
   TEST_EQUAL(settings.RoundByPresetSoundedDistancesUnits(500 /* distanceInUnits */), 600, ());
   TEST_EQUAL(settings.RoundByPresetSoundedDistancesUnits(0 /* distanceInUnits */), 200, ());
 }

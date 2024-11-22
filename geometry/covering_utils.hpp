@@ -84,7 +84,7 @@ void CoverObject(IntersectF const & intersect, uint64_t cellPenaltyArea, CellIdC
     return;
   }
 
-  uint64_t const cellArea = base::Pow2(uint64_t(1 << (cellDepth - 1 - cell.Level())));
+  uint64_t const cellArea = math::Pow2(uint64_t(1 << (cellDepth - 1 - cell.Level())));
   CellObjectIntersection const intersection = intersect(cell);
 
   if (intersection == CELL_OBJECT_NO_INTERSECTION)
@@ -101,7 +101,7 @@ void CoverObject(IntersectF const & intersect, uint64_t cellPenaltyArea, CellIdC
 
   uint64_t subdivArea = 0;
   for (size_t i = 0; i < subdiv.size(); ++i)
-    subdivArea += base::Pow2(uint64_t(1 << (cellDepth - 1 - subdiv[i].Level())));
+    subdivArea += math::Pow2(uint64_t(1 << (cellDepth - 1 - subdiv[i].Level())));
 
   ASSERT(!subdiv.empty(), (cellPenaltyArea, out, cell));
 

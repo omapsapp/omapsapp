@@ -4,6 +4,7 @@
 #include "geometry/point3d.hpp"
 
 #include "base/assert.hpp"
+#include "base/math.hpp"
 
 #include <algorithm>
 #include <cmath>
@@ -19,8 +20,8 @@ m3::PointD GetPointOnSphere(LatLon const & ll, double sphereRadius)
   ASSERT(LatLon::kMinLat <= ll.m_lat && ll.m_lat <= LatLon::kMaxLat, (ll));
   ASSERT(LatLon::kMinLon <= ll.m_lon && ll.m_lon <= LatLon::kMaxLon, (ll));
 
-  double const latRad = base::DegToRad(ll.m_lat);
-  double const lonRad = base::DegToRad(ll.m_lon);
+  double const latRad = math::DegToRad(ll.m_lat);
+  double const lonRad = math::DegToRad(ll.m_lon);
 
   double const x = sphereRadius * cos(latRad) * cos(lonRad);
   double const y = sphereRadius * cos(latRad) * sin(lonRad);
@@ -44,9 +45,9 @@ double AreaOnEarth(LatLon const & ll1, LatLon const & ll2, LatLon const & ll3)
 
   double const triple = m3::DotProduct(a, m3::CrossProduct(b, c));
 
-  ASSERT(base::AlmostEqualAbs(a.Length(), 1.0, 1e-5), ());
-  ASSERT(base::AlmostEqualAbs(b.Length(), 1.0, 1e-5), ());
-  ASSERT(base::AlmostEqualAbs(c.Length(), 1.0, 1e-5), ());
+  ASSERT(::AlmostEqualAbs(a.Length(), 1.0, 1e-5), ());
+  ASSERT(::AlmostEqualAbs(b.Length(), 1.0, 1e-5), ());
+  ASSERT(::AlmostEqualAbs(c.Length(), 1.0, 1e-5), ());
 
   double constexpr lengthMultiplication = 1.0;  // a.Length() * b.Length() * c.Length()
   double const abc = m3::DotProduct(a, b);  // * c.Length() == 1

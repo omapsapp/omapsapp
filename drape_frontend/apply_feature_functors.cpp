@@ -774,7 +774,7 @@ ApplyLineFeatureGeometry::ApplyLineFeatureGeometry(TileKey const & tileKey, TIns
   : TBase(tileKey, insertShape, f, CaptionDescription())
   , m_currentScaleGtoP(currentScaleGtoP)
   // TODO(pastk) : calculate just once in the RuleDrawer.
-  , m_minSegmentSqrLength(base::Pow2(4.0 * df::VisualParams::Instance().GetVisualScale() / currentScaleGtoP))
+  , m_minSegmentSqrLength(math::Pow2(4.0 * df::VisualParams::Instance().GetVisualScale() / currentScaleGtoP))
   , m_simplify(tileKey.m_zoomLevel >= 10 && tileKey.m_zoomLevel <= 12)
 {
   m_spline.Reset(new m2::Spline(f.GetPointsCount()));

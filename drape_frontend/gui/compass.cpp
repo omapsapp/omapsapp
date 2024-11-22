@@ -51,8 +51,8 @@ public:
 
   bool Update(ScreenBase const & screen) override
   {
-    static double const kVisibleStartAngle = base::DegToRad(5.0);
-    static double const kVisibleEndAngle = base::DegToRad(355.0);
+    static double const kVisibleStartAngle = math::DegToRad(5.0);
+    static double const kVisibleEndAngle = math::DegToRad(355.0);
 
     auto const angle = static_cast<float>(ang::AngleIn2PI(screen.GetAngle()));
 

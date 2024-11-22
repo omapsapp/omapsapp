@@ -50,7 +50,7 @@ public:
 
     bool EqualCoef(SpeedCamera const & rhs) const
     {
-      return base::AlmostEqualAbs(m_coef, rhs.m_coef, 1.0E-5);
+      return AlmostEqualAbs(m_coef, rhs.m_coef, 1.0E-5);
     }
 
     bool operator<(SpeedCamera const & rhs) const

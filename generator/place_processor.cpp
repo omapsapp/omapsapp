@@ -81,7 +81,7 @@ bool IsWorsePlace(FeaturePlace const & left, FeaturePlace const & right)
     // We need to compare areas to choose bigger feature from multipolygonal features.
     // |kMaxAreaM2| should be greater than cities exclaves (like airports or Zelenograd for Moscow).
     double const kMaxAreaM2 = 4e8;
-    area = base::Clamp(area, 0.0, kMaxAreaM2);
+    area = math::Clamp(area, 0.0, kMaxAreaM2);
     return area / kMaxAreaM2;
   };
 

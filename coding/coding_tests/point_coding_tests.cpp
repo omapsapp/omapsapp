@@ -102,7 +102,7 @@ UNIT_TEST(PointDToPointU_WithLimitRect)
           auto const pt = m2::PointD(distX(rng), distY(rng));
           auto const pointU = PointDToPointU(pt, coordBits, limitRect);
           auto const pointD = PointUToPointD(pointU, coordBits, limitRect);
-          TEST(base::AlmostEqualAbs(pt, pointD, kEps), (limitRect, pt, pointD, coordBits, kEps));
+          TEST(AlmostEqualAbs(pt, pointD, kEps), (limitRect, pt, pointD, coordBits, kEps));
         }
       }
     }

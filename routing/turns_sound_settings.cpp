@@ -36,7 +36,7 @@ uint32_t Settings::ComputeTurnDistanceM(double speedMetersPerSecond) const
   ASSERT(IsValid(), ());
 
   double const turnNotificationDistanceM = m_timeSeconds * speedMetersPerSecond;
-  return static_cast<uint32_t>(base::Clamp(turnNotificationDistanceM,
+  return static_cast<uint32_t>(math::Clamp(turnNotificationDistanceM,
                                            ConvertUnitsToMeters(m_minDistanceUnits),
                                            ConvertUnitsToMeters(m_maxDistanceUnits)));
 }
@@ -107,7 +107,7 @@ uint32_t Settings::ComputeDistToPronounceDistM(double speedMetersPerSecond, bool
   uint32_t const startBeforeMeters =
       static_cast<uint32_t>(speedMetersPerSecond * startBeforeSeconds);
 
-  return base::Clamp(startBeforeMeters, minStartBeforeMeters, maxStartBeforeMeters);
+  return math::Clamp(startBeforeMeters, minStartBeforeMeters, maxStartBeforeMeters);
 }
 
 string DebugPrint(Notification const & notification)

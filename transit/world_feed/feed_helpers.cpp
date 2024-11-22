@@ -68,12 +68,12 @@ ProjectionData GetProjection(std::vector<m2::PointD> const & polyline, size_t in
   CHECK_GREATER_OR_EQUAL(next, 0, ());
   CHECK_LESS(static_cast<size_t>(next), polyline.size(), ());
 
-  if (base::AlmostEqualAbs(proj.m_point, polyline[index], kEps))
+  if (AlmostEqualAbs(proj.m_point, polyline[index], kEps))
   {
     projData.m_indexOnShape = index;
     projData.m_needsInsertion = false;
   }
-  else if (base::AlmostEqualAbs(proj.m_point, polyline[next], kEps))
+  else if (AlmostEqualAbs(proj.m_point, polyline[next], kEps))
   {
     projData.m_indexOnShape = next;
     projData.m_needsInsertion = false;
@@ -360,7 +360,7 @@ std::pair<LineSegments, LineSegments> FindIntersections(std::vector<m2::PointD> 
 
       for (size_t k = 0; k < len; ++k)
       {
-        if (!base::AlmostEqualAbs(line1[i + k], line2[j + k], eps))
+        if (!AlmostEqualAbs(line1[i + k], line2[j + k], eps))
           break;
         ++intersection;
       }
@@ -464,7 +464,7 @@ std::vector<size_t> GetMinDistIndexes(std::vector<m2::PointD> const & shape,
   {
     double dist = mercator::DistanceOnEarth(shape[i], point);
 
-    if (base::AlmostEqualAbs(dist, minDist, kEps))
+    if (AlmostEqualAbs(dist, minDist, kEps))
     {
       indexes.push_back(i);
       continue;

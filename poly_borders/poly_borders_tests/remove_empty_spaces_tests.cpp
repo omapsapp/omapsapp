@@ -41,7 +41,7 @@ bool ConsistsOf(Polygon const & polygon, vector<m2::PointD> const & points)
     for (size_t i = 0; i < polygon.m_points.size(); ++i)
     {
       static double constexpr kEps = 1e-5;
-      if (base::AlmostEqualAbs(point, polygon.m_points[i].m_point, kEps) &&
+      if (AlmostEqualAbs(point, polygon.m_points[i].m_point, kEps) &&
           used.count(i) == 0)
       {
         used.emplace(i);

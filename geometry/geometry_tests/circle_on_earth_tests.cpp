@@ -62,7 +62,7 @@ UNIT_TEST(CircleOnEarthEquator)
 
   std::vector<m2::PointD> result;
   result.reserve(kN);
-  auto constexpr kStepRad = base::DegToRad(kAngleStepDegree);
+  auto constexpr kStepRad = math::DegToRad(kAngleStepDegree);
   double angleSumRad = 0.0;
   double angleRad = -math::pi2;
   while (angleSumRad < 2 * math::pi)

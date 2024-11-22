@@ -396,8 +396,8 @@ double Route::GetPolySegAngle(size_t ind) const
   {
     p2 = m_poly.GetPolyline().GetPoint(i);
   }
-  while (m2::AlmostEqualULPs(p1, p2) && ++i < polySz);
-  return (i == polySz) ? 0 : base::RadToDeg(ang::AngleTo(p1, p2));
+  while (AlmostEqualULPs(p1, p2) && ++i < polySz);
+  return (i == polySz) ? 0 : math::RadToDeg(ang::AngleTo(p1, p2));
 }
 
 bool Route::MatchLocationToRoute(location::GpsInfo & location,

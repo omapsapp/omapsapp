@@ -76,7 +76,7 @@ bool ConvergenceTest(double lat, double lon, double latEps, double lonEps)
     ge0::LatLonToString(tmpLat, tmpLon, urlPrefix + 0, 9);
     parser.DecodeLatLon(urlPrefix, tmpLat, tmpLon);
   }
-  return base::AlmostEqualAbs(lat, tmpLat, latEps) && base::AlmostEqualAbs(lon, tmpLon, lonEps);
+  return AlmostEqualAbs(lat, tmpLat, latEps) && AlmostEqualAbs(lon, tmpLon, lonEps);
 }
 
 UNIT_TEST(Base64DecodingWorksForAValidChar)

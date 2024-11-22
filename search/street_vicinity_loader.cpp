@@ -26,7 +26,7 @@ void StreetVicinityLoader::SetContext(MwmContext * context)
 
   m_context = context;
   auto const scaleRange = m_context->m_value.GetHeader().GetScaleRange();
-  m_scale = base::Clamp(m_scale, scaleRange.first, scaleRange.second);
+  m_scale = math::Clamp(m_scale, scaleRange.first, scaleRange.second);
 }
 
 void StreetVicinityLoader::OnQueryFinished() { m_cache.ClearIfNeeded(); }

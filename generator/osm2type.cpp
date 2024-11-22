@@ -1391,7 +1391,7 @@ void GetNameAndType(OsmElement * p, FeatureBuilderParams & params,
           // atoi error value (0) should match empty layer constant.
           static_assert(feature::LAYER_EMPTY == 0);
           params.layer = atoi(v.c_str());
-          params.layer = base::Clamp(params.layer, int8_t{feature::LAYER_LOW}, int8_t{feature::LAYER_HIGH});
+          params.layer = math::Clamp(params.layer, int8_t{feature::LAYER_LOW}, int8_t{feature::LAYER_HIGH});
         }
       }},
   });

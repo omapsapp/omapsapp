@@ -46,7 +46,7 @@ feature::FeatureBuilder::PointSeq::iterator GetIterOnRoad(m2::PointD const & poi
 {
   return std::find_if(road.begin(), road.end(), [&point](m2::PointD const & pointOnRoad)
   {
-    return m2::AlmostEqualAbs(pointOnRoad, point, kMwmPointAccuracy);
+    return AlmostEqualAbs(pointOnRoad, point, kMwmPointAccuracy);
   });
 }
 } // namespace
@@ -149,7 +149,7 @@ MiniRoundaboutTransformer::PointsT MiniRoundaboutTransformer::CreateSurrogateRoa
       *itPointOnSurrogateRoad /* source */, roundaboutOnRoad.m_location /* target */,
       m_radiusMercator /* dist */);
 
-  if (m2::AlmostEqualAbs(nextPointOnSurrogateRoad, *itPointOnSurrogateRoad, kMwmPointAccuracy))
+  if (AlmostEqualAbs(nextPointOnSurrogateRoad, *itPointOnSurrogateRoad, kMwmPointAccuracy))
     return {};
 
   AddPointToCircle(roundaboutCircle, nextPointOnSurrogateRoad);
@@ -174,7 +174,7 @@ bool MiniRoundaboutTransformer::AddRoundaboutToRoad(RoundaboutUnit const & round
       GetPointAtDistFromTarget(*itPointNearRoundabout /* source */, roundaboutCenter /* target */,
                                m_radiusMercator /* dist */);
 
-  if (isMiddlePoint && !m2::AlmostEqualAbs(nextPointOnRoad, *itPointNearRoundabout, kMwmPointAccuracy))
+  if (isMiddlePoint && !AlmostEqualAbs(nextPointOnRoad, *itPointNearRoundabout, kMwmPointAccuracy))
   {
     auto surrogateRoad = CreateSurrogateRoad(roundaboutOnRoad, roundaboutCircle, road, itPointUpd);
     if (surrogateRoad.size() < 2)
@@ -319,7 +319,7 @@ std::vector<m2::PointD> PointToPolygon(m2::PointD const & center, double radiusM
   vertices.reserve(verticesCount);
 
   double const kAngularPitch = 2 * math::pi / static_cast<double>(verticesCount);
-  double angle = base::DegToRad(initAngleDeg);
+  double angle = math::DegToRad(initAngleDeg);
 
   for (size_t i = 0; i < verticesCount; ++i)
   {

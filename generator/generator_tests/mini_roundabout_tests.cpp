@@ -55,12 +55,12 @@ void TestRunCmpPoints(std::vector<m2::PointD> const & pointsFact,
   TEST_EQUAL(pointsFact.size(), pointsPlan.size(), ());
   TEST_GREATER(pointsFact.size(), 2, ());
   for (size_t i = 0; i < pointsFact.size(); ++i)
-    TEST(m2::AlmostEqualAbs(pointsFact[i], pointsPlan[i], kMwmPointAccuracy), ());
+    TEST(AlmostEqualAbs(pointsFact[i], pointsPlan[i], kMwmPointAccuracy), ());
 }
 
 void TestRunCmpNumbers(double val1, double val2)
 {
-  TEST(base::AlmostEqualAbs(val1, val2, kMwmPointAccuracy), ());
+  TEST(AlmostEqualAbs(val1, val2, kMwmPointAccuracy), ());
 }
 
 UNIT_TEST(PointToPolygon_GeneralProperties)
@@ -81,10 +81,10 @@ UNIT_TEST(PointToPolygon_GeneralProperties)
       for (size_t i = 0; i < circlePlain.size() - 1; ++i)
       {
         double const rCurrent = DistanceOnPlain(circlePlain[i], center);
-        TEST(base::AlmostEqualAbs(rCurrent, r, kMwmPointAccuracy), ());
+        TEST(AlmostEqualAbs(rCurrent, r, kMwmPointAccuracy), ());
 
         double const vertexLengthCurrent = DistanceOnPlain(circlePlain[i], circlePlain[i + 1]);
-        TEST(base::AlmostEqualAbs(vertexLengthCurrent, vertexLenght, kMwmPointAccuracy), ());
+        TEST(AlmostEqualAbs(vertexLengthCurrent, vertexLenght, kMwmPointAccuracy), ());
       }
     }
   }
@@ -97,7 +97,7 @@ UNIT_TEST(TrimSegment_Vertical)
   double const dist = 1.0;
   m2::PointD const point = GetPointAtDistFromTarget(a /* source */, b /* target */, dist);
   m2::PointD const pointPlan(2.0, 2.0);
-  TEST(m2::AlmostEqualAbs(point, pointPlan, kMwmPointAccuracy), ());
+  TEST(AlmostEqualAbs(point, pointPlan, kMwmPointAccuracy), ());
 }
 
 UNIT_TEST(TrimSegment_VerticalNegative)
@@ -107,7 +107,7 @@ UNIT_TEST(TrimSegment_VerticalNegative)
   double const dist = 4.0;
   m2::PointD const point = GetPointAtDistFromTarget(a /* source */, b /* target */, dist);
   m2::PointD const pointPlan(-3.0, 2.0);
-  TEST(m2::AlmostEqualAbs(point, pointPlan, kMwmPointAccuracy), ());
+  TEST(AlmostEqualAbs(point, pointPlan, kMwmPointAccuracy), ());
 }
 
 UNIT_TEST(TrimSegment_ExceptionalCase)
@@ -116,7 +116,7 @@ UNIT_TEST(TrimSegment_ExceptionalCase)
   m2::PointD const b(2.0, 3.0);
   double const dist = 10.0;
   m2::PointD const point = GetPointAtDistFromTarget(a /* source */, b /* target */, dist);
-  TEST(m2::AlmostEqualAbs(point, a, kMwmPointAccuracy), ());
+  TEST(AlmostEqualAbs(point, a, kMwmPointAccuracy), ());
 }
 
 UNIT_TEST(PointToCircle_ZeroMeridian)
@@ -192,19 +192,19 @@ UNIT_TEST(Manage_MiniRoundabout_1Road)
 
   // Check for "diameters" equality.
   double const diameter = r * 2.;
-  TEST(base::AlmostEqualAbs(DistanceOnPlain(circlePlain[0], circlePlain[3]), diameter,
+  TEST(AlmostEqualAbs(DistanceOnPlain(circlePlain[0], circlePlain[3]), diameter,
                             kMwmPointAccuracy),
        ());
-  TEST(base::AlmostEqualAbs(DistanceOnPlain(circlePlain[1], circlePlain[4]), diameter,
+  TEST(AlmostEqualAbs(DistanceOnPlain(circlePlain[1], circlePlain[4]), diameter,
                             kMwmPointAccuracy),
        ());
-  TEST(base::AlmostEqualAbs(DistanceOnPlain(circlePlain[2], circlePlain[5]), diameter,
+  TEST(AlmostEqualAbs(DistanceOnPlain(circlePlain[2], circlePlain[5]), diameter,
                             kMwmPointAccuracy),
        ());
 
   double const edgeLen = DistanceOnPlain(circlePlain[0], circlePlain[1]);
   for (size_t i = 1; i < circlePlain.size(); ++i)
-    TEST(base::AlmostEqualAbs(DistanceOnPlain(circlePlain[i - 1], circlePlain[i]), edgeLen,
+    TEST(AlmostEqualAbs(DistanceOnPlain(circlePlain[i - 1], circlePlain[i]), edgeLen,
                               kMwmPointAccuracy),
          ());
 

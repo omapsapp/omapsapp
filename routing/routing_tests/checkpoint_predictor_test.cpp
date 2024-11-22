@@ -13,7 +13,7 @@ namespace checkpoint_predictor_test
 void TestAlmostEqual(double v1, double v2)
 {
   double constexpr kEpsMeters = 1.0;
-  TEST(base::AlmostEqualAbs(v1, v2, kEpsMeters), (v1, v2));
+  TEST(AlmostEqualAbs(v1, v2, kEpsMeters), (v1, v2));
 }
 
 using routing::CheckpointPredictor;
@@ -22,7 +22,7 @@ class CheckpointPredictorTest
 {
 public:
   CheckpointPredictorTest() : m_predictor({0.0, 0.0} /* start */, {4.0, 0.0} /* finish */) {}
-  
+
   size_t PredictPosition(std::vector<m2::PointD> const & intermediatePoints, m2::PointD const & point) const
   {
     return m_predictor.PredictPosition(intermediatePoints, point);

@@ -428,7 +428,7 @@ void MyPositionController::OnLocationUpdate(location::GpsInfo const & info, bool
 
   if ((!m_isCompassAvailable || glueArrowInRouting || isMovingFast) && info.HasBearing())
   {
-    SetDirection(base::DegToRad(info.m_bearing));
+    SetDirection(math::DegToRad(info.m_bearing));
     m_lastGPSBearingTimer.Reset();
   }
 
@@ -614,7 +614,7 @@ bool MyPositionController::AlmostCurrentPosition(m2::PointD const & pos) const
 bool MyPositionController::AlmostCurrentAzimut(double azimut) const
 {
   double constexpr kDirectionEqualityDelta = 1e-3;
-  return base::AlmostEqualAbs(azimut, m_drawDirection, kDirectionEqualityDelta);
+  return AlmostEqualAbs(azimut, m_drawDirection, kDirectionEqualityDelta);
 }
 
 void MyPositionController::SetDirection(double bearing)

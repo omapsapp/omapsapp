@@ -19,7 +19,7 @@ namespace
 {
 bool IsEqual(double d1, double d2)
 {
-  return base::AlmostEqualAbs(d1, d2, kMwmPointAccuracy);
+  return AlmostEqualAbs(d1, d2, kMwmPointAccuracy);
 }
 
 bool IsEqual(m2::PointD const & p1, m2::PointD const & p2)

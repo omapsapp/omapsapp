@@ -13,7 +13,7 @@ uint8_t constexpr kFeatureSorterPointCoordBits = 27;
 // The absolute precision of the point encoding in the mwm files.
 // If both x and y coordinates of two points lie within |kMwmPointAccuracy| of one
 // another we consider the points equal. In other words, |kMwmPointAccuracy| may
-// be used as the eps value for both x and y in Point::EqualDxDy, base::AlmostEqualAbs and such.
+// be used as the eps value for both x and y in Point::EqualDxDy, AlmostEqualAbs and such.
 //
 // The constant is loosely tied to mercator::Bounds::kRangeX / (1 << kPointCoordBits):
 //   The range of possible values for point coordinates

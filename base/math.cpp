@@ -5,9 +5,6 @@
 #include <cstring>
 #include <limits>
 
-namespace base
-{
-
 template <typename Float>
 bool AlmostEqualULPs(Float x, Float y, uint32_t maxULPs)
 {
@@ -38,14 +35,12 @@ bool AlmostEqualULPs(Float x, Float y, uint32_t maxULPs)
   // Calculate diff with special case to avoid IntType overflow.
   UIntType diff;
   if ((xInt >= 0) == (yInt >= 0))
-    diff = Abs(xInt - yInt);
+    diff = math::Abs(xInt - yInt);
   else
-    diff = UIntType(Abs(xInt)) + UIntType(Abs(yInt));
+    diff = UIntType(math::Abs(xInt)) + UIntType(math::Abs(yInt));
 
   return diff <= maxULPs;
 }
 
 template bool AlmostEqualULPs<float>(float x, float y, uint32_t maxULPs);
 template bool AlmostEqualULPs<double>(double x, double y, uint32_t maxULPs);
-
-} // namespace base

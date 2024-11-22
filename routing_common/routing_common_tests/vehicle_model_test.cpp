@@ -452,8 +452,8 @@ UNIT_TEST(VehicleModel_MultiplicationOperatorTest)
   SpeedKMpH const lResult = speed * factor;
   SpeedKMpH const rResult = factor * speed;
   TEST_EQUAL(lResult, rResult, ());
-  TEST(base::AlmostEqualULPs(lResult.m_weight, 90.0), ());
-  TEST(base::AlmostEqualULPs(lResult.m_eta, 110.0), ());
+  TEST(AlmostEqualULPs(lResult.m_weight, 90.0), ());
+  TEST(AlmostEqualULPs(lResult.m_eta, 110.0), ());
 }
 
 UNIT_TEST(VehicleModel_CarModelValidation)
