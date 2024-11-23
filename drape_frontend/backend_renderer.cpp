@@ -22,6 +22,7 @@
 #include "platform/platform.hpp"
 
 #include "base/logging.hpp"
+#include "base/file_name_utils.hpp"
 
 #include <algorithm>
 #include <utility>
@@ -761,9 +762,9 @@ void BackendRenderer::InitContextDependentResources()
   params.m_colors = "colors.txt";
   params.m_patterns = "patterns.txt";
 #endif // BUILD_DESIGNER
-  params.m_glyphMngParams.m_uniBlocks = "unicode_blocks.txt";
-  params.m_glyphMngParams.m_whitelist = "fonts_whitelist.txt";
-  params.m_glyphMngParams.m_blacklist = "fonts_blacklist.txt";
+  params.m_glyphMngParams.m_uniBlocks = base::JoinPath("fonts", "unicode_blocks.txt");
+  params.m_glyphMngParams.m_whitelist = base::JoinPath("fonts", "whitelist.txt");
+  params.m_glyphMngParams.m_blacklist = base::JoinPath("fonts", "blacklist.txt");
   GetPlatform().GetFontNames(params.m_glyphMngParams.m_fonts);
 
   if (m_arrow3dCustomDecl)

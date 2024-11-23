@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		039371B62C5B68CD00708377 /* UIFont+monospaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039371B52C5B68CD00708377 /* UIFont+monospaced.swift */; };
+		165953742CB1D85500CFED7C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 165953732CB1D83700CFED7C /* fonts */; };
 		1DFA2F6A20D3B57400FB2C66 /* UIColor+PartnerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFA2F6920D3B57400FB2C66 /* UIColor+PartnerColor.m */; };
 		3304306D21D4EAFB00317CA3 /* SearchCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304306C21D4EAFB00317CA3 /* SearchCategoryCell.swift */; };
 		33046832219C57180041F3A8 /* CategorySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33046831219C57180041F3A8 /* CategorySettingsViewController.swift */; };
@@ -268,20 +269,11 @@
 		6741A9451BF340DE002C974C /* classificator.txt in Resources */ = {isa = PBXBuildFile; fileRef = EE026F0511D6AC0D00645242 /* classificator.txt */; };
 		6741A9491BF340DE002C974C /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA46DA2B12D4166E00968C36 /* countries.txt */; };
 		6741A94A1BF340DE002C974C /* resources-6plus_light in Resources */ = {isa = PBXBuildFile; fileRef = 4A23D1571B8B4DD700D4EB6F /* resources-6plus_light */; };
-		6741A94B1BF340DE002C974C /* unicode_blocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = EE583CBA12F773F00042CBE3 /* unicode_blocks.txt */; };
-		6741A94C1BF340DE002C974C /* fonts_blacklist.txt in Resources */ = {isa = PBXBuildFile; fileRef = EEFE7C1212F8C9E1006AF8C3 /* fonts_blacklist.txt */; };
 		6741A94D1BF340DE002C974C /* resources-xxhdpi_light in Resources */ = {isa = PBXBuildFile; fileRef = 4A23D15A1B8B4DD700D4EB6F /* resources-xxhdpi_light */; };
 		6741A94F1BF340DE002C974C /* MWMDefaultAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64F198C1AB81A00006EAF7E /* MWMDefaultAlert.xib */; };
-		6741A9501BF340DE002C974C /* fonts_whitelist.txt in Resources */ = {isa = PBXBuildFile; fileRef = EEFE7C1312F8C9E1006AF8C3 /* fonts_whitelist.txt */; };
 		6741A9511BF340DE002C974C /* MWMDownloaderDialogHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64F4B701B4A41D40081A24A /* MWMDownloaderDialogHeader.xib */; };
 		6741A9521BF340DE002C974C /* World.mwm in Resources */ = {isa = PBXBuildFile; fileRef = FAFF42291347F101009BBB14 /* World.mwm */; };
-		6741A9531BF340DE002C974C /* 01_dejavusans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEA615E5134C4968003A9827 /* 01_dejavusans.ttf */; };
-		6741A9541BF340DE002C974C /* 02_droidsans-fallback.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF04B231B71010E00DACAF1 /* 02_droidsans-fallback.ttf */; };
 		6741A9551BF340DE002C974C /* resources-xxhdpi_dark in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D89C41B2EBF3B00AC843E /* resources-xxhdpi_dark */; };
-		6741A9571BF340DE002C974C /* 03_jomolhari-id-a3d.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEA615E7134C4968003A9827 /* 03_jomolhari-id-a3d.ttf */; };
-		6741A9581BF340DE002C974C /* 04_padauk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEA615E8134C4968003A9827 /* 04_padauk.ttf */; };
-		6741A9591BF340DE002C974C /* 05_khmeros.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEA615E9134C4968003A9827 /* 05_khmeros.ttf */; };
-		6741A95B1BF340DE002C974C /* 06_code2000.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE164810135CEE49003B8A3E /* 06_code2000.ttf */; };
 		6741A95C1BF340DE002C974C /* categories.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAAFD696139D9BE2000AE70C /* categories.txt */; };
 		6741A95D1BF340DE002C974C /* types.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA64D9A813F975AD00350ECF /* types.txt */; };
 		6741A9601BF340DE002C974C /* MWMRoutingDisclaimerAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63774E61B59375E00BCF54D /* MWMRoutingDisclaimerAlert.xib */; };
@@ -302,7 +294,6 @@
 		6741A9951BF340DE002C974C /* MWMDownloaderDialogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64F4B6E1B46A5380081A24A /* MWMDownloaderDialogCell.xib */; };
 		6741A9981BF340DE002C974C /* resources-xhdpi_light in Resources */ = {isa = PBXBuildFile; fileRef = 4A23D1591B8B4DD700D4EB6F /* resources-xhdpi_light */; };
 		6741A9991BF340DE002C974C /* MWMAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64F19831AB81A00006EAF7E /* MWMAlertViewController.xib */; };
-		6741A99F1BF340DE002C974C /* 07_roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAF30A94173AB23900818BF6 /* 07_roboto_medium.ttf */; };
 		6741A9A31BF340DE002C974C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.mm */; };
 		6741A9A51BF340DE002C974C /* MWMShareActivityItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 340837151B72451A00B5C185 /* MWMShareActivityItem.mm */; };
 		6741A9A91BF340DE002C974C /* MWMDefaultAlert.mm in Sources */ = {isa = PBXBuildFile; fileRef = F64F198B1AB81A00006EAF7E /* MWMDefaultAlert.mm */; };
@@ -326,8 +317,6 @@
 		676507601C10559800830BB3 /* patterns.txt in Resources */ = {isa = PBXBuildFile; fileRef = 451950391B7A3E070085DA05 /* patterns.txt */; };
 		676507611C10559B00830BB3 /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 452FCA3A1B6A3DF7007019AB /* colors.txt */; };
 		677A2DE21C0DD50900635A00 /* resources-default in Resources */ = {isa = PBXBuildFile; fileRef = A367C93A1B17334800E2B6E7 /* resources-default */; };
-		6B15907226623AE500944BBA /* 00_NotoSansThai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B15907026623AE500944BBA /* 00_NotoSansThai-Regular.ttf */; };
-		6B679E89266BFD0A0074AE2A /* 00_NotoNaskhArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B679E88266BFD090074AE2A /* 00_NotoNaskhArabic-Regular.ttf */; };
 		6B9978361C89A316003B8AA0 /* editor.config in Resources */ = {isa = PBXBuildFile; fileRef = 6B9978341C89A316003B8AA0 /* editor.config */; };
 		8C4FB9C72BEFEFF400D44877 /* CarPlayWindowScaleAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4FB9C62BEFEFF400D44877 /* CarPlayWindowScaleAdjuster.swift */; };
 		8CB13C3B2BF1276A004288F2 /* CarplayPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB13C3A2BF1276A004288F2 /* CarplayPlaceholderView.swift */; };
@@ -626,7 +615,6 @@
 		F6FE3C3C1CC5106500A73196 /* MWMPlaceDoesntExistAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FE3C3A1CC5106500A73196 /* MWMPlaceDoesntExistAlert.xib */; };
 		F6FEA82E1C58F108007223CC /* MWMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FEA82C1C58E89B007223CC /* MWMButton.m */; };
 		FA14E686276014C10066E453 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA14E683276014C10066E453 /* libz.1.tbd */; };
-		FA4511912A5EC15100CD8F64 /* 00_NotoSerifDevanagari-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA45118E2A5EC15100CD8F64 /* 00_NotoSerifDevanagari-Regular.ttf */; };
 		FA456C3C26BDC6AD00B83C20 /* Chart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA456C3B26BDC6AD00B83C20 /* Chart.framework */; };
 		FA456C3D26BDC6BA00B83C20 /* Chart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA456C3B26BDC6AD00B83C20 /* Chart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA456C3E26BDC6C100B83C20 /* DatePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA853BDC26BC58570026D455 /* DatePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -636,7 +624,6 @@
 		FA637ED329A500BE00D8921A /* drules_proto_outdoors_light.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA637ECF29A500BE00D8921A /* drules_proto_outdoors_light.txt */; };
 		FA637ED429A500BE00D8921A /* drules_proto_outdoors_dark.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA637ED029A500BE00D8921A /* drules_proto_outdoors_dark.txt */; };
 		FA637ED529A500BE00D8921A /* drules_proto_outdoors_dark.bin in Resources */ = {isa = PBXBuildFile; fileRef = FA637ED129A500BE00D8921A /* drules_proto_outdoors_dark.bin */; };
-		FA80EB6B2C6BEB9300C5E8E5 /* 00_NotoSansHebrew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA80EB682C6BEB9300C5E8E5 /* 00_NotoSansHebrew-Regular.ttf */; };
 		FA853BA726BC3ACE0026D455 /* CoreApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA853BA626BC3ACE0026D455 /* CoreApi.framework */; };
 		FA853BA926BC3B8A0026D455 /* libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA853BA826BC3B8A0026D455 /* libbase.a */; };
 		FA853BAB26BC3B8A0026D455 /* libcoding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA853BAA26BC3B8A0026D455 /* libcoding.a */; };
@@ -676,8 +663,6 @@
 		FA85D43D27958BF500B858E9 /* FaqController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85D43C27958BF500B858E9 /* FaqController.swift */; };
 		FA85D44E279B738F00B858E9 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85D44D279B738F00B858E9 /* CopyableLabel.swift */; };
 		FA8E808925F412E2002A1434 /* FirstSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA8E808825F412E2002A1434 /* FirstSession.mm */; };
-		FAC4E60C2C1FA4C50043979C /* 00_NotoSansMalayalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC4E6092C1FA4C40043979C /* 00_NotoSansMalayalam-Regular.ttf */; };
-		FAC4E6122C1FA9FC0043979C /* 00_NotoSansBengali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC4E60F2C1FA9FC0043979C /* 00_NotoSansBengali-Regular.ttf */; };
 		FAF9DDA32A86DC54000D7037 /* libharfbuzz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF9DDA22A86DC54000D7037 /* libharfbuzz.a */; };
 /* End PBXBuildFile section */
 
@@ -747,6 +732,7 @@
 
 /* Begin PBXFileReference section */
 		039371B52C5B68CD00708377 /* UIFont+monospaced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+monospaced.swift"; sourceTree = "<group>"; };
+		165953732CB1D83700CFED7C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../../data/fonts; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* MapsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* MapsAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = MapsAppDelegate.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1DFA2F6820D3B52F00FB2C66 /* UIColor+PartnerColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+PartnerColor.h"; sourceTree = "<group>"; };
@@ -1206,8 +1192,6 @@
 		4B83AE4A2C2E642100B0C3BC /* TTSTesterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTSTesterTest.m; sourceTree = "<group>"; };
 		5605022E1B6211E100169CAD /* sound-strings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "sound-strings"; path = "../../data/sound-strings"; sourceTree = "<group>"; };
 		6741AA5D1BF340DE002C974C /* Organic Maps (Debug).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Organic Maps (Debug).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B15907026623AE500944BBA /* 00_NotoSansThai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "00_NotoSansThai-Regular.ttf"; path = "../../data/00_NotoSansThai-Regular.ttf"; sourceTree = "<group>"; };
-		6B679E88266BFD090074AE2A /* 00_NotoNaskhArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "00_NotoNaskhArabic-Regular.ttf"; path = "../../data/00_NotoNaskhArabic-Regular.ttf"; sourceTree = "<group>"; };
 		6B9978341C89A316003B8AA0 /* editor.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = editor.config; path = ../../data/editor.config; sourceTree = "<group>"; };
 		8C4FB9C62BEFEFF400D44877 /* CarPlayWindowScaleAdjuster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayWindowScaleAdjuster.swift; sourceTree = "<group>"; };
 		8CB13C3A2BF1276A004288F2 /* CarplayPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarplayPlaceholderView.swift; sourceTree = "<group>"; };
@@ -1328,7 +1312,6 @@
 		99F8B4C523B644A6009FF0B4 /* MapStyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleSheet.swift; sourceTree = "<group>"; };
 		99F9A0E42462CA0E00AE21E0 /* DownloadAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllView.swift; sourceTree = "<group>"; };
 		99F9A0E62462CA1700AE21E0 /* DownloadAllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadAllView.xib; sourceTree = "<group>"; };
-		9DF04B231B71010E00DACAF1 /* 02_droidsans-fallback.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "02_droidsans-fallback.ttf"; path = "../../data/02_droidsans-fallback.ttf"; sourceTree = "<group>"; };
 		A367C93A1B17334800E2B6E7 /* resources-default */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "resources-default"; path = "../../data/resources-default"; sourceTree = "<group>"; };
 		A630D1E9207CA95900976DEA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ar; path = ar.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A630D1EB207CA96700976DEA /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = cs; path = cs.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -1447,15 +1430,7 @@
 		EDFDFB512B726F1A0013A44C /* ButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStackView.swift; sourceTree = "<group>"; };
 		EDFDFB602B74E2500013A44C /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		EE026F0511D6AC0D00645242 /* classificator.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = classificator.txt; path = ../../data/classificator.txt; sourceTree = SOURCE_ROOT; };
-		EE164810135CEE49003B8A3E /* 06_code2000.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 06_code2000.ttf; path = ../../data/06_code2000.ttf; sourceTree = SOURCE_ROOT; };
-		EE583CBA12F773F00042CBE3 /* unicode_blocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = unicode_blocks.txt; path = ../../data/unicode_blocks.txt; sourceTree = "<group>"; };
-		EEA615E5134C4968003A9827 /* 01_dejavusans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 01_dejavusans.ttf; path = ../../data/01_dejavusans.ttf; sourceTree = SOURCE_ROOT; };
-		EEA615E7134C4968003A9827 /* 03_jomolhari-id-a3d.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "03_jomolhari-id-a3d.ttf"; path = "../../data/03_jomolhari-id-a3d.ttf"; sourceTree = SOURCE_ROOT; };
-		EEA615E8134C4968003A9827 /* 04_padauk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 04_padauk.ttf; path = ../../data/04_padauk.ttf; sourceTree = SOURCE_ROOT; };
-		EEA615E9134C4968003A9827 /* 05_khmeros.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 05_khmeros.ttf; path = ../../data/05_khmeros.ttf; sourceTree = SOURCE_ROOT; };
 		EED10A4411F78D120095FAD4 /* MapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = MapViewController.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		EEFE7C1212F8C9E1006AF8C3 /* fonts_blacklist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fonts_blacklist.txt; path = ../../data/fonts_blacklist.txt; sourceTree = "<group>"; };
-		EEFE7C1312F8C9E1006AF8C3 /* fonts_whitelist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fonts_whitelist.txt; path = ../../data/fonts_whitelist.txt; sourceTree = "<group>"; };
 		F607C1831C032A8800B53A87 /* resources-hdpi_light */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "resources-hdpi_light"; path = "../../data/resources-hdpi_light"; sourceTree = "<group>"; };
 		F607C1841C032A8800B53A87 /* resources-hdpi_dark */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "resources-hdpi_dark"; path = "../../data/resources-hdpi_dark"; sourceTree = "<group>"; };
 		F607C18C1C047FDC00B53A87 /* MWMSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMSegue.h; sourceTree = "<group>"; };
@@ -1662,7 +1637,6 @@
 		FA1A4CF226AABBEC00026C44 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = bg; path = bg.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FA1A4CF326AABBED00026C44 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA1A4CF426AABBEE00026C44 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA45118E2A5EC15100CD8F64 /* 00_NotoSerifDevanagari-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "00_NotoSerifDevanagari-Regular.ttf"; path = "../../data/00_NotoSerifDevanagari-Regular.ttf"; sourceTree = "<group>"; };
 		FA456C3B26BDC6AD00B83C20 /* Chart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Chart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA456C4026BDCC8E00B83C20 /* shaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = shaders.xcodeproj; path = ../../xcode/shaders/shaders.xcodeproj; sourceTree = "<group>"; };
 		FA459EB314327AF700B5BB3C /* WorldCoasts.mwm */ = {isa = PBXFileReference; lastKnownFileType = file; name = WorldCoasts.mwm; path = ../../data/WorldCoasts.mwm; sourceTree = "<group>"; };
@@ -1675,7 +1649,6 @@
 		FA637ED029A500BE00D8921A /* drules_proto_outdoors_dark.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = drules_proto_outdoors_dark.txt; path = ../../data/drules_proto_outdoors_dark.txt; sourceTree = "<group>"; };
 		FA637ED129A500BE00D8921A /* drules_proto_outdoors_dark.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = drules_proto_outdoors_dark.bin; path = ../../data/drules_proto_outdoors_dark.bin; sourceTree = "<group>"; };
 		FA64D9A813F975AD00350ECF /* types.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = types.txt; path = ../../data/types.txt; sourceTree = SOURCE_ROOT; };
-		FA80EB682C6BEB9300C5E8E5 /* 00_NotoSansHebrew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "00_NotoSansHebrew-Regular.ttf"; path = "../../data/00_NotoSansHebrew-Regular.ttf"; sourceTree = "<group>"; };
 		FA853BA626BC3ACE0026D455 /* CoreApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA853BA826BC3B8A0026D455 /* libbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libbase.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA853BAA26BC3B8A0026D455 /* libcoding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcoding.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1731,9 +1704,6 @@
 		FABF2FF02B55F6780006F787 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FABF2FF12B55F6780006F787 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FABF2FF22B55F6780006F787 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hi; path = hi.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
-		FAC4E6092C1FA4C40043979C /* 00_NotoSansMalayalam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "00_NotoSansMalayalam-Regular.ttf"; path = "../../data/00_NotoSansMalayalam-Regular.ttf"; sourceTree = "<group>"; };
-		FAC4E60F2C1FA9FC0043979C /* 00_NotoSansBengali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "00_NotoSansBengali-Regular.ttf"; path = "../../data/00_NotoSansBengali-Regular.ttf"; sourceTree = "<group>"; };
-		FAF30A94173AB23900818BF6 /* 07_roboto_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 07_roboto_medium.ttf; path = ../../data/07_roboto_medium.ttf; sourceTree = "<group>"; };
 		FAF8C669278CEE29006CAE66 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAF8C66C278CEE2A006CAE66 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = be; path = be.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FAF8C66E278CEE2A006CAE66 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -3843,19 +3813,7 @@
 		FA065FC61286143F00FEA989 /* External Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6B679E88266BFD090074AE2A /* 00_NotoNaskhArabic-Regular.ttf */,
-				FAC4E60F2C1FA9FC0043979C /* 00_NotoSansBengali-Regular.ttf */,
-				FA80EB682C6BEB9300C5E8E5 /* 00_NotoSansHebrew-Regular.ttf */,
-				6B15907026623AE500944BBA /* 00_NotoSansThai-Regular.ttf */,
-				FA45118E2A5EC15100CD8F64 /* 00_NotoSerifDevanagari-Regular.ttf */,
-				FAC4E6092C1FA4C40043979C /* 00_NotoSansMalayalam-Regular.ttf */,
-				EEA615E5134C4968003A9827 /* 01_dejavusans.ttf */,
-				9DF04B231B71010E00DACAF1 /* 02_droidsans-fallback.ttf */,
-				EEA615E7134C4968003A9827 /* 03_jomolhari-id-a3d.ttf */,
-				EEA615E8134C4968003A9827 /* 04_padauk.ttf */,
-				EEA615E9134C4968003A9827 /* 05_khmeros.ttf */,
-				EE164810135CEE49003B8A3E /* 06_code2000.ttf */,
-				FAF30A94173AB23900818BF6 /* 07_roboto_medium.ttf */,
+				165953732CB1D83700CFED7C /* fonts */,
 				47AEF83F2231249E00D20538 /* categories_brands.txt */,
 				408645FB21495EB1000A4A1D /* categories_cuisines.txt */,
 				FAAFD696139D9BE2000AE70C /* categories.txt */,
@@ -3873,8 +3831,6 @@
 				4554B6E91E55F02B0084017F /* drules_proto_vehicle_dark.bin */,
 				6B9978341C89A316003B8AA0 /* editor.config */,
 				978D4A30199A11E600D72CA7 /* faq.html */,
-				EEFE7C1212F8C9E1006AF8C3 /* fonts_blacklist.txt */,
-				EEFE7C1312F8C9E1006AF8C3 /* fonts_whitelist.txt */,
 				BB7626B41E8559980031D71C /* icudt75l.dat */,
 				F623DA6A1C9C2731006A3436 /* opening_hours_how_to_edit.html */,
 				FA85F632145DDDC20090E1A0 /* packed_polygons.bin */,
@@ -3895,7 +3851,6 @@
 				FAAEA7D0161BD26600CCD661 /* synonyms.txt */,
 				BB25B1A51FB32767007276FA /* transit_colors.txt */,
 				FA64D9A813F975AD00350ECF /* types.txt */,
-				EE583CBA12F773F00042CBE3 /* unicode_blocks.txt */,
 				FAFF42291347F101009BBB14 /* World.mwm */,
 				FA459EB314327AF700B5BB3C /* WorldCoasts.mwm */,
 			);
@@ -4091,20 +4046,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165953742CB1D85500CFED7C /* fonts in Resources */,
 				47AEF8402231249E00D20538 /* categories_brands.txt in Resources */,
 				F6C3A1B221AC22810060EEC8 /* Alert 5.m4a in Resources */,
-				6741A9531BF340DE002C974C /* 01_dejavusans.ttf in Resources */,
-				FA4511912A5EC15100CD8F64 /* 00_NotoSerifDevanagari-Regular.ttf in Resources */,
-				6741A9541BF340DE002C974C /* 02_droidsans-fallback.ttf in Resources */,
-				6741A9571BF340DE002C974C /* 03_jomolhari-id-a3d.ttf in Resources */,
 				3404F49A2028A20D0090E401 /* BMCCategoryCell.xib in Resources */,
-				6741A9581BF340DE002C974C /* 04_padauk.ttf in Resources */,
-				6741A9591BF340DE002C974C /* 05_khmeros.ttf in Resources */,
 				34AB66801FC5AA330078E451 /* MWMiPhoneRoutePreview.xib in Resources */,
-				6741A95B1BF340DE002C974C /* 06_code2000.ttf in Resources */,
 				471A7BC22481D44B00A0D4C1 /* BookmarkTitleCell.xib in Resources */,
-				FAC4E60C2C1FA4C50043979C /* 00_NotoSansMalayalam-Regular.ttf in Resources */,
-				6741A99F1BF340DE002C974C /* 07_roboto_medium.ttf in Resources */,
 				FA637ED329A500BE00D8921A /* drules_proto_outdoors_light.txt in Resources */,
 				F6E2FE6D1E097BA00083EBEC /* _MWMOHHeaderCell.xib in Resources */,
 				F6E2FE701E097BA00083EBEC /* _MWMOHSubCell.xib in Resources */,
@@ -4122,9 +4069,6 @@
 				6741A97E1BF340DE002C974C /* drules_proto_default_dark.bin in Resources */,
 				6B9978361C89A316003B8AA0 /* editor.config in Resources */,
 				6741A9681BF340DE002C974C /* faq.html in Resources */,
-				6B679E89266BFD0A0074AE2A /* 00_NotoNaskhArabic-Regular.ttf in Resources */,
-				6741A94C1BF340DE002C974C /* fonts_blacklist.txt in Resources */,
-				6741A9501BF340DE002C974C /* fonts_whitelist.txt in Resources */,
 				34F73FA31E08300E00AC1FD6 /* Images.xcassets in Resources */,
 				34F73F9C1E082FF800AC1FD6 /* InfoPlist.strings in Resources */,
 				340E1EEF1E2F614400CE49BF /* LaunchScreen.storyboard in Resources */,
@@ -4132,7 +4076,6 @@
 				340E1EF21E2F614400CE49BF /* Main.storyboard in Resources */,
 				F6E2FE521E097BA00083EBEC /* MWMActionBarButton.xib in Resources */,
 				EDBD68072B625724005DD151 /* LocationServicesDisabledAlert.xib in Resources */,
-				FA80EB6B2C6BEB9300C5E8E5 /* 00_NotoSansHebrew-Regular.ttf in Resources */,
 				993DF0CA23F6BD0600AC231A /* ElevationDetailsViewController.xib in Resources */,
 				F623DA6F1C9C2E62006A3436 /* MWMAddPlaceNavigationBar.xib in Resources */,
 				6741A9991BF340DE002C974C /* MWMAlertViewController.xib in Resources */,
@@ -4150,7 +4093,6 @@
 				6741A9511BF340DE002C974C /* MWMDownloaderDialogHeader.xib in Resources */,
 				6741A96C1BF340DE002C974C /* MWMDownloadTransitMapAlert.xib in Resources */,
 				34D3B0241E389D05004100F9 /* MWMEditorAddAdditionalNameTableViewCell.xib in Resources */,
-				FAC4E6122C1FA9FC0043979C /* 00_NotoSansBengali-Regular.ttf in Resources */,
 				34D3B0271E389D05004100F9 /* EditorAdditionalNamePlaceholderTableViewCell.xib in Resources */,
 				F6E2FDB91E097BA00083EBEC /* MWMEditorAdditionalNamesHeader.xib in Resources */,
 				34D3B02D1E389D05004100F9 /* MWMEditorAdditionalNameTableViewCell.xib in Resources */,
@@ -4225,7 +4167,6 @@
 				447DB4C42BA78665000DF4C2 /* MWMOsmReauthAlert.xib in Resources */,
 				6741A9761BF340DE002C974C /* packed_polygons.bin in Resources */,
 				676507601C10559800830BB3 /* patterns.txt in Resources */,
-				6B15907226623AE500944BBA /* 00_NotoSansThai-Regular.ttf in Resources */,
 				6741A94A1BF340DE002C974C /* resources-6plus_light in Resources */,
 				9989273D2449E60200260CE2 /* BottomMenuViewController.xib in Resources */,
 				6741A9741BF340DE002C974C /* resources-6plus_dark in Resources */,
@@ -4249,7 +4190,6 @@
 				CDB4D4D7222D248900104869 /* CarPlayStoryboard.storyboard in Resources */,
 				4707E4B42372FF480017DF6E /* PlacePage.storyboard in Resources */,
 				6741A95D1BF340DE002C974C /* types.txt in Resources */,
-				6741A94B1BF340DE002C974C /* unicode_blocks.txt in Resources */,
 				340E1EFE1E2F614400CE49BF /* Welcome.storyboard in Resources */,
 				6741A9521BF340DE002C974C /* World.mwm in Resources */,
 				6741A9751BF340DE002C974C /* WorldCoasts.mwm in Resources */,

@@ -4,6 +4,8 @@
 #include "drape/drape_tests/img.hpp"
 #include "drape/drape_tests/testing_graphics_context.hpp"
 
+#include "base/file_name_utils.hpp"
+
 #include "platform/platform.hpp"
 #include "qt_tstfrm/test_main_loop.hpp"
 #include "testing/testing.hpp"
@@ -87,9 +89,9 @@ UNIT_TEST(UploadingGlyphs)
 
   UploadedRender r(QPoint(10, 10));
   dp::GlyphManager::Params args;
-  args.m_uniBlocks = "unicode_blocks.txt";
-  args.m_whitelist = "fonts_whitelist.txt";
-  args.m_blacklist = "fonts_blacklist.txt";
+  args.m_uniBlocks = base::JoinPath("fonts", "unicode_blocks.txt");
+  args.m_whitelist = base::JoinPath("fonts", "whitelist.txt");
+  args.m_blacklist = base::JoinPath("fonts", "blacklist.txt");
   GetPlatform().GetFontNames(args.m_fonts);
 
   uint32_t constexpr kTextureSize = 1024;

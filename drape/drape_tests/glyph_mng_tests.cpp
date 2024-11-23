@@ -6,6 +6,8 @@
 #include "drape/glyph_manager.hpp"
 #include "drape/harfbuzz_shaping.hpp"
 
+#include "base/file_name_utils.hpp"
+
 #include "qt_tstfrm/test_main_loop.hpp"
 
 #include "platform/platform.hpp"
@@ -41,9 +43,9 @@ public:
       TEST_EQUAL(0, FT_Property_Set(m_freetypeLibrary, module, "spread", &kSdfSpread), ());
 
     dp::GlyphManager::Params args;
-    args.m_uniBlocks = "unicode_blocks.txt";
-    args.m_whitelist = "fonts_whitelist.txt";
-    args.m_blacklist = "fonts_blacklist.txt";
+    args.m_uniBlocks = base::JoinPath("fonts", "unicode_blocks.txt");
+    args.m_whitelist = base::JoinPath("fonts", "whitelist.txt");
+    args.m_blacklist = base::JoinPath("fonts", "blacklist.txt");
     GetPlatform().GetFontNames(args.m_fonts);
 
     m_mng = std::make_unique<dp::GlyphManager>(args);
@@ -159,7 +161,7 @@ public:
         std::string const lang = m_lang;
         std::string const fontFileName = lang == "ar" ? "00_NotoNaskhArabic-Regular.ttf" : "07_roboto_medium.ttf";
 
-        auto reader = GetPlatform().GetReader(fontFileName);
+        auto reader = GetPlatform().GetReader("fonts/" + fontFileName);
         auto fontFile = reader->GetName();
         FT_Face face;
         if (FT_New_Face(m_freetypeLibrary, fontFile.c_str(), 0, &face)) {

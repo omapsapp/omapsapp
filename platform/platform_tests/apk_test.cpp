@@ -31,10 +31,10 @@ char const * arrFiles[] = {
   "categories_cuisines.txt",
   "classificator.txt",
   "types.txt",
-  "fonts_blacklist.txt",
-  "fonts_whitelist.txt",
+  "fonts/blacklist.txt",
+  "fonts/whitelist.txt",
+  "fonts/unicode_blocks.txt",
   "languages.txt",
-  "unicode_blocks.txt",
   "drules_proto_default_light.bin",
   "packed_polygons.bin",
   "countries.txt"
