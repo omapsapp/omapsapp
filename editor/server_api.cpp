@@ -167,8 +167,9 @@ UserPreferences ServerApi06::GetUserPreferences() const
   pref.m_id = user.attribute("id").as_ullong();
   pref.m_displayName = user.attribute("display_name").as_string();
   pref.m_accountCreated = base::StringToTimestamp(user.attribute("account_created").as_string());
-  pref.m_imageUrl = user.child("img").attribute("href").as_string();
   pref.m_changesets = user.child("changesets").attribute("count").as_uint();
+  // Return "none if profile has no 'img', to differentiate from no network
+  pref.m_imageUrl = user.child("img")? user.child("img").attribute("href").as_string() : "none";
   return pref;
 }
 

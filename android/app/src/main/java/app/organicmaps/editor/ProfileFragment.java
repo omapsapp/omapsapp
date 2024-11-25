@@ -1,7 +1,7 @@
 package app.organicmaps.editor;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,16 +15,17 @@ import androidx.annotation.Nullable;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmToolbarFragment;
+import app.organicmaps.util.NetworkPolicy;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
 import app.organicmaps.util.concurrency.ThreadPool;
 import app.organicmaps.util.concurrency.UiThread;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.text.NumberFormat;
 
 public class ProfileFragment extends BaseMwmToolbarFragment
 {
-  private View mUserInfoBlock;
   private TextView mEditsSent;
   private TextView mProfileName;
   private ImageView mProfileImage;
@@ -50,43 +51,56 @@ public class ProfileFragment extends BaseMwmToolbarFragment
   {
     View logoutButton = getToolbarController().getToolbar().findViewById(R.id.logout);
     logoutButton.setOnClickListener((v) -> logout());
-    mUserInfoBlock = view.findViewById(R.id.block_user_info);
+    View mUserInfoBlock = view.findViewById(R.id.block_user_info);
     mProfileInfoLoading = view.findViewById(R.id.user_profile_loading);
     mEditsSent = mUserInfoBlock.findViewById(R.id.user_sent_edits);
     mProfileName = mUserInfoBlock.findViewById(R.id.user_profile_name);
     mProfileImage = mUserInfoBlock.findViewById(R.id.user_profile_image);
     view.findViewById(R.id.about_osm).setOnClickListener((v) -> Utils.openUrl(requireActivity(), getString(R.string.osm_wiki_about_url)));
     view.findViewById(R.id.osm_history).setOnClickListener((v) -> Utils.openUrl(requireActivity(), OsmOAuth.getHistoryUrl(requireContext())));
-
   }
 
   private void refreshViews()
   {
+    // If logged in
     if (OsmOAuth.isAuthorized(requireContext()))
     {
-      // Update the number of uploaded changesets from OSM.
       ThreadPool.getWorker().execute(() -> {
-        if (mEditsSent.getText().equals(""))
-        {
-          UiUtils.show(mProfileInfoLoading);
-          UiUtils.hide(mUserInfoBlock);
-        }
-        final int profileEditCount = OsmOAuth.getOsmChangesetsCount(requireContext(), getParentFragmentManager());
-        final String profileUsername = OsmOAuth.getUsername(requireContext());
-        final Bitmap profilePicture = OsmOAuth.getProfilePicture(requireContext());
+        // Get/Display cached values first
+        final int cachedProfileEditCount = OsmOAuth.getOsmChangesetsCount(requireContext(), false);
+        final String cachedProfilePicture = OsmOAuth.getProfilePicturePath(requireContext(), false);
+        final String cachedProfileUsername = OsmOAuth.getUsername(requireContext(), false);
 
         UiThread.run(() -> {
-          mEditsSent.setText(NumberFormat.getInstance().format(profileEditCount));
-          mProfileName.setText(profileUsername);
-
+          mEditsSent.setText(NumberFormat.getInstance().format(cachedProfileEditCount));
+          mProfileName.setText(cachedProfileUsername);
           // Use generic image if user has no profile picture or it failed to load.
-          if (profilePicture != null)
-            mProfileImage.setImageBitmap(profilePicture);
+          if (!cachedProfilePicture.isEmpty())
+            mProfileImage.setImageBitmap(BitmapFactory.decodeFile(cachedProfilePicture));
           else
             mProfileImage.setImageResource(R.drawable.profile_generic);
+        });
 
-          UiUtils.show(mUserInfoBlock);
-          UiUtils.hide(mProfileInfoLoading);
+
+        // Then try to cache/display online values
+        NetworkPolicy.checkNetworkPolicy(getParentFragmentManager(), policy -> {
+          if (policy.canUseNetwork())
+          {
+            UiUtils.show(mProfileInfoLoading);
+            final int newProfileEditCount = OsmOAuth.getOsmChangesetsCount(requireContext(), true);
+            final String newProfileUsername = OsmOAuth.getUsername(requireContext(), true);
+            final String newProfilePicture = OsmOAuth.getProfilePicturePath(requireContext(), true);
+
+            UiThread.run(() -> {
+              mEditsSent.setText(NumberFormat.getInstance().format(newProfileEditCount));
+              mProfileName.setText(newProfileUsername);
+              // Needed in case user removed picture online, to
+              if (!newProfilePicture.isEmpty())
+                mProfileImage.setImageBitmap(BitmapFactory.decodeFile(newProfilePicture));
+
+              UiUtils.hide(mProfileInfoLoading);
+            });
+          }
         });
       });
     }

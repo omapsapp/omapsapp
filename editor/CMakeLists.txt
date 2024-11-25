@@ -26,6 +26,8 @@ set(SRC
   osm_auth.hpp
   osm_editor.cpp
   osm_editor.hpp
+  profile_picture.cpp
+  profile_picture.hpp
   server_api.cpp
   server_api.hpp
   ui2oh.cpp

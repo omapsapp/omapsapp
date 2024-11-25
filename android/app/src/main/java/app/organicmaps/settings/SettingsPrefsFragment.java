@@ -94,7 +94,8 @@ public class SettingsPrefsFragment extends BaseXmlSettingsFragment implements La
     final Preference pref = getPreference(getString(R.string.pref_osm_profile));
     if (OsmOAuth.isAuthorized(requireContext()))
     {
-      final String username = OsmOAuth.getUsername(requireContext());
+      // Only update profile when visiting profile page
+      final String username = OsmOAuth.getUsername(requireContext(), false);
       pref.setSummary(username);
     }
     else

@@ -9,6 +9,7 @@
 
 #include "editor/osm_auth.hpp"
 #include "editor/server_api.hpp"
+#include "editor/profile_picture.hpp"
 
 namespace
 {
@@ -86,7 +87,7 @@ Java_app_organicmaps_editor_OsmOAuth_nativeGetOsmUsername(JNIEnv * env, jclass, 
   UserPreferences prefs;
   if (LoadOsmUserPreferences(jni::ToNativeString(env, oauthToken), prefs))
     return jni::ToJavaString(env, prefs.m_displayName);
-  return nullptr;
+  return jstring();
 }
 
 JNIEXPORT jint JNICALL
@@ -99,12 +100,12 @@ Java_app_organicmaps_editor_OsmOAuth_nativeGetOsmChangesetsCount(JNIEnv * env, j
 }
 
 JNIEXPORT jstring JNICALL
-Java_app_organicmaps_editor_OsmOAuth_nativeGetOsmProfilePictureUrl(JNIEnv * env, jclass, jstring oauthToken)
+Java_app_organicmaps_editor_OsmOAuth_nativeGetOsmProfilePicturePath(JNIEnv * env, jclass, jstring oauthToken)
 {
   UserPreferences prefs;
-  if (LoadOsmUserPreferences(jni::ToNativeString(env, oauthToken), prefs))
-    return jni::ToJavaString(env, prefs.m_imageUrl);
-  return nullptr;
+  LoadOsmUserPreferences(jni::ToNativeString(env, oauthToken), prefs);
+  std::string img_path = editor::ProfilePicture::download(prefs.m_imageUrl);
+  return jni::ToJavaString(env, img_path);
 }
 
 JNIEXPORT jstring JNICALL

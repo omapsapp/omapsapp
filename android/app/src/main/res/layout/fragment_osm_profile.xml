@@ -49,7 +49,7 @@
           android:layout_width="100dp"
           android:layout_height="match_parent"
           android:importantForAccessibility="no"
-          app:srcCompat="@drawable/profile_generic" />
+          tools:src="@drawable/profile_generic" />
       <LinearLayout
           android:id="@+id/text"
           android:layout_marginStart="@dimen/margin_base"
