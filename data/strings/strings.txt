@@ -32651,7 +32651,7 @@
     zh-Hant = 選擇顏色
 
   [edit_track]
-    tags = android
+    tags = ios,android
     en = Edit Track
     af = Wysig Roete
     ar = تعديل المسار
