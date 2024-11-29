@@ -1402,6 +1402,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Il percorso è vuoto - non c'è nulla da salvare";
 
+"edit_track" = "Modifica il percorso";
+
 
 /********** Types **********/
 

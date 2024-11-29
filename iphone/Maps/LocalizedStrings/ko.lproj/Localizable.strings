@@ -1402,6 +1402,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "경로가 비어 있음 - 저장할 항목이 없음";
 
+"edit_track" = "경로 편집";
+
 
 /********** Types **********/
 

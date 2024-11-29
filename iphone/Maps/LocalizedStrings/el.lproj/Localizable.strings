@@ -1402,6 +1402,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Η διαδρομή είναι άδεια - δεν υπάρχει τίποτα να αποθηκεύσετε";
 
+"edit_track" = "Επεξεργασία διαδρομής";
+
 
 /********** Types **********/
 

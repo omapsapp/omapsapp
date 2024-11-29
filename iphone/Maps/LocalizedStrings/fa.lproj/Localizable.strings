@@ -1402,6 +1402,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "مسیر خالی است - چیزی برای ذخیره کردن وجود ندارد";
 
+"edit_track" = "ویرایش مسیر";
+
 
 /********** Types **********/
 

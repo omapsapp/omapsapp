@@ -1402,6 +1402,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "轨迹是空的 - 没有要保存的内容";
 
+"edit_track" = "编辑轨迹";
+
 
 /********** Types **********/
 
