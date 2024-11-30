@@ -24,6 +24,7 @@ public:
   std::string const & GetRulerText() const;
   void ResetTextDirtyFlag();
   static void GetTextInitInfo(std::string & alphabet, uint32_t & size);
+  static void LocalizeTexts();
 
 private:
   double CalcMetersDiff(double value);

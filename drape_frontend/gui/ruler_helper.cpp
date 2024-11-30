@@ -30,12 +30,11 @@ int constexpr kVisibleRulerBottomScale = 5;
 
 struct UnitValue
 {
-  char const * m_s;
+  std::string m_s;
   int m_i;
 };
 
-// TODO: Localize these strings.
-UnitValue constexpr g_arrFeets[] = {
+UnitValue g_arrFeet[] = {
   { "10 ft", 10 },
   { "20 ft", 20 },
   { "50 ft", 50 },
@@ -55,7 +54,7 @@ UnitValue constexpr g_arrFeets[] = {
   { "500 mi", 500 * 5280 }
 };
 
-UnitValue constexpr g_arrYards[] = {
+UnitValue g_arrYards[] = {
   { "50 yd", 50 },
   { "100 yd", 100 },
   { "200 yd", 200 },
@@ -75,7 +74,7 @@ UnitValue constexpr g_arrYards[] = {
 // TODO: fix ruler text to the current zoom level, i.e. make it 100m for z16 always
 // (ruler length will vary still). It'll make debugging and user support easier as
 // we'll be able to tell zoom level of a screenshot by looking at the ruler.
-UnitValue constexpr g_arrMeters[] = {
+UnitValue g_arrMeters[] = {
   { "1 m", 1 },
   { "2 m", 2 },
   { "5 m", 5 },
@@ -206,13 +205,13 @@ void RulerHelper::GetTextInitInfo(std::string & alphabet, uint32_t & size)
   size_t result = 0;
   auto const functor = [&result, &symbols](UnitValue const & v)
   {
-    size_t stringSize = strlen(v.m_s);
+    size_t stringSize = v.m_s.length();
     result = std::max(result, stringSize);
     for (size_t i = 0; i < stringSize; ++i)
       symbols.insert(v.m_s[i]);
   };
 
-  std::for_each(std::begin(g_arrFeets), std::end(g_arrFeets), functor);
+  std::for_each(std::begin(g_arrFeet), std::end(g_arrFeet), functor);
   std::for_each(std::begin(g_arrMeters), std::end(g_arrMeters), functor);
   std::for_each(std::begin(g_arrYards), std::end(g_arrYards), functor);
 
@@ -235,8 +234,8 @@ double RulerHelper::CalcMetersDiff(double value)
   using namespace measurement_utils;
   if (GetMeasurementUnits() == Units::Imperial)
   {
-    arrU = g_arrFeets;
-    count = ARRAY_SIZE(g_arrFeets);
+    arrU = g_arrFeet;
+    count = ARRAY_SIZE(g_arrFeet);
     conversionFn = &MetersToFeet;
   }
 
@@ -280,5 +279,29 @@ void RulerHelper::SetTextDirty()
 {
   m_dirtyTextRequested = false;
   m_isTextDirty = true;
+}
+
+void RulerHelper::LocalizeTexts()
+{
+  std::string decSep = platform::GetCurrentLocale().m_decimalSeparator;
+
+  if (decSep == ".")
+    return;
+
+  for (auto & [m_s, m_i] : g_arrFeet)
+  {
+    size_t pos;
+
+    if ((pos = m_s.find(".")) != std::string::npos)
+      m_s.replace(pos, 1, decSep);
+  }
+
+  for (auto & [m_s, m_i] : g_arrYards)
+  {
+    size_t pos;
+
+    if ((pos = m_s.find(".")) != std::string::npos)
+      m_s.replace(pos, 1, decSep);
+  }
 }
 }  // namespace gui
