@@ -1282,11 +1282,11 @@ line|z18-[railway=light_rail][!tunnel]::dash,
 
 
 line|z15-[railway=preserved],
-line|z16-[railway=abandoned],
+line|z16-[railway=disused],
 {width: 1.6;dashes: 6.3,6.3;}
 
 line|z15-[railway=construction],
-line|z16-[railway=disused],
+line|z16-[railway=abandoned],
 {width: 1;dashes: 1.8,5.4;}
 
 /* 9.2 Rail tunnel 14-22 ZOOM */

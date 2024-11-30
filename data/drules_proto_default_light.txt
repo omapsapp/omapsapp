@@ -68967,11 +68967,11 @@ cont {
   element {
     scale: 16
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -68979,11 +68979,11 @@ cont {
   element {
     scale: 17
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -68991,11 +68991,11 @@ cont {
   element {
     scale: 18
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69003,11 +69003,11 @@ cont {
   element {
     scale: 19
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69015,11 +69015,11 @@ cont {
   element {
     scale: 20
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69030,23 +69030,23 @@ cont {
   element {
     scale: 16
     lines {
-      width: 7.6
+      width: 6.4
       color: 1300267136
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 6.4
+      width: 5.2
       color: 871230427
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69054,23 +69054,23 @@ cont {
   element {
     scale: 17
     lines {
-      width: 9.2
+      width: 8.0
       color: 1300267136
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 7.8
+      width: 6.6
       color: 871230427
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69078,23 +69078,23 @@ cont {
   element {
     scale: 18
     lines {
-      width: 12.0
+      width: 10.8
       color: 1300267136
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 10.2
+      width: 9.0
       color: 871230427
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69102,23 +69102,23 @@ cont {
   element {
     scale: 19
     lines {
-      width: 12.0
+      width: 10.8
       color: 1300267136
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 10.2
+      width: 9.0
       color: 871230427
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69126,23 +69126,23 @@ cont {
   element {
     scale: 20
     lines {
-      width: 12.0
+      width: 10.8
       color: 1300267136
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 10.2
+      width: 9.0
       color: 871230427
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69153,11 +69153,11 @@ cont {
   element {
     scale: 16
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69165,11 +69165,11 @@ cont {
   element {
     scale: 17
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69177,11 +69177,11 @@ cont {
   element {
     scale: 18
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69189,11 +69189,11 @@ cont {
   element {
     scale: 19
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69201,11 +69201,11 @@ cont {
   element {
     scale: 20
     lines {
-      width: 1.6
+      width: 1.0
       color: 1301714310
       dashdot {
-        dd: 6.3
-        dd: 6.3
+        dd: 1.8
+        dd: 5.4
       }
       priority: 160
     }
@@ -69292,11 +69292,11 @@ cont {
   element {
     scale: 16
     lines {
-      width: 1.0
+      width: 1.6
       color: 1301714310
       dashdot {
-        dd: 1.8
-        dd: 5.4
+        dd: 6.3
+        dd: 6.3
       }
       priority: 160
     }
@@ -69304,11 +69304,11 @@ cont {
   element {
     scale: 17
     lines {
-      width: 1.0
+      width: 1.6
       color: 1301714310
       dashdot {
-        dd: 1.8
-        dd: 5.4
+        dd: 6.3
+        dd: 6.3
       }
       priority: 160
     }
@@ -69316,11 +69316,11 @@ cont {
   element {
     scale: 18
     lines {
-      width: 1.0
+      width: 1.6
       color: 1301714310
       dashdot {
-        dd: 1.8
-        dd: 5.4
+        dd: 6.3
+        dd: 6.3
       }
       priority: 160
     }
@@ -69328,11 +69328,11 @@ cont {
   element {
     scale: 19
     lines {
-      width: 1.0
+      width: 1.6
       color: 1301714310
       dashdot {
-        dd: 1.8
-        dd: 5.4
+        dd: 6.3
+        dd: 6.3
       }
       priority: 160
     }
@@ -69340,11 +69340,11 @@ cont {
   element {
     scale: 20
     lines {
-      width: 1.0
+      width: 1.6
       color: 1301714310
       dashdot {
-        dd: 1.8
-        dd: 5.4
+        dd: 6.3
+        dd: 6.3
       }
       priority: 160
     }
