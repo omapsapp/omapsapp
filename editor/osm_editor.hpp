@@ -239,6 +239,8 @@ private:
 
   static bool IsFeatureUploadedImpl(FeaturesContainer const & features, MwmId const & mwmId, uint32_t index);
 
+  void UpdateXMLFeatureTags(editor::XMLFeature & feature, std::list<JournalEntry> const & journal);
+
   /// Deleted, edited and created features.
   base::AtomicSharedPtr<FeaturesContainer> m_features;
 

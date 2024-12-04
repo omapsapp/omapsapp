@@ -362,7 +362,8 @@ JNIEXPORT void JNICALL
 Java_app_organicmaps_editor_Editor_nativeStartEdit(JNIEnv *, jclass)
 {
   ::Framework * frm = g_framework->NativeFramework();
-  if (!frm->HasPlacePageInfo()) {
+  if (!frm->HasPlacePageInfo())
+  {
     ASSERT(g_editableMapObject.GetEditingLifecycle() == osm::EditingLifecycle::CREATED,
            ("PlacePageInfo should only be empty for new features."));
     return;

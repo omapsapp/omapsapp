@@ -69,7 +69,6 @@ class EditableMapObject : public MapObject
 {
 public:
   static uint8_t constexpr kMaximumLevelsEditableByUsers = 50;
-  osm::EditJournal journal;
 
   bool IsNameEditable() const;
   bool IsAddressEditable() const;
@@ -133,7 +132,7 @@ public:
 
   /// Journal that stores changes to map object
   EditJournal const & GetJournal() const;
-  void SetJournal(EditJournal editJournal);
+  void SetJournal(EditJournal && editJournal);
   EditingLifecycle GetEditingLifecycle() const;
   void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
   void ClearJournal();
@@ -156,5 +155,6 @@ private:
   LocalizedStreet m_street;
   std::vector<LocalizedStreet> m_nearbyStreets;
   EditableProperties m_editableProperties;
+  osm::EditJournal m_journal;
 };
 }  // namespace osm

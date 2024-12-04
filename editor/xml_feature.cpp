@@ -431,7 +431,8 @@ osm::EditJournal XMLFeature::GetEditJournal() const
 
       auto xmlData = xmlEntry.child("data");
 
-      switch (entry.journalEntryType) {
+      switch (entry.journalEntryType)
+      {
         case osm::JournalEntryType::TagModification:
         {
           osm::TagModData tagModData;
@@ -470,11 +471,13 @@ osm::EditJournal XMLFeature::GetEditJournal() const
   auto xmlJournal = GetRootNode().child("journal");
   if (xmlJournal)
     readEditJournalList(xmlJournal, journal, false);
-  else {
+  else
+  {
     // Mark as Legacy Object
     osm::LegacyObjData legacyObjData = {"1.0"};
-    journal.AddJournalEntry({osm::JournalEntryType::LegacyObject, time(nullptr), legacyObjData});
-    journal.AddJournalHistoryEntry({osm::JournalEntryType::LegacyObject, time(nullptr), std::move(legacyObjData)});
+    time_t timestamp = time(nullptr);
+    journal.AddJournalEntry({osm::JournalEntryType::LegacyObject, timestamp, legacyObjData});
+    journal.AddJournalHistoryEntry({osm::JournalEntryType::LegacyObject, timestamp, std::move(legacyObjData)});
   }
 
   auto xmlJournalHistory = GetRootNode().child("journalHistory");
@@ -489,15 +492,18 @@ void XMLFeature::SetEditJournal(osm::EditJournal const & journal)
 {
   LOG(LDEBUG, ("Saving Journal:\n", journal.JournalToString()));
 
-  auto const insertEditJournalList = [] (pugi::xml_node & xmlNode, std::list<osm::JournalEntry> const & journalList){
+  auto const insertEditJournalList = [] (pugi::xml_node & xmlNode, std::list<osm::JournalEntry> const & journalList)
+  {
     xmlNode.append_attribute("version") = "1.0";
-    for (osm::JournalEntry const & entry : journalList) {
+    for (osm::JournalEntry const & entry : journalList)
+    {
       auto xmlEntry = xmlNode.append_child("entry");
       xmlEntry.append_attribute("type") = osm::EditJournal::ToString(entry.journalEntryType).data();
       xmlEntry.append_attribute("timestamp") = base::TimestampToString(entry.timestamp).data();
 
       auto xmlData = xmlEntry.append_child("data");
-      switch (entry.journalEntryType) {
+      switch (entry.journalEntryType)
+      {
         case osm::JournalEntryType::TagModification:
         {
           osm::TagModData const & tagModData = std::get<osm::TagModData>(entry.data);
@@ -580,10 +586,11 @@ void XMLFeature::RemoveTag(string_view key)
 
 void XMLFeature::UpdateOSMTag(std::string_view key, std::string_view value)
 {
-  if (value == "") {
+  if (value.empty())
     RemoveTag(key);
-  }
-  else {
+
+  else
+  {
     // TODO(mgsergio): Get these alt tags from the config.
     base::StringIL const alternativeTags[] = {
         {"phone", "contact:phone", "contact:mobile", "mobile"},
@@ -795,13 +802,15 @@ XMLFeature TypeToXML(uint32_t type, feature::GeomType geomType, m2::PointD merca
   }
   else
   {
-    string const strType = classif().GetReadableObjectName(uint32_t(type));
+    string const strType = classif().GetReadableObjectName(type);
     strings::SimpleTokenizer iter(strType, "-");
     string_view const k = *iter;
 
     CHECK(++iter, ("Processing Type failed: ", strType));
     // Main type is always stored as "k=amenity v=restaurant".
     toFeature.SetTagValue(k, *iter);
+
+    ASSERT(!(++iter), ("Can not process 3-arity/complex types: ", strType));
   }
   return toFeature;
 }

@@ -152,20 +152,23 @@ std::vector<std::string_view> const * StringUtf8Multilang::GetTransliteratorsIds
 std::string StringUtf8Multilang::GetOSMTagByCode(uint8_t const langCode)
 {
   std::string_view lang = StringUtf8Multilang::GetLangByCode(langCode);
-  if (lang == "")
-    return "";
-  else if (lang == "int_name" || lang == "alt_name" || lang == "old_name")
+  if (lang == "int_name" || lang == "alt_name" || lang == "old_name")
     return std::string{lang};
   else if (lang == "default")
     return "name";
-  else
+  else if (!lang.empty())
     return std::string{"name:"}.append(lang);
+  else
+  {
+    ASSERT_FAIL(("Language can not be an empty string"));
+    return "";
+  }
 }
 
 uint8_t StringUtf8Multilang::GetCodeByOSMTag(std::string const & name)
 {
   std::string lang;
-  if (name.substr(0, 5) == "name:")
+  if (name.starts_with("name:"))
     lang = name.substr(5);
   else if (name == "name")
     lang = "default";

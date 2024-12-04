@@ -581,53 +581,55 @@ bool EditableMapObject::ValidateName(string const & name)
 
 EditJournal const & EditableMapObject::GetJournal() const
 {
-  return journal;
+  return m_journal;
 }
 
-void EditableMapObject::SetJournal(EditJournal editJournal)
+void EditableMapObject::SetJournal(EditJournal && editJournal)
 {
-  journal = editJournal;
+  m_journal = std::move(editJournal);
 }
 
 EditingLifecycle EditableMapObject::GetEditingLifecycle() const
 {
-  return journal.GetEditingLifecycle();
+  return m_journal.GetEditingLifecycle();
 }
 
 void EditableMapObject::MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator)
 {
-  journal.MarkAsCreated(type, geomType, std::move(mercator));
+  m_journal.MarkAsCreated(type, geomType, std::move(mercator));
 }
 
 void EditableMapObject::ClearJournal()
 {
-  journal.Clear();
+  m_journal.Clear();
 }
 
 void EditableMapObject::ApplyEditsFromJournal(EditJournal const & editJournal)
 {
-  for (JournalEntry const & entry : editJournal.GetJournalHistory()) {
+  for (JournalEntry const & entry : editJournal.GetJournalHistory())
     ApplyJournalEntry(entry);
-  }
-  for (JournalEntry const & entry : editJournal.GetJournal()) {
+
+  for (JournalEntry const & entry : editJournal.GetJournal())
     ApplyJournalEntry(entry);
-  }
 }
 
 void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
 {
   LOG(LDEBUG, ("Applying Journal Entry: ", osm::EditJournal::ToString(entry)));
   //Todo
-  switch (entry.journalEntryType) {
+  switch (entry.journalEntryType)
+  {
     case JournalEntryType::TagModification:
     {
       TagModData const & tagModData = std::get<TagModData>(entry.data);
 
       //Metadata
       MetadataID type;
-      if (feature::Metadata::TypeFromString(tagModData.key, type)) {
+      if (feature::Metadata::TypeFromString(tagModData.key, type))
+      {
         m_metadata.Set(type, tagModData.new_value);
-        if (type == MetadataID::FMD_INTERNET) {
+        if (type == MetadataID::FMD_INTERNET)
+        {
           uint32_t const wifiType = ftypes::IsWifiChecker::Instance().GetType();
           if (tagModData.new_value == "wifi")
             m_types.SafeAdd(wifiType);
@@ -638,19 +640,21 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
       }
 
       //Names
-      uint8_t langCode = StringUtf8Multilang::GetCodeByOSMTag(tagModData.key);
-      if (langCode != 255) { //not UnsupportedLanguageCode
+      int8_t langCode = StringUtf8Multilang::GetCodeByOSMTag(tagModData.key);
+      if (langCode != StringUtf8Multilang::kUnsupportedLanguageCode)
+      {
         m_name.AddString(langCode, tagModData.new_value);
         break;
       }
 
-      if (tagModData.key == "addr:street") {
+      if (tagModData.key == "addr:street")
         m_street.m_defaultName = tagModData.new_value;
-      }
-      else if (tagModData.key == "addr:housenumber") {
+
+      else if (tagModData.key == "addr:housenumber")
         m_houseNumber = tagModData.new_value;
-      }
-      else if (tagModData.key == "cuisine") {
+
+      else if (tagModData.key == "cuisine")
+      {
         Classificator const & cl = classif();
         // Remove old cuisine values
         vector<std::string_view> oldCuisines = strings::Tokenize(tagModData.old_value, ";");
@@ -661,7 +665,8 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         for (std::string_view const & cuisine : newCuisines)
           m_types.SafeAdd(cl.GetTypeByPath({string_view("cuisine"), cuisine}));
       }
-      else if (tagModData.key == "diet:vegetarian") {
+      else if (tagModData.key == "diet:vegetarian")
+      {
         Classificator const & cl = classif();
         uint32_t const vegetarianType = cl.GetTypeByPath({string_view("cuisine"), "vegetarian"});
         if (tagModData.new_value == "yes")
@@ -669,7 +674,8 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         else
           m_types.Remove(vegetarianType);
       }
-      else if (tagModData.key == "diet:vegan") {
+      else if (tagModData.key == "diet:vegan")
+      {
         Classificator const & cl = classif();
         uint32_t const veganType = cl.GetTypeByPath({string_view("cuisine"), "vegan"});
         if (tagModData.new_value == "yes")
@@ -677,9 +683,9 @@ void EditableMapObject::ApplyJournalEntry(JournalEntry const & entry)
         else
           m_types.Remove(veganType);
       }
-      else {
+      else
         LOG(LWARNING, ("OSM key \"" , tagModData.key, "\" is unknown, skipped"));
-      }
+
       break;
     }
     case JournalEntryType::ObjectCreated:
@@ -704,46 +710,48 @@ void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
   LOG(LDEBUG, ("Executing LogDiffInJournal"));
 
   // Name
-  for (StringUtf8Multilang::Lang language : StringUtf8Multilang::GetSupportedLanguages()) {
+  for (StringUtf8Multilang::Lang language : StringUtf8Multilang::GetSupportedLanguages())
+  {
     int8_t langCode = StringUtf8Multilang::GetLangIndex(language.m_code);
     std::string_view new_name;
     std::string_view old_name;
     m_name.GetString(langCode, new_name);
     unedited_emo.GetNameMultilang().GetString(langCode, old_name);
 
-    if (new_name != old_name) {
+    if (new_name != old_name)
+    {
       std::string osmLangName = StringUtf8Multilang::GetOSMTagByCode(langCode);
-      journal.AddTagChange(osmLangName, std::string(old_name), std::string(new_name));
+      m_journal.AddTagChange(osmLangName, std::string(old_name), std::string(new_name));
     }
   }
 
   // Address
-  if (m_street.m_defaultName != unedited_emo.GetStreet().m_defaultName) {
-    journal.AddTagChange("addr:street", unedited_emo.GetStreet().m_defaultName,  m_street.m_defaultName);
-  }
+  if (m_street.m_defaultName != unedited_emo.GetStreet().m_defaultName)
+    m_journal.AddTagChange("addr:street", unedited_emo.GetStreet().m_defaultName, m_street.m_defaultName);
 
-  if (m_houseNumber != unedited_emo.GetHouseNumber()) {
-    journal.AddTagChange("addr:housenumber", unedited_emo.GetHouseNumber(), m_houseNumber);
-  }
+  if (m_houseNumber != unedited_emo.GetHouseNumber())
+    m_journal.AddTagChange("addr:housenumber", unedited_emo.GetHouseNumber(), m_houseNumber);
 
   // Metadata
-  for (uint8_t i = 0; i < static_cast<uint8_t>(feature::Metadata::FMD_COUNT); ++i) {
+  for (uint8_t i = 0; i < static_cast<uint8_t>(feature::Metadata::FMD_COUNT); ++i)
+  {
     auto const type = static_cast<feature::Metadata::EType>(i);
     std::string const & value = std::string(GetMetadata(type));
     std::string const & old_value = std::string(unedited_emo.GetMetadata(type));
 
-    if (value != old_value) {
-      journal.AddTagChange(ToString(type), old_value, value);
-    }
+    if (value != old_value)
+      m_journal.AddTagChange(ToString(type), old_value, value);
   }
 
   // cuisine and diet
   std::vector<std::string> new_cuisines = GetCuisines();
   std::vector<std::string> old_cuisines = unedited_emo.GetCuisines();
 
-  auto const findAndErase = [] (std::vector<std::string>* cuisinesPtr, std::string s){
+  auto const findAndErase = [] (std::vector<std::string>* cuisinesPtr, std::string s)
+  {
     auto it = std::find((*cuisinesPtr).begin(), (*cuisinesPtr).end(), s);
-    if (it != (*cuisinesPtr).end()) {
+    if (it != (*cuisinesPtr).end())
+    {
       (*cuisinesPtr).erase(it);
       return "yes";
     }
@@ -753,33 +761,33 @@ void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
   std::string new_vegetarian = findAndErase(&new_cuisines, "vegetarian");
   std::string old_vegetarian = findAndErase(&old_cuisines, "vegetarian");
   if (new_vegetarian != old_vegetarian)
-    journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
+    m_journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
 
   std::string new_vegan = findAndErase(&new_cuisines, "vegan");
   std::string old_vegan = findAndErase(&old_cuisines, "vegan");
   if (new_vegan != old_vegan)
-    journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
+    m_journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
 
   bool cuisinesModified = false;
 
-  if (new_cuisines.size() != old_cuisines.size()) {
+  if (new_cuisines.size() != old_cuisines.size())
     cuisinesModified = true;
-  }
-  else {
-    for (auto const & new_cuisine : new_cuisines) {
-      for (auto const & old_cuisine : old_cuisines) {
-        if (new_cuisine == old_cuisine) {
+  else
+  {
+    for (auto const & new_cuisine : new_cuisines)
+    {
+      for (auto const & old_cuisine : old_cuisines)
+      {
+        if (new_cuisine == old_cuisine)
           goto value_found;
-        }
       }
       cuisinesModified = true;
       value_found:;
     }
   }
 
-  if (cuisinesModified) {
-    journal.AddTagChange("cuisine", strings::JoinStrings(old_cuisines, ";"), strings::JoinStrings(new_cuisines, ";"));
-  }
+  if (cuisinesModified)
+    m_journal.AddTagChange("cuisine", strings::JoinStrings(old_cuisines, ";"), strings::JoinStrings(new_cuisines, ";"));
 }
 
 bool AreObjectsEqualIgnoringStreet(EditableMapObject const & lhs, EditableMapObject const & rhs)

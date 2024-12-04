@@ -673,21 +673,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                     catch (ChangesetWrapper::EmptyFeatureException const &) {}
 
                     // Add tags to XMLFeature
-                    for (JournalEntry const & entry: journal) {
-                      switch (entry.journalEntryType) {
-                        case JournalEntryType::TagModification:
-                        {
-                          TagModData const & tagModData = std::get<TagModData>(entry.data);
-                          feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
-                          break;
-                        }
-                        case JournalEntryType::ObjectCreated:
-                          break;
-                        case JournalEntryType::LegacyObject:
-                          ASSERT_FAIL(("Legacy Objects can not be edited with the new editor"));
-                          break;
-                      }
-                    }
+                    UpdateXMLFeatureTags(feature, journal);
 
                     // Upload XMLFeature to OSM
                     LOG(LDEBUG, ("CREATE Feature (newEditor)", feature));
@@ -704,22 +690,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                     XMLFeature feature = GetMatchingFeatureFromOSM(changeset, fti.m_object);
 
                     // Update tags of XMLFeature
-                    for (JournalEntry const & entry: journal) {
-                      switch (entry.journalEntryType) {
-                        case JournalEntryType::TagModification:
-                        {
-                          TagModData const & tagModData = std::get<TagModData>(entry.data);
-                          feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
-                          break;
-                        }
-                        case JournalEntryType::ObjectCreated:
-                          CHECK(false, ("ObjectCreated can only be the first entry"));
-                          break;
-                        case JournalEntryType::LegacyObject:
-                          ASSERT_FAIL(("Legacy Objects can not be edited with the new editor"));
-                          break;
-                      }
-                    }
+                    UpdateXMLFeatureTags(feature, journal);
 
                     // Upload XMLFeature to OSM
                     LOG(LDEBUG, ("MODIFIED Feature (newEditor)", feature));
@@ -947,9 +918,8 @@ void Editor::SaveUploadedInformation(FeatureID const & fid, UploadInfo const & u
   fti.m_uploadStatus = uploadInfo.m_uploadStatus;
   fti.m_uploadError = uploadInfo.m_uploadError;
 
-  if (!NeedsUpload(uploadInfo.m_uploadStatus)) {
+  if (!NeedsUpload(uploadInfo.m_uploadStatus))
     fti.m_object.ClearJournal();
-  }
 
   SaveTransaction(editableFeatures);
 }
@@ -987,7 +957,7 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
       editor::ApplyPatch(xml, fti.m_object);
   }
 
-  fti.m_object.SetJournal(journal);
+  fti.m_object.SetJournal(std::move(journal));
   fti.m_object.SetID(fid);
   fti.m_street = xml.GetTagValue(kAddrStreetTag);
 
@@ -1372,6 +1342,27 @@ bool Editor::IsFeatureUploadedImpl(FeaturesContainer const & features, MwmId con
 {
   auto const * info = GetFeatureTypeInfo(features, mwmId, index);
   return info && info->m_uploadStatus == kUploaded;
+}
+
+void Editor::UpdateXMLFeatureTags(editor::XMLFeature & feature, std::list<JournalEntry> const & journal)
+{
+  for (JournalEntry const & entry: journal)
+  {
+    switch (entry.journalEntryType)
+    {
+      case JournalEntryType::TagModification:
+      {
+        TagModData const & tagModData = std::get<TagModData>(entry.data);
+        feature.UpdateOSMTag(tagModData.key, tagModData.new_value);
+        break;
+      }
+      case JournalEntryType::ObjectCreated:
+        break;
+      case JournalEntryType::LegacyObject:
+        ASSERT_FAIL(("Legacy Objects can not be edited with the new editor"));
+        break;
+    }
+  }
 }
 
 string DebugPrint(Editor::SaveResult saveResult)

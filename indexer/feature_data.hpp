@@ -75,7 +75,8 @@ namespace feature
 
     void SafeAdd(uint32_t type)
     {
-      if (!Has(type)) {
+      if (!Has(type))
+      {
         if (m_size < kMaxTypesCount)
           Add(type);
         else

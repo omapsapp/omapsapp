@@ -10,26 +10,30 @@
 
 namespace osm
 {
-  enum class JournalEntryType {
+  enum class JournalEntryType
+  {
     TagModification,
     ObjectCreated,
     LegacyObject,   //object without full journal history, used for transition to new editor
     //Possible future values: ObjectDeleted, ObjectDisused, ObjectNotDisused, LocationChanged, FeatureTypeChanged
   };
 
-  struct TagModData {
+  struct TagModData
+  {
     std::string key;
     std::string old_value;
     std::string new_value;
   };
 
-  struct ObjCreateData {
+  struct ObjCreateData
+  {
     uint32_t type;
     feature::GeomType geomType;
     m2::PointD mercator;
   };
 
-  struct LegacyObjData {
+  struct LegacyObjData
+  {
     std::string version;
   };
 
@@ -50,8 +54,8 @@ namespace osm
 
   class EditJournal
   {
-    std::list<JournalEntry> journal{};
-    std::list<JournalEntry> journalHistory{};
+    std::list<JournalEntry> m_journal{};
+    std::list<JournalEntry> m_journalHistory{};
 
   public:
     std::list<JournalEntry> const & GetJournal() const;
@@ -64,14 +68,14 @@ namespace osm
     /// Log object creation in the journal
     void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
 
-    void AddJournalEntry(JournalEntry const & entry);
+    void AddJournalEntry(JournalEntry entry);
 
     /// Clear Journal and move content to journalHistory, used after upload to OSM
     void Clear();
 
     std::list<JournalEntry> const & GetJournalHistory() const;
 
-    void AddJournalHistoryEntry(JournalEntry const & entry);
+    void AddJournalHistoryEntry(JournalEntry entry);
 
     std::string JournalToString() const;
 
