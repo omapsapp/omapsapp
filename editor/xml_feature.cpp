@@ -418,43 +418,80 @@ osm::EditJournal XMLFeature::GetEditJournal() const
 
   auto readEditJournalList = [] (pugi::xml_node & xmlNode, osm::EditJournal & journal, bool isHistory)
   {
+    auto getAttribute = [] (pugi::xml_node & xmlNode, std::string_view attribute)
+    {
+      pugi::xml_attribute xmlValue = xmlNode.attribute(attribute.data());
+      if (xmlValue.empty())
+        MYTHROW(editor::InvalidJournalEntry, ("JournalEntry does not contain attribute: ", attribute));
+
+      return xmlValue.value();
+    };
+
     for (auto xmlEntry = xmlNode.child("entry"); xmlEntry; xmlEntry = xmlEntry.next_sibling("entry"))
     {
       osm::JournalEntry entry;
 
-      std::string strType = xmlEntry.attribute("type").value();
-      std::optional<osm::JournalEntryType> type = osm::EditJournal::TypeFromString(strType);
-      ASSERT(type.has_value(), ("Invalid JournalEntryType ", strType));
-      entry.journalEntryType = *type;
+      // JournalEntryType
+      std::string strEntryType = getAttribute(xmlEntry, "type");
+      std::optional<osm::JournalEntryType> entryType = osm::EditJournal::TypeFromString(strEntryType);
+      if (!entryType)
+        MYTHROW(editor::InvalidJournalEntry, ("Invalid JournalEntryType:", strEntryType));
+      entry.journalEntryType = *entryType;
 
-      entry.timestamp = base::StringToTimestamp(xmlEntry.attribute("timestamp").value());
+      // Timestamp
+      std::string strTimestamp = getAttribute(xmlEntry, "timestamp");
+      entry.timestamp = base::StringToTimestamp(strTimestamp);
+      if (entry.timestamp == base::INVALID_TIME_STAMP)
+        MYTHROW(editor::InvalidJournalEntry, ("Invalid Timestamp:", strTimestamp));
 
+      // Data
       auto xmlData = xmlEntry.child("data");
+      if (!xmlData)
+        MYTHROW(editor::InvalidJournalEntry, ("No Data item"));
 
       switch (entry.journalEntryType)
       {
         case osm::JournalEntryType::TagModification:
         {
           osm::TagModData tagModData;
-          tagModData.key = xmlData.attribute("key").value();
-          tagModData.old_value = xmlData.attribute("old_value").value();
-          tagModData.new_value = xmlData.attribute("new_value").value();
+
+          tagModData.key = getAttribute(xmlData, "key");
+          if (tagModData.key.empty())
+            MYTHROW(editor::InvalidJournalEntry, ("Empty key in TagModData"));
+          tagModData.old_value = getAttribute(xmlData, "old_value");
+          tagModData.new_value = getAttribute(xmlData, "new_value");
+
           entry.data = tagModData;
           break;
         }
         case osm::JournalEntryType::ObjectCreated:
         {
           osm::ObjCreateData objCreateData;
-          objCreateData.type = classif().GetTypeByReadableObjectName(xmlData.attribute("type").value());
-          objCreateData.geomType = feature::TypeFromString(xmlData.attribute("geomType").value());
+
+          // Feature Type
+          std::string strType = getAttribute(xmlData, "type");
+          if (strType.empty())
+            MYTHROW(editor::InvalidJournalEntry, ("Feature type is empty"));
+          objCreateData.type = classif().GetTypeByReadableObjectName(strType);
+          if (objCreateData.type == IndexAndTypeMapping::INVALID_TYPE)
+            MYTHROW(editor::InvalidJournalEntry, ("Invalid Feature Type:", strType));
+
+          // GeomType
+          std::string strGeomType = getAttribute(xmlData, "geomType");
+          objCreateData.geomType = feature::TypeFromString(strGeomType);
+          if (objCreateData.geomType != feature::GeomType::Point)
+            MYTHROW(editor::InvalidJournalEntry, ("Invalid geomType (only point features are supported):", strGeomType));
+
+          // Mercator
           objCreateData.mercator = mercator::FromLatLon(GetLatLonFromNode(xmlData));
+
           entry.data = objCreateData;
           break;
         }
         case osm::JournalEntryType::LegacyObject:
         {
           osm::LegacyObjData legacyObjData;
-          legacyObjData.version = xmlData.attribute("version").value();
+          legacyObjData.version = getAttribute(xmlData, "version");
           entry.data = legacyObjData;
           break;
         }

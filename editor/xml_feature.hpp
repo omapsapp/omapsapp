@@ -29,6 +29,7 @@ DECLARE_EXCEPTION(NoLatLon, XMLFeatureError);
 DECLARE_EXCEPTION(NoXY, XMLFeatureError);
 DECLARE_EXCEPTION(NoTimestamp, XMLFeatureError);
 DECLARE_EXCEPTION(NoHeader, XMLFeatureError);
+DECLARE_EXCEPTION(InvalidJournalEntry, XMLFeatureError);
 
 class XMLFeature
 {
