@@ -321,7 +321,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Aktiver posisjonstjenester</string>
     <string name="save">Lagre</string>
-    <string name="edit_description_hint">Dine beskrivelser (tekst eller html)</string>
     <string name="create">opprett</string>
     <!-- red color -->
     <string name="red">Rød</string>
@@ -548,6 +547,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Mer informasjon om Kayak</string>
     <string name="placepage_edit_bookmark_button">Rediger bokmerke</string>
+    <string name="placepage_personal_notes_hint">Personlige notater (text or html)</string>
     <string name="editor_comment_hint">Kommentar…</string>
     <string name="editor_reset_edits_message">Nullstille alle lokale endringer?</string>
     <string name="editor_reset_edits_button">Nullstill</string>
@@ -662,7 +662,6 @@
     <string name="delete_list">Slett liste</string>
     <string name="public_access">Offentlig tilgang</string>
     <string name="limited_access">Begrenset adgang</string>
-    <string name="bookmark_list_description_hint">Lag en beskrivelse (text or html)</string>
     <string name="not_shared">Privat</string>
     <string name="speedcams_alert_title">Fartskamera</string>
     <string name="place_description_title">Plasser beskrivelse</string>

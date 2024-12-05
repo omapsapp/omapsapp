@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Nombre del marcador";
 
-"placepage_personal_notes_hint" = "Notas personales";
+"placepage_personal_notes_hint" = "Notas personales (texto o html)";
 
 "placepage_delete_bookmark_button" = "Eliminar marcador";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Eliminar lista";
 
 "hide_from_map" = "Ocultar del mapa";
-
-"bookmark_list_description_hint" = "Introduzca una descripción (texto o html)";
 
 "tags_loading_error_subtitle" = "Ocurrió un error al cargar las etiquetas, por favor intente de nuevo";
 

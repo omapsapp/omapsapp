@@ -293,7 +293,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">कृपया स्थान सेवा सक्रिय करा</string>
     <string name="save">साठवा</string>
-    <string name="edit_description_hint">तुमचे वर्णन (मजकूर किंवा html)</string>
     <string name="create">तयार करा</string>
     <!-- red color -->
     <string name="red">लाल</string>
@@ -519,6 +518,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">कायाक वर तपशील</string>
     <string name="placepage_edit_bookmark_button">खूणपत्र संपादित करा</string>
+    <string name="placepage_personal_notes_hint">वैयक्तिक चिठ्ठ्या (मजकूर किंवा html)</string>
     <string name="editor_comment_hint">टिप्पणी</string>
     <string name="editor_reset_edits_message">सर्व स्थानिक बदल टाकून द्यायचे?</string>
     <string name="editor_reset_edits_button">टाकून द्या</string>
@@ -631,7 +631,6 @@
     <string name="delete_list">यादी मिटवा</string>
     <string name="public_access">सार्वजनिक प्रवेश</string>
     <string name="limited_access">मर्यादित प्रवेश</string>
-    <string name="bookmark_list_description_hint">वर्णन लिहा (मजकूर किंवा html)</string>
     <string name="not_shared">खाजगी</string>
     <string name="speedcams_alert_title">वेग कॅमेरे</string>
     <string name="place_description_title">ठिकाणाचे वर्णन</string>

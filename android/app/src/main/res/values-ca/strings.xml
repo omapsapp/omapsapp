@@ -323,7 +323,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Activeu els serveis de geolocalització</string>
     <string name="save">Desa</string>
-    <string name="edit_description_hint">Les vostres descripcions (text o html)</string>
     <string name="create">crea</string>
     <!-- red color -->
     <string name="red">Vermell</string>
@@ -551,6 +550,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Detalls a Kayak</string>
     <string name="placepage_edit_bookmark_button">Edita el marcador</string>
+    <string name="placepage_personal_notes_hint">Notes personals (text o html)</string>
     <string name="editor_comment_hint">Comentari…</string>
     <string name="editor_reset_edits_message">Voleu descartar tots els canvis locals?</string>
     <string name="editor_reset_edits_button">Descarta</string>
@@ -667,7 +667,6 @@
     <string name="delete_list">Esborra la llista</string>
     <string name="public_access">Accés públic</string>
     <string name="limited_access">Accés limitat</string>
-    <string name="bookmark_list_description_hint">Escriviu una descripció (text o html)</string>
     <string name="not_shared">Privat</string>
     <string name="speedcams_alert_title">Radars</string>
     <string name="place_description_title">Descripció del lloc</string>

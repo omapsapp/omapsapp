@@ -300,7 +300,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Bạn vui lòng bật Dịch vụ Định vị</string>
     <string name="save">Lưu</string>
-    <string name="edit_description_hint">Mô tả của bạn (chữ hoặc html)</string>
     <string name="create">tạo</string>
     <!-- red color -->
     <string name="red">Đỏ</string>
@@ -522,6 +521,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Chi tiết trên Kayak</string>
     <string name="placepage_edit_bookmark_button">Sửa Dấu Trang</string>
+    <string name="placepage_personal_notes_hint">Ghi chú cá nhân (văn bản hoặc html)</string>
     <string name="editor_comment_hint">Nhận xét…</string>
     <string name="editor_reset_edits_message">Cài đặt lại tất cả thay đổi cục bộ?</string>
     <string name="editor_reset_edits_button">Cài đặt lại</string>
@@ -628,7 +628,6 @@
     <string name="delete_list">Xóa danh sách</string>
     <string name="public_access">Truy cập công khai</string>
     <string name="limited_access">Truy cập hạn chế</string>
-    <string name="bookmark_list_description_hint">Đánh vào một mô tả (văn bản hoặc html)</string>
     <string name="not_shared">Riêng tư</string>
     <string name="speedcams_alert_title">Tăn tốc độ máy ảnh</string>
     <string name="place_description_title">Mô tả Địa điểm</string>

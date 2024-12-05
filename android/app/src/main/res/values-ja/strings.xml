@@ -324,7 +324,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">位置情報サービスを有効化してください</string>
     <string name="save">保存</string>
-    <string name="edit_description_hint">詳細（テキストまたはHTML）</string>
     <string name="create">作成</string>
     <!-- red color -->
     <string name="red">赤</string>
@@ -554,6 +553,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak で詳細表示</string>
     <string name="placepage_edit_bookmark_button">ブックマークを編集</string>
+    <string name="placepage_personal_notes_hint">パーソナルメモ（テキストまたはHTML）</string>
     <string name="editor_comment_hint">コメント…</string>
     <string name="editor_reset_edits_message">ローカル編集をすべてリセットしますか?</string>
     <string name="editor_reset_edits_button">リセット</string>
@@ -665,7 +665,6 @@
     <string name="delete_list">リストを削除</string>
     <string name="public_access">パブリック・アクセス</string>
     <string name="limited_access">制限されたアクセス</string>
-    <string name="bookmark_list_description_hint">説明(テキストまたはhtml)を記入してください</string>
     <string name="not_shared">非公開</string>
     <string name="speedcams_alert_title">自動速度違反取締装置</string>
     <string name="place_description_title">場所の説明</string>

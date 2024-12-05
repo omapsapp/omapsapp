@@ -131,6 +131,7 @@
     <string name="dialog_kayak_disclaimer">Bonasi ya rufaa inayopokelewa kwa kila nafasi uliyohifadhi kupitia kiungo hiki huenda kwenye uundaji wa ramani za kikaboni.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Maelezo kuhusu Kayak</string>
+    <string name="placepage_personal_notes_hint">Vidokezo vya kibinafsi (maandishi au HTML)</string>
     <string name="placepage_add_place_button">Ongeza Mahali kwa OpenStreetMap</string>
     <string name="editor_share_to_all_dialog_message_2">Wahariri wa OpenStreetMap watakagua mabadiliko na kuwasiliana nawe ikiwa wana maswali yoyote.</string>
     <!-- Shown as toast when starting the recent track recording -->
@@ -203,7 +204,6 @@
     <string name="delete_list">Futa Orodha</string>
     <string name="public_access">Matumizi ya umma</string>
     <string name="limited_access">Matumizi yenye ukomo</string>
-    <string name="bookmark_list_description_hint">Andika maelezo (maneno au html)</string>
     <string name="not_shared">Faragha</string>
     <string name="speedcams_alert_title">Kamera za mwendo-kasi</string>
     <string name="place_description_title">Maelezo ya Eneo</string>

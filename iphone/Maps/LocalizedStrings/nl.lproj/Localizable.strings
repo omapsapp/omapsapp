@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Bladwijzernaam";
 
-"placepage_personal_notes_hint" = "Persoonlijke aantekeningen";
+"placepage_personal_notes_hint" = "Persoonlijke aantekeningen (tekst of html)";
 
 "placepage_delete_bookmark_button" = "Verwijder bladwijzer";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Verwijder lijst";
 
 "hide_from_map" = "Verberg van de kaart";
-
-"bookmark_list_description_hint" = "Voer een beschrijving in (tekst of html)";
 
 "tags_loading_error_subtitle" = "Er is een fout opgetreden tijdens het laden van tags, probeer het opnieuw";
 

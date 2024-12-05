@@ -323,7 +323,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">יש להפעיל שירותי מיקום</string>
     <string name="save">שמור</string>
-    <string name="edit_description_hint">התיאור שלך (טקסט או HTML)</string>
     <string name="create">יצירה</string>
     <!-- red color -->
     <string name="red">אדום</string>
@@ -546,6 +545,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">פרטים על Kayak</string>
     <string name="placepage_edit_bookmark_button">ערוך סימניה</string>
+    <string name="placepage_personal_notes_hint">הערות אישיות (טקסט או HTML)</string>
     <string name="editor_comment_hint">תגובה…</string>
     <string name="editor_reset_edits_message">למחוק את כל השינויים המקומיים?</string>
     <string name="editor_reset_edits_button">מחק</string>
@@ -659,7 +659,6 @@
     <string name="delete_list">מחק רשימה</string>
     <string name="public_access">גישה ציבורית</string>
     <string name="limited_access">גישה מוגבלת</string>
-    <string name="bookmark_list_description_hint">הזן תיאור (טקסט או HTML)</string>
     <string name="not_shared">פרטי</string>
     <string name="speedcams_alert_title">מצלמות מהירות</string>
     <string name="place_description_title">תיאור מיקום</string>

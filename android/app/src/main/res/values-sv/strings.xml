@@ -298,7 +298,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Vänligen aktivera platstjänster</string>
     <string name="save">Spara</string>
-    <string name="edit_description_hint">Dina beskrivningar (text eller html)</string>
     <string name="create">skapa</string>
     <!-- red color -->
     <string name="red">Röd</string>
@@ -520,6 +519,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Information på Kayak</string>
     <string name="placepage_edit_bookmark_button">Redigera bokmärke</string>
+    <string name="placepage_personal_notes_hint">Personlig anteckning (text eller html)</string>
     <string name="editor_comment_hint">kommentar…</string>
     <string name="editor_reset_edits_message">Återställ alla lokala ändringar?</string>
     <string name="editor_reset_edits_button">Återställ</string>
@@ -627,7 +627,6 @@
     <string name="delete_list">Radera listan</string>
     <string name="public_access">Allmän åtkomst</string>
     <string name="limited_access">Privat åtkomst</string>
-    <string name="bookmark_list_description_hint">Lägg till en beskrivning (text eller html)</string>
     <string name="not_shared">Privat</string>
     <string name="speedcams_alert_title">Hastighetskameror</string>
     <string name="place_description_title">Beskrivning av platsen</string>

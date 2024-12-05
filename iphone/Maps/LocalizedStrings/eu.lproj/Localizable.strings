@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Markagailuaren izena";
 
-"placepage_personal_notes_hint" = "Ohar pertsonalak";
+"placepage_personal_notes_hint" = "Ohar pertsonalak (testua edo html)";
 
 "placepage_delete_bookmark_button" = "Ezabatu markagailua";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Ezabatu zerrenda";
 
 "hide_from_map" = "Ezkutatu mapan";
-
-"bookmark_list_description_hint" = "Gehitu deskribapen bat (testua edo html)";
 
 "tags_loading_error_subtitle" = "Errore bat gertatu da etiketak kargatzean. Saiatu berriro";
 

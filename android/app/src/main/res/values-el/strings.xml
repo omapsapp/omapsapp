@@ -324,7 +324,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Ενεργοποιήστε τις υπηρεσίες εντοπισμού τοποθεσίας</string>
     <string name="save">Αποθήκευση</string>
-    <string name="edit_description_hint">Λεπτομέρειες (κείμενο ή html)</string>
     <string name="create">δημιουργήστε</string>
     <!-- red color -->
     <string name="red">Κόκκινο</string>
@@ -547,6 +546,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Λεπτομέρειες στο Kayak</string>
     <string name="placepage_edit_bookmark_button">Επεξεργασία αγαπημένου</string>
+    <string name="placepage_personal_notes_hint">Προσωπικές σημειώσεις (κείμενο ή html)</string>
     <string name="editor_comment_hint">Σχόλιο…</string>
     <string name="editor_reset_edits_message">Απόρριψη όλων των τοπικών αλλαγών;</string>
     <string name="editor_reset_edits_button">Απόρριψη</string>
@@ -663,7 +663,6 @@
     <string name="delete_list">Διαγραφή λίστας</string>
     <string name="public_access">Δημόσια πρόσβαση</string>
     <string name="limited_access">Περιορισμένη πρόσβαση</string>
-    <string name="bookmark_list_description_hint">Εισάγετε μια περιγραφή (κείμενο ή html)</string>
     <string name="not_shared">Ιδιωτικό</string>
     <string name="speedcams_alert_title">Κάμερες Ταχύτητας</string>
     <string name="place_description_title">Περιγραφή μέρους</string>

@@ -309,7 +309,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Por favor ative os serviços de localização</string>
     <string name="save">Guardar</string>
-    <string name="edit_description_hint">As suas descrições (texto ou html)</string>
     <string name="create">criar</string>
     <!-- red color -->
     <string name="red">Vermelho</string>
@@ -533,6 +532,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Detalhes em Kayak</string>
     <string name="placepage_edit_bookmark_button">Editar favorito</string>
+    <string name="placepage_personal_notes_hint">Notas pessoais (texto ou html)</string>
     <string name="editor_comment_hint">Comentário…</string>
     <string name="editor_reset_edits_message">Eliminar todas as alterações locais?</string>
     <string name="editor_reset_edits_button">Eliminar</string>
@@ -640,7 +640,6 @@
     <string name="delete_list">Eliminar lista</string>
     <string name="public_access">Acesso público</string>
     <string name="limited_access">Acesso limitado</string>
-    <string name="bookmark_list_description_hint">Introduza uma descrição (texto ou html)</string>
     <string name="not_shared">Privado</string>
     <string name="speedcams_alert_title">Radares de velocidade</string>
     <string name="place_description_title">Descrição do local</string>

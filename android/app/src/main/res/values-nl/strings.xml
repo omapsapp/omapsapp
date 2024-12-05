@@ -321,7 +321,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Schakel locatiediensten in</string>
     <string name="save">Bewaar</string>
-    <string name="edit_description_hint">Uw omschrijvingen (tekst of html)</string>
     <string name="create">aanmaken</string>
     <!-- red color -->
     <string name="red">Rood</string>
@@ -548,6 +547,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Details op Kayak</string>
     <string name="placepage_edit_bookmark_button">Bewerk bladwijzer</string>
+    <string name="placepage_personal_notes_hint">Persoonlijke aantekeningen (tekst of html)</string>
     <string name="editor_comment_hint">Reactie…</string>
     <string name="editor_reset_edits_message">Alle lokale wijzigingen weggooien?</string>
     <string name="editor_reset_edits_button">Gooi weg</string>
@@ -662,7 +662,6 @@
     <string name="delete_list">Verwijder lijst</string>
     <string name="public_access">Publieke toegang</string>
     <string name="limited_access">Beperkte toegang</string>
-    <string name="bookmark_list_description_hint">Voer een beschrijving in (tekst of html)</string>
     <string name="not_shared">Privé</string>
     <string name="speedcams_alert_title">Snelheidscamera\'s</string>
     <string name="place_description_title">Plaatsbeschrijving</string>

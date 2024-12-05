@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Bookmark Name";
 
-"placepage_personal_notes_hint" = "Personal notes";
+"placepage_personal_notes_hint" = "Vidokezo vya kibinafsi (maandishi au HTML)";
 
 "placepage_delete_bookmark_button" = "Delete Bookmark";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Futa Orodha";
 
 "hide_from_map" = "Ficha kwenye ramani";
-
-"bookmark_list_description_hint" = "Andika maelezo (maneno au html)";
 
 "tags_loading_error_subtitle" = "Kosa limetokea wakati wa kupakua vibandiko, tafadhali jaribu tena";
 

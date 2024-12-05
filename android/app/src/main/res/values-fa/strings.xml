@@ -289,7 +289,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">لطفا موقعیت مکانی(GPS)خود را فعال کنید.</string>
     <string name="save">ذخیره</string>
-    <string name="edit_description_hint">توضیحات شما (متن یا  (html</string>
     <string name="create">ایجاد</string>
     <!-- red color -->
     <string name="red">قرمز</string>
@@ -515,6 +514,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">جزئیات در Kayak</string>
     <string name="placepage_edit_bookmark_button">ویرایش نشانه‌ها</string>
+    <string name="placepage_personal_notes_hint">یادداشت های شخصی (متن یا html)</string>
     <string name="editor_comment_hint">اظهار نظر</string>
     <string name="editor_reset_edits_message">آیا تغییرات محلی را نادیده می گیرید؟</string>
     <string name="editor_reset_edits_button">نادیده گرفتن</string>
@@ -623,7 +623,6 @@
     <string name="delete_list">حذف لیست</string>
     <string name="public_access">دسترسی عمومی</string>
     <string name="limited_access">دسترسی محدود</string>
-    <string name="bookmark_list_description_hint">یک توضیح (متن یا html) تایپ نمایید</string>
     <string name="not_shared">خصوصی</string>
     <string name="speedcams_alert_title">دوربین‌های سرعت</string>
     <string name="place_description_title">توضیحات محل</string>

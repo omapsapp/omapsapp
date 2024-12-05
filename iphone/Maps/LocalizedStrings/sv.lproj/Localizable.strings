@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Bokmärkesnamn";
 
-"placepage_personal_notes_hint" = "Personlig anteckning";
+"placepage_personal_notes_hint" = "Personlig anteckning (text eller html)";
 
 "placepage_delete_bookmark_button" = "Radera bokmärke";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Radera listan";
 
 "hide_from_map" = "Dölj från karta";
-
-"bookmark_list_description_hint" = "Lägg till en beskrivning (text eller html)";
 
 "tags_loading_error_subtitle" = "Ett fel uppstod när taggarna laddades, försök igen";
 

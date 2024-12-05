@@ -322,7 +322,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Mesedez, aktibatu kokapen zerbitzuak</string>
     <string name="save">Gorde</string>
-    <string name="edit_description_hint">Zure deskribapenak (testua edo html)</string>
     <string name="create">sortu</string>
     <!-- red color -->
     <string name="red">Gorria</string>
@@ -549,6 +548,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Xehetasunak Kayak-en</string>
     <string name="placepage_edit_bookmark_button">Editatu markagailua</string>
+    <string name="placepage_personal_notes_hint">Ohar pertsonalak (testua edo html)</string>
     <string name="editor_comment_hint">Iruzkina…</string>
     <string name="editor_reset_edits_message">Tokiko aldaketa guztiak berrezarri nahi dituzu?</string>
     <string name="editor_reset_edits_button">Berreskuratu</string>
@@ -662,7 +662,6 @@
     <string name="delete_list">Ezabatu zerrenda</string>
     <string name="public_access">Sarbide publikoa</string>
     <string name="limited_access">Sarbide mugatua</string>
-    <string name="bookmark_list_description_hint">Gehitu deskribapen bat (testua edo html)</string>
     <string name="not_shared">Pribatua</string>
     <string name="speedcams_alert_title">Abiadura kamerak</string>
     <string name="place_description_title">Tokiaren deskribapena</string>

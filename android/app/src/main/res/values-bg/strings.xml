@@ -305,7 +305,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Моля, разрешете услугите за местоположение</string>
     <string name="save">Запазване</string>
-    <string name="edit_description_hint">Ваши описания (текст или html)</string>
     <string name="create">създаване</string>
     <!-- red color -->
     <string name="red">Червено</string>
@@ -510,6 +509,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Подробности в Kayak</string>
     <string name="placepage_edit_bookmark_button">Редакция на отметка</string>
+    <string name="placepage_personal_notes_hint">Лични бележки (текст или html)</string>
     <string name="editor_comment_hint">Коментиране…</string>
     <string name="editor_reset_edits_message">Отхвърляне на всички локални промени?</string>
     <string name="editor_reset_edits_button">Отхвърляне</string>
@@ -613,7 +613,6 @@
     <string name="delete_list">Изтриване на списък</string>
     <string name="public_access">Публичен достъп</string>
     <string name="limited_access">Ограничен достъп</string>
-    <string name="bookmark_list_description_hint">Добавяне на описание (текст или html)</string>
     <string name="not_shared">Лично</string>
     <string name="speedcams_alert_title">Камери за скорост</string>
     <string name="place_description_title">Описание на мястото</string>

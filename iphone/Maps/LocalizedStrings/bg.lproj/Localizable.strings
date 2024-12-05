@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Име на отметка";
 
-"placepage_personal_notes_hint" = "Personal notes";
+"placepage_personal_notes_hint" = "Лични бележки (текст или html)";
 
 "placepage_delete_bookmark_button" = "Delete Bookmark";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Изтриване на списък";
 
 "hide_from_map" = "Hide from map";
-
-"bookmark_list_description_hint" = "Добавяне на описание (текст или html)";
 
 "tags_loading_error_subtitle" = "Възникна грешка при зареждането на таговете, моля, опитайте отново";
 

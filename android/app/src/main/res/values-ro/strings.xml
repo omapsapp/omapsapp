@@ -307,7 +307,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Activează serviciile de localizare</string>
     <string name="save">Salvează</string>
-    <string name="edit_description_hint">Descrierile tale (text sau html)</string>
     <string name="create">creează</string>
     <!-- red color -->
     <string name="red">Roșu</string>
@@ -534,6 +533,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Detalii pe Kayak</string>
     <string name="placepage_edit_bookmark_button">Modifică locul preferat</string>
+    <string name="placepage_personal_notes_hint">Însemnări personale (text sau html)</string>
     <string name="editor_comment_hint">Comentariu…</string>
     <string name="editor_reset_edits_message">Ștergi toate modificările locale?</string>
     <string name="editor_reset_edits_button">Șterge</string>
@@ -650,7 +650,6 @@
     <string name="delete_list">Șterge lista</string>
     <string name="public_access">Acces public</string>
     <string name="limited_access">Acces privat</string>
-    <string name="bookmark_list_description_hint">Adaugă o descriere (text sau html)</string>
     <string name="not_shared">Personal</string>
     <string name="speedcams_alert_title">Radare</string>
     <string name="place_description_title">Descrierea locului</string>

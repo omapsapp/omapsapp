@@ -304,7 +304,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Prosím, povolte Služby určování polohy</string>
     <string name="save">Uložit</string>
-    <string name="edit_description_hint">Popis (HTML nebo text)</string>
     <string name="create">vytvořit</string>
     <!-- red color -->
     <string name="red">Červená</string>
@@ -528,6 +527,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Podrobnosti na Kayak</string>
     <string name="placepage_edit_bookmark_button">Upravit záložku</string>
+    <string name="placepage_personal_notes_hint">Vlastní poznámka (text nebo html)</string>
     <string name="editor_comment_hint">Poznámka…</string>
     <string name="editor_reset_edits_message">Vymazat všechny místní změny?</string>
     <string name="editor_reset_edits_button">Vymazat</string>
@@ -635,7 +635,6 @@
     <string name="delete_list">Smazat seznam</string>
     <string name="public_access">Veřejně přístupné</string>
     <string name="limited_access">Soukromé</string>
-    <string name="bookmark_list_description_hint">Přidejte popis (text nebo html)</string>
     <string name="not_shared">Osobní účet</string>
     <string name="speedcams_alert_title">Detektory rychlosti</string>
     <string name="place_description_title">Popis místa</string>

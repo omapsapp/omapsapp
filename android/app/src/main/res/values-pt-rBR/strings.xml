@@ -299,7 +299,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Por favor, ative os Serviços de Localização</string>
     <string name="save">Salvar</string>
-    <string name="edit_description_hint">Suas descrições (texto ou html)</string>
     <string name="create">criar</string>
     <!-- red color -->
     <string name="red">Vermelho</string>
@@ -498,6 +497,7 @@
     <!-- An explanation dialog shown when clicking on more_on_kayak link. -->
     <string name="dialog_kayak_disclaimer">O bônus de indicação recebido por cada reserva feita por meio deste link é destinado ao desenvolvimento do Organic Maps.</string>
     <string name="placepage_edit_bookmark_button">Editar favorito</string>
+    <string name="placepage_personal_notes_hint">Anotações pessoais (texto ou html)</string>
     <string name="editor_comment_hint">Comentar…</string>
     <string name="editor_reset_edits_message">Descartar todas as modificações locais?</string>
     <string name="editor_reset_edits_button">Descartar</string>
@@ -600,7 +600,6 @@
     <string name="delete_list">Deletar lista</string>
     <string name="public_access">Acesso público</string>
     <string name="limited_access">Acesso limitado</string>
-    <string name="bookmark_list_description_hint">Digite uma descrição (texto ou html)</string>
     <string name="not_shared">Privado</string>
     <string name="speedcams_alert_title">Câmeras de trânsito</string>
     <string name="place_description_title">Descrição do lugar</string>

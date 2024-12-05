@@ -314,7 +314,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Palun luba asukohateenused</string>
     <string name="save">Salvesta</string>
-    <string name="edit_description_hint">Sinu kirjeldused (tekst või html)</string>
     <string name="create">loo</string>
     <!-- red color -->
     <string name="red">Punane</string>
@@ -543,6 +542,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Üksikasjad Kayaki kohta</string>
     <string name="placepage_edit_bookmark_button">Muuda järjehoidjat</string>
+    <string name="placepage_personal_notes_hint">Isiklikud märkmed (tekst või html)</string>
     <string name="editor_comment_hint">Kommenteeri…</string>
     <string name="editor_reset_edits_message">Loobu kõigist kohalikest muudatustest?</string>
     <string name="editor_reset_edits_button">Loobu</string>
@@ -658,7 +658,6 @@
     <string name="delete_list">Kustuta loetelu</string>
     <string name="public_access">Avalik ligipääs</string>
     <string name="limited_access">Piiratud ligipääs</string>
-    <string name="bookmark_list_description_hint">Sisesta kirjeldus (tekst või html)</string>
     <string name="not_shared">Privaatne</string>
     <string name="speedcams_alert_title">Kiiruskaamerad</string>
     <string name="place_description_title">Koha kirjeldus</string>

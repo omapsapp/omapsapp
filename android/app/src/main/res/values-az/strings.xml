@@ -322,7 +322,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Zəhmət olmasa məkan xidmətlərini aktivləşdirin</string>
     <string name="save">Yadda saxla</string>
-    <string name="edit_description_hint">Təsvirləriniz (mətn və ya html)</string>
     <string name="create">yaratmaq</string>
     <!-- red color -->
     <string name="red">Qırmızı</string>
@@ -551,6 +550,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Xizək sürmə haqqında təfərrüatlar</string>
     <string name="placepage_edit_bookmark_button">Əlfəcini redaktə edin</string>
+    <string name="placepage_personal_notes_hint">Şəxsi qeydlər (mətn və ya html)</string>
     <string name="editor_comment_hint">Şərh…</string>
     <string name="editor_reset_edits_message">Bütün yerli dəyişikliklər ləğv edilsin?</string>
     <string name="editor_reset_edits_button">İmtina</string>
@@ -664,7 +664,6 @@
     <string name="delete_list">Siyahını silin</string>
     <string name="public_access">Ictimai çıxış</string>
     <string name="limited_access">Məhdud giriş</string>
-    <string name="bookmark_list_description_hint">Təsvir yazın (mətn və ya html)</string>
     <string name="not_shared">Gizli</string>
     <string name="speedcams_alert_title">Sürət kameraları</string>
     <string name="place_description_title">Məkan Təsviri</string>

@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Назва закладкі";
 
-"placepage_personal_notes_hint" = "Асабістыя нататкі";
+"placepage_personal_notes_hint" = "Асабістыя нататкі (тэкст альбо html)";
 
 "placepage_delete_bookmark_button" = "Выдаліць закладку";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Выдаліць спіс";
 
 "hide_from_map" = "Схаваць з мапы";
-
-"bookmark_list_description_hint" = "Дабаўце апісанне (тэкст альбо html)";
 
 "tags_loading_error_subtitle" = "Адбылася памылка падчас загрузкі метак, калі ласка паспрабуйце зноў";
 
