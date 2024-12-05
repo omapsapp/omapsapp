@@ -721,7 +721,7 @@ void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
     if (new_name != old_name)
     {
       std::string osmLangName = StringUtf8Multilang::GetOSMTagByCode(langCode);
-      m_journal.AddTagChange(osmLangName, std::string(old_name), std::string(new_name));
+      m_journal.AddTagChange(std::move(osmLangName), std::string(old_name), std::string(new_name));
     }
   }
 
@@ -736,35 +736,35 @@ void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
   for (uint8_t i = 0; i < static_cast<uint8_t>(feature::Metadata::FMD_COUNT); ++i)
   {
     auto const type = static_cast<feature::Metadata::EType>(i);
-    std::string const & value = std::string(GetMetadata(type));
-    std::string const & old_value = std::string(unedited_emo.GetMetadata(type));
+    std::string_view const & value = GetMetadata(type);
+    std::string_view const & old_value = unedited_emo.GetMetadata(type);
 
     if (value != old_value)
-      m_journal.AddTagChange(ToString(type), old_value, value);
+      m_journal.AddTagChange(ToString(type), std::string(old_value), std::string(value));
   }
 
   // cuisine and diet
   std::vector<std::string> new_cuisines = GetCuisines();
   std::vector<std::string> old_cuisines = unedited_emo.GetCuisines();
 
-  auto const findAndErase = [] (std::vector<std::string>* cuisinesPtr, std::string s)
+  auto const findAndErase = [] (std::vector<std::string> & cuisinesPtr, std::string_view s)
   {
-    auto it = std::find((*cuisinesPtr).begin(), (*cuisinesPtr).end(), s);
-    if (it != (*cuisinesPtr).end())
+    auto it = std::find(cuisinesPtr.begin(), cuisinesPtr.end(), s);
+    if (it != cuisinesPtr.end())
     {
-      (*cuisinesPtr).erase(it);
+      cuisinesPtr.erase(it);
       return "yes";
     }
     return "";
   };
 
-  std::string new_vegetarian = findAndErase(&new_cuisines, "vegetarian");
-  std::string old_vegetarian = findAndErase(&old_cuisines, "vegetarian");
+  std::string new_vegetarian = findAndErase(new_cuisines, "vegetarian");
+  std::string old_vegetarian = findAndErase(old_cuisines, "vegetarian");
   if (new_vegetarian != old_vegetarian)
     m_journal.AddTagChange("diet:vegetarian", old_vegetarian, new_vegetarian);
 
-  std::string new_vegan = findAndErase(&new_cuisines, "vegan");
-  std::string old_vegan = findAndErase(&old_cuisines, "vegan");
+  std::string new_vegan = findAndErase(new_cuisines, "vegan");
+  std::string old_vegan = findAndErase(old_cuisines, "vegan");
   if (new_vegan != old_vegan)
     m_journal.AddTagChange("diet:vegan", old_vegan, new_vegan);
 
@@ -776,13 +776,11 @@ void EditableMapObject::LogDiffInJournal(EditableMapObject const & unedited_emo)
   {
     for (auto const & new_cuisine : new_cuisines)
     {
-      for (auto const & old_cuisine : old_cuisines)
+      if (!base::IsExist(old_cuisines, new_cuisine))
       {
-        if (new_cuisine == old_cuisine)
-          goto value_found;
+        cuisinesModified = true;
+        break;
       }
-      cuisinesModified = true;
-      value_found:;
     }
   }
 

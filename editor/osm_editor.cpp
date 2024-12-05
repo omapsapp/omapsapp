@@ -635,7 +635,8 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
           {
             LOG(LDEBUG, ("New Editor used\n"));
 
-            switch (fti.m_status) {
+            switch (fti.m_status)
+            {
               case FeatureStatus::Untouched:
                 CHECK(false, ("It's impossible."));
                 continue;
@@ -658,14 +659,16 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
 
                     // Check if place already exists
                     bool mergeSameLocation = false;
-                    try {
+                    try
+                    {
                       XMLFeature osmFeature = changeset.GetMatchingNodeFeatureFromOSM(objCreateData.mercator);
                       if (objCreateData.mercator == osmFeature.GetMercatorCenter()) {
                         changeset.AddChangesetTag("info:merged_same_location", "yes");
                         feature = osmFeature;
                         mergeSameLocation = true;
                       }
-                      else {
+                      else
+                      {
                         changeset.AddChangesetTag("info:feature_close_by", "yes");
                       }
                     }
@@ -684,6 +687,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                       changeset.Modify(feature);
                     break;
                   }
+
                   case EditingLifecycle::MODIFIED:
                   {
                     // Load existing OSM object (Throws, see catch below)
@@ -698,6 +702,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
                     changeset.Modify(feature);
                     break;
                   }
+
                   case EditingLifecycle::IN_SYNC:
                   {
                     CHECK(false, ("Object already IN_SYNC should not be here"));
