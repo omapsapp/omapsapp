@@ -24,7 +24,7 @@ final class CategorySettingsViewController: MWMTableViewController {
   private var newAnnotation: String?
 
   @objc weak var delegate: CategorySettingsViewControllerDelegate?
-  
+
   @objc init(bookmarkGroup: BookmarkGroup) {
     self.bookmarkGroup = bookmarkGroup
     super.init(style: .grouped)
@@ -46,11 +46,11 @@ final class CategorySettingsViewController: MWMTableViewController {
     tableView.registerNib(cell: MWMButtonCell.self)
     tableView.registerNib(cell: MWMNoteCell.self)
   }
-  
+
   override func numberOfSections(in tableView: UITableView) -> Int {
     Sections.count.rawValue
   }
-  
+
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch Sections(rawValue: section) {
     case .info:
@@ -79,7 +79,7 @@ final class CategorySettingsViewController: MWMTableViewController {
       } else {
         let cell = tableView.dequeueReusableCell(cell: MWMNoteCell.self, indexPath: indexPath)
         cell.config(with: self, noteText: bookmarkGroup.detailedAnnotation,
-                    placeholder: L("bookmark_list_description_hint"))
+                    placeholder: L("placepage_personal_notes_hint"))
         noteCell = cell
         return cell
       }

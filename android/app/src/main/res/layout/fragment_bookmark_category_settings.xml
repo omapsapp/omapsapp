@@ -52,7 +52,7 @@
     <com.google.android.material.textfield.TextInputEditText
       android:id="@+id/edit_description"
       style="@style/MwmWidget.Editor.CustomTextInput"
-      android:hint="@string/bookmark_list_description_hint"
+      android:hint="@string/placepage_personal_notes_hint"
       android:minHeight="@dimen/height_item_multiline"
       android:paddingStart="@dimen/margin_base"
       android:paddingEnd="@dimen/margin_base"
@@ -67,4 +67,3 @@
   </LinearLayout>
   </androidx.core.widget.NestedScrollView>
 </LinearLayout>
-
