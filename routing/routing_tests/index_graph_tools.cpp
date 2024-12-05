@@ -88,7 +88,7 @@ void NoUTurnRestrictionTest::TestRouteGeom(Segment const & start, Segment const 
   {
     static auto constexpr kEps = 1e-3;
     auto const point = m_graph->GetWorldGraph().GetPoint(routingResult.m_path[i], true /* forward */);
-    if (!base::AlmostEqualAbs(mercator::FromLatLon(point), expectedRouteGeom[i], kEps))
+    if (!AlmostEqualAbs(mercator::FromLatLon(point), expectedRouteGeom[i], kEps))
     {
       TEST(false, ("Coords missmated at index:", i, "expected:", expectedRouteGeom[i],
                    "received:", point));
@@ -528,7 +528,7 @@ void TestRouteGeometry(IndexGraphStarter & starter,
   for (size_t i = 0; i < geom.size(); ++i)
   {
     static double constexpr kEps = 1e-8;
-    if (!base::AlmostEqualAbs(geom[i], expectedRouteGeom[i], kEps))
+    if (!AlmostEqualAbs(geom[i], expectedRouteGeom[i], kEps))
     {
       for (size_t j = 0; j < geom.size(); ++j)
         LOG(LINFO, (j, "=>", geom[j], "vs", expectedRouteGeom[j]));
@@ -588,7 +588,7 @@ void TestRestrictions(double expectedLength,
   }
 
   static auto constexpr kEps = 1e-3;
-  TEST(base::AlmostEqualAbs(expectedLength, length, kEps),
+  TEST(AlmostEqualAbs(expectedLength, length, kEps),
        ("Length expected:", expectedLength, "has:", length));
 }
 
@@ -604,7 +604,7 @@ void TestTopologyGraph(TestIndexGraphTopology const & graph, TestIndexGraphTopol
   if (!pathFound)
     return;
 
-  TEST(base::AlmostEqualAbs(pathWeight, expectedWeight, kEpsilon),
+  TEST(AlmostEqualAbs(pathWeight, expectedWeight, kEpsilon),
        (pathWeight, expectedWeight, pathEdges));
   TEST_EQUAL(pathEdges, expectedEdges, ());
 }

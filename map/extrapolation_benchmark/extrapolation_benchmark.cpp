@@ -317,7 +317,7 @@ int main(int argc, char * argv[])
       ("Cumulative moving average, variance and standard deviation for each extrapolation:"));
   for (size_t i = 0; i < extrapolationNumber; ++i)
   {
-    double const variance = squareMes.Get()[i].Get() - base::Pow2(mes.Get()[i].Get());
+    double const variance = squareMes.Get()[i].Get() - math::Pow2(mes.Get()[i].Get());
     LOG(LINFO,
         ("Extrapolation", i + 1, ",", Extrapolator::kExtrapolationPeriodMs * (i + 1),
          "seconds after point two. Cumulative moving average =", mes.Get()[i].Get(), "meters.",

@@ -56,7 +56,7 @@ void ParseColorsList(std::string const & colorsFile, ToDo toDo)
 
 m2::PointU StipplePenTextureSize(size_t patternsCount, uint32_t maxTextureSize)
 {
-  uint32_t const sz = base::NextPowOf2(static_cast<uint32_t>(patternsCount) + kReservedPatterns);
+  uint32_t const sz = math::NextPowOf2(static_cast<uint32_t>(patternsCount) + kReservedPatterns);
   // No problem if assert will fire here. Just pen texture will be 2x bigger :)
   //ASSERT_LESS_OR_EQUAL(sz, kMinStippleTextureHeight, (patternsCount));
   uint32_t const stippleTextureHeight = std::min(maxTextureSize, std::max(sz, kMinStippleTextureHeight));
@@ -69,7 +69,7 @@ m2::PointU ColorTextureSize(size_t colorsCount, uint32_t maxTextureSize)
   uint32_t const sz = static_cast<uint32_t>(floor(sqrt(colorsCount + kReservedColors)));
   // No problem if assert will fire here. Just color texture will be 2x bigger :)
   ASSERT_LESS_OR_EQUAL(sz, kMinColorTextureSize, (colorsCount));
-  uint32_t colorTextureSize = std::max(base::NextPowOf2(sz), kMinColorTextureSize);
+  uint32_t colorTextureSize = std::max(math::NextPowOf2(sz), kMinColorTextureSize);
 
   colorTextureSize *= ColorTexture::GetColorSizeInPixels();
   colorTextureSize = std::min(maxTextureSize, colorTextureSize);

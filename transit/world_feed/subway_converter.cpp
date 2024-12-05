@@ -595,7 +595,7 @@ bool Equal(LineGeometry const & line1, LineGeometry const & line2)
 
   for (size_t i = 0; i < line1.size(); ++i)
   {
-    if (!base::AlmostEqualAbs(line1[i], line2[i], kEps))
+    if (!AlmostEqualAbs(line1[i], line2[i], kEps))
       return false;
   }
 
@@ -644,7 +644,7 @@ void SubwayConverter::CalculateLinePriorities(std::vector<LineSchemeData> const 
       for (auto const & [parallelLineId, parallelFirstPoint] : linePart.m_commonLines)
       {
         bool const codirectional =
-            base::AlmostEqualAbs(linePart.m_firstPoint, parallelFirstPoint, kEps);
+            AlmostEqualAbs(linePart.m_firstPoint, parallelFirstPoint, kEps);
 
         startPointState.parallelLineStates[parallelLineId] =
             LineSegmentInfo(LineSegmentState::Start, codirectional);
@@ -813,10 +813,10 @@ void SubwayConverter::PrepareLinesMetadata()
               auto const & [startPoint2, endPoint2] =
                   GetSegmentEdgesOnPolyline(polyline2, segments2[k]);
 
-              CHECK((base::AlmostEqualAbs(startPoint1, startPoint2, kEps) &&
-                     base::AlmostEqualAbs(endPoint1, endPoint2, kEps)) ||
-                    (base::AlmostEqualAbs(startPoint1, endPoint2, kEps) &&
-                     base::AlmostEqualAbs(endPoint1, startPoint2, kEps)), ());
+              CHECK((AlmostEqualAbs(startPoint1, startPoint2, kEps) &&
+                     AlmostEqualAbs(endPoint1, endPoint2, kEps)) ||
+                    (AlmostEqualAbs(startPoint1, endPoint2, kEps) &&
+                     AlmostEqualAbs(endPoint1, startPoint2, kEps)), ());
 
               ShiftSegmentOnShape(segments1[k], shapeLink1);
               ShiftSegmentOnShape(segments2[k], shapeLink2);

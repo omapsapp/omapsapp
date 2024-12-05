@@ -119,30 +119,30 @@ UNIT_TEST(CacheSmoke_3)
   base::CacheWithStat<uint32_t, char> cache(3); // it contains 2^3=8 elements
 
   // 0 access, cache miss is 0
-  TEST(base::AlmostEqualAbs(0.0, cache.GetCacheMiss(), kEpsilon), ());
+  TEST(AlmostEqualAbs(0.0, cache.GetCacheMiss(), kEpsilon), ());
 
   bool found = true;
   cache.Find(1, found);
   TEST(!found, ());
   // 1 access, 1 miss, cache miss = 1/1 = 1
-  TEST(base::AlmostEqualAbs(1.0, cache.GetCacheMiss(), kEpsilon), ());
+  TEST(AlmostEqualAbs(1.0, cache.GetCacheMiss(), kEpsilon), ());
 
   found = false;
   cache.Find(1, found);
   TEST(found, ());
   // 2 access, 1 miss, cache miss = 1/2 = 0.5
-  TEST(base::AlmostEqualAbs(0.5, cache.GetCacheMiss(), kEpsilon), ());
+  TEST(AlmostEqualAbs(0.5, cache.GetCacheMiss(), kEpsilon), ());
 
   found = false;
   cache.Find(2, found);
   TEST(!found, ());
   // 3 access, 2 miss, cache miss = 2/3 = 0.6(6)
-  TEST(base::AlmostEqualAbs(2.0/3.0, cache.GetCacheMiss(), kEpsilon), ());
+  TEST(AlmostEqualAbs(2.0/3.0, cache.GetCacheMiss(), kEpsilon), ());
 
   cache.Reset();
 
   // 0 access, cache miss is 0
-  TEST(base::AlmostEqualAbs(0.0, cache.GetCacheMiss(), kEpsilon), ());
+  TEST(AlmostEqualAbs(0.0, cache.GetCacheMiss(), kEpsilon), ());
 }
 
 UNIT_TEST(CacheSmoke_4)

@@ -18,9 +18,9 @@ std::unique_ptr<storage::CountryInfoGetter> CreateCountryInfoGetter()
 bool AlmostEqualRectsAbs(const m2::RectD & r1, const m2::RectD & r2)
 {
   double constexpr kEpsilon = 1e-2;
-  return base::AlmostEqualAbs(r1.maxX(), r2.maxX(), kEpsilon)
-      && base::AlmostEqualAbs(r1.maxY(), r2.maxY(), kEpsilon)
-      && base::AlmostEqualAbs(r1.minX(), r2.minX(), kEpsilon)
-      && base::AlmostEqualAbs(r1.minY(), r2.minY(), kEpsilon);
+  return AlmostEqualAbs(r1.maxX(), r2.maxX(), kEpsilon)
+      && AlmostEqualAbs(r1.maxY(), r2.maxY(), kEpsilon)
+      && AlmostEqualAbs(r1.minX(), r2.minX(), kEpsilon)
+      && AlmostEqualAbs(r1.minY(), r2.minY(), kEpsilon);
 }
 }  // namespace storage

@@ -114,7 +114,7 @@ std::string FormatLatLonAsDMSImpl(double value, char positive, char negative, in
   // Seconds
   d = d * 60.0;
   if (dac == 0)
-    d = SignedRound(d);
+    d = math::SignedRound(d);
 
   d = std::modf(d, &i);
   sstream << std::setw(2) << i;
@@ -125,7 +125,7 @@ std::string FormatLatLonAsDMSImpl(double value, char positive, char negative, in
   sstream << "″";
 
   // This condition is too heavy for production purposes (but more correct).
-  //if (base::SignedRound(value * 3600.0 * pow(10, dac)) != 0)
+  //if (math::SignedRound(value * 3600.0 * pow(10, dac)) != 0)
   if (!AlmostEqualULPs(value, 0.0))
   {
     char postfix = positive;
@@ -226,7 +226,7 @@ std::string FormatOsmLink(double lat, double lon, int zoom)
 
   for (int i = 0; i < (zoom + 8) % 3; ++i)
     osmUrl += "-";
-  // ?m tells OSM to display a marker 
+  // ?m tells OSM to display a marker
   return osmUrl + "?m";
 }
 

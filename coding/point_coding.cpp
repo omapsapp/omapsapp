@@ -50,7 +50,7 @@ double Uint32ToDouble(uint32_t x, double min, double max, uint8_t coordBits)
   // It doesn't work because of possible floating errors.
   //ASSERT(d >= min && d <= max, (d, x, min, max, coordBits));
 
-  return base::Clamp(d, min, max);
+  return math::Clamp(d, min, max);
 }
 
 m2::PointU PointDToPointU(double x, double y, uint8_t coordBits)

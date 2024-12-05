@@ -187,8 +187,8 @@ bool OsmElement::operator==(OsmElement const & other) const
 {
   return m_type == other.m_type
          && m_id == other.m_id
-         && base::AlmostEqualAbs(m_lon, other.m_lon, mercator::kPointEqualityEps)
-         && base::AlmostEqualAbs(m_lat, other.m_lat, mercator::kPointEqualityEps)
+         && AlmostEqualAbs(m_lon, other.m_lon, mercator::kPointEqualityEps)
+         && AlmostEqualAbs(m_lat, other.m_lat, mercator::kPointEqualityEps)
          && m_ref == other.m_ref
          && m_k == other.m_k
          && m_v == other.m_v

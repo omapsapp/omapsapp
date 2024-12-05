@@ -1,5 +1,7 @@
 #include "latlon.hpp"
 
+#include "base/math.hpp"
+
 #include <sstream>
 #include <tuple>
 
@@ -14,7 +16,7 @@ bool LatLon::operator<(ms::LatLon const & rhs) const
 
 bool LatLon::EqualDxDy(LatLon const & p, double eps) const
 {
-  return (base::AlmostEqualAbs(m_lat, p.m_lat, eps) && base::AlmostEqualAbs(m_lon, p.m_lon, eps));
+  return (::AlmostEqualAbs(m_lat, p.m_lat, eps) && ::AlmostEqualAbs(m_lon, p.m_lon, eps));
 }
 
 std::string DebugPrint(LatLon const & t)
@@ -24,13 +26,10 @@ std::string DebugPrint(LatLon const & t)
   out << "ms::LatLon(" << t.m_lat << ", " << t.m_lon << ")";
   return out.str();
 }
-}  // namespace ms
 
-namespace base
+bool AlmostEqualAbs(LatLon const & ll1, LatLon const & ll2, double const & eps)
 {
-bool AlmostEqualAbs(ms::LatLon const & ll1, ms::LatLon const & ll2, double const & eps)
-{
-  return base::AlmostEqualAbs(ll1.m_lat, ll2.m_lat, eps) &&
-         base::AlmostEqualAbs(ll1.m_lon, ll2.m_lon, eps);
+  return ::AlmostEqualAbs(ll1.m_lat, ll2.m_lat, eps) &&
+         ::AlmostEqualAbs(ll1.m_lon, ll2.m_lon, eps);
 }
-}  // namespace base
+}  // namespace ms

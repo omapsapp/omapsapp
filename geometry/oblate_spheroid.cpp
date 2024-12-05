@@ -32,6 +32,7 @@ double GetDistance(ms::LatLon const & point1, ms::LatLon const & point2)
 {
   using namespace base;
   using namespace std;
+  using math::DegToRad, math::Pow2;
 
   m2::PointD const p1 = {DegToRad(point1.m_lon), DegToRad(point1.m_lat)};
   m2::PointD const p2 = {DegToRad(point2.m_lon), DegToRad(point2.m_lat)};
@@ -81,7 +82,7 @@ double GetDistance(ms::LatLon const & point1, ms::LatLon const & point2)
 
   // Fallback solution.
   if (!AlmostEqualAbs(lambda, lambdaPrev, kEps))
-    return ms::DistanceOnEarth(point1, point2);
+    return DistanceOnEarth(point1, point2);
 
   double constexpr aSquare = kA * kA;
   double constexpr bSquare = kB * kB;

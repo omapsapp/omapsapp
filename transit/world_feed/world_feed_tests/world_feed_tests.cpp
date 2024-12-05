@@ -386,27 +386,27 @@ UNIT_TEST(Transit_GTFS_ProjectStopToLine_NearCircle)
   TEST_EQUAL(ResT(17, true),
                PrepareNearestPointOnTrack(point_A, std::nullopt, shape.size() - 1/* prevIndex */,
                                           Direction::Backward, shape), ());
-  TEST(base::AlmostEqualAbs(coordA, shape[17], kEps), (coordA, shape[17]));
+  TEST(AlmostEqualAbs(coordA, shape[17], kEps), (coordA, shape[17]));
 
   TEST_EQUAL(ResT(16, false),
                PrepareNearestPointOnTrack(point_B, std::nullopt, 17 /* prevIndex */,
                                           Direction::Backward, shape), ());
-  TEST(base::AlmostEqualAbs(coordB, shape[16], kEps), (coordA, shape[17]));
+  TEST(AlmostEqualAbs(coordB, shape[16], kEps), (coordA, shape[17]));
 
   TEST_EQUAL(ResT(10, true),
                PrepareNearestPointOnTrack(point_C, std::nullopt, 16 /* prevIndex */,
                                           Direction::Backward, shape), ());
-  TEST(base::AlmostEqualAbs(coordC, shape[10], kEps), (coordA, shape[17]));
+  TEST(AlmostEqualAbs(coordC, shape[10], kEps), (coordA, shape[17]));
 
   TEST_EQUAL(ResT(8, false),
                PrepareNearestPointOnTrack(point_D, std::nullopt, 10 /* prevIndex */,
                                           Direction::Backward, shape), ());
-  TEST(base::AlmostEqualAbs(coordD, shape[8], kEps), (coordA, shape[17]));
+  TEST(AlmostEqualAbs(coordD, shape[8], kEps), (coordA, shape[17]));
 
   TEST_EQUAL(ResT(7, true),
                PrepareNearestPointOnTrack(point_E, std::nullopt, 8 /* prevIndex */,
                                           Direction::Backward, shape), ());
-  TEST(base::AlmostEqualAbs(coordE, shape[7], kEps), (coordA, shape[17]));
+  TEST(AlmostEqualAbs(coordE, shape[7], kEps), (coordA, shape[17]));
 
   // point_F has different position because we do not insert before point 0.
   TEST_EQUAL(ResT(2, true),

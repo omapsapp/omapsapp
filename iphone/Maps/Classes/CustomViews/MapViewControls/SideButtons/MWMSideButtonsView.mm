@@ -30,7 +30,7 @@ CGFloat const kButtonsBottomOffset = 6;
 
 - (void)layoutSubviews {
   CGFloat spacing = self.availableHeight - self.zoomOut.maxY - self.location.height;
-  spacing = base::Clamp(spacing, kLocationButtonSpacingMin, kLocationButtonSpacingMax);
+  spacing = math::Clamp(spacing, kLocationButtonSpacingMin, kLocationButtonSpacingMax);
 
   self.location.minY = self.zoomOut.maxY + spacing;
   self.bounds = {{}, {self.zoomOut.width, self.location.maxY}};

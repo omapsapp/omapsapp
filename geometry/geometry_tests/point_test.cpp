@@ -66,32 +66,32 @@ UNIT_TEST(GetArrowPoints)
 {
   std::array<m2::PointF, 3> arrPntsFlt;
   m2::GetArrowPoints(m2::PointF(0, 0), m2::PointF(1, 0), 1.f, 1.f, arrPntsFlt);
-  TEST(m2::AlmostEqualULPs(arrPntsFlt[0], m2::PointF(1.f, 1.f)), ());
-  TEST(m2::AlmostEqualULPs(arrPntsFlt[1], m2::PointF(2.f, 0.f)), ());
-  TEST(m2::AlmostEqualULPs(arrPntsFlt[2], m2::PointF(1.f, -1.f)), ());
+  TEST(AlmostEqualULPs(arrPntsFlt[0], m2::PointF(1.f, 1.f)), ());
+  TEST(AlmostEqualULPs(arrPntsFlt[1], m2::PointF(2.f, 0.f)), ());
+  TEST(AlmostEqualULPs(arrPntsFlt[2], m2::PointF(1.f, -1.f)), ());
 
   std::array<m2::PointD, 3> arrPntsDbl;
   m2::GetArrowPoints(m2::PointD(-1., 2.), m2::PointD(-1., 100.), 2., 5., arrPntsDbl);
-  TEST(m2::AlmostEqualULPs(arrPntsDbl[0], m2::PointD(-3.f, 100.f)), ());
-  TEST(m2::AlmostEqualULPs(arrPntsDbl[1], m2::PointD(-1.f, 105.f)), ());
-  TEST(m2::AlmostEqualULPs(arrPntsDbl[2], m2::PointD(1.f, 100.f)), ());
+  TEST(AlmostEqualULPs(arrPntsDbl[0], m2::PointD(-3.f, 100.f)), ());
+  TEST(AlmostEqualULPs(arrPntsDbl[1], m2::PointD(-1.f, 105.f)), ());
+  TEST(AlmostEqualULPs(arrPntsDbl[2], m2::PointD(1.f, 100.f)), ());
 }
 
 UNIT_TEST(PointAtSegment)
 {
-  TEST(m2::AlmostEqualULPs(m2::PointAtSegment(m2::PointF(0, 0), m2::PointF(1, 0), 0.5f),
+  TEST(AlmostEqualULPs(m2::PointAtSegment(m2::PointF(0, 0), m2::PointF(1, 0), 0.5f),
                            m2::PointF(0.5f, 0.f)),
        ());
-  TEST(m2::AlmostEqualULPs(m2::PointAtSegment(m2::PointF(0, 0), m2::PointF(0, 1), 0.3f),
+  TEST(AlmostEqualULPs(m2::PointAtSegment(m2::PointF(0, 0), m2::PointF(0, 1), 0.3f),
                            m2::PointF(0.f, 0.3f)),
        ());
-  TEST(m2::AlmostEqualULPs(m2::PointAtSegment(m2::PointD(0., 0.), m2::PointD(30., 40.), 5.),
+  TEST(AlmostEqualULPs(m2::PointAtSegment(m2::PointD(0., 0.), m2::PointD(30., 40.), 5.),
                            m2::PointD(3., 4.)),
        ());
-  TEST(m2::AlmostEqualULPs(m2::PointAtSegment(m2::PointF(-3, -4), m2::PointF(-30, -40), 5.f),
+  TEST(AlmostEqualULPs(m2::PointAtSegment(m2::PointF(-3, -4), m2::PointF(-30, -40), 5.f),
                            m2::PointF(-6.f, -8.f)),
        ());
-  TEST(m2::AlmostEqualULPs(m2::PointAtSegment(m2::PointD(14., -48.), m2::PointD(70., -240.), 25.),
+  TEST(AlmostEqualULPs(m2::PointAtSegment(m2::PointD(14., -48.), m2::PointD(70., -240.), 25.),
                            m2::PointD(21., -72.)),
        ());
 }

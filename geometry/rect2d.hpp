@@ -195,8 +195,8 @@ public:
   void SetSizesToIncludePoint(Point<T> const & pt)
   {
     Point<T> const c = Center();
-    T const dx = base::Abs(pt.x - c.x);
-    T const dy = base::Abs(pt.y - c.y);
+    T const dx = math::Abs(pt.x - c.x);
+    T const dy = math::Abs(pt.y - c.y);
 
     m_minX = c.x - dx;
     m_minY = c.y - dy;

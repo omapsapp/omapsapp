@@ -264,7 +264,7 @@ double CalcTurnAngle(IRoutingResult const & result,
       vehicleSettings.m_minOutgoingDistMeters, true /* forward */);
 
   m2::PointD const junctionPoint = result.GetSegments()[outgoingSegmentIndex].m_path.front().GetPoint();
-  return base::RadToDeg(PiMinusTwoVectorsAngle(junctionPoint, ingoingPoint, outgoingPoint));
+  return math::RadToDeg(PiMinusTwoVectorsAngle(junctionPoint, ingoingPoint, outgoingPoint));
 }
 
 void CorrectCandidatesSegmentByOutgoing(TurnInfo const & turnInfo, Segment const & firstOutgoingSeg,
@@ -282,7 +282,7 @@ void CorrectCandidatesSegmentByOutgoing(TurnInfo const & turnInfo, Segment const
     // firstOutgoingSeg not found. Try to match by angle.
     auto const DoesAngleMatch = [&turnAngle](TurnCandidate const & candidate)
     {
-      return (base::AlmostEqualAbs(candidate.m_angle, turnAngle, 0.001) ||
+      return (AlmostEqualAbs(candidate.m_angle, turnAngle, 0.001) ||
               fabs(candidate.m_angle) + fabs(turnAngle) > 359.999);
     };
     auto it = find_if(candidates.begin(), candidates.end(), DoesAngleMatch);

@@ -227,7 +227,7 @@ private:
 
     for (uint32_t i = 0; i < geo1.size(); ++i)
     {
-      if (!base::AlmostEqualAbs(geo1[i], geo2[i], kMwmPointAccuracy))
+      if (!AlmostEqualAbs(geo1[i], geo2[i], kMwmPointAccuracy))
         return false;
     }
 

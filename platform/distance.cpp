@@ -66,7 +66,7 @@ double WithPrecision(double value, uint8_t precision)
   if (precision == 0)
     return std::round(value);
 
-  double const factor = base::PowUint(10.0, precision);
+  double const factor = math::PowUint(10.0, precision);
   return std::round(value * factor) / factor;
 }
 }  // namespace

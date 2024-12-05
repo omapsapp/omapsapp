@@ -36,7 +36,7 @@ public:
     return ((fabs(x - p.x) < eps) && (fabs(y - p.y) < eps));
   }
 
-  T SquaredLength(Point<T> const & p) const { return base::Pow2(x - p.x) + base::Pow2(y - p.y); }
+  T SquaredLength(Point<T> const & p) const { return math::Pow2(x - p.x) + math::Pow2(y - p.y); }
   double Length(Point<T> const & p) const { return std::sqrt(SquaredLength(p)); }
 
   bool IsAlmostZero() const { return AlmostEqualULPs(*this, Point<T>(0, 0)); }
@@ -158,7 +158,7 @@ public:
 
   struct Hash
   {
-    size_t operator()(m2::Point<T> const & p) const { return base::Hash(p.x, p.y); }
+    size_t operator()(Point const & p) const { return math::Hash(p.x, p.y); }
   };
 };
 
@@ -170,31 +170,31 @@ using PointI = Point<int32_t>;
 using PointI64 = Point<int64_t>;
 
 template <typename T>
-Point<T> const operator-(Point<T> const & a, Point<T> const & b)
+Point<T> operator-(Point<T> const & a, Point<T> const & b)
 {
   return Point<T>(a.x - b.x, a.y - b.y);
 }
 
 template <typename T>
-Point<T> const operator+(Point<T> const & a, Point<T> const & b)
+Point<T> operator+(Point<T> const & a, Point<T> const & b)
 {
   return Point<T>(a.x + b.x, a.y + b.y);
 }
 
 template <typename T>
-T const DotProduct(Point<T> const & a, Point<T> const & b)
+T DotProduct(Point<T> const & a, Point<T> const & b)
 {
   return a.x * b.x + a.y * b.y;
 }
 
 template <typename T>
-T const CrossProduct(Point<T> const & a, Point<T> const & b)
+T CrossProduct(Point<T> const & a, Point<T> const & b)
 {
   return a.x * b.y - a.y * b.x;
 }
 
 template <typename T>
-Point<T> const Rotate(Point<T> const & pt, T a)
+Point<T> Rotate(Point<T> const & pt, T a)
 {
   Point<T> res(pt);
   res.Rotate(a);
@@ -202,19 +202,19 @@ Point<T> const Rotate(Point<T> const & pt, T a)
 }
 
 template <typename T, typename U>
-Point<T> const Shift(Point<T> const & pt, U const & dx, U const & dy)
+Point<T> Shift(Point<T> const & pt, U const & dx, U const & dy)
 {
   return Point<T>(pt.x + dx, pt.y + dy);
 }
 
 template <typename T, typename U>
-Point<T> const Shift(Point<T> const & pt, Point<U> const & offset)
+Point<T> Shift(Point<T> const & pt, Point<U> const & offset)
 {
   return Shift(pt, offset.x, offset.y);
 }
 
 template <typename T>
-Point<T> const Floor(Point<T> const & pt)
+Point<T> Floor(Point<T> const & pt)
 {
   Point<T> res;
   res.x = floor(pt.x);
@@ -223,7 +223,7 @@ Point<T> const Floor(Point<T> const & pt)
 }
 
 template <typename T>
-std::string DebugPrint(m2::Point<T> const & p)
+std::string DebugPrint(Point<T> const & p)
 {
   std::ostringstream out;
   out.precision(20);
@@ -232,15 +232,15 @@ std::string DebugPrint(m2::Point<T> const & p)
 }
 
 template <typename T>
-bool AlmostEqualAbs(m2::Point<T> const & a, m2::Point<T> const & b, double eps)
+bool AlmostEqualAbs(Point<T> const & a, Point<T> const & b, double eps)
 {
-  return base::AlmostEqualAbs(a.x, b.x, eps) && base::AlmostEqualAbs(a.y, b.y, eps);
+  return ::AlmostEqualAbs(a.x, b.x, eps) && ::AlmostEqualAbs(a.y, b.y, eps);
 }
 
 template <typename T>
-bool AlmostEqualULPs(m2::Point<T> const & a, m2::Point<T> const & b, unsigned int maxULPs = 256)
+bool AlmostEqualULPs(Point<T> const & a, Point<T> const & b, unsigned int maxULPs = 256)
 {
-  return base::AlmostEqualULPs(a.x, b.x, maxULPs) && base::AlmostEqualULPs(a.y, b.y, maxULPs);
+  return ::AlmostEqualULPs(a.x, b.x, maxULPs) && ::AlmostEqualULPs(a.y, b.y, maxULPs);
 }
 
 /// Calculate three points of a triangle (p1, p2 and p3) which give an arrow that
@@ -250,7 +250,7 @@ bool AlmostEqualULPs(m2::Point<T> const & a, m2::Point<T> const & b, unsigned in
 template <typename T, typename TT, typename PointT = Point<T>>
 void GetArrowPoints(PointT const & b, PointT const & e, T w, T l, std::array<Point<TT>, 3> & arr)
 {
-  ASSERT(!m2::AlmostEqualULPs(b, e), ());
+  ASSERT(!AlmostEqualULPs(b, e), ());
 
   PointT const beVec = e - b;
   PointT beNormalizedVec = beVec.Normalize();
@@ -268,12 +268,12 @@ template <typename T>
 Point<T> PointAtSegment(Point<T> const & p1, Point<T> const & p2, T shiftFromP1)
 {
   Point<T> p12 = p2 - p1;
-  shiftFromP1 = base::Clamp(shiftFromP1, static_cast<T>(0.0), static_cast<T>(p12.Length()));
+  shiftFromP1 = math::Clamp(shiftFromP1, static_cast<T>(0.0), static_cast<T>(p12.Length()));
   return p1 + p12.Normalize() * shiftFromP1;
 }
 
 template <class TArchive, class PointT>
-TArchive & operator>>(TArchive & ar, m2::Point<PointT> & pt)
+TArchive & operator>>(TArchive & ar, Point<PointT> & pt)
 {
   ar >> pt.x;
   ar >> pt.y;
@@ -281,7 +281,7 @@ TArchive & operator>>(TArchive & ar, m2::Point<PointT> & pt)
 }
 
 template <class TArchive, class PointT>
-TArchive & operator<<(TArchive & ar, m2::Point<PointT> const & pt)
+TArchive & operator<<(TArchive & ar, Point<PointT> const & pt)
 {
   ar << pt.x;
   ar << pt.y;
@@ -296,18 +296,3 @@ bool operator<(Point<T> const & l, Point<T> const & r)
   return l.y < r.y;
 }
 }  // namespace m2
-
-namespace base
-{
-template <typename T>
-bool AlmostEqualULPs(m2::Point<T> const & p1, m2::Point<T> const & p2, unsigned int maxULPs = 256)
-{
-  return m2::AlmostEqualULPs(p1, p2, maxULPs);
-}
-
-template <typename T>
-bool AlmostEqualAbs(m2::Point<T> const & p1, m2::Point<T> const & p2, double eps)
-{
-  return m2::AlmostEqualAbs(p1, p2, eps);
-}
-}  // namespace base

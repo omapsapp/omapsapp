@@ -61,7 +61,7 @@ public:
 
   void PtoG(double & x, double & y) const
   {
-    double tempX = x;
+    double const tempX = x;
     x = tempX * m_PtoG(0, 0) + y * m_PtoG(1, 0) + m_PtoG(2, 0);
     y = tempX * m_PtoG(0, 1) + y * m_PtoG(1, 1) + m_PtoG(2, 1);
   }
@@ -122,7 +122,7 @@ public:
 
   /// Compute arbitrary pixel transformation, that translates the (oldPt1, oldPt2) -> (newPt1,
   /// newPt2)
-  static MatrixT const CalcTransform(m2::PointD const & oldPt1, m2::PointD const & oldPt2,
+  static MatrixT CalcTransform(m2::PointD const & oldPt1, m2::PointD const & oldPt2,
                                      m2::PointD const & newPt1, m2::PointD const & newPt2,
                                      bool allowRotate);
 

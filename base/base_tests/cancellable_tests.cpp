@@ -40,7 +40,7 @@ UNIT_TEST(Cancellable_Smoke)
 
   TEST(cancellable.IsCancelled(), ());
   TEST_EQUAL(cancellable.CancellationStatus(), Cancellable::Status::CancelCalled, ());
-  TEST(base::AlmostEqualAbs(x, 0.739, 1e-3), ());
+  TEST(AlmostEqualAbs(x, 0.739, 1e-3), ());
 }
 
 UNIT_TEST(Cancellable_Deadline)
@@ -72,7 +72,7 @@ UNIT_TEST(Cancellable_Deadline)
 
   TEST(cancellable.IsCancelled(), ());
   TEST_EQUAL(cancellable.CancellationStatus(), Cancellable::Status::DeadlineExceeded, ());
-  TEST(base::AlmostEqualAbs(x, 0.739, 1e-3), ());
+  TEST(AlmostEqualAbs(x, 0.739, 1e-3), ());
 
   cancellable.Cancel();
   TEST(cancellable.IsCancelled(), ());

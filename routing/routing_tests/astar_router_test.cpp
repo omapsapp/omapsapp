@@ -261,7 +261,7 @@ UNIT_TEST(AStarRouter_SimpleGraph_PickTheFasterRoad1)
                   geometry::MakePointWithAltitudeForTesting(m2::PointD(10, 3)),
                   geometry::MakePointWithAltitudeForTesting(m2::PointD(10, 2))}),
              ());
-  TEST(base::AlmostEqualAbs(result.m_distance, 800451., 1.), ("Distance error:", result.m_distance));
+  TEST(AlmostEqualAbs(result.m_distance, 800451., 1.), ("Distance error:", result.m_distance));
 }
 
 UNIT_TEST(AStarRouter_SimpleGraph_PickTheFasterRoad2)
@@ -294,7 +294,7 @@ UNIT_TEST(AStarRouter_SimpleGraph_PickTheFasterRoad2)
                   geometry::MakePointWithAltitudeForTesting(m2::PointD(6, 2)),
                   geometry::MakePointWithAltitudeForTesting(m2::PointD(10, 2))}),
              ());
-  TEST(base::AlmostEqualAbs(result.m_distance, 781458., 1.), ("Distance error:", result.m_distance));
+  TEST(AlmostEqualAbs(result.m_distance, 781458., 1.), ("Distance error:", result.m_distance));
 }
 
 UNIT_TEST(AStarRouter_SimpleGraph_PickTheFasterRoad3)
@@ -328,6 +328,6 @@ UNIT_TEST(AStarRouter_SimpleGraph_PickTheFasterRoad3)
                   geometry::MakePointWithAltitudeForTesting(m2::PointD(10, 1)),
                   geometry::MakePointWithAltitudeForTesting(m2::PointD(10, 2))}),
              ());
-  TEST(base::AlmostEqualAbs(result.m_distance, 814412., 1.), ("Distance error:", result.m_distance));
+  TEST(AlmostEqualAbs(result.m_distance, 814412., 1.), ("Distance error:", result.m_distance));
 }
 } // namespace astar_router_test

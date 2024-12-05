@@ -606,7 +606,7 @@ RouterResultCode IndexRouter::DoCalculateRoute(Checkpoints const & checkpoints,
 
     vector<Segment> subroute;
     double contributionCoef = kAlmostZeroContribution;
-    if (!base::AlmostEqualAbs(checkpointsLength, 0.0, 1e-5))
+    if (!AlmostEqualAbs(checkpointsLength, 0.0, 1e-5))
     {
       contributionCoef =
           mercator::DistanceOnEarth(startCheckpoint, finishCheckpoint) / checkpointsLength;

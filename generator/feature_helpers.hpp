@@ -68,10 +68,10 @@ public:
   // p is close to the borders of |m_rect|, in which case returns a very large number.
   double operator()(m2::PointD const & a, m2::PointD const & b, m2::PointD const & p) const
   {
-    if (base::AlmostEqualAbs(p.x, m_rect.minX(), m_eps) ||
-        base::AlmostEqualAbs(p.x, m_rect.maxX(), m_eps) ||
-        base::AlmostEqualAbs(p.y, m_rect.minY(), m_eps) ||
-        base::AlmostEqualAbs(p.y, m_rect.maxY(), m_eps))
+    if (AlmostEqualAbs(p.x, m_rect.minX(), m_eps) ||
+        AlmostEqualAbs(p.x, m_rect.maxX(), m_eps) ||
+        AlmostEqualAbs(p.y, m_rect.minY(), m_eps) ||
+        AlmostEqualAbs(p.y, m_rect.maxY(), m_eps))
     {
       // Points near rect should be in a result simplified vector.
       return std::numeric_limits<double>::max();
@@ -96,7 +96,7 @@ void SimplifyPoints(DistanceFn distFn, int level, PointsContainer const & in, Po
   if (in.size() < 2)
     return;
 
-  double const eps = base::Pow2(scales::GetEpsilonForSimplify(level));
+  double const eps = math::Pow2(scales::GetEpsilonForSimplify(level));
 
   SimplifyNearOptimal(20, in.begin(), in.end(), eps, distFn,
                       AccumulateSkipSmallTrg<DistanceFn, m2::PointD>(distFn, out, eps));

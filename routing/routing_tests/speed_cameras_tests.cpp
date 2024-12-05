@@ -115,7 +115,7 @@ bool TestSerDesSpeedCamera(std::vector<SpeedCameraMetadata> const & speedCameras
       auto const & way = metadata.m_ways.back();
       auto const res = DeserializeSpeedCamera(src, prevFeatureId);
       TEST_EQUAL(res.first, SegmentCoord(way.m_featureId, way.m_segmentId), ());
-      TEST(base::AlmostEqualAbs(res.second.m_coef, way.m_coef, 1e-5), ());
+      TEST(AlmostEqualAbs(res.second.m_coef, way.m_coef, 1e-5), ());
       TEST_EQUAL(res.second.m_maxSpeedKmPH, metadata.m_maxSpeedKmPH, ());
     }
   }

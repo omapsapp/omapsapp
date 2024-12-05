@@ -92,7 +92,7 @@ UNIT_TEST(Point3d_RotateXYZ)
 
   TEST_ALMOST_EQUAL_ABS(rotatedFirst, m3::PointD(std::sqrt(2.0), 0.0, 1.0), 1e-10, ());
 
-  double const angleDegree = base::RadToDeg(acos(rotatedFirst.z / rotatedFirst.Length()));
+  double const angleDegree = math::RadToDeg(acos(rotatedFirst.z / rotatedFirst.Length()));
 
   auto const north = rotatedFirst.RotateAroundY(-angleDegree);
   TEST_ALMOST_EQUAL_ABS(north, m3::PointD(0.0, 0.0, std::sqrt(3.0)), 1e-10, ());

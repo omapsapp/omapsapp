@@ -31,7 +31,7 @@ public:
 template <typename T>
 Point<T> Point<T>::RotateAroundX(double angleDegree) const
 {
-  double const angleRad = base::DegToRad(angleDegree);
+  double const angleRad = math::DegToRad(angleDegree);
   Point<T> res;
   res.x = x;
   res.y = y * cos(angleRad) - z * sin(angleRad);
@@ -42,7 +42,7 @@ Point<T> Point<T>::RotateAroundX(double angleDegree) const
 template <typename T>
 Point<T> Point<T>::RotateAroundY(double angleDegree) const
 {
-  double const angleRad = base::DegToRad(angleDegree);
+  double const angleRad = math::DegToRad(angleDegree);
   Point<T> res;
   res.x = x * cos(angleRad) + z * sin(angleRad);
   res.y = y;
@@ -53,7 +53,7 @@ Point<T> Point<T>::RotateAroundY(double angleDegree) const
 template <typename T>
 Point<T> Point<T>::RotateAroundZ(double angleDegree) const
 {
-  double const angleRad = base::DegToRad(angleDegree);
+  double const angleRad = math::DegToRad(angleDegree);
   Point<T> res;
   res.x = x * cos(angleRad) - y * sin(angleRad);
   res.y = x * sin(angleRad) + y * cos(angleRad);
@@ -93,14 +93,11 @@ std::string DebugPrint(Point<T> const & p)
   out << "m3::Point<" << typeid(T).name() << ">(" << p.x << ", " << p.y << ", " << p.z << ")";
   return out.str();
 }
-}  // namespace m3
 
-namespace base
-{
 template <typename T>
-bool AlmostEqualAbs(m3::Point<T> const & p1, m3::Point<T> const & p2, double const & eps)
+bool AlmostEqualAbs(Point<T> const & p1, Point<T> const & p2, double const & eps)
 {
-  return base::AlmostEqualAbs(p1.x, p2.x, eps) && base::AlmostEqualAbs(p1.y, p2.y, eps) &&
-         base::AlmostEqualAbs(p1.z, p2.z, eps);
+  return ::AlmostEqualAbs(p1.x, p2.x, eps) && ::AlmostEqualAbs(p1.y, p2.y, eps) &&
+         ::AlmostEqualAbs(p1.z, p2.z, eps);
 }
-}  // namespace base
+}  // namespace m3

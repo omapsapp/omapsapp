@@ -53,17 +53,17 @@ UNIT_TEST(ParametrizedSegment2D_DegenerateSection)
 UNIT_TEST(ParametrizedSegment2D_ClosestPoint)
 {
   using P = m2::PointD;
- 
+
   P arr[][4] =
   {
     { P(3, 4), P(0, 0), P(10, 0), P(3, 0) },
     { P(3, 4), P(0, 0), P(0, 10), P(0, 4) },
- 
+
     { P(3, 5), P(2, 2), P(5, 5), P(4, 4) },
     { P(5, 3), P(2, 2), P(5, 5), P(4, 4) },
     { P(2, 4), P(2, 2), P(5, 5), P(3, 3) },
     { P(4, 2), P(2, 2), P(5, 5), P(3, 3) },
- 
+
     { P(5, 6), P(2, 2), P(5, 5), P(5, 5) },
     { P(1, 0), P(2, 2), P(5, 5), P(2, 2) }
   };
@@ -71,6 +71,6 @@ UNIT_TEST(ParametrizedSegment2D_ClosestPoint)
   for (size_t i = 0; i < ARRAY_SIZE(arr); ++i)
   {
     m2::ParametrizedSegment<P> segment(arr[i][1], arr[i][2]);
-    TEST(m2::AlmostEqualULPs(segment.ClosestPointTo(arr[i][0]), arr[i][3]), (i));
+    TEST(AlmostEqualULPs(segment.ClosestPointTo(arr[i][0]), arr[i][3]), (i));
   }
 }

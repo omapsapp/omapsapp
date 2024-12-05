@@ -13,7 +13,7 @@ double const kEps = 1e-12;
 
 void TestAlmostEqual(double actual, double expected)
 {
-  TEST(base::AlmostEqualAbsOrRel(actual, expected, kEps), (actual, expected));
+  TEST(AlmostEqualAbsOrRel(actual, expected, kEps), (actual, expected));
 }
 
 UNIT_TEST(LatLon_Match_Smoke)

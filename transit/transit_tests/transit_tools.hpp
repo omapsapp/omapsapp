@@ -69,7 +69,7 @@ inline bool Equal(Stop const & s1, Stop const & s2)
           std::make_tuple(s2.GetId(), s2.GetFeatureId(), s2.GetOsmId(), s2.GetTitle(),
                           s2.GetTimeTable(), s2.GetTransferIds(),
                           s2.GetBestPedestrianSegments())) &&
-         base::AlmostEqualAbs(s1.GetPoint(), s2.GetPoint(), kPointsEqualEpsilon);
+         AlmostEqualAbs(s1.GetPoint(), s2.GetPoint(), kPointsEqualEpsilon);
 }
 
 inline bool Equal(Gate const & g1, Gate const & g2)
@@ -78,7 +78,7 @@ inline bool Equal(Gate const & g1, Gate const & g2)
                           g1.IsExit(), g1.GetStopsWithWeight(), g1.GetBestPedestrianSegments()) ==
           std::make_tuple(g2.GetId(), g2.GetFeatureId(), g2.GetOsmId(), g2.IsEntrance(),
                           g2.IsExit(), g2.GetStopsWithWeight(), g2.GetBestPedestrianSegments())) &&
-         base::AlmostEqualAbs(g1.GetPoint(), g2.GetPoint(), kPointsEqualEpsilon);
+         AlmostEqualAbs(g1.GetPoint(), g2.GetPoint(), kPointsEqualEpsilon);
 }
 
 inline bool Equal(Edge const & e1, Edge const & e2)
@@ -93,7 +93,7 @@ inline bool Equal(Transfer const & t1, Transfer const & t2)
 {
   return (std::make_tuple(t1.GetId(), t1.GetStopIds()) ==
           std::make_tuple(t2.GetId(), t2.GetStopIds())) &&
-         base::AlmostEqualAbs(t1.GetPoint(), t2.GetPoint(), kPointsEqualEpsilon);
+         AlmostEqualAbs(t1.GetPoint(), t2.GetPoint(), kPointsEqualEpsilon);
 }
 
 inline bool Equal(Shape const & s1, Shape const & s2)

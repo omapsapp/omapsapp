@@ -87,7 +87,7 @@ public:
       std::vector<m2::PointD> out;
 
       /// @todo Choose scale level for simplification.
-      SimplifyDefault(in.begin(), in.end(), base::Pow2(scales::GetEpsilonForSimplify(10)), out);
+      SimplifyDefault(in.begin(), in.end(), math::Pow2(scales::GetEpsilonForSimplify(10)), out);
 
       serial::SaveOuterPath(out, cp, *w);
     }

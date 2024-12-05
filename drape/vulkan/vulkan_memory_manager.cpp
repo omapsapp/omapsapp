@@ -125,20 +125,20 @@ uint32_t VulkanMemoryManager::GetOffsetAlignment(ResourceType resourceType) cons
   if (resourceType == ResourceType::Uniform)
   {
     static uint32_t const kUniformAlignment =
-        base::LCM(static_cast<uint32_t>(m_deviceLimits.minUniformBufferOffsetAlignment),
+        math::LCM(static_cast<uint32_t>(m_deviceLimits.minUniformBufferOffsetAlignment),
                   static_cast<uint32_t>(m_deviceLimits.nonCoherentAtomSize));
     return kUniformAlignment;
   }
 
   static uint32_t const kAlignment =
-      base::LCM(static_cast<uint32_t>(m_deviceLimits.minMemoryMapAlignment),
+      math::LCM(static_cast<uint32_t>(m_deviceLimits.minMemoryMapAlignment),
                 static_cast<uint32_t>(m_deviceLimits.nonCoherentAtomSize));
   return kAlignment;
 }
 
 uint32_t VulkanMemoryManager::GetSizeAlignment(VkMemoryRequirements const & memReqs) const
 {
-  return base::LCM(static_cast<uint32_t>(memReqs.alignment),
+  return math::LCM(static_cast<uint32_t>(memReqs.alignment),
                    static_cast<uint32_t>(m_deviceLimits.nonCoherentAtomSize));
 }
 

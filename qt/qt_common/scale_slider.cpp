@@ -67,7 +67,7 @@ void ScaleSlider::SetPosWithBlockedSignals(double pos)
 {
   bool const blocked = signalsBlocked();
   blockSignals(true);
-  setSliderPosition(base::SignedRound(pos * m_factor));
+  setSliderPosition(math::SignedRound(pos * m_factor));
   blockSignals(blocked);
 }
 

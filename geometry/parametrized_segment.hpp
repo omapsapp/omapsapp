@@ -50,7 +50,7 @@ public:
       return (p - m_p1).SquaredLength();
 
     // Closest point is between |m_p0| and |m_p1|.
-    return base::Pow2(CrossProduct(diff, m_d));
+    return math::Pow2(CrossProduct(diff, m_d));
   }
 
   // Returns the point of the segment that is closest to |p|.

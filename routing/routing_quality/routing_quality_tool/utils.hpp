@@ -72,8 +72,8 @@ bool AreRoutesWithSameEnds(routing::routes_builder::RoutesBuilder::Result const 
   auto const & anotherFinish = anotherResult.GetFinishPoint();
 
   double constexpr kEps = 1e-10;
-  return base::AlmostEqualAbs(start, anotherStart, kEps) &&
-         base::AlmostEqualAbs(finish, anotherFinish, kEps);
+  return AlmostEqualAbs(start, anotherStart, kEps) &&
+         AlmostEqualAbs(finish, anotherFinish, kEps);
 }
 
 template <typename AnotherResult>

@@ -30,14 +30,14 @@ struct Bounds
   }
 };
 
-inline bool ValidLon(double d) { return base::Between(-180.0, 180.0, d); }
-inline bool ValidLat(double d) { return base::Between(-90.0, 90.0, d); }
+inline bool ValidLon(double d) { return math::Between(-180.0, 180.0, d); }
+inline bool ValidLat(double d) { return math::Between(-90.0, 90.0, d); }
 
-inline bool ValidX(double d) { return base::Between(Bounds::kMinX, Bounds::kMaxX, d); }
-inline bool ValidY(double d) { return base::Between(Bounds::kMinY, Bounds::kMaxY, d); }
+inline bool ValidX(double d) { return math::Between(Bounds::kMinX, Bounds::kMaxX, d); }
+inline bool ValidY(double d) { return math::Between(Bounds::kMinY, Bounds::kMaxY, d); }
 
-inline double ClampX(double d) { return base::Clamp(d, Bounds::kMinX, Bounds::kMaxX); }
-inline double ClampY(double d) { return base::Clamp(d, Bounds::kMinY, Bounds::kMaxY); }
+inline double ClampX(double d) { return math::Clamp(d, Bounds::kMinX, Bounds::kMaxX); }
+inline double ClampY(double d) { return math::Clamp(d, Bounds::kMinY, Bounds::kMaxY); }
 
 void ClampPoint(m2::PointD & pt);
 

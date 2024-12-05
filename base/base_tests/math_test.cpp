@@ -6,6 +6,10 @@
 
 #include <boost/math/special_functions/next.hpp>
 
+namespace math_test
+{
+using namespace math;
+
 namespace
 {
 // Returns the next representable floating point value without using conversion to integer.
@@ -29,12 +33,12 @@ void TestMaxULPs()
         Float y = x;
         for (unsigned int i = 0; i <= maxULPs; ++i)
         {
-          TEST(base::AlmostEqualULPs(x, y, maxULPs), (x, y, maxULPs, x - y, dir));
+          TEST(AlmostEqualULPs(x, y, maxULPs), (x, y, maxULPs, x - y, dir));
           Float const nextY = NextFloat(y, dir);
           TEST_NOT_EQUAL(y, nextY, (i, base, dir));
           y = nextY;
         }
-        TEST(!base::AlmostEqualULPs(x, y, maxULPs), (x, y, maxULPs, x - y));
+        TEST(!AlmostEqualULPs(x, y, maxULPs), (x, y, maxULPs, x - y));
       }
     }
   }
@@ -43,7 +47,7 @@ void TestMaxULPs()
 
 UNIT_TEST(PowUInt)
 {
-  TEST_EQUAL(base::PowUint(3, 10), 59049, ());
+  TEST_EQUAL(PowUint(3, 10), 59049, ());
 }
 
 UNIT_TEST(AlmostEqualULPs_double)
@@ -64,10 +68,10 @@ UNIT_TEST(AlmostEqualULPs_double)
   TEST_ALMOST_EQUAL_ULPS(1.0/dmax, 1.0/dmax, ());
   TEST_ALMOST_EQUAL_ULPS(-1.0/dmax, -1.0/dmax, ());
 
-  TEST(!base::AlmostEqualULPs(1.0, -1.0), ());
-  TEST(!base::AlmostEqualULPs(2.0, -2.0), ());
-  TEST(!base::AlmostEqualULPs(dmax, -dmax), ());
-  TEST(!base::AlmostEqualULPs(0.0, eps), ());
+  TEST(!AlmostEqualULPs(1.0, -1.0), ());
+  TEST(!AlmostEqualULPs(2.0, -2.0), ());
+  TEST(!AlmostEqualULPs(dmax, -dmax), ());
+  TEST(!AlmostEqualULPs(0.0, eps), ());
 }
 
 UNIT_TEST(AlmostEqualULPs_float)
@@ -88,10 +92,10 @@ UNIT_TEST(AlmostEqualULPs_float)
   TEST_ALMOST_EQUAL_ULPS(1.0f/dmax, 1.0f/dmax, ());
   TEST_ALMOST_EQUAL_ULPS(-1.0f/dmax, -1.0f/dmax, ());
 
-  TEST(!base::AlmostEqualULPs(1.0f, -1.0f), ());
-  TEST(!base::AlmostEqualULPs(2.0f, -2.0f), ());
-  TEST(!base::AlmostEqualULPs(dmax, -dmax), ());
-  TEST(!base::AlmostEqualULPs(0.0f, eps), ());
+  TEST(!AlmostEqualULPs(1.0f, -1.0f), ());
+  TEST(!AlmostEqualULPs(2.0f, -2.0f), ());
+  TEST(!AlmostEqualULPs(dmax, -dmax), ());
+  TEST(!AlmostEqualULPs(0.0f, eps), ());
 }
 
 UNIT_TEST(AlmostEqual_Smoke)
@@ -99,15 +103,15 @@ UNIT_TEST(AlmostEqual_Smoke)
   double constexpr small = 1e-18;
   double constexpr eps = 1e-10;
 
-  TEST(base::AlmostEqualAbs(0.0, 0.0 + small, eps), ());
-  TEST(!base::AlmostEqualRel(0.0, 0.0 + small, eps), ());
-  TEST(!base::AlmostEqualULPs(0.0, 0.0 + small), ());
+  TEST(AlmostEqualAbs(0.0, 0.0 + small, eps), ());
+  TEST(!AlmostEqualRel(0.0, 0.0 + small, eps), ());
+  TEST(!AlmostEqualULPs(0.0, 0.0 + small), ());
 
-  TEST(base::AlmostEqualAbs(1.0, 1.0 + small, eps), ());
-  TEST(base::AlmostEqualRel(1.0, 1.0 + small, eps), ());
-  TEST(base::AlmostEqualULPs(1.0, 1.0 + small), ());
+  TEST(AlmostEqualAbs(1.0, 1.0 + small, eps), ());
+  TEST(AlmostEqualRel(1.0, 1.0 + small, eps), ());
+  TEST(AlmostEqualULPs(1.0, 1.0 + small), ());
 
-  TEST(base::AlmostEqualRel(123456789.0, 123456780.0, 1e-7), ());
+  TEST(AlmostEqualRel(123456789.0, 123456780.0, 1e-7), ());
 }
 
 UNIT_TEST(AlmostEqualULPs_MaxULPs_double)
@@ -135,32 +139,33 @@ UNIT_TEST(TEST_FLOAT_DOUBLE_EQUAL_macros)
 
 UNIT_TEST(GCD)
 {
-  TEST_EQUAL(base::GCD(6, 3), 3, ());
-  TEST_EQUAL(base::GCD(14, 7), 7, ());
-  TEST_EQUAL(base::GCD(100, 100), 100, ());
-  TEST_EQUAL(base::GCD(7, 3), 1, ());
-  TEST_EQUAL(base::GCD(8, 3), 1, ());
-  TEST_EQUAL(base::GCD(9, 3), 3, ());
+  TEST_EQUAL(GCD(6, 3), 3, ());
+  TEST_EQUAL(GCD(14, 7), 7, ());
+  TEST_EQUAL(GCD(100, 100), 100, ());
+  TEST_EQUAL(GCD(7, 3), 1, ());
+  TEST_EQUAL(GCD(8, 3), 1, ());
+  TEST_EQUAL(GCD(9, 3), 3, ());
 }
 
 UNIT_TEST(LCM)
 {
-  TEST_EQUAL(base::LCM(6, 3), 6, ());
-  TEST_EQUAL(base::LCM(14, 7), 14, ());
-  TEST_EQUAL(base::LCM(100, 100), 100, ());
-  TEST_EQUAL(base::LCM(7, 3), 21, ());
-  TEST_EQUAL(base::LCM(8, 3), 24, ());
-  TEST_EQUAL(base::LCM(9, 3), 9, ());
+  TEST_EQUAL(LCM(6, 3), 6, ());
+  TEST_EQUAL(LCM(14, 7), 14, ());
+  TEST_EQUAL(LCM(100, 100), 100, ());
+  TEST_EQUAL(LCM(7, 3), 21, ());
+  TEST_EQUAL(LCM(8, 3), 24, ());
+  TEST_EQUAL(LCM(9, 3), 9, ());
 }
 
 UNIT_TEST(Sign)
 {
-  TEST_EQUAL(1, base::Sign(1), ());
-  TEST_EQUAL(1, base::Sign(10.4), ());
+  TEST_EQUAL(1, Sign(1), ());
+  TEST_EQUAL(1, Sign(10.4), ());
 
-  TEST_EQUAL(0, base::Sign(0), ());
-  TEST_EQUAL(0, base::Sign(0.0), ());
+  TEST_EQUAL(0, Sign(0), ());
+  TEST_EQUAL(0, Sign(0.0), ());
 
-  TEST_EQUAL(-1, base::Sign(-11), ());
-  TEST_EQUAL(-1, base::Sign(-10.4), ());
+  TEST_EQUAL(-1, Sign(-11), ());
+  TEST_EQUAL(-1, Sign(-10.4), ());
 }
+}  // namespace math_test

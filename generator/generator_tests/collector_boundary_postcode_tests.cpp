@@ -126,7 +126,7 @@ bool CheckPostcodeExists(unordered_map<string, vector<m2::PointD>> const & data,
 
   for (size_t i = 0; i < geometry.size(); ++i)
   {
-    if (!m2::AlmostEqualAbs(geometry[i], it->second[i], kMwmPointAccuracy))
+    if (!AlmostEqualAbs(geometry[i], it->second[i], kMwmPointAccuracy))
       return false;
   }
 

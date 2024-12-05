@@ -127,7 +127,7 @@ int TesselateInterior(PolygonsT const & polys, TrianglesInfo & info)
     {
       for (int j = 0; j < 3; ++j)
       {
-        if (to.m_p[i] == from.m_p[base::NextModN(j, 3)] && to.m_p[base::NextModN(i, 3)] == from.m_p[j])
+        if (to.m_p[i] == from.m_p[math::NextModN(j, 3)] && to.m_p[math::NextModN(i, 3)] == from.m_p[j])
           return std::make_pair(i, j);
       }
     }
@@ -143,14 +143,14 @@ int TesselateInterior(PolygonsT const & polys, TrianglesInfo & info)
   void TrianglesInfo::ListInfo::GetNeighbors(
       Triangle const & trg, Triangle const & from, int * nb) const
   {
-    int i = base::NextModN(CommonEdge(trg, from).first, 3);
-    int j = base::NextModN(i, 3);
+    int i = math::NextModN(CommonEdge(trg, from).first, 3);
+    int j = math::NextModN(i, 3);
 
     int ind = 0;
     TIterator it = m_neighbors.find(std::make_pair(trg.m_p[j], trg.m_p[i]));
     nb[ind++] = (it != m_neighbors.end()) ? it->second : empty_key;
 
-    it = m_neighbors.find(std::make_pair(trg.m_p[base::NextModN(j, 3)], trg.m_p[j]));
+    it = m_neighbors.find(std::make_pair(trg.m_p[math::NextModN(j, 3)], trg.m_p[j]));
     nb[ind++] = (it != m_neighbors.end()) ? it->second : empty_key;
   }
 

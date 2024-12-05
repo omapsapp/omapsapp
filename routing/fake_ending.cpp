@@ -30,7 +30,7 @@ LatLonWithAltitude CalcProjectionToSegment(LatLonWithAltitude const & begin,
   auto const projectedLatLon = mercator::ToLatLon(projectedPoint);
 
   double constexpr kEpsMeters = 2.0;
-  if (base::AlmostEqualAbs(distBeginToEnd, 0.0, kEpsMeters))
+  if (AlmostEqualAbs(distBeginToEnd, 0.0, kEpsMeters))
     return LatLonWithAltitude(projectedLatLon, begin.GetAltitude());
 
   auto const distBeginToProjection =

@@ -224,7 +224,7 @@ void RoadGeometry::Load(VehicleModelInterface const & vehicleModel, FeatureType 
 
       auto const roadLenKm = GetRoadLengthM() / 1000.0;
       double const durationH = CalcFerryDurationHours(durationMeta, roadLenKm);
-      CHECK(!base::AlmostEqualAbs(durationH, 0.0, 1e-5), (durationH));
+      CHECK(!AlmostEqualAbs(durationH, 0.0, 1e-5), (durationH));
 
       if (roadLenKm != 0.0)
       {

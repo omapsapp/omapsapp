@@ -44,7 +44,7 @@ struct TurnCandidate
   bool IsAlmostEqual(TurnCandidate const & rhs) const
   {
     double constexpr kEpsilon = 0.01;
-    return base::AlmostEqualAbs(m_angle, rhs.m_angle, kEpsilon) && m_segment == rhs.m_segment &&
+    return AlmostEqualAbs(m_angle, rhs.m_angle, kEpsilon) && m_segment == rhs.m_segment &&
            m_highwayClass == rhs.m_highwayClass && m_isLink == rhs.m_isLink;
   }
 };

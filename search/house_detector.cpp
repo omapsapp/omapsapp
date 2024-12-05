@@ -779,7 +779,7 @@ HouseDetector::StreetPtr HouseDetector::FindConnection(Street const * st, bool b
 
   StreetPtr resStreet(0, false);
   double resDistance = numeric_limits<double>::max();
-  double const minSqDistance = base::Pow2(m_metersToMercator * STREET_CONNECTION_LENGTH_M);
+  double const minSqDistance = math::Pow2(m_metersToMercator * STREET_CONNECTION_LENGTH_M);
 
   for (size_t i = 0; i < m_end2st.size(); ++i)
   {

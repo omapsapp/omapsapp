@@ -178,7 +178,7 @@ void CalcStatistics(vector<double> const & a, double & avg, double & maximum, do
     avg /= n;
 
   for (double const x : a)
-    var += base::Pow2(x - avg);
+    var += math::Pow2(x - avg);
   if (a.size() > 1)
     var /= n - 1;
   stdDev = sqrt(var);
@@ -206,7 +206,7 @@ int FindResult(DataSource & dataSource, string const & mwmName, uint32_t const f
   {
     auto const & r = results[i];
     if (r.HasPoint() &&
-        base::AlmostEqualAbs(r.GetFeatureCenter(), mercator::FromLatLon(lat, lon), kEps))
+        AlmostEqualAbs(r.GetFeatureCenter(), mercator::FromLatLon(lat, lon), kEps))
     {
       double const dist =
           mercator::DistanceOnEarth(r.GetFeatureCenter(), mercator::FromLatLon(lat, lon));

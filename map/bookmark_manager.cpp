@@ -851,7 +851,7 @@ void BookmarkManager::UpdateElevationMyPosition(kml::TrackId const & trackId)
   auto trackSelectionMark = GetMarkForEdit<TrackSelectionMark>(markId);
 
   double const kEpsMeters = 1e-2;
-  if (!base::AlmostEqualAbs(trackSelectionMark->GetMyPositionDistance(),
+  if (!AlmostEqualAbs(trackSelectionMark->GetMyPositionDistance(),
                             myPositionDistance, kEpsMeters))
   {
     trackSelectionMark->SetMyPositionDistance(myPositionDistance);

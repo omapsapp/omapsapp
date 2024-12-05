@@ -16,17 +16,17 @@ bool FindSingleStripForIndex(size_t i, size_t n, IsVisibleF isVisible)
 {
   // Searching for a strip only in a single direction, because the opposite direction
   // is traversed from the last vertex of the possible strip.
-  size_t a = base::PrevModN(i, n);
-  size_t b = base::NextModN(i, n);
+  size_t a = math::PrevModN(i, n);
+  size_t b = math::NextModN(i, n);
   for (size_t j = 2; j < n; ++j)
   {
     ASSERT_NOT_EQUAL(a, b, ());
     if (!isVisible(a, b))
       return false;
     if (j & 1)
-      a = base::PrevModN(a, n);
+      a = math::PrevModN(a, n);
     else
-      b = base::NextModN(b, n);
+      b = math::NextModN(b, n);
   }
 
   ASSERT_EQUAL(a, b, ());

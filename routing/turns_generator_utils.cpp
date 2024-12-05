@@ -192,7 +192,7 @@ double CalcOneSegmentTurnAngle(TurnInfo const & turnInfo)
   ASSERT_GREATER_OR_EQUAL(turnInfo.m_ingoing->m_path.size(), 2, ());
   ASSERT_GREATER_OR_EQUAL(turnInfo.m_outgoing->m_path.size(), 2, ());
 
-  return base::RadToDeg(PiMinusTwoVectorsAngle(turnInfo.m_ingoing->m_path.back().GetPoint(),
+  return math::RadToDeg(PiMinusTwoVectorsAngle(turnInfo.m_ingoing->m_path.back().GetPoint(),
                                                turnInfo.m_ingoing->m_path[turnInfo.m_ingoing->m_path.size() - 2].GetPoint(),
                                                turnInfo.m_outgoing->m_path[1].GetPoint()));
 }
@@ -203,7 +203,7 @@ double CalcPathTurnAngle(LoadedPathSegment const & segment, size_t const pathInd
   ASSERT_GREATER(pathIndex, 0, ());
   ASSERT_LESS(pathIndex, segment.m_path.size() - 1, ());
 
-  return base::RadToDeg(PiMinusTwoVectorsAngle(segment.m_path[pathIndex].GetPoint(),
+  return math::RadToDeg(PiMinusTwoVectorsAngle(segment.m_path[pathIndex].GetPoint(),
                                                segment.m_path[pathIndex - 1].GetPoint(),
                                                segment.m_path[pathIndex + 1].GetPoint()));
 }

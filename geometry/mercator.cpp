@@ -18,7 +18,7 @@ m2::RectD MetersToXY(double lon, double lat, double lonMetersR, double latMeters
   double const minLat = max(-90.0, lat - latDegreeOffset);
   double const maxLat = min(90.0, lat + latDegreeOffset);
 
-  double const cosL = max(cos(base::DegToRad(max(fabs(minLat), fabs(maxLat)))), 0.00001);
+  double const cosL = max(cos(math::DegToRad(max(fabs(minLat), fabs(maxLat)))), 0.00001);
   ASSERT_GREATER(cosL, 0.0, ());
 
   double const lonDegreeOffset = lonMetersR * Bounds::kDegreesInMeter / cosL;
@@ -38,7 +38,7 @@ m2::PointD GetSmPoint(m2::PointD const & pt, double lonMetersR, double latMeters
   double const latDegreeOffset = latMetersR * Bounds::kDegreesInMeter;
   double const newLat = min(90.0, max(-90.0, lat + latDegreeOffset));
 
-  double const cosL = max(cos(base::DegToRad(newLat)), 0.00001);
+  double const cosL = max(cos(math::DegToRad(newLat)), 0.00001);
   ASSERT_GREATER(cosL, 0.0, ());
 
   double const lonDegreeOffset = lonMetersR * Bounds::kDegreesInMeter / cosL;
@@ -71,13 +71,13 @@ void ClampPoint(m2::PointD & pt)
 
 double YToLat(double y)
 {
-  return base::RadToDeg(2.0 * atan(tanh(0.5 * base::DegToRad(y))));
+  return math::RadToDeg(2.0 * atan(tanh(0.5 * math::DegToRad(y))));
 }
 
 double LatToY(double lat)
 {
-  double const sinx = sin(base::DegToRad(base::Clamp(lat, -86.0, 86.0)));
-  double const res = base::RadToDeg(0.5 * log((1.0 + sinx) / (1.0 - sinx)));
+  double const sinx = sin(math::DegToRad(math::Clamp(lat, -86.0, 86.0)));
+  double const res = math::RadToDeg(0.5 * log((1.0 + sinx) / (1.0 - sinx)));
   return ClampY(res);
 }
 

@@ -144,7 +144,7 @@ UserEventStream::UserEventStream()
   , m_animationSystem(AnimationSystem::Instance())
   , m_startDragOrg(m2::PointD::Zero())
   , m_startDoubleTapAndHold(m2::PointD::Zero())
-  , m_dragThreshold(base::Pow2(VisualParams::Instance().GetDragThreshold()))
+  , m_dragThreshold(math::Pow2(VisualParams::Instance().GetDragThreshold()))
 {
 }
 

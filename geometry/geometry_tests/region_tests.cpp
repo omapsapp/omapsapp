@@ -328,7 +328,7 @@ UNIT_TEST(Region_GetRandomPoint)
     m2::ConvexHull const hull(points, 1e-9 /* eps */);
     auto const hullRegion = m2::Region<P>(hull.Points().begin(), hull.Points().end());
     LOG(LINFO, (hullRegion.CalculateArea()));
-    TEST(base::AlmostEqualRel(region.CalculateArea(), hullRegion.CalculateArea(), 0.05), ());
+    TEST(AlmostEqualRel(region.CalculateArea(), hullRegion.CalculateArea(), 0.05), ());
 
     if (kNeedPlot)
     {

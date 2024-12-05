@@ -79,7 +79,7 @@ bool NeedReplace(std::vector<m2::PointD> const & curSubpolygon,
   if (areaDiff > kMaxAreaDiffMetersSquared)
     return false;
 
-  if (base::AlmostEqualAbs(areaDiff, 0.0, BordersData::kEqualityEpsilon))
+  if (AlmostEqualAbs(areaDiff, 0.0, BordersData::kEqualityEpsilon))
     return false;
 
   // We know that |curSize| is always greater than 1, because we construct it such way, but we know
@@ -238,7 +238,7 @@ size_t BordersData::RemoveDuplicatePoints()
   size_t count = 0;
 
   auto const pointsAreEqual = [](auto const & p1, auto const & p2) {
-    return base::AlmostEqualAbs(p1.m_point, p2.m_point, kEqualityEpsilon);
+    return AlmostEqualAbs(p1.m_point, p2.m_point, kEqualityEpsilon);
   };
 
   for (auto & polygon : m_bordersPolygons)
@@ -283,7 +283,7 @@ void BordersData::MarkPoint(size_t curBorderId, size_t curPointId)
     {
       auto & anotherMarkedPoint = anotherPolygon.m_points[anotherPointId];
 
-      if (base::AlmostEqualAbs(anotherMarkedPoint.m_point, curMarkedPoint.m_point, kEqualityEpsilon))
+      if (AlmostEqualAbs(anotherMarkedPoint.m_point, curMarkedPoint.m_point, kEqualityEpsilon))
       {
         anotherMarkedPoint.m_marked = true;
         curMarkedPoint.m_marked = true;

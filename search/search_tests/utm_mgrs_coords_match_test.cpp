@@ -16,10 +16,10 @@ void TestAlmostEqual(std::optional<ms::LatLon> const & maybeLatLon, double expec
   static double constexpr kEps = 1e-5;
 
   auto const actualLat = maybeLatLon->m_lat;
-  TEST(base::AlmostEqualAbsOrRel(actualLat, expectedLat, kEps), ("Lat is not close", actualLat, expectedLat));
+  TEST(AlmostEqualAbsOrRel(actualLat, expectedLat, kEps), ("Lat is not close", actualLat, expectedLat));
 
   auto const actualLon = maybeLatLon->m_lon;
-  TEST(base::AlmostEqualAbsOrRel(actualLon, expectedLon, kEps), ("Lon is not close", actualLon, expectedLon));
+  TEST(AlmostEqualAbsOrRel(actualLon, expectedLon, kEps), ("Lon is not close", actualLon, expectedLon));
 }
 
 UNIT_TEST(MatchUTMCoords)

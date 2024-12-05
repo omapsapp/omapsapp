@@ -209,7 +209,7 @@ public:
     {
       for (size_t i = 0; i < junctions.size(); ++i)
       {
-        if (!base::AlmostEqualAbs(m_cross.GetPoint(), junctions[i].GetPoint(), kMwmPointAccuracy))
+        if (!AlmostEqualAbs(m_cross.GetPoint(), junctions[i].GetPoint(), kMwmPointAccuracy))
           continue;
 
         if (i + 1 < junctions.size())

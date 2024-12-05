@@ -35,8 +35,8 @@ void LogIfNotConsistent(RoutesBuilder::Result const & oldRes, RoutesBuilder::Res
   auto const & oldRoute = oldRes.m_routes.back();
   auto const & newRoute = newRes.m_routes.back();
 
-  bool const sameETA = base::AlmostEqualAbs(oldRoute.m_eta, newRoute.m_eta, 1.0);
-  bool const sameDistance = base::AlmostEqualAbs(oldRoute.m_distance, newRoute.m_distance, 1.0);
+  bool const sameETA = AlmostEqualAbs(oldRoute.m_eta, newRoute.m_eta, 1.0);
+  bool const sameDistance = AlmostEqualAbs(oldRoute.m_distance, newRoute.m_distance, 1.0);
   if (!sameETA || !sameDistance)
   {
     LOG(LINFO, ("old ETA:", oldRoute.m_eta, "old distance:", oldRoute.m_distance, "new ETA:",
@@ -100,7 +100,7 @@ std::vector<double> GetBoostPercents(BenchmarkResults const & oldResults,
   {
     auto const oldTime = oldResults.GetBuildTimes()[i];
     auto const newTime = newResults.GetBuildTimes()[i];
-    if (base::AlmostEqualAbs(oldTime, newTime, 1e-2))
+    if (AlmostEqualAbs(oldTime, newTime, 1e-2))
       continue;
 
     auto const diffPercent = (oldTime - newTime) / oldTime * 100.0;

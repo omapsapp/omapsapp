@@ -170,8 +170,8 @@ void CheckBookmarks(BookmarkManager const & bmManager, kml::MarkGroupId groupId)
   m2::PointD org = bm->GetPivot();
 
   double constexpr kEps = 1e-6;
-  TEST(base::AlmostEqualAbs(mercator::XToLon(org.x), 27.566765, kEps), ());
-  TEST(base::AlmostEqualAbs(mercator::YToLat(org.y), 53.900047, kEps), ());
+  TEST(AlmostEqualAbs(mercator::XToLon(org.x), 27.566765, kEps), ());
+  TEST(AlmostEqualAbs(mercator::YToLat(org.y), 53.900047, kEps), ());
   TEST_EQUAL(kml::GetDefaultStr(bm->GetName()), "From: Минск, Минская область, Беларусь", ());
   TEST_EQUAL(bm->GetColor(), kml::PredefinedColor::Blue, ());
   TEST(bm->GetDescription().empty(), ());
@@ -179,8 +179,8 @@ void CheckBookmarks(BookmarkManager const & bmManager, kml::MarkGroupId groupId)
 
   bm = bmManager.GetBookmark(*it++);
   org = bm->GetPivot();
-  TEST(base::AlmostEqualAbs(mercator::XToLon(org.x), 27.551532, kEps), ());
-  TEST(base::AlmostEqualAbs(mercator::YToLat(org.y), 53.89306, kEps), ());
+  TEST(AlmostEqualAbs(mercator::XToLon(org.x), 27.551532, kEps), ());
+  TEST(AlmostEqualAbs(mercator::YToLat(org.y), 53.89306, kEps), ());
   TEST_EQUAL(kml::GetDefaultStr(bm->GetName()), "<MWM & Sons>", ());
   TEST_EQUAL(bm->GetDescription(), "Amps & <brackets>", ());
   TEST_EQUAL(kml::ToSecondsSinceEpoch(bm->GetTimeStamp()), 0, ());
@@ -377,7 +377,7 @@ UNIT_TEST(Bookmarks_Getting)
   fm.ShowRect(m2::RectD(0, 0, 80, 40));
 
   // This is not correct because Framework::OnSize doesn't work until SetRenderPolicy is called.
-  //TEST(m2::AlmostEqualULPs(m2::PointD(400, 200), pixC), (pixC));
+  //TEST(AlmostEqualULPs(m2::PointD(400, 200), pixC), (pixC));
 
   BookmarkManager & bmManager = fm.GetBookmarkManager();
   bmManager.EnableTestMode(true);
@@ -1058,7 +1058,7 @@ char const * kmlString3 =
       return false;
     if (b1.GetScale() != b2.GetScale())
       return false;
-    if (!base::AlmostEqualAbs(b1.GetPivot(), b2.GetPivot(), 1e-6 /* eps*/))
+    if (!AlmostEqualAbs(b1.GetPivot(), b2.GetPivot(), 1e-6 /* eps*/))
       return false;
 
     // do not check timestamp

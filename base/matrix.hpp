@@ -68,7 +68,7 @@ namespace math
     {
       for (size_t i = 0; i < Rows; ++i)
         for (size_t j = 0; j < Cols; ++j)
-          if (base::Abs(m_data[i * Cols + j] - m(i, j)) > eps)
+          if (Abs(m_data[i * Cols + j] - m(i, j)) > eps)
             return false;
 
       return true;

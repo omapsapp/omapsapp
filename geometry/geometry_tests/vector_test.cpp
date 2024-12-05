@@ -9,7 +9,7 @@ bool EqualArrays(T (&a1)[N], T (&a2)[N])
 {
   for (size_t i = 0; i < N; ++i)
   {
-    if (!base::AlmostEqualULPs(a1[i], a2[i]))
+    if (!AlmostEqualULPs(a1[i], a2[i]))
       return false;
   }
   return true;

@@ -145,7 +145,7 @@ dp::Color GpsTrackRenderer::CalculatePointColor(size_t pointIndex, m2::PointD co
     endAlpha = kMaxNightAlpha;
   }
 
-  double const ta = base::Clamp(lengthFromStart / fullLength, 0.0, 1.0);
+  double const ta = math::Clamp(lengthFromStart / fullLength, 0.0, 1.0);
   double const alpha = startAlpha * (1.0 - ta) + endAlpha * ta;
 
   if ((end.m_timestamp - start.m_timestamp) > kUnknownDistanceTime)
@@ -157,7 +157,7 @@ dp::Color GpsTrackRenderer::CalculatePointColor(size_t pointIndex, m2::PointD co
 
   double const length = (end.m_point - start.m_point).Length();
   double const dist = (curPoint - start.m_point).Length();
-  double const td = base::Clamp(dist / length, 0.0, 1.0);
+  double const td = math::Clamp(dist / length, 0.0, 1.0);
 
   double const speed = std::max(start.m_speedMPS * (1.0 - td) + end.m_speedMPS * td, 0.0);
   dp::Color const color = GetColorBySpeed(speed);

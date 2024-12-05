@@ -31,8 +31,8 @@ UNIT_TEST(OSM_O5M_Source_Node_read_test)
   TEST_EQUAL(em.uid, 395071, ());
   TEST_EQUAL(em.version, 8, ());
   TEST_EQUAL(em.changeset, 12059128, ());
-  TEST(base::AlmostEqualAbs(em.lon, 38.7666704, 1e-7), ());
-  TEST(base::AlmostEqualAbs(em.lat, 55.0927062, 1e-7), ());
+  TEST(AlmostEqualAbs(em.lon, 38.7666704, 1e-7), ());
+  TEST(AlmostEqualAbs(em.lat, 55.0927062, 1e-7), ());
 
   auto const tags = em.Tags();
   auto tagIterator = tags.begin();
