@@ -1,5 +1,19 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
+OPT_IGNORE_UNUSED=
+
+while getopts "u" opt; do
+  case $opt in
+    u) OPT_IGNORE_UNUSED=1 ;;
+    *)
+      echo "This tool generates localization files for Android & iOS from strings.txt & types_strings.txt."
+      echo "Usage: $0 [-u]"
+      echo
+      echo -e "-u  Allow generating with unused strings"
+      exit 1
+      ;;
+  esac
+done
 
 # Use ruby from brew on Mac OS X, because system ruby is outdated/broken/will be removed in future releases.
 case $OSTYPE in
@@ -48,8 +62,10 @@ STRINGS_UTILS="$OMIM_PATH/tools/python/strings_utils.py"
 "$STRINGS_UTILS" --types-strings --validate --output
 
 # Check for unused strings.
-CLEAN_STRINGS="$OMIM_PATH/tools/python/clean_strings_txt.py"
-"$CLEAN_STRINGS" --validate
+if [ -z $OPT_IGNORE_UNUSED ]; then
+  CLEAN_STRINGS="$OMIM_PATH/tools/python/clean_strings_txt.py"
+  "$CLEAN_STRINGS" --validate
+fi
 
 # Generate android/iphone/jquery localization files from strings files.
 TWINE="$(gem contents --show-install-dir twine)/bin/twine"
@@ -105,3 +121,5 @@ if [ "$LOCALES_CONTENT" != "$(cat "$LOCALES_CONFIG")" ]; then
   echo "$LOCALES_CONTENT" > "$LOCALES_CONFIG"
   echo Updated "$LOCALES_CONFIG" file
 fi
+
+echo "Done."

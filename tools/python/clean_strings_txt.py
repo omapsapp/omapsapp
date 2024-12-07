@@ -396,8 +396,8 @@ if __name__ == "__main__":
 
     if args.validate:
         if find_unused():
-            print(
-                "ERROR: there are unused strings\n(run \"{0} -s\" to delete them)\nTerminating...".format(prog_name))
+            print("ERROR: there are unused strings (run \"{0} -s\" to delete them)".format(prog_name))
+            print("If you're running generate_localizations.sh, add -u to generate anyway.\nExiting...")
             exit(1)
         exit(0)
 
