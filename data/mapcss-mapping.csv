@@ -1054,7 +1054,7 @@ shop|greengrocer;939;
 shop|beverages;940;
 shop|toys;941;
 shop|confectionery;942;
-shop;[shop?];;name;int_name;943;
+shop;[shop?][shop!=vacant];;name;int_name;943;
 hwtag|lit;944;
 office|company;945;
 office|telecommunication;946;
