@@ -330,7 +330,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">請啟用定位服務</string>
     <string name="save">儲存</string>
-    <string name="edit_description_hint">您的描述（文字或 html）</string>
     <string name="create">建立</string>
     <!-- red color -->
     <string name="red">紅色</string>
@@ -562,6 +561,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak 上的詳細資訊</string>
     <string name="placepage_edit_bookmark_button">編輯書籤</string>
+    <string name="placepage_personal_notes_hint">個人備註（文字或 html）</string>
     <string name="editor_comment_hint">備註…</string>
     <string name="editor_reset_edits_message">重設所有本機變更？</string>
     <string name="editor_reset_edits_button">重設</string>
@@ -675,7 +675,6 @@
     <string name="delete_list">刪除列表</string>
     <string name="public_access">允許大眾進入</string>
     <string name="limited_access">不允許進入的私人空間</string>
-    <string name="bookmark_list_description_hint">增加說明（文字或 html）</string>
     <string name="not_shared">私人</string>
     <string name="speedcams_alert_title">測速照相</string>
     <string name="place_description_title">地點說明</string>

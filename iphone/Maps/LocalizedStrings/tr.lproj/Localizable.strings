@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Yer İmi Adı";
 
-"placepage_personal_notes_hint" = "Kişisel notlar";
+"placepage_personal_notes_hint" = "Kişisel notlar (metin veya html)";
 
 "placepage_delete_bookmark_button" = "Yer İmini Sil";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Listeyi sil";
 
 "hide_from_map" = "Haritadan gizle";
-
-"bookmark_list_description_hint" = "Bir açıklama yazın (metin veya html)";
 
 "tags_loading_error_subtitle" = "Etiketler yüklenirken bir hata oluştu, lütfen tekrar deneyin";
 

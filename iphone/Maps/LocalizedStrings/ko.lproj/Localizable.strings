@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "즐겨찾기 이름";
 
-"placepage_personal_notes_hint" = "개인 메모";
+"placepage_personal_notes_hint" = "개인 메모 (글자 혹은 html)";
 
 "placepage_delete_bookmark_button" = "즐겨찾기 삭제";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "리스트 삭제";
 
 "hide_from_map" = "지도에서 숨기기";
-
-"bookmark_list_description_hint" = "묘사를 적으세요 (글자 혹은 html)";
 
 "tags_loading_error_subtitle" = "태그를 불러오는 중 에러가 발생했습니다. 다시 시도해보세요";
 

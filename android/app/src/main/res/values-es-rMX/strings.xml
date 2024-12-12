@@ -116,7 +116,6 @@
     <string name="delete_list">Eliminar lista</string>
     <string name="public_access">Acceso público</string>
     <string name="limited_access">Acceso limitado</string>
-    <string name="bookmark_list_description_hint">Introduzca una descripción (texto o html)</string>
     <string name="not_shared">Privado</string>
     <string name="speedcams_alert_title">Cámaras de velocidad</string>
     <string name="place_description_title">Descripción de lugares</string>

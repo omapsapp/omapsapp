@@ -301,7 +301,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Mohon aktifkan Layanan Lokasi</string>
     <string name="save">Simpan</string>
-    <string name="edit_description_hint">Deskripsi Anda (teks atau html)</string>
     <string name="create">buat</string>
     <!-- red color -->
     <string name="red">Đỏ</string>
@@ -523,6 +522,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Perincian di Kayak</string>
     <string name="placepage_edit_bookmark_button">Edit Bookmark</string>
+    <string name="placepage_personal_notes_hint">Catatan pribadi (teks atau html)</string>
     <string name="editor_comment_hint">Komentar…</string>
     <string name="editor_reset_edits_message">Atur ulang perubahan lokal?</string>
     <string name="editor_reset_edits_button">Atur Ulang</string>
@@ -629,7 +629,6 @@
     <string name="delete_list">Hapus Daftar</string>
     <string name="public_access">Akses umum</string>
     <string name="limited_access">Akses terbatas</string>
-    <string name="bookmark_list_description_hint">Ketikkan deskripsi (teks atau html)</string>
     <string name="not_shared">Pribadi</string>
     <string name="speedcams_alert_title">Kamera cepat</string>
     <string name="place_description_title">Deskripsi Tempat</string>

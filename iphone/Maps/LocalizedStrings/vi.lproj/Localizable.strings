@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Tên Dấu Trang";
 
-"placepage_personal_notes_hint" = "Ghi chú cá nhân";
+"placepage_personal_notes_hint" = "Ghi chú cá nhân (văn bản hoặc html)";
 
 "placepage_delete_bookmark_button" = "Xóa Dấu Trang";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Xóa danh sách";
 
 "hide_from_map" = "Ẩn từ bản đồ";
-
-"bookmark_list_description_hint" = "Đánh vào một mô tả (văn bản hoặc html)";
 
 "tags_loading_error_subtitle" = "Đã xảy ra lỗi khi tải thẻ, vui lòng thử lại";
 

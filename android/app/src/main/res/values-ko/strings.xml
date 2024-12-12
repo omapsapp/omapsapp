@@ -299,7 +299,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">위치 서비스를 작동시켜 주십시요.</string>
     <string name="save">저장</string>
-    <string name="edit_description_hint">설명(텍스트 또는 HTML)</string>
     <string name="create">만들기기</string>
     <!-- red color -->
     <string name="red">빨간색</string>
@@ -521,6 +520,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak의 세부 정보</string>
     <string name="placepage_edit_bookmark_button">즐겨찾기 편집</string>
+    <string name="placepage_personal_notes_hint">개인 메모 (글자 혹은 html)</string>
     <string name="editor_comment_hint">설명…</string>
     <string name="editor_reset_edits_message">지역 변경 사항을 재설정하시겠습니까?</string>
     <string name="editor_reset_edits_button">재설정</string>
@@ -627,7 +627,6 @@
     <string name="delete_list">리스트 삭제</string>
     <string name="public_access">일반 접근</string>
     <string name="limited_access">제한 접근</string>
-    <string name="bookmark_list_description_hint">묘사를 적으세요 (글자 혹은 html)</string>
     <string name="not_shared">개인</string>
     <string name="speedcams_alert_title">속도 감시 카메라</string>
     <string name="place_description_title">장소 묘사</string>

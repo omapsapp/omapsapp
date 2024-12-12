@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "书签名称";
 
-"placepage_personal_notes_hint" = "个人备注";
+"placepage_personal_notes_hint" = "个人备注（文字或 html）";
 
 "placepage_delete_bookmark_button" = "删除书签";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "删除列表";
 
 "hide_from_map" = "从地图上隐藏";
-
-"bookmark_list_description_hint" = "添加说明（文字或 html）";
 
 "tags_loading_error_subtitle" = "加载标签时出错，请重试";
 

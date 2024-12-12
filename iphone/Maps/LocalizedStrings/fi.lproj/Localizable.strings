@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Kirjanmerkin nimi";
 
-"placepage_personal_notes_hint" = "Henkilökohtaiset merkinnät";
+"placepage_personal_notes_hint" = "Henkilökohtaiset merkinnät (teksti tai html)";
 
 "placepage_delete_bookmark_button" = "Poista kirjanmerkki";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Poista luettelo";
 
 "hide_from_map" = "Piilota kartalta";
-
-"bookmark_list_description_hint" = "Lisää kuvaus (teksti tai html)";
 
 "tags_loading_error_subtitle" = "Tunnisteiden lataamisen aikana tapahtui virhe, yritä uudelleen";
 

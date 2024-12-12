@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Название метки";
 
-"placepage_personal_notes_hint" = "Примечание";
+"placepage_personal_notes_hint" = "Примечание (текст или html)";
 
 "placepage_delete_bookmark_button" = "Удалить метку";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Удалить список";
 
 "hide_from_map" = "Скрыть с карты";
-
-"bookmark_list_description_hint" = "Добавьте описание (текст или html)";
 
 "tags_loading_error_subtitle" = "Во время загрузки тегов произошла ошибка, пожалуйста, попробуйте ещё раз";
 

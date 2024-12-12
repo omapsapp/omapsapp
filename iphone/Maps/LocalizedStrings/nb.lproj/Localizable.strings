@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Bokmerkenavn";
 
-"placepage_personal_notes_hint" = "Personlige notater";
+"placepage_personal_notes_hint" = "Personlige notater (text or html)";
 
 "placepage_delete_bookmark_button" = "Slett bokmerke";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Slett liste";
 
 "hide_from_map" = "Skjul fra kart";
-
-"bookmark_list_description_hint" = "Lag en beskrivelse (text or html)";
 
 "tags_loading_error_subtitle" = "Det oppsto en feil under lasting av emneknagger, prøv igjen";
 

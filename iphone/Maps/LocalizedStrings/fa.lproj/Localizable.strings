@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "نام نشانه‌ها";
 
-"placepage_personal_notes_hint" = "یاداشت‌های شخصی";
+"placepage_personal_notes_hint" = "یادداشت های شخصی (متن یا html)";
 
 "placepage_delete_bookmark_button" = "حذف نشانه";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "حذف لیست";
 
 "hide_from_map" = "پنهان کردن از نقشه";
-
-"bookmark_list_description_hint" = "یک توضیح (متن یا html) تایپ نمایید";
 
 "tags_loading_error_subtitle" = "هنگام بارگذاری برچسب خطایی رخ داد، لطفا دوباره امتحان کنید";
 

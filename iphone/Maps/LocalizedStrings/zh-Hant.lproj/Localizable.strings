@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "書籤名稱";
 
-"placepage_personal_notes_hint" = "個人備註";
+"placepage_personal_notes_hint" = "個人備註（文字或 html）";
 
 "placepage_delete_bookmark_button" = "刪除書籤";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "刪除列表";
 
 "hide_from_map" = "從地圖上隱藏";
-
-"bookmark_list_description_hint" = "增加說明（文字或 html）";
 
 "tags_loading_error_subtitle" = "載入標籤時出錯，請重試";
 

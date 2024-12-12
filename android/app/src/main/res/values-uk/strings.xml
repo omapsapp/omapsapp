@@ -326,7 +326,6 @@
     <!-- location service disabled -->
     <string name="enable_location_services">Будь ласка, увімкніть геолокацію</string>
     <string name="save">Зберегти</string>
-    <string name="edit_description_hint">Ваше описання (текст або html)</string>
     <string name="create">створити</string>
     <!-- red color -->
     <string name="red">Червоний</string>
@@ -554,6 +553,7 @@
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Докладніше на Kayak</string>
     <string name="placepage_edit_bookmark_button">Редагувати мiтку</string>
+    <string name="placepage_personal_notes_hint">Примітка (текст чи html)</string>
     <string name="editor_comment_hint">Коментар…</string>
     <string name="editor_reset_edits_message">Скинути всі локальні виправлення?</string>
     <string name="editor_reset_edits_button">Скинути</string>
@@ -671,7 +671,6 @@
     <string name="delete_list">Видалити список</string>
     <string name="public_access">Публічний доступ</string>
     <string name="limited_access">Приватний доступ</string>
-    <string name="bookmark_list_description_hint">Додайте опис (текст чи html)</string>
     <string name="not_shared">Особистий</string>
     <string name="speedcams_alert_title">Камери швидкості</string>
     <string name="place_description_title">Опис місця</string>

@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Əlfəcin Adı";
 
-"placepage_personal_notes_hint" = "Şəxsi qeydlər";
+"placepage_personal_notes_hint" = "Şəxsi qeydlər (mətn və ya html)";
 
 "placepage_delete_bookmark_button" = "Əlfəcini silin";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Siyahını silin";
 
 "hide_from_map" = "Xəritədən gizlədin";
-
-"bookmark_list_description_hint" = "Təsvir yazın (mətn və ya html)";
 
 "tags_loading_error_subtitle" = "Etiketləri yükləyərkən xəta baş verdi, zəhmət olmasa yenidən cəhd edin";
 

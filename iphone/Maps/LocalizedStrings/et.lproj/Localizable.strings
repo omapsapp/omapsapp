@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Järjehoidja nimi";
 
-"placepage_personal_notes_hint" = "Isiklikud märkmed";
+"placepage_personal_notes_hint" = "Isiklikud märkmed (tekst või html)";
 
 "placepage_delete_bookmark_button" = "Kustuta järjehoidja";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Kustuta loetelu";
 
 "hide_from_map" = "Peida kaardil";
-
-"bookmark_list_description_hint" = "Sisesta kirjeldus (tekst või html)";
 
 "tags_loading_error_subtitle" = "Siltide laadimisel tekkis viga, palun proovi uuesti";
 

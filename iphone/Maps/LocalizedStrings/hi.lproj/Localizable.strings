@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Bookmark Name";
 
-"placepage_personal_notes_hint" = "Personal notes";
+"placepage_personal_notes_hint" = "Personal notes (text or html)";
 
 "placepage_delete_bookmark_button" = "Delete Bookmark";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Delete list";
 
 "hide_from_map" = "Hide from map";
-
-"bookmark_list_description_hint" = "Enter a description (text or html)";
 
 "tags_loading_error_subtitle" = "An error occurred while loading tags, please try again";
 

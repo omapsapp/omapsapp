@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Nom du signet";
 
-"placepage_personal_notes_hint" = "Remarques personnelles";
+"placepage_personal_notes_hint" = "Remarques personnelles (texte ou html)";
 
 "placepage_delete_bookmark_button" = "Supprimer le signet";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Supprimer la liste";
 
 "hide_from_map" = "Masquer sur la carte";
-
-"bookmark_list_description_hint" = "Tapez une description (texte ou html)";
 
 "tags_loading_error_subtitle" = "Une erreur s'est produite lors du chargement des tags, veuillez réessayer";
 

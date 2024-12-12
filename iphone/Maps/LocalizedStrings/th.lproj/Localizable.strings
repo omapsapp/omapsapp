@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "ชื่อของ Bookmark";
 
-"placepage_personal_notes_hint" = "ข้อความส่วนตัว";
+"placepage_personal_notes_hint" = "ข้อความส่วนตัว (ข้อความหรือ html)";
 
 "placepage_delete_bookmark_button" = "ลบ Bookmark";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "ลบรายการ";
 
 "hide_from_map" = "ซ่อนจากแผนที่";
-
-"bookmark_list_description_hint" = "พิมพ์รายละเอียด (ข้อความหรือ html)";
 
 "tags_loading_error_subtitle" = "เกิดข้อผิดพลาดขณะโหลดแท็ก โปรดลองใหม่อีกครั้ง";
 

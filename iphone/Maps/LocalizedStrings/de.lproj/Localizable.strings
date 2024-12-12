@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Name des Lesezeichens";
 
-"placepage_personal_notes_hint" = "Persönliche Notizen";
+"placepage_personal_notes_hint" = "Persönliche Notizen (Text oder html)";
 
 "placepage_delete_bookmark_button" = "Lesezeichen löschen";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Liste löschen";
 
 "hide_from_map" = "Auf der Karte ausblenden";
-
-"bookmark_list_description_hint" = "Fügen Sie die Beschreibung hinzu (Text oder html)";
 
 "tags_loading_error_subtitle" = "Während dem Laden der Tags ist ein Fehler aufgetreten, bitte versuchen Sie es erneut";
 

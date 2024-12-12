@@ -826,7 +826,7 @@
 
 "placepage_bookmark_name_hint" = "Nazwa zakładki";
 
-"placepage_personal_notes_hint" = "Notatki osobiste";
+"placepage_personal_notes_hint" = "Notatki osobiste (tekst lub html)";
 
 "placepage_delete_bookmark_button" = "Usuń zakładkę";
 
@@ -1017,8 +1017,6 @@
 "delete_list" = "Usuń listę";
 
 "hide_from_map" = "Ukryj mapy";
-
-"bookmark_list_description_hint" = "Dodaj opis (tekst lub html)";
 
 "tags_loading_error_subtitle" = "Wystąpił błąd podczas pobierania tagów, spróbuj ponownie";
 
