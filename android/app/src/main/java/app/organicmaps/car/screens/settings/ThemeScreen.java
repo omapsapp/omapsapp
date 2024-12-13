@@ -47,7 +47,7 @@ public class ThemeScreen extends BaseMapScreen
   {
     final Header.Builder builder = new Header.Builder();
     builder.setStartHeaderAction(Action.BACK);
-    builder.setTitle(getCarContext().getString(R.string.pref_map_style_title));
+    builder.setTitle(getCarContext().getString(R.string.pref_appearance_title));
     return builder.build();
   }
 
@@ -56,7 +56,7 @@ public class ThemeScreen extends BaseMapScreen
   {
     final ItemList.Builder builder = new ItemList.Builder();
     final ThemeUtils.ThemeMode currentThemeMode = ThemeUtils.getThemeMode(getCarContext());
-    builder.addItem(createRadioButton(ThemeUtils.ThemeMode.AUTO, currentThemeMode));
+    builder.addItem(createRadioButton(ThemeUtils.ThemeMode.FOLLOW_SYSTEM, currentThemeMode));
     builder.addItem(createRadioButton(ThemeUtils.ThemeMode.NIGHT, currentThemeMode));
     builder.addItem(createRadioButton(ThemeUtils.ThemeMode.LIGHT, currentThemeMode));
     return new ListTemplate.Builder().setHeader(createHeader()).setSingleList(builder.build()).build();

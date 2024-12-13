@@ -17,9 +17,9 @@ public final class ThemeUtils
 {
   public enum ThemeMode
   {
-    AUTO(R.string.auto, R.string.theme_auto),
-    LIGHT(R.string.off, R.string.theme_default),
-    NIGHT(R.string.on, R.string.theme_night);
+    LIGHT(R.string.light, R.string.theme_default),
+    NIGHT(R.string.dark, R.string.theme_night),
+    FOLLOW_SYSTEM(R.string.follow_system, R.string.theme_follow_system);
 
     ThemeMode(@StringRes int titleId, @StringRes int prefsKeyId)
     {
@@ -58,7 +58,7 @@ public final class ThemeUtils
   @UiThread
   public static void update(@NonNull CarContext context, @NonNull ThemeMode oldThemeMode)
   {
-    final ThemeMode newThemeMode = oldThemeMode == ThemeMode.AUTO ? (context.isDarkMode() ? ThemeMode.NIGHT : ThemeMode.LIGHT) : oldThemeMode;
+    final ThemeMode newThemeMode = oldThemeMode == ThemeMode.FOLLOW_SYSTEM ? (context.isDarkMode() ? ThemeMode.NIGHT : ThemeMode.LIGHT) : oldThemeMode;
 
     @Framework.MapStyle
     int newMapStyle;
@@ -74,7 +74,7 @@ public final class ThemeUtils
   public static boolean isNightMode(@NonNull CarContext context)
   {
     final ThemeMode themeMode = getThemeMode(context);
-    return themeMode == ThemeMode.NIGHT || (themeMode == ThemeMode.AUTO && context.isDarkMode());
+    return themeMode == ThemeMode.NIGHT || (themeMode == ThemeMode.FOLLOW_SYSTEM && context.isDarkMode());
   }
 
   @SuppressLint("ApplySharedPref")
@@ -88,13 +88,13 @@ public final class ThemeUtils
   @NonNull
   public static ThemeMode getThemeMode(@NonNull CarContext context)
   {
-    final String autoTheme = context.getString(R.string.theme_auto);
+    final String followSystemTheme = context.getString(R.string.theme_follow_system);
     final String lightTheme = context.getString(R.string.theme_default);
     final String nightTheme = context.getString(R.string.theme_night);
-    final String themeMode = getSharedPreferences(context).getString(THEME_KEY, autoTheme);
+    final String themeMode = getSharedPreferences(context).getString(THEME_KEY, followSystemTheme);
 
-    if (themeMode.equals(autoTheme))
-      return ThemeMode.AUTO;
+    if (themeMode.equals(followSystemTheme))
+      return ThemeMode.FOLLOW_SYSTEM;
     else if (themeMode.equals(lightTheme))
       return ThemeMode.LIGHT;
     else if (themeMode.equals(nightTheme))

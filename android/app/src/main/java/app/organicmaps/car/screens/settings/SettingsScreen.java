@@ -75,7 +75,7 @@ public class SettingsScreen extends BaseMapScreen
   private Item createThemeItem()
   {
     final Row.Builder builder = new Row.Builder();
-    builder.setTitle(getCarContext().getString(R.string.pref_map_style_title));
+    builder.setTitle(getCarContext().getString(R.string.pref_appearance_title));
     builder.addText(getCarContext().getString(ThemeUtils.getThemeMode(getCarContext()).getTitleId()));
     builder.setOnClickListener(() -> getScreenManager().push(new ThemeScreen(getCarContext(), getSurfaceRenderer())));
     builder.setBrowsable(true);

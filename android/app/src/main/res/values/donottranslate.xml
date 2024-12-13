@@ -53,6 +53,7 @@
   <string name="theme_night" translatable="false">night</string>
   <string name="theme_auto" translatable="false">auto</string>
   <string name="theme_nav_auto" translatable="false">nav-auto</string>
+  <string name="theme_follow_system" translatable="false">follow-system</string>
 
   <!-- Tags -->
   <string name="tag_menu_collapse" translatable="false">collapse</string>

@@ -7,6 +7,7 @@ import static app.organicmaps.api.Const.EXTRA_PICK_POINT;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -24,6 +25,7 @@ import app.organicmaps.location.LocationHelper;
 import app.organicmaps.util.Config;
 import app.organicmaps.util.LocationUtils;
 import app.organicmaps.util.SharingUtils;
+import app.organicmaps.util.ThemeSwitcher;
 import app.organicmaps.util.ThemeUtils;
 import app.organicmaps.util.Utils;
 import app.organicmaps.util.concurrency.UiThread;
@@ -120,6 +122,14 @@ public class SplashActivity extends AppCompatActivity
     mApiRequest = null;
   }
 
+  @Override
+  public void onConfigurationChanged(@NonNull Configuration newConfig)
+  {
+    super.onConfigurationChanged(newConfig);
+    ThemeSwitcher.INSTANCE.restart(false);
+    UiThread.runLater(this::recreate);
+  }
+  
   private void showFatalErrorDialog(@StringRes int titleId, @StringRes int messageId, Exception error)
   {
     mCanceled = true;

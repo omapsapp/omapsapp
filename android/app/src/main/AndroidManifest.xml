@@ -340,10 +340,13 @@
       </intent-filter>
 
     </activity>
+    <activity
+        android:name="app.organicmaps.base.BaseMwmFragmentActivity"
+        android:configChanges="uiMode" />
 
     <activity
         android:name="app.organicmaps.DownloadResourcesLegacyActivity"
-        android:configChanges="orientation|screenLayout|screenSize"/>
+        android:configChanges="uiMode|orientation|screenLayout|screenSize" />
 
     <activity-alias
       android:name="app.organicmaps.DownloadResourcesActivity"
@@ -364,21 +367,21 @@
 
     <activity
         android:name="app.organicmaps.downloader.DownloaderActivity"
-        android:configChanges="orientation|screenLayout|screenSize"
+        android:configChanges="uiMode|orientation|screenLayout|screenSize"
         android:label="@string/download_maps"
         android:parentActivityName="app.organicmaps.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
         android:name="app.organicmaps.search.SearchActivity"
-        android:configChanges="orientation|screenLayout|screenSize"
+        android:configChanges="uiMode|orientation|screenLayout|screenSize"
         android:label="@string/search_map"
         android:parentActivityName="app.organicmaps.MwmActivity"
         android:windowSoftInputMode="stateVisible|adjustResize" />
 
     <activity
         android:name="app.organicmaps.settings.SettingsActivity"
-        android:configChanges="orientation|screenLayout|screenSize"
+        android:configChanges="uiMode|orientation|screenLayout|screenSize"
         android:label="@string/settings"
         android:parentActivityName="app.organicmaps.MwmActivity" />
 
@@ -386,6 +389,7 @@
         android:name="app.organicmaps.help.HelpActivity"
         android:label="@string/about_menu_title"
         android:parentActivityName="app.organicmaps.MwmActivity"
+        android:configChanges="uiMode"
         android:exported="false">
       <intent-filter>
         <action android:name="app.organicmaps.help.HelpActivity" />
@@ -395,54 +399,63 @@
 
     <activity
         android:name="app.organicmaps.bookmarks.BookmarkCategoriesActivity"
-        android:configChanges="orientation|screenLayout|screenSize"
+        android:configChanges="uiMode|orientation|screenLayout|screenSize"
         android:label="@string/bookmarks_and_tracks"
         android:parentActivityName="app.organicmaps.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
         android:name="app.organicmaps.bookmarks.BookmarkListActivity"
-        android:configChanges="orientation|screenLayout|screenSize"
+        android:configChanges="uiMode|orientation|screenLayout|screenSize"
         android:label="@string/bookmarks"
         android:parentActivityName="app.organicmaps.bookmarks.BookmarkCategoriesActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
         android:name="app.organicmaps.editor.EditorActivity"
-        android:configChanges="orientation|screenLayout|screenSize"
+        android:configChanges="uiMode|orientation|screenLayout|screenSize"
         android:label="@string/edit_place"
         android:parentActivityName="app.organicmaps.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
         android:name="app.organicmaps.editor.ProfileActivity"
+        android:configChanges="uiMode"
         android:parentActivityName="app.organicmaps.settings.SettingsActivity" />
 
     <activity
         android:name="app.organicmaps.editor.FeatureCategoryActivity"
         android:parentActivityName="app.organicmaps.MwmActivity"
+        android:configChanges="uiMode"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
         android:name="app.organicmaps.editor.ReportActivity"
+        android:configChanges="uiMode"
         android:parentActivityName="app.organicmaps.MwmActivity" />
 
     <activity
         android:name="app.organicmaps.editor.OsmLoginActivity"
+        android:configChanges="uiMode"
         android:parentActivityName="app.organicmaps.MwmActivity" />
 
     <activity
       android:name="app.organicmaps.bookmarks.BookmarkCategorySettingsActivity"
       android:label="@string/edit"
+      android:configChanges="uiMode"
       android:windowSoftInputMode="stateVisible"/>
     <activity
       android:name="app.organicmaps.widget.placepage.PlaceDescriptionActivity"
+      android:configChanges="uiMode"
       android:label="@string/place_description_title"/>
     <activity
       android:name="app.organicmaps.settings.DrivingOptionsActivity"
+      android:configChanges="uiMode"
       android:label="@string/driving_options_title"/>
     <activity
-        android:name="app.organicmaps.MapPlaceholderActivity"/>
+      android:name="app.organicmaps.MapPlaceholderActivity"
+      android:configChanges="uiMode" />
+
     <service
         android:name="app.organicmaps.car.CarAppService"
         android:exported="true"
