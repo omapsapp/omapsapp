@@ -339,8 +339,11 @@ if (WITH_SYSTEM_PROVIDED_3PARTY)
   set(GFLAGS_USE_TARGET_NAMESPACE ON)
   find_package(gflags REQUIRED)
 
+  find_package(PkgConfig)
+  pkg_check_modules(jansson REQUIRED IMPORTED_TARGET jansson)
+  add_library(jansson::jansson ALIAS PkgConfig::jansson)
+
   find_package(expat CONFIG REQUIRED)
-  find_package(jansson CONFIG REQUIRED)
   find_package(pugixml REQUIRED)
   find_package(utf8cpp REQUIRED)
 endif()
