@@ -627,7 +627,8 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
         LOG(LDEBUG, ("Content of editJournal:\n", fti.m_object.GetJournal().JournalToString()));
 
         // Don't use new editor for Legacy Objects
-        bool useNewEditor = fti.m_object.GetJournal().GetJournalHistory().front().journalEntryType != JournalEntryType::LegacyObject;
+        auto const & journalHistory = fti.m_object.GetJournal().GetJournalHistory();
+        bool useNewEditor = journalHistory.empty() || journalHistory.front().journalEntryType != JournalEntryType::LegacyObject;
 
         try
         {
@@ -935,7 +936,9 @@ bool Editor::FillFeatureInfo(FeatureStatus status, XMLFeature const & xml, Featu
   EditJournal journal = xml.GetEditJournal();
 
   // Do not load Legacy Objects form Journal
-  bool loadFromJournal = journal.GetJournalHistory().front().journalEntryType != JournalEntryType::LegacyObject;
+  auto const & journalHistory = journal.GetJournalHistory();
+  bool loadFromJournal = journalHistory.empty() || journalHistory.front().journalEntryType != JournalEntryType::LegacyObject;
+
   LOG(LDEBUG, ("loadFromJournal: ", loadFromJournal));
 
   if (status == FeatureStatus::Created)
