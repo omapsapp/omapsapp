@@ -76,7 +76,7 @@ public:
     using DataSourceGetterFn = std::function<DataSource &()>;
     using CountryInfoGetterFn = std::function<storage::CountryInfoGetter const &()>;
     using CountryParentNameGetterFn = std::function<std::string(std::string const &)>;
-    using GetStringsBundleFn = std::function<StringsBundle const &()>;
+    using GetStringsBundleFn = std::function<om::localization::StringsBundle const &()>;
     using PowerManagerGetter = std::function<power_management::PowerManager const &()>;
 
     template <typename DataSourceGetter, typename CountryInfoGetter,

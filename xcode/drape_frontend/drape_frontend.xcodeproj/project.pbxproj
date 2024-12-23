@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16CF95312CAED82C005174C3 /* liblocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CF95302CAED82C005174C3 /* liblocalization.a */; };
 		347F520D1DC2334A0064B273 /* drape_api_builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 347F52071DC2334A0064B273 /* drape_api_builder.cpp */; };
 		347F520E1DC2334A0064B273 /* drape_api_builder.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 347F52081DC2334A0064B273 /* drape_api_builder.hpp */; };
 		347F520F1DC2334A0064B273 /* drape_api_renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 347F52091DC2334A0064B273 /* drape_api_renderer.cpp */; };
@@ -214,6 +215,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16CF952C2CAED743005174C3 /* liblocalization.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liblocalization.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		16CF95302CAED82C005174C3 /* liblocalization.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liblocalization.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		347F52071DC2334A0064B273 /* drape_api_builder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drape_api_builder.cpp; sourceTree = "<group>"; };
 		347F52081DC2334A0064B273 /* drape_api_builder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = drape_api_builder.hpp; sourceTree = "<group>"; };
 		347F52091DC2334A0064B273 /* drape_api_renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drape_api_renderer.cpp; sourceTree = "<group>"; };
@@ -429,12 +432,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CF95312CAED82C005174C3 /* liblocalization.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16CF952B2CAED743005174C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16CF95302CAED82C005174C3 /* liblocalization.a */,
+				16CF952C2CAED743005174C3 /* liblocalization.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		670947311BDF9B82005014C0 = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +455,7 @@
 				34AF87CC1DBE508400E5E7DC /* common-release.xcconfig */,
 				670947411BDF9B99005014C0 /* drape_frontend */,
 				6709473B1BDF9B82005014C0 /* Products */,
+				16CF952B2CAED743005174C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

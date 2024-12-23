@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:localization/localization.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:common-debug.xcconfig">
    </FileRef>
    <FileRef

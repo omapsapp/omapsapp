@@ -539,8 +539,8 @@ void TransitRouteDisplay::AddGateSubwayForSubroute(routing::RouteSegment const &
     gateMarkInfo.m_featureId = fid;
     if (!symbolName.empty())
       gateMarkInfo.m_symbolName = symbolName;
-    auto const title =
-        m_getStringsBundleFn().GetString(sp.m_pendingEntrance ? "core_entrance" : "core_exit");
+    auto const title = m_getStringsBundleFn().GetString(sp.m_pendingEntrance ? om::localization::kCoreEntrance
+                                                                             : om::localization::kCoreExit);
     gateMarkInfo.m_titles.emplace_back(title, df::GetTransitTextColorName("default"));
   }
 
@@ -591,8 +591,8 @@ void TransitRouteDisplay::AddGatePTForSubroute(routing::RouteSegment const & seg
     gateMarkInfo.m_featureId = fid;
     if (!symbolName.empty())
       gateMarkInfo.m_symbolName = symbolName;
-    auto const title =
-        m_getStringsBundleFn().GetString(sp.m_pendingEntrance ? "core_entrance" : "core_exit");
+    auto const title = m_getStringsBundleFn().GetString(sp.m_pendingEntrance ? om::localization::kCoreEntrance
+                                                                             : om::localization::kCoreExit);
     gateMarkInfo.m_titles.emplace_back(title, df::GetTransitTextColorName("default"));
   }
 

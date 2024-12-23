@@ -73,8 +73,6 @@ set(SRC
   stl_iterator.hpp
   string_utils.cpp
   string_utils.hpp
-  strings_bundle.cpp
-  strings_bundle.hpp
   suffix_array.cpp
   suffix_array.hpp
   sunrise_sunset.cpp

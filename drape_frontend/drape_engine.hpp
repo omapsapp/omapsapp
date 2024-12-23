@@ -28,7 +28,7 @@
 #include "geometry/screenbase.hpp"
 #include "geometry/triangle2d.hpp"
 
-#include "base/strings_bundle.hpp"
+#include "localization/strings_bundle.hpp"
 
 #include <atomic>
 #include <functional>

@@ -134,10 +134,10 @@ char const * kmlString =
     "</Document>"
     "</kml>";
 
-#define BM_CALLBACKS {                                                            \
-    []() -> StringsBundle const &                                                \
+#define BM_CALLBACKS {                                                           \
+    []() -> om::localization::StringsBundle const &                              \
     {                                                                            \
-      static StringsBundle const dummyBundle;                                    \
+      static om::localization::StringsBundle const dummyBundle;                  \
       return dummyBundle;                                                        \
     },                                                                           \
     static_cast<BookmarkManager::Callbacks::GetSeacrhAPIFn>(nullptr),            \
@@ -1261,9 +1261,9 @@ UNIT_CLASS_TEST(Runner, Bookmarks_Listeners)
   };
 
   BookmarkManager::Callbacks callbacks(
-    []() -> StringsBundle const &
+    []() -> om::localization::StringsBundle const &
     {
-      static StringsBundle const dummyBundle;
+      static om::localization::StringsBundle const dummyBundle;
       return dummyBundle;
     },
     static_cast<BookmarkManager::Callbacks::GetSeacrhAPIFn>(nullptr),

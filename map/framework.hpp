@@ -56,7 +56,8 @@
 #include "geometry/screenbase.hpp"
 
 #include "base/macros.hpp"
-#include "base/strings_bundle.hpp"
+
+#include "localization/strings_bundle.hpp"
 
 #include "std/target_os.hpp"
 
@@ -142,7 +143,7 @@ private:
 protected:
   using TDrapeFunction = std::function<void (df::DrapeEngine *)>;
 
-  StringsBundle m_stringsBundle;
+  om::localization::StringsBundle m_stringsBundle;
 
   FeaturesFetcher m_featuresFetcher;
 
@@ -658,7 +659,7 @@ public:
     m_stringsBundle.SetString(name, value);
   }
 
-  StringsBundle const & GetStringsBundle();
+  om::localization::StringsBundle const & GetStringsBundle();
 
   /// [in] lat, lon - last known location
   /// [out] lat, lon - predicted location

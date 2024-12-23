@@ -16,9 +16,10 @@
 #include "geometry/screenbase.hpp"
 
 #include "base/macros.hpp"
-#include "base/strings_bundle.hpp"
 #include "base/thread_checker.hpp"
 #include "base/visitor.hpp"
+
+#include "localization/strings_bundle.hpp"
 
 #include <atomic>
 #include <functional>
@@ -71,7 +72,7 @@ public:
 
   struct Callbacks
   {
-    using GetStringsBundleFn = std::function<StringsBundle const &()>;
+    using GetStringsBundleFn = std::function<om::localization::StringsBundle const &()>;
     using GetSeacrhAPIFn = std::function<SearchAPI &()>;
     using CreatedBookmarksCallback = std::function<void(std::vector<BookmarkInfo> const &)>;
     using UpdatedBookmarksCallback = std::function<void(std::vector<BookmarkInfo> const &)>;

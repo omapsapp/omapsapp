@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0831F23C200E53600034C365 /* bookmarks_search_params.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0831F23B200E53600034C365 /* bookmarks_search_params.hpp */; };
+		16CF952F2CAED7E2005174C3 /* liblocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CF952E2CAED7E2005174C3 /* liblocalization.a */; };
 		34583BCF1C88556800F94664 /* place_page_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34583BCD1C88556800F94664 /* place_page_info.cpp */; };
 		34583BD01C88556800F94664 /* place_page_info.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34583BCE1C88556800F94664 /* place_page_info.hpp */; };
 		347B60761DD9926D0050FA24 /* traffic_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 347B60741DD9926D0050FA24 /* traffic_manager.cpp */; };
@@ -150,6 +151,7 @@
 
 /* Begin PBXFileReference section */
 		0831F23B200E53600034C365 /* bookmarks_search_params.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bookmarks_search_params.hpp; sourceTree = "<group>"; };
+		16CF952E2CAED7E2005174C3 /* liblocalization.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liblocalization.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		34583BCD1C88556800F94664 /* place_page_info.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = place_page_info.cpp; sourceTree = "<group>"; };
 		34583BCE1C88556800F94664 /* place_page_info.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = place_page_info.hpp; sourceTree = "<group>"; };
 		347B60741DD9926D0050FA24 /* traffic_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = traffic_manager.cpp; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CF952F2CAED7E2005174C3 /* liblocalization.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +303,7 @@
 		34DDA17E1DBE5DF40088A609 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16CF952E2CAED7E2005174C3 /* liblocalization.a */,
 				FAA8388926BB3CE4002E54C6 /* libdrape.a */,
 				FAA8388526BB3CC3002E54C6 /* libexpat.a */,
 				FAA8388326BB3CBE002E54C6 /* libcppjansson.a */,

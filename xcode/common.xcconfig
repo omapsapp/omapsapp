@@ -3,9 +3,11 @@ OMIM_ROOT = $(PROJECT_DIR)/../..
 QT_PATH[arch=x86_64] = /usr/local/opt/qt@6
 QT_PATH[arch=arm64] = /opt/homebrew/opt/qt@6
 BOOST_ROOT = $(OMIM_ROOT)/3party/boost
+CORE_LOCALIZATION_GENERATOR_PATH = $(OMIM_ROOT)/localization/generator
+CORE_LOCALIZATION_GENERATOR_OUTPUT_PATH = $(BUILT_PRODUCTS_DIR)/localization
 
 // jansson is included in many libs, and is also used in headers (leaks to other libs)
-HEADER_SEARCH_PATHS = $(inherited) $(OMIM_ROOT) $(BOOST_ROOT) $(OMIM_ROOT)/3party/jansson $(OMIM_ROOT)/3party/jansson/jansson/src $(OMIM_ROOT)/3party/utfcpp/source
+HEADER_SEARCH_PATHS = $(inherited) $(OMIM_ROOT) $(BOOST_ROOT) $(OMIM_ROOT)/3party/jansson $(OMIM_ROOT)/3party/jansson/jansson/src $(OMIM_ROOT)/3party/utfcpp/source $(CORE_LOCALIZATION_GENERATOR_OUTPUT_PATH)
 FRAMEWORK_SEARCH_PATHS[sdk=macosx*] = $(QT_PATH)/lib
 
 // Deployment target

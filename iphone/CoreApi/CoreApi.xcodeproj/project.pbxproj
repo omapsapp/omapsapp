@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16CF953F2CB00C92005174C3 /* liblocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CF953E2CB00C92005174C3 /* liblocalization.a */; };
 		470015F42342509C00EBF03D /* CoreApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 470015F22342509C00EBF03D /* CoreApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		471527392491EDAA00E91BBA /* MWMBookmarkColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 471527382491EDA400E91BBA /* MWMBookmarkColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4718C4322355FC3C00640DF1 /* MWMNetworkPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4718C4302355FC3C00640DF1 /* MWMNetworkPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -108,6 +109,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16CF953E2CB00C92005174C3 /* liblocalization.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liblocalization.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		470015EF2342509C00EBF03D /* CoreApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		470015F22342509C00EBF03D /* CoreApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreApi.h; sourceTree = "<group>"; };
 		470015F32342509C00EBF03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CF953F2CB00C92005174C3 /* liblocalization.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +282,7 @@
 		4700161123425CFC00EBF03D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16CF953E2CB00C92005174C3 /* liblocalization.a */,
 				FAA6D8CF29205D2D00E8D50D /* libcppjansson.a */,
 				4700161223425CFD00EBF03D /* UIKit.framework */,
 			);

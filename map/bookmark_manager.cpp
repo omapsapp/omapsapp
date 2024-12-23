@@ -2567,7 +2567,7 @@ kml::MarkGroupId BookmarkManager::CheckAndCreateDefaultCategory()
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
   if (m_categories.empty())
-    return CreateBookmarkCategory(m_callbacks.m_getStringsBundle().GetString("core_my_places"));
+    return CreateBookmarkCategory(m_callbacks.m_getStringsBundle().GetString(om::localization::kCoreMyPlaces));
   return m_categories.cbegin()->first;
 }
 

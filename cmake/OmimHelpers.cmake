@@ -49,6 +49,7 @@ endfunction()
 
 function(omim_add_library library)
   add_library(${library} ${ARGN})
+  add_library(om::${library} ALIAS ${library})
 
   # Enable warnings for all our libraries.
   target_compile_options(${library} PRIVATE ${OMIM_WARNING_FLAGS})

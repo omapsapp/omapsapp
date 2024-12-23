@@ -1,0 +1,6 @@
+core_entrance
+core_exit
+core_placepage_unknown_place
+core_my_places
+core_my_position
+postal_code

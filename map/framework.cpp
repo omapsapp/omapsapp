@@ -284,7 +284,7 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
             [this]() -> DataSource & { return m_featuresFetcher.GetDataSource(); },
             [this]() -> storage::CountryInfoGetter const & { return GetCountryInfoGetter(); },
             [this](string const & id) -> string { return m_storage.GetParentIdFor(id); },
-            [this]() -> StringsBundle const & { return m_stringsBundle; },
+            [this]() -> om::localization::StringsBundle const & { return m_stringsBundle; },
             [this]() -> power_management::PowerManager const & { return m_powerManager; }),
         static_cast<RoutingManager::Delegate &>(*this))
   , m_trafficManager(bind(&Framework::GetMwmsByRect, this, _1, false /* rough */),
@@ -308,16 +308,6 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
 
   m_connectToGpsTrack = GpsTracker::Instance().IsEnabled();
 
-  // Init strings bundle.
-  // @TODO. There are hardcoded strings below which are defined in strings.txt as well.
-  // It's better to use strings from strings.txt instead of hardcoding them here.
-  m_stringsBundle.SetDefaultString("core_entrance", "Entrance");
-  m_stringsBundle.SetDefaultString("core_exit", "Exit");
-  m_stringsBundle.SetDefaultString("core_placepage_unknown_place", "Unknown Place");
-  m_stringsBundle.SetDefaultString("core_my_places", "My Places");
-  m_stringsBundle.SetDefaultString("core_my_position", "My Position");
-  m_stringsBundle.SetDefaultString("postal_code", "Postal Code");
-
   m_featuresFetcher.InitClassificator();
   m_featuresFetcher.SetOnMapDeregisteredCallback(bind(&Framework::OnMapDeregistered, this, _1));
   LOG(LDEBUG, ("Classificator initialized"));
@@ -332,7 +322,7 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
   LOG(LDEBUG, ("Search API initialized, part 1"));
 
   m_bmManager = make_unique<BookmarkManager>(BookmarkManager::Callbacks(
-      [this]() -> StringsBundle const & { return m_stringsBundle; },
+      [this]() -> om::localization::StringsBundle const & { return m_stringsBundle; },
       [this]() -> SearchAPI & { return GetSearchAPI(); },
       [this](vector<BookmarkInfo> const & marks) { GetSearchAPI().OnBookmarksCreated(marks); },
       [this](vector<BookmarkInfo> const & marks) { GetSearchAPI().OnBookmarksUpdated(marks); },
@@ -712,7 +702,7 @@ void Framework::FillNotMatchedPlaceInfo(place_page::Info & info, m2::PointD cons
                                         std::string const & customTitle /* = {} */) const
 {
   if (customTitle.empty())
-    info.SetCustomNameWithCoordinates(mercator, m_stringsBundle.GetString("core_placepage_unknown_place"));
+    info.SetCustomNameWithCoordinates(mercator, m_stringsBundle.GetString(om::localization::kCorePlacepageUnknownPlace));
   else
     info.SetCustomName(customTitle);
   info.SetCanEditOrAdd(CanEditMapForPosition(mercator));
@@ -722,7 +712,7 @@ void Framework::FillNotMatchedPlaceInfo(place_page::Info & info, m2::PointD cons
 void Framework::FillPostcodeInfo(string const & postcode, m2::PointD const & mercator,
                                  place_page::Info & info) const
 {
-  info.SetCustomNames(postcode, m_stringsBundle.GetString("postal_code"));
+  info.SetCustomNames(postcode, m_stringsBundle.GetString(om::localization::kPostalCode));
   info.SetMercator(mercator);
 }
 
@@ -785,7 +775,7 @@ void Framework::FillMyPositionInfo(place_page::Info & info, place_page::BuildInf
   auto const position = GetCurrentPosition();
   CHECK(position, ());
   info.SetMercator(*position);
-  info.SetCustomName(m_stringsBundle.GetString("core_my_position"));
+  info.SetCustomName(m_stringsBundle.GetString(om::localization::kCoreMyPosition));
 
   UserMark const * mark = FindUserMarkInTapPosition(buildInfo);
   if (mark != nullptr && mark->GetMarkType() == UserMark::Type::ROUTING)
@@ -2370,7 +2360,7 @@ void Framework::PredictLocation(double & lat, double & lon, double accuracy,
   lat = mercator::YToLat(mercatorPt.y);
 }
 
-StringsBundle const & Framework::GetStringsBundle()
+om::localization::StringsBundle const & Framework::GetStringsBundle()
 {
   return m_stringsBundle;
 }

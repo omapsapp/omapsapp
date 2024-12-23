@@ -137,7 +137,7 @@ class TransitRouteDisplay
 {
 public:
   using GetMwmIdFn = std::function<MwmSet::MwmId (routing::NumMwmId numMwmId)>;
-  using GetStringsBundleFn = std::function<StringsBundle const & ()>;
+  using GetStringsBundleFn = std::function<om::localization::StringsBundle const & ()>;
 
   TransitRouteDisplay(TransitReadManager & transitReadManager, GetMwmIdFn const & getMwmIdFn,
                       GetStringsBundleFn const & getStringsBundleFn, BookmarkManager * bmManager,
