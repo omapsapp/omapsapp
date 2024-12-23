@@ -27,9 +27,6 @@ namespace
 // TODO(o.khlopkova) Set average speed for each type of transit separately - trains, buses, etc.
 // Average transit speed. Approximately 40 km/h.
 static double constexpr kAvgTransitSpeedMpS = 11.1;
-// If count of corrupted shapes in feed exceeds this value we skip feed and don't save it. The shape
-// is corrupted if we cant't properly project all stops from the trip to its polyline.
-static size_t constexpr kMaxInvalidShapesCount = 5;
 
 ::transit::TransitId constexpr kInvalidLineId = std::numeric_limits<::transit::TransitId>::max();
 
@@ -574,9 +571,9 @@ std::pair<TransitId, std::string> WorldFeed::GetStopIdAndHash(std::string const 
 bool WorldFeed::FillStopsEdges()
 {
   gtfs::StopTimes allStopTimes = m_feed.get_stop_times();
-  std::sort(
-      allStopTimes.begin(), allStopTimes.end(),
-      [](const gtfs::StopTime & t1, const gtfs::StopTime & t2) { return t1.trip_id < t2.trip_id; });
+  std::sort(allStopTimes.begin(), allStopTimes.end(),
+            [](const gtfs::StopTime & t1, const gtfs::StopTime & t2)
+            { return t1.trip_id < t2.trip_id; });
 
   std::vector<std::unordered_map<TransitId, LineData>::iterator> linesForRemoval;
 
@@ -669,9 +666,8 @@ bool WorldFeed::FillLinesAndShapes()
               base::LessBy(&gtfs::ShapePoint::shape_pt_sequence));
   }
 
-  auto const getShape = [&shapes](gtfs::Id const & gtfsShapeId) -> gtfs::Shape const & {
-    return shapes[gtfsShapeId];
-  };
+  auto const getShape = [&shapes](gtfs::Id const & gtfsShapeId) -> gtfs::Shape const &
+  { return shapes[gtfsShapeId]; };
 
   std::unordered_map<gtfs::Id, gtfs::StopTimes> stopTimes;
   for (const auto & stop_time : m_feed.get_stop_times())
@@ -760,9 +756,9 @@ void WorldFeed::ModifyLinesAndShapes()
 
   // We sort links by shape length so we could search for shapes in which i-th shape is included
   // only in the left part of the array [0, i).
-  std::sort(links.begin(), links.end(), [](Link const & link1, Link const & link2) {
-    return link1.m_shapeSize > link2.m_shapeSize;
-  });
+  std::sort(links.begin(), links.end(),
+            [](Link const & link1, Link const & link2)
+            { return link1.m_shapeSize > link2.m_shapeSize; });
 
   size_t subShapesCount = 0;
 
@@ -1038,9 +1034,6 @@ std::pair<size_t, size_t> WorldFeed::ModifyShapes()
         stopsOnLines.m_isValid = false;
         ++invalidStopSequences;
       }
-
-      if (invalidStopSequences > kMaxInvalidShapesCount)
-        return {invalidStopSequences, validStopSequences};
     }
 
     for (auto & stopsOnLines : stopsLists)
@@ -1059,9 +1052,6 @@ std::pair<size_t, size_t> WorldFeed::ModifyShapes()
           stopsOnLines.m_isValid = false;
           ++invalidStopSequences;
           --validStopSequences;
-
-          if (invalidStopSequences > kMaxInvalidShapesCount)
-            return {invalidStopSequences, validStopSequences};
         }
 
         for (auto const lineId : lineIds)
@@ -1442,7 +1432,7 @@ bool WorldFeed::SetFeed(gtfs::Feed && feed)
   auto const [badShapesCount, goodShapesCount] = ModifyShapes();
   LOG(LINFO, ("Modified shapes."));
 
-  if (badShapesCount > kMaxInvalidShapesCount || (goodShapesCount == 0 && badShapesCount > 0))
+  if (goodShapesCount == 0 && badShapesCount >= 0)
   {
     LOG(LINFO, ("Corrupted shapes count exceeds allowable limit."));
     return false;
@@ -1625,7 +1615,7 @@ void Edges::Write(IdEdgeSet const & ids, std::ofstream & stream) const
     ToJSONObject(*node, "stop_id_to", edgeId.m_toStopId);
 
     CHECK_NOT_EQUAL(edge.m_featureId, std::numeric_limits<uint32_t>::max(),
-                   (edgeId.m_lineId, edgeId.m_fromStopId, edgeId.m_toStopId));
+                    (edgeId.m_lineId, edgeId.m_fromStopId, edgeId.m_toStopId));
     ToJSONObject(*node, "feature_id", edge.m_featureId);
 
     CHECK_GREATER(edge.m_weight, 0, (edgeId.m_fromStopId, edgeId.m_toStopId, edgeId.m_lineId));
@@ -1649,7 +1639,7 @@ void EdgesTransfer::Write(IdEdgeTransferSet const & ids, std::ofstream & stream)
     ToJSONObject(*node, "weight", edgeData.m_weight);
 
     CHECK_NOT_EQUAL(edgeData.m_featureId, std::numeric_limits<uint32_t>::max(),
-                   (edgeTransferId.m_fromStopId, edgeTransferId.m_toStopId));
+                    (edgeTransferId.m_fromStopId, edgeTransferId.m_toStopId));
     ToJSONObject(*node, "feature_id", edgeData.m_featureId);
 
     WriteJson(node.get(), stream);
@@ -1839,14 +1829,16 @@ bool WorldFeed::PrepareEdgesInRegion(std::string const & region)
           FindPointsOnShape(shapePoints, it->second[0].front(), it->second[0].back());
     }
 
-    CHECK(edgeData.m_shapeLink.m_startIndex != 0 || edgeData.m_shapeLink.m_endIndex != 0, (edgeData.m_shapeLink.m_shapeId));
+    CHECK(edgeData.m_shapeLink.m_startIndex != 0 || edgeData.m_shapeLink.m_endIndex != 0,
+          (edgeData.m_shapeLink.m_shapeId));
 
     auto const & pointOnShapeStart = shapePoints[edgeData.m_shapeLink.m_startIndex];
     auto const & pointOnShapeEnd = shapePoints[edgeData.m_shapeLink.m_endIndex];
 
     auto const & pointStopStart = m_stops.m_data.at(edgeId.m_fromStopId).m_point;
 
-    if (mercator::DistanceOnEarth(pointOnShapeStart, pointStopStart) > mercator::DistanceOnEarth(pointOnShapeEnd, pointStopStart))
+    if (mercator::DistanceOnEarth(pointOnShapeStart, pointStopStart) >
+        mercator::DistanceOnEarth(pointOnShapeEnd, pointStopStart))
     {
       std::swap(edgeData.m_shapeLink.m_startIndex, edgeData.m_shapeLink.m_endIndex);
     }
