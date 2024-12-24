@@ -8,6 +8,12 @@
   android:clipChildren="false"
   android:clipToPadding="false"
   tools:background="@color/bg_primary">
+  <View
+    android:id="@+id/touch_interceptor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    tools:visibility="visible" />
   <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/map_buttons_inner_left"
     android:layout_width="wrap_content"
@@ -17,6 +23,7 @@
     android:clipChildren="false"
     android:clipToPadding="false"
     android:padding="@dimen/nav_frame_padding"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent">
     <include
       layout="@layout/map_buttons_bookmarks"
@@ -25,6 +32,14 @@
       android:layout_alignParentBottom="true"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
+    <include
+      layout="@layout/map_buttons_search_frame"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      app:layout_constraintBottom_toBottomOf="@+id/btn_search"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/btn_search" />
     <include
       layout="@layout/map_buttons_search"
       android:layout_width="wrap_content"
@@ -36,8 +51,7 @@
   </androidx.constraintlayout.widget.ConstraintLayout>
   <include
     layout="@layout/map_status_track_recording"
-    android:layout_marginTop="@dimen/track_recorder_status_top_margin"
-    android:layout_marginHorizontal="@dimen/nav_frame_padding"
+    android:layout_margin="@dimen/nav_frame_padding"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_constraintRight_toRightOf="parent"
@@ -46,17 +60,18 @@
     android:id="@+id/map_buttons_inner_right"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/map_buttons_bottom_margin"
-    android:layout_marginBottom="@dimen/map_buttons_bottom_margin"
+    android:layout_marginTop="@dimen/action_bar_extended_height"
     android:clipChildren="false"
     android:clipToPadding="false"
     android:padding="@dimen/nav_frame_padding"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent">
     <include
       layout="@layout/map_buttons_zoom"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
+      android:layout_marginTop="8dp"
       android:layout_marginBottom="@dimen/zoom_buttons_margin"
       app:layout_constraintBottom_toTopOf="@+id/my_position"
       app:layout_constraintEnd_toEndOf="parent" />
