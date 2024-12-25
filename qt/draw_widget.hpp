@@ -90,6 +90,8 @@ protected:
   void keyPressEvent(QKeyEvent * e) override;
   void keyReleaseEvent(QKeyEvent * e) override;
 
+  void OnViewportChanged(ScreenBase const & screen) override;
+
 private:
   void SubmitFakeLocationPoint(m2::PointD const & pt);
   void SubmitRulerPoint(m2::PointD const & pt);
@@ -127,5 +129,6 @@ private:
   std::unique_ptr<Screenshoter> m_screenshoter;
   Ruler m_ruler;
   RoutingTurnsVisualizer m_turnsVisualizer;
+  qreal m_currentRotation = 0.0;
 };
 }  // namespace qt
