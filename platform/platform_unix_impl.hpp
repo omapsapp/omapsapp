@@ -10,4 +10,6 @@ void EnumerateFiles(std::string const & directory, std::function<void(char const
 
 void EnumerateFilesByRegExp(std::string const & directory, std::string const & regexp,
                             std::vector<std::string> & res);
+
+void SetMaxOpenFileLimit();
 }  // namespace pl

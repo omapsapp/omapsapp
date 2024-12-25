@@ -11,8 +11,9 @@
 #include <regex>
 
 #include <dirent.h>
-#include <sys/types.h>
+#include <sys/resource.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #if defined(OMIM_OS_MAC) || defined(OMIM_OS_IPHONE)
@@ -155,6 +156,22 @@ void EnumerateFilesByRegExp(string const & directory, string const & regexp, vec
     if (regex_search(name.begin(), name.end(), exp))
       res.push_back(name);
   });
+}
+
+void SetMaxOpenFileLimit()
+{
+  struct rlimit rlim;
+  if (getrlimit(RLIMIT_NOFILE, &rlim))
+    LOG(LERROR, ("getrlimit failed with errno", errno));
+  else
+  {
+    LOG(LINFO, ("NOFILE soft limit", rlim.rlim_cur, "hard limit", rlim.rlim_max));
+    rlim.rlim_cur = rlim.rlim_max;
+    if (setrlimit(RLIMIT_NOFILE, &rlim))
+      LOG(LERROR, ("setrlimit failed with errno", errno));
+    else
+      LOG(LINFO, ("NOFILE is set to", rlim.rlim_cur));
+  }
 }
 
 }  // namespace pl

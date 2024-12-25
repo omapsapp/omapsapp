@@ -1,4 +1,5 @@
 #include "platform/platform.hpp"
+#include "platform/platform_unix_impl.hpp"
 
 #include "base/file_name_utils.hpp"
 #include "base/logging.hpp"
@@ -26,6 +27,8 @@
 
 Platform::Platform()
 {
+  pl::SetMaxOpenFileLimit();
+
   // OMaps.app/Content/Resources or omim-build-debug for tests.
   std::string const resourcesPath = NSBundle.mainBundle.resourcePath.UTF8String;
   // Omaps.app or omim-build-debug for tests.
