@@ -84,7 +84,7 @@ RoutingSettings GetRoutingSettings(VehicleType vehicleType)
             50.0 /* m_matchingThresholdM */,
             true /* m_showTurnAfterNext */,
             measurement_utils::KmphToMps(3.0) /* m_minSpeedForRouteRebuildMpS */,
-            20.0 /* m_finishToleranceM */,
+            30.0 /* m_finishToleranceM */,
             9 /* m_maxOutgoingPointsCount */,
             120.0 /* m_minOutgoingDistMeters */,
             2 /* m_maxIngoingPointsCount */,
