@@ -56,7 +56,7 @@ void GpsTracker::SetEnabled(bool enabled)
   SetSettingsIsEnabled(enabled);
   m_enabled = enabled;
 
-  if (enabled)
+  if (!enabled)
     m_track.Clear();
 }
 
