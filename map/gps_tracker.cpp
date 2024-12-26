@@ -60,6 +60,11 @@ void GpsTracker::SetEnabled(bool enabled)
     m_track.Clear();
 }
 
+void GpsTracker::Clear()
+{
+  m_track.Clear();
+}
+
 bool GpsTracker::IsEnabled() const
 {
   return m_enabled;

@@ -14,6 +14,7 @@ public:
 
   bool IsEnabled() const;
   void SetEnabled(bool enabled);
+  void Clear();
 
   bool IsEmpty() const;
   size_t GetTrackSize() const;
