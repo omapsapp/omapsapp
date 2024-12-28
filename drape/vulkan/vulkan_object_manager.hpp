@@ -132,6 +132,11 @@ private:
   std::mutex m_mutex;
   std::mutex m_samplerMutex;
   std::mutex m_destroyMutex;
+
+#ifdef ENABLE_TRACE
+  int64_t m_buffersCount = 0;
+  int64_t m_imagesCount = 0;
+#endif
 };
 }  // namespace vulkan
 }  // namespace dp

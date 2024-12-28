@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Spende, um gemeinsam die besten Karten zu erstellen!";
 
+"already_donated" = "Bereits gespendet";
+
+"remind_me_later" = "Später erinnern";
+
+"support_organic_maps" = "Organic Maps unterstützen";
+
 /* Button in the main Help dialog */
 "copyright" = "Copyright";
 
@@ -615,7 +621,7 @@
 
 "login" = "Bei OpenStreetMap anmelden";
 
-"login_osm" = "Melden Sie sich bei OpenStreetMap an";
+"login_osm" = "Bei OpenStreetMap anmelden";
 
 "forgot_password" = "Passwort vergessen?";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Von der Community erstellte OpenStreetMap-Daten (Stand: %@). Erfahre mehr darüber, wie du die Karte bearbeiten und aktualisieren kannst unter OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Melden Sie sich bei openstreetmap.org an, um Ihre Änderungen weltweit zu veröffentlichen.";
+"login_to_make_edits_visible" = "Erstellen Sie ein OpenStreetMap-Konto oder melden Sie sich an, um Ihre Kartenbearbeitungen weltweit zu veröffentlichen.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Zum Herunterladen benötigen Sie mehr Platz. Bitte löschen Sie unnötige Daten.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Mehr Informationen über OpenStreetMap";
 
-"editor_operator" = "Eigentümer";
+"editor_operator" = "Betreiber";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Eigentümer: %@";
+"operator" = "Betreiber: %@";
+
+"editor_category_unsuitable_title" = "Keine passende Kategorie gefunden?";
+
+"editor_category_unsuitable_text" = "Mit Organic Maps kann man nur einfache Punktkategorien hinzufügen, daher keine Städte, Straßen, Seen, Gebäudeumrisse, etc. Bitte füge solche Kategorien direkt bei <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a> hinzu. In unserem <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">Leitfaden</a> findest du eine detaillierte Schritt-für-Schritt-Anleitung.";
 
 "downloader_no_downloaded_maps_title" = "Keine Karten heruntergeladen";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "Mehr";
 
 "book_button" = "Buchen";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Einzelheiten bei Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Kayak deaktivieren";
 
 "placepage_call_button" = "Anrufen";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Planen";
 
-"placepage_remove_stop" = "Entfernen";
+"placepage_remove_stop" = "Stopp entfernen";
 
 "planning_route_remove_title" = "Hierher ziehen zum Entfernen";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Bergab";
 
-"elevation_profile_minaltitude" = "Min. Höhe";
+"elevation_profile_min_elevation" = "Min. Höhe";
 
-"elevation_profile_maxaltitude" = "Max. Höhe";
+"elevation_profile_max_elevation" = "Max. Höhe";
 
 "elevation_profile_difficulty" = "Schwierigkeitsgrad";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Track löschen";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Wollen Sie diesen Track wirklich löschen?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Name des Tracks";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Wenn Sie einen Softwareentwickler kennen, können Sie ihn oder sie bitten, eine Funktion zu implementieren, die Sie benötigen.";
 
 /* App tip #04 */
-"app_tip_04" = "Wussten Sie, dass Sie jeden Ort auf der Karte lange antippen können, um ihn auszuwählen?";
+"app_tip_04" = "Tippen Sie irgendwo auf die Karte, um etwas auszuwählen. Tippen Sie lange, um die Oberfläche aus- und wieder einzublenden.";
 
 /* App tip #05 */
 "app_tip_05" = "Wussten Sie, dass Sie Ihren aktuellen Standort auf der Karte auswählen können?";
@@ -1394,6 +1412,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Route ist leer - nichts zu speichern";
 
+"edit_track" = "Track bearbeiten";
+
 
 /********** Types **********/
 
@@ -1447,7 +1467,7 @@
 
 "type.amenity.bbq" = "Grillplatz";
 
-"type.amenity.bench" = "Parkbank";
+"type.amenity.bench" = "Sitzbank";
 
 "type.amenity.bicycle_parking" = "Fahrradständer";
 
@@ -1469,7 +1489,7 @@
 
 "type.amenity.car_sharing" = "Carsharing";
 
-"type.amenity.car_wash" = "Autowäsche";
+"type.amenity.car_wash" = "Autowaschanlage";
 
 "type.amenity.casino" = "Kasino";
 
@@ -1497,7 +1517,7 @@
 
 "type.amenity.community_centre" = "Bürgerhaus";
 
-"type.amenity.compressed_air" = "Pressluft";
+"type.amenity.compressed_air" = "Druckluft";
 
 "type.amenity.conference_centre" = "Konferenzzentrum";
 
@@ -1513,7 +1533,7 @@
 
 "type.amenity.driving_school" = "Fahrschule";
 
-"type.amenity.exhibition_centre" = "Ausstellungszentrum";
+"type.amenity.exhibition_centre" = "Messezentrum";
 
 "type.amenity.money_transfer" = "Geldtransfer";
 
@@ -1641,7 +1661,7 @@
 
 "type.amenity.post_box" = "Briefkasten";
 
-"type.amenity.post_office" = "Poststelle";
+"type.amenity.post_office" = "Postfiliale";
 
 "type.amenity.prison" = "Gefängnis";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Wasseranschluss";
 
+"type.amenity.water_point.drinking_water_no" = "Wasseranschluss";
+
 "type.barrier" = "Barriere";
 
 "type.barrier.block" = "Block";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garage";
 
-"type.building.train_station" = "Bahnhof";
+"type.building.train_station" = "Bahnhofsgebäude";
 
 "type.building.warehouse" = "Lagerhalle";
 
@@ -1881,9 +1903,9 @@
 
 "type.craft.key_cutter" = "Schlüssel-Nachmachdienst";
 
-"type.craft.locksmith" = "Schlosser";
+"type.craft.locksmith" = "Schlüsseldienst";
 
-"type.craft.metal_construction" = "Schlosser";
+"type.craft.metal_construction" = "Metallverarbeitung";
 
 "type.craft.painter" = "Maler";
 
@@ -2478,7 +2500,7 @@
 
 "type.historic.tank" = "Historischer Panzer";
 
-"type.historic.tomb" = "Grabstätte";
+"type.historic.tomb" = "Historische Grabstätte";
 
 "type.historic.wayside_cross" = "Wegkreuz";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Wasserhahn";
 
+"type.man_made.water_tap.drinking_water_no" = "Wasserhahn";
+
 "type.man_made.water_tower" = "Wasserturm";
 
 "type.man_made.water_well" = "Brunnen";
+
+"type.man_made.water_well.drinking_water_no" = "Brunnen";
 
 "type.man_made.windmill" = "Windmühle";
 
@@ -2793,6 +2819,8 @@
 
 "type.natural.spring" = "Quelle";
 
+"type.natural.spring.drinking_water_no" = "Quelle";
+
 "type.natural.strait" = "Meerenge";
 
 "type.natural.tree_row" = "Baumreihe";
@@ -2813,7 +2841,7 @@
 
 "type.office" = "Büro";
 
-"type.office.company" = "Niederlassung";
+"type.office.company" = "Firmenbüro";
 
 "type.office.estate_agent" = "Immobilienmakler";
 
@@ -3050,11 +3078,13 @@
 
 "type.railway.station.light_rail" = "Stadtbahnbahnhof";
 
+"type.railway.station.light_rail.berlin" = "S-Bahnhof";
+
 "type.railway.station.light_rail.london" = "Stadtbahnbahnhof";
 
 "type.railway.station.light_rail.porto" = "Stadtbahnbahnhof";
 
-"type.railway.station.monorail" = "Bahnhof";
+"type.railway.station.monorail" = "Einschienenbahn-Station";
 
 "type.railway.station.subway" = "U-Bahn-Station";
 
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "U-Bahn-Station";
 
 "type.railway.station.subway.hiroshima" = "U-Bahn-Station";
+
+"type.railway.station.subway.hongkong" = "U-Bahn-Station";
 
 "type.railway.station.subway.isfahan" = "U-Bahn-Station";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "U-Bahn-Station";
 
 "type.railway.station.subway.shanghai" = "U-Bahn-Station";
+
+"type.railway.station.subway.shenzhen" = "U-Bahn-Station";
 
 "type.railway.station.subway.shiraz" = "U-Bahn-Station";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "U-Bahn-Eingang";
 
+"type.railway.subway_entrance.hongkong" = "U-Bahn-Eingang";
+
 "type.railway.subway_entrance.isfahan" = "U-Bahn-Eingang";
 
 "type.railway.subway_entrance.istanbul" = "U-Bahn-Eingang";
@@ -3470,6 +3506,8 @@
 
 "type.railway.subway_entrance.shanghai" = "U-Bahn-Eingang";
 
+"type.railway.subway_entrance.shenzhen" = "U-Bahn-Eingang";
+
 "type.railway.subway_entrance.shiraz" = "U-Bahn-Eingang";
 
 "type.railway.subway_entrance.singapore" = "U-Bahn-Eingang";
@@ -3548,7 +3586,7 @@
 
 "type.shop.car" = "Autohaus";
 
-"type.shop.car_parts" = "Autoteile";
+"type.shop.car_parts" = "Autoersatzteile";
 
 "type.shop.car_repair" = "Autowerkstatt";
 
@@ -3604,17 +3642,17 @@
 
 "type.shop.garden_centre" = "Gärtnerei";
 
-"type.shop.gas" = "Gasspeicher";
+"type.shop.gas" = "Gas-Geschäft";
 
 "type.shop.gift" = "Geschenkeladen";
 
 "type.shop.greengrocer" = "Gemüseladen";
 
-"type.shop.grocery" = "Lebensmittelgeschäft";
+"type.shop.grocery" = "Lebensmittelkonserven";
 
 "type.shop.hairdresser" = "Friseur";
 
-"type.shop.hardware" = "Hardware Store";
+"type.shop.hardware" = "Eisenwarengeschäft";
 
 "type.shop.health_food" = "Reformhaus";
 
@@ -3656,13 +3694,15 @@
 
 "type.shop.outpost" = "Abholpunkt";
 
+"type.shop.pasta" = "Nudelgeschäft";
+
 "type.shop.pastry" = "Konditorei";
 
 "type.shop.pawnbroker" = "Pfandleihe";
 
 "type.shop.pet" = "Tierhandlung";
 
-"type.shop.pet_grooming" = "Haustierpflege";
+"type.shop.pet_grooming" = "Tiersalon";
 
 "type.shop.photo" = "Fotofachgeschäft";
 
@@ -3692,7 +3732,7 @@
 
 "type.shop.travel_agency" = "Reisebüro";
 
-"type.shop.tyres" = "Reifen-Shop";
+"type.shop.tyres" = "Reifenhändler";
 
 "type.shop.variety_store" = "Billigladen";
 
@@ -3749,7 +3789,7 @@
 
 "type.shop.tobacco" = "Tabakwarengeschäft";
 
-"type.shop.trade" = "Handelsbedarf";
+"type.shop.trade" = "Baustoffhandel";
 
 "type.shop.watches" = "Uhrengeschäft";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Sehenswürdigkeit";
 
+"type.attraction.amusement_ride" = "Fahrgeschäft";
+
 "type.attraction.animal" = "Tiergehege";
+
+"type.attraction.bumper_car" = "Autoscooter";
+
+"type.attraction.big_wheel" = "Riesenrad";
+
+"type.attraction.carousel" = "Karussell";
+
+"type.attraction.historic" = "Historische Attraktion";
+
+"type.attraction.maze" = "Labyrinth";
+
+"type.attraction.roller_coaster" = "Achterbahn";
+
+"type.attraction.water_slide" = "Wasserrutsche";
 
 "type.tourism.attraction.specified" = "Sehenswürdigkeit";
 
@@ -3858,7 +3914,7 @@
 
 "type.tourism.gallery" = "Kunstgalerie";
 
-"type.tourism.guest_house" = "Gästehaus";
+"type.tourism.guest_house" = "Pension";
 
 "type.tourism.hostel" = "Herberge";
 
@@ -4005,7 +4061,7 @@
 
 "type.shop.auction" = "Auktion";
 
-"type.shop.collector" = "Sammlerstücke";
+"type.shop.collector" = "Sammlerartikel";
 
 "type.self_service.yes" = "Selbstbedienung verfügbar";
 

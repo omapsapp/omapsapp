@@ -101,6 +101,7 @@ using namespace osm_auth_ios;
   NSTimeInterval const minimumBackgroundFetchIntervalInSeconds = 6 * 60 * 60;
   [UIApplication.sharedApplication setMinimumBackgroundFetchInterval:minimumBackgroundFetchIntervalInSeconds];
   [self updateApplicationIconBadgeNumber];
+  [TrackRecordingManager.shared setup];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -121,7 +122,7 @@ using namespace osm_auth_ios;
   [self enableTTSForTheFirstTime];
 
   if (![MapsAppDelegate isTestsEnvironment])
-    [[CloudStorageManager shared] start];
+    [[iCloudSynchronizaionManager shared] start];
   
   [[DeepLinkHandler shared] applicationDidFinishLaunching:launchOptions];
   // application:openUrl:options is called later for deep links if YES is returned.

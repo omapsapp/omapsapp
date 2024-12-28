@@ -118,7 +118,7 @@
         android:layout_marginTop="@dimen/margin_eighth"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="@string/elevation_profile_maxaltitude"
+        android:text="@string/elevation_profile_max_elevation"
         android:textAppearance="@style/MwmTextAppearance.Body5" />
       <TextView
         android:id="@+id/max_altitude"
@@ -147,7 +147,7 @@
         android:layout_marginTop="@dimen/margin_eighth"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="@string/elevation_profile_minaltitude"
+        android:text="@string/elevation_profile_min_elevation"
         android:textAppearance="@style/MwmTextAppearance.Body5" />
       <TextView
         android:id="@+id/min_altitude"

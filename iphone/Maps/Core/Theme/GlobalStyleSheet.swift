@@ -119,6 +119,10 @@ class GlobalStyleSheet: IStyleSheet {
       s.onTintColor = .red
     }
 
+    theme.add(styleName: "TrackRecordingWidgetButton", from: "BottomTabBarButton") { (s) -> (Void) in
+      s.cornerRadius = 23
+    }
+
     theme.add(styleName: "BlackOpaqueBackground") { (s) -> (Void) in
       s.backgroundColor = colors.blackOpaque
     }

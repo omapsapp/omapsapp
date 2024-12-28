@@ -127,23 +127,26 @@ area|z14-15[landuse=grass],
 {fill-color: @green0;}
 area|z10[landuse=forest],
 area|z16-[landuse=grass],
-area|z14-[natural=grassland],
+area|z14-15[natural=grassland],
 area|z14-[leisure=golf_course],
 area|z14-[leisure=miniature_golf],
 area|z14-[natural=heath],
 area|z14-[landuse=allotments],
 area|z14-[landuse=orchard],
 area|z14-[landuse=vineyard],
-area|z14-[landuse=meadow],
+area|z14-15[landuse=meadow],
 area|z14-[landuse=recreation_ground],
 area|z14-[landuse=village_green],
 area|z14-[landuse=field],
 {fill-color: @green1;}
+area|z16-[natural=grassland],
+area|z16-[landuse=meadow],
+{fill-color: @green1b;}
 area|z11-12[landuse=forest],
 area|z12[leisure=garden],
 {fill-color: @green2;}
 area|z13[landuse=forest],
-area|z13[leisure=garden]
+area|z13[leisure=garden],
 {fill-color: @green3;}
 area|z14[landuse=forest],
 area|z14[leisure=garden],
@@ -154,6 +157,13 @@ area|z15[leisure=garden],
 area|z16-[landuse=forest],
 area|z16-[leisure=garden],
 {fill-color: @forest;}
+
+area|z12-[leisure=garden][garden:type=residential],
+{fill-color: @green0;}
+area|z16-[leisure=garden][garden:type=residential],
+{fill-color: @green1;}
+area|z17-[leisure=garden][garden:type=residential],
+{fill-color: @green2;}
 
 area|z12-13[landuse=grass],
 area|z12-13[natural=grassland],

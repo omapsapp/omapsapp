@@ -71,7 +71,7 @@ public abstract class BaseToolbarActivity extends BaseMwmFragmentActivity
     return R.id.fragment_container;
   }
 
-  public void stackFragment(@NonNull Class<? extends Fragment> fragmentClass,
+  public Fragment stackFragment(@NonNull Class<? extends Fragment> fragmentClass,
                             @Nullable String title, @Nullable Bundle args)
   {
     final int resId = getFragmentContentResId();
@@ -99,6 +99,8 @@ public abstract class BaseToolbarActivity extends BaseMwmFragmentActivity
         toolbar.setTitle(title);
       }
     }
+
+    return fragment;
   }
 
   @Override

@@ -314,6 +314,10 @@
     <string name="google_play_services">שירותי מיקום של Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">קבע במהירות את המיקום המשוער שלך באמצעות Bluetooth, WiFi או רשת סלולרית</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">קישורים למלון Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">תמונות, חוות דעת, קישורי הזמנה מוצגים עבור מלונות שיש להם רישום באתר Kayak.com. בונוס ההפניה המתקבל עבור כל הזמנה דרך קישורים אלה מיועד לפיתוח של Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">הורד את כל המפות במסלול שלך</string>
     <!-- Text for routing error dialog -->
@@ -493,7 +497,10 @@
     <string name="message_invalid_feature_position">לא ניתן למקם כאן פריט</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">נתוני OpenStreetMap שנוצרו על ידי הקהילה החל מ-%s. למידע נוסף על איך לערוך ולעדכן את המפה ב-OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">התחברו ל-openstreetmap.org כדי לפרסם את השינויים שלכם לעולם.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">\u200FOpenStreetMap.org (OSM) הוא פרויקט קהילתי לבניית מפה חופשית ופתוחה. זהו המקור העיקרי לנתוני מפות ב-Organic Maps והוא פועל בדומה לוויקיפדיה. ניתן להוסיף או לערוך מקומות והם הופכים לזמינים למיליוני משתמשים בכל רחבי העולם.
+\nהצטרף לקהילה ועזור ליצור מפה טובה יותר לכולם!</string>
+    <string name="login_to_make_edits_visible">צור חשבון OpenStreetMap או היכנס כדי לפרסם את עריכות המפה שלך לעולם.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d מתוך %2$d</string>
     <string name="download_over_mobile_header">להוריד באמצעות חיבור אינטרנט סלולרי?</string>
@@ -513,9 +520,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">העריכות שלך מועלות למסד הנתונים הציבורי של <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a>. נא לא להוסיף מידע אישי או מוגן בזכויות יוצרים.</string>
     <string name="editor_more_about_osm">עוד על OpenStreetMap</string>
-    <string name="editor_operator">בעלים</string>
+    <string name="editor_osm_history">היסטוריית העריכה שלך</string>
+    <string name="editor_osm_notes">הערות נתוני המפה שלך</string>
+    <string name="editor_operator">מַפעִיל</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">בעלים: %s</string>
+    <string name="operator">מַפעִיל: %s</string>
     <string name="editor_category_unsuitable_title">לא מוצאים קטגוריה מתאימה?</string>
     <string name="editor_category_unsuitable_text">באמצעות Organic Maps ניתן להוסיף קטגוריות נקודה פשוטות בלבד, כלומר לא ניתן להוסיף עיירות, כבישים, אגמים, מבנים וכו\'. אנא הוסיפו קטגוריות כאלה ישירות ל-<a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. עיינו <a href="https://organicmaps.app/faq/editing/advanced-map-editing">במדריך</a> שלנו לקבלת הוראות מפורטות.</string>
     <string name="downloader_no_downloaded_maps_title">לא הורדת אף מפה</string>
@@ -534,6 +543,7 @@
     <string name="miles_per_hour">מייל לשעה</string>
     <string name="hour">ש׳</string>
     <string name="minute">ד׳</string>
+    <string name="day">י</string>
     <string name="placepage_more_button">עוד</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">תמונות, ביקורות, הזמנה</string>
@@ -541,6 +551,8 @@
     <string name="dialog_kayak_disclaimer">בונוס ההפניה המתקבל עבור כל הזמנה דרך קישור זה מסייע בפיתוח של Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">פרטים על Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">השבת את Kayak</string>
     <string name="placepage_edit_bookmark_button">ערוך סימניה</string>
     <string name="editor_comment_hint">תגובה…</string>
     <string name="editor_reset_edits_message">למחוק את כל השינויים המקומיים?</string>
@@ -599,8 +611,8 @@
     <string name="routing_add_start_point">יש להוסיף נקודת התחלה למסלול באמצעות חיפוש או בלחיצה על המפה</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">יש לבחור נקודת יעד באמצעות חיפוש או בלחיצה על המפה</string>
-    <string name="placepage_remove_stop">הסרה</string>
-    <string name="placepage_add_stop">הוסף תחנה</string>
+    <string name="placepage_remove_stop">הסר עצירה</string>
+    <string name="placepage_add_stop">הוסף עצירה</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">התחבר ל-OpenStreetMap כדי להעלות אוטומטית את כל עריכות המפה שלך. למידע נוסף <a href="https://github.com/organicmaps/organicmaps/issues/6144">כאן</a>.</string>
     <string name="dialog_error_storage_title">בעיית גישה לאחסון</string>
@@ -750,8 +762,8 @@
     <string name="isolines_location_error_dialog">קווי מתאר עוד לא זמינים לאזור זה</string>
     <string name="elevation_profile_ascent">עלייה</string>
     <string name="elevation_profile_descent">ירידה</string>
-    <string name="elevation_profile_minaltitude">גובה מינימלי</string>
-    <string name="elevation_profile_maxaltitude">גובה מקסימלי</string>
+    <string name="elevation_profile_min_elevation">מינ\' גובה</string>
+    <string name="elevation_profile_max_elevation">מקס\' גובה</string>
     <string name="elevation_profile_difficulty">קושי</string>
     <string name="elevation_profile_distance">מרחק:</string>
     <string name="elevation_profile_time">זמן:</string>
@@ -773,6 +785,8 @@
     <string name="enable_show_on_lock_screen">הצג במסך הנעילה</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">כאשר מופעל, האפליקציה תעבוד במסך הנעילה אפילו כשהמכשיר נעול.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">שפת המפה</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">נתוני מפה מ-OpenStreetMap</string>
     <!-- App Tip #00 -->
@@ -784,7 +798,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">אם אתה מכיר מפתח תוכנה, אתה יכול לבקש ממנו ליישם תכונה שאתה צריך.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">האם אתה יודע שאתה יכול ללחוץ ארוכות על כל מקום במפה כדי לבחור אותו?</string>
+    <string name="app_tip_04">הקש בכל מקום במפה כדי לבחור משהו. הקש ארוכות כדי להסתיר ולהציג בחזרה את הממשק.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">האם אתה יודע שאתה יכול לבחור את המיקום הנוכחי שלך על המפה?</string>
     <!-- App tip #06 -->
@@ -854,7 +868,11 @@
     <string name="track_recording_toast_nothing_to_save">המסלול ריק - אין מה לשמור</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">לא ניתן להציג תיבת דו-שיח לבחירת תיקיות מכיוון שלא מותקנת אפליקציה מתאימה במכשיר שלך. אנא התקן אפליקציית מנהל קבצים ונסה שוב</string>
+    <string name="choose_color">בחר צבע</string>
+    <string name="edit_track">עריכת מסלול</string>
     <string name="uri_open_location_failed">לא מותקנת אפליקציה שיכולה לפתוח את המיקום</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">אוטומטי בניווט</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">כתובת/שכונה</string>
@@ -1040,6 +1058,7 @@
     <string name="type.amenity.waste_disposal">מיכל אשפה</string>
     <string name="type.amenity.waste_transfer_station">תחנת מעבר פסולת</string>
     <string name="type.amenity.water_point">נקודת מילוי מיכלי מים</string>
+    <string name="type.amenity.water_point.drinking_water_no">נקודת מילוי מיכלי מים</string>
     <string name="type.barrier">מחסום</string>
     <string name="type.barrier.block">חסימה</string>
     <string name="type.barrier.bollard">עמוד</string>
@@ -1085,7 +1104,7 @@
     <string name="type.building.has_parts">מבנה</string>
     <string name="type.building_part">מבנה</string>
     <string name="type.building.garage">מחסן/חניה</string>
-    <string name="type.building.train_station">תחנת רכבת</string>
+    <string name="type.building.train_station">בניין תחנת רכבת</string>
     <string name="type.building.warehouse">מחסן</string>
     <string name="type.cemetery.grave">קבר</string>
     <string name="type.craft">מְלָאכָה</string>
@@ -1535,8 +1554,10 @@
     <string name="type.man_made.tower.communication">מגדל תקשורת</string>
     <string name="type.man_made.wastewater_plant">מפעל טיפול בשפכים</string>
     <string name="type.man_made.water_tap">ברז מים</string>
+    <string name="type.man_made.water_tap.drinking_water_no">ברז מים</string>
     <string name="type.man_made.water_tower">מגדל מים</string>
     <string name="type.man_made.water_well">באר מים</string>
+    <string name="type.man_made.water_well.drinking_water_no">באר מים</string>
     <string name="type.man_made.windmill">טחנת רוח</string>
     <string name="type.man_made.works">עבודות תעשיה</string>
     <string name="type.military">צבאי</string>
@@ -1578,6 +1599,7 @@
     <string name="type.natural.rock">סלע</string>
     <string name="type.natural.scrub">עשביה</string>
     <string name="type.natural.spring">מעיין</string>
+    <string name="type.natural.spring.drinking_water_no">מעיין</string>
     <string name="type.natural.strait">מצר ים</string>
     <string name="type.natural.tree_row">שורת עצים</string>
     <string name="type.natural.vineyard">כרם</string>
@@ -1737,6 +1759,7 @@
     <string name="type.shop.newsagent">דוכן עיתונים</string>
     <string name="type.shop.optician">אופטיקה</string>
     <string name="type.shop.outpost">נקודת איסוף</string>
+    <string name="type.shop.pasta">חנות פסטה</string>
     <string name="type.shop.pastry">מגדניה</string>
     <string name="type.shop.pawnbroker">משכנתאות</string>
     <string name="type.shop.pet">חנות בעלי חיים</string>
@@ -1829,7 +1852,13 @@
     <string name="type.tourism.artwork.sculpture">פסל אומנותי</string>
     <string name="type.tourism.artwork.statue">פסל</string>
     <string name="type.tourism.attraction">אטרקציה תיירותית</string>
+    <string name="type.attraction.amusement_ride">טיול שעשועים</string>
     <string name="type.attraction.animal">מתחם בעלי חיים</string>
+    <string name="type.attraction.carousel">קרוסלה</string>
+    <string name="type.attraction.historic">אטרקציה היסטורית</string>
+    <string name="type.attraction.maze">מָבוֹך</string>
+    <string name="type.attraction.roller_coaster">רכבת הרים</string>
+    <string name="type.attraction.water_slide">מגלשת מים</string>
     <string name="type.tourism.attraction.specified">אטרקציה תיירותית</string>
     <string name="type.tourism.camp_site">אתר מחנאות</string>
     <string name="type.tourism.caravan_site">חניון קרוואנים</string>

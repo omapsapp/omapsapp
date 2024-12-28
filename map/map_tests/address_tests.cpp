@@ -39,7 +39,7 @@ void TestAddress(ReverseGeocoder & coder, std::shared_ptr<MwmInfo> mwmInfo, ms::
                  StringUtf8Multilang const & streetNames, std::string const & houseNumber)
 {
   feature::NameParamsOut out;
-  feature::GetReadableName({ streetNames, mwmInfo->GetRegionData(), languages::GetCurrentNorm(),
+  feature::GetReadableName({ streetNames, mwmInfo->GetRegionData(), languages::GetCurrentMapLanguage(),
                              false /* allowTranslit */ }, out);
 
   TestAddress(coder, ll, out.primary, houseNumber);
@@ -61,7 +61,7 @@ UNIT_TEST(ReverseGeocoder_Smoke)
 
   ReverseGeocoder coder(dataSource);
 
-  auto const currentLocale = languages::GetCurrentNorm();
+  auto const currentLocale = languages::GetCurrentMapLanguage();
 
   {
     StringUtf8Multilang streetNames;

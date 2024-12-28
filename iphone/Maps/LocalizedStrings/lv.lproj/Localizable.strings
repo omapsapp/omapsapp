@@ -1,0 +1,4084 @@
+
+/********** Strings **********/
+
+/* Button text (should be short) */
+"cancel" = "Atcelt";
+
+/* Button which interrupts country download */
+"cancel_download" = "Atsaukt lejupielādi";
+
+/* Button which deletes downloaded country */
+"delete" = "Dzēst";
+
+"download_maps" = "Lejupielādēt kartes";
+
+/* Settings/Downloader - info for country which started downloading */
+"downloading" = "Lejupielādē…";
+
+/* Choose measurement on first launch alert - choose metric system button */
+"kilometres" = "Kilometri";
+
+/* Leave Review dialog - Review button */
+"leave_a_review" = "Atstājiet atsauksmi";
+
+/* Choose measurement on first launch alert - choose imperial system button */
+"miles" = "Jūdzes";
+
+/* A text for current gps location point/arrow selected on the map */
+"core_my_position" = "Mana vieta";
+
+/* Update maps later button text */
+"later" = "Vēlāk";
+
+/* View and button titles for accessibility, please also edit it in iphone/plist.txt */
+"search" = "Meklēt";
+
+/* Settings/Downloader - 3G download warning dialog confirm button */
+"use_cellular_data" = "Jā";
+
+/* View and button titles for accessibility */
+"zoom_to_country" = "Rādīt kartē";
+
+/* Button text for the button at the center of the screen when the country is not downloaded and the size should not be shown */
+"country_status_download_without_size" = "Lejupielādēt karti";
+
+/* Message to display at the center of the screen when the country download has failed */
+"country_status_download_failed" = "Lejupielāde neizdevās";
+
+/* Text in About screen */
+"about_headline" = "Bezmaksas, pieejama visiem un veidota ar mīlestību";
+
+/* Text in About screen */
+"about_proposition_1" = "• Nesatur reklāmas, izsekošanu un nevāc datus";
+
+/* Text in About screen */
+"about_proposition_2" = "• Neizlādē bateriju, darbojas bez interneta pieslēguma";
+
+/* Text in About screen */
+"about_proposition_3" = "• Ātra, minimālistiska un kopienas izstrādāta";
+
+"close" = "Aizvērt";
+
+"download" = "Lejupielādēt";
+
+/* REMOVE THIS STRING AFTER REFACTORING */
+"continue_button" = "Turpināt";
+
+/* "Add new bookmark list" dialog title */
+"add_new_set" = "Pievienot jaunu sarakstu";
+
+/* Add Bookmark list dialog - hint when the list name is empty */
+"bookmark_set_name" = "Grāmatzīmju saraksta nosaukums";
+
+/* "Bookmark Lists" dialog title */
+"bookmark_sets" = "Grāmatzīmju saraksti";
+
+/* Should be used in the bookmarks-only context, see bookmarks_and_tracks if tracks are also implied. */
+"bookmarks" = "Grāmatzīmes";
+
+/* "Bookmarks and Tracks" dialog title, also sync it with iphone/plist.txt */
+"bookmarks_and_tracks" = "Grāmatzīmes un ceļi";
+
+/* Default bookmark list name */
+"core_my_places" = "Manas vietas";
+
+/* Editor title above street and house number, duplicates [type.building.address] in types_strings.txt */
+"address" = "Adrese";
+
+/* Settings button in system menu */
+"settings" = "Iestatījumi";
+
+/* Measurement units title in settings activity */
+"measurement_units" = "Mērvienības";
+
+
+/********** Search categories **********/
+
+/* Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! */
+"category_eat" = "Kur paēst";
+
+/* Search category for grocery stores; any changes should be duplicated in categories.txt @category_food! */
+"category_food" = "Pārtikas preces";
+
+/* Search category for public transport; any changes should be duplicated in categories.txt @category_transport! */
+"category_transport" = "Transports";
+
+/* Search category for fuel stations; any changes should be duplicated in categories.txt @category_fuel! */
+"category_fuel" = "Degvielas uzpildes stacija";
+
+/* Search category for parking lots; any changes should be duplicated in categories.txt @category_parking! */
+"category_parking" = "Autostāvvieta";
+
+/* Search category for malls/clothes/shoes/gifts/jewellery/sport shops; any changes should be duplicated in categories.txt @category_shopping! */
+"category_shopping" = "Iepirkšanās";
+
+/* Search category for second_hand/charity/antique/auction shops; any changes should be duplicated in categories.txt @category_secondhand! */
+"category_secondhand" = "Lietotas preces";
+
+/* Search category for places to stay; any changes should be duplicated in categories.txt @category_hotel! */
+"category_hotel" = "Viesnīca";
+
+/* Search category sight seeings and touristic attractions; any changes should be duplicated in categories.txt @category_tourism! */
+"category_tourism" = "Apskates objekti";
+
+/* Search category for entertainment; any changes should be duplicated in categories.txt @category_entertainment! */
+"category_entertainment" = "Izklaide";
+
+/* Search category for ATMs; any changes should be duplicated in categories.txt @category_atm! */
+"category_atm" = "Bankomāts";
+
+/* Search category for nightclubs/bars; any changes should be duplicated in categories.txt @category_nightlife! */
+"category_nightlife" = "Naktsdzīve";
+
+/* Search category for water park/disneyland/playground/toys store; any changes should be duplicated in categories.txt @category_children! */
+"category_children" = "Atpūta ģimenei";
+
+/* Search category for banks; any changes should be duplicated in categories.txt @category_bank! */
+"category_bank" = "Banka";
+
+/* Search category for pharmacies; any changes should be duplicated in categories.txt @category_pharmacy! */
+"category_pharmacy" = "Aptieka";
+
+/* Search category for hospitals; any changes should be duplicated in categories.txt @category_hospital! */
+"category_hospital" = "Slimnīca";
+
+/* Search category for toilets; any changes should be duplicated in categories.txt @category_toilet! */
+"category_toilet" = "Tualete";
+
+/* Search category for post offices; any changes should be duplicated in categories.txt @category_post! */
+"category_post" = "Pasts";
+
+/* Search category for police; any changes should be duplicated in categories.txt @category_police! */
+"category_police" = "Policija";
+
+/* Search category for WiFi access; any changes should be duplicated in categories.txt @category_wifi! */
+"category_wifi" = "WiFi";
+
+/* Search category for recycling; any changes should be duplicated in categories.txt @category_recycling! */
+"category_recycling" = "Pārstrāde";
+
+/* Search category for water; any changes should be duplicated in categories.txt @category_water! also used to sort bookmarks by type */
+"category_water" = "Ūdens";
+
+/* Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! */
+"category_rv" = "Dzīvojamo auto labierīcības";
+
+
+/********** Other translations **********/
+
+"share_bookmarks_email_body" = "Sveiki!\n\nPielikumā ir grāmatzīmes. Lūdzu, atveriet tās „Organic Maps“ lietotnē. Ja Jums tā nav instalēta, instalējiet to te: https://omaps.app/get?kmz\n\nBaudiet ceļošanu ar „Oranic Maps“!";
+
+/* message title of loading file */
+"load_kmz_title" = "Ielādē grāmatzīmes";
+
+/* Kmz file successful loading */
+"load_kmz_successful" = "Grāmatzīmes ir ielādētas! Tās varat atrast kartē un grāmatzīmju pārvaldīšanas ekrānā.";
+
+/* Kml file loading failed */
+"load_kmz_failed" = "Grāmatzīmes ielādēt neizdevās. Iespējams, datne ir bojāta.";
+
+/* resource for context menu */
+"edit" = "Rediģēt";
+
+/* Warning message when doing search around current position */
+"unknown_current_position" = "Jūsu atrašanās vieta vēl nav noteikta";
+
+/* Subject for emailed bookmark */
+"bookmark_share_email_subject" = "Hei, apskatiet manu grāmatzīmi „Organic Maps“ kartē!";
+
+/* Subject for emailed position */
+"my_position_share_email_subject" = "Hei, apskati manu atrašanās vietu „Oganic Maps“ kartē!";
+
+/* Share by email button text, also used in editor and About. */
+"email" = "E-pasts";
+
+/* Text for message when used successfully copied something */
+"copied_to_clipboard" = "Nokopēts starpliktuvē: %@";
+
+/* place preview title */
+"info" = "Informācija";
+
+/* Used for bookmark editing */
+"done" = "Pabeigts";
+
+/* Prints version number in About dialog */
+"version" = "„Organic Maps“ versija: %@";
+
+/* Title for tracks category in bookmarks manager */
+"tracks_title" = "Ceļi";
+
+/* Length of track in cell that describes route */
+"length" = "Garums";
+
+"share_my_location" = "Kopīgot manu atrašanās vietu";
+
+"prefs_group_route" = "Navigācija";
+
+"pref_zoom_title" = "Tālummaiņas pogas";
+
+/* Settings «Map» category: «Appearance» title */
+"pref_appearance_title" = "Izskats";
+
+/* Settings "Appearance" category: "Light" title, should be consistent with the pref_appearance_title translation. */
+"pref_appearance_light" = "Gaišs";
+
+/* Settings "Appearance" category: "Dark" title, should be consistent with the pref_appearance_title translation. */
+"pref_appearance_dark" = "Tumšs";
+
+/* Generic «Off» string */
+"off" = "Izslēgts";
+
+/* Generic «On» string */
+"on" = "Ieslēgts";
+
+/* Generic «Auto» string */
+"auto" = "Automātisks";
+
+/* Settings «Map» category: «Perspective view» title */
+"pref_map_3d_title" = "Perspektīvas skats";
+
+/* Settings «Map» category: «3D buildings» title */
+"pref_map_3d_buildings_title" = "3D ēkas";
+
+/* A message in Settings/Preferences explaining why is it not possible to enable 3D buildings when max power saving mode is enabled */
+"pref_map_3d_buildings_disabled_summary" = "Energotaupības režīmā 3D ēkas ir izslēgtas";
+
+/* Settings «Route» category: «Tts enabled» title */
+"pref_tts_enable_title" = "Balss instrukcijas";
+
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Izrunāt ielu nosaukumus";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Kad ieslēgts, ielas vai ceļa nobrauktuves nosaukumu skaļi izrunās.";
+
+/* Settings «Route» category: «Tts language» title */
+"pref_tts_language_title" = "Balss valoda";
+
+/* Settings «Route» category: «Test Voice Directions» title */
+"pref_tts_test_voice_title" = "Pārbaudīt balss norādes (TTS, teksta pārvēršana runā)";
+
+/* Title for "Other" section in TTS settings. */
+"pref_tts_other_section_title" = "Cita";
+
+"pref_map_auto_zoom" = "Automātisks mērogs";
+
+"placepage_distance" = "Attālums";
+
+"search_show_on_map" = "Rādīt kartē";
+
+/* Text in menu */
+"website" = "Tīmekļa vietne";
+
+/* Text in About menu, opens Organic Maps news website */
+"news" = "Jaunumi";
+
+/* Text in menu */
+"facebook" = "Facebook";
+
+/* Text in menu */
+"twitter" = "X (Twitter)";
+
+/* Text in menu */
+"instagram" = "Instagram";
+
+/* Text in the editor */
+"vk" = "VK";
+
+/* Text in menu */
+"rate_the_app" = "Novērtējiet lietotni";
+
+/* Text in menu */
+"help" = "Palīdzība";
+
+/* Button in the main Help dialog */
+"faq" = "Biežāk uzdotie jautājumi";
+
+/* Button in the main menu */
+"donate" = "Ziedot";
+
+/* Tex label above the Donate button */
+"donate_description" = "Ziedojiet, lai kopā varam veidot vislabākās kartes!";
+
+"already_donated" = "Already donated";
+
+"remind_me_later" = "Atgādināt vēlāk";
+
+"support_organic_maps" = "Atbalstīt Organic Maps";
+
+/* Button in the main Help dialog */
+"copyright" = "Autortiesības";
+
+/* Text in menu + Button in the main Help dialog */
+"report_a_bug" = "Ziņot par kļūdu";
+
+/* Button in the About screen */
+"report_incorrect_map_bug" = "Ziņojiet vai labojiet kļūdainus kartes datus";
+
+/* Button in the About screen */
+"volunteer" = "Brīvprātīgi palīdzēt";
+
+/* "Social media" section header in the About screen */
+"follow_us" = "Sekojiet un sazinieties ar mums:";
+
+/* Alert text */
+"email_error_body" = "E-pasta klients nav sagatavots darbam. Konfigurējiet to vai sazinieties ar mums: %@";
+
+/* Alert title */
+"email_error_title" = "Kļūda, nosūtot vēstuli";
+
+/* Settings item title */
+"pref_calibration_title" = "Kompasa kalibrēšana";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Vēlreiz piespiediet un paturiet uz kartes, lai redzētu saskarni";
+
+/* Update all button text */
+"downloader_update_all_button" = "Atjaunināt visu";
+
+/* Downloaded maps list header */
+"downloader_downloaded_subtitle" = "Lejupielādētās";
+
+/* Downloaded maps category */
+"downloader_available_maps" = "Pieejamas";
+
+/* Country queued for download */
+"downloader_queued" = "Rindota";
+
+"downloader_near_me_subtitle" = "Man tuvumā";
+
+/* In maps downloader and country place page shows how many maps are downloaded / to download, e.g. "Maps: 3 of 10" */
+"downloader_status_maps" = "Kartes";
+
+"downloader_download_all_button" = "Lejupielādēt visu";
+
+"downloader_downloading" = "Lejupielādē:";
+
+"downloader_search_results" = "Atrasts";
+
+/* Status of outdated country in the list */
+"downloader_status_outdated" = "Atjaunināt";
+
+/* Status of failed country in the list */
+"downloader_status_failed" = "Neizdevās";
+
+/* Displayed in a dialog that appears when a user tries to delete a map while the app is in the follow route mode */
+"downloader_delete_map_while_routing_dialog" = "Lai dzēstu karti, apturiet navigāciju.";
+
+/* PointsInDifferentMWM */
+"routing_failed_cross_mwm_building" = "Maršrutus var izveidot, ja atrodas vienas reģiona kartes robežās.";
+
+/* Context menu item for downloader. */
+"downloader_download_map" = "Lejupielādēt karti";
+
+/* Item status in downloader. */
+"downloader_retry" = "Mēģināt vēlreiz";
+
+/* Item in context menu. */
+"downloader_delete_map" = "Dzēst karti";
+
+/* Text for routing error dialog */
+"routing_download_maps_along" = "Lejupielādēt visas maršruta kartes";
+
+/* Text for routing error dialog */
+"routing_requires_all_map" = "Lai izveidotu maršrutu, lejupielādējiet un atjauniniet visas kartes no jūsu atrašanās vietas līdz galamērķim.";
+
+/* bookmark button text */
+"bookmark" = "grāmatzīme";
+
+"save" = "Saglabāt";
+
+"create" = "izveidot";
+
+/* red color */
+"red" = "Sarkana";
+
+/* yellow color */
+"yellow" = "Dzeltena";
+
+/* blue color */
+"blue" = "Zila";
+
+/* green color */
+"green" = "Zaļa";
+
+/* purple color */
+"purple" = "Violeta";
+
+/* orange color */
+"orange" = "Oranža";
+
+/* brown color */
+"brown" = "Brūna";
+
+/* pink color */
+"pink" = "Rozā";
+
+/* deep purple color */
+"deep_purple" = "Tumši violeta";
+
+/* light blue color */
+"light_blue" = "Gaiši zila";
+
+/* cyan color */
+"cyan" = "Ciāna";
+
+/* teal color */
+"teal" = "Tumši ciāna";
+
+/* lime color */
+"lime" = "Dzeltenzaļa";
+
+/* deep orange color */
+"deep_orange" = "Tumši oranža";
+
+/* gray color */
+"gray" = "Pelēka";
+
+/* blue gray color */
+"blue_gray" = "Zilpelēka";
+
+
+/********** Routing dialogs strings **********/
+
+"dialog_routing_disclaimer_title" = "Sekojot maršrutam, ievērojiet:";
+
+"dialog_routing_disclaimer_priority" = "— Apstākļiem uz ceļa, ceļu satiksmes noteikumiem un ceļazīmēm vienmēr ir priekšroka pār navigācijas ieteikumiem;";
+
+"dialog_routing_disclaimer_precision" = "— Karte var būt kļūdaina, kā arī ieteiktais maršruts ne vienmēr būs optimālākais galamērķa sasniegšanai;";
+
+"dialog_routing_disclaimer_recommendations" = "— Jāsaprot, ka ieteiktie maršruti ir tikai ieteikumi;";
+
+"dialog_routing_disclaimer_borders" = "— Esiet uzmanīgi ar maršrutiem pie valsts robežām: mūsu lietotnes ģenerētie maršruti reizēm var šķērsot valsts robežas neatļautās vietās.";
+
+"dialog_routing_disclaimer_beware" = "Uz ceļa esiet modri un uzmanīgi!";
+
+"dialog_routing_check_gps" = "Pārbaudīt GPS signālu";
+
+"dialog_routing_error_location_not_found" = "Neizdevās izveidot maršrutu. Neizdevās noteikt pašreizējās GPS koordinātes.";
+
+"dialog_routing_location_turn_wifi" = "Pārbaudiet GPS signālu. „Wi-Fi“ ieslēgšana uzlabos atrašanās vietas precizitāti.";
+
+"dialog_routing_location_turn_on" = "Ieslēgt vietas noteikšanas servisus";
+
+"dialog_routing_location_unknown_turn_on" = "Neizdodas noteikt pašreizējās GPS koordinātes. Ieslēdziet atrašanās vietas servisus, lai aprēķināt maršrutu.";
+
+"dialog_routing_download_files" = "Lejupielādēt nepieciešamās datnes";
+
+"dialog_routing_download_and_update_all" = "Lejupielādēt un atjaunināt visas kartes, kas varētu būt plānotajā maršrutā.";
+
+"dialog_routing_unable_locate_route" = "Neizdevās noteikt maršrutu";
+
+"dialog_routing_change_start_or_end" = "Precizējiet savu sākuma punktu vai galamērķi.";
+
+"dialog_routing_change_start" = "Precizēt sākuma punktu";
+
+"dialog_routing_start_not_determined" = "Maršruts nav izveidots. Neizdodas noteikt sākuma punktu.";
+
+"dialog_routing_select_closer_start" = "Atlasiet sākuma punktu tuvāk pie ceļa.";
+
+"dialog_routing_change_end" = "Precizēt galamērķi";
+
+"dialog_routing_end_not_determined" = "Maršruts nav izveidots. Neizdodas noteikt galamērķi.";
+
+"dialog_routing_select_closer_end" = "Atlasiet galamērķa punktu pēc iespējas tuvāk ceļam.";
+
+"dialog_routing_change_intermediate" = "Neizdevās noteikt starppunktu.";
+
+"dialog_routing_intermediate_not_determined" = "Labojiet starppunktu.";
+
+"dialog_routing_system_error" = "Sistēmas kļūda";
+
+"dialog_routing_application_error" = "Kļūdas dēļ neizdevās izveidot maršrutu.";
+
+"dialog_routing_try_again" = "Mēģiniet vēlreiz";
+
+"dialog_routing_download_and_build_cross_route" = "Vai vēlaties lejupielādēt karti un izveidot piemērotāku maršrutu, kas ietver vairāk par vienu karti?";
+
+"dialog_routing_download_cross_route" = "Lejupielādējiet papildu kartes, lai izveidotu labāku maršrutu, kas šķērso šīs kartes robežu.";
+
+
+/********** Strings for downloading map from search **********/
+
+/* «Show» context menu */
+"show" = "Rādīt";
+
+/* «Hide» context menu */
+"hide" = "Slēpt";
+
+/* Failed planning route message in navigation view */
+"routing_planning_error" = "Maršruta plānošana neizdevās";
+
+/* Arrive routing message in navigation view */
+"routing_arrive" = "Ierašanās: %@";
+
+/* Text for routing::RouterResultCode::FileTooOld dialog. */
+"dialog_routing_download_and_update_maps" = "Lejupielādēt un atjaunināt visas kartes gar iespējamo maršrutu, lai to aprēķinātu.";
+
+"categories" = "Kategorijas";
+
+"history" = "Vēsture";
+
+"search_not_found" = "Vai, nekas nav atrasts!";
+
+/* The message when user did not find anything in the search. */
+"search_not_found_query" = "Lejupielādējiet reģionu, kurā meklēt, vai mēģiniet pievienot tuvumā esošas apdzīvotas vietas nosaukumu.";
+
+"search_history_title" = "Meklēšanas vēsture";
+
+"search_history_text" = "Apskatiet meklēšanas vēsturi.";
+
+"clear_search" = "Notīrīt vēsturi";
+
+/* Place Page link to Wikipedia article (if map object has it). */
+"read_in_wikipedia" = "Vikipēdija";
+
+/* Place Page link to Wikimedia Commons. */
+"wikimedia_commons" = "Wikimedia Commons";
+
+"p2p_your_location" = "Jūsu atrašanās vieta";
+
+"p2p_start" = "Sākt";
+
+"p2p_from_here" = "Maršruts no";
+
+"p2p_to_here" = "Kurp";
+
+"p2p_only_from_current" = "Navigācija ir pieejama tikai no jūsu pašreizējās atrašanās vietas.";
+
+"p2p_reroute_from_current" = "Vai vēlaties plānot maršrutu no savas pašreizējās atrašanās vietas?";
+
+"editor_time_add" = "Pievienot grafiku";
+
+"editor_time_delete" = "Dzēst grafiku";
+
+/* Text for allday switch. */
+"editor_time_allday" = "Visu dienu (24 stundas)";
+
+"editor_time_open" = "Atvērts";
+
+"editor_time_close" = "Slēgts";
+
+"editor_time_add_closed" = "Pievienot  laiku, kad nestrādā";
+
+"editor_time_title" = "Darba laiks";
+
+"editor_time_advanced" = "Paplašinātais režīms";
+
+"editor_time_simple" = "Parastais režīms";
+
+"editor_hours_closed" = "Laiks, kad slēgts";
+
+"editor_example_values" = "Piemēra vērtības";
+
+"editor_add_select_location" = "Vieta";
+
+"editor_done_dialog_1" = "Jūs nomainījāt pasaules karti! Neturiet izmaiņas pie sevis, bet pastāstiet par tām saviem draugiem un rediģējiet kopā!";
+
+"share_with_friends" = "Kopīgot ar draugiem";
+
+"editor_report_problem_send_button" = "Sūtīt";
+
+"autodownload" = "Automātiska karšu lejupielāde";
+
+/* Place Page opening hours text */
+"closed_now" = "Šobrīd slēgts";
+
+/* Place Page opening hours text */
+"daily" = "Ik dienu";
+
+"twentyfour_seven" = "24/7";
+
+"day_off_today" = "Šodien slēgts";
+
+"day_off" = "Slēgts";
+
+"today" = "Šodien";
+
+"opens_tomorrow_at" = "Atveras rīt %@";
+
+"opens_dayoftheweek_at" = "Atveras %1$@ plkst. %2$@";
+
+"opens_at" = "Atveras plkst. %@";
+
+"opens_in" = "Atveras pēc %@";
+
+"closes_at" = "Slēgts no plkst. %@";
+
+"closes_in" = "Slēgts pēc %@";
+
+"closed" = "Slēgts";
+
+"add_opening_hours" = "Pievienot darba laiku";
+
+"no_osm_account" = "Vai jums nav „OpenStreetMap“ konta?";
+
+"register_at_openstreetmap" = "Reģistrējieties „OpenStreetMap“";
+
+"password_8_chars_min" = "Parole (vismaz 8 simboli)";
+
+"invalid_username_or_password" = "Nederīgs lietotājvārds vai parole.";
+
+"login" = "Ierakstīties";
+
+"login_osm" = "Ierakstīties „OpenStreetMap“";
+
+"forgot_password" = "Vai aizmirsāt paroli?";
+
+"osm_account" = "OSM konts";
+
+"logout" = "Izrakstīties";
+
+/* Information text: "Last upload 11.01.2016" */
+"last_upload" = "Pēdējo reizi augšupielādēja";
+
+"thank_you" = "Paldies";
+
+"edit_place" = "Rediģēt vietu";
+
+"place_name" = "Vietas nosaukums";
+
+"add_language" = "Pievienot valodu";
+
+/* Editable House Number text field (in address block). */
+"house_number" = "Ēkas numurs";
+
+"details" = "Vairāk";
+
+/* Text field to enter non-existing street name, below list of known streets around */
+"add_street" = "Pievienot ielu";
+
+"choose_language" = "Izvēlieties valodu";
+
+"choose_street" = "Izvēlieties ielu";
+
+"postal_code" = "Pasta indekss";
+
+"cuisine" = "Virtuve";
+
+"select_cuisine" = "Atlasiet virtuvi";
+
+/* login text field */
+"email_or_username" = "E-pasta adrese vai lietotājvārds";
+
+"phone" = "Tālrunis";
+
+"level" = "Stāvs";
+
+"please_note" = "Ievērojiet";
+
+"downloader_delete_map_dialog" = "Kopā ar karti dzēsīsies visas jūsu veiktās kartes izmaiņas.";
+
+"downloader_update_maps" = "Atjaunināt kartes";
+
+"downloader_search_field_hint" = "Atrast karti";
+
+"migration_download_error_dialog" = "Lejupielādes kļūda";
+
+"common_check_internet_connection_dialog" = "Pārliecinieties, ka ierīce ir savienota ar internetu.";
+
+"downloader_no_space_title" = "Trūkst vietas";
+
+"downloader_no_space_message" = "Dzēsiet liekos datus";
+
+"editor_profile_changes" = "Apstiprinātas izmaiņas";
+
+"editor_focus_map_on_location" = "Velciet karti, lai atlasītu pareizu objekta atrašanās vietu.";
+
+"editor_add_select_category" = "Atlasiet kategoriju";
+
+"editor_add_select_category_popular_subtitle" = "Populāras";
+
+"editor_add_select_category_all_subtitle" = "Visas kategorijas";
+
+"editor_edit_place_title" = "Rediģēšana";
+
+"editor_add_place_title" = "Pievienošana";
+
+"editor_edit_place_name_hint" = "Vietas nosaukums";
+
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Pieraksts vietējā valodā";
+
+"editor_edit_place_category_title" = "Kategorija";
+
+"whatsnew_editor_message_1" = "Pievienojiet kartei jaunas vietas un rediģējiet jau esošās uzreiz lietotnē.";
+
+"dialog_incorrect_feature_position" = "Mainīt atrašanās vietu";
+
+"message_invalid_feature_position" = "Šeit objekti nevar atrasties";
+
+/* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
+"osm_presentation" = "Kopiena veidotie „OpenStreetMap“ dati uz %@. Uzziniet vairāk par to, kā piedalīties kartes rediģēšanā un uzlabošanā vietnē „OpenStreetMap.org“.";
+
+"login_to_make_edits_visible" = "Izveidojiet OpenStreetMap kontu vai piesakieties, lai publicētu savas kartes rediģējumus visā pasaulē.";
+
+/* Error dialog no space */
+"migration_no_space_message" = "Lejupielādei nepieciešams vairāk vietas. Izdzēsiet liekos datus.";
+
+"editor_sharing_title" = "Es uzlaboju „Organic Maps“ kartes";
+
+/* Downloaded 10 **of** 20 <- it is that "of" */
+"downloader_of" = "%1$d no %2$d";
+
+"download_over_mobile_header" = "Vai lejupielādēt arī mobilajā tīklā?";
+
+"download_over_mobile_message" = "Ja lietojat ierobežotus datus vai viesabonēšanu, tas var izmaksāt dārgi.";
+
+"error_enter_correct_house_number" = "Ierakstiet derīgu ēkas numuru";
+
+"editor_storey_number" = "Stāvu skaits (maks. %d)";
+
+/* Error message in Editor when a user tries to set the number of floors for a building higher than %d floors */
+"error_enter_correct_storey_number" = "Stāvu skaits nedrīkst pārsniegt %d";
+
+"editor_zip_code" = "Pasta indekss";
+
+"error_enter_correct_zip_code" = "Ierakstiet pasta indeksu";
+
+/* Place Page title for long tap */
+"core_placepage_unknown_place" = "Nezināma vieta";
+
+/* Title for OSM note section in the editor */
+"editor_other_info" = "Note to OpenStreetMap volunteers (optional)";
+
+"editor_detailed_description_hint" = "Sīkāks komentārs";
+
+"editor_detailed_description" = "Jūsu izmaiņu priekšlikumu nosūtīsim „OpenStreetMap“ kopienai. Lūdzu, sniedziet jebkādu papildu informāciju, ko nevarat norādīt „Organic Maps“ lietotnē.";
+
+"editor_more_about_osm" = "Vairāk par „OpenStreetMap“";
+
+"editor_operator" = "Operators";
+
+/* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
+"operator" = "Operators: %@";
+
+"editor_category_unsuitable_title" = "Vai neatrodat atbilstošu kategoriju?";
+
+"editor_category_unsuitable_text" = "„Organic Maps“ ļauj pievienot tikai vienkāršu punktu kategorijas, proti, nevarat pievienot pilsētas, ceļus, ezerus, ēku aprises u.tml. Šādas kategorijas lūdzam pievienot tiešā veidā <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Lai uzzinātu, kā to izdarīt, sekojiet norādēm <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">rokasgrāmatā</a>.";
+
+"downloader_no_downloaded_maps_title" = "Ierīcē nav lejupielādētas kartes";
+
+"downloader_no_downloaded_maps_message" = "Lai darbotos nesaistes navigācija un meklēšana, lejupielādējiet kartes.";
+
+"current_location_unknown_error_title" = "Pašreizējā vieta nav zināma.";
+
+"current_location_unknown_error_message" = "Nosakot jūsu atrašanās vietu, radās kļūda. Pārleicinieties, ka ierīce darbojas korekti un mēģiniet vēlreiz.";
+
+"location_services_disabled_header" = "Vietas noteikšanas servisi ir izslēgti";
+
+"location_services_disabled_message" = "Ierīces iestatījumos ieslēdziet pieeju ģeolokācijai.";
+
+"location_services_disabled_1" = "1. Atveriet iestatījumus";
+
+"location_services_disabled_2" = "2. Pieskarieties „Vietai\"";
+
+/* iOS Dialog for the case when the location permission is not granted; you might find the exact wording for your language here: https://support.apple.com/en-us/102647 (replace 'en-us' in URL with your language/region) */
+"location_services_disabled_3" = "3. Atlasiet „Izmantojot lietotni“";
+
+"location_services_disabled_on_device_2" = "2. Atlasiet „Privātums“";
+
+"location_services_disabled_on_device_3" = "3. Atlasiet atrašanās vietas pakalpojumus";
+
+"location_services_disabled_on_device_4" = "4. Ieslēdziet atrašanāš vietas noteikšanas pakalpojumus";
+
+"location_services_disabled_on_device_additional_message" = "Vai turpiniet izmantot „Organic Maps“ bez vietas";
+
+/* abbreviation for meters */
+"m" = "m";
+
+/* abbreviation for kilometers */
+"km" = "km";
+
+/* abbreviation for kilometers per hour */
+"kilometers_per_hour" = "km/h";
+
+/* abbreviation for mile(s) */
+"mi" = "mi";
+
+/* A unit of measure */
+"ft" = "ft";
+
+"miles_per_hour" = "mph";
+
+"hour" = "st.";
+
+"minute" = "min.";
+
+"day" = "d";
+
+"placepage_more_button" = "Vairāk";
+
+"book_button" = "Rezervēt";
+
+/* A referral link on the place page for some hotels */
+"more_on_kayak" = "Foto, atsauksmes, rezervācija";
+
+/* An explanation dialog shown when clicking on more_on_kayak link. */
+"dialog_kayak_disclaimer" = "No ieteikuma saites saņemtais bonuss par katru rezervāciju nonāk „Organic Maps“ attīstīšanai.";
+
+/* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_button" = "Informācija par „Kayak“";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Atslēgt Kayak";
+
+"placepage_call_button" = "Zvanīt";
+
+"placepage_edit_bookmark_button" = "Rediģēt grāmatzīmi";
+
+"placepage_bookmark_name_hint" = "Grāmatzīmes nosaukums";
+
+"placepage_personal_notes_hint" = "Personīgi pieraksti";
+
+"placepage_delete_bookmark_button" = "Dzēst grāmatzīmi";
+
+"editor_edits_sent_message" = "Jūsu piezīmi nosūtīsim uz „OpenStreetMap“";
+
+"editor_comment_hint" = "Komentārs…";
+
+"editor_reset_edits_message" = "Vai izmest visas lokāli saglabātās izmaiņas?";
+
+"editor_reset_edits_button" = "Noraidīt";
+
+"editor_remove_place_message" = "Vai dzēst pievienoto vietu?";
+
+"editor_remove_place_button" = "Dzēst";
+
+"editor_place_doesnt_exist" = "Vieta nepastāv";
+
+"text_more_button" = "…vairāk";
+
+/* Phone number error message */
+"error_enter_correct_phone" = "Ierakstiet derīgu tālruņa numuru";
+
+"error_enter_correct_web" = "Ierakstiet derīgu tīmekļa vietnes adresi";
+
+"error_enter_correct_email" = "Ierakstiet e-pasta adresi";
+
+"refresh" = "Atjaunināt";
+
+"placepage_add_place_button" = "Pievienot vietu „OpenStreetMap“";
+
+/* Displayed when saving some edits to the map to warn against publishing personal data */
+"editor_share_to_all_dialog_title" = "Vai vēlaties to nosūtīt visiem lietotājiem?";
+
+/* Dialog before publishing the modifications to the public map. */
+"editor_share_to_all_dialog_message_1" = "Pārliecinieties, ka neievadījāt nekādus privātus vai personīgus datus.";
+
+"editor_share_to_all_dialog_message_2" = "„OpenStreetMap“ redaktori pārskatīs veiktās izmaiņas un jautājumu gadījumā ar jums sazināsies.";
+
+"navigation_stop_button" = "Apturēt";
+
+/* iOS dialog for the case when recent track recording is on and the app comes back from background */
+"recent_track_background_dialog_title" = "Vai izslēgt pēdējā noietā vai nobrauktā maršuta ierakstīšanu?";
+
+"off_recent_track_background_button" = "Izslēgt";
+
+/* For sharing via SMS and so on */
+"sharing_call_action_look" = "Paskaties";
+
+"recent_track_background_dialog_message" = "„Organic Maps“ fonā izmantos ierīces atrašanās vietas datus, lai reģistrētu pēdējo noieto vai nobraukto maršrutu.";
+
+"general_settings" = "Pamata iestatījumi";
+
+/* For the first routing */
+"accept" = "Pieņemt";
+
+/* For the first routing */
+"decline" = "Noraidīt";
+
+/* A noun - a button name used to show search results in list form */
+"search_in_table" = "Saraksts";
+
+"mobile_data_dialog" = "Izmantot mobilos datus, lai parādītu plašāku informāciju?";
+
+"mobile_data_option_always" = "Izmantot vienmēr";
+
+"mobile_data_option_today" = "Tikai šodien";
+
+"mobile_data_option_not_today" = "Šodien neizmantot";
+
+"mobile_data" = "Mobilie dati";
+
+/* NOTE to translators: please synchronize your translation with the English one. */
+"mobile_data_description" = "Kartes atjauninājumu paziņojumiem un rediģējumu augšupielādēšanai ir nepieciešami mobilie dati.";
+
+"mobile_data_option_never" = "Nekad neizmantot";
+
+"mobile_data_option_ask" = "Jautāt vienmēr";
+
+"traffic_update_maps_text" = "Lai parādītu satiksmes datus, kartes ir jāatjaunina.";
+
+"big_font" = "Palielināt fonta lielumu kartē";
+
+/* "traffic" as in road congestion */
+"traffic_update_app_message" = "Lai parādītu satiksmes datus, lietotne ir jāatjaunina.";
+
+/* "traffic" as in "road congestion" */
+"traffic_data_unavailable" = "Satiksmes dati nav pieejami";
+
+"enable_logging" = "Ieslēgt žurnalēšanu";
+
+"log_file_size" = "Žurnāla datnes lielums: %@";
+
+"transliteration_title" = "Transliterācija uz latīņu alfabētu";
+
+/* Subway exits for public transport marks on the map */
+"core_exit" = "Izeja";
+
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Lietojiet meklēšanu vai pieskarieties kartei, lai pievienotu galamērķi";
+
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Lietojiet meklēšanu vai pieskarieties kartei, lai pievienotu sākuma punktu";
+
+"planning_route_manage_route" = "Pārvaldīt maršrutu";
+
+"button_plan" = "Plānot";
+
+"placepage_remove_stop" = "Noņemt starppunktu";
+
+"planning_route_remove_title" = "Velciet te, lai noņemtu";
+
+"placepage_add_stop" = "Pievienot starppunktu";
+
+"start_from_my_position" = "Sākt no";
+
+/* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
+"alert_reauth_message_ios" = "Ierakstieties „OpenStraatMap“, lai automātiski augšupielādētu visus kartes rediģējumus. Uzziniet vairāk";
+
+/* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's link part */
+"alert_reauth_link_text_ios" = "te";
+
+"core_entrance" = "Ieeja";
+
+"error_enter_correct_name" = "Ierakstiet pareizu nosaukumu";
+
+"bookmark_lists" = "Saraksti";
+
+/* Do not display all bookmark lists on the map */
+"bookmark_lists_hide_all" = "Slēpt visu";
+
+"bookmark_lists_show_all" = "Rādīt visu";
+
+"bookmarks_create_new_group" = "Izveidot jaunu sarakstu";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Importēt grāmatzīmes un ceļus";
+
+"downloader_hide_screen" = "Slēpt ekrānu";
+
+"downloader_percent" = "%@ (%@ no %@)";
+
+"downloader_process" = "Lejupielādē %@…";
+
+"downloader_applying" = "Pielieto %@…";
+
+"bookmarks_error_message_share_general" = "Programmas kļūdas dēļ kopīgošana neizdevās";
+
+"bookmarks_error_title_share_empty" = "Kopīgošanas kļūda";
+
+"bookmarks_error_message_share_empty" = "Nav iespējams kopīgot tukšu sarakstu";
+
+"bookmarks_error_message_empty_list_name" = "Ierakstiet saraksta nosaukumu";
+
+"bookmarks_error_title_list_name_already_taken" = "Šāds nosaukums jau ir aizņemts";
+
+"bookmarks_error_title_list_name_too_long" = "Nosaukums ir par garu";
+
+"profile" = "„OpenStraatMap“ profils";
+
+"bookmarks_detect_title" = "Atrastas jaunas datnes";
+
+"button_convert" = "Konvertēt";
+
+"bookmarks_convert_error_title" = "Kļūda";
+
+"bookmarks_convert_error_message" = "Atsevišķas datnes nav konvertētas.";
+
+"restore" = "Atjaunot";
+
+"privacy_policy" = "Privātuma politika";
+
+"terms_of_use" = "Lietošanas noteikumi";
+
+"button_layer_subway" = "Metro";
+
+"layers_title" = "Kartes stili un slāņi";
+
+"subway_data_unavailable" = "Metro karte nav pieejama";
+
+"title_error_downloading_bookmarks" = "Notika kļūda";
+
+"popular_place" = "Populāras";
+
+"export_file" = "Eksportēt KMZ";
+
+"export_file_gpx" = "GPX eksportēšana";
+
+"delete_list" = "Dzēst sarakstu";
+
+"hide_from_map" = "Slēpt kartē";
+
+"bookmark_list_description_hint" = "Aprakstiet (teksts vai HTML)";
+
+"tags_loading_error_subtitle" = "Kļūda, ielādējot birkas. Mēģiniet vēlreiz.";
+
+"download_button" = "Lejupielādēt";
+
+"speedcams_alert_title" = "Fotoradari";
+
+"place_description_title" = "Vietas apraksts";
+
+/* "Speed cameras" settings menu option (should be short! no more than 47-50 chars) to warn a driver if there is a risk of exceeding the speed limit */
+"pref_tts_speedcams_auto" = "Brīdināt par ātruma pārsniegšanu";
+
+/* Speed camera settings menu option - Always warn (about speedcams) */
+"pref_tts_speedcams_always" = "Brīdināt vienmēr";
+
+/* Speed camera settings menu option - Never warn (about speedcams) */
+"pref_tts_speedcams_never" = "Nekad nebrīdināt";
+
+"power_managment_title" = "Energotaupības režīms";
+
+"power_managment_description" = "Mēģināt samazināt enerģijas patēriņu, izslēdzot atsevišķas funkcijas.";
+
+"power_managment_setting_never" = "Nekad";
+
+"power_managment_setting_auto" = "Kad ir zems uzlādes līmenis";
+
+"power_managment_setting_manual_max" = "Vienmēr";
+
+"enable_logging_warning_message" = "Uz laiku ieslēdziet šo opciju, lai reģistrētu un manuāli nosūtītu sīkākus žurnālus problēmu diagnostikai, izmantojot „Ziņot par kļūdu“ funkciju palīdzības lodziņā. Žurnāli var saturēt informāciju par atrašanās vietu.";
+
+"driving_options_title" = "Maršruta opcijas";
+
+/* Recommended length for CarPlay and Android Auto is around 25-27 characters */
+"avoid_tolls" = "Izvairīties no maksas ceļiem";
+
+/* Recommended length for CarPlay and Android Auto is around 25-27 characters */
+"avoid_unpaved" = "Izvairīties no zemes ceļiem";
+
+/* Recommended length for CarPlay and Android Auto is around 25-27 characters */
+"avoid_ferry" = "Izvairīties no prāmjiem";
+
+"avoid_motorways" = "Izvairīties no automaģistrālēm";
+
+"unable_to_calc_alert_title" = "Neizdevās aprēķināt maršrutu";
+
+"unable_to_calc_alert_subtitle" = "Maršrutu neatrada. Iespējams, maršruta iestatījumi ir pārāk ierobežojoši vai trūkst „OpenStreetMap“ datu. Mēģiniet mainīt iestatījumus un atkārtot.";
+
+"define_to_avoid_btn" = "Noteikt nevēlamos ceļus";
+
+"change_driving_options_btn" = "Maršruta izvēles ir ieslēgtas";
+
+"toll_road" = "Maksas ceļš";
+
+"unpaved_road" = "Neasfaltēts ceļš";
+
+"ferry_crossing" = "Prāmja pārceltuve";
+
+"trip_start" = "Uz priekšu";
+
+"pick_destination" = "Galamērķis";
+
+"follow_my_position" = "Centrēt";
+
+"search_results" = "Meklēšanas rezultāti";
+
+"then_turn" = "Pēc tam";
+
+"redirect_route_alert" = "Vai vēlaties maršrutu izveidot no jauna?";
+
+/* A generic "Yes" button in dialogs */
+"yes" = "Jā";
+
+/* A generic "No" button in dialogs */
+"no" = "Nē";
+
+/* E.g. "WiFi:Yes" */
+"yes_available" = "Ir";
+
+/* E.g. "WiFi:No" */
+"no_available" = "Nav";
+
+/* To indicate the capacity of car parkings, bicycle parkings, electric vehicle charging stations... */
+"capacity" = "Ietilpība: %@";
+
+/* To indicate the network of ATMs, bicycle rentals, electric vehicle charging stations... */
+"network" = "Tīkls: %@";
+
+"trip_finished" = "Ieradāties galamērķī!";
+
+"keyboard_availability_alert" = "Braukšanas laikā tastatūra nav pieejama";
+
+"dialog_routing_change_start_carplay" = "No pašreizējās vietas maršrutu izveidot nevar";
+
+"dialog_routing_change_end_carplay" = "Neizdodas atrast maršrutu līdz galamērķim. Izvēlieties citu galamērķa punktu";
+
+"dialog_routing_check_gps_carplay" = "Nav GPS signāla. Aizejiet līdz atklātai vietai";
+
+"dialog_routing_unable_locate_route_carplay" = "Neizdevās izveidot maršrutu. Norādiet citus maršruta punktus";
+
+"dialog_routing_download_files_carplay" = "Lejupielādējiet trūkstošās kartes, lai izveidotu maršrutu";
+
+"dialog_routing_system_error_carplay" = "Notika kļūda. Palaidiet programmu no jauna";
+
+"dialog_routing_rebuild_from_current_location_carplay" = "Maršrutu izveidos no jūsu pašreizējās vietas";
+
+"dialog_routing_rebuild_for_vehicle_carplay" = "Maršrutu konvertēs par piemērotu automobilim";
+
+"not_all_shown_bookmarks_carplay" = "Nav parādītas visas grāmatzīmes";
+
+"switch_to_phone_bookmarks_carplay" = "Lai redzētu visas grāmatzīmes, pārslēdzieties uz tālruni";
+
+"ok" = "Labi";
+
+"speedcams_alert_title_carplay_1" = "Fotoradari";
+
+"speedcams_alert_title_carplay_2" = "Ātruma brīdinājumi";
+
+"download_map_carplay" = "Lejupielādējiet lietotnes kartes savā mobilajā ierīcē";
+
+"carplay_roundabout_exit" = "%@ izeja";
+
+/* max. 10 symbols, both iOS and Android */
+"sort" = "Kārtot…";
+
+/* iOS */
+"sort_default" = "Kārtot pēc noklusējuma";
+
+"sort_type" = "Kārtot pēc tipa";
+
+"sort_distance" = "Kārtot pēc attāluma";
+
+"sort_date" = "Kārtot pēc datuma";
+
+"sort_name" = "Kārtot pēc nosaukuma";
+
+"week_ago_sorttype" = "Pirms nedēļas";
+
+"month_ago_sorttype" = "Pirms mēneša";
+
+"moremonth_ago_sorttype" = "Vairāk nekā pirms mēneša";
+
+"moreyear_ago_sorttype" = "Vairāk nekā pirms gada";
+
+"near_me_sorttype" = "Man tuvumā";
+
+"others_sorttype" = "Cits";
+
+
+/********** Bookmark types used for sorting **********/
+
+"food_places" = "Ēdiens";
+
+"tourist_places" = "Apskates objekti";
+
+"museums" = "Muzeji";
+
+"parks" = "Parki";
+
+"swim_places" = "Peldvietas";
+
+"mountains" = "Kalni";
+
+"animals" = "Dzīvnieki";
+
+"hotels" = "Viesnīcas";
+
+"buildings" = "Ēkas";
+
+"money" = "Nauda";
+
+"shops" = "Veikali";
+
+"parkings" = "Autostāvvietas";
+
+"fuel_places" = "Degvielas uzpildes stacija";
+
+"medicine" = "Medicīna";
+
+"search_in_the_list" = "Meklēt sarakstā";
+
+"religious_places" = "Reliģiskas vietas";
+
+"transit_not_found" = "Metro navigācija šajā reģionā nav pieejama";
+
+"dialog_pedestrian_route_is_long_header" = "Metro maršruts nav atrasts";
+
+"dialog_pedestrian_route_is_long_message" = "Izvēlieties sākuma un beigu punktu tuvāk metro stacijai";
+
+"button_layer_isolines" = "Reljefa līnijas";
+
+"isolines_activation_error_dialog" = "Reljefa līniju parādīšanai nepieciešamas lejupielādēt šī reģiona karti";
+
+"isolines_location_error_dialog" = "Topogrāfiskais slānis šim reģionam nav pieejams";
+
+"elevation_profile_diff_level" = "Sarežģītības līmenis";
+
+"elevation_profile_diff_level_easy" = "Viegls";
+
+"elevation_profile_diff_level_moderate" = "Normāls";
+
+"elevation_profile_diff_level_hard" = "Sarežģīts";
+
+"elevation_profile_ascent" = "Kāpums";
+
+"elevation_profile_descent" = "Kritums";
+
+"elevation_profile_min_elevation" = "Zemākais punkts";
+
+"elevation_profile_max_elevation" = "Augstākais punkts";
+
+"elevation_profile_difficulty" = "Sarežģītība";
+
+"elevation_profile_time" = "Laiks:";
+
+"isolines_toast_zooms_1_10" = "Pietuviniet, lai izpētītu izolīnijas";
+
+"downloader_updating_ios" = "Atjaunina";
+
+"downloader_loading_ios" = "Lejupielādē";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_title" = "Atjaunināt lejupielādētās kartes";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_message" = "Karšu atjaunināšana nodrošina, ka karšu informācija ir svaiga";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_button_size" = "Atjaunināt (%@)";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_button_later" = "Atjaunināšu vēlāk";
+
+/* Delete track button on track edit screen */
+"placepage_delete_track_button" = "Dzēst ceļu";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Tiešām vēlies dzēst šo ceļu?";
+
+/* Placeholder for track name input on track edit screen */
+"placepage_track_name_hint" = "Ceļa nosaukums";
+
+/* move track or bookmark from the list button text */
+"move" = "Pārvietot";
+
+/* edit track screen title */
+"track_title" = "Ceļš";
+
+/* Telegram group url for the "?" About page */
+"telegram_url" = "https://t.me/OrganicMapsApp";
+
+/* Instagram account url for the "?" About page */
+"instagram_url" = "https://www.instagram.com/organicmaps.app";
+
+/* Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content */
+"translated_om_site_url" = "https://organicmaps.app/";
+
+/* Link to OSM wiki for Editor, Profile and About pages */
+"osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
+
+/* App Tip #00 */
+"app_tip_00" = "Paldies, ka izmantojat mūsu kopienas veidotās kartes!";
+
+/* App tip #01 */
+"app_tip_01" = "Ar jūsu ziedojumiem un atbalstu varam izveidot pasaulē labākās kartes!";
+
+/* App tip #02 */
+"app_tip_02" = "lv = Vai jums patīk mūsu lietotne? Lūdzam ziedot tās attīstībai! Varbūt tā nepatīk? Tādā gadījumā lūdzam mums pastāstīt, kas tajā nepatīk, lai varam „Organic Maps“ uzlabot!";
+
+/* App tip #03 */
+"app_tip_03" = "Ja pazīstat kādu programmatūras izstrādātāju, varat viņam vai viņai palūgt ieviest funkciju, kas jums pietrūkst.";
+
+/* App tip #04 */
+"app_tip_04" = "Tap anywhere on the map to select anything. A long tap is used to hide and show the interface.";
+
+/* App tip #05 */
+"app_tip_05" = "Vai zinājāt, ka ir iespējams atlasīt jūsu pašreizējo atrašanās vietu kartē?";
+
+/* App tip #06 */
+"app_tip_06" = "Varat palīdzēt tulkot lietotni savā valodā.";
+
+/* App tip #07 */
+"app_tip_07" = "Šo lietotni veido daži entuziasti un mūsu kopiena.";
+
+/* App tip #08 */
+"app_tip_08" = "Kartes datus varat viegli labot un papildināt.";
+
+/* App tip #09 */
+"app_tip_09" = "Mūsu mērķis ir izveidot viegli lietojamas kartes, kas respektē jūsu privātumu un kuras jums patiks.";
+
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Tagad „Organic Maps“ izmantojat tālruņa ekrānā";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Tagad „Organic Maps“ izmantojat automobiļa ekrānā";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Turpināt tālrunī";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Uz auto ekrānu";
+
+/* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
+"button_layer_outdoor" = "Aktīvā atpūta";
+
+/* Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks */
+"bookmarks_export" = "Eksportēt visas grāmatzīmes un ceļus";
+
+/* Text for the editing the Track's color button. */
+"change_color" = "Mainīt krāsu";
+
+/* Main screen title "Map" displayed in the navigation back button's menu. */
+"map" = "Karte";
+
+"drive_through" = "Caurbrauktuve caur";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Saite uz ēdienkarti";
+
+/* Message for the bug report alert. */
+"bugreport_alert_message" = "Vai vēlaties izstrādātājiem nosūtīt ziņojumu par kļūdu?\nMēs paļaujamies uz šiem ziņojumiem, jo „Organic Maps“ automātiski nevāc nekādus datus par kļūdām. Jau iepriekš pateicamies par „Organic Maps“ atbalstīšanu!";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Ieslēgta „iCloud“ sinhronizācija";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "„iCloud“ sinhronizācija šobrīd ir eksperimentāla iespēja, ko joprojām veidojam. Pirms tās izmantošanas izveidojiet grāmatzīmju un ceļu dublējumkopijas.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "„iCloud“ ir izslēgts";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Ja vēlaties izmantot šo funkciju, ierīces iestatījumos ieslēdziet „iCloud“.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Ieslēgt";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Dublējumkopija";
+
+/* Title for the "iCloud synchronization failure" alert. */
+"icloud_synchronization_error_alert_title" = "„iCloud“ sinhronizācijas kļūda";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Kļūda: sinhronizācija neizdevās savienojuma kļūdas dēļ";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Kļūda: sinhronizācija neizdevās pārsniegtas „iCloud“ kvotas dēļ";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Kļūda: „iCloud“ nav pieejams";
+
+/* Title for the "Open In Another App" button on the PlacePage. */
+"open_in_app" = "Atvērt citā lietotnē";
+
+/* To indicate if restaurant or other place has outdoor seating */
+"outdoor_seating" = "Sēdvietas ārā";
+
+/* Title for the "Recently Deleted Lists" button on the Bookmarks and Lists screen. */
+"bookmarks_recently_deleted" = "Nesen dzēstie saraksti";
+
+/* Title for the "Clear" button on the Recently Deleted Lists screen. */
+"clear" = "Notīrīt";
+
+/* Title for the "Delete All" button on the Recently Deleted Lists screen. */
+"delete_all" = "Dzēst visu";
+
+/* Title for the "Recover" button on the Recently Deleted Lists screen. */
+"recover" = "Atjaunot";
+
+/* Title for the "Recover All" button on the Recently Deleted Lists screen. */
+"recover_all" = "Atjaunot visu";
+
+/* Prompt to start recording a track. */
+"start_track_recording" = "Record Track";
+
+/* Prompt for stopping a track recording. */
+"stop_track_recording" = "Stop Track Recording";
+
+/* Title for the "Stop Without Saving" action for the alert when saving a track recording. */
+"stop_without_saving" = "Stop Without Saving";
+
+/* Title for the "Stop Without Saving" action for the alert when saving a track recording. */
+"continue_recording" = "Continue Recording";
+
+/* Title for the alert when saving a track recording. */
+"track_recording_alert_title" = "Save into Bookmarks and Tracks?";
+
+/* Message for the toast when saving the track recording is finished but nothing to save. */
+"track_recording_toast_nothing_to_save" = "Track is empty - nothing to save";
+
+"edit_track" = "Ceļa labošana";
+
+
+/********** Types **********/
+
+"type.addr_interpolation" = "Address/Block";
+
+"type.addr_interpolation.even" = "Address/Block";
+
+"type.addr_interpolation.odd" = "Address/Block";
+
+"type.aerialway" = "Aerialway";
+
+"type.aerialway.cable_car" = "Cable Car";
+
+"type.aerialway.chair_lift" = "Chair Lift";
+
+"type.aerialway.drag_lift" = "Drag Lift";
+
+"type.aerialway.gondola" = "Gondola";
+
+"type.aerialway.mixed_lift" = "Mixed Lift";
+
+"type.aerialway.station" = "Aerialway Station";
+
+"type.aeroway" = "Airspace Infrastructure";
+
+"type.aeroway.aerodrome" = "Airport";
+
+"type.aeroway.aerodrome.international" = "International Airport";
+
+"type.aeroway.apron" = "Apron";
+
+"type.aeroway.gate" = "Gate";
+
+"type.aeroway.helipad" = "Helipad";
+
+"type.aeroway.runway" = "Runway";
+
+"type.aeroway.taxiway" = "Taxiway";
+
+"type.aeroway.terminal" = "Terminal";
+
+"type.amenity" = "Amenity";
+
+"type.amenity.arts_centre" = "Arts Center";
+
+"type.amenity.atm" = "ATM";
+
+"type.amenity.bank" = "Bank";
+
+"type.amenity.bar" = "Bar";
+
+"type.amenity.bbq" = "Barbecue Grill";
+
+"type.amenity.bench" = "Bench";
+
+"type.amenity.bicycle_parking" = "Bicycle Parking";
+
+"type.amenity.bicycle_rental" = "Bicycle Rental";
+
+"type.amenity.bicycle_repair_station" = "Bicycle Repair Station";
+
+"type.amenity.biergarten" = "Biergarten";
+
+"type.amenity.brothel" = "Brothel";
+
+"type.amenity.bureau_de_change" = "Currency Exchange";
+
+"type.amenity.bus_station" = "Bus Station";
+
+"type.amenity.cafe" = "Cafe";
+
+"type.amenity.car_rental" = "Car Rental";
+
+"type.amenity.car_sharing" = "Car Sharing";
+
+"type.amenity.car_wash" = "Car Wash";
+
+"type.amenity.casino" = "Casino";
+
+"type.amenity.gambling" = "Gambling";
+
+"type.leisure.adult_gaming_centre" = "Adult Gaming Centre";
+
+"type.leisure.amusement_arcade" = "Arcade";
+
+"type.amenity.charging_station" = "Charging Station";
+
+"type.amenity.charging_station.bicycle" = "Bicycle Charging Station";
+
+"type.amenity.charging_station.motorcar" = "Car Charging Station";
+
+"type.amenity.childcare" = "Nursery";
+
+"type.amenity.cinema" = "Cinema";
+
+"type.leisure.bowling_alley" = "Bowling Alley";
+
+"type.amenity.clinic" = "Clinic";
+
+"type.amenity.college" = "College";
+
+"type.amenity.community_centre" = "Community Centre";
+
+"type.amenity.compressed_air" = "Compressed Air";
+
+"type.amenity.conference_centre" = "Conference Center";
+
+"type.amenity.courthouse" = "Courthouse";
+
+"type.amenity.dentist" = "Dentist";
+
+"type.amenity.doctors" = "Doctor";
+
+"type.amenity.drinking_water" = "Drinking Water";
+
+"type.drinking_water.yes" = "Drinking Water";
+
+"type.amenity.driving_school" = "Driving School";
+
+"type.amenity.exhibition_centre" = "Exhibition Center";
+
+"type.amenity.money_transfer" = "Money Transfer";
+
+"type.amenity.music_school" = "Music School";
+
+"type.amenity.language_school" = "Language School";
+
+"type.office.diplomatic" = "Embassy";
+
+"type.amenity.fast_food" = "Fast Food";
+
+"type.amenity.ferry_terminal" = "Ferry";
+
+"type.amenity.fire_station" = "Fire Station";
+
+"type.amenity.food_court" = "Food Court";
+
+"type.amenity.fountain" = "Fountain";
+
+"type.amenity.fuel" = "Gas Station";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.amenity.grave_yard" = "Graveyard";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.amenity.grave_yard.christian" = "Graveyard";
+
+"type.amenity.hospital" = "Hospital";
+
+"type.amenity.hunting_stand" = "Hunting Stand";
+
+"type.amenity.ice_cream" = "Ice Cream";
+
+"type.amenity.internet_cafe" = "Internet Cafe";
+
+"type.amenity.kindergarten" = "Kindergarten";
+
+"type.amenity.library" = "Library";
+
+"type.amenity.loading_dock" = "Loading Dock";
+
+"type.amenity.marketplace" = "Marketplace";
+
+"type.amenity.motorcycle_parking" = "Motorcycle Parking";
+
+"type.amenity.nightclub" = "Nightclub";
+
+"type.amenity.nursing_home" = "Nursing Home";
+
+"type.amenity.parking" = "Parking";
+
+"type.amenity.parking.fee" = "Parking";
+
+"type.amenity.parking.multi.storey" = "Multi Storey Parking";
+
+"type.amenity.parking.multi.storey.fee" = "Multi Storey Parking";
+
+"type.amenity.parking.no.access" = "Private Parking";
+
+"type.amenity.parking.permissive" = "Private Parking";
+
+"type.amenity.parking.private" = "Private Parking";
+
+"type.amenity.parking.park_and_ride" = "Park And Ride Parking";
+
+"type.amenity.parking.underground" = "Underground Parking";
+
+"type.amenity.parking.underground.fee" = "Underground Parking";
+
+"type.amenity.parking.underground.private" = "Private Underground Parking";
+
+"type.amenity.parking.street_side" = "Street-Side Parking";
+
+"type.amenity.parking.street_side.fee" = "Street-Side Parking";
+
+"type.amenity.parking.street_side.private" = "Private Street-Side Parking";
+
+"type.amenity.parking.lane" = "Lane Parking";
+
+"type.amenity.parking.lane.fee" = "Lane Parking";
+
+"type.amenity.parking.lane.private" = "Private Lane Parking";
+
+"type.amenity.parking_entrance" = "Parking Entrance";
+
+"type.amenity.parking_entrance.private" = "Private Parking Entrance";
+
+"type.amenity.parking_entrance.permissive" = "Parking Entrance";
+
+"type.amenity.parking_space" = "Parking Space";
+
+"type.amenity.parking_space.permissive" = "Parking Space";
+
+"type.amenity.parking_space.private" = "Parking Space";
+
+"type.amenity.parking_space.underground" = "Parking Space";
+
+"type.amenity.parking_space.disabled" = "Disabled Parking Space";
+
+"type.amenity.payment_terminal" = "Payment Terminal";
+
+"type.amenity.pharmacy" = "Pharmacy";
+
+"type.amenity.place_of_worship" = "Place of Worship";
+
+"type.amenity.place_of_worship.buddhist" = "Buddhist Temple";
+
+"type.amenity.place_of_worship.christian" = "Church";
+
+"type.amenity.place_of_worship.christian.mormon" = "Church of Jesus Christ of Latter Day Saints";
+
+"type.amenity.place_of_worship.christian.jehovahs_witness" = "Jehovah's Witnesses Kingdom Hall";
+
+"type.amenity.place_of_worship.hindu" = "Hindu Temple";
+
+"type.amenity.place_of_worship.jewish" = "Synagogue";
+
+"type.amenity.place_of_worship.muslim" = "Mosque";
+
+"type.amenity.place_of_worship.shinto" = "Shinto Shrine";
+
+"type.amenity.place_of_worship.taoist" = "Taoist Temple";
+
+"type.amenity.police" = "Police";
+
+"type.amenity.post_box" = "Mailbox";
+
+"type.amenity.post_office" = "Post Office";
+
+"type.amenity.prison" = "Prison";
+
+"type.amenity.pub" = "Pub";
+
+"type.amenity.public_bookcase" = "Book Exchange";
+
+
+/********** Types: Recycling **********/
+
+"type.amenity.recycling.centre" = "Recycling Center";
+
+"type.amenity.recycling" = "Recycling Container";
+
+"type.amenity.recycling.container" = "Recycling Container";
+
+"type.recycling.batteries" = "Batteries";
+
+"type.recycling.clothes" = "Clothes";
+
+"type.recycling.glass_bottles" = "Glass Bottles";
+
+"type.recycling.paper" = "Paper";
+
+"type.recycling.plastic" = "Plastic";
+
+"type.recycling.plastic_bottles" = "Plastic Bottles";
+
+"type.recycling.scrap_metal" = "Scrap Metal";
+
+"type.recycling.small_appliances" = "Electronic Waste";
+
+"type.recycling.cardboard" = "Cardboard";
+
+"type.recycling.cans" = "Cans";
+
+"type.recycling.shoes" = "Shoes";
+
+"type.recycling.green_waste" = "Green/Organic Waste";
+
+"type.recycling.cartons" = "Cartons";
+
+"type.amenity.restaurant" = "Restaurant";
+
+"type.amenity.sanitary_dump_station" = "Holding Tank Dump Station";
+
+"type.amenity.school" = "School";
+
+/* Weather shelter (including sun shelters and natural rock shelters). */
+"type.amenity.shelter" = "Shelter";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Shelter";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivouac Hut";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
+
+"type.amenity.public_bath" = "Public Bath";
+
+"type.amenity.shower" = "Shower";
+
+"type.amenity.stripclub" = "Stripclub";
+
+"type.amenity.taxi" = "Taxi Stand";
+
+"type.amenity.telephone" = "Phone";
+
+"type.amenity.theatre" = "Theatre";
+
+"type.amenity.toilets" = "Toilet";
+
+"type.toilets.yes" = "Toilet";
+
+"type.amenity.townhall" = "Town Hall";
+
+"type.amenity.university" = "University";
+
+"type.amenity.vending_machine" = "Vending Machine";
+
+"type.amenity.vending_machine.cigarettes" = "Cigarette Dispenser";
+
+"type.amenity.vending_machine.coffee" = "Coffee Dispenser";
+
+"type.amenity.vending_machine.condoms" = "Condoms Dispenser";
+
+"type.amenity.vending_machine.drinks" = "Drinks Dispenser";
+
+"type.amenity.vending_machine.food" = "Food Dispenser";
+
+"type.amenity.vending_machine.newspapers" = "Newspaper Dispenser";
+
+"type.amenity.vending_machine.parking_tickets" = "Parking Meter";
+
+"type.amenity.vending_machine.public_transport_tickets" = "Ticket Machine";
+
+"type.amenity.vending_machine.sweets" = "Sweets Dispenser";
+
+"type.amenity.vending_machine.excrement_bags" = "Excrement Bags Dispenser";
+
+"type.amenity.parcel_locker" = "Parcel Locker";
+
+"type.amenity.vehicle_inspection" = "Vehicle Inspection";
+
+"type.amenity.vending_machine.fuel" = "Fuel Pump";
+
+"type.amenity.veterinary" = "Veterinary Doctor";
+
+"type.amenity.waste_basket" = "Trash Bin";
+
+"type.amenity.waste_disposal" = "Dumpster";
+
+"type.amenity.waste_transfer_station" = "Waste Transfer Station";
+
+"type.amenity.water_point" = "Water Tank Refill Point";
+
+"type.amenity.water_point.drinking_water_no" = "Water Tank Refill Point";
+
+"type.barrier" = "Barrier";
+
+"type.barrier.block" = "Block";
+
+"type.barrier.bollard" = "Bollard";
+
+"type.barrier.border_control" = "Border Control";
+
+"type.barrier.chain" = "Chain";
+
+"type.barrier.city_wall" = "City Wall";
+
+"type.barrier.cycle_barrier" = "Cycle Barrier";
+
+"type.waterway.ditch" = "Drainage Ditch";
+
+"type.natural.water.moat" = "Moat";
+
+"type.natural.water.wastewater" = "Wastewater";
+
+"type.barrier.entrance" = "Entrance";
+
+"type.barrier.fence" = "Fence";
+
+"type.barrier.gate" = "Gate";
+
+"type.barrier.hedge" = "Hedge";
+
+"type.barrier.kissing_gate" = "Gate";
+
+"type.barrier.lift_gate" = "Lift Gate";
+
+"type.barrier.retaining_wall" = "Retaining Wall";
+
+"type.barrier.stile" = "Stile";
+
+"type.barrier.turnstile" = "Turnstile";
+
+"type.barrier.swing_gate" = "Swing Gate";
+
+"type.barrier.toll_booth" = "Toll Booth";
+
+"type.barrier.wall" = "Wall";
+
+"type.boundary" = "Boundary";
+
+"type.boundary.administrative" = "Administrative Boundary";
+
+/* Borders between countries. */
+"type.boundary.administrative.2" = "National Border";
+
+/* Country's primary subdivision borders, e.g. between regions, provinces, states.. */
+"type.boundary.administrative.3" = "Regional Boundary";
+
+/* Country's primary subdivision borders, e.g. between regions, provinces, states.. */
+"type.boundary.administrative.4" = "Regional Boundary";
+
+"type.boundary.national_park" = "National Park";
+
+"type.boundary.aboriginal_lands" = "Indigenous Lands";
+
+"type.boundary.protected_area" = "Protected Area";
+
+"type.boundary.protected_area.1" = "Protected Area";
+
+"type.boundary.protected_area.2" = "Protected Area";
+
+"type.boundary.protected_area.3" = "Protected Area";
+
+"type.boundary.protected_area.4" = "Protected Area";
+
+"type.boundary.protected_area.5" = "Protected Area";
+
+"type.boundary.protected_area.6" = "Protected Area";
+
+"type.building" = "Building";
+
+/* Duplicates [address] in strings.txt */
+"type.building.address" = "Address";
+
+"type.building.has_parts" = "Building";
+
+"type.building_part" = "Building";
+
+"type.building.garage" = "Garage";
+
+"type.building.train_station" = "Station Building";
+
+"type.building.warehouse" = "Warehouse";
+
+"type.cemetery.grave" = "Grave";
+
+"type.craft" = "Craft";
+
+"type.craft.beekeeper" = "Beekeeper";
+
+"type.craft.blacksmith" = "Blacksmith";
+
+"type.craft.brewery" = "Craft Brewery";
+
+"type.craft.caterer" = "Caterer";
+
+"type.craft.carpenter" = "Carpenter";
+
+"type.craft.confectionery" = "Confectioner";
+
+"type.craft.electrician" = "Electrician";
+
+"type.craft.electronics_repair" = "Electronics Repair";
+
+"type.craft.gardener" = "Gardener";
+
+"type.craft.grinding_mill" = "Grinding Mill";
+
+"type.craft.handicraft" = "Handicraft";
+
+/* Heating, Ventilation, and Air Conditioning */
+"type.craft.hvac" = "HVAC";
+
+"type.craft.key_cutter" = "Key Cutting";
+
+"type.craft.locksmith" = "Locksmith";
+
+"type.craft.metal_construction" = "Metal Worker";
+
+"type.craft.painter" = "House Painter";
+
+"type.craft.photographer" = "Photographer";
+
+"type.shop.camera" = "Camera Shop";
+
+"type.craft.plumber" = "Plumber";
+
+"type.craft.sawmill" = "Sawmill";
+
+"type.craft.shoemaker" = "Shoe Repair";
+
+"type.craft.winery" = "Winery";
+
+"type.craft.tailor" = "Tailor";
+
+"type.cuisine.african" = "African";
+
+"type.cuisine.american" = "American";
+
+"type.cuisine.arab" = "Arab";
+
+"type.cuisine.argentinian" = "Argentinian";
+
+"type.cuisine.asian" = "Asian";
+
+"type.cuisine.austrian" = "Austrian";
+
+"type.cuisine.bagel" = "Bagel";
+
+"type.cuisine.balkan" = "Balkan";
+
+"type.cuisine.barbecue" = "Barbecue";
+
+"type.cuisine.bavarian" = "Bavarian";
+
+"type.cuisine.beef_bowl" = "Beef Bowl";
+
+"type.cuisine.brazilian" = "Brazilian";
+
+"type.cuisine.breakfast" = "Breakfast";
+
+"type.cuisine.bubble_tea" = "Bubble Tea";
+
+"type.cuisine.burger" = "Burger";
+
+"type.cuisine.buschenschank" = "Buschenschank";
+
+"type.cuisine.cake" = "Cake";
+
+"type.cuisine.caribbean" = "Caribbean";
+
+"type.cuisine.chicken" = "Chicken";
+
+"type.cuisine.chinese" = "Chinese";
+
+"type.cuisine.coffee_shop" = "Coffee";
+
+"type.cuisine.crepe" = "Crepe";
+
+"type.cuisine.croatian" = "Croatian";
+
+"type.cuisine.curry" = "Curry";
+
+"type.cuisine.deli" = "Deli";
+
+"type.cuisine.diner" = "Diner";
+
+"type.cuisine.donut" = "Donut";
+
+"type.cuisine.ethiopian" = "Ethiopian";
+
+"type.cuisine.filipino" = "Filipino";
+
+"type.cuisine.fine_dining" = "Fine Dining";
+
+"type.cuisine.fish" = "Fish";
+
+"type.cuisine.fish_and_chips" = "Fish and Chips";
+
+"type.cuisine.french" = "French";
+
+"type.cuisine.friture" = "Friture";
+
+"type.cuisine.georgian" = "Georgian";
+
+"type.cuisine.german" = "German";
+
+"type.cuisine.greek" = "Greek";
+
+"type.cuisine.grill" = "Grill";
+
+"type.cuisine.heuriger" = "Heuriger";
+
+"type.cuisine.hotdog" = "Hotdog";
+
+"type.cuisine.hungarian" = "Hungarian";
+
+"type.cuisine.ice_cream" = "Ice Cream";
+
+"type.cuisine.indian" = "Indian";
+
+"type.cuisine.indonesian" = "Indonesian";
+
+"type.cuisine.international" = "International";
+
+"type.cuisine.irish" = "Irish";
+
+"type.cuisine.italian" = "Italian";
+
+"type.cuisine.italian_pizza" = "Italian, Pizza";
+
+"type.cuisine.japanese" = "Japanese";
+
+"type.cuisine.kebab" = "Kebab";
+
+"type.cuisine.korean" = "Korean";
+
+"type.cuisine.lao" = "Lao";
+
+"type.cuisine.lebanese" = "Lebanese";
+
+"type.cuisine.local" = "Local";
+
+"type.cuisine.malagasy" = "Malagasy";
+
+"type.cuisine.malaysian" = "Malaysian";
+
+"type.cuisine.mediterranean" = "Mediterranean";
+
+"type.cuisine.mexican" = "Mexican";
+
+"type.cuisine.moroccan" = "Moroccan";
+
+"type.cuisine.noodles" = "Noodles";
+
+"type.cuisine.oriental" = "East Asian";
+
+"type.cuisine.pancake" = "Pancake";
+
+"type.cuisine.pasta" = "Pasta";
+
+"type.cuisine.persian" = "Persian";
+
+"type.cuisine.peruvian" = "Peruvian";
+
+"type.cuisine.pizza" = "Pizza";
+
+"type.cuisine.polish" = "Polish";
+
+"type.cuisine.portuguese" = "Portuguese";
+
+"type.cuisine.ramen" = "Ramen";
+
+"type.cuisine.regional" = "Regional";
+
+"type.cuisine.russian" = "Russian";
+
+"type.cuisine.sandwich" = "Sandwich";
+
+"type.cuisine.sausage" = "Sausage";
+
+"type.cuisine.savory_pancakes" = "Savory Pancakes";
+
+"type.cuisine.seafood" = "Seafood";
+
+"type.cuisine.soba" = "Soba";
+
+"type.cuisine.spanish" = "Spanish";
+
+"type.cuisine.steak_house" = "Steak House";
+
+"type.cuisine.sushi" = "Sushi";
+
+"type.cuisine.tapas" = "Tapas";
+
+"type.cuisine.tea" = "Tea";
+
+"type.cuisine.thai" = "Thai";
+
+"type.cuisine.turkish" = "Turkish";
+
+"type.cuisine.vegan" = "Vegan";
+
+"type.cuisine.vegetarian" = "Vegetarian";
+
+"type.cuisine.vietnamese" = "Vietnamese";
+
+"type.emergency" = "Emergency";
+
+"type.emergency.assembly_point" = "Emergency Assembly Point";
+
+"type.emergency.defibrillator" = "Defibrillator";
+
+"type.emergency.fire_hydrant" = "Fire Hydrant";
+
+"type.emergency.phone" = "Emergency Phone";
+
+/* This is for secondary entrances, for main entrances see type.entrance.main */
+"type.entrance" = "Entrance";
+
+/* This is for main/primary entrances, for secondary entrances see type.entrance */
+"type.entrance.main" = "Main Entrance";
+
+"type.entrance.exit" = "Exit";
+
+"type.fee.yes" = "$";
+
+"type.fee.no" = "Free";
+
+"type.healthcare.laboratory" = "Medical Laboratory";
+
+"type.healthcare.physiotherapist" = "Physiotherapist";
+
+"type.healthcare.alternative" = "Alternative Medicine";
+
+"type.healthcare.audiologist" = "Audiologist";
+
+"type.healthcare.blood_donation" = "Blood Donation Center";
+
+"type.healthcare.optometrist" = "Optometrist";
+
+"type.healthcare.podiatrist" = "Podiatrist";
+
+"type.healthcare.psychotherapist" = "Psychotherapist";
+
+"type.healthcare.sample_collection" = "Sample Collection Centre";
+
+"type.healthcare.speech_therapist" = "Logopedics";
+
+
+/********** Types: Roads **********/
+
+"type.highway" = "Highway";
+
+"type.highway.bridleway" = "Bridle Path";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.bridleway.bridge" = "Bridge";
+
+"type.highway.bridleway.permissive" = "Bridle Path";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.bridleway.tunnel" = "Tunnel";
+
+"type.highway.busway" = "Dedicated Bus Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.busway.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.busway.tunnel" = "Tunnel";
+
+"type.highway.bus_stop" = "Bus Stop";
+
+"type.highway.construction" = "Road Under Construction";
+
+"type.highway.cycleway" = "Cycle Path";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.cycleway.bridge" = "Bridge";
+
+"type.highway.cycleway.permissive" = "Cycle Path";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.cycleway.tunnel" = "Tunnel";
+
+"type.highway.elevator" = "Elevator";
+
+"type.highway.footway" = "Foot Path";
+
+"type.highway.footway.sidewalk" = "Sidewalk";
+
+"type.highway.footway.crossing" = "Pedestrian Crossing";
+
+"type.highway.footway.area" = "Foot Path";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.footway.bridge" = "Pedestrian Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.footway.tunnel" = "Pedestrian Tunnel";
+
+"type.highway.ford" = "Ford";
+
+"type.highway.living_street" = "Living Street";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.living_street.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.living_street.tunnel" = "Tunnel";
+
+"type.highway.motorway" = "Motorway";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.motorway.bridge" = "Motorway Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.motorway.tunnel" = "Motorway Tunnel";
+
+"type.highway.motorway_junction" = "Road Exit";
+
+"type.highway.motorway_link" = "Motorway";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.motorway_link.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.motorway_link.tunnel" = "Tunnel";
+
+"type.highway.path" = "Path";
+
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Path";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Path";
+
+"type.highway.path.bicycle" = "Path";
+
+"type.highway.footway.bicycle" = "Path";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.path.bridge" = "Bridge";
+
+"type.highway.path.horse" = "Path";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.path.tunnel" = "Tunnel";
+
+"type.highway.pedestrian" = "Pedestrian Street";
+
+"type.highway.pedestrian.area" = "Pedestrian Street";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.pedestrian.bridge" = "Pedestrian Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.pedestrian.tunnel" = "Pedestrian Tunnel";
+
+"type.highway.primary" = "Primary Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.primary.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.primary.tunnel" = "Tunnel";
+
+"type.highway.primary_link" = "Primary Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.primary_link.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.primary_link.tunnel" = "Tunnel";
+
+"type.highway.raceway" = "Racetrack";
+
+"type.highway.residential" = "Residential Street";
+
+"type.highway.residential.area" = "Residential Street";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.residential.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.residential.tunnel" = "Tunnel";
+
+"type.highway.rest_area" = "Rest Area";
+
+"type.highway.road" = "Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.road.bridge" = "Bridge";
+
+/* A bridge structure outline. */
+"type.man_made.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.road.tunnel" = "Tunnel";
+
+"type.highway.secondary" = "Secondary Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.secondary.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.secondary.tunnel" = "Tunnel";
+
+"type.highway.secondary_link" = "Secondary Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.secondary_link.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.secondary_link.tunnel" = "Tunnel";
+
+"type.highway.service" = "Service Road";
+
+"type.highway.service.area" = "Service Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.service.bridge" = "Bridge";
+
+"type.highway.service.driveway" = "Service Road";
+
+"type.highway.service.parking_aisle" = "Service Road";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.service.tunnel" = "Tunnel";
+
+"type.highway.services" = "Service Area";
+
+"type.highway.speed_camera" = "Speed Camera";
+
+"type.highway.steps" = "Stairs";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.steps.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.steps.tunnel" = "Tunnel";
+
+"type.highway.tertiary" = "Tertiary Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.tertiary.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.tertiary.tunnel" = "Tunnel";
+
+"type.highway.tertiary_link" = "Tertiary Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.tertiary_link.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.tertiary_link.tunnel" = "Tunnel";
+
+"type.highway.track" = "Track";
+
+"type.highway.track.area" = "Track";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.track.bridge" = "Bridge";
+
+"type.highway.track.grade1" = "Track";
+
+"type.highway.track.no.access" = "Track";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.track.tunnel" = "Tunnel";
+
+"type.highway.traffic_signals" = "Traffic Lights";
+
+"type.highway.trunk" = "Trunk Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.trunk.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.trunk.tunnel" = "Tunnel";
+
+"type.highway.trunk_link" = "Trunk Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.trunk_link.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.trunk_link.tunnel" = "Tunnel";
+
+"type.highway.unclassified" = "Minor Road";
+
+"type.highway.unclassified.area" = "Minor Road";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.unclassified.bridge" = "Bridge";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.unclassified.tunnel" = "Tunnel";
+
+"type.area_highway.cycleway" = "Cycle Path";
+
+"type.area_highway.footway" = "Foot Path";
+
+"type.area_highway.living_street" = "Living Street";
+
+"type.area_highway.motorway" = "Motorway";
+
+"type.area_highway.path" = "Path";
+
+"type.area_highway.pedestrian" = "Pedestrian Street";
+
+"type.area_highway.primary" = "Primary Road";
+
+"type.area_highway.residential" = "Residential Street";
+
+"type.area_highway.secondary" = "Secondary Road";
+
+"type.area_highway.service" = "Service Road";
+
+"type.area_highway.tertiary" = "Tertiary Road";
+
+"type.area_highway.steps" = "Stairs";
+
+"type.area_highway.track" = "Track";
+
+"type.area_highway.trunk" = "Trunk Road";
+
+"type.area_highway.unclassified" = "Minor Road";
+
+"type.highway.world_level" = "highway-world_level";
+
+"type.highway.world_towns_level" = "highway-world_towns_level";
+
+
+/********** Types: Historic **********/
+
+"type.historic" = "Historic Object";
+
+"type.historic.aircraft" = "Historic Aircraft";
+
+"type.historic.anchor" = "Historic Anchor";
+
+"type.historic.archaeological_site" = "Archaeological Site";
+
+"type.historic.battlefield" = "Historic Battlefield";
+
+"type.historic.boundary_stone" = "Boundary Stone";
+
+"type.historic.cannon" = "Cannon";
+
+"type.historic.castle" = "Castle";
+
+"type.historic.castle.castrum" = "Roman Fort";
+
+"type.historic.castle.defensive" = "Stronghold Castle";
+
+"type.historic.castle.fortified_church" = "Fortified Church";
+
+"type.historic.castle.fortress" = "Fortress";
+
+"type.historic.castle.hillfort" = "Hillfort";
+
+"type.historic.castle.kremlin" = "Kremlin";
+
+"type.historic.castle.manor" = "Manor House";
+
+"type.historic.castle.palace" = "Palace";
+
+"type.historic.castle.shiro" = "Japanese Castle";
+
+"type.historic.castle.stately" = "Stately Castle";
+
+"type.historic.city_gate" = "City Gate";
+
+"type.historic.citywalls" = "City Wall";
+
+"type.historic.fort" = "Fort";
+
+"type.historic.gallows" = "Gallows";
+
+"type.historic.locomotive" = "Historic Locomotive";
+
+"type.historic.memorial" = "Memorial";
+
+"type.historic.memorial.cross" = "Memorial Cross";
+
+"type.historic.memorial.plaque" = "Commemorative Plaque";
+
+"type.historic.memorial.sculpture" = "Sculpture";
+
+"type.historic.memorial.statue" = "Statue";
+
+"type.historic.memorial.stolperstein" = "Stolperstein";
+
+"type.historic.stone" = "Historic Stone";
+
+"type.historic.memorial.war_memorial" = "War Memorial";
+
+"type.historic.mine" = "Historic Mine";
+
+"type.historic.monument" = "Monument";
+
+"type.historic.pillory" = "Pillory";
+
+"type.historic.ruins" = "Historic Ruins";
+
+"type.historic.ship" = "Ship";
+
+"type.historic.tank" = "Historic Tank";
+
+"type.historic.tomb" = "Tomb";
+
+"type.historic.wayside_cross" = "Wayside Cross";
+
+"type.historic.wayside_shrine" = "Wayside Shrine";
+
+"type.historic.wreck" = "Shipwreck";
+
+"type.hwtag" = "hwtag";
+
+"type.hwtag.bidir_bicycle" = "hwtag-bidir_bicycle";
+
+"type.hwtag.onedir_bicycle" = "hwtag-onedir_bicycle";
+
+"type.hwtag.lit" = "hwtag-lit";
+
+"type.hwtag.nobicycle" = "hwtag-nobicycle";
+
+"type.hwtag.nocar" = "hwtag-nocar";
+
+"type.hwtag.nofoot" = "hwtag-nofoot";
+
+"type.hwtag.oneway" = "hwtag-oneway";
+
+"type.hwtag.private" = "hwtag-private";
+
+"type.hwtag.toll" = "hwtag-toll";
+
+"type.hwtag.yesbicycle" = "hwtag-yesbicycle";
+
+"type.hwtag.yescar" = "hwtag-yescar";
+
+"type.hwtag.yesfoot" = "hwtag-yesfoot";
+
+"type.internet_access" = "Internet";
+
+"type.internet_access.wlan" = "Internet";
+
+"type.junction" = "Junction";
+
+"type.junction.circular" = "Roundabout";
+
+"type.junction.roundabout" = "Roundabout";
+
+"type.landuse" = "Landuse";
+
+"type.landuse.allotments" = "Allotments";
+
+"type.landuse.basin" = "Basin";
+
+"type.landuse.brownfield" = "Brownfield";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.landuse.cemetery" = "Graveyard";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.landuse.cemetery.christian" = "Graveyard";
+
+"type.landuse.churchyard" = "Churchyard";
+
+"type.landuse.commercial" = "Commercial Area";
+
+"type.landuse.construction" = "Construction Area";
+
+"type.landuse.education" = "Educational Facility";
+
+"type.landuse.farmland" = "Farmland";
+
+"type.landuse.farmyard" = "Farmyard";
+
+"type.landuse.field" = "Field";
+
+"type.landuse.flowerbed" = "Flowerbed";
+
+"type.landuse.forest" = "Forest";
+
+"type.landuse.forest.coniferous" = "Coniferous Forest";
+
+"type.landuse.forest.deciduous" = "Deciduous Forest";
+
+"type.landuse.forest.mixed" = "Mixed-Leaf Forest";
+
+"type.landuse.garages" = "Garages";
+
+"type.landuse.grass" = "Grass";
+
+"type.landuse.greenfield" = "Greenfield";
+
+"type.landuse.greenhouse_horticulture" = "Greenhouse";
+
+"type.landuse.industrial" = "Industrial Area";
+
+"type.landuse.landfill" = "Landfill";
+
+"type.landuse.meadow" = "Meadow";
+
+"type.landuse.military" = "Military Area";
+
+"type.landuse.orchard" = "Orchard";
+
+"type.landuse.quarry" = "Quarry";
+
+"type.landuse.railway" = "Railway Premises";
+
+"type.landuse.recreation_ground" = "Recreation Ground";
+
+"type.landuse.reservoir" = "Reservoir";
+
+"type.landuse.residential" = "Residential Area";
+
+"type.landuse.retail" = "Retail Area";
+
+"type.landuse.salt_pond" = "Salt Pond";
+
+"type.landuse.village_green" = "Land";
+
+"type.landuse.vineyard" = "Vineyard";
+
+"type.leisure" = "Leisure";
+
+"type.leisure.common" = "Public Land";
+
+"type.leisure.dog_park" = "Dog Park";
+
+"type.leisure.fitness_centre" = "Fitness Centre";
+
+"type.leisure.fitness_station" = "Fitness Station";
+
+"type.leisure.dance" = "Dance Hall";
+
+"type.leisure.garden" = "Garden";
+
+"type.leisure.garden.residential" = "Garden";
+
+"type.leisure.golf_course" = "Golf Course";
+
+"type.leisure.miniature_golf" = "Minigolf";
+
+"type.leisure.hackerspace" = "Hackerspace";
+
+"type.leisure.ice_rink" = "Ice Rink";
+
+"type.leisure.marina" = "Marina";
+
+"type.leisure.nature_reserve" = "Nature Reserve";
+
+"type.leisure.outdoor_seating" = "Outdoor Seating";
+
+"type.leisure.park" = "Park";
+
+"type.leisure.park.no.access" = "Park";
+
+"type.leisure.park.permissive" = "Park";
+
+"type.leisure.park.private" = "Park";
+
+"type.leisure.picnic_table" = "Picnic Table";
+
+"type.leisure.pitch" = "Sport Pitch";
+
+"type.leisure.playground" = "Playground";
+
+"type.leisure.recreation_ground" = "Recreation Ground";
+
+"type.leisure.sauna" = "Sauna";
+
+"type.leisure.slipway" = "Slipway";
+
+"type.leisure.sports_centre" = "Sports Center";
+
+"type.sport.climbing" = "Climbing Centre";
+
+"type.sport.yoga" = "Yoga Studio";
+
+"type.leisure.stadium" = "Stadium";
+
+"type.leisure.swimming_pool" = "Swimming Pool";
+
+"type.leisure.swimming_pool.private" = "Swimming Pool";
+
+"type.leisure.track" = "Track";
+
+"type.leisure.track.area" = "Track";
+
+"type.leisure.water_park" = "Water Park";
+
+"type.leisure.beach_resort" = "Beach Resort";
+
+"type.man_made" = "Man Made";
+
+"type.man_made.breakwater" = "Breakwater";
+
+"type.man_made.cairn" = "Cairn";
+
+"type.man_made.chimney" = "Chimney";
+
+"type.man_made.cutline" = "Cutline";
+
+"type.man_made.survey_point" = "Survey Point";
+
+"type.man_made.flagpole" = "Flagpole";
+
+"type.man_made.lighthouse" = "Lighthouse";
+
+"type.man_made.mast" = "Mast";
+
+"type.man_made.pier" = "Pier";
+
+"type.man_made.pipeline" = "Pipeline";
+
+"type.man_made.pipeline.overground" = "Overground Pipeline";
+
+"type.man_made.silo" = "Silo";
+
+"type.man_made.storage_tank" = "Storage Tank";
+
+"type.man_made.surveillance" = "Surveillance Camera";
+
+"type.man_made.tower" = "Tower";
+
+"type.man_made.tower.communication" = "Communications Tower";
+
+"type.man_made.wastewater_plant" = "Wastewater Treatment Plant";
+
+"type.man_made.water_tap" = "Water Tap";
+
+"type.man_made.water_tap.drinking_water_no" = "Water Tap";
+
+"type.man_made.water_tower" = "Water Tower";
+
+"type.man_made.water_well" = "Water Well";
+
+"type.man_made.water_well.drinking_water_no" = "Water Well";
+
+"type.man_made.windmill" = "Windmill";
+
+"type.man_made.works" = "Industrial Works";
+
+"type.mapswithme" = "mapswithme";
+
+"type.mapswithme.grid" = "mapswithme-grid";
+
+"type.military" = "Military";
+
+"type.military.bunker" = "Bunker";
+
+"type.mountain_pass" = "Mountain Pass";
+
+"type.natural" = "Nature";
+
+/* A rocky land cover. */
+"type.natural.bare_rock" = "Bare Rock";
+
+/* A land cover consisting of rounded rock fragments (pebbles) on a beach or riverbed. */
+"type.natural.shingle" = "Shingle";
+
+/* A loose surface consisting of angular, sharp stones. Usually on a mountain slope and prone to landslides. */
+"type.natural.scree" = "Scree";
+
+"type.natural.bay" = "Bay";
+
+"type.natural.beach" = "Beach";
+
+"type.natural.beach.sand" = "Sandy Beach";
+
+"type.natural.beach.gravel" = "Gravel Beach";
+
+"type.natural.cape" = "Cape";
+
+"type.natural.cave_entrance" = "Cave Entrance";
+
+"type.natural.cliff" = "Cliff";
+
+"type.natural.earth_bank" = "Earth Bank";
+
+"type.man_made.embankment" = "Embankment";
+
+"type.natural.coastline" = "Coastline";
+
+"type.natural.desert" = "Desert";
+
+"type.natural.geyser" = "Geyser";
+
+"type.natural.glacier" = "Glacier";
+
+"type.natural.grassland" = "Grassland";
+
+"type.natural.heath" = "Heath";
+
+"type.natural.hot_spring" = "Hot Spring";
+
+"type.natural.water.lake" = "Lake";
+
+"type.natural.water.lock" = "Lock Chamber";
+
+"type.natural.water.pond" = "Pond";
+
+"type.natural.water.reservoir" = "Reservoir";
+
+"type.natural.water.basin" = "Basin";
+
+"type.natural.water.river" = "River";
+
+"type.natural.land" = "Land";
+
+"type.natural.meadow" = "Meadow";
+
+"type.natural.orchard" = "Orchard";
+
+"type.natural.peak" = "Peak";
+
+"type.natural.saddle" = "Mountain Saddle";
+
+"type.natural.rock" = "Rock";
+
+"type.natural.scrub" = "Scrub";
+
+"type.natural.spring" = "Natural Spring";
+
+"type.natural.spring.drinking_water_no" = "Natural Spring";
+
+"type.natural.strait" = "Strait";
+
+"type.natural.tree_row" = "Tree Row";
+
+"type.natural.vineyard" = "Vineyard";
+
+"type.natural.volcano" = "Volcano";
+
+"type.natural.water" = "Water";
+
+"type.natural.wetland" = "Wetland";
+
+"type.natural.wetland.bog" = "Bog";
+
+"type.natural.wetland.marsh" = "Marsh";
+
+"type.noexit" = "Dead End";
+
+"type.office" = "Office";
+
+"type.office.company" = "Company Office";
+
+"type.office.estate_agent" = "Estate Agent";
+
+"type.office.government" = "Government Office";
+
+"type.office.insurance" = "Insurance Office";
+
+"type.office.lawyer" = "Lawyer";
+
+"type.office.ngo" = "Non-Governmental Organization";
+
+"type.office.telecommunication" = "Telecom Company";
+
+"type.organic.only" = "Organic";
+
+"type.organic.yes" = "Organic";
+
+"type.place.city" = "City";
+
+"type.place.city.capital" = "Capital";
+
+"type.place.city.capital.10" = "City";
+
+"type.place.city.capital.11" = "City";
+
+"type.place.city.capital.2" = "Capital";
+
+"type.place.city.capital.3" = "City";
+
+"type.place.city.capital.4" = "City";
+
+"type.place.city.capital.5" = "City";
+
+"type.place.city.capital.6" = "City";
+
+"type.place.city.capital.7" = "City";
+
+"type.place.city.capital.8" = "City";
+
+"type.place.city.capital.9" = "City";
+
+"type.place.continent" = "Continent";
+
+"type.place.country" = "Country";
+
+"type.place.county" = "County";
+
+"type.place.farm" = "Farm";
+
+"type.place.hamlet" = "Hamlet";
+
+"type.place.island" = "Island";
+
+"type.place.islet" = "Islet";
+
+"type.place.isolated_dwelling" = "Isolated Dwelling";
+
+"type.place.locality" = "Locality";
+
+"type.place.neighbourhood" = "Neighbourhood";
+
+"type.place.ocean" = "Ocean";
+
+"type.place.region" = "Region";
+
+"type.place.sea" = "Sea";
+
+"type.place.square" = "Square";
+
+"type.place.state" = "State";
+
+"type.place.state.USA" = "State";
+
+"type.place.suburb" = "Suburb";
+
+"type.place.town" = "Town";
+
+"type.place.village" = "Village";
+
+"type.power" = "Power";
+
+"type.power.generator" = "Power Generator";
+
+"type.power.generator.solar" = "Solar Generator";
+
+"type.power.generator.wind" = "Wind Generator";
+
+"type.power.generator.gas" = "Gas Turbine Power Plant";
+
+"type.power.generator.hydro" = "Hydroelectric Power Plant";
+
+"type.power.line" = "Power Line";
+
+"type.power.line.underground" = "Underground Power Line";
+
+"type.power.minor_line" = "Minor Power Line";
+
+"type.power.plant" = "Power Plant";
+
+"type.power.plant.coal" = "Coal Power Plant";
+
+"type.power.plant.gas" = "Gas Turbine Power Plant";
+
+"type.power.plant.hydro" = "Hydroelectric Power Plant";
+
+"type.power.plant.solar" = "Solar Power Plant";
+
+"type.power.plant.wind" = "Wind Power Plant";
+
+"type.power.station" = "Power Station";
+
+"type.power.substation" = "Substation";
+
+"type.power.tower" = "Power Tower";
+
+"type.psurface" = "psurface";
+
+"type.psurface.paved_bad" = "psurface-paved_bad";
+
+"type.psurface.paved_good" = "psurface-paved_good";
+
+"type.psurface.unpaved_bad" = "psurface-unpaved_bad";
+
+"type.psurface.unpaved_good" = "psurface-unpaved_good";
+
+"type.public_transport" = "Public Transport";
+
+"type.public_transport.platform" = "Platform";
+
+"type.railway" = "Railway";
+
+"type.railway.abandoned" = "Abandoned Railway";
+
+"type.railway.abandoned.bridge" = "Abandoned Railway Bridge";
+
+"type.railway.abandoned.tunnel" = "Abandoned Railway Tunnel";
+
+"type.railway.construction" = "Railway Construction";
+
+"type.railway.crossing" = "Railway Crossing";
+
+"type.railway.disused" = "Disused Railway";
+
+"type.railway.funicular" = "Funicular";
+
+"type.railway.funicular.bridge" = "Funicular Bridge";
+
+"type.railway.funicular.tunnel" = "Funicular Tunnel";
+
+"type.railway.halt" = "Rail Halt";
+
+"type.railway.level_crossing" = "Level Crossing";
+
+"type.railway.light_rail" = "Light Rail";
+
+"type.railway.light_rail.bridge" = "Light Rail Bridge";
+
+"type.railway.light_rail.tunnel" = "Light Rail Tunnel";
+
+"type.railway.monorail" = "Monorail";
+
+"type.railway.monorail.bridge" = "Monorail Bridge";
+
+"type.railway.monorail.tunnel" = "Monorail Tunnel";
+
+"type.railway.narrow_gauge" = "Narrow Gauge Rail";
+
+"type.railway.narrow_gauge.bridge" = "Narrow Gauge Rail Bridge";
+
+"type.railway.narrow_gauge.tunnel" = "Narrow Gauge Rail Tunnel";
+
+"type.railway.platform" = "Railway Platform";
+
+"type.railway.preserved" = "Preserved Rail";
+
+"type.railway.preserved.bridge" = "Preserved Rail Bridge";
+
+"type.railway.preserved.tunnel" = "Preserved Rail Tunnel";
+
+"type.railway.rail" = "Railway";
+
+"type.railway.rail.highspeed" = "High-Speed Railway";
+
+"type.railway.rail.tourism" = "Touristic Railway";
+
+"type.railway.rail.main" = "Railway";
+
+/* Includes ordinary railway=rail w/o more specific usage= and service= tags. */
+"type.railway.rail.branch" = "Railway Branch";
+
+/* Non-passenger utility tracks: industrial, military, test. */
+"type.railway.rail.utility" = "Utility Railway";
+
+"type.railway.rail.spur" = "Railway Spur";
+
+/* Short service tracks: siding, yard, crossover. */
+"type.railway.rail.service" = "Service Rail Track";
+
+"type.railway.rail.bridge" = "Railway Bridge";
+
+"type.railway.rail.highspeed.bridge" = "Railway Bridge";
+
+"type.railway.rail.tourism.bridge" = "Railway Bridge";
+
+"type.railway.rail.main.bridge" = "Railway Bridge";
+
+"type.railway.rail.branch.bridge" = "Railway Bridge";
+
+"type.railway.rail.utility.bridge" = "Railway Bridge";
+
+"type.railway.rail.spur.bridge" = "Railway Bridge";
+
+"type.railway.rail.service.bridge" = "Railway Bridge";
+
+"type.railway.rail.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.highspeed.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.tourism.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.main.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.branch.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.utility.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.spur.tunnel" = "Railway Tunnel";
+
+"type.railway.rail.service.tunnel" = "Railway Tunnel";
+
+"type.railway.station" = "Train Station";
+
+"type.railway.station.funicular" = "Funicular";
+
+"type.railway.station.light_rail" = "Train Station";
+
+"type.railway.station.light_rail.berlin" = "Train Station";
+
+"type.railway.station.light_rail.london" = "Train Station";
+
+"type.railway.station.light_rail.porto" = "Train Station";
+
+"type.railway.station.monorail" = "Train Station";
+
+"type.railway.station.subway" = "Subway Station";
+
+"type.railway.station.subway.adana" = "Subway Station";
+
+"type.railway.station.subway.algiers" = "Subway Station";
+
+"type.railway.station.subway.almaty" = "Subway Station";
+
+"type.railway.station.subway.amsterdam" = "Subway Station";
+
+"type.railway.station.subway.ankara" = "Subway Station";
+
+"type.railway.station.subway.athens" = "Subway Station";
+
+"type.railway.station.subway.baku" = "Subway Station";
+
+"type.railway.station.subway.bangkok" = "Subway Station";
+
+"type.railway.station.subway.barcelona" = "Subway Station";
+
+"type.railway.station.subway.beijing" = "Subway Station";
+
+"type.railway.station.subway.bengalore" = "Subway Station";
+
+"type.railway.station.subway.berlin" = "Subway Station";
+
+"type.railway.station.subway.bilbao" = "Subway Station";
+
+"type.railway.station.subway.brasilia" = "Subway Station";
+
+"type.railway.station.subway.brescia" = "Subway Station";
+
+"type.railway.station.subway.brussels" = "Subway Station";
+
+"type.railway.station.subway.bucharest" = "Subway Station";
+
+"type.railway.station.subway.budapest" = "Subway Station";
+
+"type.railway.station.subway.buenos_aires" = "Subway Station";
+
+"type.railway.station.subway.bursa" = "Subway Station";
+
+"type.railway.station.subway.cairo" = "Subway Station";
+
+"type.railway.station.subway.caracas" = "Subway Station";
+
+"type.railway.station.subway.catania" = "Subway Station";
+
+"type.railway.station.subway.changchun" = "Subway Station";
+
+"type.railway.station.subway.chengdu" = "Subway Station";
+
+"type.railway.station.subway.chicago" = "Subway Station";
+
+"type.railway.station.subway.chongqing" = "Subway Station";
+
+"type.railway.station.subway.dalian" = "Subway Station";
+
+"type.railway.station.subway.delhi" = "Subway Station";
+
+"type.railway.station.subway.dnepro" = "Subway Station";
+
+"type.railway.station.subway.dubai" = "Subway Station";
+
+"type.railway.station.subway.ekb" = "Subway Station";
+
+"type.railway.station.subway.fukuoka" = "Subway Station";
+
+"type.railway.station.subway.glasgow" = "Subway Station";
+
+"type.railway.station.subway.guangzhou" = "Subway Station";
+
+"type.railway.station.subway.hamburg" = "Subway Station";
+
+"type.railway.station.subway.helsinki" = "Subway Station";
+
+"type.railway.station.subway.hiroshima" = "Subway Station";
+
+"type.railway.station.subway.hongkong" = "Subway Station";
+
+"type.railway.station.subway.isfahan" = "Subway Station";
+
+"type.railway.station.subway.istanbul" = "Subway Station";
+
+"type.railway.station.subway.izmir" = "Subway Station";
+
+"type.railway.station.subway.kazan" = "Subway Station";
+
+"type.railway.station.subway.kharkiv" = "Subway Station";
+
+"type.railway.station.subway.kiev" = "Subway Station";
+
+"type.railway.station.subway.kobe" = "Subway Station";
+
+"type.railway.station.subway.kolkata" = "Subway Station";
+
+"type.railway.station.subway.kunming" = "Subway Station";
+
+"type.railway.station.subway.kyoto" = "Subway Station";
+
+"type.railway.station.subway.la" = "Subway Station";
+
+"type.railway.station.subway.lausanne" = "Subway Station";
+
+"type.railway.station.subway.lille" = "Subway Station";
+
+"type.railway.station.subway.lima" = "Subway Station";
+
+"type.railway.station.subway.lisboa" = "Subway Station";
+
+"type.railway.station.subway.london" = "Subway Station";
+
+"type.railway.station.subway.lyon" = "Subway Station";
+
+"type.railway.station.subway.madrid" = "Subway Station";
+
+"type.railway.station.subway.malaga" = "Subway Station";
+
+"type.railway.station.subway.manila" = "Subway Station";
+
+"type.railway.station.subway.maracaibo" = "Subway Station";
+
+"type.railway.station.subway.mashhad" = "Subway Station";
+
+"type.railway.station.subway.mecca" = "Subway Station";
+
+"type.railway.station.subway.medellin" = "Subway Station";
+
+"type.railway.station.subway.mexico" = "Subway Station";
+
+"type.railway.station.subway.milan" = "Subway Station";
+
+"type.railway.station.subway.minsk" = "Subway Station";
+
+"type.railway.station.subway.montreal" = "Subway Station";
+
+"type.railway.station.subway.moscow" = "Subway Station";
+
+"type.railway.station.subway.munchen" = "Subway Station";
+
+"type.railway.station.subway.nagoya" = "Subway Station";
+
+"type.railway.station.subway.newyork" = "Subway Station";
+
+"type.railway.station.subway.nnov" = "Subway Station";
+
+"type.railway.station.subway.novosibirsk" = "Subway Station";
+
+"type.railway.station.subway.osaka" = "Subway Station";
+
+"type.railway.station.subway.oslo" = "Subway Station";
+
+"type.railway.station.subway.palma" = "Subway Station";
+
+"type.railway.station.subway.panama" = "Subway Station";
+
+"type.railway.station.subway.paris" = "Subway Station";
+
+"type.railway.station.subway.philadelphia" = "Subway Station";
+
+"type.railway.station.subway.pyongyang" = "Subway Station";
+
+"type.railway.station.subway.rennes" = "Subway Station";
+
+"type.railway.station.subway.rio" = "Subway Station";
+
+"type.railway.station.subway.roma" = "Subway Station";
+
+"type.railway.station.subway.rotterdam" = "Subway Station";
+
+"type.railway.station.subway.samara" = "Subway Station";
+
+"type.railway.station.subway.santiago" = "Subway Station";
+
+"type.railway.station.subway.santo_domingo" = "Subway Station";
+
+"type.railway.station.subway.saopaulo" = "Subway Station";
+
+"type.railway.station.subway.sapporo" = "Subway Station";
+
+"type.railway.station.subway.sendai" = "Subway Station";
+
+"type.railway.station.subway.sf" = "Subway Station";
+
+"type.railway.station.subway.shanghai" = "Subway Station";
+
+"type.railway.station.subway.shenzhen" = "Subway Station";
+
+"type.railway.station.subway.shiraz" = "Subway Station";
+
+"type.railway.station.subway.singapore" = "Subway Station";
+
+"type.railway.station.subway.sofia" = "Subway Station";
+
+"type.railway.station.subway.spb" = "Subway Station";
+
+"type.railway.station.subway.stockholm" = "Subway Station";
+
+"type.railway.station.subway.tabriz" = "Subway Station";
+
+"type.railway.station.subway.taipei" = "Subway Station";
+
+"type.railway.station.subway.taoyuan" = "Subway Station";
+
+"type.railway.station.subway.tashkent" = "Subway Station";
+
+"type.railway.station.subway.tbilisi" = "Subway Station";
+
+"type.railway.station.subway.tehran" = "Subway Station";
+
+"type.railway.station.subway.tianjin" = "Subway Station";
+
+"type.railway.station.subway.tokyo" = "Subway Station";
+
+"type.railway.station.subway.valencia" = "Subway Station";
+
+"type.railway.station.subway.vienna" = "Subway Station";
+
+"type.railway.station.subway.warszawa" = "Subway Station";
+
+"type.railway.station.subway.washington" = "Subway Station";
+
+"type.railway.station.subway.wuhan" = "Subway Station";
+
+"type.railway.station.subway.yerevan" = "Subway Station";
+
+"type.railway.station.subway.yokohama" = "Subway Station";
+
+"type.railway.subway" = "Subway Line";
+
+"type.railway.subway.bridge" = "Subway Line Bridge";
+
+"type.railway.subway.tunnel" = "Subway Line Tunnel";
+
+"type.railway.subway_entrance" = "Subway Entrance";
+
+"type.railway.subway_entrance.adana" = "Subway Entrance";
+
+"type.railway.subway_entrance.algiers" = "Subway Entrance";
+
+"type.railway.subway_entrance.almaty" = "Subway Entrance";
+
+"type.railway.subway_entrance.amsterdam" = "Subway Entrance";
+
+"type.railway.subway_entrance.ankara" = "Subway Entrance";
+
+"type.railway.subway_entrance.athens" = "Subway Entrance";
+
+"type.railway.subway_entrance.baku" = "Subway Entrance";
+
+"type.railway.subway_entrance.bangkok" = "Subway Entrance";
+
+"type.railway.subway_entrance.barcelona" = "Subway Entrance";
+
+"type.railway.subway_entrance.beijing" = "Subway Entrance";
+
+"type.railway.subway_entrance.bengalore" = "Subway Entrance";
+
+"type.railway.subway_entrance.berlin" = "Subway Entrance";
+
+"type.railway.subway_entrance.bilbao" = "Subway Entrance";
+
+"type.railway.subway_entrance.brasilia" = "Subway Entrance";
+
+"type.railway.subway_entrance.brescia" = "Subway Entrance";
+
+"type.railway.subway_entrance.brussels" = "Subway Entrance";
+
+"type.railway.subway_entrance.bucharest" = "Subway Entrance";
+
+"type.railway.subway_entrance.budapest" = "Subway Entrance";
+
+"type.railway.subway_entrance.buenos_aires" = "Subway Entrance";
+
+"type.railway.subway_entrance.bursa" = "Subway Entrance";
+
+"type.railway.subway_entrance.cairo" = "Subway Entrance";
+
+"type.railway.subway_entrance.caracas" = "Subway Entrance";
+
+"type.railway.subway_entrance.catania" = "Subway Entrance";
+
+"type.railway.subway_entrance.changchun" = "Subway Entrance";
+
+"type.railway.subway_entrance.chengdu" = "Subway Entrance";
+
+"type.railway.subway_entrance.chicago" = "Subway Entrance";
+
+"type.railway.subway_entrance.chongqing" = "Subway Entrance";
+
+"type.railway.subway_entrance.dalian" = "Subway Entrance";
+
+"type.railway.subway_entrance.delhi" = "Subway Entrance";
+
+"type.railway.subway_entrance.dnepro" = "Subway Entrance";
+
+"type.railway.subway_entrance.dubai" = "Subway Entrance";
+
+"type.railway.subway_entrance.ekb" = "Subway Entrance";
+
+"type.railway.subway_entrance.fukuoka" = "Subway Entrance";
+
+"type.railway.subway_entrance.glasgow" = "Subway Entrance";
+
+"type.railway.subway_entrance.guangzhou" = "Subway Entrance";
+
+"type.railway.subway_entrance.hamburg" = "Subway Entrance";
+
+"type.railway.subway_entrance.helsinki" = "Subway Entrance";
+
+"type.railway.subway_entrance.hiroshima" = "Subway Entrance";
+
+"type.railway.subway_entrance.hongkong" = "Subway Entrance";
+
+"type.railway.subway_entrance.isfahan" = "Subway Entrance";
+
+"type.railway.subway_entrance.istanbul" = "Subway Entrance";
+
+"type.railway.subway_entrance.izmir" = "Subway Entrance";
+
+"type.railway.subway_entrance.kazan" = "Subway Entrance";
+
+"type.railway.subway_entrance.kharkiv" = "Subway Entrance";
+
+"type.railway.subway_entrance.kiev" = "Subway Entrance";
+
+"type.railway.subway_entrance.kobe" = "Subway Entrance";
+
+"type.railway.subway_entrance.kolkata" = "Subway Entrance";
+
+"type.railway.subway_entrance.kunming" = "Subway Entrance";
+
+"type.railway.subway_entrance.kyoto" = "Subway Entrance";
+
+"type.railway.subway_entrance.la" = "Subway Entrance";
+
+"type.railway.subway_entrance.lausanne" = "Subway Entrance";
+
+"type.railway.subway_entrance.lille" = "Subway Entrance";
+
+"type.railway.subway_entrance.lima" = "Subway Entrance";
+
+"type.railway.subway_entrance.lisboa" = "Subway Entrance";
+
+"type.railway.subway_entrance.london" = "Subway Entrance";
+
+"type.railway.subway_entrance.lyon" = "Subway Entrance";
+
+"type.railway.subway_entrance.madrid" = "Subway Entrance";
+
+"type.railway.subway_entrance.malaga" = "Subway Entrance";
+
+"type.railway.subway_entrance.manila" = "Subway Entrance";
+
+"type.railway.subway_entrance.maracaibo" = "Subway Entrance";
+
+"type.railway.subway_entrance.mashhad" = "Subway Entrance";
+
+"type.railway.subway_entrance.mecca" = "Subway Entrance";
+
+"type.railway.subway_entrance.medellin" = "Subway Entrance";
+
+"type.railway.subway_entrance.mexico" = "Subway Entrance";
+
+"type.railway.subway_entrance.milan" = "Subway Entrance";
+
+"type.railway.subway_entrance.minsk" = "Subway Entrance";
+
+"type.railway.subway_entrance.montreal" = "Subway Entrance";
+
+"type.railway.subway_entrance.moscow" = "Subway Entrance";
+
+"type.railway.subway_entrance.munchen" = "Subway Entrance";
+
+"type.railway.subway_entrance.nagoya" = "Subway Entrance";
+
+"type.railway.subway_entrance.newyork" = "Subway Entrance";
+
+"type.railway.subway_entrance.nnov" = "Subway Entrance";
+
+"type.railway.subway_entrance.novosibirsk" = "Subway Entrance";
+
+"type.railway.subway_entrance.osaka" = "Subway Entrance";
+
+"type.railway.subway_entrance.oslo" = "Subway Entrance";
+
+"type.railway.subway_entrance.palma" = "Subway Entrance";
+
+"type.railway.subway_entrance.panama" = "Subway Entrance";
+
+"type.railway.subway_entrance.paris" = "Subway Entrance";
+
+"type.railway.subway_entrance.philadelphia" = "Subway Entrance";
+
+"type.railway.subway_entrance.pyongyang" = "Subway Entrance";
+
+"type.railway.subway_entrance.rennes" = "Subway Entrance";
+
+"type.railway.subway_entrance.rio" = "Subway Entrance";
+
+"type.railway.subway_entrance.roma" = "Subway Entrance";
+
+"type.railway.subway_entrance.rotterdam" = "Subway Entrance";
+
+"type.railway.subway_entrance.samara" = "Subway Entrance";
+
+"type.railway.subway_entrance.santiago" = "Subway Entrance";
+
+"type.railway.subway_entrance.santo_domingo" = "Subway Entrance";
+
+"type.railway.subway_entrance.saopaulo" = "Subway Entrance";
+
+"type.railway.subway_entrance.sapporo" = "Subway Entrance";
+
+"type.railway.subway_entrance.sendai" = "Subway Entrance";
+
+"type.railway.subway_entrance.sf" = "Subway Entrance";
+
+"type.railway.subway_entrance.shanghai" = "Subway Entrance";
+
+"type.railway.subway_entrance.shenzhen" = "Subway Entrance";
+
+"type.railway.subway_entrance.shiraz" = "Subway Entrance";
+
+"type.railway.subway_entrance.singapore" = "Subway Entrance";
+
+"type.railway.subway_entrance.sofia" = "Subway Entrance";
+
+"type.railway.subway_entrance.spb" = "Subway Entrance";
+
+"type.railway.subway_entrance.stockholm" = "Subway Entrance";
+
+"type.railway.subway_entrance.tabriz" = "Subway Entrance";
+
+"type.railway.subway_entrance.taipei" = "Subway Entrance";
+
+"type.railway.subway_entrance.taoyuan" = "Subway Entrance";
+
+"type.railway.subway_entrance.tashkent" = "Subway Entrance";
+
+"type.railway.subway_entrance.tbilisi" = "Subway Entrance";
+
+"type.railway.subway_entrance.tehran" = "Subway Entrance";
+
+"type.railway.subway_entrance.tianjin" = "Subway Entrance";
+
+"type.railway.subway_entrance.tokyo" = "Subway Entrance";
+
+"type.railway.subway_entrance.valencia" = "Subway Entrance";
+
+"type.railway.subway_entrance.vienna" = "Subway Entrance";
+
+"type.railway.subway_entrance.warszawa" = "Subway Entrance";
+
+"type.railway.subway_entrance.washington" = "Subway Entrance";
+
+"type.railway.subway_entrance.wuhan" = "Subway Entrance";
+
+"type.railway.subway_entrance.yerevan" = "Subway Entrance";
+
+"type.railway.subway_entrance.yokohama" = "Subway Entrance";
+
+"type.railway.tram" = "Tram Line";
+
+"type.railway.tram.bridge" = "Tram Line Bridge";
+
+"type.railway.tram.tunnel" = "Tram Line Tunnel";
+
+"type.railway.tram_stop" = "Tram Stop";
+
+"type.route" = "Route";
+
+"type.route.ferry" = "Ferry";
+
+"type.route.shuttle_train" = "route-shuttle_train";
+
+"type.shop" = "Shop";
+
+"type.shop.alcohol" = "Liquor Shop";
+
+"type.shop.bakery" = "Bakery";
+
+"type.shop.bathroom_furnishing" = "Bathroom Furnishings";
+
+"type.shop.beauty" = "Beauty Shop";
+
+"type.shop.beverages" = "Beverages";
+
+"type.shop.bicycle" = "Bicycle Shop";
+
+"type.shop.bookmaker" = "Bookmaker";
+
+"type.shop.books" = "Bookstore";
+
+"type.shop.butcher" = "Butcher";
+
+"type.shop.cannabis" = "Cannabis Shop";
+
+"type.shop.car" = "Car Dealership";
+
+"type.shop.car_parts" = "Car Parts Shop";
+
+"type.shop.car_repair" = "Car Repair Workshop";
+
+"type.shop.car_repair.tyres" = "Tyre Repair";
+
+"type.shop.caravan" = "RV Dealership";
+
+"type.shop.carpet" = "Carpet Shop";
+
+"type.shop.chemist" = "Chemist";
+
+"type.shop.chocolate" = "Chocolate Shop";
+
+"type.shop.clothes" = "Clothes Shop";
+
+"type.shop.coffee" = "Coffee Shop";
+
+"type.shop.computer" = "Computer Store";
+
+"type.shop.confectionery" = "Candy Shop";
+
+"type.shop.convenience" = "Convenience Store";
+
+"type.shop.copyshop" = "Copyshop";
+
+"type.shop.cosmetics" = "Cosmetics Shop";
+
+"type.shop.curtain" = "Curtain Shop";
+
+"type.shop.deli" = "Delicatessen";
+
+"type.shop.department_store" = "Department Store";
+
+"type.shop.doityourself" = "Home Improvement Store";
+
+"type.shop.dry_cleaning" = "Dry Cleaner";
+
+"type.shop.electronics" = "Electronics Shop";
+
+"type.shop.erotic" = "Erotic Shop";
+
+"type.shop.fabric" = "Fabric Shop";
+
+"type.shop.farm" = "Farm Food Shop";
+
+"type.shop.fashion_accessories" = "Fashion Accessories";
+
+"type.shop.florist" = "Florist";
+
+"type.shop.funeral_directors" = "Funeral Directors";
+
+"type.shop.furniture" = "Furniture Store";
+
+"type.shop.garden_centre" = "Garden Center";
+
+"type.shop.gas" = "Gas Store";
+
+"type.shop.gift" = "Gift Shop";
+
+"type.shop.greengrocer" = "Greengrocer";
+
+"type.shop.grocery" = "Grocery Store";
+
+"type.shop.hairdresser" = "Hairdresser";
+
+"type.shop.hardware" = "Hardware Store";
+
+"type.shop.health_food" = "Health Food Shop";
+
+"type.shop.herbalist" = "Herbalist";
+
+"type.shop.hifi" = "HiFi Audio Shop";
+
+"type.shop.houseware" = "Housewares Store";
+
+"type.shop.jewelry" = "Jewelry Store";
+
+"type.shop.kiosk" = "Kiosk";
+
+"type.shop.kitchen" = "Kitchen Store";
+
+"type.shop.laundry" = "Laundry";
+
+"type.shop.mall" = "Mall";
+
+"type.shop.massage" = "Massage Salon";
+
+"type.shop.mobile_phone" = "Cell Phone Store";
+
+"type.shop.money_lender" = "Money Lender";
+
+"type.shop.motorcycle" = "Motorcycle Shop";
+
+"type.shop.motorcycle_repair" = "Motorcycle Repair";
+
+"type.shop.music" = "Record Store";
+
+"type.shop.musical_instrument" = "Musical Instrument Shop";
+
+"type.shop.newsagent" = "Newspaper Stand";
+
+"type.shop.optician" = "Optician";
+
+"type.shop.outdoor" = "Outdoor Equipment Shop";
+
+"type.shop.outpost" = "Pickup Point";
+
+"type.shop.pasta" = "Makaronu veikals";
+
+"type.shop.pastry" = "Bakery";
+
+"type.shop.pawnbroker" = "Pawnbroker";
+
+"type.shop.pet" = "Pet Store";
+
+"type.shop.pet_grooming" = "Pet Grooming";
+
+"type.shop.photo" = "Photo Shop";
+
+"type.shop.rental" = "Rental Shop";
+
+"type.shop.rental.bicycle" = "Bicycle Rental Shop";
+
+"type.shop.seafood" = "Fishmonger";
+
+"type.shop.second_hand" = "Second Hand Shop";
+
+"type.shop.shoes" = "Shoe Shop";
+
+"type.shop.sports" = "Sports Shop";
+
+"type.shop.stationery" = "Stationery Shop";
+
+"type.shop.supermarket" = "Supermarket";
+
+"type.shop.tattoo" = "Tattoo Parlour";
+
+"type.shop.tea" = "Tea Shop";
+
+"type.shop.ticket" = "Ticket Shop";
+
+"type.shop.toys" = "Toy Store";
+
+"type.shop.travel_agency" = "Travel Agency";
+
+"type.shop.tyres" = "Tyre Shop";
+
+"type.shop.variety_store" = "Variety Store";
+
+"type.shop.video" = "Video Shop";
+
+"type.shop.video_games" = "Video Game Shop";
+
+"type.shop.wine" = "Wine Shop";
+
+"type.shop.agrarian" = "Agricultural Shop";
+
+"type.shop.antiques" = "Antiques Shop";
+
+"type.shop.appliance" = "Appliance Shop";
+
+/* maybe change to Art Gallery for en-US when supported */
+"type.shop.art" = "Artwork Shop";
+
+"type.shop.baby_goods" = "Baby Goods Shop";
+
+"type.shop.bag" = "Bag Shop";
+
+"type.shop.bed" = "Bed Shop";
+
+"type.shop.boutique" = "Boutique";
+
+"type.shop.charity" = "Charity Shop";
+
+"type.shop.cheese" = "Cheese Shop";
+
+"type.shop.craft" = "Craft Supplies Store";
+
+"type.shop.dairy" = "Dairy Shop";
+
+"type.shop.electrical" = "Electrical Supplies Store";
+
+"type.shop.fishing" = "Fishing Store";
+
+"type.shop.interior_decoration" = "Interior Decorations Store";
+
+"type.shop.lottery" = "Lottery Tickets";
+
+"type.shop.medical_supply" = "Medical Supplies Store";
+
+"type.shop.nutrition_supplements" = "Nutrition Supplement Store";
+
+"type.shop.paint" = "Paint Shop";
+
+"type.shop.perfumery" = "Perfume Shop";
+
+"type.shop.sewing" = "Sewing Supplies Shop";
+
+"type.shop.storage_rental" = "Storage Rental";
+
+"type.shop.tobacco" = "Smoke Shop";
+
+"type.shop.trade" = "Trade Supplies";
+
+"type.shop.watches" = "Watch Store";
+
+"type.shop.wholesale" = "Wholesale Store";
+
+"type.sport" = "Sport";
+
+"type.sport.american_football" = "American Football";
+
+"type.sport.archery" = "Archery";
+
+"type.sport.athletics" = "Athletics";
+
+"type.sport.australian_football" = "Australian Football";
+
+"type.sport.baseball" = "Baseball";
+
+"type.sport.basketball" = "Basketball";
+
+"type.sport.beachvolleyball" = "Beach Volleyball";
+
+"type.sport.bowls" = "Bowls";
+
+"type.sport.chess" = "Chess";
+
+"type.sport.cricket" = "Cricket";
+
+"type.sport.curling" = "Curling";
+
+"type.sport.equestrian" = "Equestrian Sports";
+
+"type.sport.golf" = "Golf";
+
+"type.sport.gymnastics" = "Gymnastics";
+
+"type.sport.handball" = "Handball";
+
+"type.sport.multi" = "Various Sports";
+
+/* Used to tag a scuba diving site. */
+"type.sport.scuba_diving" = "Scuba Diving Site";
+
+"type.sport.shooting" = "Shooting";
+
+"type.sport.skateboard" = "Skateboarding";
+
+"type.sport.skiing" = "Skiing";
+
+"type.sport.soccer" = "Soccer";
+
+"type.sport.swimming" = "Swimming";
+
+"type.sport.table_tennis" = "Table Tennis";
+
+"type.sport.tennis" = "Tennis Court";
+
+"type.sport.volleyball" = "Volleyball";
+
+"type.sport.10pin" = "Bowling";
+
+"type.sport.9pin" = "Bowling";
+
+"type.sport.padel" = "Padel";
+
+"type.sport.futsal" = "Futsal";
+
+"type.sport.ice_hockey" = "Ice Hockey";
+
+"type.sport.field_hockey" = "Field Hockey";
+
+"type.sport.badminton" = "Badminton";
+
+"type.sport.pelota" = "Basque Pelota";
+
+"type.tourism" = "Tourism";
+
+"type.tourism.aquarium" = "Aquarium";
+
+/* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
+"type.tourism.alpine_hut" = "Mountain Lodge";
+
+"type.tourism.apartment" = "Holiday Apartment";
+
+"type.tourism.artwork" = "Artwork";
+
+"type.tourism.artwork.architecture" = "Architectural Artwork";
+
+"type.tourism.artwork.painting" = "Painting";
+
+"type.tourism.artwork.sculpture" = "Sculpture";
+
+"type.tourism.artwork.statue" = "Statue";
+
+"type.tourism.attraction" = "Attraction";
+
+"type.attraction.amusement_ride" = "Atrakciju brauciens";
+
+"type.attraction.animal" = "Animal Enclosure";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Karuselis";
+
+"type.attraction.historic" = "Vēsturiska atrakcija";
+
+"type.attraction.maze" = "Labirints";
+
+"type.attraction.roller_coaster" = "Amerikāņu kalniņi";
+
+"type.attraction.water_slide" = "Ūdens slīdkalniņš";
+
+"type.tourism.attraction.specified" = "Attraction";
+
+"type.tourism.camp_site" = "Campground";
+
+"type.tourism.caravan_site" = "RV Park";
+
+/* A rentable countryside vacation house. */
+"type.tourism.chalet" = "Holiday Cottage";
+
+"type.tourism.gallery" = "Art Gallery";
+
+"type.tourism.guest_house" = "Guest House";
+
+"type.tourism.hostel" = "Hostel";
+
+"type.tourism.hotel" = "Hotel";
+
+"type.tourism.information" = "Tourist Information";
+
+"type.tourism.information.board" = "Information Board";
+
+"type.tourism.information.guidepost" = "Guidepost";
+
+"type.tourism.information.map" = "Tourist Map";
+
+"type.tourism.information.office" = "Tourist Office";
+
+"type.tourism.information.visitor_centre" = "Visitor Centre";
+
+"type.tourism.motel" = "Motel";
+
+"type.tourism.museum" = "Museum";
+
+"type.tourism.picnic_site" = "Picnic Site";
+
+"type.leisure.resort" = "Resort";
+
+"type.tourism.theme_park" = "Theme Park";
+
+"type.tourism.viewpoint" = "Viewpoint";
+
+/* Typically more basic, not staffed and free (compared to alpine_hut). */
+"type.tourism.wilderness_hut" = "Wilderness Hut";
+
+"type.tourism.zoo" = "Zoo";
+
+"type.tourism.zoo.petting" = "Petting Zoo";
+
+"type.traffic_calming" = "Traffic Calming";
+
+"type.traffic_calming.bump" = "Traffic Bump";
+
+"type.traffic_calming.hump" = "Traffic Hump";
+
+"type.waterway" = "Waterway";
+
+"type.waterway.canal" = "Canal";
+
+"type.waterway.canal.tunnel" = "Canal Tunnel";
+
+"type.waterway.fish_pass" = "Fish Pass";
+
+"type.waterway.dam" = "Dam";
+
+"type.barrier.ditch" = "Ditch";
+
+"type.natural.water.ditch" = "Drainage Ditch";
+
+"type.waterway.ditch.tunnel" = "Culvert";
+
+"type.waterway.dock" = "Waterway Dock";
+
+"type.waterway.drain" = "Drain";
+
+"type.natural.water.drain" = "Drain";
+
+"type.waterway.drain.tunnel" = "Culvert";
+
+"type.waterway.lock_gate" = "Lock Gate";
+
+"type.waterway.river" = "River";
+
+"type.waterway.river.tunnel" = "River";
+
+"type.waterway.stream" = "Stream";
+
+"type.waterway.stream.ephemeral" = "Ephemeral Stream";
+
+"type.waterway.stream.intermittent" = "Intermittent Stream";
+
+"type.waterway.stream.tunnel" = "Stream";
+
+"type.waterway.waterfall" = "Waterfall";
+
+"type.waterway.weir" = "Weir";
+
+"type.wheelchair" = "Wheelchair";
+
+"type.wheelchair.limited" = "Limited Wheelchair Access";
+
+"type.wheelchair.no" = "No Wheelchair Access";
+
+"type.wheelchair.yes" = "Full Wheelchair Access";
+
+"type.aerialway.j.bar" = "J-bar Lift";
+
+"type.aerialway.magic_carpet" = "Magic Carpet";
+
+"type.aerialway.platter" = "Platter Lift";
+
+"type.aerialway.rope_tow" = "Rope Tow";
+
+"type.aerialway.t.bar" = "T-bar Lift";
+
+"type.piste_type.downhill" = "Downhill Ski Run";
+
+"type.piste_type.downhill.area" = "Downhill Ski Run";
+
+"type.piste_type.downhill.advanced" = "Downhill Ski Run";
+
+"type.piste_type.downhill.advanced.area" = "Downhill Ski Run";
+
+"type.piste_type.downhill.easy" = "Downhill Ski Run";
+
+"type.piste_type.downhill.easy.area" = "Downhill Ski Run";
+
+"type.piste_type.downhill.expert" = "Downhill Ski Run";
+
+"type.piste_type.downhill.expert.area" = "Downhill Ski Run";
+
+"type.piste_type.downhill.freeride" = "Downhill Ski Run";
+
+"type.piste_type.downhill.intermediate" = "Downhill Ski Run";
+
+"type.piste_type.downhill.intermediate.area" = "Downhill Ski Run";
+
+"type.piste_type.downhill.novice" = "Downhill Ski Run";
+
+"type.piste_type.downhill.novice.area" = "Downhill Ski Run";
+
+"type.piste_type.nordic" = "Nordic Ski Trail";
+
+"type.piste_type.sled" = "Sledding Piste";
+
+"type.piste_type.sled.area" = "Sledding Piste";
+
+"type.piste_type.snow_park" = "Snow Park";
+
+"type.piste_type.hike" = "Snow Hiking Trail";
+
+"type.piste_type.connection" = "Piste Connection";
+
+"type.piste_type.skitour" = "Skitour Trail";
+
+"type.amenity.events_venue" = "Events Venue";
+
+"type.shop.auction" = "Auction";
+
+"type.shop.collector" = "Collectables";
+
+"type.self_service.yes" = "Self-service available";
+
+"type.self_service.only" = "Self-service only";
+
+"type.self_service.partially" = "Partial self-service";
+
+"type.self_service.no" = "No self-service";
+
+/* https://wiki.openstreetmap.org/wiki/Key:social_facility */
+"type.amenity.social_facility" = "Social Facility";
+
+/* https://wiki.openstreetmap.org/wiki/Tag:emergency=emergency_ward_entrance */
+"type.emergency.emergency_ward_entrance" = "Emergency Ward Entrance";
+
+/* https://wiki.openstreetmap.org/wiki/Tag:amenity=dojo */
+"type.amenity.dojo" = "Dojo";
+
+/* https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall */
+"type.leisure.sports_hall" = "Sports hall";

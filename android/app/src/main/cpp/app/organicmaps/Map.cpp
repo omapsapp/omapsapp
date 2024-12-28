@@ -27,10 +27,11 @@ Java_app_organicmaps_Map_nativeCreateEngine(JNIEnv * env, jclass,
                                             jobject surface, jint density,
                                             jboolean firstLaunch,
                                             jboolean isLaunchByDeepLink,
-                                            jint appVersionCode)
+                                            jint appVersionCode,
+                                            jboolean isCustomROM)
 {
   return g_framework->CreateDrapeEngine(env, surface, density, firstLaunch, isLaunchByDeepLink,
-                                        base::asserted_cast<uint32_t>(appVersionCode));
+                                        base::asserted_cast<uint32_t>(appVersionCode), isCustomROM);
 }
 
 JNIEXPORT jboolean JNICALL

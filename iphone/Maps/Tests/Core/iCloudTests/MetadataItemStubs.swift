@@ -14,14 +14,12 @@ extension LocalMetadataItem {
 extension CloudMetadataItem {
   static func stub(fileName: String, 
                    lastModificationDate: TimeInterval,
-                   isInTrash: Bool,
                    isDownloaded: Bool = true,
                    hasUnresolvedConflicts: Bool = false) -> CloudMetadataItem {
     let item = CloudMetadataItem(fileName: fileName,
                                  fileUrl: URL(string: "url")!,
                                  isDownloaded: isDownloaded,
                                  lastModificationDate: lastModificationDate,
-                                 isRemoved: isInTrash,
                                  downloadingError: nil,
                                  uploadingError: nil,
                                  hasUnresolvedConflicts: hasUnresolvedConflicts)

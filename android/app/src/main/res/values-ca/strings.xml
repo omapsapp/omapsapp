@@ -314,6 +314,10 @@
     <string name="google_play_services">Serveis d\'ubicació de Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Determineu ràpidament la vostra ubicació aproximada mitjançant Bluetooth, WiFi o xarxa mòbil</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Enllaços d\'hotels del Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Es mostren fotos, comentaris i enllaços de reserva per als hotels que tenen una llista a Kayak.com. La bonificació de referència rebuda per cada reserva a través d\'aquests enllaços es destina al desenvolupament d\'Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Baixeu tots els mapes de la ruta</string>
     <!-- Text for routing error dialog -->
@@ -498,7 +502,10 @@
     <string name="message_invalid_feature_position">No s’ha trobat cap objecte aquí</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Dades de l’OpenStreetMap creades per la comunitat a partir de %s. Obteniu més informació sobre com editar i actualitzar el mapa a OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Inicieu sessió a openstreetmap.org perquè altres usuaris puguin veure els vostres canvis.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) és un projecte comunitari per construir un mapa lliure i obert. És la font principal de dades de mapes a Organic Maps i funciona de manera similar a la Viquipèdia. Pots afegir o editar llocs i estaran disponibles per a milions d\'usuaris de tot el món.
+\nUneix-te a la comunitat i ajuda a crear un mapa millor per a tothom!</string>
+    <string name="login_to_make_edits_visible">Creeu un compte d\'OpenStreetMap o inicieu sessió per publicar les vostres edicions de mapes al món.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Voleu baixar-ho a través d’una connexió de xarxa mòbil?</string>
@@ -518,9 +525,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Les vostres edicions es pengen a la base de dades pública <a href="https://wiki.openstreetmap.org/wiki/Ca:About">OpenStreetMap</a>. Si us plau, no afegiu informació personal o amb drets d\'autor.</string>
     <string name="editor_more_about_osm">Més sobre l\'OpenStreetMap</string>
-    <string name="editor_operator">Propietari</string>
+    <string name="editor_osm_history">El teu historial d\'edició</string>
+    <string name="editor_osm_notes">Notes de les vostres dades del mapa</string>
+    <string name="editor_operator">Operador</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Propietari: %s</string>
+    <string name="operator">Operador: %s</string>
     <string name="editor_category_unsuitable_title">No trobeu una categoria adequada?</string>
     <string name="editor_category_unsuitable_text">Organic Maps només permet afegir categories de punts simples, això vol dir que no hi ha ciutats, carreteres, llacs, contorns d\'edificis, etc. Si us plau, afegiu aquestes categories directament a <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Consulteu la nostra <a href="https://organicmaps.app/faq/editing/advanced-map-editing">guia</a> per obtenir instruccions detallades pas a pas.</string>
     <string name="downloader_no_downloaded_maps_title">No heu baixat cap mapa</string>
@@ -539,6 +548,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">d</string>
     <string name="placepage_more_button">Més</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotos, comentaris, reserves</string>
@@ -546,6 +556,8 @@
     <string name="dialog_kayak_disclaimer">La bonificació de referència rebuda per cada reserva a través d\'aquest enllaç es destina al desenvolupament de Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Detalls a Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Desactiva Kayak</string>
     <string name="placepage_edit_bookmark_button">Edita el marcador</string>
     <string name="editor_comment_hint">Comentari…</string>
     <string name="editor_reset_edits_message">Voleu descartar tots els canvis locals?</string>
@@ -607,7 +619,7 @@
     <string name="routing_add_start_point">Utilitzeu la cerca o toqueu el mapa per afegir un punt de partida de la ruta</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Utilitzeu la cerca o toqueu el mapa per afegir un punt de destinació</string>
-    <string name="placepage_remove_stop">Elimina</string>
+    <string name="placepage_remove_stop">Elimina parada</string>
     <string name="placepage_add_stop">Afegeix una parada</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Si us plau, inicieu sessió a OpenStreetMap per carregar automàticament totes les edicions de mapes. Més informació <a href="https://github.com/organicmaps/organicmaps/issues/6144">aquí</a>.</string>
@@ -758,8 +770,8 @@
     <string name="isolines_location_error_dialog">La capa topogràfica encara no és disponible en aquesta àrea</string>
     <string name="elevation_profile_ascent">Ascens</string>
     <string name="elevation_profile_descent">Descens</string>
-    <string name="elevation_profile_minaltitude">Altitud mín.</string>
-    <string name="elevation_profile_maxaltitude">Altitud màx.</string>
+    <string name="elevation_profile_min_elevation">Min. elevació</string>
+    <string name="elevation_profile_max_elevation">Màx. elevació</string>
     <string name="elevation_profile_difficulty">Dificultat</string>
     <string name="elevation_profile_distance">Dist.:</string>
     <string name="elevation_profile_time">Temps:</string>
@@ -781,6 +793,8 @@
     <string name="enable_show_on_lock_screen">Mostra en la pantalla de bloqueig</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Si està activa, no cal desblocar l\'aparell cada vegada mentre l\'aplicació està funcionant.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Idioma del mapa</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Dades del mapa de l\'OpenStreetMap</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -796,7 +810,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Si coneixeu un desenvolupador de programari, podeu demanar-li que implementi una funcionalitat que necessiteu.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Sabíeu que podeu tocar llargament qualsevol lloc del mapa per seleccionar-lo?</string>
+    <string name="app_tip_04">Toqueu qualsevol lloc del mapa per seleccionar qualsevol cosa. Toqueu llargament per ocultar i mostrar la interfície.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Sabíeu que podeu seleccionar la vostra ubicació actual al mapa?</string>
     <!-- App tip #06 -->
@@ -866,7 +880,11 @@
     <string name="track_recording_toast_nothing_to_save">El recorregut està buit, no hi ha res a desar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">No es pot mostrar el diàleg de selecció de carpetes perquè no hi ha cap aplicació adequada instal·lada al vostre dispositiu. Instal·leu una aplicació de gestor de fitxers i torneu-ho a provar</string>
+    <string name="choose_color">Tria el color</string>
+    <string name="edit_track">Edita el recorregut</string>
     <string name="uri_open_location_failed">No hi ha cap aplicació instal·lada que pugui obrir la ubicació</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Auto a la navegació</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adreça/Bloc</string>
@@ -1053,6 +1071,7 @@
     <string name="type.amenity.waste_disposal">Contenidor d’escombraries</string>
     <string name="type.amenity.waste_transfer_station">Estació de transferència de residus</string>
     <string name="type.amenity.water_point">Punt d’aigua</string>
+    <string name="type.amenity.water_point.drinking_water_no">Punt d’aigua</string>
     <string name="type.barrier">Barrera</string>
     <string name="type.barrier.block">Bloc</string>
     <string name="type.barrier.bollard">Bol·lard</string>
@@ -1081,6 +1100,7 @@
     <string name="type.boundary.protected_area.6">Àrea Protegida</string>
     <!-- Duplicates [address] in strings.txt -->
     <string name="type.building.address">Adreça</string>
+    <string name="type.building.train_station">Edifici de l\'Estació</string>
     <string name="type.craft.caterer">Càtering</string>
     <string name="type.craft.grinding_mill">Molí de mòlta</string>
     <string name="type.craft.key_cutter">Tall de claus</string>
@@ -1211,6 +1231,7 @@
     <string name="type.shop.hifi">Àudio HiFi</string>
     <string name="type.shop.motorcycle_repair">Reparació de motos</string>
     <string name="type.shop.outpost">Punt de recollida</string>
+    <string name="type.shop.pasta">Botiga de pasta</string>
     <string name="type.shop.pastry">Forn de pa</string>
     <string name="type.shop.pet_grooming">Peluca de mascotes</string>
     <string name="type.shop.rental">Botiga de lloguer</string>
@@ -1230,7 +1251,13 @@
     <string name="type.tourism.artwork.sculpture">Escultura</string>
     <string name="type.tourism.artwork.statue">Estàtua</string>
     <string name="type.tourism.attraction">Atracció</string>
+    <string name="type.attraction.amusement_ride">Passeig de diversió</string>
     <string name="type.attraction.animal">Recinte d’animals</string>
+    <string name="type.attraction.carousel">Carrusel</string>
+    <string name="type.attraction.historic">Atracció històrica</string>
+    <string name="type.attraction.maze">Laberint</string>
+    <string name="type.attraction.roller_coaster">Muntanya Russa</string>
+    <string name="type.attraction.water_slide">Tobogan aquàtic</string>
     <string name="type.tourism.attraction.specified">Atracció</string>
     <string name="type.tourism.camp_site">Paratge d’acampada</string>
     <string name="type.tourism.caravan_site">Zona de caravanes</string>

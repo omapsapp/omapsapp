@@ -88,7 +88,7 @@ const map<string, string> KAYAK_DOMAINS = {
 
 string GetKayakHotelURL(const string & countryIsoCode, uint64_t kayakHotelId,
                         const string & kayakHotelName, uint64_t kayakCityId,
-                        time_t firstDay, time_t lastDay, bool isReferral)
+                        time_t firstDay, time_t lastDay)
 {
   // https://www.kayak.com.tr/hotels/Elexus-Hotel-Resort--Spa--Casino,Kyrenia-c7163-h2651619-details/2023-10-03/2023-10-04/1adults
 
@@ -97,8 +97,7 @@ string GetKayakHotelURL(const string & countryIsoCode, uint64_t kayakHotelId,
   url << "https://";
   auto const it = KAYAK_DOMAINS.find(countryIsoCode);
   url << ((it == KAYAK_DOMAINS.end()) ? KAYAK_DOMAINS.find("US")->second : it->second);
-  if (isReferral)
-    url << "/in?" << "a=" << KAYAK_AFFILIATE << "&url=";
+  url << "/in?" << "a=" << KAYAK_AFFILIATE << "&url=";
   url << "/hotels/";
   url << url::Slug(kayakHotelName) << ",";
   url << "-c" << kayakCityId << "-h" << kayakHotelId << "-details";
@@ -115,7 +114,7 @@ string GetKayakHotelURL(const string & countryIsoCode, uint64_t kayakHotelId,
 }
 
 string GetKayakHotelURLFromURI(const string & countryIsoCode, const string & uri,
-                               time_t firstDay, time_t lastDay, bool isReferral)
+                               time_t firstDay, time_t lastDay)
 {
   // Elexus Hotel Resort & Spa & Casino,-c7163-h1696321580
 
@@ -134,7 +133,7 @@ string GetKayakHotelURLFromURI(const string & countryIsoCode, const string & uri
       !to_uint64(uri.substr(c + 3, h - c - 3).c_str(), kayakCityId))
     return {};
 
-  return GetKayakHotelURL(countryIsoCode, kayakHotelId, kayakHotelName, kayakCityId, firstDay, lastDay, isReferral);
+  return GetKayakHotelURL(countryIsoCode, kayakHotelId, kayakHotelName, kayakCityId, firstDay, lastDay);
 }
 
 }  // namespace osm

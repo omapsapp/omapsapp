@@ -7,9 +7,6 @@ final class BookmarksListPresenter {
   private let router: IBookmarksListRouter
   private var interactor: IBookmarksListInteractor
   private weak var delegate: BookmarksListDelegate?
-
-  private let distanceFormatter = MeasurementFormatter()
-  private let imperialUnits: Bool
   private var bookmarkGroup: BookmarkGroup
 
   private enum EditableItem {
@@ -21,15 +18,12 @@ final class BookmarksListPresenter {
   init(view: IBookmarksListView,
        router: IBookmarksListRouter,
        delegate: BookmarksListDelegate?,
-       interactor: IBookmarksListInteractor,
-       imperialUnits: Bool) {
+       interactor: IBookmarksListInteractor) {
     self.view = view
     self.router = router
     self.delegate = delegate
     self.interactor = interactor
-    self.imperialUnits = imperialUnits
     self.bookmarkGroup = interactor.getBookmarkGroup()
-    self.distanceFormatter.unitOptions = [.providedUnit]
     self.subscribeOnGroupReloading()
   }
 
@@ -108,10 +102,7 @@ final class BookmarksListPresenter {
   }
 
   private func formatDistance(_ distance: Double) -> String {
-    let unit = imperialUnits ? UnitLength.miles : UnitLength.kilometers
-    let distanceInUnits = unit.converter.value(fromBaseUnitValue: distance)
-    let measurement = Measurement(value: distanceInUnits.rounded(), unit: unit)
-    return distanceFormatter.string(from: measurement)
+    DistanceFormatter.distanceString(fromMeters: distance)
   }
 
   private func showSortMenu() {

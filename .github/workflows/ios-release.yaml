@@ -16,20 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout private keys
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ secrets.PRIVATE_REPO }}
-          ssh-key: ${{ secrets.PRIVATE_SSH_KEY }}
-          ref: master
-          path: ./private.git
-
-      - name: Configure repo with private keys
+      - name: Restore release keys
         shell: bash
         run: |
-          mkdir -p xcode/keys/
-          cp -p ./private.git/xcode/keys/appstore.json xcode/keys/
-          rm -rf ./private.git
+          mkdir -p xcode/keys
+          echo "$APPSTORE_JSON" | base64 -d > xcode/keys/appstore.json
+        env:
+          APPSTORE_JSON: ${{ secrets.APPSTORE_JSON }}
 
       - name: Checkout screenshots
         uses: actions/checkout@v4

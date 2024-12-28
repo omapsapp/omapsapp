@@ -292,6 +292,10 @@
     <string name="google_play_services">Layanan Lokasi Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Dengan cepat menentukan perkiraan lokasi Anda melalui Bluetooth, WiFi, atau jaringan seluler</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Tautan Hotel Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Foto, ulasan, tautan pemesanan ditampilkan untuk hotel yang memiliki daftar di Kayak.com. Bonus rujukan yang diterima untuk setiap pemesanan melalui tautan ini digunakan untuk pengembangan Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Unduh peta bersama rute</string>
     <!-- Text for routing error dialog -->
@@ -470,7 +474,10 @@
     <string name="message_invalid_feature_position">Objek tidak dapat diletakkan di sini</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Data OpenStreetMap yang dibuat oleh komunitas pada tanggal %s. Pelajari lebih lanjut mengenai cara mengedit dan memperbarui peta di OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Masuk agar pengguna lain dapat melihat perubahan yang Anda buat.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) adalah sebuah proyek komunitas untuk membuat sebuah peta yang bebas dan terbuka. OSM merupakan sumber utama data peta di Organic Maps dan berfungsi mirip dengan Wikipedia. Anda dapat menambahkan atau mengedit tempat dan tempat tersebut tersedia untuk jutaan pengguna di seluruh Dunia.
+\nBergabunglah dengan komunitas dan bantu membuat peta yang lebih baik untuk semua orang!</string>
+    <string name="login_to_make_edits_visible">Buat akun OpenStreetMap atau masuk untuk mempublikasikan hasil editan peta Anda ke seluruh dunia.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d dari %2$d</string>
     <string name="download_over_mobile_header">Unduh dengan menggunakan koneksi jaringan seluler?</string>
@@ -490,9 +497,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Hasil editan Anda akan diunggah ke database <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> publik. Mohon untuk tidak menambahkan informasi pribadi atau informasi yang memiliki hak cipta.</string>
     <string name="editor_more_about_osm">Selengkapnya tentang OpenStreetMap</string>
-    <string name="editor_operator">Pemilik</string>
+    <string name="editor_osm_history">Riwayat pengeditan Anda</string>
+    <string name="editor_osm_notes">Catatan data peta Anda</string>
+    <string name="editor_operator">Operator</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Pemilik: %s</string>
+    <string name="operator">Operator: %s</string>
     <string name="editor_category_unsuitable_title">Tidak dapat menemukan kategori yang sesuai?</string>
     <string name="editor_category_unsuitable_text">Organic Maps hanya memungkinkan untuk menambahkan kategori titik sederhana, yang berarti tidak ada kota, jalan, danau, garis besar bangunan, dll. Silahkan tambahkan kategori tersebut secara langsung ke <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Lihat <a href="https://organicmaps.app/faq/editing/advanced-map-editing">panduan</a> kami untuk petunjuk langkah demi langkah yang terperinci.</string>
     <string name="downloader_no_downloaded_maps_title">Tidak ada peta apa pun yang diunduh</string>
@@ -511,6 +520,7 @@
     <string name="miles_per_hour">mpj</string>
     <string name="hour">j</string>
     <string name="minute">mnt</string>
+    <string name="day">hr</string>
     <string name="placepage_more_button">Lainnya</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Foto, ulasan, pemesanan</string>
@@ -518,6 +528,8 @@
     <string name="dialog_kayak_disclaimer">Bonus rujukan yang diterima untuk setiap pemesanan melalui tautan ini digunakan untuk pengembangan Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Perincian di Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Nonaktifkan Kayak</string>
     <string name="placepage_edit_bookmark_button">Edit Bookmark</string>
     <string name="editor_comment_hint">Komentar…</string>
     <string name="editor_reset_edits_message">Atur ulang perubahan lokal?</string>
@@ -572,7 +584,7 @@
     <string name="routing_add_start_point">Gunakan pencarian atau ketuk pada peta untuk menambahkan titik awal rute</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Gunakan pencarian atau ketuk pada peta untuk menambahkan titik tujuan</string>
-    <string name="placepage_remove_stop">Hapus</string>
+    <string name="placepage_remove_stop">Hapus pemberhentian</string>
     <string name="placepage_add_stop">Tambah perhentian</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Silahkan login ke OpenStreetMap untuk mengupload semua hasil edit peta Anda secara otomatis. Pelajari lebih lanjut <a href="https://github.com/organicmaps/organicmaps/issues/6144">di sini</a>.</string>
@@ -720,8 +732,8 @@
     <string name="isolines_location_error_dialog">Lapisan topografi belum tersedia untuk wilayah ini</string>
     <string name="elevation_profile_ascent">Menanjak</string>
     <string name="elevation_profile_descent">Menurun</string>
-    <string name="elevation_profile_minaltitude">Ketinggian Min.</string>
-    <string name="elevation_profile_maxaltitude">Ketinggian Maks.</string>
+    <string name="elevation_profile_min_elevation">Min. tinggi</string>
+    <string name="elevation_profile_max_elevation">Maks. tinggi</string>
     <string name="elevation_profile_difficulty">Kesulitan</string>
     <string name="elevation_profile_distance">Jarak:</string>
     <string name="elevation_profile_time">Waktu:</string>
@@ -743,7 +755,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Jika Anda mengenal seorang pengembang perangkat lunak, Anda dapat memintanya untuk mengimplementasikan fitur yang Anda perlukan.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Tahukah Anda bahwa Anda dapat mengetuk lama tempat mana pun di peta untuk memilihnya?</string>
+    <string name="app_tip_04">Ketuk di mana saja pada peta untuk memilih apa pun. Ketuk lama untuk menyembunyikan dan menampilkan kembali antarmuka.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Tahukah Anda bahwa Anda dapat memilih lokasi Anda saat ini di peta?</string>
     <!-- App tip #06 -->
@@ -813,7 +825,11 @@
     <string name="track_recording_toast_nothing_to_save">Jalur kosong - tidak ada yang bisa disimpan</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Tidak dapat menampilkan dialog pemilihan folder karena tidak ada aplikasi yang sesuai yang diinstal pada perangkat Anda. Instal aplikasi pengelola file dan coba lagi</string>
+    <string name="choose_color">Pilih Warna</string>
+    <string name="edit_track">Edit Jalur</string>
     <string name="uri_open_location_failed">Tidak ada Aplikasi yang diinstal yang dapat membuka lokasi</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Otomatis dalam navigasi</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Alamat/Blokir</string>
@@ -922,6 +938,7 @@
     <string name="type.amenity.police">Polisi</string>
     <string name="type.amenity.post_box">Kotak pos</string>
     <string name="type.amenity.post_office">Kantor pos</string>
+    <string name="type.amenity.prison">Penjara</string>
     <string name="type.amenity.public_bookcase">Rak Buku</string>
 
     <!-- SECTION: Types: Recycling -->
@@ -961,6 +978,7 @@
     <string name="type.amenity.waste_basket">Kotak sampah</string>
     <string name="type.amenity.waste_disposal">Sampah</string>
     <string name="type.amenity.water_point">Titik Air</string>
+    <string name="type.amenity.water_point.drinking_water_no">Titik Air</string>
     <string name="type.barrier.block">Blok</string>
     <string name="type.barrier.bollard">Pilar</string>
     <string name="type.barrier.border_control">Gerbang perbatasan</string>
@@ -991,7 +1009,7 @@
     <string name="type.building.has_parts">Gedung</string>
     <string name="type.building_part">Gedung</string>
     <string name="type.building.garage">Garasi</string>
-    <string name="type.building.train_station">Rel kereta api</string>
+    <string name="type.building.train_station">Bangunan Stasiun</string>
     <string name="type.cemetery.grave">Kuburan</string>
     <string name="type.craft">Kerajinan</string>
     <string name="type.craft.beekeeper">Peternak lebah</string>
@@ -1370,8 +1388,10 @@
     <string name="type.man_made.tower">Menara</string>
     <string name="type.man_made.tower.communication">Menara Komunikasi</string>
     <string name="type.man_made.water_tap">Keran Air</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Keran Air</string>
     <string name="type.man_made.water_tower">Menara air</string>
     <string name="type.man_made.water_well">Sumur air</string>
+    <string name="type.man_made.water_well.drinking_water_no">Sumur air</string>
     <string name="type.man_made.windmill">Kincir angin</string>
     <string name="type.natural">Alam</string>
     <!-- A rocky land cover. -->
@@ -1410,6 +1430,7 @@
     <string name="type.natural.rock">Batu</string>
     <string name="type.natural.scrub">Semak</string>
     <string name="type.natural.spring">Mata air</string>
+    <string name="type.natural.spring.drinking_water_no">Mata air</string>
     <string name="type.natural.strait">Selat</string>
     <string name="type.natural.tree_row">Baris pohon</string>
     <string name="type.natural.vineyard">Kebun anggur</string>
@@ -1503,6 +1524,7 @@
     <string name="type.railway.station">Rel kereta api</string>
     <string name="type.railway.station.funicular">Kereta gantung</string>
     <string name="type.railway.station.light_rail">Rel kereta api</string>
+    <string name="type.railway.station.light_rail.berlin">Rel kereta api</string>
     <string name="type.railway.station.light_rail.london">Rel kereta api</string>
     <string name="type.railway.station.light_rail.porto">Rel kereta api</string>
     <string name="type.railway.station.monorail">Rel kereta api</string>
@@ -1545,6 +1567,7 @@
     <string name="type.railway.station.subway.hamburg">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.helsinki">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.hiroshima">Stasiun bawah tanah</string>
+    <string name="type.railway.station.subway.hongkong">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.isfahan">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.istanbul">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.izmir">Stasiun bawah tanah</string>
@@ -1598,6 +1621,7 @@
     <string name="type.railway.station.subway.sendai">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.sf">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.shanghai">Stasiun bawah tanah</string>
+    <string name="type.railway.station.subway.shenzhen">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.shiraz">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.singapore">Stasiun bawah tanah</string>
     <string name="type.railway.station.subway.sofia">Stasiun bawah tanah</string>
@@ -1657,6 +1681,7 @@
     <string name="type.railway.subway_entrance.hamburg">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.helsinki">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.hiroshima">Pintu masuk kereta bawah tanah</string>
+    <string name="type.railway.subway_entrance.hongkong">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.isfahan">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.istanbul">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.izmir">Pintu masuk kereta bawah tanah</string>
@@ -1710,6 +1735,7 @@
     <string name="type.railway.subway_entrance.sendai">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.sf">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.shanghai">Pintu masuk kereta bawah tanah</string>
+    <string name="type.railway.subway_entrance.shenzhen">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.shiraz">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.singapore">Pintu masuk kereta bawah tanah</string>
     <string name="type.railway.subway_entrance.sofia">Pintu masuk kereta bawah tanah</string>
@@ -1794,6 +1820,7 @@
     <string name="type.shop.optician">Toko kacamata</string>
     <string name="type.shop.outdoor">Peralatan Outdoor</string>
     <string name="type.shop.outpost">Titik penjemputan</string>
+    <string name="type.shop.pasta">Toko Pasta</string>
     <string name="type.shop.pastry">Kue-kue</string>
     <string name="type.shop.pawnbroker">Rumah Gadai</string>
     <string name="type.shop.pet">Toko hewan</string>
@@ -1888,7 +1915,13 @@
     <string name="type.tourism.artwork.sculpture">Pariwisata</string>
     <string name="type.tourism.artwork.statue">Pariwisata</string>
     <string name="type.tourism.attraction">Atraksi</string>
+    <string name="type.attraction.amusement_ride">Wahana Hiburan</string>
     <string name="type.attraction.animal">Kandang Hewan</string>
+    <string name="type.attraction.carousel">Korsel</string>
+    <string name="type.attraction.historic">Atraksi bersejarah</string>
+    <string name="type.attraction.maze">Labirin</string>
+    <string name="type.attraction.roller_coaster">Roller Coaster</string>
+    <string name="type.attraction.water_slide">Seluncuran Air</string>
     <string name="type.tourism.attraction.specified">Atraksi</string>
     <string name="type.tourism.camp_site">Perkemahan</string>
     <string name="type.tourism.caravan_site">Lokasi perkemahan</string>

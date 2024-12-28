@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Donate to build the best maps together!";
 
+"already_donated" = "Already donated";
+
+"remind_me_later" = "Remind later";
+
+"support_organic_maps" = "Support Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Copyright";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Community-created OpenStreetMap data as of %@. Learn more about how to edit and update the map at OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Log in to openstreetmap.org to publish your changes to the world.";
+"login_to_make_edits_visible" = "Create an OpenStreetMap account or log in to publish your map edits to the world.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "To download, you need more space. Please delete any unnecessary data.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "More about OpenStreetMap";
 
-"editor_operator" = "Owner";
+"editor_operator" = "Operator";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Owner: %@";
+"operator" = "Operator: %@";
+
+"editor_category_unsuitable_title" = "Can't find a suitable category?";
+
+"editor_category_unsuitable_text" = "Organic Maps allows to add simple point categories only, that means no towns, roads, lakes, building outlines, etc. Please add such categories directly to <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Check our <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">guide</a> for detailed step by step instructions.";
 
 "downloader_no_downloaded_maps_title" = "You haven't downloaded any maps";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "More";
 
 "book_button" = "Book";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Details on Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Disable Kayak";
 
 "placepage_call_button" = "Call";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Plan";
 
-"placepage_remove_stop" = "Remove";
+"placepage_remove_stop" = "Remove Stop";
 
 "planning_route_remove_title" = "Drag here to remove";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Descent";
 
-"elevation_profile_minaltitude" = "Min. altitude";
+"elevation_profile_min_elevation" = "Min. elevation";
 
-"elevation_profile_maxaltitude" = "Max. altitude";
+"elevation_profile_max_elevation" = "Max. elevation";
 
 "elevation_profile_difficulty" = "Difficulty";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Are you sure you want to delete this track?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "If you know a software developer, you can ask him or her to implement a feature that you need.";
 
 /* App tip #04 */
-"app_tip_04" = "Do you know that you can long-tap any place on the map to select it?";
+"app_tip_04" = "Tap anywhere on the map to select anything. A long tap is used to hide and show the interface.";
 
 /* App tip #05 */
 "app_tip_05" = "Did you know that your current location on the map can be selected?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Track is empty - nothing to save";
+
+"edit_track" = "Edit Track";
 
 
 /********** Types **********/
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Water Tank Refill Point";
 
+"type.amenity.water_point.drinking_water_no" = "Water Tank Refill Point";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Block";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garage";
 
-"type.building.train_station" = "Train Station";
+"type.building.train_station" = "Station Building";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -1877,7 +1899,7 @@
 "type.craft.handicraft" = "Handicraft";
 
 /* Heating, Ventilation, and Air Conditioning */
-"type.craft.hvac" = "HVAC Shop";
+"type.craft.hvac" = "HVAC";
 
 "type.craft.key_cutter" = "Key Cutting";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Water Tap";
 
+"type.man_made.water_tap.drinking_water_no" = "Water Tap";
+
 "type.man_made.water_tower" = "Water Tower";
 
 "type.man_made.water_well" = "Water Well";
+
+"type.man_made.water_well.drinking_water_no" = "Water Well";
 
 "type.man_made.windmill" = "Windmill";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Scrub";
 
 "type.natural.spring" = "Natural Spring";
+
+"type.natural.spring.drinking_water_no" = "Natural Spring";
 
 "type.natural.strait" = "Strait";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Train Station";
 
+"type.railway.station.light_rail.berlin" = "Train Station";
+
 "type.railway.station.light_rail.london" = "Train Station";
 
 "type.railway.station.light_rail.porto" = "Train Station";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Metro Station";
 
 "type.railway.station.subway.hiroshima" = "Metro Station";
+
+"type.railway.station.subway.hongkong" = "Metro Station";
 
 "type.railway.station.subway.isfahan" = "Metro Station";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Metro Station";
 
 "type.railway.station.subway.shanghai" = "Metro Station";
+
+"type.railway.station.subway.shenzhen" = "Metro Station";
 
 "type.railway.station.subway.shiraz" = "Metro Station";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Metro Entrance";
 
+"type.railway.subway_entrance.hongkong" = "Metro Entrance";
+
 "type.railway.subway_entrance.isfahan" = "Metro Entrance";
 
 "type.railway.subway_entrance.istanbul" = "Metro Entrance";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Metro Entrance";
 
 "type.railway.subway_entrance.shanghai" = "Metro Entrance";
+
+"type.railway.subway_entrance.shenzhen" = "Metro Entrance";
 
 "type.railway.subway_entrance.shiraz" = "Metro Entrance";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Outdoor Equipment Shop";
 
 "type.shop.outpost" = "Pickup Point";
+
+"type.shop.pasta" = "Pasta Shop";
 
 "type.shop.pastry" = "Bakery";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Attraction";
 
+"type.attraction.amusement_ride" = "Amusement Ride";
+
 "type.attraction.animal" = "Animal Enclosure";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Carousel";
+
+"type.attraction.historic" = "Historic attraction";
+
+"type.attraction.maze" = "Maze";
+
+"type.attraction.roller_coaster" = "Roller Coaster";
+
+"type.attraction.water_slide" = "Water Slide";
 
 "type.tourism.attraction.specified" = "Attraction";
 

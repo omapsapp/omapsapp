@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+<!-- ********** Strings for downloading map from search **********/ -->
+
+	<key>bookmarks_places</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>%d grāmatzīmju</string>
+			<key>one</key>
+			<string>%d grāmatzīme</string>
+			<key>other</key>
+			<string>%d grāmatzīmes</string>
+		</dict>
+	</dict>
+
+	<key>bookmarks_detect_message</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Lietotne atrada %d jaunu datņu. Varat tās apskatīt pēc konvertācijas.</string>
+			<key>one</key>
+			<string>Lietotne atrada %d jaunu datni. Varat to apskatīt pēc konvertācijas.</string>
+			<key>other</key>
+			<string>Lietotne atrada %d jaunas datnes. Varat tās apskatīt pēc konvertācijas.</string>
+		</dict>
+	</dict>
+
+	<key>tracks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>%d ceļu</string>
+			<key>one</key>
+			<string>%d ceļš</string>
+			<key>other</key>
+			<string>%d ceļi</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

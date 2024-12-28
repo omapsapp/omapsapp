@@ -291,6 +291,10 @@
     <string name="google_play_services">Dịch vụ vị trí của Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Nhanh chóng xác định vị trí gần đúng của bạn bằng Bluetooth, WiFi hoặc mạng di động</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Liên kết khách sạn Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Hình ảnh, đánh giá, liên kết đặt phòng được hiển thị cho các khách sạn có danh sách trên Kayak.com. Phần thưởng giới thiệu nhận được cho mỗi lần đặt phòng thông qua các liên kết này sẽ hướng tới sự phát triển của Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Tải xuống bản đồ theo tuyến đường</string>
     <!-- Text for routing error dialog -->
@@ -469,7 +473,10 @@
     <string name="message_invalid_feature_position">Một đối tượng không thể đặt được ở đây</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Dữ liệu OpenStreetMap do cộng đồng tạo ra kể từ %s. Tìm hiểu thêm về cách chỉnh sửa và cập nhật bản đồ tại OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Đăng nhập để người dùng khác có thể nhìn thấy những thay đổi bạn đã thực hiện.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) là một dự án cộng đồng nhằm xây dựng bản đồ mở và miễn phí. Đây là nguồn dữ liệu bản đồ chính trong Bản đồ không phải trả tiền và hoạt động tương tự như Wikipedia. Bạn có thể thêm hoặc chỉnh sửa địa điểm và chúng sẽ có sẵn cho hàng triệu người dùng trên toàn thế giới.
+\nTham gia cộng đồng và giúp tạo bản đồ tốt hơn cho mọi người!</string>
+    <string name="login_to_make_edits_visible">Tạo tài khoản OpenStreetMap hoặc đăng nhập để xuất bản các chỉnh sửa bản đồ của bạn với thế giới.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d trên %2$d</string>
     <string name="download_over_mobile_header">Tải xuống qua kết nối mạng di động?</string>
@@ -489,9 +496,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Các chỉnh sửa của bạn sẽ được tải lên cơ sở dữ liệu <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> công khai. Vui lòng không thêm thông tin cá nhân hoặc có bản quyền.</string>
     <string name="editor_more_about_osm">Thông tin bổ sung về OpenStreetMap</string>
-    <string name="editor_operator">Đơn vị điều hành</string>
+    <string name="editor_osm_history">Lịch sử chỉnh sửa của bạn</string>
+    <string name="editor_osm_notes">Ghi chú dữ liệu bản đồ của bạn</string>
+    <string name="editor_operator">Toán tử</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Đơn vị điều hành: %s</string>
+    <string name="operator">Toán tử: %s</string>
     <string name="editor_category_unsuitable_title">Không thể tìm thấy một danh mục phù hợp?</string>
     <string name="editor_category_unsuitable_text">Bản đồ không phải trả tiền chỉ cho phép thêm các danh mục điểm đơn giản, nghĩa là không có thị trấn, đường, hồ, đường viền tòa nhà, v.v. Vui lòng thêm các danh mục đó trực tiếp vào <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Hãy xem <a href="https://organicmaps.app/faq/editing/advanced-map-editing">hướng dẫn</a> của chúng tôi để biết hướng dẫn chi tiết từng bước.</string>
     <string name="downloader_no_downloaded_maps_title">Bạn chưa tải về bất kỳ bản đồ nào</string>
@@ -510,6 +519,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">giờ</string>
     <string name="minute">phút</string>
+    <string name="day">ngày</string>
     <string name="placepage_more_button">Bổ sung</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Hình ảnh, đánh giá, đặt phòng</string>
@@ -517,6 +527,8 @@
     <string name="dialog_kayak_disclaimer">Phần thưởng giới thiệu nhận được cho mỗi lần đặt phòng thông qua liên kết này sẽ hướng tới việc phát triển bản đồ không phải trả tiền.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Chi tiết trên Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Vô hiệu hóa Kayak</string>
     <string name="placepage_edit_bookmark_button">Sửa Dấu Trang</string>
     <string name="editor_comment_hint">Nhận xét…</string>
     <string name="editor_reset_edits_message">Cài đặt lại tất cả thay đổi cục bộ?</string>
@@ -571,7 +583,7 @@
     <string name="routing_add_start_point">Sử dụng tìm kiếm hoặc nhấn vào bản đồ để thêm điểm bắt đầu tuyến đường</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Sử dụng tìm kiếm hoặc nhấn vào bản đồ để thêm điểm đến</string>
-    <string name="placepage_remove_stop">Xóa</string>
+    <string name="placepage_remove_stop">Xóa điểm dừng</string>
     <string name="placepage_add_stop">Thêm điểm dừng</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Vui lòng đăng nhập vào OpenStreetMap để tự động tải lên tất cả các chỉnh sửa bản đồ của bạn. Tìm hiểu thêm <a href="https://github.com/organicmaps/organicmaps/issues/6144">tại đây</a>.</string>
@@ -719,8 +731,8 @@
     <string name="isolines_location_error_dialog">Đường hiển thị độ cao hiện chưa khả dụng tại khu vực này</string>
     <string name="elevation_profile_ascent">Đi lên</string>
     <string name="elevation_profile_descent">Đi xuống</string>
-    <string name="elevation_profile_minaltitude">Độ cao tối thiểu</string>
-    <string name="elevation_profile_maxaltitude">Độ cao tối đa</string>
+    <string name="elevation_profile_min_elevation">Min. độ cao</string>
+    <string name="elevation_profile_max_elevation">Max. độ cao</string>
     <string name="elevation_profile_difficulty">Độ khó</string>
     <string name="elevation_profile_distance">Khoảng cách</string>
     <string name="elevation_profile_time">Giờ:</string>
@@ -740,7 +752,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Nếu bạn biết một nhà phát triển phần mềm, bạn có thể yêu cầu họ triển khai một tính năng mà bạn cần.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Bạn có biết rằng bạn có thể nhấn và giữ bất kỳ địa điểm nào trên bản đồ để chọn địa điểm đó không?</string>
+    <string name="app_tip_04">Nhấn vào bất cứ nơi nào trên bản đồ để chọn bất cứ thứ gì. Nhấn và giữ để ẩn và hiển thị lại giao diện.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Bạn có biết rằng bạn có thể chọn vị trí hiện tại của mình trên bản đồ không?</string>
     <!-- App tip #06 -->
@@ -810,7 +822,11 @@
     <string name="track_recording_toast_nothing_to_save">Tuyến đường trống - không có gì để lưu</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Không thể hiển thị hộp thoại chọn thư mục vì không có ứng dụng phù hợp nào được cài đặt trên thiết bị của bạn. Vui lòng cài đặt ứng dụng quản lý tệp và thử lại</string>
+    <string name="choose_color">Chọn màu</string>
+    <string name="edit_track">Chỉnh sửa tuyến đường</string>
     <string name="uri_open_location_failed">Không có ứng dụng nào được cài đặt có thể mở vị trí</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Tự động điều hướng</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Địa chỉ/Khối</string>
@@ -923,6 +939,7 @@
     <string name="type.amenity.police">Cảnh sát</string>
     <string name="type.amenity.post_box">Hòm thư</string>
     <string name="type.amenity.post_office">Bưu cục</string>
+    <string name="type.amenity.prison">Nhà tù</string>
     <string name="type.amenity.pub">Quán rượu</string>
     <string name="type.amenity.public_bookcase">Kệ sách</string>
 
@@ -964,6 +981,7 @@
     <string name="type.amenity.waste_basket">Thùng rác</string>
     <string name="type.amenity.waste_disposal">Xử lý chất thải</string>
     <string name="type.amenity.water_point">Điểm cấp nước</string>
+    <string name="type.amenity.water_point.drinking_water_no">Điểm cấp nước</string>
     <string name="type.barrier.block">Khối</string>
     <string name="type.barrier.bollard">Trụ</string>
     <string name="type.barrier.border_control">Biên Phòng</string>
@@ -994,7 +1012,7 @@
     <string name="type.building.has_parts">Tòa nhà</string>
     <string name="type.building_part">Tòa nhà</string>
     <string name="type.building.garage">Gara</string>
-    <string name="type.building.train_station">Đường tàu hỏa</string>
+    <string name="type.building.train_station">Tòa nhà ga</string>
     <string name="type.cemetery.grave">Phần mộ</string>
     <string name="type.craft">Thủ công</string>
     <string name="type.craft.beekeeper">Người nuôi ong</string>
@@ -1374,8 +1392,10 @@
     <string name="type.man_made.tower">Tháp</string>
     <string name="type.man_made.tower.communication">Tháp truyền thông</string>
     <string name="type.man_made.water_tap">Vòi nước</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Vòi nước</string>
     <string name="type.man_made.water_tower">Tháp Nước</string>
     <string name="type.man_made.water_well">Giếng Nước</string>
+    <string name="type.man_made.water_well.drinking_water_no">Giếng Nước</string>
     <string name="type.man_made.windmill">Cối xay gió</string>
     <string name="type.military.bunker">Boongke</string>
     <string name="type.natural">Tự nhiên</string>
@@ -1414,6 +1434,7 @@
     <string name="type.natural.rock">Đá</string>
     <string name="type.natural.scrub">Bụi rậm</string>
     <string name="type.natural.spring">Suối</string>
+    <string name="type.natural.spring.drinking_water_no">Suối</string>
     <string name="type.natural.strait">Eo biển</string>
     <string name="type.natural.tree_row">Hàng cây</string>
     <string name="type.natural.vineyard">Vườn nho</string>
@@ -1507,6 +1528,7 @@
     <string name="type.railway.station">Đường tàu hỏa</string>
     <string name="type.railway.station.funicular">Đường sắt leo núi</string>
     <string name="type.railway.station.light_rail">Đường tàu hỏa</string>
+    <string name="type.railway.station.light_rail.berlin">Đường tàu hỏa</string>
     <string name="type.railway.station.light_rail.london">Đường tàu hỏa</string>
     <string name="type.railway.station.light_rail.porto">Đường tàu hỏa</string>
     <string name="type.railway.station.monorail">Đường tàu hỏa</string>
@@ -1549,6 +1571,7 @@
     <string name="type.railway.station.subway.hamburg">Ngầm</string>
     <string name="type.railway.station.subway.helsinki">Ngầm</string>
     <string name="type.railway.station.subway.hiroshima">Ngầm</string>
+    <string name="type.railway.station.subway.hongkong">Ngầm</string>
     <string name="type.railway.station.subway.isfahan">Ngầm</string>
     <string name="type.railway.station.subway.istanbul">Ngầm</string>
     <string name="type.railway.station.subway.izmir">Ngầm</string>
@@ -1602,6 +1625,7 @@
     <string name="type.railway.station.subway.sendai">Ngầm</string>
     <string name="type.railway.station.subway.sf">Ngầm</string>
     <string name="type.railway.station.subway.shanghai">Ngầm</string>
+    <string name="type.railway.station.subway.shenzhen">Ngầm</string>
     <string name="type.railway.station.subway.shiraz">Ngầm</string>
     <string name="type.railway.station.subway.singapore">Ngầm</string>
     <string name="type.railway.station.subway.sofia">Ngầm</string>
@@ -1661,6 +1685,7 @@
     <string name="type.railway.subway_entrance.hamburg">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.helsinki">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.hiroshima">Lỗi vào Metro</string>
+    <string name="type.railway.subway_entrance.hongkong">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.isfahan">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.istanbul">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.izmir">Lỗi vào Metro</string>
@@ -1714,6 +1739,7 @@
     <string name="type.railway.subway_entrance.sendai">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.sf">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.shanghai">Lỗi vào Metro</string>
+    <string name="type.railway.subway_entrance.shenzhen">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.shiraz">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.singapore">Lỗi vào Metro</string>
     <string name="type.railway.subway_entrance.sofia">Lỗi vào Metro</string>
@@ -1799,6 +1825,7 @@
     <string name="type.shop.optician">Cửa hàng mắt kính</string>
     <string name="type.shop.outdoor">Thiết bị Ngoài trời</string>
     <string name="type.shop.outpost">Điểm đón</string>
+    <string name="type.shop.pasta">Cửa hàng mì ống</string>
     <string name="type.shop.pastry">Bánh ngọt</string>
     <string name="type.shop.pawnbroker">Cầm đồ</string>
     <string name="type.shop.pet">Cửa Hàng Vật Nuôi</string>
@@ -1893,7 +1920,13 @@
     <string name="type.tourism.artwork.sculpture">Du lịch</string>
     <string name="type.tourism.artwork.statue">Du lịch</string>
     <string name="type.tourism.attraction">Hấp dẫn</string>
+    <string name="type.attraction.amusement_ride">Đi xe giải trí</string>
     <string name="type.attraction.animal">Bao vây động vật</string>
+    <string name="type.attraction.carousel">băng chuyền</string>
+    <string name="type.attraction.historic">Điểm tham quan lịch sử</string>
+    <string name="type.attraction.maze">mê cung</string>
+    <string name="type.attraction.roller_coaster">Tàu lượn siêu tốc</string>
+    <string name="type.attraction.water_slide">Trượt nước</string>
     <string name="type.tourism.attraction.specified">Hấp dẫn</string>
     <string name="type.tourism.camp_site">Cắm trại</string>
     <string name="type.tourism.caravan_site">Khu lễ hội hóa trang</string>

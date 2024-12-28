@@ -217,7 +217,7 @@
     <!-- Confirmation for OpenStreetMap log out. -->
     <string name="osm_log_out_confirmation">OpenStreetMap hesabınızdan çıkış yapmak istediğinizden emin misiniz?</string>
     <!-- Title for tracks category in bookmarks manager -->
-    <string name="tracks_title">Kayıtlı Rotalar</string>
+    <string name="tracks_title">GPS Kayıtları</string>
     <!-- Length of track in cell that describes route -->
     <string name="length">Uzunluk</string>
     <string name="share_my_location">Konumumu Paylaş</string>
@@ -241,7 +241,7 @@
     <!-- Settings «Map» category: «3D buildings» title -->
     <string name="pref_map_3d_buildings_title">3B yapılar</string>
     <!-- A message in Settings/Preferences explaining why is it not possible to enable 3D buildings when max power saving mode is enabled -->
-    <string name="pref_map_3d_buildings_disabled_summary">3D binalar güç tasarrufu modunda kapatılır</string>
+    <string name="pref_map_3d_buildings_disabled_summary">3B yapılar güç tasarrufu modundayken kapatılır</string>
     <!-- Settings «Route» category: «Tts enabled» title -->
     <string name="pref_tts_enable_title">Sesli Yönlendirme</string>
     <!-- Settings «Route» category: «Tts announce street names» title -->
@@ -274,7 +274,7 @@
     <!-- Button in the main menu -->
     <string name="donate">Bağış yapın</string>
     <!-- Button in the main Help dialog -->
-    <string name="how_to_support_us">Bu projeyi destekle</string>
+    <string name="how_to_support_us">Bu projeyi destekleyin</string>
     <!-- Button in the main Help dialog -->
     <string name="copyright">Telif hakkı</string>
     <!-- Text in menu + Button in the main Help dialog -->
@@ -284,7 +284,7 @@
     <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
     <string name="compass_calibration_required">Pusulayı kalibre etmek ve haritadaki ok yönünü düzeltmek için telefonu sekiz şeklinde hareket ettirin.</string>
     <!-- Toast text when user hides UI with a long tap anywhere on the map -->
-    <string name="long_tap_toast">Arayüzü görmek için haritaya tekrar uzun dokunun</string>
+    <string name="long_tap_toast">Seçenekleri görmek için haritaya tekrar basılı tutun</string>
     <!-- Update all button text -->
     <string name="downloader_update_all_button">Tümünü güncelle</string>
     <!-- Cancel all button text -->
@@ -314,6 +314,10 @@
     <string name="google_play_services">Google Play Konum Hizmetleri</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Bluetooth, WiFi veya mobil ağ üzerinden yaklaşık konumunuzu hızlıca belirleyin</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Otel Bağlantıları</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Kayak.com\'da listesi olan oteller için fotoğraflar, yorumlar, rezervasyon bağlantıları görüntülenir. Bu bağlantılar aracılığıyla yapılan her rezervasyon için alınan yönlendirme bonusu Organic Maps\'in geliştirilmesine harcanmaktadır.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Rota üzerindeki tüm haritaları indir</string>
     <!-- Text for routing error dialog -->
@@ -397,9 +401,9 @@
     <string name="hide">Gizle</string>
     <string name="categories">Kategoriler</string>
     <string name="history">Geçmiş</string>
-    <string name="search_not_found">Üzgünüz, hiç bir şey bulamadık.</string>
+    <string name="search_not_found">Tüh, sonuç bulunamadı.</string>
     <!-- The message when user did not find anything in the search. -->
-    <string name="search_not_found_query">Arama yaptığınız bölgeyi indirin veya yakındaki bir kasaba/köy adını eklemeyi deneyin.</string>
+    <string name="search_not_found_query">Arama yapmak istediğiniz bölgenin haritasını indirin veya yakındaki bir yerleşim yeri adını eklemeyi deneyin.</string>
     <string name="search_history_title">Arama Geçmişi</string>
     <string name="search_history_text">Son aramaları görüntüleyin.</string>
     <string name="clear_search">Arama Geçmişini Temizle</string>
@@ -501,7 +505,10 @@
     <string name="message_invalid_feature_position">Buraya bir nesne konumlandırılamıyor</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">%s tarihine ait topluluk tarafından oluşturulmuş OpenStreetMap verilerini kullanıyorsunuz. OpenStreetMap.org adresinden haritayı nasıl düzenleyebileceğiniz hakkında bilgi edinebilirsiniz</string>
-    <string name="login_to_make_edits_visible">Diğer kullanıcıların yaptığınız değişiklikleri görebilmesi için OpenStreetMap.org\'da oturum açın.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM), ücretsiz ve açık harita oluşturmayı amaçlayan bir topluluk projesidir. OSM, Organic Maps\'teki harita verilerinin ana kaynağıdır ve Vikipedi\'ye benzer şekilde çalışır. Haritadaki yerleri ekleyebilir veya düzenleyebilirsiniz ve bunlar tüm dünyadaki milyonlarca kullanıcı tarafından kullanılabilir hale gelir.
+\nTopluluğa katılın ve herkes için daha iyi bir harita oluşturmaya yardımcı olun!</string>
+    <string name="login_to_make_edits_visible">Harita düzenlemelerinizin herkese ulaşabilmesi için bir OpenStreetMap hesabı oluşturun veya oturum açın.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Hücresel bir ağ bağlantısı kullanarak indirilsin mi?</string>
@@ -521,9 +528,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Düzenlemeleriniz halka açık <a href="https://wiki.openstreetmap.org/wiki/Tr:About">OpenStreetMap</a> veritabanına yüklenir. Lütfen kişisel veya telif hakkıyla korunan bilgiler eklemeyin.</string>
     <string name="editor_more_about_osm">OpenStreetMap hakkında ek bilgi</string>
-    <string name="editor_operator">İşletmeci</string>
+    <string name="editor_osm_history">Düzenleme geçmişiniz</string>
+    <string name="editor_osm_notes">Harita veri notlarınız</string>
+    <string name="editor_operator">Operatör</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">İşletmeci: %s</string>
+    <string name="operator">Operatör: %s</string>
     <string name="editor_category_unsuitable_title">Uygun bir kategori bulamıyor musunuz?</string>
     <string name="editor_category_unsuitable_text">Organik Haritalar yalnızca basit nokta kategorileri eklemeye izin verir, yani kasaba, yol, göl, bina ana hatları vb. yoktur. Lütfen bu tür kategorileri doğrudan <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>\'a ekleyin. Adım adım ayrıntılı talimatlar için <a href="https://organicmaps.app/faq/editing/advanced-map-editing">rehberimize</a> göz atın.</string>
     <string name="downloader_no_downloaded_maps_title">Hiç harita indirmediniz</string>
@@ -542,6 +551,7 @@
     <string name="miles_per_hour">saatte mil</string>
     <string name="hour">sa</string>
     <string name="minute">dk</string>
+    <string name="day">g</string>
     <string name="placepage_more_button">Diğer</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotoğraflar, yorumlar, rezervasyon</string>
@@ -549,6 +559,8 @@
     <string name="dialog_kayak_disclaimer">Bu bağlantı üzerinden yapılan her rezervasyon için alınan yönlendirme bonusu Organic Maps\'in geliştirilmesine harcanmaktadır.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak hakkında detaylar</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak\'yı devre dışı bırak</string>
     <string name="placepage_edit_bookmark_button">Yer İmini Düzenle</string>
     <string name="editor_comment_hint">Yorum…</string>
     <string name="editor_reset_edits_message">Tüm yerel değişiklikler sıfırlansın mı?</string>
@@ -575,7 +587,7 @@
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap editörleri değişikliklerinizi kontrol edecek ve bir soruları olursa sizinle iletişime geçecekler.</string>
     <string name="navigation_stop_button">Dur</string>
     <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Yolun kaydedilmesi</string>
+    <string name="track_recording">GPS iziniz kaydediliyor</string>
     <!-- For the first routing -->
     <string name="accept">Kabul et</string>
     <!-- For the first routing -->
@@ -608,7 +620,7 @@
     <string name="routing_add_start_point">Bir rota başlangıç noktası eklemek için aramayı kullanın veya haritaya dokunun</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Bir hedef noktası eklemek için aramayı kullanın veya haritaya dokunun</string>
-    <string name="placepage_remove_stop">Kaldır</string>
+    <string name="placepage_remove_stop">Durağı kaldır</string>
     <string name="placepage_add_stop">Ara nokta ekle</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Tüm harita düzenlemelerinizi otomatik olarak yüklemek için lütfen OpenStreetMap\'e giriş yapın. Daha fazla bilgi <a href="https://github.com/organicmaps/organicmaps/issues/6144">burada</a>.</string>
@@ -756,8 +768,8 @@
     <string name="isolines_location_error_dialog">Arazi katmanı henüz bu bölgede mevcut değil</string>
     <string name="elevation_profile_ascent">Tırmanış</string>
     <string name="elevation_profile_descent">İniş</string>
-    <string name="elevation_profile_minaltitude">Min. rakım</string>
-    <string name="elevation_profile_maxaltitude">Maks. rakım</string>
+    <string name="elevation_profile_min_elevation">Min. yükselti</string>
+    <string name="elevation_profile_max_elevation">Maks. yükselti</string>
     <string name="elevation_profile_difficulty">Zorluk</string>
     <string name="elevation_profile_distance">Mesafe:</string>
     <string name="elevation_profile_time">Süre:</string>
@@ -779,6 +791,8 @@
     <string name="enable_show_on_lock_screen">Kilit ekranında göster</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Etkinleştirildiğinde, uygulama çalışırken her seferinde cihazınızın kilidini açmanıza gerek kalmaz.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Harita dili</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Harita verileri OpenStreetMap\'ten</string>
     <!-- Telegram group url for the "?" About page -->
@@ -794,44 +808,44 @@
     <!-- App tip #01 -->
     <string name="app_tip_01">Bağışlarınız ve desteğinizle dünyanın en iyi haritalar uygulamasını oluşturabiliriz!</string>
     <!-- App tip #02 -->
-    <string name="app_tip_02">Uygulamamızı beğendiniz mi? Gelişimi desteklemek için lütfen bağış yapın! Henüz beğenmedin mi? Lütfen bize bildirin, düzelteceğiz!</string>
+    <string name="app_tip_02">Uygulamamızı beğendiniz mi? Geliştirmemizi desteklemek için lütfen bağış yapın! Henüz beğenmediniz mi? Lütfen beğenmediğiniz şeyleri bize bildirin, düzelteceğiz!</string>
     <!-- App tip #03 -->
-    <string name="app_tip_03">Bir yazılım geliştirici tanıyorsanız, ondan ihtiyacınız olan bir özelliği uygulamasını isteyebilirsiniz.</string>
+    <string name="app_tip_03">Bir yazılım mühendisi / geliştirici tanıyorsanız, ondan ihtiyacınız olan bir özelliği uygulamaya eklemesini isteyebilirsiniz.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Haritadaki herhangi bir yeri seçmek için uzun süre dokunabileceğinizi biliyor musunuz?</string>
+    <string name="app_tip_04">Herhangi bir şeyi seçmek için haritada üzerine dokunun. Ekrandaki seçenekleri gizlemek ve geri getirmek için ise basılı tutun.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Haritada mevcut konumunuzu seçebileceğinizi biliyor musunuz?</string>
     <!-- App tip #06 -->
     <string name="app_tip_06">Uygulamamızın kendi dilinize çevrilmesine yardımcı olabilirsiniz.</string>
     <!-- App tip #07 -->
-    <string name="app_tip_07">Uygulamamız birkaç meraklı ve topluluk tarafından geliştirilmiştir.</string>
+    <string name="app_tip_07">Uygulamamız birkaç teknoloji tutkunu ve topluluk tarafından geliştirilmiştir.</string>
     <!-- App tip #08 -->
     <string name="app_tip_08">Harita verilerini kolayca düzeltebilir ve iyileştirebilirsiniz.</string>
     <!-- App tip #09 -->
-    <string name="app_tip_09">Temel amacımız hızlı, gizlilik odaklı, kullanımı kolay, seveceğiniz haritalar oluşturmaktır.</string>
+    <string name="app_tip_09">Temel amacımız hızlı, gizlilik odaklı, kullanımı kolay, seveceğiniz bir harita uygulaması oluşturmaktır.</string>
     <!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
-    <string name="car_used_on_the_phone_screen">Artık telefon ekranında Organic Maps kullanıyorsunuz</string>
+    <string name="car_used_on_the_phone_screen">Artık Organic Maps\'i telefon ekranında kullanıyorsunuz</string>
     <!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
     <string name="car_used_on_the_car_screen">Şu anda araç ekranında Organic Maps kullanıyorsunuz</string>
     <!-- Displayed on the phone screen. Android Auto connected -->
     <string name="aa_connected_title">Android Auto\'ya bağlandınız</string>
     <!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-    <string name="car_continue_on_the_phone">Telefonda devam edin</string>
+    <string name="car_continue_on_the_phone">Telefonda devam et</string>
     <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-    <string name="car_continue_in_the_car">Araba ekranına</string>
+    <string name="car_continue_in_the_car">Arabada göster</string>
     <!-- Ask user to grant location permissions -->
     <string name="aa_location_permissions_request">Bu uygulama, navigasyon amacıyla konumunuza erişim gerektirir.</string>
     <!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
     <string name="aa_grant_permissions">İzinleri Verin</string>
     <!-- Text that will be displayed in the notification title when the app is connected to Android Auto. -->
-    <string name="aa_connected_to_car_notification_title">Arabaya bağlı</string>
+    <string name="aa_connected_to_car_notification_title">Arabaya bağlanıldı</string>
     <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->
     <string name="button_layer_outdoor">Yürüyüş</string>
     <!-- Text displayed when a webview or a browser are disabled, and external links can't be opened. -->
     <string name="browser_not_available">Web tarayıcısı mevcut değil</string>
     <string name="volume">Ses</string>
     <!-- Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks -->
-    <string name="bookmarks_export">Tüm Yer İmlerini ve Rotaları Dışa Aktar</string>
+    <string name="bookmarks_export">Tüm Yer İmlerini ve Kayıtları Dışa Aktar</string>
     <!-- button in (app) TTS settings, to open the system TTS settings. -->
     <string name="pref_tts_open_system_settings">Konuşma sentezleme ile ilgili sistem ayarları</string>
     <!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
@@ -842,7 +856,7 @@
     <!-- Accessibility text for the zoom-out button on the map -->
     <string name="zoom_out">Uzaklaştır</string>
     <!-- Restaurant or other food place's menu URL field in the Editor -->
-    <string name="website_menu">Menü bağlantısı</string>
+    <string name="website_menu">Menü Bağlantısı</string>
     <!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
     <string name="view_menu">Menüyü Görüntüle</string>
     <!-- Title for the "Open In Another App" button on the PlacePage. -->
@@ -853,22 +867,26 @@
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Açık oturma alanı</string>
     <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">En doğru navigasyon için, telefonun pil ayarlarında güç tasarrufu modunu devre dışı bırakmanızı öneririz.</string>
+    <string name="power_save_dialog_summary">En doğru navigasyon için, telefonunuzun pil ayarlarından güç tasarrufu modunu devre dışı bırakmanızı öneririz.</string>
     <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Parkur kaydı</string>
+    <string name="start_track_recording">GPS izini kaydet</string>
     <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Parkur kaydını durdur</string>
+    <string name="stop_track_recording">GPS izi kaydını durdur</string>
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Kaydetmeden durdur</string>
+    <string name="stop_without_saving">Kaydı sil ve durdur</string>
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
     <string name="continue_recording">Kaydı devam ettir</string>
     <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Parkur kaydını yer imleri ve kayıtlı rotalara kaydedin mi?</string>
+    <string name="track_recording_alert_title">GPS izi kaydınız yer imleri ve kayıtlı rotalara kaydedilsin mi?</string>
     <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Rota boş - kaydedilecek bir şey yok</string>
+    <string name="track_recording_toast_nothing_to_save">Kaydınız boş - kaydedilecek bir şey yok</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
-    <string name="error_no_file_manager_app">Cihazınızda uygun bir uygulama yüklü olmadığından klasör seçimi iletişim kutusu görüntülenemiyor. Lütfen bir dosya yöneticisi uygulaması yükleyin ve tekrar deneyin</string>
+    <string name="error_no_file_manager_app">Cihazınızda uygun bir uygulama yüklü olmadığından klasör seçim menüsü görüntülenemiyor. Lütfen bir dosya yöneticisi uygulaması yükleyin ve tekrar deneyin.</string>
+    <string name="choose_color">Renk seç</string>
+    <string name="edit_track">Kaydı düzenle</string>
     <string name="uri_open_location_failed">Konumu açabilecek yüklü bir uygulama yok</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Navigasyonda otomatik</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adres/Blok</string>
@@ -1049,6 +1067,7 @@
     <string name="type.amenity.waste_disposal">Çöp Konteyneri</string>
     <string name="type.amenity.waste_transfer_station">Atık Transfer İstasyonu</string>
     <string name="type.amenity.water_point">Karavanlar için Su Noktası</string>
+    <string name="type.amenity.water_point.drinking_water_no">Karavanlar için Su Noktası</string>
     <string name="type.barrier">Bariyer</string>
     <string name="type.barrier.block">Blok</string>
     <string name="type.barrier.bollard">Direk</string>
@@ -1094,7 +1113,7 @@
     <string name="type.building.has_parts">Bina</string>
     <string name="type.building_part">Bina</string>
     <string name="type.building.garage">Garaj</string>
-    <string name="type.building.train_station">Tren İstasyonu</string>
+    <string name="type.building.train_station">İstasyon Binası</string>
     <string name="type.building.warehouse">Depo</string>
     <string name="type.cemetery.grave">Mezar</string>
     <string name="type.craft">Zanaat</string>
@@ -1531,8 +1550,10 @@
     <string name="type.man_made.tower.communication">İletişim Kulesi</string>
     <string name="type.man_made.wastewater_plant">Atıksu Tesisi</string>
     <string name="type.man_made.water_tap">Su Musluğu</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Su Musluğu</string>
     <string name="type.man_made.water_tower">Su Kulesi</string>
     <string name="type.man_made.water_well">Su Kuyusu</string>
+    <string name="type.man_made.water_well.drinking_water_no">Su Kuyusu</string>
     <string name="type.man_made.windmill">Yel Değirmeni</string>
     <string name="type.man_made.works">Sanayi İşleri</string>
     <string name="type.military">Askeri</string>
@@ -1574,6 +1595,7 @@
     <string name="type.natural.rock">Kaya</string>
     <string name="type.natural.scrub">Çalılık</string>
     <string name="type.natural.spring">Pınar</string>
+    <string name="type.natural.spring.drinking_water_no">Pınar</string>
     <string name="type.natural.strait">Boğaz</string>
     <string name="type.natural.tree_row">Ağaç Sırası</string>
     <string name="type.natural.vineyard">Bağ</string>
@@ -1697,6 +1719,7 @@
     <string name="type.railway.station">Tren İstasyonu</string>
     <string name="type.railway.station.funicular">Füniküler</string>
     <string name="type.railway.station.light_rail">Tren İstasyonu</string>
+    <string name="type.railway.station.light_rail.berlin">Tren İstasyonu</string>
     <string name="type.railway.station.light_rail.london">Tren İstasyonu</string>
     <string name="type.railway.station.light_rail.porto">Tren İstasyonu</string>
     <string name="type.railway.station.monorail">Tren İstasyonu</string>
@@ -1739,6 +1762,7 @@
     <string name="type.railway.station.subway.hamburg">Metro</string>
     <string name="type.railway.station.subway.helsinki">Metro</string>
     <string name="type.railway.station.subway.hiroshima">Metro</string>
+    <string name="type.railway.station.subway.hongkong">Metro</string>
     <string name="type.railway.station.subway.isfahan">Metro</string>
     <string name="type.railway.station.subway.istanbul">Metro</string>
     <string name="type.railway.station.subway.izmir">Metro</string>
@@ -1792,6 +1816,7 @@
     <string name="type.railway.station.subway.sendai">Metro</string>
     <string name="type.railway.station.subway.sf">Metro</string>
     <string name="type.railway.station.subway.shanghai">Metro</string>
+    <string name="type.railway.station.subway.shenzhen">Metro</string>
     <string name="type.railway.station.subway.shiraz">Metro</string>
     <string name="type.railway.station.subway.singapore">Metro</string>
     <string name="type.railway.station.subway.sofia">Metro</string>
@@ -1854,6 +1879,7 @@
     <string name="type.railway.subway_entrance.hamburg">Metro Girişi</string>
     <string name="type.railway.subway_entrance.helsinki">Metro Girişi</string>
     <string name="type.railway.subway_entrance.hiroshima">Metro Girişi</string>
+    <string name="type.railway.subway_entrance.hongkong">Metro Girişi</string>
     <string name="type.railway.subway_entrance.isfahan">Metro Girişi</string>
     <string name="type.railway.subway_entrance.istanbul">Metro Girişi</string>
     <string name="type.railway.subway_entrance.izmir">Metro Girişi</string>
@@ -1907,6 +1933,7 @@
     <string name="type.railway.subway_entrance.sendai">Metro Girişi</string>
     <string name="type.railway.subway_entrance.sf">Metro Girişi</string>
     <string name="type.railway.subway_entrance.shanghai">Metro Girişi</string>
+    <string name="type.railway.subway_entrance.shenzhen">Metro Girişi</string>
     <string name="type.railway.subway_entrance.shiraz">Metro Girişi</string>
     <string name="type.railway.subway_entrance.singapore">Metro Girişi</string>
     <string name="type.railway.subway_entrance.sofia">Metro Girişi</string>
@@ -1999,6 +2026,7 @@
     <string name="type.shop.optician">Gözlükçü</string>
     <string name="type.shop.outdoor">Dış Mekan Ekipmanları</string>
     <string name="type.shop.outpost">Alım Noktası</string>
+    <string name="type.shop.pasta">Makarna Dükkanı</string>
     <string name="type.shop.pastry">Hamur işi</string>
     <string name="type.shop.pawnbroker">Tefeci</string>
     <string name="type.shop.pet">Evcil Hayvan Mağazası</string>
@@ -2095,7 +2123,13 @@
     <string name="type.tourism.artwork.sculpture">Heykel</string>
     <string name="type.tourism.artwork.statue">Heykel</string>
     <string name="type.tourism.attraction">Görülecek Yerler</string>
+    <string name="type.attraction.amusement_ride">Eğlence Sürüşü</string>
     <string name="type.attraction.animal">Hayvan Muhafazası</string>
+    <string name="type.attraction.carousel">Atlıkarınca</string>
+    <string name="type.attraction.historic">Tarihi cazibe merkezi</string>
+    <string name="type.attraction.maze">Labirent</string>
+    <string name="type.attraction.roller_coaster">Lunapark hız treni</string>
+    <string name="type.attraction.water_slide">Su Kaydırağı</string>
     <string name="type.tourism.attraction.specified">Görülecek Yerler</string>
     <string name="type.tourism.camp_site">Kamp Alanı</string>
     <string name="type.tourism.caravan_site">Karavan Parkı</string>

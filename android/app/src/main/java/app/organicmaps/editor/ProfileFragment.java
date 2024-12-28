@@ -57,6 +57,7 @@ public class ProfileFragment extends BaseMwmToolbarFragment
     mProfileImage = mUserInfoBlock.findViewById(R.id.user_profile_image);
     view.findViewById(R.id.about_osm).setOnClickListener((v) -> Utils.openUrl(requireActivity(), getString(R.string.osm_wiki_about_url)));
     view.findViewById(R.id.osm_history).setOnClickListener((v) -> Utils.openUrl(requireActivity(), OsmOAuth.getHistoryUrl(requireContext())));
+    view.findViewById(R.id.osm_notes).setOnClickListener((v) -> Utils.openUrl(requireActivity(), OsmOAuth.getNotesUrl(requireContext())));
 
   }
 

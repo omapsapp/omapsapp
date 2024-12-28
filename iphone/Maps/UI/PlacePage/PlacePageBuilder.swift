@@ -1,44 +1,52 @@
 @objc class PlacePageBuilder: NSObject {    
-  @objc static func build() -> PlacePageViewController {
+  @objc static func build(for data: PlacePageData) -> PlacePageViewController {
     let storyboard = UIStoryboard.instance(.placePage)
     guard let viewController = storyboard.instantiateInitialViewController() as? PlacePageViewController else {
       fatalError()
     }
-    let data = PlacePageData(localizationProvider: OpeinigHoursLocalization())
     viewController.isPreviewPlus = data.isPreviewPlus
     let interactor = PlacePageInteractor(viewController: viewController,
                                          data: data,
                                          mapViewController: MapViewController.shared()!)
-    let layout:IPlacePageLayout
-    if data.elevationProfileData != nil {
-      layout = PlacePageElevationLayout(interactor: interactor, storyboard: storyboard, data: data)
-    } else {
+    let layout: IPlacePageLayout
+    switch data.objectType {
+    case .POI, .bookmark:
       layout = PlacePageCommonLayout(interactor: interactor, storyboard: storyboard, data: data)
+    case .track:
+      layout = PlacePageTrackLayout(interactor: interactor, storyboard: storyboard, data: data)
+    case .trackRecording:
+      // TODO: Implement PlacePageTrackRecordingLayout
+      fatalError("PlacePageTrackRecordingLayout is not implemented")
+    @unknown default:
+      fatalError()
     }
-    let presenter = PlacePagePresenter(view: viewController, interactor: interactor)
-
+    let presenter = PlacePagePresenter(view: viewController)
     viewController.setLayout(layout)
-    viewController.presenter = presenter
+    viewController.interactor = interactor
     interactor.presenter = presenter
     layout.presenter = presenter
     return viewController
 	}
 
-  @objc static func update(_ viewController: PlacePageViewController) {
-    let data = PlacePageData(localizationProvider: OpeinigHoursLocalization())
+  @objc static func update(_ viewController: PlacePageViewController, with data: PlacePageData) {
     viewController.isPreviewPlus = data.isPreviewPlus
     let interactor = PlacePageInteractor(viewController: viewController,
                                          data: data,
                                          mapViewController: MapViewController.shared()!)
-    let layout:IPlacePageLayout
-    if data.elevationProfileData != nil {
-      layout = PlacePageElevationLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
-    } else {
+    let layout: IPlacePageLayout
+    switch data.objectType {
+    case .POI, .bookmark:
       layout = PlacePageCommonLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
+    case .track:
+      layout = PlacePageTrackLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
+    case .trackRecording:
+      // TODO: Implement PlacePageTrackRecordingLayout
+      fatalError("PlacePageTrackRecordingLayout is not implemented")
+    @unknown default:
+      fatalError()
     }
-    let presenter = PlacePagePresenter(view: viewController, interactor: interactor)
-
-    viewController.presenter = presenter
+    let presenter = PlacePagePresenter(view: viewController)
+    viewController.interactor = interactor
     interactor.presenter = presenter
     layout.presenter = presenter
     viewController.updateWithLayout(layout)

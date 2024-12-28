@@ -16,6 +16,8 @@
 #include "indexer/road_shields_parser.hpp"
 #include "indexer/search_string_utils.hpp"
 
+#include "platform/localization.hpp"
+
 #include "coding/string_utf8_multilang.hpp"
 
 #include "base/logging.hpp"
@@ -471,9 +473,25 @@ private:
     center = feature::GetCenter(*ft);
     m_ranker.GetBestMatchName(*ft, name);
 
+    // Use brand instead of empty result name.
+    if (!m_isViewportMode && name.empty())
+    {
+      std::string_view brand = (*ft).GetMetadata(feature::Metadata::FMD_BRAND);
+      if (!brand.empty())
+        name = platform::GetLocalizedBrandName(std::string{ brand });
+    }
+
     // Insert exact address (street and house number) instead of empty result name.
     if (!m_isViewportMode && name.empty())
     {
+      feature::TypesHolder featureTypes(*ft);
+      featureTypes.SortBySpec();
+      auto const bestType = featureTypes.GetBestType();
+      auto const addressChecker = ftypes::IsAddressChecker::Instance();
+    
+      if (!addressChecker.IsMatched(bestType))
+        return ft;
+
       ReverseGeocoder::Address addr;
       if (GetExactAddress(*ft, center, addr))
       {

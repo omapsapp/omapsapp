@@ -41,6 +41,7 @@ set(SRC
   app/organicmaps/SearchEngine.cpp
   app/organicmaps/SearchRecents.cpp
   app/organicmaps/settings/UnitLocale.cpp
+  app/organicmaps/settings/MapLanguageCode.cpp
   app/organicmaps/sound/tts.cpp
   app/organicmaps/subway/SubwayManager.cpp
   app/organicmaps/TrackRecorder.cpp

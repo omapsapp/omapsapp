@@ -165,6 +165,18 @@ bool IsExist(Cont const & c, T const & t)
   return std::find(std::cbegin(c), end, t) != end;
 }
 
+template <class MapT, class K, class V>
+auto EmplaceOrAssign(MapT & theMap, K && k, V && v)
+{
+  auto it = theMap.lower_bound(k);
+  if (it != theMap.end() && k == it->first)
+  {
+    it->second = std::forward<V>(v);
+    return std::make_pair(it, false);
+  }
+  return std::make_pair(theMap.emplace_hint(it, std::forward<K>(k), std::forward<V>(v)), true);
+}
+
 // Creates a comparer being able to compare two instances of class C
 // (given by reference or pointer) by a field or const method of C.
 // For example, to create comparer that is able to compare pairs of

@@ -55,6 +55,7 @@ std::string DebugPrint(Message::Type msgType)
   case Message::Type::Invalidate: return "Invalidate";
   case Message::Type::Allow3dMode: return "Allow3dMode";
   case Message::Type::Allow3dBuildings: return "Allow3dBuildings";
+  case Message::Type::SetMapLangIndex: return "SetMapLangIndex";
   case Message::Type::EnablePerspective: return "EnablePerspective";
   case Message::Type::FlushCirclesPack: return "FlushCirclesPack";
   case Message::Type::CacheCirclesPack: return "CacheCirclesPack";

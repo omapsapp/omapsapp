@@ -110,12 +110,11 @@
       android:id="@+id/lanes"
       android:layout_width="0dp"
       android:layout_height="68dp"
-      android:layout_marginEnd="@dimen/margin_half"
-      android:layout_marginTop="@dimen/margin_half"
+      android:layout_margin="@dimen/margin_half"
       android:padding="@dimen/margin_half"
       android:visibility="gone"
+      app:layout_constraintStart_toEndOf="@+id/nav_speed_limit"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@id/nav_next_turn_container"
       app:layout_constraintTop_toBottomOf="@id/street_frame"
       app:activeLaneTintColor="?navLaneArrowActiveColor"
       app:inactiveLaneTintColor="?navLaneArrowInactiveColor"
@@ -123,4 +122,14 @@
       app:cornerRadius="@dimen/margin_quarter"
       app:editModeLanesCount="10"
       tools:visibility="visible" />
+
+  <app.organicmaps.widget.SpeedLimitView
+    android:id="@+id/nav_speed_limit"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_margin="@dimen/margin_half"
+    app:editModeCurrentSpeed="90"
+    app:editModeSpeedLimit="120"
+    app:layout_constraintStart_toEndOf="@id/nav_next_turn_container"
+    app:layout_constraintTop_toBottomOf="@id/street_frame" />
 </androidx.constraintlayout.widget.ConstraintLayout>

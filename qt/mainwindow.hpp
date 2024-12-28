@@ -50,12 +50,11 @@ class MainWindow : public QMainWindow, location::LocationObserver
 
   enum LayerType : uint8_t
   {
-    TRAFFIC = 0,
-    TRANSIT,      // Metro scheme
+    /// @todo Uncomment when we will integrate a traffic provider.
+    // TRAFFIC = 0,
+    TRANSIT = 0,      // Metro scheme
     ISOLINES,
-
-    // Should be the last
-    COUNT
+    OUTDOORS,
   };
   PopupMenuHolder * m_layers = nullptr;
   PopupMenuHolder * m_routing = nullptr;

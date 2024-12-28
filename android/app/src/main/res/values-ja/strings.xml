@@ -315,6 +315,10 @@
     <string name="google_play_services">Google Play位置情報サービス</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Bluetooth、WiFi、またはモバイルネットワーク経由で、おおよその位置を素早く特定する</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.comホテルリンク</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Kayak.comに掲載されているホテルの写真、レビュー、予約リンクが表示されます。これらのリンクを経由して予約された場合、紹介ボーナスはOrganic Mapsの開発に使用されます。</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">ルート上の地図をダウンロード</string>
     <!-- Text for routing error dialog -->
@@ -502,7 +506,9 @@
     <string name="message_invalid_feature_position">ここにはオブジェクトを配置できません</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">コミュニティが作成した OpenStreetMap のデータは OpenStreetMap.org までです。地図の編集や更新の方法については、%sを参照してください。</string>
-    <string name="login_to_make_edits_visible">他のユーザーにも変更が表示されるようにログインしてください。</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org(OSM)は、フリーでオープンな地図を構築するコミュニティ・プロジェクトです。OSMは、Organic Mapsの地図データの主要なソースであり、ウィキペディアと同じように機能します。あなたが場所を追加したり編集したりすると、世界中の何百万人ものユーザーがその場所を利用できるようになります！</string>
+    <string name="login_to_make_edits_visible">OpenStreetMapのアカウントを作成するかログインして、あなたの地図編集を世界中に公開しましょう。</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%2$dのうち%1$d</string>
     <string name="download_over_mobile_header">モバイル通信でダウンロードしますか？</string>
@@ -522,6 +528,8 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">あなたの編集は公開されている<a href="https://wiki.openstreetmap.org/wiki/JA:参加する">OpenStreetMap</a>データベースにアップロードされます。個人情報や著作権のある情報は追加しないでください。</string>
     <string name="editor_more_about_osm">OpenStreetMapについての詳細</string>
+    <string name="editor_osm_history">編集履歴</string>
+    <string name="editor_osm_notes">地図データのメモ</string>
     <string name="editor_operator">オペレーター</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">オペレーター: %s</string>
@@ -543,6 +551,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">時間</string>
     <string name="minute">分</string>
+    <string name="day">日</string>
     <string name="placepage_more_button">さらに詳しく</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">写真、レビュー、予約</string>
@@ -550,6 +559,8 @@
     <string name="dialog_kayak_disclaimer">このリンクを経由した予約の紹介ボーナスは、Organic Mapsの発展のために使われる。</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak で詳細表示</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayakの無効化</string>
     <string name="placepage_edit_bookmark_button">ブックマークを編集</string>
     <string name="editor_comment_hint">コメント…</string>
     <string name="editor_reset_edits_message">ローカル編集をすべてリセットしますか?</string>
@@ -609,7 +620,7 @@
     <string name="routing_add_start_point">検索を使うか、地図上をタップしてルートの出発点を追加する</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">検索を使うか、地図上をタップして目的地を追加する</string>
-    <string name="placepage_remove_stop">削除</string>
+    <string name="placepage_remove_stop">停留所を削除</string>
     <string name="placepage_add_stop">中間地点を追加</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">すべてのマップ編集を自動的にアップロードするには、OpenStreetMapにログインしてください。詳しくは <a href="https://github.com/organicmaps/organicmaps/issues/6144">こちら</a>.</string>
@@ -757,8 +768,8 @@
     <string name="isolines_location_error_dialog">地形レイヤーはこの地域ではまだ利用できません</string>
     <string name="elevation_profile_ascent">上昇</string>
     <string name="elevation_profile_descent">下降</string>
-    <string name="elevation_profile_minaltitude">最小高度</string>
-    <string name="elevation_profile_maxaltitude">最大高度</string>
+    <string name="elevation_profile_min_elevation">最小標高</string>
+    <string name="elevation_profile_max_elevation">最大標高</string>
     <string name="elevation_profile_difficulty">難易度</string>
     <string name="elevation_profile_distance">距離：</string>
     <string name="elevation_profile_time">時間：</string>
@@ -780,6 +791,8 @@
     <string name="enable_show_on_lock_screen">ロック画面に表示</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">有効にすると、デバイスがロックされている場合でもアプリはロック画面で動作します。</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">マップ言語</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">OpenStreetMapからの地図データ</string>
     <!-- Link to OSM wiki for Editor, Profile and About pages -->
@@ -793,7 +806,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">ソフトウェア開発者を知っている場合は、必要な機能を実装するように依頼できます。</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">地図上の任意の場所を長押しして選択できることをご存知ですか?</string>
+    <string name="app_tip_04">地図上の任意の場所をタップして、何かを選択します。ロングタップでインターフェイスを非表示にしたり、表示したりできます。</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">地図上で現在地を選択できることをご存知ですか?</string>
     <!-- App tip #06 -->
@@ -863,7 +876,11 @@
     <string name="track_recording_toast_nothing_to_save">ルートが空です - 保存するものがありません</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">デバイスに適切なアプリがインストールされていないため、フォルダ選択ダイアログを表示できません。ファイルマネージャーアプリをインストールして再度お試しください。</string>
+    <string name="choose_color">色を選択</string>
+    <string name="edit_track">ルートを編集</string>
     <string name="uri_open_location_failed">場所を開くことができるアプリがインストールされていません</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">ナビゲーションオート</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">アドレス/ブロック</string>
@@ -1033,6 +1050,7 @@
     <string name="type.amenity.waste_basket">ゴミ箱</string>
     <string name="type.amenity.waste_disposal">ゴミ</string>
     <string name="type.amenity.water_point">給水所</string>
+    <string name="type.amenity.water_point.drinking_water_no">給水所</string>
     <string name="type.barrier">障害物</string>
     <string name="type.barrier.block">ブロック</string>
     <string name="type.barrier.bollard">柱</string>
@@ -1071,7 +1089,7 @@
     <string name="type.building.has_parts">建物</string>
     <string name="type.building_part">建物</string>
     <string name="type.building.garage">車庫</string>
-    <string name="type.building.train_station">鉄道駅</string>
+    <string name="type.building.train_station">駅ビル</string>
     <string name="type.cemetery.grave">墓</string>
     <string name="type.craft">工房</string>
     <string name="type.craft.beekeeper">養蜂家</string>
@@ -1500,8 +1518,10 @@
     <string name="type.man_made.tower.communication">通信塔</string>
     <string name="type.man_made.wastewater_plant">下水処理場</string>
     <string name="type.man_made.water_tap">給水栓</string>
+    <string name="type.man_made.water_tap.drinking_water_no">給水栓</string>
     <string name="type.man_made.water_tower">給水塔</string>
     <string name="type.man_made.water_well">井戸</string>
+    <string name="type.man_made.water_well.drinking_water_no">井戸</string>
     <string name="type.man_made.windmill">風車</string>
     <string name="type.man_made.works">工場</string>
     <string name="type.military">軍事</string>
@@ -1543,6 +1563,7 @@
     <string name="type.natural.rock">岩</string>
     <string name="type.natural.scrub">雑木林</string>
     <string name="type.natural.spring">泉</string>
+    <string name="type.natural.spring.drinking_water_no">泉</string>
     <string name="type.natural.strait">海峡</string>
     <string name="type.natural.tree_row">並木</string>
     <string name="type.natural.vineyard">ブドウ園</string>
@@ -1666,6 +1687,7 @@
     <string name="type.railway.station">鉄道駅</string>
     <string name="type.railway.station.funicular">フニクラ</string>
     <string name="type.railway.station.light_rail">鉄道駅</string>
+    <string name="type.railway.station.light_rail.berlin">鉄道駅</string>
     <string name="type.railway.station.light_rail.london">鉄道駅</string>
     <string name="type.railway.station.light_rail.porto">鉄道駅</string>
     <string name="type.railway.station.monorail">鉄道駅</string>
@@ -1708,6 +1730,7 @@
     <string name="type.railway.station.subway.hamburg">地下鉄</string>
     <string name="type.railway.station.subway.helsinki">地下鉄</string>
     <string name="type.railway.station.subway.hiroshima">地下鉄</string>
+    <string name="type.railway.station.subway.hongkong">地下鉄</string>
     <string name="type.railway.station.subway.isfahan">地下鉄</string>
     <string name="type.railway.station.subway.istanbul">地下鉄</string>
     <string name="type.railway.station.subway.izmir">地下鉄</string>
@@ -1761,6 +1784,7 @@
     <string name="type.railway.station.subway.sendai">地下鉄</string>
     <string name="type.railway.station.subway.sf">地下鉄</string>
     <string name="type.railway.station.subway.shanghai">地下鉄</string>
+    <string name="type.railway.station.subway.shenzhen">地下鉄</string>
     <string name="type.railway.station.subway.shiraz">地下鉄</string>
     <string name="type.railway.station.subway.singapore">地下鉄</string>
     <string name="type.railway.station.subway.sofia">地下鉄</string>
@@ -1820,6 +1844,7 @@
     <string name="type.railway.subway_entrance.hamburg">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.helsinki">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.hiroshima">地下鉄入り口</string>
+    <string name="type.railway.subway_entrance.hongkong">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.isfahan">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.istanbul">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.izmir">地下鉄入り口</string>
@@ -1873,6 +1898,7 @@
     <string name="type.railway.subway_entrance.sendai">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.sf">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.shanghai">地下鉄入り口</string>
+    <string name="type.railway.subway_entrance.shenzhen">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.shiraz">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.singapore">地下鉄入り口</string>
     <string name="type.railway.subway_entrance.sofia">地下鉄入り口</string>
@@ -1964,6 +1990,7 @@
     <string name="type.shop.optician">眼鏡店</string>
     <string name="type.shop.outdoor">アウトドア用品店</string>
     <string name="type.shop.outpost">集荷場</string>
+    <string name="type.shop.pasta">パスタ・ショップ</string>
     <string name="type.shop.pastry">ペストリー</string>
     <string name="type.shop.pawnbroker">質屋</string>
     <string name="type.shop.pet">ペットショップ</string>
@@ -2060,7 +2087,13 @@
     <string name="type.tourism.artwork.sculpture">彫刻</string>
     <string name="type.tourism.artwork.statue">像</string>
     <string name="type.tourism.attraction">アトラクション</string>
+    <string name="type.attraction.amusement_ride">遊園地</string>
     <string name="type.attraction.animal">アニマル・エンクロージャー</string>
+    <string name="type.attraction.carousel">カルーセル</string>
+    <string name="type.attraction.historic">歴史的アトラクション</string>
+    <string name="type.attraction.maze">迷路</string>
+    <string name="type.attraction.roller_coaster">ジェットコースター</string>
+    <string name="type.attraction.water_slide">ウォータースライド</string>
     <string name="type.tourism.attraction.specified">アトラクション</string>
     <string name="type.tourism.camp_site">キャンプ場</string>
     <string name="type.tourism.caravan_site">オートキャンプ場</string>

@@ -25,6 +25,7 @@ NSString * const kToEditorSegue = @"CategorySelectorToEditorSegue";
 @property(nonatomic) NSString * selectedType;
 @property(nonatomic) BOOL isSearch;
 @property(nonatomic) MWMObjectsCategorySelectorDataSource * dataSource;
+@property(nonatomic, strong) UIStackView * searchResultsIsEmptyDisclaimer;
 
 @end
 
@@ -43,6 +44,7 @@ NSString * const kToEditorSegue = @"CategorySelectorToEditorSegue";
   [self configTable];
   [self configNavBar];
   [self configSearchBar];
+  [self configEmptySearchResultsDisclaimer];
   [MWMKeyboard addObserver:self];
   self.dataSource = [[MWMObjectsCategorySelectorDataSource alloc] init];
 }
@@ -67,6 +69,70 @@ NSString * const kToEditorSegue = @"CategorySelectorToEditorSegue";
 - (void)configSearchBar
 {
   self.searchBar.placeholder = L(@"search");
+}
+
+- (void)configEmptySearchResultsDisclaimer
+{
+  UIStackView * stackView = [[UIStackView alloc] init];
+  stackView.axis = UILayoutConstraintAxisVertical;
+  stackView.alignment = UIStackViewAlignmentCenter;
+  stackView.translatesAutoresizingMaskIntoConstraints = NO;
+  stackView.spacing = 12;
+  self.searchResultsIsEmptyDisclaimer = stackView;
+
+  UILabel *titleLabel = [[UILabel alloc] init];
+  titleLabel.text = L(@"editor_category_unsuitable_title");
+  titleLabel.font = [UIFont boldSystemFontOfSize:20];
+  titleLabel.textAlignment = NSTextAlignmentCenter;
+  titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  titleLabel.font = [UIFont bold17];
+
+  UITextView * subtitleTextView = [[UITextView alloc] init];
+  subtitleTextView.translatesAutoresizingMaskIntoConstraints = NO;
+  subtitleTextView.editable = NO;
+  subtitleTextView.scrollEnabled = NO;
+  subtitleTextView.backgroundColor = [UIColor clearColor];
+  subtitleTextView.textContainerInset = UIEdgeInsetsZero;
+
+  NSString *subtitleHTML = L(@"editor_category_unsuitable_text");
+  NSData *htmlData = [subtitleHTML dataUsingEncoding:NSUnicodeStringEncoding];
+  NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+  NSError *error = nil;
+
+  NSAttributedString *attributedText =
+  [[NSAttributedString alloc] initWithData:htmlData
+                                   options:options
+                        documentAttributes:nil
+                                     error:&error];
+  if (error) {
+    LOG(LERROR, ("Error parsing HTML:", error.localizedDescription));
+  } else {
+    UIColor * textColor;
+    if (@available(iOS 13.0, *)) {
+      textColor = [[UIColor alloc] initWithDynamicProvider:^UIColor * (UITraitCollection * traitCollection) {
+        return traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ? UIColor.whitePrimaryText : UIColor.blackPrimaryText;
+      }];
+    } else {
+      textColor = UIColor.blackPrimaryText;
+    }
+    NSMutableAttributedString *mutableAttributedText = [[NSMutableAttributedString alloc] initWithAttributedString:attributedText];
+    [mutableAttributedText addAttributes:@{ NSForegroundColorAttributeName: textColor,
+                                            NSFontAttributeName: UIFont.regular14}
+                                   range:NSMakeRange(0, mutableAttributedText.length)];
+    subtitleTextView.attributedText = mutableAttributedText;
+    subtitleTextView.textAlignment = NSTextAlignmentCenter;
+  }
+
+  [self.view addSubview:stackView];
+  [stackView addArrangedSubview:titleLabel];
+  [stackView addArrangedSubview:subtitleTextView];
+
+  [NSLayoutConstraint activateConstraints:@[
+    [stackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+    [stackView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
+    [stackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20],
+    [stackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-20]
+  ]];
 }
 
 - (void)onDone
@@ -151,7 +217,9 @@ NSString * const kToEditorSegue = @"CategorySelectorToEditorSegue";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return [self.dataSource size];
+  NSInteger size = [self.dataSource size];
+  [self.searchResultsIsEmptyDisclaimer setHidden:size != 0];
+  return size;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

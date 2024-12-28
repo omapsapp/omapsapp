@@ -15,7 +15,6 @@ struct CloudMetadataItem: MetadataItem {
   let fileUrl: URL
   var isDownloaded: Bool
   var lastModificationDate: TimeInterval
-  var isRemoved: Bool
   let downloadingError: NSError?
   let uploadingError: NSError?
   let hasUnresolvedConflicts: Bool
@@ -29,7 +28,7 @@ extension LocalMetadataItem {
       throw SynchronizationError.failedToCreateMetadataItem
     }
     self.fileName = fileUrl.lastPathComponent
-    self.fileUrl = fileUrl
+    self.fileUrl = fileUrl.standardizedFileURL
     self.lastModificationDate = lastModificationDate
   }
 
@@ -39,7 +38,7 @@ extension LocalMetadataItem {
 }
 
 extension CloudMetadataItem {
-  init(metadataItem: NSMetadataItem, isRemoved: Bool = false) throws {
+  init(metadataItem: NSMetadataItem) throws {
     guard let fileName = metadataItem.value(forAttribute: NSMetadataItemFSNameKey) as? String,
           let fileUrl = metadataItem.value(forAttribute: NSMetadataItemURLKey) as? URL,
           let downloadStatus = metadataItem.value(forAttribute: NSMetadataUbiquitousItemDownloadingStatusKey) as? String,
@@ -50,16 +49,15 @@ extension CloudMetadataItem {
       throw SynchronizationError.failedToCreateMetadataItem
     }
     self.fileName = fileName
-    self.fileUrl = fileUrl
+    self.fileUrl = fileUrl.standardizedFileURL
     self.isDownloaded = downloadStatus == NSMetadataUbiquitousItemDownloadingStatusCurrent
     self.lastModificationDate = lastModificationDate
-    self.isRemoved = isRemoved || CloudMetadataItem.isInTrash(fileUrl)
     self.hasUnresolvedConflicts = hasUnresolvedConflicts
     self.downloadingError = metadataItem.value(forAttribute: NSMetadataUbiquitousItemDownloadingErrorKey) as? NSError
     self.uploadingError = metadataItem.value(forAttribute: NSMetadataUbiquitousItemUploadingErrorKey) as? NSError
   }
 
-  init(fileUrl: URL, isRemoved: Bool = false) throws {
+  init(fileUrl: URL) throws {
     let resources = try fileUrl.resourceValues(forKeys: [.nameKey,
                                                          .contentModificationDateKey,
                                                          .ubiquitousItemDownloadingStatusKey,
@@ -73,17 +71,12 @@ extension CloudMetadataItem {
       throw SynchronizationError.failedToCreateMetadataItem
     }
     self.fileName = fileUrl.lastPathComponent
-    self.fileUrl = fileUrl
+    self.fileUrl = fileUrl.standardizedFileURL
     self.isDownloaded = downloadStatus.rawValue == NSMetadataUbiquitousItemDownloadingStatusCurrent
     self.lastModificationDate = lastModificationDate
-    self.isRemoved = isRemoved || CloudMetadataItem.isInTrash(fileUrl)
     self.hasUnresolvedConflicts = hasUnresolvedConflicts
     self.downloadingError = resources.ubiquitousItemDownloadingError
     self.uploadingError = resources.ubiquitousItemUploadingError
-  }
-
-  static func isInTrash(_ fileUrl: URL) -> Bool {
-    fileUrl.pathComponents.contains(kTrashDirectoryName)
   }
 
   func relatedLocalItemUrl(to localContainer: URL) -> URL {
@@ -93,7 +86,7 @@ extension CloudMetadataItem {
 
 extension MetadataItem {
   var shortDebugDescription: String {
-    "File path: \(fileUrl.path), lastModified: \(lastModificationDate)"
+    "fileName: \(fileName), lastModified: \(lastModificationDate)"
   }
 }
 

@@ -31,9 +31,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d fájlt találtunk. Látni fogja őket a megtérés után.</string>
+			<string>%d fájlt találtunk. Látni fogja őket a konvertálás után.</string>
 			<key>other</key>
-			<string>%d fájl található. Látni fogja őket a megtérés után.</string>
+			<string>%d fájl található. Látni fogja őket a konvertálás után.</string>
 		</dict>
 	</dict>
 

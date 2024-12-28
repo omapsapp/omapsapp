@@ -146,7 +146,7 @@ SearchAPI::SearchAPI(DataSource & dataSource, storage::Storage const & storage,
   , m_infoGetter(infoGetter)
   , m_delegate(delegate)
   , m_engine(m_dataSource, GetDefaultCategories(), m_infoGetter,
-             Engine::Params(languages::GetCurrentTwine() /* locale */, numThreads))
+             Engine::Params(languages::GetCurrentMapTwine() /* locale */, numThreads))
 {
 }
 
@@ -420,6 +420,11 @@ void SearchAPI::SetViewportIfPossible(SearchParams & params)
 {
   if (m_isViewportInitialized)
     params.m_viewport = m_viewport;
+}
+
+void SearchAPI::SetLocale(std::string const & locale)
+{
+  m_engine.SetLocale(locale);
 }
 
 bool SearchAPI::QueryMayBeSkipped(SearchParams const & prevParams,

@@ -22,3 +22,6 @@ extern MapStyle const kDefaultMapStyle;
 extern MapStyle MapStyleFromSettings(std::string const & str);
 extern std::string MapStyleToString(MapStyle mapStyle);
 extern std::string DebugPrint(MapStyle mapStyle);
+extern bool MapStyleIsDark(MapStyle mapStyle);
+extern MapStyle GetDarkMapStyleVariant(MapStyle mapStyle);
+extern MapStyle GetLightMapStyleVariant(MapStyle mapStyle);

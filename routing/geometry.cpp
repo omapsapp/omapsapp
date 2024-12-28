@@ -53,19 +53,11 @@ class RoadAttrsGetter
 public:
   void Load(FilesContainerR const & cont)
   {
-    try
-    {
-      if (cont.IsExist(CITY_ROADS_FILE_TAG))
-        m_cityRoads.Load(cont.GetReader(CITY_ROADS_FILE_TAG));
+    if (cont.IsExist(CITY_ROADS_FILE_TAG))
+      m_cityRoads.Load(cont.GetReader(CITY_ROADS_FILE_TAG));
 
-      if (cont.IsExist(MAXSPEEDS_FILE_TAG))
-        m_maxSpeeds.Load(cont.GetReader(MAXSPEEDS_FILE_TAG));
-    }
-    catch (Reader::Exception const & e)
-    {
-      LOG(LERROR, ("File", cont.GetFileName(), "Error while reading", CITY_ROADS_FILE_TAG, "or",
-                   MAXSPEEDS_FILE_TAG, "section.", e.Msg()));
-    }
+    if (cont.IsExist(MAXSPEEDS_FILE_TAG))
+      m_maxSpeeds.Load(cont.GetReader(MAXSPEEDS_FILE_TAG));
   }
 
 public:

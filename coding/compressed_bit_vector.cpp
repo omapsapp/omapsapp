@@ -3,9 +3,9 @@
 #include "coding/write_to_sink.hpp"
 
 #include "base/assert.hpp"
-#include "base/bits.hpp"
 
 #include <algorithm>
+#include <bit>
 
 namespace coding
 {
@@ -299,7 +299,7 @@ unique_ptr<DenseCBV> DenseCBV::BuildFromBitGroups(vector<uint64_t> && bitGroups)
   unique_ptr<DenseCBV> cbv(new DenseCBV());
   cbv->m_popCount = 0;
   for (size_t i = 0; i < bitGroups.size(); ++i)
-    cbv->m_popCount += bits::PopCount(bitGroups[i]);
+    cbv->m_popCount += std::popcount(bitGroups[i]);
   cbv->m_bitGroups = std::move(bitGroups);
   return cbv;
 }
@@ -326,7 +326,7 @@ unique_ptr<CompressedBitVector> DenseCBV::LeaveFirstSetNBits(uint64_t n) const
   for (size_t i = 0; i < m_bitGroups.size() && n != 0; ++i)
   {
     uint64_t group = m_bitGroups[i];
-    uint32_t const bits = bits::PopCount(group);
+    uint32_t const bits = std::popcount(group);
     if (bits <= n)
     {
       n -= bits;
@@ -445,7 +445,7 @@ unique_ptr<CompressedBitVector> CompressedBitVectorBuilder::FromBitGroups(
   uint64_t const maxBit = kBlockSize * (bitGroups.size() - 1) + bits::FloorLog(bitGroups.back());
   uint64_t popCount = 0;
   for (size_t i = 0; i < bitGroups.size(); ++i)
-    popCount += bits::PopCount(bitGroups[i]);
+    popCount += std::popcount(bitGroups[i]);
 
   if (DenseEnough(popCount, maxBit))
     return DenseCBV::BuildFromBitGroups(std::move(bitGroups));

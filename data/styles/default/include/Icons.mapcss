@@ -2,7 +2,7 @@
 2.NATURAL
 3.TRANSPORT
  3.1 Train Station
- 3.2 Subway Station
+ 3.2 Road Icons
  3.3 Tram Station
  3.4 Bus Station
  3.5 Ferry terminal
@@ -178,6 +178,11 @@ node|z17-[natural=spring],
 node|z17-[natural=hot_spring],
 {icon-image: drinking-water-m.svg; font-size: 11;}
 
+node|z14-[natural=spring][drinking_water=not],
+{icon-image: drinking-water-no-s.svg; font-size: 10;}
+node|z17-[natural=spring][drinking_water=not],
+{icon-image: drinking-water-no-m.svg; font-size: 11;}
+
 node|z14[natural=geyser],
 {icon-image: geyser-s.svg;}
 node|z15-[natural=geyser],
@@ -200,6 +205,19 @@ node|z19-[amenity=drinking_water],
 node|z19-[man_made=water_tap],
 node|z19-[man_made=water_well],
 {icon-image: drinking-water-m.svg;}
+
+node|z16-[man_made=water_tap][drinking_water=not],
+node|z16-[man_made=water_well][drinking_water=not],
+node|z16-[amenity=water_point][drinking_water=not],
+{icon-image: none;}
+node|z18-[man_made=water_tap][drinking_water=not],
+node|z18-[man_made=water_well][drinking_water=not],
+node|z18-[amenity=water_point][drinking_water=not],
+{icon-image: drinking-water-no-s.svg;}
+node|z19-[man_made=water_tap][drinking_water=not],
+node|z19-[man_made=water_well][drinking_water=not],
+node|z19-[amenity=water_point][drinking_water=not],
+{icon-image: drinking-water-no-m.svg;}
 
 /* 3. TRANSPORT */
 
@@ -279,10 +297,10 @@ node|z17-[railway=station]::int_name,
 node|z17-[railway=halt]::int_name,
 {text-offset: 1;font-size: 12;text-halo-opacity: 0.9;}
 
-/* 3.2 Subway Station */
+/* 3.2 Road Icons */
 
-/*moved to Subways.mapcss*/
-
+node|z19-[highway=traffic_signals],
+{icon-image: traffic_signals.svg}
 
 node|z17-[highway=elevator],
 area|z17-[highway=elevator],
@@ -398,6 +416,8 @@ node|z17-[aerialway=station],
 node|z17-[railway=level_crossing]
 {icon-image: railway-crossing-m.svg;}
 
+node|z12-14[railway=station][station=funicular],
+{icon-image: funicular-s.svg;}
 node|z15-[railway=station][station=funicular],
 {icon-image: funicular-m.svg;text-offset: 1;font-size: 10;}
 node|z17-[aerialway=station],
@@ -455,6 +475,13 @@ area|z16-[historic=tomb],
 node|z16-[tourism=aquarium],
 area|z16-[tourism=aquarium],
 node|z17-[attraction=animal],
+node|z17-[attraction=amusement_ride],
+node|z17-[attraction=carousel],
+node|z17-[attraction=roller_coaster],
+node|z17-[attraction=maze],
+node|z17-[attraction=historic],
+node|z17-[attraction=big_wheel],
+node|z17-[attraction=bumper_car],
 node|z17-[historic=ruins],
 area|z17-[historic=ruins],
 node|z17-[historic=wayside_shrine],
@@ -692,6 +719,15 @@ area|z16-[tourism=theme_park]
 
 node|z17-[attraction=animal],
 {icon-image: animal-m.svg;icon-min-distance: 24;}
+
+node|z17-[attraction=amusement_ride],
+node|z17-[attraction=carousel],
+node|z17-[attraction=roller_coaster],
+node|z17-[attraction=maze],
+node|z17-[attraction=historic],
+node|z17-[attraction=big_wheel],
+node|z17-[attraction=bumper_car],
+{icon-image: playground-m.svg;icon-min-distance: 24;}
 
 node|z15-[amenity=community_centre],
 area|z15-[amenity=community_centre],
@@ -1034,6 +1070,8 @@ node|z18-[man_made=silo],
 area|z18-[man_made=silo],
 node|z18-[man_made=storage_tank],
 area|z18-[man_made=storage_tank],
+node|z18-[man_made=water_tower],
+node|z18-[man_made=tower],
 node|z18-[amenity=bbq],
 area|z18-[amenity=bbq],
 node|z18-[amenity=brothel],
@@ -1514,8 +1552,11 @@ node|z16-[highway=ford],
 node|z19-[power=tower],
 node|z15-[man_made=flagpole],
 node|z16-[man_made=mast],
-node|z17-[man_made=tower][tower:type=communication],
 {icon-image: dot-m.svg;}
+
+node|z16-[man_made=tower],
+node|z16-[man_made=tower][tower:type=communication],
+{icon-image: mast-m.svg;}
 
 node|z16-[amenity=taxi],
 area|z16-[amenity=taxi]
@@ -1763,6 +1804,7 @@ node|z16-[man_made=silo],
 area|z16-[man_made=silo],
 node|z16-[man_made=storage_tank],
 area|z16-[man_made=storage_tank],
+node|z16-[man_made=water_tower],
 {icon-image: storage-tank.svg;font-size: 11;}
 
 node|z18-[amenity=bbq],
@@ -1771,7 +1813,7 @@ area|z18-[amenity=bbq]
 
 node|z18-[man_made=survey_point],
 {icon-image: survey_point-m.svg;font-size: 11;}
- 
+
 node|z19-[man_made=cairn]
 {icon-image: cairn-m.svg;font-size: 11;}
 
@@ -1828,6 +1870,7 @@ node|z16-[shop=bakery],
 area|z16-[shop=bakery],
 node|z16-[shop=pastry],
 area|z16-[shop=pastry],
+node|z16-[shop=pasta],
 node|z16-[shop=beauty],
 area|z16-[shop=beauty],
 node|z16-[shop=cosmetics],
@@ -1991,6 +2034,8 @@ area|z17-[shop=supermarket],
 node|z16[shop=cheese],
 area|z16[shop=cheese]
 {icon-image: cheese-m.svg;}
+node|z16-[shop=pasta],
+{icon-image: shop-m.svg;}
 node|z16[shop=alcohol],
 area|z16[shop=alcohol]
 {icon-image: alcohol-m.svg;}

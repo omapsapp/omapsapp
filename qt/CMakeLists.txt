@@ -239,7 +239,6 @@ if (BUILD_DESIGNER)
     foreach(BUNDLE ${BUNDLE_FOLDER} ${BUNDLES})
       execute_process(
         COMMAND \"${QT_PATH}/bin/macdeployqt\" \"\${BUNDLE}\"
-        COMMAND find \"\${BUNDLE}/Contents/MacOS\" -type f -exec python \"${OMIM_ROOT}/tools/macdeployqtfix/macdeployqtfix.py\" -q -nl {} \"${QT_PATH}\" \\;
       )
     endforeach()
     foreach(BUNDLE ${BUNDLES})

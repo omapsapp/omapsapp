@@ -287,6 +287,10 @@
     <string name="google_play_services">Google Play Placeringstjenester</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Find hurtigt din omtrentlige position via Bluetooth, WiFi eller mobilnetværk</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com hotel-links</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotos, anmeldelser og bookinglinks vises for hoteller, der har en liste på Kayak.com. Den henvisningsbonus, der modtages for hver booking via disse links, går til udvikling af Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Download kort på vejen</string>
     <!-- Text for routing error dialog -->
@@ -467,7 +471,10 @@
     <string name="message_invalid_feature_position">Et objekt kan ikke placeres her</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Fællesskabsskabte OpenStreetMap-data fra %s. Få mere at vide om, hvordan du redigerer og opdaterer kortet på OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Log på så andre brugere kan se ændringerne som du har foretaget.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) er et fællesskabsprojekt til opbygning af et gratis og åbent kort. Det er hovedkilden til kortdata i Organic Maps og fungerer på samme måde som Wikipedia. Du kan tilføje eller redigere steder, og de bliver tilgængelige for millioner af brugere over hele verden.
+\nSlut dig til fællesskabet og vær med til at skabe et bedre kort for alle!</string>
+    <string name="login_to_make_edits_visible">Opret en OpenStreetMap-konto eller log ind for at offentliggøre dine kortredigeringer til hele verden.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d af %2$d</string>
     <string name="download_over_mobile_header">Download ved brug af mobilnetværksforbindelse?</string>
@@ -487,9 +494,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Dine ændringer uploades til den offentlige <a href="https://wiki.openstreetmap.org/wiki/Da:Om_OpenStreetMap">OpenStreetMap</a>-database. Tilføj venligst ikke personlige eller ophavsretligt beskyttede oplysninger.</string>
     <string name="editor_more_about_osm">Mere om OpenStreetMap</string>
-    <string name="editor_operator">Bruger</string>
+    <string name="editor_osm_history">Din redigeringshistorik</string>
+    <string name="editor_osm_notes">Dine noter til kortdata</string>
+    <string name="editor_operator">Operatør</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Bruger: %s</string>
+    <string name="operator">Operatør: %s</string>
     <string name="editor_category_unsuitable_title">Kan du ikke finde en passende kategori?</string>
     <string name="editor_category_unsuitable_text">Organic Maps giver kun mulighed for at tilføje simple punktkategorier, dvs. ingen byer, veje, søer, bygningsomrids osv. Tilføj venligst sådanne kategorier direkte til <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Se vores <a href="https://organicmaps.app/faq/editing/advanced-map-editing">guide</a> for detaljerede trin for trin-instruktioner.</string>
     <string name="downloader_no_downloaded_maps_title">Du har ikke hentet alle kort</string>
@@ -508,6 +517,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">time</string>
     <string name="minute">min</string>
+    <string name="day">d</string>
     <string name="placepage_more_button">Mere</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotos, anmeldelser, booking</string>
@@ -515,6 +525,8 @@
     <string name="dialog_kayak_disclaimer">Henvisningsbonussen, der modtages for hver booking via dette link, går til udviklingen af Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Detaljer på Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Deaktiver Kayak</string>
     <string name="placepage_edit_bookmark_button">Rediger bogmærke</string>
     <string name="editor_comment_hint">Kommentar…</string>
     <string name="editor_reset_edits_message">Nulstil alle lokale ændringer?</string>
@@ -567,7 +579,7 @@
     <string name="routing_add_start_point">Brug søgning eller tryk på kortet for at tilføje et startpunkt for en rute</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Brug søgning eller tryk på kortet for at tilføje et destinationspunkt</string>
-    <string name="placepage_remove_stop">Fjern</string>
+    <string name="placepage_remove_stop">Fjern stop</string>
     <string name="placepage_add_stop">Tilføj stop</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Log ind på OpenStreetMap for automatisk at uploade alle dine kortredigeringer. Få mere at vide <a href="https://github.com/organicmaps/organicmaps/issues/6144">her</a>.</string>
@@ -716,8 +728,8 @@
     <string name="isolines_location_error_dialog">Det topografiske lag er endnu ikke tilgængeligt i dette område</string>
     <string name="elevation_profile_ascent">Stige op</string>
     <string name="elevation_profile_descent">Stige ned</string>
-    <string name="elevation_profile_minaltitude">Min. højde</string>
-    <string name="elevation_profile_maxaltitude">Maks. højde</string>
+    <string name="elevation_profile_min_elevation">Min. højde</string>
+    <string name="elevation_profile_max_elevation">Maks. højde</string>
     <string name="elevation_profile_difficulty">Vanskelighed</string>
     <string name="elevation_profile_distance">Afs.:</string>
     <string name="elevation_profile_time">Tid:</string>
@@ -739,7 +751,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Hvis du kender en softwareudvikler, kan du bede ham eller hende om at implementere en funktion, som du har brug for.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Ved du, at du kan trykke længe på et hvilket som helst sted på kortet for at vælge det?</string>
+    <string name="app_tip_04">Tryk hvor som helst på kortet for at vælge noget. Tryk længe for at skjule og vise grænsefladen igen.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Ved du, at du kan vælge din nuværende placering på kortet?</string>
     <!-- App tip #06 -->
@@ -809,7 +821,11 @@
     <string name="track_recording_toast_nothing_to_save">Ruten er tom - der er ikke noget at gemme</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kan ikke vise dialogboksen til valg af mappe, fordi der ikke er installeret en passende app på din enhed. Installer venligst en filhåndteringsapp, og prøv igen</string>
+    <string name="choose_color">Vælg farve</string>
+    <string name="edit_track">Rediger ruten</string>
     <string name="uri_open_location_failed">Ingen app installeret, der kan åbne stedet</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Auto i navigation</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresse/blok</string>
@@ -919,6 +935,7 @@
     <string name="type.amenity.police">Politi</string>
     <string name="type.amenity.post_box">Postboks</string>
     <string name="type.amenity.post_office">Postkontor</string>
+    <string name="type.amenity.prison">Fængsel</string>
     <string name="type.amenity.pub">Værtshus</string>
     <string name="type.amenity.public_bookcase">Bog udveksling</string>
 
@@ -953,6 +970,7 @@
     <string name="type.amenity.waste_basket">Skraldespand</string>
     <string name="type.amenity.waste_disposal">Bortskaffelse af affald</string>
     <string name="type.amenity.water_point">Vandstation</string>
+    <string name="type.amenity.water_point.drinking_water_no">Vandstation</string>
     <string name="type.barrier.block">Blokering</string>
     <string name="type.barrier.bollard">Søjle</string>
     <string name="type.barrier.border_control">Grænsekontrol</string>
@@ -982,7 +1000,7 @@
     <string name="type.building.address">Adresse</string>
     <string name="type.building.has_parts">Bygning</string>
     <string name="type.building_part">Bygning</string>
-    <string name="type.building.train_station">Togstation</string>
+    <string name="type.building.train_station">Stationsbygning</string>
     <string name="type.cemetery.grave">Grav</string>
     <string name="type.craft">Håndværk</string>
     <string name="type.craft.beekeeper">Biavler</string>
@@ -1360,8 +1378,10 @@
     <string name="type.man_made.tower">Tårn</string>
     <string name="type.man_made.tower.communication">Kommunikationstårn</string>
     <string name="type.man_made.water_tap">Vandhane</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Vandhane</string>
     <string name="type.man_made.water_tower">Vandtårn</string>
     <string name="type.man_made.water_well">Brønd</string>
+    <string name="type.man_made.water_well.drinking_water_no">Brønd</string>
     <string name="type.man_made.windmill">Vindmølle</string>
     <string name="type.natural">Natur</string>
     <!-- A rocky land cover. -->
@@ -1400,6 +1420,7 @@
     <string name="type.natural.rock">Bjergart</string>
     <string name="type.natural.scrub">Kratbevokset område</string>
     <string name="type.natural.spring">Kilde</string>
+    <string name="type.natural.spring.drinking_water_no">Kilde</string>
     <string name="type.natural.strait">Stræde</string>
     <string name="type.natural.tree_row">Trærækker</string>
     <string name="type.natural.vineyard">Vingård</string>
@@ -1493,6 +1514,7 @@
     <string name="type.railway.station">Togstation</string>
     <string name="type.railway.station.funicular">Funicular</string>
     <string name="type.railway.station.light_rail">Togstation</string>
+    <string name="type.railway.station.light_rail.berlin">Togstation</string>
     <string name="type.railway.station.light_rail.london">Togstation</string>
     <string name="type.railway.station.light_rail.porto">Togstation</string>
     <string name="type.railway.station.monorail">Togstation</string>
@@ -1535,6 +1557,7 @@
     <string name="type.railway.station.subway.hamburg">Metro</string>
     <string name="type.railway.station.subway.helsinki">Metro</string>
     <string name="type.railway.station.subway.hiroshima">Metro</string>
+    <string name="type.railway.station.subway.hongkong">Metro</string>
     <string name="type.railway.station.subway.isfahan">Metro</string>
     <string name="type.railway.station.subway.istanbul">Metro</string>
     <string name="type.railway.station.subway.izmir">Metro</string>
@@ -1588,6 +1611,7 @@
     <string name="type.railway.station.subway.sendai">Metro</string>
     <string name="type.railway.station.subway.sf">Metro</string>
     <string name="type.railway.station.subway.shanghai">Metro</string>
+    <string name="type.railway.station.subway.shenzhen">Metro</string>
     <string name="type.railway.station.subway.shiraz">Metro</string>
     <string name="type.railway.station.subway.singapore">Metro</string>
     <string name="type.railway.station.subway.sofia">Metro</string>
@@ -1647,6 +1671,7 @@
     <string name="type.railway.subway_entrance.hamburg">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.helsinki">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.hiroshima">Indgang til undergrundsbane</string>
+    <string name="type.railway.subway_entrance.hongkong">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.isfahan">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.istanbul">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.izmir">Indgang til undergrundsbane</string>
@@ -1700,6 +1725,7 @@
     <string name="type.railway.subway_entrance.sendai">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.sf">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.shanghai">Indgang til undergrundsbane</string>
+    <string name="type.railway.subway_entrance.shenzhen">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.shiraz">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.singapore">Indgang til undergrundsbane</string>
     <string name="type.railway.subway_entrance.sofia">Indgang til undergrundsbane</string>
@@ -1783,6 +1809,7 @@
     <string name="type.shop.optician">Optiker</string>
     <string name="type.shop.outdoor">Fritidsudstyr</string>
     <string name="type.shop.outpost">Afhentningssted</string>
+    <string name="type.shop.pasta">Pasta butik</string>
     <string name="type.shop.pastry">Bagværk</string>
     <string name="type.shop.pawnbroker">Pantelåner</string>
     <string name="type.shop.pet">Dyrehandel</string>
@@ -1876,7 +1903,13 @@
     <string name="type.tourism.artwork.sculpture">Kunstværk</string>
     <string name="type.tourism.artwork.statue">Kunstværk</string>
     <string name="type.tourism.attraction">Attraktioner</string>
+    <string name="type.attraction.amusement_ride">Forlystelse</string>
     <string name="type.attraction.animal">Indhegning til dyr</string>
+    <string name="type.attraction.carousel">Karrusel</string>
+    <string name="type.attraction.historic">Historisk attraktion</string>
+    <string name="type.attraction.maze">Labyrint</string>
+    <string name="type.attraction.roller_coaster">Rutsjebane</string>
+    <string name="type.attraction.water_slide">Vandrutschebane</string>
     <string name="type.tourism.attraction.specified">Attraktioner</string>
     <string name="type.tourism.caravan_site">Autocamperplads</string>
     <!-- A rentable countryside vacation house. -->

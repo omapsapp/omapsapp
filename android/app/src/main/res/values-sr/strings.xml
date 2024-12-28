@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SECTION: Strings -->
+    <!-- Button text (should be short) -->
+    <string name="back">Назад</string>
+    <!-- Button text (should be short) -->
+    <string name="cancel">Одустани</string>
+    <!-- Button which deletes downloaded country -->
+    <string name="delete">Обриши</string>
+    <string name="download_maps">Преузми мапе</string>
+    <!-- Settings/Downloader - info for country when download fails -->
+    <string name="download_has_failed">Преузимање није успело. Додирни за поновни покушај.</string>
+    <!-- Settings/Downloader - info for country which started downloading -->
+    <string name="downloading">Преузимање…</string>
+    <!-- Choose measurement on first launch alert - choose metric system button -->
+    <string name="kilometres">Колиметри</string>
+    <!-- Choose measurement on first launch alert - choose imperial system button -->
+    <string name="miles">Миље</string>
+    <!-- A text for current gps location point/arrow selected on the map -->
+    <string name="core_my_position">Моја позиција</string>
+    <!-- Update maps later button text -->
+    <string name="later">Касније</string>
+    <!-- View and button titles for accessibility, please also edit it in iphone/plist.txt -->
+    <string name="search">Тражи</string>
+    <!-- Search box placeholder text; Used when searching on the map itself, not when searching for a map -->
+    <string name="search_map">Тражи на мапи</string>
+    <!-- Location services are disabled by user alert - message -->
+    <string name="location_is_disabled_long_text">Тренутно су сви локацијски сервиси на овом уређају или апликацији искључени. Потребно је да их укључите у Подешавањима.</string>
+    <!-- View and button titles for accessibility -->
+    <string name="zoom_to_country">Прикажи на мапи</string>
+    <!-- Message to display at the center of the screen when the country download has failed -->
+    <string name="country_status_download_failed">Преузимање није успело</string>
+    <!-- Button text for the button under the country_status_download_failed message -->
+    <string name="try_again">Покушај поново</string>
+    <string name="about_menu_title">О апликацији Organic Maps</string>
+    <!-- Text in About screen -->
+    <string name="about_headline">Слободна за све, направљена с љубављу</string>
+    <!-- Text in About screen -->
+    <string name="about_proposition_1">• Без реклама, без праћења, без сакупљања података</string>
+    <!-- Text in About screen -->
+    <string name="about_proposition_2">• Без непотребне потрошње батерије, ради и без интернета</string>
+    <!-- Text in About screen -->
+    <string name="about_proposition_3">• Брза, минималистичка, направљена од стране заједнице</string>
+    <!-- Text in About screen -->
+    <string name="about_developed_by_enthusiasts">Апликација отвореног кода, направљена од ентузијаста и волонтера.</string>
+    <!-- The button that opens system location settings -->
+    <string name="location_settings">Подешавања локације</string>
+    <string name="close">Затвори</string>
+    <string name="unsupported_phone">Ова апликација захтева хардверски-убрзан OpenGL. На жалост, ваш уређај није подржан.</string>
+    <string name="download">Преузми</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disconnect_usb_cable">Молим вас откачите USB кабл, или убаците меморијску картицу да бисте користили Organic Maps</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="not_enough_free_space_on_sdcard">Молим вас, прво ослободите нешто простора на SD картици или на USB меморији да бисте користили апликацију</string>
+    <string name="download_resources">Пре него што почнете да користите апликацију, прво преузмите на ваш уређај општу мапу света.
+\nЗа то ће бити потребно %s меморије.</string>
+    <string name="download_resources_continue">Иди на мапу</string>
+    <string name="downloading_country_can_proceed">Преузимање %s. Можете
+\nотићи на мапу.</string>
+    <string name="download_country_ask">Преузети %s?</string>
+    <string name="update_country_ask">Ажурирати %s?</string>
+    <!-- REMOVE THIS STRING AFTER REFACTORING -->
+    <string name="pause">Пауза</string>
+    <!-- REMOVE THIS STRING AFTER REFACTORING -->
+    <string name="continue_button">Настави</string>
+    <!-- Show popup notification on top of the map when country download has failed. -->
+    <string name="download_country_failed">%s преузимање није успело</string>
+    <!-- "Add new bookmark list" dialog title -->
+    <string name="add_new_set">Направи нову листу</string>
+    <!-- Add Bookmark list dialog - hint when the list name is empty -->
+    <string name="bookmark_set_name">Назив листе маркера</string>
+    <!-- Should be used in the bookmarks-only context, see bookmarks_and_tracks if tracks are also implied. -->
+    <string name="bookmarks">Маркери</string>
+    <!-- "Bookmarks and Tracks" dialog title, also sync it with iphone/plist.txt -->
+    <string name="bookmarks_and_tracks">Маркери и путање</string>
+    <!-- Default bookmark list name -->
+    <string name="core_my_places">Моја места</string>
+    <!-- Add bookmark dialog - bookmark name -->
+    <string name="name">Назив</string>
+    <!-- Editor title above street and house number, duplicates [type.building.address] in types_strings.txt -->
+    <string name="address">Адреса</string>
+    <!-- Add Bookmark dialog/Bookmark list; Bookmarks dialog/Bookmark list cell. -->
+    <string name="list">Листа</string>
+    <!-- Settings button in system menu -->
+    <string name="settings">Подешавања</string>
+    <!-- Header of settings activity where user defines storage path -->
+    <string name="maps_storage">Сачувај мапе у</string>
+    <!-- Detailed description of Maps Storage settings button -->
+    <string name="maps_storage_summary">Изаберите фолдер у ком се чувају мапе.</string>
+    <!-- E.g. "Downloaded maps: 500Mb" in Maps Storage settings -->
+    <string name="maps_storage_downloaded">Преузете мапе</string>
+    <!-- Internal storage type in Maps Storage settings (not accessible by the user) -->
+    <string name="maps_storage_internal">Интерна приватна меморија</string>
+    <!-- Shared storage type in Maps Storage settings (a primary storage usually) -->
+    <string name="maps_storage_shared">Интерна дељена меморија</string>
+    <!-- Removable external storage type in Maps Storage settings, e.g. an SD card -->
+    <string name="maps_storage_removable">SD картица</string>
+    <!-- Generic external storage type in Maps Storage settings -->
+    <string name="maps_storage_external">Екстерна дељена меморија</string>
+    <!-- Free space out of total storage size in Maps Storage settings, e.g. "300 MB free of 2 GB" -->
+    <string name="maps_storage_free_size">слободно %1$s од %2$s</string>
+    <!-- Question dialog for transferring maps from one storage to another -->
+    <string name="move_maps">Преместити мапу?</string>
+    <!-- Error moving map files from one storage to another -->
+    <string name="move_maps_error">Грешка приликом премештања фајлова са мапама</string>
+    <!-- Ask user to wait several minutes (some long process in modal dialog). -->
+    <string name="wait_several_minutes">Ово може да потраје неколико минута.
+\nМолим вас, сачекајте…</string>
+    <!-- Measurement units title in settings activity -->
+    <string name="measurement_units">Јединице мере</string>
+    <!-- Detailed description of Measurement Units settings button -->
+    <string name="measurement_units_summary">Изаберите између километара и миља</string>
+
+    <!-- SECTION: Search categories -->
+    <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
+    <string name="category_eat">Где јести</string>
+    <!-- Search category for grocery stores; any changes should be duplicated in categories.txt @category_food! -->
+    <string name="category_food">Намирнице</string>
+    <!-- Search category for public transport; any changes should be duplicated in categories.txt @category_transport! -->
+    <string name="category_transport">Транспорт</string>
+    <!-- Search category for fuel stations; any changes should be duplicated in categories.txt @category_fuel! -->
+    <string name="category_fuel">Гориво</string>
+    <!-- Search category for parking lots; any changes should be duplicated in categories.txt @category_parking! -->
+    <string name="category_parking">Паркинг</string>
+    <!-- Search category for malls/clothes/shoes/gifts/jewellery/sport shops; any changes should be duplicated in categories.txt @category_shopping! -->
+    <string name="category_shopping">Куповина</string>
+    <!-- Search category for second_hand/charity/antique/auction shops; any changes should be duplicated in categories.txt @category_secondhand! -->
+    <string name="category_secondhand">Second Hand</string>
+    <!-- Search category for places to stay; any changes should be duplicated in categories.txt @category_hotel! -->
+    <string name="category_hotel">Хотел</string>
+    <!-- Search category sight seeings and touristic attractions; any changes should be duplicated in categories.txt @category_tourism! -->
+    <string name="category_tourism">Атракција</string>
+    <!-- Search category for entertainment; any changes should be duplicated in categories.txt @category_entertainment! -->
+    <string name="category_entertainment">Забава</string>
+    <!-- Search category for ATMs; any changes should be duplicated in categories.txt @category_atm! -->
+    <string name="category_atm">Банкомат</string>
+    <!-- Search category for nightclubs/bars; any changes should be duplicated in categories.txt @category_nightlife! -->
+    <string name="category_nightlife">Ноћни живот</string>
+    <!-- Search category for water park/disneyland/playground/toys store; any changes should be duplicated in categories.txt @category_children! -->
+    <string name="category_children">Породични одмор</string>
+    <!-- Search category for banks; any changes should be duplicated in categories.txt @category_bank! -->
+    <string name="category_bank">Банка</string>
+    <!-- Search category for pharmacies; any changes should be duplicated in categories.txt @category_pharmacy! -->
+    <string name="category_pharmacy">Апотека</string>
+    <!-- Search category for hospitals; any changes should be duplicated in categories.txt @category_hospital! -->
+    <string name="category_hospital">Болница</string>
+    <!-- Search category for toilets; any changes should be duplicated in categories.txt @category_toilet! -->
+    <string name="category_toilet">Тоалет</string>
+    <!-- Search category for post offices; any changes should be duplicated in categories.txt @category_post! -->
+    <string name="category_post">Пошта</string>
+    <!-- Search category for police; any changes should be duplicated in categories.txt @category_police! -->
+    <string name="category_police">Полиција</string>
+    <!-- Search category for WiFi access; any changes should be duplicated in categories.txt @category_wifi! -->
+    <string name="category_wifi">WiFi</string>
+    <!-- Search category for recycling; any changes should be duplicated in categories.txt @category_recycling! -->
+    <string name="category_recycling">Рециклажа</string>
+    <!-- Search category for water; any changes should be duplicated in categories.txt @category_water! also used to sort bookmarks by type -->
+    <string name="category_water">Вода</string>
+    <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
+    <string name="category_rv">За кампер возила</string>
+
+    <!-- SECTION: Other translations -->
+    <!-- Notes field in Bookmarks view -->
+    <string name="description">Напомене</string>
+    <!-- Email Subject when sharing bookmark list -->
+    <string name="share_bookmarks_email_subject">Organic Maps маркери су подељени са вама</string>
+    <string name="share_bookmarks_email_body">Здраво!
+\n
+\nУ прилогу су моји маркери; молим те да их отвориш у Organic Maps-у. Ако га немаш већ инсталираног, можеш да га преузмеш одавде: https://omaps.app/get?kmz
+\n
+\nУживај у путовању са Organic Maps-ом!</string>
+    <!-- message title of loading file -->
+    <string name="load_kmz_title">Учитавање маркера</string>
+    <!-- Kmz file successful loading -->
+    <string name="load_kmz_successful">Маркери су успешно учитани! Можете их проначи на мапи помоћу Менаџера маркера.</string>
+    <!-- Kml file loading failed -->
+    <string name="load_kmz_failed">Неуспешно учитавање маркера. Могуће је да је фајл оштећен или неисправан.</string>
+    <!-- Failed to recognize the format of a bookmarks or tracks file. -->
+    <string name="unknown_file_type">Апликација не препознаје ову врсту фајла:
+\n%1$s</string>
+    <!-- Failed to open a bookmarks or tracks file in Organic Maps. -->
+    <string name="failed_to_open_file">Отварање фајла %1$s није успело
+\n
+\n%2$s</string>
+    <!-- resource for context menu -->
+    <string name="edit">Измени</string>
+    <!-- Warning message when doing search around current position -->
+    <string name="unknown_current_position">Ваша локација још није одређена</string>
+    <!-- Alert message that we can't run Map Storage settings due to some reasons. -->
+    <string name="cant_change_this_setting">Извините, подешавање локације за чување мапа је тренутно онемогућено.</string>
+    <!-- Alert message that downloading is in progress. -->
+    <string name="downloading_is_active">Преузимање мапа је у току.</string>
+    <!-- Share my position using SMS, %1$@ contains om:// and %2$@ https://omaps.app link WITHOUT NAME. @NOTE non-ascii symbols in the link will result in max 70 characters SMS instead of 140. -->
+    <string name="my_position_share_sms">Види моју тренутну локацију у Organic Maps-у! %1$s или %2$s Још не користиш offline мапе? Преузми их овде: https://omaps.app/get</string>
+    <!-- Subject for emailed bookmark -->
+    <string name="bookmark_share_email_subject">Хеј, види мој маркер у Organic Maps-у!</string>
+    <!-- Subject for emailed position -->
+    <string name="my_position_share_email_subject">Хеј, види моју тренутну локацију на Organic Maps мапи!</string>
+    <!-- Share my position using EMail, %1$@ is om:// and %2$@ is https://omaps.app link WITHOUT NAME -->
+    <string name="my_position_share_email">Здраво,
+\n
+\nЈа сам овде: %1$s. Кликни на овај %2$s или овај линк %3$s да би видео то место на мапи.
+\n
+\nХвала.</string>
+    <!-- Share button text which opens menu with more buttons, like Message, EMail, Facebook etc. -->
+    <string name="share">Подели</string>
+    <!-- Share by email button text, also used in editor and About. -->
+    <string name="email">Email</string>
+    <!-- Text for message when used successfully copied something -->
+    <string name="copied_to_clipboard">Копирано у клипборд: %s</string>
+    <!-- Used for bookmark editing -->
+    <string name="done">Готово</string>
+    <!-- Data version in «About» screen, %@ is replaced by a local, human readable date. -->
+    <string name="data_version">OpenStreetMap подаци: %s</string>
+    <!-- Confirmation for OpenStreetMap log out. -->
+    <string name="osm_log_out_confirmation">Да ли сте сигурни да желите да се одјавите са OpenStreetMap налога?</string>
+    <!-- Title for tracks category in bookmarks manager -->
+    <string name="tracks_title">Путање</string>
+    <!-- Length of track in cell that describes route -->
+    <string name="length">Дужина</string>
+    <string name="share_my_location">Подели моју локацију</string>
+    <!-- Settings general group in settings screen -->
+    <string name="prefs_group_general">Општа подешавања</string>
+    <!-- Settings information group in settings screen -->
+    <string name="prefs_group_information">Информације</string>
+    <string name="prefs_group_route">Навигација</string>
+    <string name="pref_zoom_title">Дугмад за увећавање/умањивање</string>
+    <string name="pref_zoom_summary">Прикажи на мапи</string>
+    <!-- Settings «Map» category: «Night style» title -->
+    <string name="pref_map_style_title">Ноћни режим</string>
+    <!-- Generic «Off» string -->
+    <string name="off">Искључено</string>
+    <!-- Generic «On» string -->
+    <string name="on">Укључено</string>
+    <!-- Generic «Auto» string -->
+    <string name="auto">Аутоматски</string>
+    <!-- Settings «Map» category: «Perspective view» title -->
+    <string name="pref_map_3d_title">Приказ перспективе</string>
+    <!-- Settings «Map» category: «3D buildings» title -->
+    <string name="pref_map_3d_buildings_title">3D зграде</string>
+    <!-- A message in Settings/Preferences explaining why is it not possible to enable 3D buildings when max power saving mode is enabled -->
+    <string name="pref_map_3d_buildings_disabled_summary">3D зграде се не приказују у режиму чувања батерије</string>
+    <!-- Settings «Route» category: «Tts enabled» title -->
+    <string name="pref_tts_enable_title">Гласовне инструкције</string>
+    <!-- Settings «Route» category: «Tts announce street names» title -->
+    <string name="pref_tts_street_names_title">Најави име улице</string>
+    <!-- Settings «Route» category: «Tts announce street names» description -->
+    <string name="pref_tts_street_names_description">Када је укључено, име улице или излаз на који треба скренути ће бити изговорен.</string>
+    <!-- Settings «Route» category: «Tts language» title -->
+    <string name="pref_tts_language_title">Језик гласа</string>
+    <!-- Settings «Route» category: «Test Voice Directions» title -->
+    <string name="pref_tts_test_voice_title">Тестирај гласовне инструкције (Текст-у-говор)</string>
+    <!-- Settings «Route» category: Pop-up message when clicking «Test Voice Directions» -->
+    <string name="pref_tts_playing_test_voice">Проверите гласноћу или системска подешавања Текста-у-говор ако сада не чујете глас.</string>
+    <!-- Settings «Route» category: «Tts unavailable» subtitle -->
+    <string name="pref_tts_unavailable">Није доступно</string>
+    <string name="pref_map_auto_zoom">Аутоматско увећавање</string>
+    <string name="placepage_distance">Раздаљина</string>
+    <string name="search_show_on_map">Погледај на мапи</string>
+    <!-- Menu button -->
+    <string name="menu">Мени</string>
+    <!-- Text in menu -->
+    <string name="website">Веб-сајт</string>
+    <!-- Text in About menu, opens Organic Maps news website -->
+    <string name="news">Новости</string>
+    <!-- Settings: Send feedback button and dialog title -->
+    <string name="feedback">Повратне информације</string>
+    <!-- Text in menu -->
+    <string name="rate_the_app">Оцена апликације</string>
+    <!-- Text in menu -->
+    <string name="help">Помоћ</string>
+    <!-- Button in the main Help dialog -->
+    <string name="faq">Често постављена питања</string>
+    <!-- Button in the main menu -->
+    <string name="donate">Донација</string>
+    <!-- Button in the main Help dialog -->
+    <string name="how_to_support_us">Подржи пројекат</string>
+    <!-- Text in menu + Button in the main Help dialog -->
+    <string name="report_a_bug">Пријави проблем</string>
+    <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
+    <string name="compass_calibration_recommended">Побољшајте смер стрелице тако што ћете померати телефон у путањи осмице као бисте калибрисали компас.</string>
+    <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
+    <string name="compass_calibration_required">Померајте телефон у путањи осмице како бисте калибрисали компас и поправили смер стрелице на мапи.</string>
+    <!-- Toast text when user hides UI with a long tap anywhere on the map -->
+    <string name="long_tap_toast">Додирните дуго мапу да бисте поново видели интерфејс</string>
+    <!-- Update all button text -->
+    <string name="downloader_update_all_button">Ажурирај све</string>
+    <!-- Cancel all button text -->
+    <string name="downloader_cancel_all">Одустани од свих</string>
+    <!-- Downloaded maps list header -->
+    <string name="downloader_downloaded_subtitle">Преузето</string>
+    <!-- Country queued for download -->
+    <string name="downloader_queued">На чекању</string>
+    <string name="downloader_near_me_subtitle">Близу мене</string>
+    <!-- In maps downloader and country place page shows how many maps are downloaded / to download, e.g. "Maps: 3 of 10" -->
+    <string name="downloader_status_maps">Мапе</string>
+    <string name="downloader_download_all_button">Преузми све</string>
+    <string name="downloader_downloading">Преузимање:</string>
+    <!-- Displayed in a dialog that appears when a user tries to delete a map while the app is in the follow route mode -->
+    <string name="downloader_delete_map_while_routing_dialog">Да бисте обрисали мапу, зауставите навигацију.</string>
+    <!-- PointsInDifferentMWM -->
+    <string name="routing_failed_cross_mwm_building">Могу се креирати само руте које се комплетно налазе у оквиру мапе једног региона.</string>
+    <!-- Context menu item for downloader. -->
+    <string name="downloader_download_map">Преузми мапу</string>
+    <!-- Item status in downloader. -->
+    <string name="downloader_retry">Покушај поново</string>
+    <!-- Item in context menu. -->
+    <string name="downloader_delete_map">Обриши мапу</string>
+    <!-- Item in context menu. -->
+    <string name="downloader_update_map">Ажурирај мапу</string>
+    <!-- Preference title -->
+    <string name="google_play_services">Google Play прецизност локације</string>
+    <!-- Preference text -->
+    <string name="pref_use_google_play">Брзо одређивање ваше локације коришћењем Bluetooth-а, WiFi-а, или мобилне мреже</string>
+    <!-- Text for routing error dialog -->
+    <string name="routing_download_maps_along">Преузми све мапе које се налазе на рути</string>
+    <!-- Text for routing error dialog -->
+    <string name="routing_requires_all_map">Да би рута могла да се креира, потребно је да преузимање и ажурирање свих мапа између ваше локације и вашег одредишта.</string>
+    <!-- Text for routing error dialog -->
+    <string name="routing_not_enough_space">Нема довољно простора</string>
+    <!-- location service disabled -->
+    <string name="enable_location_services">Молим вас укључите Локацијске сервисе</string>
+    <string name="save">Сачувај</string>
+    <string name="edit_description_hint">Ваш опис (текст или html)</string>
+    <string name="create">креирај</string>
+    <!-- red color -->
+    <string name="red">Црвена</string>
+    <!-- yellow color -->
+    <string name="yellow">Жута</string>
+    <!-- blue color -->
+    <string name="blue">Плава</string>
+    <!-- green color -->
+    <string name="green">Зелена</string>
+    <!-- purple color -->
+    <string name="purple">Љубичаста</string>
+    <!-- orange color -->
+    <string name="orange">Наранџаста</string>
+    <!-- brown color -->
+    <string name="brown">Браон</string>
+    <!-- pink color -->
+    <string name="pink">Розе</string>
+    <!-- deep purple color -->
+    <string name="deep_purple">Тамно љубичаста</string>
+    <!-- light blue color -->
+    <string name="light_blue">Светло плава</string>
+    <!-- cyan color -->
+    <string name="cyan">Цијан</string>
+    <!-- teal color -->
+    <string name="teal">Теал</string>
+    <!-- lime color -->
+    <string name="lime">Лимета</string>
+    <!-- deep orange color -->
+    <string name="deep_orange">Тамно наранџаста</string>
+    <!-- gray color -->
+    <string name="gray">Сива</string>
+    <!-- blue gray color -->
+    <string name="blue_gray">Плаво сива</string>
+
+    <!-- SECTION: Routing dialogs strings -->
+    <string name="dialog_routing_disclaimer_title">Када пратите руту, обратите пажњу на:</string>
+    <string name="dialog_routing_disclaimer_priority">— Услови на путу, саобраћајни прописи и знакови имају приоритет у односу на навигацију;</string>
+    <string name="dialog_routing_disclaimer_precision">— Мапа може бити нетачна и предложена рута не мора увек бити најоптималнији начин да стигнете на одредиште;</string>
+    <string name="dialog_routing_disclaimer_recommendations">— Предложену руту треба да схватите само као предлог;</string>
+    <string name="dialog_routing_disclaimer_borders">— Будите пажљиви са рутама које пролазе и близини граница: руте које креира наша апликација могу понекад прелазити границе дражава на недозвољеним местима.</string>
+    <string name="dialog_routing_disclaimer_beware">Молимо Вас да будете опрезни и безбедни на путу!</string>
+    <string name="dialog_routing_check_gps">Провери GPS сигнал</string>
+    <string name="dialog_routing_error_location_not_found">Не могу да направим руту. Тренутне GPS координате не могу да се одреде.</string>
+    <string name="dialog_routing_location_turn_wifi">Молим Вас да проверите ваш GPS сигнал. Укључивање Wi-Fi-а ће поправити прецизност ваше локације.</string>
+    <string name="dialog_routing_location_turn_on">Укључи Локацијске сервисе</string>
+    <string name="dialog_routing_location_unknown_turn_on">Није могуће одредити тренутне GPS координате. Укључи локацијске сервисе ради проналажења руте.</string>
+    <string name="dialog_routing_unable_locate_route">Не могу да пронађем руту</string>
+    <string name="dialog_routing_cant_build_route">Не могу да направим руту.</string>
+    <string name="dialog_routing_change_start_or_end">Молим Вас да подесите почетну или одредишну тачку.</string>
+    <string name="dialog_routing_change_start">Подеси почетну тачку</string>
+    <string name="dialog_routing_start_not_determined">Рута није креирана. Не могу да одредим почетну тачку.</string>
+    <string name="dialog_routing_select_closer_start">Молим вас да изаберете почетну тачку ближе путу.</string>
+    <string name="dialog_routing_change_end">Подеси одредишну тачку</string>
+    <string name="dialog_routing_end_not_determined">Рута није направљена. Не могу да пронађем одредиште.</string>
+    <string name="dialog_routing_select_closer_end">Молим Вас да изаберете одредишну тачну ближе путу.</string>
+    <string name="dialog_routing_change_intermediate">Не могу да пронађем успутну тачку.</string>
+    <string name="dialog_routing_intermediate_not_determined">Молим Вас да подесите успутну тачку.</string>
+    <string name="dialog_routing_system_error">Системска грешка</string>
+    <string name="dialog_routing_application_error">Не могу да направим руту због грешке у апликацији.</string>
+    <string name="dialog_routing_try_again">Молим Вас, покушајте поново</string>
+    <string name="not_now">Не сада</string>
+    <string name="dialog_routing_download_and_build_cross_route">Да ли желите да преузмете мапу и направите оптималнију руту која се простире на више од једне мапе?</string>
+    <string name="dialog_routing_download_cross_route">Преузми додатне мапе и направи бољу руту која се престире преко граница ове мапе.</string>
+
+    <!-- SECTION: Strings for downloading map from search -->
+    <string name="search_without_internet_advertisement">Да бисте почели да претражујете и правите руте, молим Вас да преузмете мапу. Након тога веза са интернетом Вам више неће бити потребна.</string>
+    <string name="search_select_map">Изабери мапу</string>
+    <!-- «Show» context menu -->
+    <string name="show">Прикажи</string>
+    <!-- «Hide» context menu -->
+    <string name="hide">Сакриј</string>
+    <string name="categories">Категорије</string>
+    <string name="history">Историја</string>
+    <string name="search_not_found">Упс, нема резултата.</string>
+    <!-- The message when user did not find anything in the search. -->
+    <string name="search_not_found_query">Преузмите регион где вршите претрагу, или пробајте да додате име оближњег насеља.</string>
+    <string name="search_history_title">Историја претраге</string>
+    <string name="search_history_text">Погледајте ваше недавне претраге.</string>
+    <string name="clear_search">Обриши историју претраге</string>
+    <!-- Place Page link to Wikipedia article (if map object has it). -->
+    <string name="read_in_wikipedia">Википедија</string>
+    <!-- Place Page link to Wikimedia Commons. -->
+    <string name="wikimedia_commons">Викимедијина остава</string>
+    <string name="p2p_your_location">Ваша локација</string>
+    <string name="p2p_start">Крени</string>
+    <string name="p2p_from_here">Рута од</string>
+    <string name="p2p_to_here">Рута до</string>
+    <string name="p2p_only_from_current">Навигација је могућа само од ваше тренутне локације.</string>
+    <string name="p2p_reroute_from_current">Да ли желите да направите руту од ваше тренутне локације?</string>
+    <!-- Edit open hours/set time and minutes dialog -->
+    <string name="next_button">Даље</string>
+    <!-- Tab title in the Edit Opening Hours time picker -->
+    <string name="editor_time_from">Од</string>
+    <!-- Tab title in the Edit Opening Hours time picker -->
+    <string name="editor_time_to">До</string>
+    <string name="editor_time_add">Додај време</string>
+    <string name="editor_time_delete">Обриши време</string>
+    <!-- Text for allday switch. -->
+    <string name="editor_time_allday">Нон-стоп (24 сата)</string>
+    <string name="editor_time_open">Отворено</string>
+    <string name="editor_time_close">Затворено</string>
+    <string name="editor_time_add_closed">Додај нерадно време</string>
+    <string name="editor_time_title">Радно време</string>
+    <string name="editor_time_advanced">Напредни режим</string>
+    <string name="editor_time_simple">Једноставни режим</string>
+    <string name="editor_hours_closed">Нерадно време</string>
+    <string name="editor_example_values">Примери</string>
+    <string name="editor_correct_mistake">Исправи грешку</string>
+    <string name="editor_add_select_location">Локација</string>
+    <string name="editor_report_problem_desription_1">Молим Вас да детаљно опишете проблем како би OpenStreetMap заједница могла да га поправи.</string>
+    <string name="editor_report_problem_desription_2">Или то учините сами на https://www.openstreetmap.org/</string>
+    <string name="editor_report_problem_send_button">Пошаљи</string>
+    <string name="editor_report_problem_title">Проблем</string>
+    <string name="editor_report_problem_no_place_title">Ово место не постоји</string>
+    <string name="editor_report_problem_under_construction_title">Затворено због одржавања</string>
+    <string name="editor_report_problem_duplicate_place_title">Дуплирано место</string>
+    <string name="autodownload">Аутоматско преузимање мапа</string>
+    <!-- Place Page opening hours text -->
+    <string name="daily">Сваки дан</string>
+    <string name="twentyfour_seven">24/7</string>
+    <string name="day_off_today">Данас не ради</string>
+    <string name="day_off">Затворено</string>
+    <string name="today">Данас</string>
+    <string name="opens_in">Отвара се за %s</string>
+    <string name="closes_in">Затвара се за %s</string>
+    <string name="closed">Затворено</string>
+    <string name="edit_opening_hours">Промени радно време</string>
+    <string name="no_osm_account">Немате OpenStreetMap налог?</string>
+    <string name="register_at_openstreetmap">Региструјте се на OpenStreetMap-у</string>
+    <string name="login">Пријави се</string>
+    <!-- Status message indicating that user did not login to OSM profile yet. -->
+    <string name="not_signed_in">Нисте пријављени</string>
+    <string name="login_osm">Пријава на OpenStreetMap</string>
+    <string name="password">Лозинка</string>
+    <string name="forgot_password">Заборављена лозинка?</string>
+    <string name="logout">Одјави се</string>
+    <string name="edit_place">Измени место</string>
+    <string name="add_language">Додај језик</string>
+    <string name="street">Улица</string>
+    <!-- Editable House Number text field (in address block). -->
+    <string name="house_number">Кућни број</string>
+    <string name="details">Детаљи</string>
+    <!-- Text field to enter non-existing street name, below list of known streets around -->
+    <string name="add_street">Додај улицу</string>
+    <!-- Error to display when a new street name is not entered in the New street dialog -->
+    <string name="empty_street_name_error">Молим Вас, унесите назив улице</string>
+    <string name="choose_language">Изаберите језик</string>
+    <string name="choose_street">Изаберите улицу</string>
+    <string name="postal_code">Поштански број</string>
+    <string name="cuisine">Кухиња</string>
+    <string name="select_cuisine">Изаберите кухињу</string>
+    <!-- login text field -->
+    <string name="email_or_username">Email или корисничко име</string>
+    <string name="editor_add_phone">Додај број телефона</string>
+    <string name="level">Спрат</string>
+    <!-- Building level -->
+    <string name="level_value_generic">Спрат: %s</string>
+    <string name="downloader_delete_map_dialog">Све ваше промене на мапи ће бити обрисане заједно са мапом.</string>
+    <string name="downloader_update_maps">Ажурирај мапе</string>
+    <string name="downloader_mwm_migration_dialog">Да бисте направили руту, потребно је да ажурирате све мапе, а затим да поново планирате руту.</string>
+    <string name="downloader_search_field_hint">Пронађи мапу</string>
+    <string name="common_check_internet_connection_dialog">Молим Вас да проверите да ли је Ваш уређај повезан на интернет.</string>
+    <string name="downloader_no_space_title">Нема довољно простора</string>
+    <string name="downloader_no_space_message">Молим Вас да обришете непотребне податке</string>
+    <string name="editor_login_error_dialog">Грешка приликом пријаве.</string>
+    <string name="editor_profile_changes">Верификоване промене</string>
+    <string name="editor_focus_map_on_location">Превуците мапу да бисте изабрали тачну локацију објекта.</string>
+    <string name="editor_edit_place_title">Измена</string>
+    <string name="editor_add_place_title">Додавање</string>
+    <string name="editor_edit_place_name_hint">Назив места</string>
+    <!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+    <string name="editor_default_language_hint">Као што је написано на локалном језику</string>
+    <string name="editor_edit_place_category_title">Категорија</string>
+    <string name="detailed_problem_description">Детаљан опис проблема</string>
+    <string name="editor_report_problem_other_title">Други проблем</string>
+    <string name="placepage_add_business_button">Додај фирму</string>
+    <string name="message_invalid_feature_position">Објекат не може бити на овом месту</string>
+    <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
+    <string name="osm_presentation">Подаци са OpenStreetMap-а које је креирала заједница до %s. Научите више о томе како да мењате и ажурирате мапу на OpenStreetMap.org</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) је пројекат заједнице који има за циљ прављење бесплатне, слободне и отворене мапе. OSM је главни извор података за мапе у Organic Maps-у и функционише на сличан начин као Википедија. Можете додати или променити места и ваше промене постају видљиве милионима корисника широм света.
+\nПридружите се заједници и помозите да направимо бољу мапу која је доступна свима!</string>
+    <string name="login_to_make_edits_visible">Пријавите се на openstreetmap.org да бисте објавили ваше промене остатку света.</string>
+    <!-- Downloaded 10 **of** 20 <- it is that "of" -->
+    <string name="downloader_of">%1$d од %2$d</string>
+    <string name="download_over_mobile_header">Преузимање преко мобилне мреже?</string>
+    <string name="download_over_mobile_message">Ово може бити значајно скупље у оквиру одређених пакета или у ромингу.</string>
+    <string name="error_enter_correct_house_number">Унесте исправан кућни број</string>
+    <string name="editor_storey_number">Број спратова (макс. %d)</string>
+    <!-- Error message in Editor when a user tries to set the number of floors for a building higher than %d floors -->
+    <string name="error_enter_correct_storey_number">Број спратова не сме да прелази %d</string>
+    <string name="editor_zip_code">Поштански број</string>
+    <string name="error_enter_correct_zip_code">Унесите исправан поштански број</string>
+    <!-- Place Page title for long tap -->
+    <string name="core_placepage_unknown_place">Непознато место</string>
+    <!-- Title for OSM note section in the editor -->
+    <string name="editor_other_info">Напомена за OpenStreetMap волонтере (није обавезна)</string>
+    <!-- Hint of the input field in the OSM note section of the editor -->
+    <string name="editor_note_hint">Опишите грешке на мапи или ствари које се не могу променити помоћу Organic Maps-а</string>
+    <!-- Information about OSM at the top of the editing page -->
+    <string name="editor_about_osm">Ваше промене су послате у јавну <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> базу података. Молимо Вас да не додајете личне податке или податке заштићене ауторским правима.</string>
+    <string name="editor_more_about_osm">Више о OpenStreetMap-у</string>
+    <string name="editor_operator">Оператор</string>
+    <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
+    <string name="operator">Оператор: %s</string>
+    <string name="editor_category_unsuitable_title">Не можете да пронађете одговарајућу категорију?</string>
+    <string name="editor_category_unsuitable_text">Organic Maps омогућава додавање једноставних категорија за тачке на мапи, што искључује градове, путеве, језера, тлоцрте зграда, итд. Молимо Вас да такве категорије додате директно на <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Прочитајте наше <a href="https://organicmaps.app/faq/editing/advanced-map-editing">упутство</a> за детаљне инструкције, корак-по-корак.</string>
+    <string name="downloader_no_downloaded_maps_title">Нисте преузели ни једну мапу</string>
+    <string name="downloader_no_downloaded_maps_message">Преузмите мапе да бисте претраживали и користили навигацију без интернета.</string>
+    <string name="current_location_unknown_error_title">Тренутна локација није позната.</string>
+    <!-- abbreviation for meters -->
+    <string name="m">м</string>
+    <!-- abbreviation for kilometers -->
+    <string name="km">км</string>
+    <!-- abbreviation for kilometers per hour -->
+    <string name="kilometers_per_hour">км/ч</string>
+    <!-- abbreviation for mile(s) -->
+    <string name="mi">ми</string>
+    <!-- A unit of measure -->
+    <string name="ft">стопа</string>
+    <string name="miles_per_hour">ми/ч</string>
+    <string name="hour">ч</string>
+    <string name="minute">мин</string>
+    <string name="day">д</string>
+    <string name="placepage_more_button">Више</string>
+    <!-- A referral link on the place page for some hotels -->
+    <string name="more_on_kayak">Фотографије, утисци, резервације</string>
+    <!-- An explanation dialog shown when clicking on more_on_kayak link. -->
+    <string name="dialog_kayak_disclaimer">Награда за сваку резервацију која је направљена преко овог линка биће усмерена у развој Organic Maps-а.</string>
+    <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_button">Детаљи на Kayak-у</string>
+    <string name="placepage_edit_bookmark_button">Измени маркер</string>
+    <string name="editor_comment_hint">Коментар…</string>
+    <string name="editor_reset_edits_message">Брисање свих измена које нису послате?</string>
+    <string name="editor_reset_edits_button">Обриши</string>
+    <string name="editor_remove_place_message">Брисање додатог места?</string>
+    <string name="editor_remove_place_button">Обриши</string>
+    <string name="editor_place_doesnt_exist">Место не постоји</string>
+    <!-- Error message for "Place doesn't exist" dialog when comment is empty -->
+    <string name="delete_place_empty_comment_error">Молим Вас наведите разлог због чега бриште ово место</string>
+    <!-- Phone number error message -->
+    <string name="error_enter_correct_phone">Унесите исправан број телефона</string>
+    <string name="error_enter_correct_web">Унесите исправну веб адресу</string>
+    <string name="error_enter_correct_email">Унесите исправан email</string>
+    <string name="error_enter_correct_facebook_page">Унесите исправну Facebook веб адресу, налог, или име странице</string>
+    <string name="error_enter_correct_instagram_page">Унесите исправно Instagram корисничко име или веб адресу</string>
+    <string name="error_enter_correct_twitter_page">Унесите исправно Twitter корисничко име или веб адресу</string>
+    <string name="error_enter_correct_vk_page">Унесите исправно VK корисничко име или веб адресу</string>
+    <string name="error_enter_correct_line_page">Унесите исправан LINE ID или веб адресу</string>
+    <string name="placepage_add_place_button">Додај место на OpenStreetMap</string>
+    <!-- Displayed when saving some edits to the map to warn against publishing personal data -->
+    <string name="editor_share_to_all_dialog_title">Да ли желите да поделите са свим другим корисницима?</string>
+    <!-- Dialog before publishing the modifications to the public map. -->
+    <string name="editor_share_to_all_dialog_message_1">Проверите да нисте унели приватне или личне податке.</string>
+    <string name="editor_share_to_all_dialog_message_2">OpenStreetMap мапери ће проверити промене и контактирати Вас уколико буду имали питања.</string>
+    <string name="navigation_stop_button">Стоп</string>
+    <!-- Shown as toast when starting the recent track recording -->
+    <string name="track_recording">Снимање путање</string>
+    <!-- For the first routing -->
+    <string name="accept">Прихвати</string>
+    <!-- For the first routing -->
+    <string name="decline">Одбиј</string>
+    <string name="mobile_data_dialog">Користи мобилни интернет ради приказа детљних информација?</string>
+    <string name="mobile_data_option_always">Увек користи</string>
+    <string name="mobile_data_option_today">Само данас</string>
+    <string name="mobile_data_option_not_today">Немој данас</string>
+    <string name="mobile_data">Мобилни интернет</string>
+    <!-- NOTE to translators: please synchronize your translation with the English one. -->
+    <string name="mobile_data_description">Мобилни интернет је потребан за обавештења о ажурирању мапе и за слање измена.</string>
+    <string name="mobile_data_option_never">Никад не користи</string>
+    <string name="mobile_data_option_ask">Увек ме питај</string>
+    <string name="traffic_update_maps_text">Да би се приказали подаци о саобраћају, мапа мора да се ажурира.</string>
+    <string name="big_font">Повећај слова на мапи</string>
+    <string name="traffic_update_app">Молим Вас да ажурирате Organic Maps</string>
+    <!-- "traffic" as in "road congestion" -->
+    <string name="traffic_data_unavailable">Подаци о саобраћају нису доступни</string>
+    <string name="enable_logging">Омогући снимање лог фајлова</string>
+    <!-- Settings: "Send general feedback" button -->
+    <string name="feedback_general">Ваше мишљење</string>
+    <string name="prefs_languages_information">Користимо системски сервис текст-у-говор за гласовне инструкције. Многи Андроид уређаји користе Google Препознавање и синтезу говора, који можете да преузмете или ажурирате путем Google Play продавнице (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
+    <string name="prefs_languages_information_off">За поједине језике, мораћете да инсталирате синтетизатор говора или језички пакет путем продавнице апликација (Google Play, Galaxy Store, App Gallery, FDroid).
+\nОтворите Подешавања вашег уређаја → Језик и унос → Говор → Излаз Текста у говор.
+\nОвде можете да управљате подешавањима за синтезу говора (на пример, да преузмете језички пакет за употребу без интернета) и да изаберете неку другу машину за Текст-у-говор.</string>
+    <string name="prefs_languages_information_off_link">За више информација погледајте ово упутство.</string>
+    <string name="transliteration_title">Транслитерација у латиницу</string>
+    <string name="learn_more">Сазнај више</string>
+    <!-- Subway exits for public transport marks on the map -->
+    <string name="core_exit">Излаз</string>
+    <!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+    <string name="routing_add_start_point">Користите претрагу или кратко додирните мапу да бисте додали почетну тачку руте</string>
+    <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+    <string name="routing_add_finish_point">Користите претрагу или кратко додирните мапу да бисте додали одредишну тачку</string>
+    <string name="placepage_remove_stop">Уклони стајање</string>
+    <string name="placepage_add_stop">Додај стајање</string>
+    <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
+    <string name="alert_reauth_message">Молим Вас да се пријавите на OpenStreetMap да бисте аутоматски послали своје промене на мапи. Сазнајте више о томе <a href="https://github.com/organicmaps/organicmaps/issues/6144">овде</a>.</string>
+    <string name="dialog_error_storage_title">Проблем са приступом меморији</string>
+    <string name="dialog_error_storage_message">Екстерна меморија није доступна. SD картица је можда уклоњена, оштећена, или је фајл систем само за читање. Молим Вас, проверите Вашу SD картицу или нас контактирајте на support\\@organicmaps.app</string>
+    <string name="setting_emulate_bad_storage">Симулирај неисправну меморију</string>
+    <string name="core_entrance">Улаз</string>
+    <string name="error_enter_correct_name">Молим Вас да унесете исправан назив</string>
+    <string name="bookmark_lists">Листе</string>
+    <!-- Do not display all bookmark lists on the map -->
+    <string name="bookmark_lists_hide_all">Сакриј све</string>
+    <string name="bookmark_lists_show_all">Прикажи све</string>
+    <plurals name="bookmarks_places">
+        <item quantity="one">%d маркер</item>
+        <item quantity="other">%d маркера</item>
+    </plurals>
+    <string name="bookmarks_create_new_group">Креирај нову листу</string>
+    <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
+    <string name="bookmarks_import">Увези маркере и путање</string>
+    <string name="bookmarks_error_message_share_general">Дељење није могуће због грешке у апликацији</string>
+    <string name="bookmarks_error_title_share_empty">Грешка приликом дељења</string>
+    <string name="bookmarks_error_message_share_empty">Не може се поделити празна листа</string>
+    <string name="bookmarks_error_title_empty_list_name">Назив не сме бити празан</string>
+    <string name="bookmarks_error_message_empty_list_name">Молим Вас унесите име листе</string>
+    <string name="bookmarks_new_list_hint">Нова листа</string>
+    <string name="bookmarks_error_title_list_name_already_taken">Овај назив већ постоји</string>
+    <string name="bookmarks_error_message_list_name_already_taken">Молим Вас изаберите други назив</string>
+    <string name="please_wait">Молим Вас сачекајте…</string>
+    <string name="phone_number">Број телефона</string>
+    <string name="profile">OpenStreetMap профил</string>
+    <plurals name="bookmarks_detect_message">
+        <item quantity="one">%d фајл је пронађен. Можете да га погледате након конверзије.</item>
+        <item quantity="few">%d фајла је пронађено. Можете да их погледате након конверзије.</item>
+        <item quantity="other">%d фајлова је пронађено. Можете да их погледате након конверзије.</item>
+    </plurals>
+    <string name="restore">Реконструиши</string>
+    <plurals name="tracks">
+        <item quantity="one">%d путања</item>
+        <item quantity="few">%d путање</item>
+        <item quantity="other">%d путања</item>
+    </plurals>
+    <!-- Settings privacy group in settings screen -->
+    <string name="privacy">Приватност</string>
+    <string name="privacy_policy">Политика приватности</string>
+    <string name="terms_of_use">Услови коришћења</string>
+    <string name="button_layer_traffic">Саобраћај</string>
+    <string name="button_layer_subway">Метро</string>
+    <string name="layers_title">Стилови мапе и слојеви</string>
+    <string name="subway_data_unavailable">Мапа метроа не постоји</string>
+    <string name="bookmarks_empty_list_title">Ова листа је празна</string>
+    <string name="bookmarks_empty_list_message">Да бисте додали маркер, кратко додирните место на мапи, а онда додирните иконицу са звездом</string>
+    <string name="category_desc_more">…више</string>
+    <string name="export_file">Експортуј KMZ</string>
+    <string name="export_file_gpx">Експортуј GPX</string>
+    <string name="delete_list">Обриши листу</string>
+    <string name="public_access">Јавни приступ</string>
+    <string name="limited_access">Ограничен приступ</string>
+    <string name="bookmark_list_description_hint">Унесите опис (текст или html)</string>
+    <string name="not_shared">Приватно</string>
+    <string name="speedcams_alert_title">Саобраћајне камере</string>
+    <string name="place_description_title">Опис места</string>
+    <!-- this text will be shown in application notification preferences opposite checkbox which enable/disable downloader notifications. Devices on Android 8+ are affected. -->
+    <string name="notification_channel_downloader">Преузимање мапа</string>
+    <!-- "Speed cameras" settings menu option (should be short! no more than 47-50 chars) to warn a driver if there is a risk of exceeding the speed limit -->
+    <string name="pref_tts_speedcams_auto">Упозорење на прекорачење брзине</string>
+    <!-- Speed camera settings menu option - Always warn (about speedcams) -->
+    <string name="pref_tts_speedcams_always">Увек ме упозори</string>
+    <!-- Speed camera settings menu option - Never warn (about speedcams) -->
+    <string name="pref_tts_speedcams_never">Немој да ме упозораваш</string>
+    <string name="power_managment_title">Режим чувања батерије</string>
+    <string name="power_managment_description">Смањује потрошњу електричне енергије искључивањем одређених функционалности.</string>
+    <string name="power_managment_setting_never">Никад</string>
+    <string name="power_managment_setting_auto">Када је батерија при крају</string>
+    <string name="power_managment_setting_manual_max">Увек</string>
+    <string name="enable_logging_warning_message">Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције \"Пријави проблем\" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.</string>
+    <string name="access_rules_author_only">Online измене</string>
+    <string name="driving_options_title">Опције рутирања</string>
+    <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
+    <string name="avoid_tolls">Избегавај путарине</string>
+    <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
+    <string name="avoid_unpaved">Избегавај неасфалтиране путеве</string>
+    <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
+    <string name="avoid_ferry">Избегавај трајекте</string>
+    <string name="avoid_motorways">Избегавај аутопутеве</string>
+    <string name="unable_to_calc_alert_title">Није могуће израчунати руту</string>
+    <string name="unable_to_calc_alert_subtitle">Рута није пронађена. Узрок могу бити опције рутирања или непотпуни OpenStreetMap подаци. Молим Вас да промените ваше опције рутирања и покушате поново.</string>
+    <string name="define_to_avoid_btn">Изабери путеве за избегавање</string>
+    <string name="change_driving_options_btn">Опције рутирања су укључене</string>
+    <string name="toll_road">Путеви са путаринама</string>
+    <string name="unpaved_road">Неасфалтирани путеви</string>
+    <string name="ferry_crossing">Линије трајекта</string>
+    <!-- A generic "Yes" button in dialogs -->
+    <string name="yes">Да</string>
+    <!-- A generic "No" button in dialogs -->
+    <string name="no">Не</string>
+    <!-- E.g. "WiFi:Yes" -->
+    <string name="yes_available">Да</string>
+    <!-- E.g. "WiFi:No" -->
+    <string name="no_available">Не</string>
+    <!-- To indicate the capacity of car parkings, bicycle parkings, electric vehicle charging stations... -->
+    <string name="capacity">Број места: %s</string>
+    <!-- To indicate the network of ATMs, bicycle rentals, electric vehicle charging stations... -->
+    <string name="network">Мрежа: %s</string>
+    <string name="trip_finished">Стигли сте!</string>
+    <string name="ok">ОК</string>
+    <!-- max. 10 symbols, both iOS and Android -->
+    <string name="sort">Сортирање…</string>
+    <!-- Android, title, max 20-22 symbols -->
+    <string name="sort_bookmarks">Сортирање маркера</string>
+    <!-- Android -->
+    <string name="by_default">Подразумевано</string>
+    <!-- Android -->
+    <string name="by_type">По типу</string>
+    <!-- Android -->
+    <string name="by_distance">По удаљености</string>
+    <!-- Android -->
+    <string name="by_date">По датуму</string>
+    <!-- Android -->
+    <string name="by_name">По називу</string>
+    <string name="week_ago_sorttype">Пре недељу дана</string>
+    <string name="month_ago_sorttype">Пре месец дана</string>
+    <string name="moremonth_ago_sorttype">Пре више од месец дана</string>
+    <string name="moreyear_ago_sorttype">Пре више од годину дана</string>
+    <string name="near_me_sorttype">Близу мене</string>
+    <string name="others_sorttype">Остали</string>
+
+    <!-- SECTION: Bookmark types used for sorting -->
+    <string name="food_places">Храна</string>
+    <string name="tourist_places">Атракције</string>
+    <string name="museums">Музеји</string>
+    <string name="parks">Паркови</string>
+    <string name="swim_places">Пливање</string>
+    <string name="mountains">Планине</string>
+    <string name="animals">Животиње</string>
+    <string name="hotels">Хотели</string>
+    <string name="buildings">Зграде</string>
+    <string name="money">Новац</string>
+    <string name="shops">Продавнице</string>
+    <string name="parkings">Паркинг</string>
+    <string name="fuel_places">Бензинске станице</string>
+    <string name="medicine">Медицина</string>
+    <string name="search_in_the_list">Претражи листу</string>
+    <string name="religious_places">Верска места</string>
+    <string name="select_list">Изаберите листу</string>
+    <string name="transit_not_found">Навигација у метроу у овом региону још није доступна</string>
+    <string name="dialog_pedestrian_route_is_long_header">Није пронађена метро рута</string>
+    <string name="dialog_pedestrian_route_is_long_message">Молим вас изаберите почетну и крајњу тачку ближе метро станицама</string>
+    <string name="button_layer_isolines">Изолиније</string>
+    <string name="isolines_activation_error_dialog">Приказивање изолинија захтева преузмање података са мапе за ову област</string>
+    <string name="isolines_location_error_dialog">Изолиније нису доступне за ову област</string>
+    <string name="elevation_profile_ascent">Успон</string>
+    <string name="elevation_profile_descent">Спуст</string>
+    <string name="elevation_profile_difficulty">Тежина</string>
+    <string name="elevation_profile_distance">Удаљ.:</string>
+    <string name="elevation_profile_time">Време:</string>
+    <string name="isolines_toast_zooms_1_10">Увећајте да бисте видели изолиније</string>
+    <string name="downloader_loading_ios">Преузимање</string>
+    <string name="download_map_title">Преузми мапу света</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disk_error">Не могу да направим фолдер и пременстим фајлове на интерну меморију уређаја или на SD картицу</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disk_error_title">Грешка са меморијом</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="connection_failure">Повезивање није успело</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disconnect_usb_cable_title">Откачите USB кабл</string>
+    <string name="enable_keep_screen_on">Држи укључен екран</string>
+    <!-- Description in preferences -->
+    <string name="enable_keep_screen_on_description">Када је одабрано, екран ће увек бити укључен док се приказује мапа.</string>
+    <!-- A preference title; keep short! -->
+    <string name="enable_show_on_lock_screen">Прикажи на закључаном екрану</string>
+    <!-- Description in preferences -->
+    <string name="enable_show_on_lock_screen_description">Када је одабрано, апликација ће радити и на закључаном екрану, тј. када је уређај закључан.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Језик мапе</string>
+    <!-- OpenStreetMap text on splash screen -->
+    <string name="splash_subtitle">Подаци за мапе су са OpenStreetMap-а</string>
+    <!-- App Tip #00 -->
+    <string name="app_tip_00">Хвала што користите мапе које је направила заједница!</string>
+    <!-- App tip #01 -->
+    <string name="app_tip_01">Са вашим донацијама и подршком, можемо да направимо најбоље мапе на свету!</string>
+    <!-- App tip #02 -->
+    <string name="app_tip_02">Да ли вам се допада наша апликација? Молим Вас да донирате да бисте подржали даљи развој! Још вам се не допада? Молимо Вас да нам јавите зашто, па ћемо да је поправимо!</string>
+    <!-- App tip #03 -->
+    <string name="app_tip_03">Ако знате неког програмера, можете да га замолите да имплементира функционалност која вам је потребна.</string>
+    <!-- App tip #04 -->
+    <string name="app_tip_04">Додирните било где на мапи да бисте изабрали било шта. Дуг додир се користи да се сакрије и прикаже интерфејс.</string>
+    <!-- App tip #05 -->
+    <string name="app_tip_05">Да ли сте знали да можете да изаберете вашу тренутну локацију на мапи?</string>
+    <!-- App tip #06 -->
+    <string name="app_tip_06">Можете да помогнете да се апликација преведе на ваш језик.</string>
+    <!-- App tip #07 -->
+    <string name="app_tip_07">Наша апликација је развијена од стране неколико ентузијаста и заједнице.</string>
+    <!-- App tip #08 -->
+    <string name="app_tip_08">Лако можете да поправите или унапредите податке на мапи.</string>
+    <!-- App tip #09 -->
+    <string name="app_tip_09">Наш главни циљ је да направимо брзу апликацију за мапе, једноставну за коришћење, оријентисану на приватност, коју ћете волети.</string>
+    <!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+    <string name="car_used_on_the_phone_screen">Ви сада користите Organic Maps на екрану телефона</string>
+    <!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
+    <string name="car_used_on_the_car_screen">Ви сада користите Organic Maps на екрану аутомобила</string>
+    <!-- Displayed on the phone screen. Android Auto connected -->
+    <string name="aa_connected_title">Повезани сте на Андроид Ауто</string>
+    <!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
+    <string name="car_continue_on_the_phone">Настави на телефону</string>
+    <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+    <string name="car_continue_in_the_car">Пребаци на екран аутомобила</string>
+    <!-- Ask user to grant location permissions -->
+    <string name="aa_location_permissions_request">Ова апликација захтева приступ вашој локацији за потребе навигације.</string>
+    <!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
+    <string name="aa_grant_permissions">Одобри дозволе</string>
+    <!-- Text that will be displayed in the notification title when the app is connected to Android Auto. -->
+    <string name="aa_connected_to_car_notification_title">Повезан са аутомобилом</string>
+    <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->
+    <string name="button_layer_outdoor">На отвореном</string>
+    <!-- Text displayed when a webview or a browser are disabled, and external links can't be opened. -->
+    <string name="browser_not_available">Веб читач није доступан</string>
+    <string name="volume">Јачина звука</string>
+    <!-- Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks -->
+    <string name="bookmarks_export">Експортуј све маркере и путање</string>
+    <!-- button in (app) TTS settings, to open the system TTS settings. -->
+    <string name="pref_tts_open_system_settings">Системска подешавања синтезе говора</string>
+    <!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
+    <string name="pref_tts_no_system_tts">Синтеза говора није пронађена, да ли сте сигурни да је ваш уређај подржава?</string>
+    <string name="drive_through">Пролаз за возила</string>
+    <string name="clear_the_search">Обриши претрагу</string>
+    <string name="zoom_in">Увећај</string>
+    <!-- Accessibility text for the zoom-out button on the map -->
+    <string name="zoom_out">Умањи</string>
+    <!-- Restaurant or other food place's menu URL field in the Editor -->
+    <string name="website_menu">Линк менија</string>
+    <!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+    <string name="view_menu">Прикажи мени</string>
+    <!-- Title for the "Open In Another App" button on the PlacePage. -->
+    <string name="open_in_app">Отвори у другој апликацији</string>
+    <!-- To indicate if the place proposed self service... -->
+    <string name="self_service">Самопослуживање</string>
+    <string name="select_option">Изаберите опцију</string>
+    <!-- To indicate if restaurant or other place has outdoor seating -->
+    <string name="outdoor_seating">Башта</string>
+    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
+    <string name="power_save_dialog_summary">За прецизнију навигацију препоручујемо да се искључи режим чувања батерије у Подешавањима везаним за бетерију телефона.</string>
+    <!-- Prompt to start recording a track. -->
+    <string name="start_track_recording">Сними путању</string>
+    <!-- Prompt for stopping a track recording. -->
+    <string name="stop_track_recording">Заустави снимање путање</string>
+    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
+    <string name="stop_without_saving">Заустави без снимања</string>
+    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
+    <string name="continue_recording">Настави снимање</string>
+    <!-- Title for the alert when saving a track recording. -->
+    <string name="track_recording_alert_title">Сачувати у маркерима и путањама?</string>
+    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
+    <string name="track_recording_toast_nothing_to_save">Путања је празна, нема шта да се сачува</string>
+    <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
+    <string name="error_no_file_manager_app">Дијалог за избор фолдера није могуће приказати пошто на уређају није инсталирана одговарајућа апликација. Молим Вас да инсталирате апликацију за управљање фајловима и покушате поново.</string>
+    <string name="choose_color">Изаберите боју</string>
+    <string name="edit_track">Измените путању</string>
+    <string name="uri_open_location_failed">Нема инсталираних апликација које могу да отворе локацију.</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Аутоматски у навигацији</string>
+
+    <!-- SECTION: Types -->
+    <string name="type.addr_interpolation">Адреса/Блок</string>
+    <string name="type.addr_interpolation.even">Адреса/Блок</string>
+    <string name="type.addr_interpolation.odd">Адреса/Блок</string>
+    <string name="type.aerialway">Гондола</string>
+    <string name="type.aerialway.cable_car">Ваздушни трамвај</string>
+    <string name="type.aerialway.chair_lift">Ски-лифт</string>
+    <string name="type.aerialway.drag_lift">Ски-лифт једносед</string>
+    <string name="type.aerialway.gondola">Гондола</string>
+    <string name="type.aerialway.mixed_lift">Комбинована жичара</string>
+    <string name="type.aerialway.station">Станица жичаре</string>
+    <string name="type.aeroway">Ваздушна инфраструктура</string>
+    <string name="type.aeroway.aerodrome">Аеродром</string>
+    <string name="type.aeroway.aerodrome.international">Интернационални аеродром</string>
+    <string name="type.aeroway.apron">Перон</string>
+    <string name="type.aeroway.gate">Капија за укрцавање</string>
+    <string name="type.aeroway.helipad">Хелиодром</string>
+    <string name="type.aeroway.runway">Писта</string>
+    <string name="type.aeroway.taxiway">Рулна стаза</string>
+    <string name="type.aeroway.terminal">Терминал</string>
+    <string name="type.amenity">Инфраструктурни објекти</string>
+    <string name="type.amenity.arts_centre">Центар уметности</string>
+    <string name="type.amenity.atm">Банкомат</string>
+    <string name="type.amenity.bank">Банка</string>
+    <string name="type.amenity.bar">Бар</string>
+    <string name="type.amenity.bbq">Грил</string>
+    <string name="type.amenity.bench">Клупа</string>
+    <string name="type.amenity.bicycle_parking">Паркинг за бицикле</string>
+    <string name="type.amenity.bicycle_rental">Рентирање бицикли</string>
+    <string name="type.amenity.bicycle_repair_station">Станица за поправку бицикала</string>
+    <string name="type.amenity.biergarten">Пивска башта</string>
+    <string name="type.amenity.brothel">Јавна кућа</string>
+    <string name="type.amenity.bureau_de_change">Мењачница</string>
+    <string name="type.amenity.bus_station">Аутобуска станица</string>
+    <string name="type.amenity.cafe">Кафе</string>
+    <string name="type.amenity.car_rental">Рентакар</string>
+    <string name="type.amenity.car_sharing">Дељење аутомобила</string>
+    <string name="type.amenity.car_wash">Перионица</string>
+    <string name="type.amenity.casino">Казино</string>
+    <string name="type.amenity.gambling">Коцкарница</string>
+    <string name="type.leisure.adult_gaming_centre">Центар за игру одраслих</string>
+    <string name="type.leisure.amusement_arcade">Играоница за одрасле</string>
+    <string name="type.amenity.charging_station">Станица за пуњење ЕВ</string>
+    <string name="type.amenity.charging_station.bicycle">Станица за пуњење бицикала</string>
+    <string name="type.amenity.charging_station.motorcar">Станица за пуњење аутомобила</string>
+    <string name="type.amenity.childcare">Вртић</string>
+    <string name="type.amenity.cinema">Биоскоп</string>
+    <string name="type.leisure.bowling_alley">Куглана</string>
+    <string name="type.amenity.clinic">Дом здравља / Поликлиника</string>
+    <string name="type.amenity.college">Факултет</string>
+    <string name="type.amenity.community_centre">Дом културе</string>
+    <string name="type.amenity.compressed_air">Компримовани ваздух</string>
+    <string name="type.amenity.conference_centre">Конференцијски центар</string>
+    <string name="type.amenity.courthouse">Суд</string>
+    <string name="type.amenity.dentist">Стоматолог</string>
+    <string name="type.amenity.doctors">Доктор</string>
+    <string name="type.amenity.drinking_water">Вода за пиће</string>
+    <string name="type.drinking_water.yes">Вода за пиће</string>
+    <string name="type.amenity.driving_school">Ауто-школа</string>
+    <string name="type.amenity.exhibition_centre">Изложбени центар</string>
+    <string name="type.amenity.money_transfer">Трансфер новца</string>
+    <string name="type.amenity.music_school">Музичка школа</string>
+    <string name="type.amenity.language_school">Школа језика</string>
+    <string name="type.office.diplomatic">Амбасада</string>
+    <string name="type.amenity.fast_food">Брза храна</string>
+    <string name="type.amenity.ferry_terminal">Трајект</string>
+    <string name="type.amenity.fire_station">Ватрогасна станица</string>
+    <string name="type.amenity.food_court">Ресторанска башта</string>
+    <string name="type.amenity.fountain">Фонтана</string>
+    <string name="type.amenity.fuel">Бензинска станица</string>
+    <!-- In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. -->
+    <string name="type.amenity.grave_yard">Гробље</string>
+    <!-- In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. -->
+    <string name="type.amenity.grave_yard.christian">Хришћанско гробље</string>
+    <string name="type.amenity.hospital">Болница</string>
+    <string name="type.amenity.hunting_stand">Ловачка чека</string>
+    <string name="type.amenity.ice_cream">Сладолед</string>
+    <string name="type.amenity.internet_cafe">Интернет кафе</string>
+    <string name="type.amenity.kindergarten">Вртић</string>
+    <string name="type.amenity.library">Библиотека</string>
+    <string name="type.amenity.loading_dock">Утоварна станица</string>
+    <string name="type.amenity.marketplace">Маркет</string>
+    <string name="type.amenity.motorcycle_parking">Паркинг за мотоцикле</string>
+    <string name="type.amenity.nightclub">Ноћни клуб</string>
+    <string name="type.amenity.nursing_home">Старачки дом</string>
+    <string name="type.amenity.parking">Паркинг</string>
+    <string name="type.amenity.parking.fee">Паркинг</string>
+    <string name="type.amenity.parking.multi.storey">Вишеспратни паркинг</string>
+    <string name="type.amenity.parking.multi.storey.fee">Вишеспратни паркинг</string>
+    <string name="type.amenity.parking.no.access">Приватни паркинг</string>
+    <string name="type.amenity.parking.permissive">Приватни паркинг</string>
+    <string name="type.amenity.parking.private">Приватни паркинг</string>
+    <string name="type.amenity.parking.park_and_ride">Паркирај и вози паркинг</string>
+    <string name="type.amenity.parking.underground">Подземни паркинг</string>
+    <string name="type.amenity.parking.underground.fee">Подземни паркинг</string>
+    <string name="type.amenity.parking.underground.private">Приватни подземни паркинг</string>
+    <string name="type.amenity.parking.street_side">Паркинг поред пута</string>
+    <string name="type.amenity.parking.street_side.fee">Паркинг поред пута</string>
+    <string name="type.amenity.parking.street_side.private">Приватни паркинг поред пута</string>
+    <string name="type.amenity.parking.lane">Линијски паркинг</string>
+    <string name="type.amenity.parking.lane.fee">Линијски паркинг</string>
+    <string name="type.amenity.parking.lane.private">Приватни линијски паркинг</string>
+    <string name="type.amenity.parking_entrance">Улаз на паркинг</string>
+    <string name="type.amenity.parking_entrance.private">Улаз на приватни паркинг</string>
+    <string name="type.amenity.parking_entrance.permissive">Улаз на паркинг</string>
+    <string name="type.amenity.parking_space">Паркинг место</string>
+    <string name="type.amenity.parking_space.permissive">Паркинг место</string>
+    <string name="type.amenity.parking_space.private">Паркинг место</string>
+    <string name="type.amenity.parking_space.underground">Паркинг место</string>
+    <string name="type.amenity.parking_space.disabled">Паркинг место за инвалиде</string>
+    <string name="type.amenity.payment_terminal">Терминал за наплату</string>
+    <string name="type.amenity.pharmacy">Апотека</string>
+    <string name="type.amenity.place_of_worship">Храм</string>
+    <string name="type.amenity.place_of_worship.buddhist">Будистички храм</string>
+    <string name="type.amenity.place_of_worship.christian">Црква</string>
+    <string name="type.amenity.place_of_worship.christian.mormon">Црква Исуса Христа светаца последњих дана</string>
+    <string name="type.amenity.place_of_worship.christian.jehovahs_witness">Сала краљевства Јеховиних сведока</string>
+    <string name="type.amenity.place_of_worship.hindu">Хинду храм</string>
+    <string name="type.amenity.place_of_worship.jewish">Синагога</string>
+    <string name="type.amenity.place_of_worship.muslim">Џамија</string>
+    <string name="type.amenity.place_of_worship.shinto">Шинтоистички храм</string>
+    <string name="type.amenity.place_of_worship.taoist">Таоистички храм</string>
+    <string name="type.amenity.police">Полиција</string>
+    <string name="type.amenity.post_box">Поштанско сандуче</string>
+    <string name="type.amenity.post_office">Пошта</string>
+    <string name="type.amenity.prison">Затвор</string>
+    <string name="type.amenity.pub">Паб</string>
+    <string name="type.amenity.public_bookcase">Размена књига</string>
+
+    <!-- SECTION: Types: Recycling -->
+    <string name="type.amenity.recycling.centre">Центар за рециклажу</string>
+    <string name="type.amenity.recycling">Контејнер за рециклажу</string>
+    <string name="type.amenity.recycling.container">Контејнер за рециклажу</string>
+    <string name="type.recycling.batteries">Бетерије</string>
+    <string name="type.recycling.clothes">Стара одећа</string>
+    <string name="type.recycling.glass_bottles">Стаклене флаше</string>
+    <string name="type.recycling.paper">Папир</string>
+    <string name="type.recycling.plastic">Пластика</string>
+    <string name="type.recycling.plastic_bottles">Пластичне флаше</string>
+    <string name="type.recycling.scrap_metal">Старо гвожђе</string>
+    <string name="type.recycling.small_appliances">Електроотпад</string>
+    <string name="type.recycling.cardboard">Картон</string>
+    <string name="type.recycling.cans">Конзерве</string>
+    <string name="type.recycling.shoes">Ципеле</string>
+    <string name="type.recycling.green_waste">Биолошки отпад</string>
+    <string name="type.recycling.cartons">Картон и папир</string>
+    <string name="type.amenity.restaurant">Ресторан</string>
+    <string name="type.amenity.sanitary_dump_station">Станица за одлагање резервоара</string>
+    <string name="type.amenity.school">Школа</string>
+    <!-- Weather shelter (including sun shelters and natural rock shelters). -->
+    <string name="type.amenity.shelter">Склониште</string>
+    <!-- A weather shelter by the public transport stop. -->
+    <string name="type.amenity.shelter.public_transport">Склониште</string>
+    <!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+    <string name="type.amenity.shelter.basic_hut">Колиба за ноћење</string>
+    <!-- A traditional 3-walled shelter (one side open), suitable for overnight camping. -->
+    <string name="type.amenity.shelter.lean_to">Склониште типа шупе</string>
+    <string name="type.amenity.public_bath">Јавно купатило</string>
+    <string name="type.amenity.shower">Туш</string>
+    <string name="type.amenity.stripclub">Стриптиз клуб</string>
+    <string name="type.amenity.taxi">Такси станица</string>
+    <string name="type.amenity.telephone">Телефон</string>
+    <string name="type.amenity.theatre">Позориште</string>
+    <string name="type.amenity.toilets">Тоалет</string>
+    <string name="type.toilets.yes">Тоалет</string>
+    <string name="type.amenity.townhall">Локална самоуправа</string>
+    <string name="type.amenity.university">Универзитет</string>
+    <string name="type.amenity.vending_machine">Аутомат</string>
+    <string name="type.amenity.vending_machine.cigarettes">Аутомат за цигарете</string>
+    <string name="type.amenity.vending_machine.coffee">Аутомат за кафу</string>
+    <string name="type.amenity.vending_machine.condoms">Аутомат за кондоме</string>
+    <string name="type.amenity.vending_machine.drinks">Аутомат за пиће</string>
+    <string name="type.amenity.vending_machine.food">Аутомат за храну</string>
+    <string name="type.amenity.vending_machine.newspapers">Аутомат за новине</string>
+    <string name="type.amenity.vending_machine.parking_tickets">Паркомат</string>
+    <string name="type.amenity.vending_machine.public_transport_tickets">Аутомат за продају карата</string>
+    <string name="type.amenity.vending_machine.sweets">Аутомат за слаткише</string>
+    <string name="type.amenity.vending_machine.excrement_bags">Кесе за псећи измет</string>
+    <string name="type.amenity.parcel_locker">Пакетомат</string>
+    <string name="type.amenity.vehicle_inspection">Контрола возила</string>
+    <string name="type.amenity.vending_machine.fuel">Пумпа за гориво</string>
+    <string name="type.amenity.veterinary">Ветеринар</string>
+    <string name="type.amenity.waste_basket">Канта за смеће</string>
+    <string name="type.amenity.waste_disposal">Контејнер за смеће</string>
+    <string name="type.amenity.waste_transfer_station">Станица за прераду отпада</string>
+    <string name="type.amenity.water_point">Чесма</string>
+    <string name="type.amenity.water_point.drinking_water_no">Чесма</string>
+    <string name="type.barrier">Баријера</string>
+    <string name="type.barrier.block">Блок</string>
+    <string name="type.barrier.bollard">Стуб</string>
+    <string name="type.barrier.border_control">Гранична контрола</string>
+    <string name="type.barrier.chain">Ланац</string>
+    <string name="type.barrier.city_wall">Градски зид</string>
+    <string name="type.barrier.cycle_barrier">Бедем</string>
+    <string name="type.waterway.ditch">Канал</string>
+    <string name="type.natural.water.moat">Шанац</string>
+    <string name="type.natural.water.wastewater">Отпадна вода</string>
+    <string name="type.barrier.entrance">Пролаз</string>
+    <string name="type.barrier.fence">Ограда</string>
+    <string name="type.barrier.gate">Капија</string>
+    <string name="type.barrier.hedge">Жива ограда</string>
+    <string name="type.barrier.kissing_gate">Капија</string>
+    <string name="type.barrier.lift_gate">Рампа</string>
+    <string name="type.barrier.retaining_wall">Потпорни зид</string>
+    <string name="type.barrier.stile">Прелаз преко ограде</string>
+    <string name="type.barrier.turnstile">Окретна капија</string>
+    <string name="type.barrier.swing_gate">Рампа</string>
+    <string name="type.barrier.toll_booth">Наплатна рампа</string>
+    <string name="type.barrier.wall">Зид</string>
+    <string name="type.boundary">Граница</string>
+    <string name="type.boundary.administrative">Административна граница</string>
+    <!-- Borders between countries. -->
+    <string name="type.boundary.administrative.2">Гранични прелаз</string>
+    <!-- Country's primary subdivision borders, e.g. between regions, provinces, states.. -->
+    <string name="type.boundary.administrative.3">Регионална граница</string>
+    <!-- Country's primary subdivision borders, e.g. between regions, provinces, states.. -->
+    <string name="type.boundary.administrative.4">Регионална граница</string>
+    <string name="type.boundary.national_park">Национални парк</string>
+    <string name="type.boundary.aboriginal_lands">Домородачка земља</string>
+    <string name="type.boundary.protected_area">Заштићено подручје</string>
+    <string name="type.boundary.protected_area.1">Заштићено подручје</string>
+    <string name="type.boundary.protected_area.2">Заштићено подручје</string>
+    <string name="type.boundary.protected_area.3">Заштићено подручје</string>
+    <string name="type.boundary.protected_area.4">Заштићено подручје</string>
+    <string name="type.boundary.protected_area.5">Заштићено подручје</string>
+    <string name="type.boundary.protected_area.6">Заштићено подручје</string>
+    <string name="type.building">Зграда</string>
+    <!-- Duplicates [address] in strings.txt -->
+    <string name="type.building.address">Адреса</string>
+    <string name="type.building.has_parts">Зграда</string>
+    <string name="type.building_part">Зграда</string>
+    <string name="type.building.garage">Гаража</string>
+    <string name="type.building.train_station">Станична зграда</string>
+    <string name="type.building.warehouse">Депо</string>
+    <string name="type.cemetery.grave">Гробље</string>
+    <string name="type.craft">Занатлије</string>
+    <string name="type.craft.beekeeper">Пчелар</string>
+    <string name="type.craft.blacksmith">Ковач</string>
+    <string name="type.craft.brewery">Пивара</string>
+    <string name="type.craft.caterer">Угоститељ</string>
+    <string name="type.craft.carpenter">Столар</string>
+    <string name="type.craft.confectionery">Посластичарница</string>
+    <string name="type.craft.electrician">Електрика</string>
+    <string name="type.craft.electronics_repair">Сервис електронике</string>
+    <string name="type.craft.gardener">Баштован</string>
+    <string name="type.craft.grinding_mill">Млин</string>
+    <string name="type.craft.handicraft">Занатска радионица</string>
+    <!-- Heating, Ventilation, and Air Conditioning -->
+    <string name="type.craft.hvac">Грејање, вентилација и климатизација</string>
+    <string name="type.craft.key_cutter">Нарезивање кључева</string>
+    <string name="type.craft.locksmith">Бравар</string>
+    <string name="type.craft.metal_construction">Металне конструкције</string>
+    <string name="type.craft.painter">Молер</string>
+    <string name="type.craft.photographer">Фотограф</string>
+    <string name="type.shop.camera">Продавница фотоапарата</string>
+    <string name="type.craft.plumber">Водоинсталатер</string>
+    <string name="type.craft.sawmill">Стругара</string>
+    <string name="type.craft.shoemaker">Обућар</string>
+    <string name="type.craft.winery">Винарија</string>
+    <string name="type.craft.tailor">Атеље</string>
+    <string name="type.cuisine.african">Афричка</string>
+    <string name="type.cuisine.american">Америчка</string>
+    <string name="type.cuisine.arab">Арапска</string>
+    <string name="type.cuisine.argentinian">Аргентинска</string>
+    <string name="type.cuisine.asian">Азијска</string>
+    <string name="type.cuisine.austrian">Аустријска</string>
+    <string name="type.cuisine.bagel">Багел</string>
+    <string name="type.cuisine.balkan">Балканска</string>
+    <string name="type.cuisine.barbecue">Роштиљ</string>
+    <string name="type.cuisine.bavarian">Баварска</string>
+    <string name="type.cuisine.beef_bowl">Говедина</string>
+    <string name="type.cuisine.brazilian">Бразилска</string>
+    <string name="type.cuisine.breakfast">Доручак</string>
+    <string name="type.cuisine.bubble_tea">Чај са мехурићима</string>
+    <string name="type.cuisine.burger">Хамбургер</string>
+    <string name="type.cuisine.buschenschank">Таверна</string>
+    <string name="type.cuisine.cake">Колачи</string>
+    <string name="type.cuisine.caribbean">Карибска</string>
+    <string name="type.cuisine.chicken">Пилетина</string>
+    <string name="type.cuisine.chinese">Кинеска</string>
+    <string name="type.cuisine.coffee_shop">Кафа</string>
+    <string name="type.cuisine.crepe">Палачинке</string>
+    <string name="type.cuisine.croatian">Хрватска</string>
+    <string name="type.cuisine.curry">Кари</string>
+    <string name="type.cuisine.deli">Деликатеси</string>
+    <string name="type.cuisine.diner">Ресторан</string>
+    <string name="type.cuisine.donut">Крофне</string>
+    <string name="type.cuisine.ethiopian">Етиопијска</string>
+    <string name="type.cuisine.filipino">Филипинска</string>
+    <string name="type.cuisine.fine_dining">Ексклузивни ресторан</string>
+    <string name="type.cuisine.fish">Риба</string>
+    <string name="type.cuisine.fish_and_chips">Риба и помфрит</string>
+    <string name="type.cuisine.french">Француска</string>
+    <string name="type.cuisine.friture">Пржена храна</string>
+    <string name="type.cuisine.georgian">Грузијска</string>
+    <string name="type.cuisine.german">Немачка</string>
+    <string name="type.cuisine.greek">Грчка</string>
+    <string name="type.cuisine.grill">Грил</string>
+    <string name="type.cuisine.heuriger">Винска таверна</string>
+    <string name="type.cuisine.hotdog">Hotdog</string>
+    <string name="type.cuisine.hungarian">Мађарска</string>
+    <string name="type.cuisine.ice_cream">Сладолед</string>
+    <string name="type.cuisine.indian">Индијска</string>
+    <string name="type.cuisine.indonesian">Индонежанска</string>
+    <string name="type.cuisine.international">Интернационална</string>
+    <string name="type.cuisine.irish">Ирска</string>
+    <string name="type.cuisine.italian">Италијанска</string>
+    <string name="type.cuisine.italian_pizza">Пица</string>
+    <string name="type.cuisine.japanese">Јапанска</string>
+    <string name="type.cuisine.kebab">Кебаб</string>
+    <string name="type.cuisine.korean">Корејска</string>
+    <string name="type.cuisine.lao">Лаоска</string>
+    <string name="type.cuisine.lebanese">Либанска</string>
+    <string name="type.cuisine.local">Локална</string>
+    <string name="type.cuisine.malagasy">Мадагаскарска</string>
+    <string name="type.cuisine.malaysian">Малезијска</string>
+    <string name="type.cuisine.mediterranean">Медитеранска</string>
+    <string name="type.cuisine.mexican">Мексичка</string>
+    <string name="type.cuisine.moroccan">Мароканска</string>
+    <string name="type.cuisine.noodles">Нудле</string>
+    <string name="type.cuisine.oriental">Оријентална</string>
+    <string name="type.cuisine.pancake">Палачинке</string>
+    <string name="type.cuisine.pasta">Паста</string>
+    <string name="type.cuisine.persian">Персијска</string>
+    <string name="type.cuisine.peruvian">Перуанска</string>
+    <string name="type.cuisine.pizza">Пица</string>
+    <string name="type.cuisine.polish">Пољска</string>
+    <string name="type.cuisine.portuguese">Португалска</string>
+    <string name="type.cuisine.ramen">Рамен (јапанска супа са резанцима)</string>
+    <string name="type.cuisine.regional">Регионална</string>
+    <string name="type.cuisine.russian">Руска</string>
+    <string name="type.cuisine.sandwich">Сендвич</string>
+    <string name="type.cuisine.sausage">Кобасица</string>
+    <string name="type.cuisine.savory_pancakes">Слане палачинке</string>
+    <string name="type.cuisine.seafood">Морски плодови</string>
+    <string name="type.cuisine.soba">Соба</string>
+    <string name="type.cuisine.spanish">Шпанска</string>
+    <string name="type.cuisine.steak_house">Стек</string>
+    <string name="type.cuisine.sushi">Суши</string>
+    <string name="type.cuisine.tapas">Тапас</string>
+    <string name="type.cuisine.tea">Чај</string>
+    <string name="type.cuisine.thai">Тајландска</string>
+    <string name="type.cuisine.turkish">Турска</string>
+    <string name="type.cuisine.vegan">Веганска</string>
+    <string name="type.cuisine.vegetarian">Вегетаријанска</string>
+    <string name="type.cuisine.vietnamese">Вијетнамска</string>
+    <string name="type.emergency">Хитна служба</string>
+    <string name="type.emergency.assembly_point">Сабирно место за хитне случајеве</string>
+    <string name="type.emergency.defibrillator">Дефибрилатор</string>
+    <string name="type.emergency.fire_hydrant">Пожарни хидрант</string>
+    <string name="type.emergency.phone">Ургентни телефон</string>
+    <!-- This is for secondary entrances, for main entrances see type.entrance.main -->
+    <string name="type.entrance">Улаз</string>
+    <!-- This is for main/primary entrances, for secondary entrances see type.entrance -->
+    <string name="type.entrance.main">Главни улаз</string>
+    <string name="type.entrance.exit">Излаз</string>
+    <string name="type.fee.no">Бесплатно</string>
+    <string name="type.healthcare.laboratory">Медицинска лабораторија</string>
+    <string name="type.healthcare.physiotherapist">Физиотерапеут</string>
+    <string name="type.healthcare.alternative">Алтернативна медицина</string>
+    <string name="type.healthcare.audiologist">Аудиологија</string>
+    <string name="type.healthcare.blood_donation">Завод за трансфузију крви</string>
+    <string name="type.healthcare.optometrist">Оптометрија</string>
+    <string name="type.healthcare.podiatrist">Подолог</string>
+    <string name="type.healthcare.psychotherapist">Психотерапеут</string>
+    <string name="type.healthcare.sample_collection">Прикупљање анализа</string>
+    <string name="type.healthcare.speech_therapist">Логопед</string>
+
+    <!-- SECTION: Types: Roads -->
+    <string name="type.highway">Ауто-пут</string>
+    <string name="type.highway.bridleway">Коњска стаза</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.bridleway.bridge">Мост</string>
+    <string name="type.highway.bridleway.permissive">Коњска стаза</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.bridleway.tunnel">Тунел</string>
+    <string name="type.highway.busway">Наменски аутобуски пут</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.busway.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.busway.tunnel">Тунел</string>
+    <string name="type.highway.bus_stop">Аутобуско стајалиште</string>
+    <string name="type.highway.construction">Пут у изградњи</string>
+    <string name="type.highway.cycleway">Бициклистичка стаза</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.cycleway.bridge">Мост</string>
+    <string name="type.highway.cycleway.permissive">Бициклистичка стаза</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.cycleway.tunnel">Тунел</string>
+    <string name="type.highway.elevator">Лифт</string>
+    <string name="type.highway.footway">Пешачка стаза</string>
+    <string name="type.highway.footway.sidewalk">Тротоар</string>
+    <string name="type.highway.footway.crossing">Пешачки прелаз</string>
+    <string name="type.highway.footway.area">Пешачка зона</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.footway.bridge">Пасарела</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.footway.tunnel">Пешачки тунел</string>
+    <string name="type.highway.ford">Брод</string>
+    <string name="type.highway.living_street">Улица у стамбеној зони</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.living_street.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.living_street.tunnel">Тунел</string>
+    <string name="type.highway.motorway">Мото-пут</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.motorway.bridge">Мост на мото-путу</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.motorway.tunnel">Тунел на мото-путу</string>
+    <string name="type.highway.motorway_junction">Излаз са ауто-пута</string>
+    <string name="type.highway.motorway_link">Излаз са мото-пута</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.motorway_link.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.motorway_link.tunnel">Тунел</string>
+    <string name="type.highway.path">Стаза</string>
+    <!-- Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. -->
+    <string name="type.highway.path.difficult">Тешка или слабо видљива стаза</string>
+    <!-- Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. -->
+    <string name="type.highway.path.expert">Веома тешка или нејасна стаза</string>
+    <string name="type.highway.path.bicycle">Пут за бициклисте и пешаке</string>
+    <string name="type.highway.footway.bicycle">Пут за бициклисте и пешаке</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.path.bridge">Мост</string>
+    <string name="type.highway.path.horse">Коњска стаза</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.path.tunnel">Тунел</string>
+    <string name="type.highway.pedestrian">Пешачка улица</string>
+    <string name="type.highway.pedestrian.area">Пешачка зона</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.pedestrian.bridge">Пешачки мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.pedestrian.tunnel">Пешачки тунел</string>
+    <string name="type.highway.primary">Пут прве класе</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.primary.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.primary.tunnel">Тунел</string>
+    <string name="type.highway.primary_link">Приступни пут</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.primary_link.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.primary_link.tunnel">Тунел</string>
+    <string name="type.highway.raceway">Тркачка стаза</string>
+    <string name="type.highway.residential">Стамбена улица</string>
+    <string name="type.highway.residential.area">Стамбена улица</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.residential.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.residential.tunnel">Тунел</string>
+    <string name="type.highway.rest_area">Одмориште</string>
+    <string name="type.highway.road">Пут</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.road.bridge">Мост</string>
+    <!-- A bridge structure outline. -->
+    <string name="type.man_made.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.road.tunnel">Тунел</string>
+    <string name="type.highway.secondary">Пут друге класе</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.secondary.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.secondary.tunnel">Тунел</string>
+    <string name="type.highway.secondary_link">Излаз са пута</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.secondary_link.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.secondary_link.tunnel">Тунел</string>
+    <string name="type.highway.service">Сервисни пут</string>
+    <string name="type.highway.service.area">Сервисни пут</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.service.bridge">Мост</string>
+    <string name="type.highway.service.driveway">Прилаз</string>
+    <string name="type.highway.service.parking_aisle">Пут на паркингу</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.service.tunnel">Тунел</string>
+    <string name="type.highway.services">Сервисна зона</string>
+    <string name="type.highway.speed_camera">Прекршајна камера</string>
+    <string name="type.highway.steps">Мердевине</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.steps.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.steps.tunnel">Тунел</string>
+    <string name="type.highway.tertiary">Пут треће класе</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.tertiary.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.tertiary.tunnel">Тунел</string>
+    <string name="type.highway.tertiary_link">Пут треће класе</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.tertiary_link.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.tertiary_link.tunnel">Тунел</string>
+    <string name="type.highway.track">Макадам</string>
+    <string name="type.highway.track.area">Макадам</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.track.bridge">Мост</string>
+    <string name="type.highway.track.grade1">Макадам</string>
+    <string name="type.highway.track.no.access">Макадам</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.track.tunnel">Тунел</string>
+    <string name="type.highway.traffic_signals">Семафор</string>
+    <string name="type.highway.trunk">Улица</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.trunk.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.trunk.tunnel">Тунел</string>
+    <string name="type.highway.trunk_link">Улица</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.trunk_link.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.trunk_link.tunnel">Тунел</string>
+    <string name="type.highway.unclassified">Некласификовани пут</string>
+    <string name="type.highway.unclassified.area">Некласификовани пут</string>
+    <!-- These translations are used for all type.highway.*.bridge. -->
+    <string name="type.highway.unclassified.bridge">Мост</string>
+    <!-- These translations are used for all type.highway.*.tunnel. -->
+    <string name="type.highway.unclassified.tunnel">Тунел</string>
+    <string name="type.area_highway.cycleway">Бициклистичка стаза</string>
+    <string name="type.area_highway.footway">Пешачка стаза</string>
+    <string name="type.area_highway.living_street">Улица у стамбеној зони</string>
+    <string name="type.area_highway.motorway">Мото-пут</string>
+    <string name="type.area_highway.path">Стаза</string>
+    <string name="type.area_highway.pedestrian">Пешачка улица</string>
+    <string name="type.area_highway.primary">Пут прве класе</string>
+    <string name="type.area_highway.residential">Стамбена улица</string>
+    <string name="type.area_highway.secondary">Пут друге класе</string>
+    <string name="type.area_highway.service">Сервисни пут</string>
+    <string name="type.area_highway.tertiary">Пут треће класе</string>
+    <string name="type.area_highway.steps">Мердевине</string>
+    <string name="type.area_highway.track">Макадам</string>
+    <string name="type.area_highway.trunk">Улица</string>
+    <string name="type.area_highway.unclassified">Некласификовани пут</string>
+
+    <!-- SECTION: Types: Historic -->
+    <string name="type.historic">Историјски објекат</string>
+    <string name="type.historic.aircraft">Историјски авион</string>
+    <string name="type.historic.anchor">Историјско сидро</string>
+    <string name="type.historic.archaeological_site">Археолошко налазиште</string>
+    <string name="type.historic.battlefield">Историјско бојно поље</string>
+    <string name="type.historic.boundary_stone">Гранични камен</string>
+    <string name="type.historic.cannon">Топ</string>
+    <string name="type.historic.castle">Замак</string>
+    <string name="type.historic.castle.castrum">Римска тврђава</string>
+    <string name="type.historic.castle.defensive">Замак</string>
+    <string name="type.historic.castle.fortified_church">Утврђена црква</string>
+    <string name="type.historic.castle.fortress">Тврђава</string>
+    <string name="type.historic.castle.hillfort">Тврђава</string>
+    <string name="type.historic.castle.kremlin">Кремљ</string>
+    <string name="type.historic.castle.manor">Каштел</string>
+    <string name="type.historic.castle.palace">Палата</string>
+    <string name="type.historic.castle.shiro">Јапански каштел</string>
+    <string name="type.historic.castle.stately">Замак</string>
+    <string name="type.historic.city_gate">Градска капија</string>
+    <string name="type.historic.citywalls">Градски зид</string>
+    <string name="type.historic.fort">Утврђење</string>
+    <string name="type.historic.gallows">Вешала</string>
+    <string name="type.historic.locomotive">Историјска локомотива</string>
+    <string name="type.historic.memorial">Споменик</string>
+    <string name="type.historic.memorial.cross">Спомен-крст</string>
+    <string name="type.historic.memorial.plaque">Спомен-плоча</string>
+    <string name="type.historic.memorial.sculpture">Скулптура</string>
+    <string name="type.historic.memorial.statue">Статуа</string>
+    <string name="type.historic.memorial.stolperstein">Столперстеин</string>
+    <string name="type.historic.stone">Историјски камен</string>
+    <string name="type.historic.memorial.war_memorial">Војни меморијал</string>
+    <string name="type.historic.mine">Историјски рудник</string>
+    <string name="type.historic.monument">Споменик</string>
+    <string name="type.historic.pillory">Стуб срама</string>
+    <string name="type.historic.ruins">Историјске рушевине</string>
+    <string name="type.historic.ship">Лађа</string>
+    <string name="type.historic.tank">Историјски тенк</string>
+    <string name="type.historic.tomb">Гробница</string>
+    <string name="type.historic.wayside_cross">Крст поред пута</string>
+    <string name="type.historic.wayside_shrine">Светилиште поред пута</string>
+    <string name="type.historic.wreck">Историјски бродолом</string>
+    <string name="type.internet_access">Интернет</string>
+    <string name="type.internet_access.wlan">Интернет</string>
+    <string name="type.junction">Раскрсница</string>
+    <string name="type.junction.circular">Кружни ток</string>
+    <string name="type.junction.roundabout">Кружни ток</string>
+    <string name="type.landuse">Пољопривредно земљиште</string>
+    <string name="type.landuse.allotments">Парцела</string>
+    <string name="type.landuse.basin">Резервоар</string>
+    <string name="type.landuse.brownfield">Грађевинско земљиште</string>
+    <!-- In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. -->
+    <string name="type.landuse.cemetery">Гробље</string>
+    <!-- In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. -->
+    <string name="type.landuse.cemetery.christian">Хришћанско гробље</string>
+    <string name="type.landuse.churchyard">Двориште цркве</string>
+    <string name="type.landuse.commercial">Кмерцијална област</string>
+    <string name="type.landuse.construction">Градилиште</string>
+    <string name="type.landuse.education">Образовна установа</string>
+    <string name="type.landuse.farmland">Пољопривредно земљиште</string>
+    <string name="type.landuse.farmyard">Пољопривредно земљиште</string>
+    <string name="type.landuse.field">Поље</string>
+    <string name="type.landuse.flowerbed">Цветно острво</string>
+    <string name="type.landuse.forest">Шума</string>
+    <string name="type.landuse.forest.coniferous">Четинарска шума</string>
+    <string name="type.landuse.forest.deciduous">Листопадна шума</string>
+    <string name="type.landuse.forest.mixed">Шума</string>
+    <string name="type.landuse.garages">Гаража</string>
+    <string name="type.landuse.grass">Травњак</string>
+    <string name="type.landuse.greenfield">Грађевинско земљиште</string>
+    <string name="type.landuse.greenhouse_horticulture">Стакленик</string>
+    <string name="type.landuse.industrial">Индустријска зона</string>
+    <string name="type.landuse.landfill">Депонија</string>
+    <string name="type.landuse.meadow">Ливада</string>
+    <string name="type.landuse.military">Војна област</string>
+    <string name="type.landuse.orchard">Воћњак</string>
+    <string name="type.landuse.quarry">Каменолом</string>
+    <string name="type.landuse.railway">Железничке просторије</string>
+    <string name="type.landuse.recreation_ground">Простор за рекреацију</string>
+    <string name="type.landuse.reservoir">Вештачко језеро</string>
+    <string name="type.landuse.residential">Стамбена зона</string>
+    <string name="type.landuse.retail">Пословна зона</string>
+    <string name="type.landuse.salt_pond">Слано језеро</string>
+    <string name="type.landuse.village_green">Зеленило</string>
+    <string name="type.landuse.vineyard">Виноград</string>
+    <string name="type.leisure">Слободно време</string>
+    <string name="type.leisure.common">Јавно земљиште</string>
+    <string name="type.leisure.dog_park">Парк за псе</string>
+    <string name="type.leisure.fitness_centre">Фитнес центар</string>
+    <string name="type.leisure.fitness_station">Фитнес станица</string>
+    <string name="type.leisure.dance">Плесна дворана</string>
+    <string name="type.leisure.garden">Башта</string>
+    <string name="type.leisure.garden.residential">Врт у дворишту</string>
+    <string name="type.leisure.golf_course">Терен за голф</string>
+    <string name="type.leisure.miniature_golf">Мини-голф</string>
+    <string name="type.leisure.ice_rink">Клизалиште</string>
+    <string name="type.leisure.marina">Марина</string>
+    <string name="type.leisure.nature_reserve">Природни резерват</string>
+    <string name="type.leisure.outdoor_seating">Седење на отвореном</string>
+    <string name="type.leisure.park">Парк</string>
+    <string name="type.leisure.park.no.access">Парк</string>
+    <string name="type.leisure.park.permissive">Парк</string>
+    <string name="type.leisure.park.private">Парк</string>
+    <string name="type.leisure.picnic_table">Сто за пикник</string>
+    <string name="type.leisure.pitch">Спортски терен</string>
+    <string name="type.leisure.playground">Игралиште</string>
+    <string name="type.leisure.sauna">Сауна</string>
+    <string name="type.leisure.slipway">Навоз</string>
+    <string name="type.leisure.sports_centre">Спортски центар</string>
+    <string name="type.sport.climbing">Зид за пењање</string>
+    <string name="type.sport.yoga">Јога студио</string>
+    <string name="type.leisure.stadium">Стадион</string>
+    <string name="type.leisure.swimming_pool">Базен</string>
+    <string name="type.leisure.swimming_pool.private">Приватни базен</string>
+    <string name="type.leisure.track">Тркачка стаза</string>
+    <string name="type.leisure.track.area">Тркачка стаза</string>
+    <string name="type.leisure.water_park">Водени парк</string>
+    <string name="type.leisure.beach_resort">Ресорт на плажи</string>
+    <string name="type.man_made">Грађевинске структуре</string>
+    <string name="type.man_made.breakwater">Лукобран</string>
+    <string name="type.man_made.chimney">Димњак</string>
+    <string name="type.man_made.cutline">Шумски пут</string>
+    <string name="type.man_made.survey_point">Геодетска тачка</string>
+    <string name="type.man_made.flagpole">Јарбол са заставом</string>
+    <string name="type.man_made.lighthouse">Светионик</string>
+    <string name="type.man_made.mast">Јарбол</string>
+    <string name="type.man_made.pier">Док</string>
+    <string name="type.man_made.pipeline">Цевовод</string>
+    <string name="type.man_made.pipeline.overground">Подземни цевовод</string>
+    <string name="type.man_made.silo">Силос</string>
+    <string name="type.man_made.storage_tank">Резервоар</string>
+    <string name="type.man_made.surveillance">Сигурносна камера</string>
+    <string name="type.man_made.tower">Торањ</string>
+    <string name="type.man_made.tower.communication">Телекомуникациони торањ</string>
+    <string name="type.man_made.wastewater_plant">Пречишћивач отпадних вода</string>
+    <string name="type.man_made.water_tap">Јавна чесма</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Јавна чесма</string>
+    <string name="type.man_made.water_tower">Водоторањ</string>
+    <string name="type.man_made.water_well">Бунар</string>
+    <string name="type.man_made.water_well.drinking_water_no">Бунар</string>
+    <string name="type.man_made.windmill">Ветрењача</string>
+    <string name="type.man_made.works">Фабрика</string>
+    <string name="type.military">Војска</string>
+    <string name="type.military.bunker">Бункер</string>
+    <string name="type.mountain_pass">Планински превој</string>
+    <string name="type.natural">Природа</string>
+    <!-- A rocky land cover. -->
+    <string name="type.natural.bare_rock">Камењар</string>
+    <!-- A land cover consisting of rounded rock fragments (pebbles) on a beach or riverbed. -->
+    <string name="type.natural.shingle">Шљунак</string>
+    <!-- A loose surface consisting of angular, sharp stones. Usually on a mountain slope and prone to landslides. -->
+    <string name="type.natural.scree">Камени крш</string>
+    <string name="type.natural.bay">Залив</string>
+    <string name="type.natural.beach">Плажа</string>
+    <string name="type.natural.beach.sand">Пешчана плажа</string>
+    <string name="type.natural.beach.gravel">Шљунковита плажа</string>
+    <string name="type.natural.cape">Рт</string>
+    <string name="type.natural.cave_entrance">Пећина</string>
+    <string name="type.natural.cliff">Литица</string>
+    <string name="type.natural.earth_bank">Насип</string>
+    <string name="type.man_made.embankment">Насип</string>
+    <string name="type.natural.coastline">Обала</string>
+    <string name="type.natural.desert">Пустиња</string>
+    <string name="type.natural.geyser">Гејзир</string>
+    <string name="type.natural.glacier">Глечер</string>
+    <string name="type.natural.grassland">Пашњак</string>
+    <string name="type.natural.heath">Пуста земља</string>
+    <string name="type.natural.hot_spring">Термални извор</string>
+    <string name="type.natural.water.lake">Језеро</string>
+    <string name="type.natural.water.lock">Преводница</string>
+    <string name="type.natural.water.pond">Језерце</string>
+    <string name="type.natural.water.reservoir">Резервоар</string>
+    <string name="type.natural.water.basin">Природни базен</string>
+    <string name="type.natural.water.river">Река</string>
+    <string name="type.natural.land">Земљиште</string>
+    <string name="type.natural.meadow">Ливада</string>
+    <string name="type.natural.orchard">Воћњак</string>
+    <string name="type.natural.peak">Врх</string>
+    <string name="type.natural.saddle">Планинско седло</string>
+    <string name="type.natural.rock">Камен</string>
+    <string name="type.natural.scrub">Шикара</string>
+    <string name="type.natural.spring">Извор</string>
+    <string name="type.natural.spring.drinking_water_no">Извор</string>
+    <string name="type.natural.strait">Теснац</string>
+    <string name="type.natural.tree_row">Дрворед</string>
+    <string name="type.natural.vineyard">Виноград</string>
+    <string name="type.natural.volcano">Вулкан</string>
+    <string name="type.natural.water">Вода</string>
+    <string name="type.natural.wetland">Мочвара</string>
+    <string name="type.natural.wetland.bog">Тресет</string>
+    <string name="type.natural.wetland.marsh">Мочвара</string>
+    <string name="type.noexit">Крај пута</string>
+    <string name="type.office">Канцеларија</string>
+    <string name="type.office.company">Компанија</string>
+    <string name="type.office.estate_agent">Агент за некретнине</string>
+    <string name="type.office.government">Владина канцеларија</string>
+    <string name="type.office.insurance">Осигурање</string>
+    <string name="type.office.lawyer">Адвокат</string>
+    <string name="type.office.ngo">НВО</string>
+    <string name="type.office.telecommunication">Мобилни оператер</string>
+    <string name="type.organic.only">Еко</string>
+    <string name="type.organic.yes">Еко</string>
+    <string name="type.place.city">Град</string>
+    <string name="type.place.city.capital">Главни град</string>
+    <string name="type.place.city.capital.10">Град</string>
+    <string name="type.place.city.capital.11">Град</string>
+    <string name="type.place.city.capital.2">Главни град</string>
+    <string name="type.place.city.capital.3">Град</string>
+    <string name="type.place.city.capital.4">Град</string>
+    <string name="type.place.city.capital.5">Град</string>
+    <string name="type.place.city.capital.6">Град</string>
+    <string name="type.place.city.capital.7">Град</string>
+    <string name="type.place.city.capital.8">Град</string>
+    <string name="type.place.city.capital.9">Град</string>
+    <string name="type.place.continent">Континент</string>
+    <string name="type.place.country">Држава</string>
+    <string name="type.place.county">Округ</string>
+    <string name="type.place.farm">Фарма</string>
+    <string name="type.place.hamlet">Село</string>
+    <string name="type.place.island">Острво</string>
+    <string name="type.place.islet">Острвце</string>
+    <string name="type.place.isolated_dwelling">Изолована кућа</string>
+    <string name="type.place.locality">Локалитет</string>
+    <string name="type.place.neighbourhood">Насеље</string>
+    <string name="type.place.ocean">Океан</string>
+    <string name="type.place.region">Регион</string>
+    <string name="type.place.sea">Море</string>
+    <string name="type.place.square">Трг</string>
+    <string name="type.place.state">Држава</string>
+    <string name="type.place.state.USA">Држава</string>
+    <string name="type.place.suburb">Кварт</string>
+    <string name="type.place.town">Град</string>
+    <string name="type.place.village">Село</string>
+    <string name="type.power">Енергетика</string>
+    <string name="type.power.generator">Генератор</string>
+    <string name="type.power.generator.solar">Соларни генератор</string>
+    <string name="type.power.generator.wind">Ветрогенератор</string>
+    <string name="type.power.generator.gas">Гасно-турбинска електрана</string>
+    <string name="type.power.generator.hydro">Хидроелектрана</string>
+    <string name="type.power.line">Далековод</string>
+    <string name="type.power.line.underground">Подземни далековод</string>
+    <string name="type.power.plant">Електрана</string>
+    <string name="type.power.plant.coal">Термоелектрана</string>
+    <string name="type.power.plant.gas">Гасно-турбинска електрана</string>
+    <string name="type.power.plant.hydro">Хидроелектрана</string>
+    <string name="type.power.plant.solar">Соларна електрана</string>
+    <string name="type.power.plant.wind">Ветропарк</string>
+    <string name="type.power.station">Електрична станица</string>
+    <string name="type.power.substation">Подстаница</string>
+    <string name="type.power.tower">Далековод</string>
+    <string name="type.psurface">Површина</string>
+    <string name="type.psurface.paved_bad">Лош асфалт</string>
+    <string name="type.psurface.paved_good">Добар асфалт</string>
+    <string name="type.psurface.unpaved_bad">Лош макадам</string>
+    <string name="type.psurface.unpaved_good">Добар макадам</string>
+    <string name="type.public_transport">Јавни превоз</string>
+    <string name="type.public_transport.platform">Стајалиште јавног превоза</string>
+    <string name="type.railway">Железница</string>
+    <string name="type.railway.abandoned">Напуштена пруга</string>
+    <string name="type.railway.abandoned.bridge">Напуштен железнички мост</string>
+    <string name="type.railway.abandoned.tunnel">Напуштен железнички тунел</string>
+    <string name="type.railway.construction">Пруга у изградњи</string>
+    <string name="type.railway.crossing">Пружни прелаз</string>
+    <string name="type.railway.disused">Напуштена пруга</string>
+    <string name="type.railway.funicular">Успињача</string>
+    <string name="type.railway.halt">Железничка станица</string>
+    <string name="type.railway.level_crossing">Пружни прелаз</string>
+    <string name="type.railway.light_rail">Железнички семафор</string>
+    <string name="type.railway.light_rail.bridge">Лака железница</string>
+    <string name="type.railway.monorail">Једношинска пруга</string>
+    <string name="type.railway.monorail.bridge">Једношински мост</string>
+    <string name="type.railway.monorail.tunnel">Једношински тунел</string>
+    <string name="type.railway.narrow_gauge">Пруга уског колосека</string>
+    <string name="type.railway.platform">Железнички перон</string>
+    <string name="type.railway.preserved">Туристичка пруга</string>
+    <string name="type.railway.rail">Пруга</string>
+    <string name="type.railway.rail.highspeed">Пруга велике брзине</string>
+    <string name="type.railway.rail.tourism">Туристичка железница</string>
+    <string name="type.railway.rail.main">Железница</string>
+    <!-- Includes ordinary railway=rail w/o more specific usage= and service= tags. -->
+    <string name="type.railway.rail.branch">Секундарна железница</string>
+    <!-- Non-passenger utility tracks: industrial, military, test. -->
+    <string name="type.railway.rail.utility">Индустријска пруга</string>
+    <string name="type.railway.rail.spur">Железнички чвор</string>
+    <!-- Short service tracks: siding, yard, crossover. -->
+    <string name="type.railway.rail.service">Помоћна железничка пруга</string>
+    <string name="type.railway.rail.bridge">Железнички мост</string>
+    <string name="type.railway.rail.highspeed.bridge">Железнички мост</string>
+    <string name="type.railway.rail.tourism.bridge">Железнички мост</string>
+    <string name="type.railway.rail.main.bridge">Железнички мост</string>
+    <string name="type.railway.rail.branch.bridge">Железнички мост</string>
+    <string name="type.railway.rail.utility.bridge">Железнички мост</string>
+    <string name="type.railway.rail.spur.bridge">Железнички мост</string>
+    <string name="type.railway.rail.service.bridge">Железнички мост</string>
+    <string name="type.railway.rail.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.highspeed.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.tourism.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.main.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.branch.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.utility.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.spur.tunnel">Железнички тунел</string>
+    <string name="type.railway.rail.service.tunnel">Железнички тунел</string>
+    <string name="type.railway.station">Железничка станица</string>
+    <string name="type.railway.station.funicular">Успињача</string>
+    <string name="type.railway.station.light_rail">Железничка станица</string>
+    <string name="type.railway.station.light_rail.berlin">Железничка станица</string>
+    <string name="type.railway.station.light_rail.london">Железничка станица</string>
+    <string name="type.railway.station.light_rail.porto">Железничка станица</string>
+    <string name="type.railway.station.monorail">Железничка станица</string>
+    <string name="type.railway.station.subway">Метро станица</string>
+    <string name="type.railway.station.subway.adana">Метро станица</string>
+    <string name="type.railway.station.subway.algiers">Метро станица</string>
+    <string name="type.railway.station.subway.almaty">Метро станица</string>
+    <string name="type.railway.station.subway.amsterdam">Метро станица</string>
+    <string name="type.railway.station.subway.ankara">Метро станица</string>
+    <string name="type.railway.station.subway.athens">Метро станица</string>
+    <string name="type.railway.station.subway.baku">Метро станица</string>
+    <string name="type.railway.station.subway.bangkok">Метро станица</string>
+    <string name="type.railway.station.subway.barcelona">Метро станица</string>
+    <string name="type.railway.station.subway.beijing">Метро станица</string>
+    <string name="type.railway.station.subway.bengalore">Метро станица</string>
+    <string name="type.railway.station.subway.berlin">Метро станица</string>
+    <string name="type.railway.station.subway.bilbao">Метро станица</string>
+    <string name="type.railway.station.subway.brasilia">Метро станица</string>
+    <string name="type.railway.station.subway.brescia">Метро станица</string>
+    <string name="type.railway.station.subway.brussels">Метро станица</string>
+    <string name="type.railway.station.subway.bucharest">Метро станица</string>
+    <string name="type.railway.station.subway.budapest">Метро станица</string>
+    <string name="type.railway.station.subway.buenos_aires">Метро станица</string>
+    <string name="type.railway.station.subway.bursa">Метро станица</string>
+    <string name="type.railway.station.subway.cairo">Метро станица</string>
+    <string name="type.railway.station.subway.caracas">Метро станица</string>
+    <string name="type.railway.station.subway.catania">Метро станица</string>
+    <string name="type.railway.station.subway.changchun">Метро станица</string>
+    <string name="type.railway.station.subway.chengdu">Метро станица</string>
+    <string name="type.railway.station.subway.chicago">Метро станица</string>
+    <string name="type.railway.station.subway.chongqing">Метро станица</string>
+    <string name="type.railway.station.subway.dalian">Метро станица</string>
+    <string name="type.railway.station.subway.delhi">Метро станица</string>
+    <string name="type.railway.station.subway.dnepro">Метро станица</string>
+    <string name="type.railway.station.subway.dubai">Метро станица</string>
+    <string name="type.railway.station.subway.ekb">Метро станица</string>
+    <string name="type.railway.station.subway.fukuoka">Метро станица</string>
+    <string name="type.railway.station.subway.glasgow">Метро станица</string>
+    <string name="type.railway.station.subway.guangzhou">Метро станица</string>
+    <string name="type.railway.station.subway.hamburg">Метро станица</string>
+    <string name="type.railway.station.subway.helsinki">Метро станица</string>
+    <string name="type.railway.station.subway.hiroshima">Метро станица</string>
+    <string name="type.railway.station.subway.hongkong">Метро станица</string>
+    <string name="type.railway.station.subway.isfahan">Метро станица</string>
+    <string name="type.railway.station.subway.istanbul">Метро станица</string>
+    <string name="type.railway.station.subway.izmir">Метро станица</string>
+    <string name="type.railway.station.subway.kazan">Метро станица</string>
+    <string name="type.railway.station.subway.kharkiv">Метро станица</string>
+    <string name="type.railway.station.subway.kiev">Метро станица</string>
+    <string name="type.railway.station.subway.kobe">Метро станица</string>
+    <string name="type.railway.station.subway.kolkata">Метро станица</string>
+    <string name="type.railway.station.subway.kunming">Метро станица</string>
+    <string name="type.railway.station.subway.kyoto">Метро станица</string>
+    <string name="type.railway.station.subway.la">Метро станица</string>
+    <string name="type.railway.station.subway.lausanne">Метро станица</string>
+    <string name="type.railway.station.subway.lille">Метро станица</string>
+    <string name="type.railway.station.subway.lima">Метро станица</string>
+    <string name="type.railway.station.subway.lisboa">Метро станица</string>
+    <string name="type.railway.station.subway.london">Метро станица</string>
+    <string name="type.railway.station.subway.lyon">Метро станица</string>
+    <string name="type.railway.station.subway.madrid">Метро станица</string>
+    <string name="type.railway.station.subway.malaga">Метро станица</string>
+    <string name="type.railway.station.subway.manila">Метро станица</string>
+    <string name="type.railway.station.subway.maracaibo">Метро станица</string>
+    <string name="type.railway.station.subway.mashhad">Метро станица</string>
+    <string name="type.railway.station.subway.mecca">Метро станица</string>
+    <string name="type.railway.station.subway.medellin">Метро станица</string>
+    <string name="type.railway.station.subway.mexico">Метро станица</string>
+    <string name="type.railway.station.subway.milan">Метро станица</string>
+    <string name="type.railway.station.subway.minsk">Метро станица</string>
+    <string name="type.railway.station.subway.montreal">Метро станица</string>
+    <string name="type.railway.station.subway.moscow">Метро станица</string>
+    <string name="type.railway.station.subway.munchen">Метро станица</string>
+    <string name="type.railway.station.subway.nagoya">Метро станица</string>
+    <string name="type.railway.station.subway.newyork">Метро станица</string>
+    <string name="type.railway.station.subway.nnov">Метро станица</string>
+    <string name="type.railway.station.subway.novosibirsk">Метро станица</string>
+    <string name="type.railway.station.subway.osaka">Метро станица</string>
+    <string name="type.railway.station.subway.oslo">Метро станица</string>
+    <string name="type.railway.station.subway.palma">Метро станица</string>
+    <string name="type.railway.station.subway.panama">Метро станица</string>
+    <string name="type.railway.station.subway.paris">Метро станица</string>
+    <string name="type.railway.station.subway.philadelphia">Метро станица</string>
+    <string name="type.railway.station.subway.pyongyang">Метро станица</string>
+    <string name="type.railway.station.subway.rennes">Метро станица</string>
+    <string name="type.railway.station.subway.rio">Метро станица</string>
+    <string name="type.railway.station.subway.roma">Метро станица</string>
+    <string name="type.railway.station.subway.rotterdam">Метро станица</string>
+    <string name="type.railway.station.subway.samara">Метро станица</string>
+    <string name="type.railway.station.subway.santiago">Метро станица</string>
+    <string name="type.railway.station.subway.santo_domingo">Метро станица</string>
+    <string name="type.railway.station.subway.saopaulo">Метро станица</string>
+    <string name="type.railway.station.subway.sapporo">Метро станица</string>
+    <string name="type.railway.station.subway.sendai">Метро станица</string>
+    <string name="type.railway.station.subway.sf">Метро станица</string>
+    <string name="type.railway.station.subway.shanghai">Метро станица</string>
+    <string name="type.railway.station.subway.shenzhen">Метро станица</string>
+    <string name="type.railway.station.subway.shiraz">Метро станица</string>
+    <string name="type.railway.station.subway.singapore">Метро станица</string>
+    <string name="type.railway.station.subway.sofia">Метро станица</string>
+    <string name="type.railway.station.subway.spb">Метро станица</string>
+    <string name="type.railway.station.subway.stockholm">Метро станица</string>
+    <string name="type.railway.station.subway.tabriz">Метро станица</string>
+    <string name="type.railway.station.subway.taipei">Метро станица</string>
+    <string name="type.railway.station.subway.taoyuan">Метро станица</string>
+    <string name="type.railway.station.subway.tashkent">Метро станица</string>
+    <string name="type.railway.station.subway.tbilisi">Метро станица</string>
+    <string name="type.railway.station.subway.tehran">Метро станица</string>
+    <string name="type.railway.station.subway.tianjin">Метро станица</string>
+    <string name="type.railway.station.subway.tokyo">Метро станица</string>
+    <string name="type.railway.station.subway.valencia">Метро станица</string>
+    <string name="type.railway.station.subway.vienna">Метро станица</string>
+    <string name="type.railway.station.subway.warszawa">Метро станица</string>
+    <string name="type.railway.station.subway.washington">Метро станица</string>
+    <string name="type.railway.station.subway.wuhan">Метро станица</string>
+    <string name="type.railway.station.subway.yerevan">Метро станица</string>
+    <string name="type.railway.station.subway.yokohama">Метро станица</string>
+    <string name="type.railway.subway">Метро</string>
+    <string name="type.railway.subway.bridge">Метро мост</string>
+    <string name="type.railway.subway.tunnel">Метро тунел</string>
+    <string name="type.railway.subway_entrance">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.adana">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.algiers">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.almaty">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.amsterdam">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.ankara">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.athens">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.baku">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.bangkok">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.barcelona">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.beijing">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.bengalore">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.berlin">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.bilbao">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.brasilia">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.brescia">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.brussels">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.bucharest">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.budapest">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.buenos_aires">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.bursa">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.cairo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.caracas">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.catania">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.changchun">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.chengdu">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.chicago">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.chongqing">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.dalian">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.delhi">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.dnepro">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.dubai">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.ekb">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.fukuoka">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.glasgow">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.guangzhou">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.hamburg">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.helsinki">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.hiroshima">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.hongkong">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.isfahan">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.istanbul">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.izmir">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kazan">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kharkiv">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kiev">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kobe">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kolkata">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kunming">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.kyoto">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.la">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.lausanne">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.lille">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.lima">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.lisboa">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.london">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.lyon">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.madrid">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.malaga">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.manila">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.maracaibo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.mashhad">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.mecca">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.medellin">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.mexico">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.milan">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.minsk">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.montreal">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.moscow">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.munchen">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.nagoya">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.newyork">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.nnov">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.novosibirsk">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.osaka">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.oslo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.palma">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.panama">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.paris">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.philadelphia">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.pyongyang">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.rennes">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.rio">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.roma">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.rotterdam">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.samara">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.santiago">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.santo_domingo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.saopaulo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.sapporo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.sendai">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.sf">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.shanghai">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.shenzhen">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.shiraz">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.singapore">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.sofia">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.spb">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.stockholm">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.tabriz">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.taipei">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.taoyuan">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.tashkent">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.tbilisi">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.tehran">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.tianjin">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.tokyo">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.valencia">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.vienna">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.warszawa">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.washington">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.wuhan">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.yerevan">Улаз у метро</string>
+    <string name="type.railway.subway_entrance.yokohama">Улаз у метро</string>
+    <string name="type.railway.tram">Трамвај</string>
+    <string name="type.railway.tram.bridge">Трамвајски мост</string>
+    <string name="type.railway.tram.tunnel">Трамвајски тунел</string>
+    <string name="type.railway.tram_stop">Трамвајска станица</string>
+    <string name="type.route">Рута</string>
+    <string name="type.route.ferry">Трајект</string>
+    <string name="type.shop">Продавница</string>
+    <string name="type.shop.alcohol">Продавница пића</string>
+    <string name="type.shop.bakery">Пекара</string>
+    <string name="type.shop.bathroom_furnishing">Намештај за купатило</string>
+    <string name="type.shop.beauty">Козметички салон</string>
+    <string name="type.shop.beverages">Пића</string>
+    <string name="type.shop.bicycle">Продавница бисикла</string>
+    <string name="type.shop.bookmaker">Кладионица</string>
+    <string name="type.shop.books">Књижара</string>
+    <string name="type.shop.butcher">Месара</string>
+    <string name="type.shop.cannabis">Канабис шоп</string>
+    <string name="type.shop.car">Продаја аутомобила</string>
+    <string name="type.shop.car_parts">Ауто-делови</string>
+    <string name="type.shop.car_repair">Ауто-сервис</string>
+    <string name="type.shop.car_repair.tyres">Гуме</string>
+    <string name="type.shop.caravan">Продаја каравана</string>
+    <string name="type.shop.carpet">Продавница тепиха</string>
+    <string name="type.shop.chemist">Кућна хемија</string>
+    <string name="type.shop.chocolate">Чоколада</string>
+    <string name="type.shop.clothes">Одећа</string>
+    <string name="type.shop.coffee">Кафа</string>
+    <string name="type.shop.computer">Компјутери</string>
+    <string name="type.shop.confectionery">Слаткиши</string>
+    <string name="type.shop.convenience">Мини-маркет</string>
+    <string name="type.shop.copyshop">Копирница</string>
+    <string name="type.shop.cosmetics">Козметика</string>
+    <string name="type.shop.curtain">Завесе</string>
+    <string name="type.shop.deli">Десликатеси</string>
+    <string name="type.shop.department_store">Тржни центар</string>
+    <string name="type.shop.doityourself">Грађевинска радња</string>
+    <string name="type.shop.dry_cleaning">Хемијско чишћење</string>
+    <string name="type.shop.electronics">Електроника</string>
+    <string name="type.shop.erotic">Секс шоп</string>
+    <string name="type.shop.fabric">Текстил</string>
+    <string name="type.shop.farm">Пиљара</string>
+    <string name="type.shop.fashion_accessories">Модни аксесоари</string>
+    <string name="type.shop.florist">Цвећара</string>
+    <string name="type.shop.funeral_directors">Погребна опрема</string>
+    <string name="type.shop.furniture">Намештај</string>
+    <string name="type.shop.garden_centre">Баштенски производи</string>
+    <string name="type.shop.gas">Индустријски гасови</string>
+    <string name="type.shop.gift">Даротека</string>
+    <string name="type.shop.greengrocer">Поврће и воће</string>
+    <string name="type.shop.grocery">Бакалница</string>
+    <string name="type.shop.hairdresser">Фризер</string>
+    <string name="type.shop.hardware">Гвожђара</string>
+    <string name="type.shop.health_food">Здрава храна</string>
+    <string name="type.shop.herbalist">Продавница биља</string>
+    <string name="type.shop.hifi">HiFi аудио</string>
+    <string name="type.shop.houseware">Кућне потрепштине</string>
+    <string name="type.shop.jewelry">Златара</string>
+    <string name="type.shop.kiosk">Киоск</string>
+    <string name="type.shop.kitchen">Кухињска опрема</string>
+    <string name="type.shop.laundry">Перионица веша</string>
+    <string name="type.shop.mall">Тржни центар</string>
+    <string name="type.shop.massage">Масажа</string>
+    <string name="type.shop.mobile_phone">Мобилни телефони</string>
+    <string name="type.shop.money_lender">Новчане позајмице</string>
+    <string name="type.shop.motorcycle">Мотори</string>
+    <string name="type.shop.motorcycle_repair">Сервис мотора</string>
+    <string name="type.shop.music">Музика</string>
+    <string name="type.shop.musical_instrument">Музички инструменти</string>
+    <string name="type.shop.newsagent">Новинарница</string>
+    <string name="type.shop.optician">Оптика</string>
+    <string name="type.shop.outdoor">Пешачење, пењање и камповање</string>
+    <string name="type.shop.outpost">Преузимање пакета</string>
+    <string name="type.shop.pasta">Тестенине</string>
+    <string name="type.shop.pastry">Посластичарница</string>
+    <string name="type.shop.pawnbroker">Залагаоница</string>
+    <string name="type.shop.pet">Пет шоп</string>
+    <string name="type.shop.pet_grooming">Грумер</string>
+    <string name="type.shop.photo">Фотограф</string>
+    <string name="type.shop.rental">Центар за изнајмљивање</string>
+    <string name="type.shop.rental.bicycle">Изнајмљивање бицикала</string>
+    <string name="type.shop.seafood">Рибарница</string>
+    <string name="type.shop.second_hand">Половна одећа</string>
+    <string name="type.shop.shoes">Обућа</string>
+    <string name="type.shop.sports">Спортска опрема</string>
+    <string name="type.shop.stationery">Школски и канцеларијски прибор</string>
+    <string name="type.shop.supermarket">Супермаркет</string>
+    <string name="type.shop.tattoo">Тетоважа</string>
+    <string name="type.shop.tea">Чајеви</string>
+    <string name="type.shop.ticket">Билетарница</string>
+    <string name="type.shop.toys">Играчке</string>
+    <string name="type.shop.travel_agency">Туристичка агенција</string>
+    <string name="type.shop.tyres">Гуме</string>
+    <string name="type.shop.variety_store">Све по истој цени</string>
+    <string name="type.shop.video">Видео-клуб</string>
+    <string name="type.shop.video_games">Видео-игре</string>
+    <string name="type.shop.wine">Винарија</string>
+    <string name="type.shop.agrarian">Пољопривредна опрема</string>
+    <string name="type.shop.antiques">Антикварница</string>
+    <string name="type.shop.appliance">Продавница апарата</string>
+    <!-- maybe change to Art Gallery for en-US when supported -->
+    <string name="type.shop.art">Уметнички радови</string>
+    <string name="type.shop.baby_goods">Беби-опрема</string>
+    <string name="type.shop.bag">Торбе</string>
+    <string name="type.shop.bed">Душеци / кревети</string>
+    <string name="type.shop.boutique">Бутик</string>
+    <string name="type.shop.charity">Добротворна радња</string>
+    <string name="type.shop.cheese">Сир</string>
+    <string name="type.shop.craft">Уметност и занати</string>
+    <string name="type.shop.dairy">Млечни производи</string>
+    <string name="type.shop.electrical">Електроматеријал</string>
+    <string name="type.shop.fishing">Рибарница</string>
+    <string name="type.shop.interior_decoration">Унутрашње декорације</string>
+    <string name="type.shop.lottery">Лутрија</string>
+    <string name="type.shop.medical_supply">Фармацеутска компанија</string>
+    <string name="type.shop.nutrition_supplements">Суплементи</string>
+    <string name="type.shop.paint">Фарбара</string>
+    <string name="type.shop.perfumery">Парфимерија</string>
+    <string name="type.shop.sewing">Позамантерија</string>
+    <string name="type.shop.storage_rental">Изнајмљивање складишта</string>
+    <string name="type.shop.tobacco">Дуван</string>
+    <string name="type.shop.trade">Занатске потрепштине</string>
+    <string name="type.shop.watches">Сатови</string>
+    <string name="type.shop.wholesale">Велепродаја</string>
+    <string name="type.sport">Спорт</string>
+    <string name="type.sport.american_football">Амерички фудбал</string>
+    <string name="type.sport.archery">Стреличарство</string>
+    <string name="type.sport.athletics">Атлетика</string>
+    <string name="type.sport.australian_football">Аустралијски фудбал</string>
+    <string name="type.sport.baseball">Бејзбол</string>
+    <string name="type.sport.basketball">Кошарка</string>
+    <string name="type.sport.beachvolleyball">Одбојка на песку</string>
+    <string name="type.sport.bowls">Куглање</string>
+    <string name="type.sport.chess">Шах</string>
+    <string name="type.sport.cricket">Крикет</string>
+    <string name="type.sport.curling">Карлинг</string>
+    <string name="type.sport.equestrian">Коњички спорт</string>
+    <string name="type.sport.golf">Голф</string>
+    <string name="type.sport.gymnastics">Гимнастика</string>
+    <string name="type.sport.handball">Рукомет</string>
+    <string name="type.sport.multi">Разни спортови</string>
+    <!-- Used to tag a scuba diving site. -->
+    <string name="type.sport.scuba_diving">Роњење</string>
+    <string name="type.sport.shooting">Стрељана</string>
+    <string name="type.sport.skateboard">Скејтборд</string>
+    <string name="type.sport.skiing">Скијање</string>
+    <string name="type.sport.soccer">Фудбал</string>
+    <string name="type.sport.swimming">Пливање</string>
+    <string name="type.sport.table_tennis">Стони тенис</string>
+    <string name="type.sport.tennis">Тенис</string>
+    <string name="type.sport.volleyball">Одбојка</string>
+    <string name="type.sport.10pin">Куглање</string>
+    <string name="type.sport.9pin">Куглање</string>
+    <string name="type.sport.padel">Падел</string>
+    <string name="type.sport.futsal">Футсал</string>
+    <string name="type.sport.ice_hockey">Хокеј</string>
+    <string name="type.sport.field_hockey">Хокеј на трави</string>
+    <string name="type.sport.badminton">Бадминтон</string>
+    <string name="type.sport.pelota">Баскијска пелота</string>
+    <string name="type.tourism">Туризам</string>
+    <string name="type.tourism.aquarium">Акваријум</string>
+    <!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
+    <string name="type.tourism.alpine_hut">Планинарска колиба</string>
+    <string name="type.tourism.apartment">Апартман за одмор</string>
+    <string name="type.tourism.artwork">Уметничка скулптура</string>
+    <string name="type.tourism.artwork.architecture">Архитектонско уметничко дело</string>
+    <string name="type.tourism.artwork.painting">Уметничко дело</string>
+    <string name="type.tourism.artwork.sculpture">Скулптура</string>
+    <string name="type.tourism.artwork.statue">Статуа</string>
+    <string name="type.tourism.attraction">Атракција</string>
+    <string name="type.attraction.amusement_ride">Забавни парк</string>
+    <string name="type.attraction.animal">Животињски кавез</string>
+    <string name="type.attraction.carousel">Аутићи на струју</string>
+    <string name="type.attraction.historic">Историјска атракција</string>
+    <string name="type.attraction.maze">Лавиринт</string>
+    <string name="type.attraction.roller_coaster">Ролеркостер</string>
+    <string name="type.attraction.water_slide">Тобоган</string>
+    <string name="type.tourism.attraction.specified">Атракција</string>
+    <string name="type.tourism.camp_site">Камп</string>
+    <string name="type.tourism.caravan_site">Камп за караване</string>
+    <!-- A rentable countryside vacation house. -->
+    <string name="type.tourism.chalet">Викендица</string>
+    <string name="type.tourism.gallery">Уметничка галерија</string>
+    <string name="type.tourism.guest_house">Кућа духова</string>
+    <string name="type.tourism.hostel">Хостел</string>
+    <string name="type.tourism.hotel">Хотел</string>
+    <string name="type.tourism.information">Туристичке информације</string>
+    <string name="type.tourism.information.board">Информациона табла</string>
+    <string name="type.tourism.information.guidepost">Путоказ</string>
+    <string name="type.tourism.information.map">Туристичка мапа</string>
+    <string name="type.tourism.information.office">Туристички биро</string>
+    <string name="type.tourism.information.visitor_centre">Центар за посетиоце</string>
+    <string name="type.tourism.motel">Мотел</string>
+    <string name="type.tourism.museum">Музеј</string>
+    <string name="type.tourism.picnic_site">Пикник</string>
+    <string name="type.leisure.resort">Ресорт хотел</string>
+    <string name="type.tourism.theme_park">Забавни парк</string>
+    <string name="type.tourism.viewpoint">Видиковац</string>
+    <!-- Typically more basic, not staffed and free (compared to alpine_hut). -->
+    <string name="type.tourism.wilderness_hut">Планинска кућа за туристе</string>
+    <string name="type.tourism.zoo">Зоолошки врт</string>
+    <string name="type.tourism.zoo.petting">Контактни зоо-врт</string>
+    <string name="type.traffic_calming">Пешачки прелаз</string>
+    <string name="type.traffic_calming.bump">Лежећи полицајац (грба)</string>
+    <string name="type.traffic_calming.hump">Лежећи полицајац</string>
+    <string name="type.waterway">Водени ток</string>
+    <string name="type.waterway.canal">Канал</string>
+    <string name="type.waterway.canal.tunnel">Тунел у каналу</string>
+    <string name="type.waterway.fish_pass">Рибљи пут</string>
+    <string name="type.waterway.dam">Брана</string>
+    <string name="type.barrier.ditch">Јарак</string>
+    <string name="type.natural.water.ditch">Канал</string>
+    <string name="type.waterway.ditch.tunnel">Канал</string>
+    <string name="type.waterway.dock">Преводница</string>
+    <string name="type.waterway.drain">Канал</string>
+    <string name="type.natural.water.drain">Канал</string>
+    <string name="type.waterway.drain.tunnel">Канал</string>
+    <string name="type.waterway.lock_gate">Капија</string>
+    <string name="type.waterway.river">Река</string>
+    <string name="type.waterway.river.tunnel">Река</string>
+    <string name="type.waterway.stream">Поток</string>
+    <string name="type.waterway.stream.ephemeral">Повремени поток</string>
+    <string name="type.waterway.stream.intermittent">Повремени поток</string>
+    <string name="type.waterway.stream.tunnel">Поток</string>
+    <string name="type.waterway.waterfall">Водопад</string>
+    <string name="type.waterway.weir">Брана</string>
+    <string name="type.wheelchair">Приступ инвалидским колицима</string>
+    <string name="type.wheelchair.limited">Лимитирани приступ инвалидским колицима</string>
+    <string name="type.wheelchair.no">Није приступно инвалидским колицима</string>
+    <string name="type.wheelchair.yes">Пун приступ инвалидским колицима</string>
+    <string name="type.aerialway.j.bar">Жичара са Ј пречком</string>
+    <string name="type.aerialway.magic_carpet">Магични тепих</string>
+    <string name="type.aerialway.platter">Жичара са тањир седиштем</string>
+    <string name="type.aerialway.rope_tow">Вучно уже</string>
+    <string name="type.aerialway.t.bar">Жичара са Т седиштем</string>
+    <string name="type.piste_type.downhill">Спуст стаза</string>
+    <string name="type.piste_type.downhill.area">Спуст стаза</string>
+    <string name="type.piste_type.downhill.advanced">Скијање за напредне</string>
+    <string name="type.piste_type.downhill.advanced.area">Скијање за напредне</string>
+    <string name="type.piste_type.downhill.easy">Скијање за почетнике</string>
+    <string name="type.piste_type.downhill.easy.area">Скијање за почетнике</string>
+    <string name="type.piste_type.downhill.expert">Скијање за професионалце</string>
+    <string name="type.piste_type.downhill.expert.area">Скијање за професионалце</string>
+    <string name="type.piste_type.downhill.freeride">Бесплатно скијање</string>
+    <string name="type.piste_type.downhill.intermediate">Средња ски-стаза</string>
+    <string name="type.piste_type.downhill.intermediate.area">Средња ски-стаза</string>
+    <string name="type.piste_type.downhill.novice">Скијање за потпуне почетнике</string>
+    <string name="type.piste_type.downhill.novice.area">Скијање за потпуне почетнике</string>
+    <string name="type.piste_type.nordic">Стаза за нордијско скијање</string>
+    <string name="type.piste_type.sled">Стаза за санкање</string>
+    <string name="type.piste_type.sled.area">Стаза за санкање</string>
+    <string name="type.piste_type.snow_park">Снежни парк</string>
+    <string name="type.piste_type.hike">Снежна стаза за ходање</string>
+    <string name="type.piste_type.connection">Веза између стаза</string>
+    <string name="type.piste_type.skitour">Ски-тур стаза</string>
+    <string name="type.amenity.events_venue">Место одржавања догађаја</string>
+    <string name="type.shop.auction">Аукција</string>
+    <string name="type.shop.collector">Колекционарство</string>
+    <string name="type.self_service.yes">Доступно самопослужење</string>
+    <string name="type.self_service.only">Самопослуживање</string>
+    <string name="type.self_service.partially">Делимично самопослуживање</string>
+    <string name="type.self_service.no">Нема самопослуживања</string>
+    <!-- https://wiki.openstreetmap.org/wiki/Key:social_facility -->
+    <string name="type.amenity.social_facility">Социјална установа</string>
+    <!-- https://wiki.openstreetmap.org/wiki/Tag:emergency=emergency_ward_entrance -->
+    <string name="type.emergency.emergency_ward_entrance">Улаз у хитну помоћ</string>
+    <!-- https://wiki.openstreetmap.org/wiki/Tag:amenity=dojo -->
+    <string name="type.amenity.dojo">Дојо</string>
+    <!-- https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall -->
+    <string name="type.leisure.sports_hall">Спортска хала</string>
+</resources>

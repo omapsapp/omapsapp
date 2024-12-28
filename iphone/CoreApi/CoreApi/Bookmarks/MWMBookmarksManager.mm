@@ -830,8 +830,8 @@ static KmlFileType convertFileTypeToCore(MWMKmlFileType fileType) {
   }
 }
 
-- (void)setElevationActivePoint:(double)distance trackId:(uint64_t)trackId {
-  self.bm.SetElevationActivePoint(trackId, distance);
+- (void)setElevationActivePoint:(CLLocationCoordinate2D)point distance:(double)distance trackId:(uint64_t)trackId {
+  self.bm.SetElevationActivePoint(trackId, mercator::FromLatLon(point.latitude, point.longitude), distance);
 }
 
 - (void)setElevationActivePointChanged:(uint64_t)trackId callback:(ElevationPointChangedBlock)callback {

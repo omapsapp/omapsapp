@@ -1,10 +1,10 @@
-enum TrackRecordingState: Equatable {
+@objc
+enum TrackRecordingState: Int, Equatable {
   case inactive
   case active
-  case error(TrackRecordingError)
 }
 
-enum TrackRecordingAction {
+enum TrackRecordingAction: String, CaseIterable {
   case start
   case stop
 }
@@ -13,7 +13,12 @@ enum TrackRecordingError: Error {
   case locationIsProhibited
 }
 
-typealias TrackRecordingStateHandler = (TrackRecordingState) -> Void
+protocol TrackRecordingObserver: AnyObject {
+  func addObserver(_ observer: AnyObject, recordingIsActiveDidChangeHandler: @escaping TrackRecordingStateHandler)
+  func removeObserver(_ observer: AnyObject)
+}
+
+typealias TrackRecordingStateHandler = (TrackRecordingState, TrackInfo?) -> Void
 
 @objcMembers
 final class TrackRecordingManager: NSObject {
@@ -30,15 +35,53 @@ final class TrackRecordingManager: NSObject {
     var recordingStateDidChangeHandler: TrackRecordingStateHandler?
   }
 
-  static let shared: TrackRecordingManager = TrackRecordingManager(trackRecorder: FrameworkHelper.self)
+  static let shared: TrackRecordingManager = {
+    let trackRecorder = FrameworkHelper.self
+    var activityManager: TrackRecordingActivityManager? = nil
+    #if canImport(ActivityKit)
+    if #available(iOS 16.2, *) {
+      activityManager = TrackRecordingLiveActivityManager.shared
+    }
+    #endif
+    return TrackRecordingManager(trackRecorder: trackRecorder, activityManager: activityManager)
+  }()
 
   private let trackRecorder: TrackRecorder.Type
-  private(set) var recordingState: TrackRecordingState = .inactive
+  private var activityManager: TrackRecordingActivityManager?
+  private var observations: [Observation] = []
+  private var trackRecordingInfo: TrackInfo?
 
-  private init(trackRecorder: TrackRecorder.Type) {
+  var recordingState: TrackRecordingState {
+    trackRecorder.isTrackRecordingEnabled() ? .active : .inactive
+  }
+
+  private init(trackRecorder: TrackRecorder.Type, activityManager: TrackRecordingActivityManager?) {
     self.trackRecorder = trackRecorder
+    self.activityManager = activityManager
     super.init()
-    self.recordingState = getCurrentRecordingState()
+    subscribeOnAppLifecycleEvents()
+  }
+
+  // MARK: - Public methods
+
+  @objc
+  func setup() {
+    do {
+      try checkIsLocationEnabled()
+      switch recordingState {
+      case .inactive:
+        break
+      case .active:
+        subscribeOnTrackRecordingProgressUpdates()
+      }
+    } catch {
+      handleError(error)
+    }
+  }
+
+  @objc
+  func isActive() -> Bool {
+    recordingState == .active
   }
 
   func processAction(_ action: TrackRecordingAction, completion: (CompletionHandler)? = nil) {
@@ -50,34 +93,74 @@ final class TrackRecordingManager: NSObject {
     }
   }
 
-  private func handleError(_ error: TrackRecordingError, completion: (CompletionHandler)? = nil) {
-    switch error {
-    case .locationIsProhibited:
-      completion?()
-      // Show alert to enable location
-      LocationManager.checkLocationStatus()
+  // MARK: - Private methods
+
+  private func checkIsLocationEnabled() throws {
+    guard !LocationManager.isLocationProhibited() else {
+      throw TrackRecordingError.locationIsProhibited
     }
-    stopRecording(.withoutSaving, completion: completion)
   }
 
-  private func getCurrentRecordingState() -> TrackRecordingState {
-    guard !LocationManager.isLocationProhibited() else {
-      return .error(.locationIsProhibited)
-    }
-    return trackRecorder.isTrackRecordingEnabled() ? .active : .inactive
+  // MARK: - Handle lifecycle events
+
+  private func subscribeOnAppLifecycleEvents() {
+    NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(prepareForTermination), name: UIApplication.willTerminateNotification, object: nil)
   }
+
+  @objc
+  private func willResignActive() {
+    guard let activityManager, recordingState == .active else { return }
+    do {
+      try activityManager.start(with: trackRecordingInfo ?? .empty())
+    } catch {
+      handleError(error)
+    }
+  }
+
+  @objc
+  private func willEnterForeground() {
+    activityManager?.stop()
+  }
+
+  @objc
+  private func prepareForTermination() {
+    activityManager?.stop()
+  }
+
+  // MARK: - Handle track recording process
+
+  private func subscribeOnTrackRecordingProgressUpdates() {
+    trackRecorder.setTrackRecordingUpdateHandler { [weak self] info in
+      guard let self else { return }
+      self.trackRecordingInfo = info
+      self.notifyObservers()
+      self.activityManager?.update(info)
+    }
+  }
+
+  private func unsubscribeFromTrackRecordingProgressUpdates() {
+    trackRecorder.setTrackRecordingUpdateHandler(nil)
+    trackRecordingInfo = nil
+  }
+
+  // MARK: - Handle Start/Stop event and Errors
 
   private func start(completion: (CompletionHandler)? = nil) {
-    let state = getCurrentRecordingState()
-    switch state {
-    case .inactive:
-      trackRecorder.startTrackRecording()
-      recordingState = .active
+    do {
+      try checkIsLocationEnabled()
+      switch recordingState {
+      case .inactive:
+        subscribeOnTrackRecordingProgressUpdates()
+        trackRecorder.startTrackRecording()
+        notifyObservers()
+      case .active:
+        break
+      }
       completion?()
-    case .active:
-      break
-    case .error(let trackRecordingError):
-      handleError(trackRecordingError, completion: completion)
+    } catch {
+      handleError(error, completion: completion)
     }
   }
 
@@ -102,18 +185,33 @@ final class TrackRecordingManager: NSObject {
   }
 
   private func stopRecording(_ savingOption: SavingOption, completion: (CompletionHandler)? = nil) {
+    unsubscribeFromTrackRecordingProgressUpdates()
     trackRecorder.stopTrackRecording()
+    activityManager?.stop()
+    notifyObservers()
+    
     switch savingOption {
     case .withoutSaving:
       break
     case .saveWithName(let name):
       trackRecorder.saveTrackRecording(withName: name)
     }
-    recordingState = .inactive
     completion?()
   }
-  
-  private static func showOnFinishRecordingAlert(onSave: @escaping CompletionHandler, 
+
+  private func handleError(_ error: Error, completion: (CompletionHandler)? = nil) {
+    LOG(.error, error.localizedDescription)
+    switch error {
+    case TrackRecordingError.locationIsProhibited:
+      // Show alert to enable location
+      LocationManager.checkLocationStatus()
+    default:
+      break
+    }
+    stopRecording(.withoutSaving, completion: completion)
+  }
+
+  private static func showOnFinishRecordingAlert(onSave: @escaping CompletionHandler,
                                                  onStop: @escaping CompletionHandler,
                                                  onContinue: @escaping CompletionHandler) {
     let alert = UIAlertController(title: L("track_recording_alert_title"), message: nil, preferredStyle: .alert)
@@ -121,5 +219,26 @@ final class TrackRecordingManager: NSObject {
     alert.addAction(UIAlertAction(title: L("stop_without_saving"), style: .default, handler: { _ in onStop() }))
     alert.addAction(UIAlertAction(title: L("save"), style: .cancel, handler: { _ in onSave() }))
     UIViewController.topViewController().present(alert, animated: true)
+  }
+}
+
+// MARK: - TrackRecordingObserver
+
+extension TrackRecordingManager: TrackRecordingObserver {
+  @objc
+  func addObserver(_ observer: AnyObject, recordingIsActiveDidChangeHandler: @escaping TrackRecordingStateHandler) {
+    let observation = Observation(observer: observer, recordingStateDidChangeHandler: recordingIsActiveDidChangeHandler)
+    observations.append(observation)
+    recordingIsActiveDidChangeHandler(recordingState, trackRecordingInfo)
+  }
+
+  @objc
+  func removeObserver(_ observer: AnyObject) {
+    observations.removeAll { $0.observer === observer }
+  }
+
+  private func notifyObservers() {
+    observations = observations.filter { $0.observer != nil }
+    observations.forEach { $0.recordingStateDidChangeHandler?(recordingState, trackRecordingInfo) }
   }
 }

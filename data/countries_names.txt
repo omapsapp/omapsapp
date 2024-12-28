@@ -789,6 +789,7 @@
   nl = Armenië
   pl = Armenia
   pt = Arménia
+  pt-BR = Armênia
   ro = Armenia
   ru = Армения
   sk = Arménsko
@@ -1571,7 +1572,8 @@
   nb = Bahrain
   nl = Bahrein
   pl = Bahrajn
-  pt = Bahrein
+  pt = Barém
+  pt-BR = Bahrein
   ro = Bahrain
   ru = Бахрейн
   sk = Bahrajn
@@ -6266,8 +6268,8 @@
   nb = Aruba, Curacao og Karibiske Nederland
   nl = Aruba, Curaçao en Caribisch Nederland
   pl = Aruba, Curaçao i Holandia Karaibska
-  pt = Aruba, Curaçao e Países Baixos das Caraíbas
-  pt-BR = Aruba, Curação and Países Baixos Caribenhos
+  pt = Aruba, Curaçau e Países Baixos das Caraíbas
+  pt-BR = Aruba, Curaçau and Países Baixos Caribenhos
   ro = Aruba, Curacao și Caraibe Olanda
   ru = Аруба, Кюрасао и Карибские Нидерланды
   sk = Aruba, Curaçao a Karibské Holandsko
@@ -6304,7 +6306,8 @@
   nb = Caymanøyene
   nl = Kaaimaneilanden
   pl = Kajmany
-  pt = Ilhas Cayman
+  pt = Ilhas Caimão
+  pt-BR = Ilhas Cayman
   ro = Insulele Cayman
   ru = Каймановы острова
   sk = Kajmanie ostrovy
@@ -8092,7 +8095,8 @@
   nb = Tsjekkia
   nl = Tsjechië
   pl = Czechy
-  pt = República Checa
+  pt = Chéquia
+  pt-BR = Tchéquia
   ro = Cehia
   ru = Чехия
   sk = Česko
@@ -8854,7 +8858,8 @@
   nb = Djibouti
   nl = Djibouti
   pl = Dżibuti
-  pt = Djibouti
+  pt = Jibuti
+  pt-BR = Djibuti
   ro = Djibouti
   ru = Джибути
   sk = Džibutsko
@@ -9192,6 +9197,7 @@
   nl = Estland
   pl = Estonia
   pt = Estónia
+  pt-BR = Estônia
   ro = Estonia
   ru = Эстония
   sk = Estónsko
@@ -12198,6 +12204,7 @@
   nl = Nieuw-Caledonië
   pl = Nowa Kaledonia
   pt = Nova Caledónia
+  pt-BR = Nova Caledônia
   ro = Noua Caledonie
   ru = Новая Каледония
   sk = Nová Kaledónia
@@ -15609,7 +15616,8 @@
   nb = Epirus og Vest-Makedonia (periferi)
   nl = Epirus en West-Macedonië
   pl = Epir i Zachodnia Macedonia
-  pt = Épiro e Macedônia Ocidental
+  pt = Épiro e Macedónia Ocidental
+  pt-BR = Épiro e Macedônia Ocidental
   ro = Regiunea Epirul și Macedonia de Vest
   ru = Эпир и западная Македония
   sk = Epirus a Západná Makedónia
@@ -15643,7 +15651,8 @@
   nb = Makedonia og Thrakia (periferi)
   nl = Macedonië en Thracië
   pl = Macedonia i Tracja
-  pt = Macedônia e Trácia
+  pt = Macedónia e Trácia
+  pt-BR = Macedônia e Trácia
   ro = Regiunea Macedonia și Tracia
   ru = Македония и Фракия
   sk = Makedónia a Trácia
@@ -15749,6 +15758,7 @@
   nl = Groenland
   pl = Grenlandia
   pt = Gronelândia
+  pt-BR = Groenlândia
   ro = Groenlanda
   ru = Гренландия
   sk = Grónsko
@@ -17952,6 +17962,7 @@
   nl = Iran
   pl = Iran
   pt = Irão
+  pt-BR = Irã
   ro = Iran
   ru = Иран
   sk = Irán
@@ -17987,6 +17998,7 @@
   nl = Iran — Noord
   pl = Iran — Północ
   pt = Irão — Norte
+  pt-BR = Irã — Norte
   ro = Iran — Nord
   ru = Иран — Север
   sk = Irán — Sever
@@ -18022,6 +18034,7 @@
   nl = Iran — Zuid
   pl = Iran — Południe
   pt = Irão — Sul
+  pt-BR = Irã — Sul
   ro = Iran — Sud
   ru = Иран — Юг
   sk = Irán — Juh
@@ -22814,6 +22827,7 @@
   nl = Kenia
   pl = Kenia
   pt = Quénia
+  pt-BR = Quênia
   ro = Kenya
   ru = Кения
   sk = Keňa
@@ -23037,6 +23051,7 @@
   nl = Letland
   pl = Łotwa
   pt = Letónia
+  pt-BR = Letônia
   ro = Letonia
   ru = Латвия
   sk = Lotyšsko
@@ -23378,6 +23393,7 @@
   nl = Madagaskar
   pl = Madagaskar
   pt = Madagáscar
+  pt-BR = Madagascar
   ro = Madagascar
   ru = Мадагаскар
   sk = Madagaskar
@@ -24259,6 +24275,7 @@
   nl = Monaco
   pl = Monako
   pt = Mónaco
+  pt-BR = Mônaco
   ro = Monaco
   ru = Монако
   sk = Monako
@@ -24545,7 +24562,8 @@
   nb = Vest-Sahara
   nl = Westelijke Sahara
   pl = Sahara Zachodnia
-  pt = Saara Ocidental
+  pt = Sara Ocidental
+  pt-BR = Saara Ocidental
   ro = Sahara Occidentală
   ru = Западная Сахара
   sk = Západná Sahara
@@ -26876,6 +26894,7 @@
   nl = Palestijnse Gebieden
   pl = Terytoria palestyńskie
   pt = Territórios Palestinianos
+  pt-BR = Territórios Palestinos
   ro = Teritoriile Palestiniene
   ru = Территории Палестины
   sk = Palestínske územia
@@ -27494,6 +27513,7 @@
   nl = Polen
   pl = Polska
   pt = Polónia
+  pt-BR = Polônia
   ro = Polonia
   ru = Польша
   sk = Poľsko
@@ -28273,6 +28293,7 @@
   nl = Roemenië
   pl = Rumunia
   pt = Roménia
+  pt-BR = Romênia
   ro = România
   ru = Румыния
   sk = Rumunsko
@@ -31706,7 +31727,7 @@
   nb = Saint Kitts og Nevis
   nl = Saint Kitts en Nevis
   pl = Saint Kitts i Nevis
-  pt = São Cristóvão e Nevis
+  pt = São Cristóvão e Neves
   ro = Sfântul Cristofor și Nevis
   ru = Сент-Китс и Невис
   sk = Svätý Krištof a Nevis
@@ -32508,6 +32529,7 @@
   nl = Slovenië
   pl = Słowenia
   pt = Eslovénia
+  pt-BR = Eslovênia
   ro = Slovenia
   ru = Словения
   sk = Slovinsko
@@ -33898,7 +33920,8 @@
   nb = Melilla
   nl = Melilla
   pl = Melilla
-  pt = Melilla
+  pt = Melilha
+  pt-BR = Melilla
   ro = Melilla
   ru = Мелилья
   sk = Melilla
@@ -34803,6 +34826,7 @@
   nl = Tadzjikistan
   pl = Tadżykistan
   pt = Tajiquistão
+  pt-BR = Tadjiquistão
   ro = Tadjikistan
   ru = Таджикистан
   sk = Tadžikistan
@@ -35159,7 +35183,7 @@
   nb = Tokelau
   nl = Tokelau-eilanden
   pl = Tokelau
-  pt = Tokelau
+  pt = Toquelau
   ro = Tokelau
   ru = Токелау
   sk = Tokelau
@@ -35232,7 +35256,8 @@
   nb = Trinidad og Tobago
   nl = Trinidad en Tobago
   pl = Trynidad i Tobago
-  pt = Trinidad e Tobago
+  pt = Trindade e Tobago
+  pt-BR = Trinidad e Tobago
   ro = Trinidad și Tobago
   ru = Тринидад и Тобаго
   sk = Trinidad a Tobago
@@ -35547,6 +35572,7 @@
   nl = Turkmenistan
   pl = Turkmenistan
   pt = Turquemenistão
+  pt-BR = Turcomenistão
   ro = Turkmenistan
   ru = Туркмения
   sk = Turkménsko
@@ -41742,7 +41768,8 @@
   nb = Usbekistan
   nl = Oezbekistan
   pl = Uzbekistan
-  pt = Uzbequistão
+  pt = Usbequistão
+  pt-BR = Uzbequistão
   ro = Uzbekistan
   ru = Узбекистан
   sk = Uzbekistan
@@ -41853,6 +41880,7 @@
   nl = Vietnam
   pl = Wietnam
   pt = Vietname
+  pt-BR = Vietnã
   ro = Vietnam
   ru = Вьетнам
   sk = Vietnam
@@ -42067,6 +42095,7 @@
   nl = Jemen
   pl = Jemen
   pt = Iémen
+  pt-BR = Iêmen
   ro = Yemen
   ru = Йемен
   sk = Jemen
@@ -42140,7 +42169,8 @@
   nb = Zimbabwe
   nl = Zimbabwe
   pl = Zimbabwe
-  pt = Zimbábue
+  pt = Zimbabué
+  pt-BR = Zimbábue
   ro = Zimbabwe
   ru = Зимбабве
   sk = Zimbabwe
@@ -43471,6 +43501,7 @@
   nl = Iran — Oost
   pl = Iran — Wschód
   pt = Irão — Leste
+  pt-BR = Irã — Leste
   ro = Iran — Est
   ru = Иран — Восток
   sk = Irán — Východ
@@ -57561,7 +57592,7 @@
   da = San Marino
   el = Σίτι του Σαν Μαρίνο, Σεραβάλε, Μπόργκο Ματζιόρε
   es = San Marino
-  et = San Marino, Chita, Krasnokamensk, Borzya
+  et = San Marino, Serravalle, Borgo Maggiore
   fi = San Marino
   fr = Ville de Saint-Marin
   he = סן מרינו
@@ -57574,6 +57605,7 @@
   pl = San Marino
   pt = San Marino
   ro = Orașul San Marino
+  ru = Сан-Марино
   sk = San Maríno
   sv = San Marino
   tr = San Marino şehri
@@ -58577,32 +58609,32 @@
   sv = Göteborg
 
 [Switzerland_Central Description]
-  en = Lucerne, Oberarth, Emmen
+  en = Lucerne, Zug, Sarnen, Stans, Altdorf, Schwyz
   cs = Lucern
-  de = Luzern
+  de = Luzern, Zug, Sarnen, Stans, Altdorf, Schwyz
   el = Λουκέρνη, Όμπερμπαθ, Έμμεν
-  es = Lucerna
+  es = Lucerna, Zug, Sarnen, Stans, Altdorf, Schwyz
   et = Luzern, Oberarth, Emmen
-  fr = Lucerne
+  fr = Lucerne, Zug, Sarnen, Stans, Altdorf, Schwyz
   he = לוצרן
-  it = Lucerna
+  it = Lucerna, Zug, Sarnen, Stans, Altdorf, Schwyz
   ja = ルツェルン
   ko = 루체른
   pl = Lucerna
-  pt = Lucerna
+  pt = Lucerna, Zug, Sarnen, Stans, Altdorf, Schwyz
   ro = Lucerna
   ru = Люцерн
 
 [Switzerland_Eastern Description]
-  en = St. Gallen, Schaffhausen, Chur
+  en = Chur, St. Gallen, Herisau, Appenzell, Frauenfeld, Glarus, Schaffhausen
   ar = خور
   da = Kanton Schaffhausen
-  de = St. Gallen, Schaffhausen, Chur
+  de = Chur, St. Gallen, Herisau, Appenzell, Frauenfeld, Glarus, Schaffhausen
   el = Σεν Γκάλεν, Σαφχάουζεν, Σουρ
-  es = Coira
-  fr = Saint-Gall, Schaffhouse, Coire
+  es = Coira, San Galo, Herisau, Appenzell, Frauenfeld, Glaris, Schaffhausen
+  fr = Coire, Saint-Gall, Herisau, Appenzell, Frauenfeld, Glaris, Schaffhouse
   he = שפהאוזן
-  it = San Gallo, Sciaffusa, Coira
+  it = Coira, San Gallo, Herisau, Appenzello, Frauenfeld, Glarona, Sciaffusa
   ja = シャフハウゼン, クール
   pl = Szafuza
   pt = Coira
@@ -58611,20 +58643,20 @@
   uk = Шаффгаузен, Кур
 
 [Switzerland_Espace Mittelland_Bern Description]
-  en = Bern, Biel/Bienne, Köniz
+  en = Bern, Freiburg, Solothurn, Neuenburg, Delsberg, Biel, Olten
   ar = برن
   cs = Bern
-  de = Bern, Biel
+  de = Bern, Freiburg, Solothurn, Neuenburg, Delsberg, Biel, Olten
   el = Βέρνη, Μπιλ / Μπιένε, Κόνιζ
-  es = Berna
-  fr = Berne, Bienne
+  es = Berna, Friburgo, Soleura, Neuenburg, Delsberg, Biel, Olten
+  fr = Berne, Fribourg, Soleure, Neuchâtel, Delémont, Bienne, Olten
   he = ברן
   hu = Bern
-  it = Berna
+  it = Berna, Friburgo, Soletta, Neuenburg, Delsberg, Bienne, Olten
   ja = ベルン
   ko = 베른
   pl = Berno
-  pt = Berna
+  pt = Berna, Friburgo, Solothurn, Neuenburg, Delsberg, Biel, Olten
   ro = Berna
   ru = Берн, Биль
   sk = Bern
@@ -58633,30 +58665,31 @@
   uk = Берн
 
 [Switzerland_Espace Mittelland_East Description]
-  en = Thun, Langenthal, Steffisburg
+  en = Thun, Interlaken, Langenthal
+  de = Thun, Interlaken, Langenthal
   el = Τουν, Λάνγκετχαλ, Στέφισμπουργκ
-  fr = Thoune, Steffisburg
-  it = Steffisburg
+  fr = Thoune, Interlaken, Langenthal
+  it = Thun, Interlaken, Langenthal
   ru = Тун, Штеффисбург
   uk = Тун
   zh-Hant = 施特菲斯堡
 
 [Switzerland_Lake Geneva region Description]
-  en = Geneva, Lausanne, Vernier
+  en = Geneva, Lausanne, Sion
   ar = جنيف
   az = Cenevrə
   cs = Ženeva
   da = Geneve
-  de = Genf, Lausanne
+  de = Genf, Lausanne, Sitten
   el = Γενεύη, Λωζάνη, Βερνιέρ
-  es = Ginebra, Lausana
+  es = Ginebra, Lausana, Sion
   et = Genf, Lausanne, Vernier
   fi = Geneve
-  fr = Genève
+  fr = Genève, Lausanne, Sion
   he = ז'נבה
   hu = Genf
   id = Jenewa
-  it = Ginevra, Losanna
+  it = Ginevra, Losanna, Sion
   ja = ジュネーヴ
   pl = Genewa
   ru = Женева, Лозанна, Вернье
@@ -58667,40 +58700,43 @@
   vi = Giơ-ne-vơ
 
 [Switzerland_Northwestern Description]
-  en = Basel, Lenzburg, Riehen
+  en = Basel, Liestal, Aarau
   cs = Basilej
-  de = Basel
+  de = Basel, Liestal, Aarau
   el = Βασιλεία, Λένζμπεργκ, Ρίχεν
-  es = Basilea
-  fr = Bâle
+  es = Basilea, Liestal, Aarau
+  fr = Bâle, Liestal, Aarau
   hu = Basel
-  it = Basilea
+  it = Basilea, Liestal, Aarau
   ru = Базель, Риэн
   sk = Bazilej
   uk = Базель
 
 [Switzerland_Ticino Description]
-  en = Lugano, Bellinzona, Locarno
+  en = Bellinzona, Lugano, Locarno
+  de = Bellinzona, Lugano, Locarno
   el = Λουγκάνο, Μπελιντσόνα, Λοκάρνο
-  fr = Bellinzone
+  es = Bellinzona, Lugano, Locarno
+  fr = Bellinzone, Lugano, Locarno
+  it = Bellinzona, Lugano, Locarno
   ru = Лугано, Беллинцона, Локарно
 
 [Switzerland_Zurich Description]
-  en = Zurich, Winterthur, Illnau
+  en = Zurich, Winterthur
   ar = زيورخ
   az = Sürix
   cs = Curych
   da = Zürich
-  de = Zürich, Winterthur, Illnau
+  de = Zürich, Winterthur
   el = Ζυρίχη, Βίντερθουρ, Ιλνάου
-  es = Zúrich
+  es = Zúrich, Winterthur
   et = Zürich, Winterthur, Illnau
   fi = Zürich
   fr = Zurich, Winterthour
   he = ציריך
   hu = Zürich
   id = Zürich
-  it = Zurigo
+  it = Zurigo, Winterthur
   ja = チューリッヒ
   ko = 취리히
   nl = Zürich

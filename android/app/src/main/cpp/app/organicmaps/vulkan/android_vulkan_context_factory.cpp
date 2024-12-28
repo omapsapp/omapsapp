@@ -86,7 +86,7 @@ public:
 };
 }  // namespace
 
-AndroidVulkanContextFactory::AndroidVulkanContextFactory(uint32_t appVersionCode, int sdkVersion)
+AndroidVulkanContextFactory::AndroidVulkanContextFactory(uint32_t appVersionCode, int sdkVersion, bool isCustomROM)
 {
   if (InitVulkan() == 0)
   {
@@ -165,8 +165,7 @@ AndroidVulkanContextFactory::AndroidVulkanContextFactory(uint32_t appVersionCode
   dp::SupportManager::Version driverVersion{VK_VERSION_MAJOR(gpuProperties.driverVersion),
                                             VK_VERSION_MINOR(gpuProperties.driverVersion),
                                             VK_VERSION_PATCH(gpuProperties.driverVersion)};
-  if (dp::SupportManager::Instance().IsVulkanForbidden(gpuProperties.deviceName, apiVersion,
-                                                       driverVersion))
+  if (dp::SupportManager::Instance().IsVulkanForbidden(gpuProperties.deviceName, apiVersion, driverVersion, isCustomROM))
   {
     LOG_ERROR_VK("GPU/Driver configuration is not supported.");
     return;

@@ -19,8 +19,8 @@ struct SupportManager::Configuration
   Version m_driverVersion;
 };
 
-char const * kSupportedAntialiasing = "Antialiasing";
-static char const * kVulkanForbidden = "VulkanForbidden";
+std::string_view kSupportedAntialiasing = "Antialiasing";
+std::string_view constexpr kVulkanForbidden = "VulkanForbidden";
 
 void SupportManager::Init(ref_ptr<GraphicsContext> context)
 {
@@ -107,7 +107,8 @@ bool SupportManager::IsVulkanForbidden()
   return forbidden;
 }
 
-bool SupportManager::IsVulkanForbidden(std::string const & deviceName, Version apiVersion, Version driverVersion)
+bool SupportManager::IsVulkanForbidden(std::string const & deviceName, Version apiVersion,
+                                       Version driverVersion, bool isCustomROM)
 {
   LOG(LINFO, ("Device =", deviceName, "API =", apiVersion, "Driver =", driverVersion));
 
@@ -117,17 +118,22 @@ bool SupportManager::IsVulkanForbidden(std::string const & deviceName, Version a
     "PowerVR Rogue G6110", "PowerVR Rogue GE8100", "PowerVR Rogue GE8300",
     // https://github.com/organicmaps/organicmaps/issues/5539
     "Adreno (TM) 418",
-
-    // https://github.com/organicmaps/organicmaps/issues/2739
-    // https://github.com/organicmaps/organicmaps/issues/9255
-    // SM-G930F (S7, heroltexx, hero2ltexx). Crash on vkCreateSwapchainKHR and we don't even get to SupportManager::Init.
-    /// @todo UPD: Crash on Android 14 (LineageOS), stock Android 12 works ok (with same api = 1.0.82; driver = 28.0.0).
-    "Mali-T880",
   };
 
   for (auto const d : kBannedDevices)
   {
     if (d == deviceName)
+      return true;
+  }
+
+  if (isCustomROM)
+  {
+    // Crash on LineageOS, stock Android works ok (with same api = 1.0.82; driver = 28.0.0).
+    // https://github.com/organicmaps/organicmaps/issues/2739
+    // https://github.com/organicmaps/organicmaps/issues/9255
+    // SM-G930F (S7, heroltexx, hero2ltexx). Crash on vkCreateSwapchainKHR and we don't even get to SupportManager::Init.
+    // SM-G920F (S6)
+    if (deviceName.starts_with("Mali-T"))
       return true;
   }
 

@@ -407,9 +407,7 @@ public:
   static std::string GetSortedByTimeBlockName(SortedByTimeBlockType blockType);
   std::string GetLocalizedRegionAddress(m2::PointD const & pt);
 
-  ElevationInfo MakeElevationInfo(kml::TrackId trackId) const;
-
-  void SetElevationActivePoint(kml::TrackId const & trackId, double distanceInMeters);
+  void SetElevationActivePoint(kml::TrackId const & trackId, m2::PointD pt, double distanceInMeters);
   // Returns distance from the start of the track to active point in meters.
   double GetElevationActivePoint(kml::TrackId const & trackId) const;
 
@@ -427,7 +425,6 @@ public:
   Track::TrackSelectionInfo GetTrackSelectionInfo(kml::TrackId const & trackId) const;
 
   void SetTrackSelectionInfo(Track::TrackSelectionInfo const & trackSelectionInfo, bool notifyListeners);
-  void SetDefaultTrackSelection(kml::TrackId trackId, bool showInfoSign);
   void OnTrackSelected(kml::TrackId trackId);
   void OnTrackDeselected();
 

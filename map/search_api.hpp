@@ -21,6 +21,7 @@
 #include <optional>
 #include <unordered_set>
 #include <vector>
+#include <string>
 
 class DataSource;
 
@@ -112,6 +113,8 @@ public:
   void ClearSearchHistory() { m_searchQuerySaver.Clear(); }
 
   void EnableIndexingOfBookmarksDescriptions(bool enable);
+
+  void SetLocale(std::string const & locale);
 
   // By default all created bookmarks are saved in BookmarksProcessor
   // but we do not index them in an attempt to save time and memory.

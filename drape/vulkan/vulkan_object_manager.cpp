@@ -2,7 +2,7 @@
 
 #include "drape/drape_routine.hpp"
 
-#include "base/macros.hpp"
+#include "platform/trace.hpp"
 
 #include <algorithm>
 #include <cstring>
@@ -15,6 +15,9 @@ namespace
 {
 size_t constexpr kBackendQueueIndex = 0;
 size_t constexpr kOtherQueueIndex = 0;
+
+// Maximum descriptors sets count in the pool.
+uint32_t constexpr kMaxDescriptorsSetCount = 256 * kMaxInflightFrames;
 
 VkSamplerAddressMode GetVulkanSamplerAddressMode(TextureWrapping wrapping)
 {
@@ -125,6 +128,11 @@ VulkanObject VulkanObjectManager::CreateBuffer(VulkanMemoryManager::ResourceType
                                      result.GetAlignedOffset()));
   }
 
+#ifdef ENABLE_TRACE
+  m_buffersCount++;
+  TRACE_COUNTER("[drape][vulkan] Buffers", m_buffersCount);
+#endif
+
   return result;
 }
 
@@ -181,6 +189,11 @@ VulkanObject VulkanObjectManager::CreateImage(VkImageUsageFlags usageFlags, VkFo
   viewCreateInfo.image = result.m_image;
   CHECK_VK_CALL(vkCreateImageView(m_device, &viewCreateInfo, nullptr, &result.m_imageView));
 
+#ifdef ENABLE_TRACE
+  m_imagesCount++;
+  TRACE_COUNTER("[drape][vulkan] Images", m_imagesCount);
+#endif
+
   return result;
 }
 
@@ -213,6 +226,14 @@ DescriptorSetGroup VulkanObjectManager::CreateDescriptorSetGroup(ref_ptr<VulkanG
 
   // Decrease the available sets count.
   m_descriptorPools[poolIndex].m_availableSetsCount--;
+
+  TRACE_COUNTER("[drape][vulkan] Descriptor pools", static_cast<int64_t>(m_descriptorPools.size()));
+#ifdef ENABLE_TRACE
+  int64_t usedDescriptorsSets = 0;
+  for (auto const & pool : m_descriptorPools)
+    usedDescriptorsSets += (kMaxDescriptorsSetCount - pool.m_availableSetsCount);
+  TRACE_COUNTER("[drape][vulkan] Descriptor sets", usedDescriptorsSets);
+#endif
 
   CHECK_VK_CALL(vkAllocateDescriptorSets(m_device, &allocInfo, &s.m_descriptorSet));
   return s;
@@ -294,11 +315,25 @@ void VulkanObjectManager::CollectObjectsImpl(VulkanObjectArray const & objects)
   for (auto const & obj : objects)
   {
     if (obj.m_buffer != VK_NULL_HANDLE)
+    {
       vkDestroyBuffer(m_device, obj.m_buffer, nullptr);
+#ifdef ENABLE_TRACE
+      m_buffersCount--;
+      TRACE_COUNTER("[drape][vulkan] Buffers", m_buffersCount);
+#endif
+    }
     if (obj.m_imageView != VK_NULL_HANDLE)
+    {
       vkDestroyImageView(m_device, obj.m_imageView, nullptr);
+    }
     if (obj.m_image != VK_NULL_HANDLE)
+    {
       vkDestroyImage(m_device, obj.m_image, nullptr);
+#ifdef ENABLE_TRACE
+      m_imagesCount--;
+      TRACE_COUNTER("[drape][vulkan] Images", m_imagesCount);
+#endif
+    }
   }
 
   std::lock_guard<std::mutex> lock(m_mutex);
@@ -377,9 +412,6 @@ void VulkanObjectManager::Fill(VulkanObject object, void const * data, uint32_t 
 
 void VulkanObjectManager::CreateDescriptorPool()
 {
-  // Maximum descriptors sets count in the pool.
-  uint32_t constexpr kMaxDescriptorsSetCount = 256 * kMaxInflightFrames;
-
   CHECK_GREATER(m_maxUniformBuffers, 0, ());
   CHECK_GREATER(m_maxImageSamplers, 0, ());
   std::vector<VkDescriptorPoolSize> poolSizes =

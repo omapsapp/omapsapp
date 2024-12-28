@@ -70,8 +70,9 @@
   auto const viewWidth = [MapViewController sharedController].mapView.width;
   auto const rulerOffset =
     m2::PointF(frame.origin.x * vs, (frame.origin.y + frame.size.height - viewHeight) * vs);
+  auto const kCompassAdditionalYOffset = [TrackRecordingManager.shared isActive] ? 50 : 0;
   auto const compassOffset =
-    m2::PointF((frame.origin.x + frame.size.width - viewWidth) * vs, frame.origin.y * vs);
+    m2::PointF((frame.origin.x + frame.size.width - viewWidth) * vs, (frame.origin.y + kCompassAdditionalYOffset) * vs);
   m_skin->ForEach([&](gui::EWidget w, gui::Position const & pos) {
     m2::PointF pivot = pos.m_pixelPivot;
     switch (w)

@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_menu_bookmark_track_recordign.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
+  }
+}

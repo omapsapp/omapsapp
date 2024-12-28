@@ -297,14 +297,14 @@ Java_app_organicmaps_editor_Editor_nativeGetNearbyStreets(JNIEnv * env, jclass c
 }
 
 JNIEXPORT jobjectArray JNICALL
-Java_app_organicmaps_editor_Editor_nativeGetSupportedLanguages(JNIEnv * env, jclass clazz)
+Java_app_organicmaps_editor_Editor_nativeGetSupportedLanguages(JNIEnv * env, jclass clazz, jboolean includeServiceLangs)
 {
   using TLang = StringUtf8Multilang::Lang;
   //public Language(@NonNull String code, @NonNull String name)
   static jclass const langClass = jni::GetGlobalClassRef(env, "app/organicmaps/editor/data/Language");
   static jmethodID const langCtor = jni::GetConstructorID(env, langClass, "(Ljava/lang/String;Ljava/lang/String;)V");
 
-  return jni::ToJavaArray(env, langClass, StringUtf8Multilang::GetSupportedLanguages(),
+  return jni::ToJavaArray(env, langClass, StringUtf8Multilang::GetSupportedLanguages(includeServiceLangs),
                           [](JNIEnv * env, TLang const & lang)
                           {
                             jni::TScopedLocalRef const code(env, jni::ToJavaString(env, lang.m_code));
@@ -406,8 +406,10 @@ Java_app_organicmaps_editor_Editor_nativeGetAllCreatableFeatureTypes(JNIEnv * en
                                                                          jstring jLang)
 {
   std::string const & lang = jni::ToNativeString(env, jLang);
-  GetFeatureCategories().AddLanguage(lang);
-  return jni::ToJavaStringArray(env, GetFeatureCategories().GetAllCreatableTypeNames());
+  auto & categories = GetFeatureCategories();
+  categories.AddLanguage(lang);
+  categories.AddLanguage("en");
+  return jni::ToJavaStringArray(env, categories.GetAllCreatableTypeNames());
 }
 
 JNIEXPORT jobjectArray JNICALL
@@ -416,9 +418,10 @@ Java_app_organicmaps_editor_Editor_nativeSearchCreatableFeatureTypes(JNIEnv * en
                                                                          jstring jLang)
 {
   std::string const & lang = jni::ToNativeString(env, jLang);
-  GetFeatureCategories().AddLanguage(lang);
-  return jni::ToJavaStringArray(env,
-                                GetFeatureCategories().Search(jni::ToNativeString(env, query)));
+  auto & categories = GetFeatureCategories();
+  categories.AddLanguage(lang);
+  categories.AddLanguage("en");
+  return jni::ToJavaStringArray(env, categories.Search(jni::ToNativeString(env, query)));
 }
 
 JNIEXPORT jobjectArray JNICALL

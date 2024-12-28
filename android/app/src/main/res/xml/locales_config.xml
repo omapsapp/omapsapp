@@ -28,6 +28,7 @@
     <locale android:name="ja" />
     <locale android:name="ko" />
     <locale android:name="lt" />
+    <locale android:name="lv" />
     <locale android:name="mr" />
     <locale android:name="mt" />
     <locale android:name="nb" />
@@ -38,6 +39,7 @@
     <locale android:name="ro" />
     <locale android:name="ru" />
     <locale android:name="sk" />
+    <locale android:name="sr" />
     <locale android:name="sv" />
     <locale android:name="sw" />
     <locale android:name="th" />

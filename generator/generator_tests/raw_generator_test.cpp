@@ -37,7 +37,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Towns)
 
   std::string const mwmName = "Towns";
   std::string const mwmWorld = WORLD_FILE_NAME;
-  BuildFB("./data/osm_test_data/towns.osm", mwmName, true /* makeWorld */);
+  BuildFB("./data/test_data/osm/towns.osm", mwmName, true /* makeWorld */);
 
   size_t count = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
@@ -115,7 +115,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Towns)
 UNIT_CLASS_TEST(TestRawGenerator, HighwayLinks)
 {
   std::string const mwmName = "Highways";
-  BuildFB("./data/osm_test_data/highway_links.osm", mwmName);
+  BuildFB("./data/test_data/osm/highway_links.osm", mwmName);
 
   BuildFeatures(mwmName);
   BuildRouting(mwmName, "Spain");
@@ -180,7 +180,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Building3D)
   auto const & buildingHasPartsChecker = ftypes::IsBuildingHasPartsChecker::Instance();
 
   std::string const mwmName = "Building3D";
-  BuildFB("./data/osm_test_data/building3D.osm", mwmName);
+  BuildFB("./data/test_data/osm/building3D.osm", mwmName);
 
   size_t buildings = 0, buildingParts = 0, buildingHasParts = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
@@ -207,7 +207,7 @@ UNIT_CLASS_TEST(TestRawGenerator, BuildingRelation)
   auto const & buildingHasPartsChecker = ftypes::IsBuildingHasPartsChecker::Instance();
 
   std::string const mwmName = "Building";
-  BuildFB("./data/osm_test_data/building_relation.osm", mwmName);
+  BuildFB("./data/test_data/osm/building_relation.osm", mwmName);
 
   {
     size_t buildings = 0, buildingParts = 0, buildingHasParts = 0;
@@ -253,7 +253,7 @@ UNIT_CLASS_TEST(TestRawGenerator, BuildingRelation)
 UNIT_CLASS_TEST(TestRawGenerator, AreaHighway)
 {
   std::string const mwmName = "AreaHighway";
-  BuildFB("./data/osm_test_data/highway_area.osm", mwmName);
+  BuildFB("./data/test_data/osm/highway_area.osm", mwmName);
 
   uint32_t const waterType = classif().GetTypeByPath({"natural", "water", "tunnel"});
   uint32_t const pedestrianType = classif().GetTypeByPath({"highway", "pedestrian", "area"});
@@ -279,7 +279,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Place_Region)
 
   std::string const mwmName = "Region";
   std::string const worldMwmName = WORLD_FILE_NAME;
-  BuildFB("./data/osm_test_data/place_region.osm", mwmName, true /* makeWorld */);
+  BuildFB("./data/test_data/osm/place_region.osm", mwmName, true /* makeWorld */);
 
   size_t worldRegions = 0, countryRegions = 0;
 
@@ -325,7 +325,7 @@ UNIT_CLASS_TEST(TestRawGenerator, MiniRoundabout)
   uint32_t const roadType = classif().GetTypeByPath({"highway", "secondary"});
 
   std::string const mwmName = "MiniRoundabout";
-  BuildFB("./data/osm_test_data/mini_roundabout.osm", mwmName, false /* makeWorld */);
+  BuildFB("./data/test_data/osm/mini_roundabout.osm", mwmName, false /* makeWorld */);
 
   size_t roadsCount = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
@@ -396,7 +396,7 @@ std::string_view GetPostcode(FeatureType & ft)
 UNIT_CLASS_TEST(TestRawGenerator, Postcode_Relations)
 {
   std::string const mwmName = "Postcodes";
-  BuildFB("./data/osm_test_data/postcode_relations.osm", mwmName, false /* makeWorld */);
+  BuildFB("./data/test_data/osm/postcode_relations.osm", mwmName, false /* makeWorld */);
   BuildFeatures(mwmName);
 
   size_t count = 0;
@@ -421,7 +421,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Postcode_Relations)
 UNIT_CLASS_TEST(TestRawGenerator, Building_Address)
 {
   std::string const mwmName = "Address";
-  BuildFB("./data/osm_test_data/building_address.osm", mwmName, false /* makeWorld */);
+  BuildFB("./data/test_data/osm/building_address.osm", mwmName, false /* makeWorld */);
 
   size_t count = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
@@ -477,9 +477,9 @@ UNIT_TEST(Relation_Wiki)
   std::string const mwmName = "Relation";
 
   std::string const arrFiles[] = {
-    "./data/osm_test_data/village_relation.osm",
-    "./data/osm_test_data/novenkoe_village.osm",
-    "./data/osm_test_data/nikolaevka_village.osm",
+    "./data/test_data/osm/village_relation.osm",
+    "./data/test_data/osm/novenkoe_village.osm",
+    "./data/test_data/osm/nikolaevka_village.osm",
   };
 
   std::string const arrWiki[] = {
@@ -526,7 +526,7 @@ UNIT_CLASS_TEST(TestRawGenerator, AssociatedStreet_Wiki)
   uint32_t const roadType = classif().GetTypeByPath({"highway", "residential"});
 
   std::string const mwmName = "Street";
-  BuildFB("./data/osm_test_data/associated_street.osm", mwmName, false /* makeWorld */);
+  BuildFB("./data/test_data/osm/associated_street.osm", mwmName, false /* makeWorld */);
 
   size_t count = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
@@ -565,33 +565,33 @@ UNIT_TEST(Place_CityRelations)
 
   std::string const arrFiles[] = {
     // 1 Relation with many polygons + 1 Node.
-    "./data/osm_test_data/gorlovka_city.osm",
+    "./data/test_data/osm/gorlovka_city.osm",
     // 2 Relations + 1 Node
-    "./data/osm_test_data/tver_city.osm",
+    "./data/test_data/osm/tver_city.osm",
     // 1 Relation + 1 Node with _different_ names.
-    "./data/osm_test_data/reykjavik_city.osm",
-    "./data/osm_test_data/berlin_city.osm",
+    "./data/test_data/osm/reykjavik_city.osm",
+    "./data/test_data/osm/berlin_city.osm",
     // Relation boundary is place=suburb, but border_type=city
-    "./data/osm_test_data/riviera_beach_city.osm",
-    "./data/osm_test_data/hotchkiss_town.osm",
-    "./data/osm_test_data/voronezh_city.osm",
-    "./data/osm_test_data/minsk_city.osm",
+    "./data/test_data/osm/riviera_beach_city.osm",
+    "./data/test_data/osm/hotchkiss_town.osm",
+    "./data/test_data/osm/voronezh_city.osm",
+    "./data/test_data/osm/minsk_city.osm",
 
     // 1 boundary-only Relation + 1 Node
-    "./data/osm_test_data/kadikoy_town.osm",
+    "./data/test_data/osm/kadikoy_town.osm",
     // 2 Relations + 1 Node
-    "./data/osm_test_data/stolbtcy_town.osm",
+    "./data/test_data/osm/stolbtcy_town.osm",
     // 1 Way + 1 Relation + 1 Node
-    "./data/osm_test_data/dmitrov_town.osm",
-    "./data/osm_test_data/lesnoy_town.osm",
+    "./data/test_data/osm/dmitrov_town.osm",
+    "./data/test_data/osm/lesnoy_town.osm",
 
-    "./data/osm_test_data/pushkino_city.osm",
-    "./data/osm_test_data/korday_town.osm",
-    "./data/osm_test_data/bad_neustadt_town.osm",
+    "./data/test_data/osm/pushkino_city.osm",
+    "./data/test_data/osm/korday_town.osm",
+    "./data/test_data/osm/bad_neustadt_town.osm",
 
     /// @todo We don't store villages in World now, but for the future!
     // 1 Relation + 1 Node (not linked with each other)
-    //"./data/osm_test_data/palm_beach_village.osm",
+    //"./data/test_data/osm/palm_beach_village.osm",
   };
 
   ms::LatLon arrNotInBoundary[] = {
@@ -700,7 +700,7 @@ UNIT_TEST(Place_CityRelations_IncludePoint)
   std::string const worldMwmName = WORLD_FILE_NAME;
 
   std::string const arrFiles[] = {
-    "./data/osm_test_data/valentin_alsina_town.osm",
+    "./data/test_data/osm/valentin_alsina_town.osm",
   };
 
   ms::LatLon arrInBoundary[] = {
@@ -779,9 +779,9 @@ UNIT_CLASS_TEST(TestRawGenerator, Place_NoCityBoundaries)
   TestDataSample const arrInput[] = {
       // Check that we have only 2 cities without duplicates (Pargas, Қордай).
       // Boundaries are removed because of "very big".
-      { "./data/osm_test_data/no_boundary_towns.osm", 2, 2 },
+      { "./data/test_data/osm/no_boundary_towns.osm", 2, 2 },
       // 3 villages in country and 0 in World.
-      { "./data/osm_test_data/us_villages_like_towns.osm", 0, 3 },
+      { "./data/test_data/osm/us_villages_like_towns.osm", 0, 3 },
   };
 
   for (size_t i = 0; i < std::size(arrInput); ++i)
@@ -833,7 +833,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Place_2Villages)
 {
   std::string const mwmName = "Villages";
 
-  BuildFB("./data/osm_test_data/tarachevo_villages.osm", mwmName, false /* makeWorld */);
+  BuildFB("./data/test_data/osm/tarachevo_villages.osm", mwmName, false /* makeWorld */);
 
   auto const & checker = ftypes::IsCityTownOrVillageChecker::Instance();
 
@@ -856,7 +856,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Relation_Fence)
 {
   std::string const mwmName = "Fences";
 
-  BuildFB("./data/osm_test_data/fence_relation.osm", mwmName);
+  BuildFB("./data/test_data/osm/fence_relation.osm", mwmName);
 
   uint32_t const fenceType = classif().GetTypeByPath({"barrier", "fence"});
 
@@ -877,7 +877,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Shuttle_Route)
 {
   std::string const mwmName = "Shuttle";
 
-  BuildFB("./data/osm_test_data/shuttle_route.osm", mwmName);
+  BuildFB("./data/test_data/osm/shuttle_route.osm", mwmName);
 
   uint32_t const railType = classif().GetTypeByPath({"railway", "rail"});
   uint32_t const shuttleType = classif().GetTypeByPath({"route", "shuttle_train"});
@@ -901,9 +901,9 @@ UNIT_TEST(MiniRoundabout_Connectivity)
   std::string const mwmName = "MiniRoundabout";
 
   std::string const arrFiles[] = {
-    "./data/osm_test_data/mini_roundabout_1.osm",
-    "./data/osm_test_data/mini_roundabout_2.osm",
-    "./data/osm_test_data/mini_roundabout_3.osm",
+    "./data/test_data/osm/mini_roundabout_1.osm",
+    "./data/test_data/osm/mini_roundabout_2.osm",
+    "./data/test_data/osm/mini_roundabout_3.osm",
   };
 
   for (auto const & fileName : arrFiles)
@@ -972,7 +972,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Addr_Interpolation)
 {
   std::string const mwmName = "Address";
 
-  BuildFB("./data/osm_test_data/addr_interpol.osm", mwmName);
+  BuildFB("./data/test_data/osm/addr_interpol.osm", mwmName);
 
   uint32_t const addrType = classif().GetTypeByPath({"addr:interpolation", "even"});
 
@@ -1028,7 +1028,7 @@ UNIT_CLASS_TEST(TestRawGenerator, NamedAddress)
 {
   std::string const mwmName = "Address";
 
-  BuildFB("./data/osm_test_data/named_address.osm", mwmName);
+  BuildFB("./data/test_data/osm/named_address.osm", mwmName);
 
   uint32_t const addrType = classif().GetTypeByPath({"building", "address"});
 
@@ -1060,7 +1060,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Place_State)
 
   std::string const mwmName = "State";
   std::string const worldMwmName = WORLD_FILE_NAME;
-  BuildFB("./data/osm_test_data/place_state.osm", mwmName, true /* makeWorld */);
+  BuildFB("./data/test_data/osm/place_state.osm", mwmName, true /* makeWorld */);
 
   size_t states = 0;
 
@@ -1093,7 +1093,7 @@ UNIT_CLASS_TEST(TestRawGenerator, CycleBarrier)
   uint32_t const barrierType = classif().GetTypeByPath({"barrier", "cycle_barrier"});
 
   std::string const mwmName = "CycleBarrier";
-  BuildFB("./data/osm_test_data/cycle_barrier.osm", mwmName, false /* makeWorld */);
+  BuildFB("./data/test_data/osm/cycle_barrier.osm", mwmName, false /* makeWorld */);
 
   size_t barriersCount = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
@@ -1138,10 +1138,10 @@ UNIT_CLASS_TEST(TestRawGenerator, Addr_Street_Place)
     bool m_checkStreet, m_checkPlace;
   };
   TestData const arrFiles[] = {
-    { "./data/osm_test_data/addr_street_place.osm", 1, true, true },
-    { "./data/osm_test_data/addr_street_very_far.osm", 2, true, false },
-    { "./data/osm_test_data/zelenograd.osm", 1, false, true },
-    { "./data/osm_test_data/addr_area_street.osm", 1, true, false },
+    { "./data/test_data/osm/addr_street_place.osm", 1, true, true },
+    { "./data/test_data/osm/addr_street_very_far.osm", 2, true, false },
+    { "./data/test_data/osm/zelenograd.osm", 1, false, true },
+    { "./data/test_data/osm/addr_area_street.osm", 1, true, false },
   };
 
   for (auto const & data : arrFiles)
@@ -1185,7 +1185,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Area_Relation_Bad)
 {
   std::string const mwmName = "AreaRel";
 
-  BuildFB("./data/osm_test_data/area_relation_bad.osm", mwmName);
+  BuildFB("./data/test_data/osm/area_relation_bad.osm", mwmName);
   size_t count = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)
   {
@@ -1220,7 +1220,7 @@ UNIT_CLASS_TEST(TestRawGenerator, Railway_Station)
   std::string const mwmName = "Railway";
   auto const & cl = classif();
 
-  BuildFB("./data/osm_test_data/railway_station.osm", mwmName);
+  BuildFB("./data/test_data/osm/railway_station.osm", mwmName);
 
   size_t count = 0;
   ForEachFB(mwmName, [&](feature::FeatureBuilder const & fb)

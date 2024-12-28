@@ -33,8 +33,7 @@ public:
   template<typename T>
   T * CastFactory()
   {
-    ASSERT(dynamic_cast<T *>(m_factory) != nullptr, ());
-    return static_cast<T *>(m_factory);
+    return dynamic_cast<T *>(m_factory);
   }
 
   void WaitForInitialization(dp::GraphicsContext * context) override;

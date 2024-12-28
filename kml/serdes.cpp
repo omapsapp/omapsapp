@@ -59,14 +59,6 @@ std::string_view constexpr kExtendedDataFooter =
 
 std::string const kCompilationFooter = "</" + kCompilation + ">\n";
 
-std::string GetLocalizableString(LocalizableString const & s, int8_t lang)
-{
-  auto const it = s.find(lang);
-  if (it == s.cend())
-    return {};
-  return it->second;
-}
-
 PredefinedColor ExtractPlacemarkPredefinedColor(std::string const & s)
 {
   if (s == "#placemark-red")
@@ -335,14 +327,17 @@ void SaveCategoryData(Writer & writer, CategoryData const & categoryData,
       SaveStyle(writer, GetStyleForPredefinedColor(static_cast<PredefinedColor>(i)), kIndent0);
 
     // Use CDATA if we have special symbols in the name.
-    writer << kIndent2 << "<name>";
-    SaveStringWithCDATA(writer, GetLocalizableString(categoryData.m_name, kDefaultLang));
-    writer << "</name>\n";
+    if (auto name = GetDefaultLanguage(categoryData.m_name))
+    {
+      writer << kIndent2 << "<name>";
+      SaveStringWithCDATA(writer, *name);
+      writer << "</name>\n";
+    }
 
-    if (!categoryData.m_description.empty())
+    if (auto const description = GetDefaultLanguage(categoryData.m_description))
     {
       writer << kIndent2 << "<description>";
-      SaveStringWithCDATA(writer, GetLocalizableString(categoryData.m_description, kDefaultLang));
+      SaveStringWithCDATA(writer, *description);
       writer << "</description>\n";
     }
 
@@ -432,10 +427,10 @@ void SaveBookmarkData(Writer & writer, BookmarkData const & bookmarkData)
   SaveStringWithCDATA(writer, GetPreferredBookmarkName(bookmarkData, defaultLang));
   writer << "</name>\n";
 
-  if (!bookmarkData.m_description.empty())
+  if (auto const description = GetDefaultLanguage(bookmarkData.m_description))
   {
     writer << kIndent4 << "<description>";
-    SaveStringWithCDATA(writer, GetLocalizableString(bookmarkData.m_description, kDefaultLang));
+    SaveStringWithCDATA(writer, *description);
     writer << "</description>\n";
   }
 
@@ -589,14 +584,17 @@ void SaveTrackExtendedData(Writer & writer, TrackData const & trackData)
 void SaveTrackData(Writer & writer, TrackData const & trackData)
 {
   writer << kIndent2 << "<Placemark>\n";
-  writer << kIndent4 << "<name>";
-  SaveStringWithCDATA(writer, GetLocalizableString(trackData.m_name, kDefaultLang));
-  writer << "</name>\n";
+  if (auto name = GetDefaultLanguage(trackData.m_name))
+  {
+    writer << kIndent4 << "<name>";
+    SaveStringWithCDATA(writer, *name);
+    writer << "</name>\n";
+  }
 
-  if (!trackData.m_description.empty())
+  if (auto const description = GetDefaultLanguage(trackData.m_description))
   {
     writer << kIndent4 << "<description>";
-    SaveStringWithCDATA(writer, GetLocalizableString(trackData.m_description, kDefaultLang));
+    SaveStringWithCDATA(writer, *description);
     writer << "</description>\n";
   }
 
@@ -1065,7 +1063,10 @@ void KmlParser::Pop(std::string_view tag)
     auto & lines = m_geometry.m_lines;
     ASSERT(!lines.empty(), ());
     if (lines.back().size() < 2)
+    {
       lines.pop_back();
+      m_geometry.m_timestamps.pop_back();
+    }
   }
   else if (IsProcessTrackCoord())
   {

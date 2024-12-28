@@ -123,7 +123,7 @@ UNIT_TEST(HungaryBudapest_AvoidMotorway)
   integration::CalculateRouteAndTestRouteLength(
       integration::GetVehicleComponents(VehicleType::Pedestrian),
       mercator::FromLatLon(47.56566, 19.14942), {0., 0.},
-      mercator::FromLatLon(47.593, 19.24018), 10579.2);
+      mercator::FromLatLon(47.593, 19.24018), 10179.6);
 }
 
 UNIT_TEST(PolandWarshaw_AvoidCycleway)

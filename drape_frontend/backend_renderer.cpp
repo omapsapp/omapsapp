@@ -400,7 +400,12 @@ void BackendRenderer::AcceptMessage(ref_ptr<Message> message)
       m_readManager->Allow3dBuildings(msg->Allow3dBuildings());
       break;
     }
-
+  case Message::Type::SetMapLangIndex:
+    {
+      ref_ptr<SetMapLangIndexMessage> msg = message;
+      m_readManager->SetMapLangIndex(msg->MapLangIndex());
+      break;
+    }
   case Message::Type::RequestSymbolsSize:
     {
       ref_ptr<RequestSymbolsSizeMessage> msg = message;
@@ -616,10 +621,8 @@ void BackendRenderer::AcceptMessage(ref_ptr<Message> message)
       CHECK(m_context != nullptr, ());
       m_texMng->InvalidateArrowTexture(
           m_context,
-          m_arrow3dCustomDecl.has_value() ? m_arrow3dCustomDecl->m_arrowMeshTexturePath
-                                          : std::nullopt,
-          m_arrow3dCustomDecl.has_value() ? m_arrow3dCustomDecl->m_loadFromDefaultResourceFolder
-                                          : false);
+          m_arrow3dCustomDecl ? m_arrow3dCustomDecl->m_arrowMeshTexturePath : std::string(),
+          m_arrow3dCustomDecl ? m_arrow3dCustomDecl->m_loadFromDefaultResourceFolder : false);
 
       // Preload mesh data.
       m_arrow3dPreloadedData = Arrow3d::PreloadMesh(m_arrow3dCustomDecl, m_texMng);
@@ -727,7 +730,7 @@ void BackendRenderer::Routine::Do()
     m_renderer.IterateRenderLoop();
   m_renderer.ReleaseResources();
 }
-  
+
 void BackendRenderer::RenderFrame()
 {
   CHECK(m_context != nullptr, ());
@@ -762,11 +765,11 @@ void BackendRenderer::InitContextDependentResources()
   params.m_glyphMngParams.m_whitelist = "fonts_whitelist.txt";
   params.m_glyphMngParams.m_blacklist = "fonts_blacklist.txt";
   GetPlatform().GetFontNames(params.m_glyphMngParams.m_fonts);
-  if (m_arrow3dCustomDecl.has_value())
+
+  if (m_arrow3dCustomDecl)
   {
     params.m_arrowTexturePath = m_arrow3dCustomDecl->m_arrowMeshTexturePath;
-    params.m_arrowTextureUseDefaultResourceFolder =
-        m_arrow3dCustomDecl->m_loadFromDefaultResourceFolder;
+    params.m_arrowTextureUseDefaultResourceFolder = m_arrow3dCustomDecl->m_loadFromDefaultResourceFolder;
   }
 
   CHECK(m_context != nullptr, ());

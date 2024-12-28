@@ -10,6 +10,8 @@
 #include "platform/measurement_utils.hpp"
 #include "platform/preferred_languages.hpp"
 #include "platform/utm_mgrs_utils.hpp"
+#include "platform/distance.hpp"
+#include "platform/duration.hpp"
 
 #include "geometry/mercator.hpp"
 
@@ -41,7 +43,7 @@ void Info::SetFromFeatureType(FeatureType & ft)
   auto const mwmInfo = GetID().m_mwmId.GetInfo();
   if (mwmInfo)
   {
-    feature::GetPreferredNames({ m_name, mwmInfo->GetRegionData(), languages::GetCurrentNorm(),
+    feature::GetPreferredNames({ m_name, mwmInfo->GetRegionData(), languages::GetCurrentMapLanguage(),
                                true /* allowTranslit */} , out);
   }
 
@@ -244,6 +246,20 @@ void Info::SetCustomName(std::string const & name)
     m_uiTitle = name;
 
   m_customName = name;
+}
+
+void Info::SetTitlesForTrack(Track const & track)
+{
+  m_uiTitle = track.GetName();
+  m_uiSubtitle = m_bookmarkCategoryName;
+
+  std::vector<std::string> statistics;
+  auto const length = track.GetLengthMeters();
+  auto const duration = track.GetDurationInSeconds();
+  statistics.push_back(platform::Distance::CreateFormatted(length).ToString());
+  if (duration > 0)
+    statistics.push_back(platform::Duration(duration).GetPlatformLocalizedString());
+  m_uiTrackStatistics = strings::JoinStrings(statistics, feature::kFieldsSeparator);
 }
 
 void Info::SetCustomNames(std::string const & title, std::string const & subtitle)

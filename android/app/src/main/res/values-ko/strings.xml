@@ -290,6 +290,10 @@
     <string name="google_play_services">Google Play 위치 서비스</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">블루투스, WiFi 또는 모바일 네트워크를 통해 대략적인 위치를 빠르게 파악할 수 있습니다</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com 호텔 링크</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Kayak.com에 숙소가 등록된 호텔의 사진, 후기, 예약 링크가 표시됩니다. 이러한 링크를 통해 예약할 때마다 받는 추천 보너스는 Organic Maps의 개발에 사용됩니다.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">경로를 따라 지도 다운로드</string>
     <!-- Text for routing error dialog -->
@@ -468,7 +472,10 @@
     <string name="message_invalid_feature_position">목적지를 이곳에서 찾을 수 없습니다</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">커뮤니티에서 만든 오픈스트리트맵 데이터(%s 기준). 지도를 편집하고 업데이트하는 방법에 대한 자세한 내용은 OpenStreetMap.org에서 확인하세요.</string>
-    <string name="login_to_make_edits_visible">로그인하여 다른 사용자가 변경한 내용을 볼 수 있도록 하십시오.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">오픈스트리트맵(OSM)은 무료 오픈스트리트맵을 구축하기 위한 커뮤니티 프로젝트입니다. 오가닉 맵의 지도 데이터의 주요 소스이며 위키백과와 유사하게 작동합니다. 장소를 추가하거나 편집하면 전 세계 수백만 명의 사용자가 사용할 수 있습니다.
+\n커뮤니티에 참여하여 모두를 위한 더 나은 지도를 만드는 데 도움을 주세요!</string>
+    <string name="login_to_make_edits_visible">오픈스트리트맵 계정을 만들거나 로그인하여 지도 편집 내용을 전 세계에 공개하세요.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%2$d중의 %1$d</string>
     <string name="download_over_mobile_header">셀룰러 네트워크 접속을 사용하여 다운로드하시겠습니까?</string>
@@ -488,9 +495,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">수정한 내용은 공개 <a href="https://wiki.openstreetmap.org/wiki/Ko:OpenStreetMap_소개">OpenStreetMap</a> 데이터베이스에 업로드됩니다. 개인 정보나 저작권이 있는 정보는 추가하지 마세요.</string>
     <string name="editor_more_about_osm">OpenStreetMap 정보</string>
-    <string name="editor_operator">소유자</string>
+    <string name="editor_osm_history">편집 기록</string>
+    <string name="editor_osm_notes">지도 데이터 노트</string>
+    <string name="editor_operator">연산자</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">소유자: %s</string>
+    <string name="operator">연산자: %s</string>
     <string name="editor_category_unsuitable_title">적합한 카테고리를 찾을 수 없나요?</string>
     <string name="editor_category_unsuitable_text">오가닉 지도에서는 단순한 포인트 카테고리만 추가할 수 있으므로 도시, 도로, 호수, 건물 윤곽선 등은 추가할 수 없습니다. 이러한 카테고리는 <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> 에 직접 추가하세요. 자세한 단계별 지침은 <a href="https://organicmaps.app/faq/editing/advanced-map-editing">가이드</a>를 참조하세요.</string>
     <string name="downloader_no_downloaded_maps_title">지도를 다운로드하지 않았습니다</string>
@@ -509,6 +518,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">t</string>
     <string name="minute">min</string>
+    <string name="day">일</string>
     <string name="placepage_more_button">자세히</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">사진, 리뷰, 예약</string>
@@ -516,6 +526,8 @@
     <string name="dialog_kayak_disclaimer">이 링크를 통해 예약할 때마다 받는 추천 보너스는 오가닉맵 개발에 사용됩니다.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak의 세부 정보</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak 비활성화</string>
     <string name="placepage_edit_bookmark_button">즐겨찾기 편집</string>
     <string name="editor_comment_hint">설명…</string>
     <string name="editor_reset_edits_message">지역 변경 사항을 재설정하시겠습니까?</string>
@@ -570,7 +582,7 @@
     <string name="routing_add_start_point">검색을 사용하거나 지도를 탭하여 경로 시작점을 추가합니다</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">검색을 사용하거나 지도를 탭하여 목적지 지점을 추가합니다</string>
-    <string name="placepage_remove_stop">제거</string>
+    <string name="placepage_remove_stop">정류장 제거</string>
     <string name="placepage_add_stop">스톱 추가</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">모든 지도 편집 내용을 자동으로 업로드하려면 오픈스트리트맵에 로그인하세요. 자세히 알아보기 <a href="https://github.com/organicmaps/organicmaps/issues/6144">여기</a>.</string>
@@ -718,8 +730,8 @@
     <string name="isolines_location_error_dialog">이 지역의 지형 레이어는 아직 사용할 수 없습니다</string>
     <string name="elevation_profile_ascent">올라가기</string>
     <string name="elevation_profile_descent">내려가기</string>
-    <string name="elevation_profile_minaltitude">산 최소 높이</string>
-    <string name="elevation_profile_maxaltitude">산 최대 높이</string>
+    <string name="elevation_profile_min_elevation">최소 높이</string>
+    <string name="elevation_profile_max_elevation">최대 높이</string>
     <string name="elevation_profile_difficulty">난이도</string>
     <string name="elevation_profile_distance">거리:</string>
     <string name="elevation_profile_time">소비 시간:</string>
@@ -741,7 +753,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">소프트웨어 개발자를 알고 있다면 필요한 기능을 구현하도록 요청할 수 있습니다.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">지도의 아무 곳이나 길게 탭하여 선택할 수 있다는 것을 알고 계셨나요?</string>
+    <string name="app_tip_04">지도의 아무 곳이나 탭하여 원하는 항목을 선택합니다. 길게 탭하면 인터페이스를 숨기고 다시 표시할 수 있습니다.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">지도에서 현재 위치를 선택할 수 있다는 것을 알고 계셨나요?</string>
     <!-- App tip #06 -->
@@ -811,7 +823,11 @@
     <string name="track_recording_toast_nothing_to_save">경로가 비어 있음 - 저장할 항목이 없음</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">장치에 적합한 앱이 설치되어 있지 않아 폴더 선택 대화 상자를 표시할 수 없습니다. 파일 관리자 앱을 설치한 후 다시 시도하세요</string>
+    <string name="choose_color">색상 선택</string>
+    <string name="edit_track">경로 편집</string>
     <string name="uri_open_location_failed">위치를 열 수 있는 앱이 설치되어 있지 않습니다.</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">내비게이션의 자동</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">주소/블록</string>
@@ -924,6 +940,7 @@
     <string name="type.amenity.police">경찰</string>
     <string name="type.amenity.post_box">우편함</string>
     <string name="type.amenity.post_office">우체국</string>
+    <string name="type.amenity.prison">감옥</string>
     <string name="type.amenity.pub">술집</string>
     <string name="type.amenity.public_bookcase">도서 교환</string>
 
@@ -966,6 +983,7 @@
     <string name="type.amenity.waste_basket">쓰레기통</string>
     <string name="type.amenity.waste_disposal">휴지통</string>
     <string name="type.amenity.water_point">상수도</string>
+    <string name="type.amenity.water_point.drinking_water_no">상수도</string>
     <string name="type.barrier.block">블록</string>
     <string name="type.barrier.bollard">기둥</string>
     <string name="type.barrier.border_control">국경통제소</string>
@@ -996,7 +1014,7 @@
     <string name="type.building.has_parts">건물</string>
     <string name="type.building_part">건물</string>
     <string name="type.building.garage">차고</string>
-    <string name="type.building.train_station">기차역</string>
+    <string name="type.building.train_station">역 빌딩</string>
     <string name="type.cemetery.grave">무덤</string>
     <string name="type.craft">공예</string>
     <string name="type.craft.beekeeper">양봉가</string>
@@ -1378,8 +1396,10 @@
     <string name="type.man_made.tower">타워</string>
     <string name="type.man_made.tower.communication">커뮤니케이션 타워</string>
     <string name="type.man_made.water_tap">수도꼭지</string>
+    <string name="type.man_made.water_tap.drinking_water_no">수도꼭지</string>
     <string name="type.man_made.water_tower">급수탑</string>
     <string name="type.man_made.water_well">우물</string>
+    <string name="type.man_made.water_well.drinking_water_no">우물</string>
     <string name="type.man_made.windmill">풍차</string>
     <string name="type.military.bunker">벙커</string>
     <string name="type.natural">자연</string>
@@ -1419,6 +1439,7 @@
     <string name="type.natural.rock">암석</string>
     <string name="type.natural.scrub">관목지</string>
     <string name="type.natural.spring">샘</string>
+    <string name="type.natural.spring.drinking_water_no">샘</string>
     <string name="type.natural.strait">해협</string>
     <string name="type.natural.tree_row">나무 행</string>
     <string name="type.natural.vineyard">포도원</string>
@@ -1512,6 +1533,7 @@
     <string name="type.railway.station">기차역</string>
     <string name="type.railway.station.funicular">케이블카</string>
     <string name="type.railway.station.light_rail">기차역</string>
+    <string name="type.railway.station.light_rail.berlin">기차역</string>
     <string name="type.railway.station.light_rail.london">기차역</string>
     <string name="type.railway.station.light_rail.porto">기차역</string>
     <string name="type.railway.station.monorail">기차역</string>
@@ -1554,6 +1576,7 @@
     <string name="type.railway.station.subway.hamburg">지하철</string>
     <string name="type.railway.station.subway.helsinki">지하철</string>
     <string name="type.railway.station.subway.hiroshima">지하철</string>
+    <string name="type.railway.station.subway.hongkong">지하철</string>
     <string name="type.railway.station.subway.isfahan">지하철</string>
     <string name="type.railway.station.subway.istanbul">지하철</string>
     <string name="type.railway.station.subway.izmir">지하철</string>
@@ -1607,6 +1630,7 @@
     <string name="type.railway.station.subway.sendai">지하철</string>
     <string name="type.railway.station.subway.sf">지하철</string>
     <string name="type.railway.station.subway.shanghai">지하철</string>
+    <string name="type.railway.station.subway.shenzhen">지하철</string>
     <string name="type.railway.station.subway.shiraz">지하철</string>
     <string name="type.railway.station.subway.singapore">지하철</string>
     <string name="type.railway.station.subway.sofia">지하철</string>
@@ -1666,6 +1690,7 @@
     <string name="type.railway.subway_entrance.hamburg">지하철 입구</string>
     <string name="type.railway.subway_entrance.helsinki">지하철 입구</string>
     <string name="type.railway.subway_entrance.hiroshima">지하철 입구</string>
+    <string name="type.railway.subway_entrance.hongkong">지하철 입구</string>
     <string name="type.railway.subway_entrance.isfahan">지하철 입구</string>
     <string name="type.railway.subway_entrance.istanbul">지하철 입구</string>
     <string name="type.railway.subway_entrance.izmir">지하철 입구</string>
@@ -1719,6 +1744,7 @@
     <string name="type.railway.subway_entrance.sendai">지하철 입구</string>
     <string name="type.railway.subway_entrance.sf">지하철 입구</string>
     <string name="type.railway.subway_entrance.shanghai">지하철 입구</string>
+    <string name="type.railway.subway_entrance.shenzhen">지하철 입구</string>
     <string name="type.railway.subway_entrance.shiraz">지하철 입구</string>
     <string name="type.railway.subway_entrance.singapore">지하철 입구</string>
     <string name="type.railway.subway_entrance.sofia">지하철 입구</string>
@@ -1804,6 +1830,7 @@
     <string name="type.shop.optician">안경점 의</string>
     <string name="type.shop.outdoor">아웃도어 장비</string>
     <string name="type.shop.outpost">픽업 장소</string>
+    <string name="type.shop.pasta">파스타 가게</string>
     <string name="type.shop.pastry">패스트리</string>
     <string name="type.shop.pawnbroker">전당포</string>
     <string name="type.shop.pet">펫샵</string>
@@ -1899,7 +1926,13 @@
     <string name="type.tourism.artwork.sculpture">작품</string>
     <string name="type.tourism.artwork.statue">작품</string>
     <string name="type.tourism.attraction">관광 명소</string>
+    <string name="type.attraction.amusement_ride">놀이기구</string>
     <string name="type.attraction.animal">동물 인클로저</string>
+    <string name="type.attraction.carousel">캐러셀</string>
+    <string name="type.attraction.historic">역사적인 명소</string>
+    <string name="type.attraction.maze">미로</string>
+    <string name="type.attraction.roller_coaster">롤러 코스터</string>
+    <string name="type.attraction.water_slide">워터 슬라이드</string>
     <string name="type.tourism.attraction.specified">관광 명소</string>
     <string name="type.tourism.camp_site">캠핑</string>
     <string name="type.tourism.caravan_site">카라반 사용가능 캠핑장</string>

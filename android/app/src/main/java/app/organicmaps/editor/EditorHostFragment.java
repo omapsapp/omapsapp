@@ -261,16 +261,6 @@ public class EditorHostFragment extends BaseMwmToolbarFragment implements View.O
                              .commit();
   }
 
-  protected void editCategory()
-  {
-    if (!mIsNewObject)
-      return;
-
-    final Activity host = requireActivity();
-    host.finish();
-    startActivity(new Intent(host, FeatureCategoryActivity.class));
-  }
-
   private void showSearchControls(boolean showSearch)
   {
     ((SearchToolbarController) getToolbarController()).showSearchControls(showSearch);
@@ -372,7 +362,7 @@ public class EditorHostFragment extends BaseMwmToolbarFragment implements View.O
   private void showLoginDialog()
   {
     startActivity(new Intent(requireContext(), OsmLoginActivity.class));
-    Utils.navigateToParent(requireActivity());
+    requireActivity().finish();
   }
 
   private void saveNote()

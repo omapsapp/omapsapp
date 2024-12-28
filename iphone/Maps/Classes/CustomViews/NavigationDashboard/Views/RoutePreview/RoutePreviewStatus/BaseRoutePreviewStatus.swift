@@ -85,6 +85,7 @@ final class BaseRoutePreviewStatus: SolidTouchView {
   }
 
   private func configManageRouteButton(_ button: UIButton) {
+    button.setImagePadding(8)
     button.setTitle(L("planning_route_manage_route"), for: .normal)
   }
 

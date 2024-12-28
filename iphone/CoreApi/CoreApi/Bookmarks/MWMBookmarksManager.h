@@ -1,9 +1,10 @@
+#import <CoreLocation/CoreLocation.h>
+
 #import "MWMTypes.h"
 
 #import "MWMBookmarksObserver.h"
 #import "PlacePageBookmarkData.h"
 
-@class CLLocation;
 @class MWMBookmark;
 @class MWMBookmarkGroup;
 @class MWMBookmarksSection;
@@ -157,7 +158,7 @@ NS_SWIFT_NAME(BookmarksManager)
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable("call +manager instead")));
 + (instancetype) new __attribute__((unavailable("call +manager instead")));
 
-- (void)setElevationActivePoint:(double)distance trackId:(uint64_t)trackId;
+- (void)setElevationActivePoint:(CLLocationCoordinate2D)point distance:(double)distance trackId:(uint64_t)trackId;
 - (void)setElevationActivePointChanged:(uint64_t)trackId callback:(ElevationPointChangedBlock)callback;
 - (void)resetElevationActivePointChanged;
 - (void)setElevationMyPositionChanged:(uint64_t)trackId callback:(ElevationPointChangedBlock)callback;

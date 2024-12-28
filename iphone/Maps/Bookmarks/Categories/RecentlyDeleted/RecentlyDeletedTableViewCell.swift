@@ -6,13 +6,6 @@ final class RecentlyDeletedTableViewCell: UITableViewCell {
     let deletionDate: Date
   }
 
-  private static let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .medium
-    formatter.timeStyle = .medium
-    return formatter
-  }()
-
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
   }
@@ -24,7 +17,9 @@ final class RecentlyDeletedTableViewCell: UITableViewCell {
 
   func configureWith(_ viewModel: ViewModel) {
     textLabel?.text = viewModel.fileName
-    detailTextLabel?.text = Self.dateFormatter.string(from: viewModel.deletionDate)
+    detailTextLabel?.text = DateTimeFormatter.dateString(from: viewModel.deletionDate,
+                                                         dateStyle: .medium,
+                                                         timeStyle: .medium)
   }
 }
 

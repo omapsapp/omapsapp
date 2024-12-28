@@ -16,8 +16,7 @@
 
 namespace
 {
-// You can clone data from repo https://github.com/organicmaps/world_feed_integration_tests_data
-std::string const kFeedsSubdir = "world_feed_integration_tests_data";
+std::string const kFeedsSubdir = "test_data/world_feed_integration_tests_data";
 }  // namespace
 
 namespace transit

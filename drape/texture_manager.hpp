@@ -1,7 +1,6 @@
 #pragma once
 
 #include "drape/color.hpp"
-#include "drape/font_texture.hpp"
 #include "drape/glyph_manager.hpp"
 #include "drape/pointers.hpp"
 #include "drape/stipple_pen_resource.hpp"   // for PenPatternT
@@ -73,7 +72,7 @@ public:
     std::string m_colors;
     std::string m_patterns;
     GlyphManager::Params m_glyphMngParams;
-    std::optional<std::string> m_arrowTexturePath;
+    std::string m_arrowTexturePath; // maybe empty if no custom texture
     bool m_arrowTextureUseDefaultResourceFolder = false;
   };
 
@@ -119,7 +118,7 @@ public:
   ref_ptr<Texture> GetSMAASearchTexture() const;
 
   void InvalidateArrowTexture(ref_ptr<dp::GraphicsContext> context,
-                              std::optional<std::string> const & texturePath = std::nullopt,
+                              std::string const & texturePath = {},
                               bool useDefaultResourceFolder = false);
   // Apply must be called on FrontendRenderer.
   void ApplyInvalidatedStaticTextures();

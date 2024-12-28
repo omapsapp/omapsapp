@@ -52,18 +52,23 @@ jobs:
       - name: Parallel submodules checkout
         run: git submodule update --depth 1 --init --recursive --jobs=$(($(sysctl -n hw.logicalcpu) * 20))
 
-      - name: Checkout private keys
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ secrets.PRIVATE_REPO }}
-          ssh-key: ${{ secrets.PRIVATE_SSH_KEY }}
-          ref: master
-          path: private.git
-
-      - name: Configure repo with private keys
+      - name: Restore beta keys
+        shell: bash
         run: |
-          ./configure.sh ./private.git
-          rm -rf ./private.git
+          mkdir -p xcode/keys
+          echo "$PRIVATE_H" | base64 -d > private.h
+          echo "$APPSTORE_JSON" | base64 -d > xcode/keys/appstore.json
+          echo "$CERTIFICATES_DEV_P12" | base64 -d > xcode/keys/CertificatesDev.p12
+          echo "$CERTIFICATES_DISTR_P12" | base64 -d > xcode/keys/CertificatesDistr.p12
+        env:
+          PRIVATE_H: ${{ secrets.PRIVATE_H }}
+          APPSTORE_JSON: ${{ secrets.APPSTORE_JSON }}
+          CERTIFICATES_DEV_P12: ${{ secrets.CERTIFICATES_DEV_P12 }}
+          CERTIFICATES_DISTR_P12: ${{ secrets.CERTIFICATES_DISTR_P12 }}
+
+      - name: Configure repository
+        shell: bash
+        run: ./configure.sh
 
       - name: Compile and upload to TestFlight
         run: |

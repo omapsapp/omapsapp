@@ -1,28 +1,28 @@
 #pragma once
 
-#include "map/track.hpp"
+#include "kml/types.hpp"
 
 #include "geometry/point_with_altitude.hpp"
+#include "geometry/latlon.hpp"
 
 #include <cstdint>
 #include <string>
 #include <vector>
 
-class ElevationInfo
+struct ElevationInfo
 {
 public:
   struct Point
   {
-    Point(double distance, geometry::Altitude altitude)
-      : m_distance(distance), m_altitude(altitude)
-    {
-    }
-
-    double m_distance;
-    geometry::Altitude m_altitude;
+    Point(geometry::PointWithAltitude point, double distance)
+    : m_point(point), m_distance(distance)
+    {}
+    const geometry::PointWithAltitude m_point;
+    const double m_distance;
   };
 
   using Points = std::vector<Point>;
+  using SegmentsDistances = std::vector<double>;
 
   enum Difficulty : uint8_t
   {
@@ -33,35 +33,31 @@ public:
   };
 
   ElevationInfo() = default;
-  explicit ElevationInfo(Track const & track);
+  explicit ElevationInfo(kml::MultiGeometry const & geometry);
 
-  kml::TrackId GetId() const { return m_id; };
-  std::string const & GetName() const { return m_name; }
   size_t GetSize() const { return m_points.size(); };
   Points const & GetPoints() const { return m_points; };
-  uint16_t GetAscent() const { return m_ascent; }
-  uint16_t GetDescent() const { return m_descent; }
-  uint16_t GetMinAltitude() const { return m_minAltitude; }
-  uint16_t GetMaxAltitude() const { return m_maxAltitude; }
+  uint32_t GetAscent() const { return m_ascent; }
+  uint32_t GetDescent() const { return m_descent; }
+  geometry::Altitude GetMinAltitude() const { return m_minAltitude; }
+  geometry::Altitude GetMaxAltitude() const { return m_maxAltitude; }
   uint8_t GetDifficulty() const { return m_difficulty; }
-  uint32_t GetDuration() const { return m_duration; }
+  SegmentsDistances const & GetSegmentsDistances() const { return m_segmentsDistances; };
 
 private:
-  kml::TrackId m_id = kml::kInvalidTrackId;
-  std::string m_name;
   // Points with distance from start of the track and altitude.
   Points m_points;
   // Ascent in meters.
-  uint16_t m_ascent = 0;
+  uint32_t m_ascent = 0;
   // Descent in meters.
-  uint16_t m_descent = 0;
+  uint32_t m_descent = 0;
   // Altitude in meters.
-  uint16_t m_minAltitude = 0;
+  geometry::Altitude m_minAltitude = 0;
   // Altitude in meters.
-  uint16_t m_maxAltitude = 0;
+  geometry::Altitude m_maxAltitude = 0;
   // Some digital difficulty level with value in range [0-kMaxDifficulty]
   // or kInvalidDifficulty when difficulty is not found or incorrect.
   Difficulty m_difficulty = Difficulty::Unknown;
-  // Duration in seconds.
-  uint32_t m_duration = 0;
+  // Distances to the start of each segment.
+  SegmentsDistances m_segmentsDistances;
 };

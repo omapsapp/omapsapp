@@ -1039,11 +1039,9 @@ UNIT_CLASS_TEST(MwmTestsFixture, Streets_Rank)
     };
 
     /// @todo Streets should be highwer. Now POIs additional rank is greater than Streets rank.
-    processRequest("Santa Fe ", 20);
-    /// @todo Prefix search gives POIs (Starbucks) near "Avenida Santa Fe". Some WTFs for street's ranking here:
-    /// - gives 'Full Prefix' name's rank
-    /// - gives m_matchedFraction: 0.777778, while 'st' should be counted for streets definitely
-    processRequest("Santa Fe st ", 12);
+    processRequest("Santa Fe ", 22);
+    // Rank looks good here, except the "Santa Fe" train station is on a first place.
+    processRequest("Santa Fe st ", 2);
   }
 
   {
@@ -1103,6 +1101,15 @@ UNIT_CLASS_TEST(MwmTestsFixture, Pois_Rank)
       // alt_name="Malabia"
       // name="Malabia XXX" - should take this name's rank
       EqualClassifType(Range(results, 0, 1), GetClassifTypes({{"railway", "station", "subway"}}));
+    }
+
+    {
+      auto request = MakeRequest("Parque Ciudad");
+      auto const & results = request->Results();
+      TEST_GREATER(results.size(), kPopularPoiResultsCount, ());
+
+      /// @todo Actually, 2 parks should be the first, but (in test mode only), we have suburb and subway (*Parque*).
+      TEST_EQUAL(CountClassifType(Range(results, 0, 5), classif().GetTypeByPath({"leisure", "park"})), 2, ());
     }
   }
 
@@ -1268,6 +1275,33 @@ UNIT_CLASS_TEST(MwmTestsFixture, PostOffice_Viewport)
   }
 }
 
+UNIT_CLASS_TEST(MwmTestsFixture, Family_Viewport)
+{
+  using namespace mercator;
+  auto const & cl = classif();
+
+  // Buenos Aires
+  ms::LatLon const center(-34.588943, -58.3988512);
+  SetViewportAndLoadMaps(center);
+
+  auto params = GetDefaultSearchParams("Family holiday ");
+  params.m_mode = search::Mode::Viewport;
+  params.m_categorialRequest = true;
+  params.m_maxNumResults = search::SearchParams::kDefaultNumResultsInViewport;
+
+  {
+    params.m_viewport = { LonToX(-58.4015885), LatToY(-34.5901233), LonToX(-58.396118), LatToY(-34.5876888) };
+
+    auto request = MakeRequest(params);
+    auto const & results = request->Results();
+    Range allRange(results, true /* all */);
+
+    TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"shop", "baby_goods"})), 1, ());
+    TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"shop", "toys"})), 1, ());
+    TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"leisure", "playground"})), 2, ());
+  }
+}
+
 UNIT_CLASS_TEST(MwmTestsFixture, NotAllTokens)
 {
   auto const & cl = classif();
@@ -1402,6 +1436,22 @@ UNIT_CLASS_TEST(MwmTestsFixture, CompleteSearch_DistantMWMs)
     auto const & results = request->Results();
     TEST_GREATER(results.size(), kPopularPoiResultsCount, ());
     EqualClassifType(Range(results, 0, 1), GetClassifTypes({{"natural", "volcano"}}));
+  }
+}
+
+UNIT_CLASS_TEST(MwmTestsFixture, Synonyms)
+{
+  // Buenos Aires
+  ms::LatLon const center(-34.6073377, -58.4432843);
+  SetViewportAndLoadMaps(center);
+
+  {
+    auto request = MakeRequest("ntra sra de asuncion zelaya");
+    auto const & results = request->Results();
+    TEST_GREATER(results.size(), kPopularPoiResultsCount, ());
+
+    TEST_EQUAL(results[0].GetFeatureType(), classif().GetTypeByPath({"landuse", "residential"}), ());
+    TEST_EQUAL(results[0].GetString(), "Barrio Nuestra Señora de la Asunción", ());
   }
 }
 

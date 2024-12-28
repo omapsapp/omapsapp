@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1">
+<metadata>
+  <name>My route</name>
+  <desc><![CDATA[You will see this in the document and can use reserved characters like < > & "]]></desc>
+</metadata>
+<wpt lat="48.209846" lon="16.376023">
+  <name>Point 1</name>
+  <desc>Point 1</desc>
+</wpt>
+<wpt lat="48.209847" lon="16.376028">
+  <name><![CDATA[Point cdata name ><&"]]></name>
+  <desc><![CDATA[Point cdata desc ><&"]]></desc>
+</wpt>
+<trk>
+  <name>Some random route</name>
+  <extensions>
+    <color>00FF00</color>
+  </extensions>
+  <trkseg>
+    <trkpt lat="48.209846" lon="16.376023">
+      <ele>123</ele>
+      <time>2010-10-30T10:11:14Z</time>
+    </trkpt>
+    <trkpt lat="48.209503" lon="16.381065">
+      <ele>456</ele>
+      <time>2010-10-30T10:11:15Z</time>
+    </trkpt>
+  </trkseg>
+  <trkseg>
+    <trkpt lat="48.209846" lon="16.376023">
+      <ele>123</ele>
+    </trkpt>
+    <trkpt lat="48.209503" lon="16.381065">
+      <ele>456</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+<trk>
+  <name><![CDATA[Track cdata name ><&"]]></name>
+  <desc><![CDATA[Track cdata desc ><&"]]></desc>
+  <trkseg>
+    <trkpt lat="48.209846" lon="16.376023">
+      <ele>123</ele>
+    </trkpt>
+    <trkpt lat="48.209503" lon="16.381065">
+      <ele>456</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

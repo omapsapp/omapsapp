@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Doneer om samen de beste kaarten te bouwen!";
 
+"already_donated" = "Reeds gedoneerd";
+
+"remind_me_later" = "Herinner later";
+
+"support_organic_maps" = "Ondersteun Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Auteursrechten";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Door de gemeenschap gemaakte OpenStreetMap-gegevens vanaf %@. Lees meer over hoe je de kaart kunt bewerken en bijwerken op OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Log in zodat andere gebruikers kunnen zien wat u hebt gewijzigd.";
+"login_to_make_edits_visible" = "Maak een OpenStreetMap account aan of log in om uw kaartbewerkingen voor de wereld te publiceren.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Om te kunnen downloaden, heb je meer ruimte nodig. Verwijder overbodige gegevens.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Meer over OpenStreetMap";
 
-"editor_operator" = "Uitvoerder";
+"editor_operator" = "Exploitant";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Uitvoerder: %@";
+"operator" = "Exploitant: %@";
+
+"editor_category_unsuitable_title" = "Kun je geen geschikte categorie vinden?";
+
+"editor_category_unsuitable_text" = "Met Organic Maps kun je alleen eenvoudige puntcategorieën toevoegen, dus geen steden, wegen, meren, contouren van gebouwen, enzovoort. Voeg zulke categorieën direct toe aan <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Bekijk onze <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">gids</a> voor gedetailleerde stap voor stap instructies.";
 
 "downloader_no_downloaded_maps_title" = "U hebt geen kaarten gedownload";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "Meer";
 
 "book_button" = "Boek";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Details op Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Kayak uitschakelen";
 
 "placepage_call_button" = "Bel";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Plan";
 
-"placepage_remove_stop" = "Verwijder";
+"placepage_remove_stop" = "Verwijder tussenstop";
 
 "planning_route_remove_title" = "Sleep hier om te verwijderen";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Daling";
 
-"elevation_profile_minaltitude" = "Min. hoogte";
+"elevation_profile_min_elevation" = "Min. hoogte";
 
-"elevation_profile_maxaltitude" = "Max. hoogte";
+"elevation_profile_max_elevation" = "Max. hoogte";
 
 "elevation_profile_difficulty" = "Moeilijkheid";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Verwijder traject";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Weet u zeker dat u deze track wilt verwijderen?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Trajectnaam";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Als u een softwareontwikkelaar kent, kunt u hem of haar vragen een functie te implementeren die u nodig heeft.";
 
 /* App tip #04 */
-"app_tip_04" = "Wist u dat u op elke plaats op de kaart lang kunt tikken om deze te selecteren?";
+"app_tip_04" = "Tik ergens op de kaart om iets te selecteren. Tik lang om de interface te verbergen en weer te geven.";
 
 /* App tip #05 */
 "app_tip_05" = "Wist u dat u uw huidige locatie op de kaart kunt selecteren?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Route is leeg - niets om op te slaan";
+
+"edit_track" = "Route bewerken";
 
 
 /********** Types **********/
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Waterpunt";
 
+"type.amenity.water_point.drinking_water_no" = "Waterpunt";
+
 "type.barrier" = "Barrière";
 
 "type.barrier.block" = "Blok";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garage";
 
-"type.building.train_station" = "Treinstation";
+"type.building.train_station" = "Stationsgebouw";
 
 "type.building.warehouse" = "Magazijn";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Waterkraan";
 
+"type.man_made.water_tap.drinking_water_no" = "Waterkraan";
+
 "type.man_made.water_tower" = "Watertoren";
 
 "type.man_made.water_well" = "Waterput";
+
+"type.man_made.water_well.drinking_water_no" = "Waterput";
 
 "type.man_made.windmill" = "Windmolen";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Kreupel bos";
 
 "type.natural.spring" = "Bron";
+
+"type.natural.spring.drinking_water_no" = "Bron";
 
 "type.natural.strait" = "Zeestraat";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Station";
 
+"type.railway.station.light_rail.berlin" = "Station";
+
 "type.railway.station.light_rail.london" = "Station";
 
 "type.railway.station.light_rail.porto" = "Station";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Metrostation";
 
 "type.railway.station.subway.hiroshima" = "Metrostation";
+
+"type.railway.station.subway.hongkong" = "Metrostation";
 
 "type.railway.station.subway.isfahan" = "Metrostation";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Metrostation";
 
 "type.railway.station.subway.shanghai" = "Metrostation";
+
+"type.railway.station.subway.shenzhen" = "Metrostation";
 
 "type.railway.station.subway.shiraz" = "Metrostation";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Metro ingang";
 
+"type.railway.subway_entrance.hongkong" = "Metro ingang";
+
 "type.railway.subway_entrance.isfahan" = "Metro ingang";
 
 "type.railway.subway_entrance.istanbul" = "Metro ingang";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Metro ingang";
 
 "type.railway.subway_entrance.shanghai" = "Metro ingang";
+
+"type.railway.subway_entrance.shenzhen" = "Metro ingang";
 
 "type.railway.subway_entrance.shiraz" = "Metro ingang";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Outdooruitrusting";
 
 "type.shop.outpost" = "Ophaalpunt";
+
+"type.shop.pasta" = "Deegwarenwinkel";
 
 "type.shop.pastry" = "Banketbakker";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Attractie";
 
+"type.attraction.amusement_ride" = "Prettocht";
+
 "type.attraction.animal" = "Dierenverblijf";
+
+"type.attraction.bumper_car" = "Botsauto's";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Reuzenrad";
+
+"type.attraction.historic" = "Historische attractie";
+
+"type.attraction.maze" = "Doolhof";
+
+"type.attraction.roller_coaster" = "Achtbaan";
+
+"type.attraction.water_slide" = "Waterglijbaan";
 
 "type.tourism.attraction.specified" = "Attractie";
 

@@ -114,6 +114,14 @@
 		D5B191CF2386C7E4009CD0D6 /* http_uploader_background.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D5B191CE2386C7E4009CD0D6 /* http_uploader_background.hpp */; };
 		EB60B4DC204C130300E4953B /* network_policy_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB60B4DB204C130300E4953B /* network_policy_ios.mm */; };
 		EB60B4DE204C175700E4953B /* network_policy_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = EB60B4DD204C175700E4953B /* network_policy_ios.h */; };
+		ED49D7402CEE438E004AF27E /* products.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49D73F2CEE438E004AF27E /* products.cpp */; };
+		ED49D7412CEE438E004AF27E /* products.hpp in Headers */ = {isa = PBXBuildFile; fileRef = ED49D73E2CEE438E004AF27E /* products.hpp */; };
+		ED49D7442CEE43A4004AF27E /* meta_config_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49D7422CEE43A4004AF27E /* meta_config_tests.cpp */; };
+		ED49D7452CEE43A4004AF27E /* products_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49D7432CEE43A4004AF27E /* products_tests.cpp */; };
+		ED965B252CD8F72E0049E39E /* duration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = ED965B242CD8F72A0049E39E /* duration.hpp */; };
+		ED965B272CD8F7810049E39E /* duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED965B262CD8F77D0049E39E /* duration.cpp */; };
+		ED965B472CDA52DB0049E39E /* duration_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED965B462CDA4EC00049E39E /* duration_tests.cpp */; };
+		ED965B482CDA575B0049E39E /* duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED965B262CD8F77D0049E39E /* duration.cpp */; };
 		F6DF73581EC9EAE700D8BA0B /* string_storage_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DF73561EC9EAE700D8BA0B /* string_storage_base.cpp */; };
 		F6DF73591EC9EAE700D8BA0B /* string_storage_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DF73561EC9EAE700D8BA0B /* string_storage_base.cpp */; };
 		F6DF735A1EC9EAE700D8BA0B /* string_storage_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6DF73561EC9EAE700D8BA0B /* string_storage_base.cpp */; };
@@ -252,6 +260,13 @@
 		D5B191CE2386C7E4009CD0D6 /* http_uploader_background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = http_uploader_background.hpp; sourceTree = "<group>"; };
 		EB60B4DB204C130300E4953B /* network_policy_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = network_policy_ios.mm; sourceTree = "<group>"; };
 		EB60B4DD204C175700E4953B /* network_policy_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = network_policy_ios.h; sourceTree = "<group>"; };
+		ED49D73E2CEE438E004AF27E /* products.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = products.hpp; sourceTree = "<group>"; };
+		ED49D73F2CEE438E004AF27E /* products.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = products.cpp; sourceTree = "<group>"; };
+		ED49D7422CEE43A4004AF27E /* meta_config_tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = meta_config_tests.cpp; sourceTree = "<group>"; };
+		ED49D7432CEE43A4004AF27E /* products_tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = products_tests.cpp; sourceTree = "<group>"; };
+		ED965B242CD8F72A0049E39E /* duration.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = duration.hpp; sourceTree = "<group>"; };
+		ED965B262CD8F77D0049E39E /* duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = duration.cpp; sourceTree = "<group>"; };
+		ED965B462CDA4EC00049E39E /* duration_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = duration_tests.cpp; sourceTree = "<group>"; };
 		F6DF73561EC9EAE700D8BA0B /* string_storage_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = string_storage_base.cpp; sourceTree = "<group>"; };
 		F6DF73571EC9EAE700D8BA0B /* string_storage_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = string_storage_base.hpp; sourceTree = "<group>"; };
 		FAA8389026BB48E9002E54C6 /* libcppjansson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcppjansson.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +325,9 @@
 		675340DE1C58C405002CF0D9 /* platform_tests */ = {
 			isa = PBXGroup;
 			children = (
+				ED49D7422CEE43A4004AF27E /* meta_config_tests.cpp */,
+				ED49D7432CEE43A4004AF27E /* products_tests.cpp */,
+				ED965B462CDA4EC00049E39E /* duration_tests.cpp */,
 				168EFCC12A30EB7400F71EE8 /* distance_tests.cpp */,
 				675341001C58C4C9002CF0D9 /* apk_test.cpp */,
 				675341011C58C4C9002CF0D9 /* country_file_tests.cpp */,
@@ -374,6 +392,8 @@
 		6753437A1A3F5CF500A0A8C3 /* platform */ = {
 			isa = PBXGroup;
 			children = (
+				ED965B242CD8F72A0049E39E /* duration.hpp */,
+				ED965B262CD8F77D0049E39E /* duration.cpp */,
 				1669C83E2A30DCD200530AD1 /* distance.cpp */,
 				1669C83F2A30DCD200530AD1 /* distance.hpp */,
 				675343861A3F5D5900A0A8C3 /* apple_location_service.mm */,
@@ -456,6 +476,8 @@
 				675343A71A3F5D5A00A0A8C3 /* servers_list.hpp */,
 				675343A81A3F5D5A00A0A8C3 /* settings.cpp */,
 				675343A91A3F5D5A00A0A8C3 /* settings.hpp */,
+				ED49D73E2CEE438E004AF27E /* products.hpp */,
+				ED49D73F2CEE438E004AF27E /* products.cpp */,
 				34C624BB1DABCCD100510300 /* socket_apple.mm */,
 				34C624BC1DABCCD100510300 /* socket.hpp */,
 				F6DF73561EC9EAE700D8BA0B /* string_storage_base.cpp */,
@@ -516,6 +538,7 @@
 				34C624BE1DABCCD100510300 /* socket.hpp in Headers */,
 				D50B2296238591570056820A /* http_payload.hpp in Headers */,
 				675343C11A3F5D5A00A0A8C3 /* location_service.hpp in Headers */,
+				ED965B252CD8F72E0049E39E /* duration.hpp in Headers */,
 				67AB92DD1B7B3D7300AB5194 /* mwm_version.hpp in Headers */,
 				675343CA1A3F5D5A00A0A8C3 /* platform_unix_impl.hpp in Headers */,
 				675343D21A3F5D5A00A0A8C3 /* servers_list.hpp in Headers */,
@@ -533,6 +556,7 @@
 				675343CD1A3F5D5A00A0A8C3 /* platform.hpp in Headers */,
 				6741250F1B4C00CC00A3E828 /* local_country_file.hpp in Headers */,
 				3D15ACE2214A707900F725D5 /* localization.hpp in Headers */,
+				ED49D7412CEE438E004AF27E /* products.hpp in Headers */,
 				D5B191CF2386C7E4009CD0D6 /* http_uploader_background.hpp in Headers */,
 				1669C8422A30DCD200530AD1 /* distance.hpp in Headers */,
 				3DE8B98F1DEC3115000E6083 /* network_policy.hpp in Headers */,
@@ -685,8 +709,10 @@
 				6741250A1B4C00CC00A3E828 /* country_file.cpp in Sources */,
 				4564FA7F2094978D0043CCFB /* remote_file.cpp in Sources */,
 				674125081B4C00CC00A3E828 /* country_defines.cpp in Sources */,
+				ED965B272CD8F7810049E39E /* duration.cpp in Sources */,
 				EB60B4DC204C130300E4953B /* network_policy_ios.mm in Sources */,
 				6741250E1B4C00CC00A3E828 /* local_country_file.cpp in Sources */,
+				ED49D7402CEE438E004AF27E /* products.cpp in Sources */,
 				670E8C761BB318AB00094197 /* platform_ios.mm in Sources */,
 				67A2526A1BB40E100063F8A8 /* platform_qt.cpp in Sources */,
 				56EB1EDE1C6B6E6C0022D831 /* mwm_traits.cpp in Sources */,
@@ -725,8 +751,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6783389E1C6DE59200FD6263 /* platform_test.cpp in Sources */,
+				ED49D7442CEE43A4004AF27E /* meta_config_tests.cpp in Sources */,
+				ED49D7452CEE43A4004AF27E /* products_tests.cpp in Sources */,
 				678338961C6DE59200FD6263 /* apk_test.cpp in Sources */,
 				678338991C6DE59200FD6263 /* jansson_test.cpp in Sources */,
+				ED965B482CDA575B0049E39E /* duration.cpp in Sources */,
 				6783389C1C6DE59200FD6263 /* location_test.cpp in Sources */,
 				678338981C6DE59200FD6263 /* get_text_by_id_tests.cpp in Sources */,
 				6783389A1C6DE59200FD6263 /* language_test.cpp in Sources */,
@@ -734,6 +763,7 @@
 				678338971C6DE59200FD6263 /* country_file_tests.cpp in Sources */,
 				678338951C6DE59200FD6263 /* testingmain.cpp in Sources */,
 				1669C8412A30DCD200530AD1 /* distance.cpp in Sources */,
+				ED965B472CDA52DB0049E39E /* duration_tests.cpp in Sources */,
 				44CAB5F62A1F926800819330 /* utm_mgrs_utils_tests.cpp in Sources */,
 				F6DF735A1EC9EAE700D8BA0B /* string_storage_base.cpp in Sources */,
 				168EFCC22A30EB7400F71EE8 /* distance_tests.cpp in Sources */,

@@ -51,7 +51,7 @@ jobs:
         shell: bash
         run: git submodule update --depth 1 --init --recursive --jobs=$(($(nproc) * 20))
 
-      - name: Configure in Open Source mode
+      - name: Configure repository
         shell: bash
         run: ./configure.sh
 
@@ -66,11 +66,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flavor: [WebDebug, FdroidBeta]
+        flavor: [WebDebug, FdroidDebug]
         include:
           - flavor: WebDebug
             arch: arm64
-          - flavor: FdroidBeta
+          - flavor: FdroidDebug
             arch: arm32
     # Cancels previous jobs if the same branch or PR was updated again.
     concurrency:
@@ -93,7 +93,7 @@ jobs:
         shell: bash
         run: git submodule update --depth 1 --init --recursive --jobs=$(($(nproc) * 20))
 
-      - name: Configure in Open Source mode
+      - name: Configure repository
         shell: bash
         run: ./configure.sh
 

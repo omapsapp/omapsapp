@@ -1,6 +1,8 @@
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <CoreApi/CoreApi.h>
+#import <CoreApi/Framework.h>
+#import <CoreApi/AppInfo.h>
+#import <CoreApi/MWMCommon.h>
 #import "MWMSearch+CoreSpotlight.h"
 #import "MWMSettings.h"
 

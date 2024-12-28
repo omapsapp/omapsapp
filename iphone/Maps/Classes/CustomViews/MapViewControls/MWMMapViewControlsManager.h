@@ -5,6 +5,7 @@
 
 @class MapViewController;
 @class BottomTabBarViewController;
+@class TrackRecordingViewController;
 @protocol MWMFeatureHolder;
 
 @interface MWMMapViewControlsManager : NSObject
@@ -18,7 +19,8 @@
 @property(nonatomic) MWMBottomMenuState menuState;
 @property(nonatomic) MWMBottomMenuState menuRestoreState;
 @property(nonatomic) BOOL isDirectionViewHidden;
-@property(nonatomic) BottomTabBarViewController *tabBarController;
+@property(nonatomic) BottomTabBarViewController * tabBarController;
+@property(nonatomic) TrackRecordingViewController * trackRecordingButton;
 
 - (instancetype)init __attribute__((unavailable("init is not available")));
 - (instancetype)initWithParentController:(MapViewController *)controller;

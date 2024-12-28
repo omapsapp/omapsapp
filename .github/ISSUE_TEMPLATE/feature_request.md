@@ -2,7 +2,7 @@
 name: Feature Request
 about: Suggest an idea for Organic Maps
 title: ''
-labels: [Enhancement]
+labels: []
 assignees: ''
 
 ---

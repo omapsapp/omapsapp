@@ -26,9 +26,19 @@
       android:orientation="vertical"
       android:padding="@dimen/margin_base"
       tools:ignore="ScrollViewSize">
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="@dimen/margin_half"
+          android:fontFamily="@string/robotoMedium"
+          android:text="@string/login_to_make_edits_visible"
+          android:textAppearance="@style/MwmTextAppearance.Body2"
+          android:textColor="?android:textColorPrimary" />
       <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_base">
         <ImageView
           android:id="@+id/osm_logo"
           android:layout_width="@dimen/osm_logo"
@@ -43,29 +53,19 @@
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="@dimen/margin_base"
+          android:autoLink="web"
           android:fontFamily="@string/robotoRegular"
-          android:text="@string/osm_presentation"
-          android:textAppearance="@style/MwmTextAppearance.Body2"
+          android:text="@string/login_osm_presentation"
+          android:textAppearance="@style/MwmTextAppearance.Body3"
           android:textColor="?android:textColorPrimary"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/osm_logo"
           app:layout_constraintTop_toTopOf="parent" />
       </androidx.constraintlayout.widget.ConstraintLayout>
-      <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_half"
-        android:autoLink="web"
-        android:fontFamily="@string/robotoMedium"
-        android:text="@string/login_to_make_edits_visible"
-        android:textAppearance="@style/MwmTextAppearance.Body2"
-        android:textColor="?android:textColorPrimary" />
       <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/osm_username_container"
         style="@style/MwmWidget.Editor.CustomTextInput"
-        android:layout_marginTop="@dimen/margin_half"
         android:textColorHint="?android:textColorSecondary"
         app:endIconMode="custom">
         <com.google.android.material.textfield.TextInputEditText

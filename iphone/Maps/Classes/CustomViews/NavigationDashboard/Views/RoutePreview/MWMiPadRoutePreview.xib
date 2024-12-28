@@ -39,7 +39,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opi-yT-xIZ">
                             <rect key="frame" x="72.5" y="12" width="175" height="24"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="DEFINE ROADS TO AVOID" image="ic_options_warning"/>
                             <connections>
                                 <action selector="onDrivingOptions:" destination="u2u-Vb-2eH" eventType="touchUpInside" id="x2p-AW-91V"/>
@@ -284,8 +283,6 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAs-km-8uw">
                                     <rect key="frame" x="20" y="12" width="127" height="24"/>
-                                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="ManageRoute" image="ic_24px_manager"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="medium14:MWMBlack"/>

@@ -13,14 +13,8 @@ typedef NS_ENUM(NSInteger, ElevationDifficulty) {
 @interface ElevationProfileData : NSObject
 
 @property(nonatomic, readonly) uint64_t trackId;
-@property(nonatomic, readonly) NSString *serverId;
-@property(nonatomic, readonly) NSUInteger ascent;
-@property(nonatomic, readonly) NSUInteger descent;
-@property(nonatomic, readonly) NSUInteger maxAttitude;
-@property(nonatomic, readonly) NSUInteger minAttitude;
 @property(nonatomic, readonly) ElevationDifficulty difficulty;
-@property(nonatomic, readonly) NSUInteger trackTime;
-@property(nonatomic, readonly) NSArray<ElevationHeightPoint *> *points;
+@property(nonatomic, readonly) NSArray<ElevationHeightPoint *> * points;
 @property(nonatomic, readonly) double activePoint;
 @property(nonatomic, readonly) double myPosition;
 

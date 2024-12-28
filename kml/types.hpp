@@ -15,9 +15,9 @@
 
 namespace kml
 {
+/// @note Important! Should be synced with android/app/src/main/java/app/organicmaps/bookmarks/data/Icon.java
 enum class PredefinedColor : uint8_t
 {
-  // Do not change the order because of binary serialization.
   None = 0,
   Red,
   Blue,
@@ -92,6 +92,7 @@ inline dp::Color ColorFromPredefinedColor(PredefinedColor color)
   case None:
   case Count: return ColorFromPredefinedColor(kml::PredefinedColor::Red);
   }
+  UNREACHABLE();
 }
 
 kml::PredefinedColor GetRandomPredefinedColor();
@@ -145,9 +146,9 @@ inline std::string DebugPrint(CompilationType compilationType)
   UNREACHABLE();
 }
 
+/// @note Important! Should be synced with android/app/src/main/java/app/organicmaps/bookmarks/data/Icon.java
 enum class BookmarkIcon : uint16_t
 {
-  // Do not change the order because of binary serialization.
   None = 0,
   Hotel,
   Animals,
@@ -176,6 +177,13 @@ enum class BookmarkIcon : uint16_t
   Viewpoint,
   Sport,
   Pub,
+  Art,
+  Bank,
+  Cafe,
+  Pharmacy,
+  Stadium,
+  Theatre,
+  Information,
 
   Count
 };
@@ -211,6 +219,13 @@ inline std::string ToString(BookmarkIcon icon)
   case Viewpoint: return "Viewpoint";
   case Sport: return "Sport";
   case Pub: return "Pub";
+  case Art: return "Art";
+  case Bank: return "Bank";
+  case Cafe: return "Cafe";
+  case Pharmacy: return "Pharmacy";
+  case Stadium: return "Stadium";
+  case Theatre: return "Theatre";
+  case Information: return "Information";
   case Count: return {};
   }
   UNREACHABLE();
@@ -372,7 +387,7 @@ struct MultiGeometry
 
   bool HasTimestamps() const;
   bool HasTimestampsFor(size_t lineIndex) const;
-  
+
   size_t GetNumberOfLinesWithouTimestamps() const;
   size_t GetNumberOfLinesWithTimestamps() const;
 };

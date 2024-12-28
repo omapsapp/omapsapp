@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "기부하여 최고의 지도를 함께 만들어 보세요!";
 
+"already_donated" = "기부완료";
+
+"remind_me_later" = "나중에 알림";
+
+"support_organic_maps" = "Organic Maps 지원하기";
+
 /* Button in the main Help dialog */
 "copyright" = "저작권";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "커뮤니티에서 만든 오픈스트리트맵 데이터(%@ 기준). 지도를 편집하고 업데이트하는 방법에 대한 자세한 내용은 OpenStreetMap.org에서 확인하세요.";
 
-"login_to_make_edits_visible" = "로그인하여 다른 사용자가 변경한 내용을 볼 수 있도록 하십시오.";
+"login_to_make_edits_visible" = "오픈스트리트맵 계정을 만들거나 로그인하여 지도 편집 내용을 전 세계에 공개하세요.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "다운로드하려면, 더 많은 여유 공간이 필요합니다. 불필요한 데이터를 삭제하십시오.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "OpenStreetMap 정보";
 
-"editor_operator" = "소유자";
+"editor_operator" = "연산자";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "소유자: %@";
+"operator" = "연산자: %@";
+
+"editor_category_unsuitable_title" = "적합한 카테고리를 찾을 수 없나요?";
+
+"editor_category_unsuitable_text" = "오가닉 지도에서는 단순한 포인트 카테고리만 추가할 수 있으므로 도시, 도로, 호수, 건물 윤곽선 등은 추가할 수 없습니다. 이러한 카테고리는 <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a> 에 직접 추가하세요. 자세한 단계별 지침은 <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">가이드</a>를 참조하세요.";
 
 "downloader_no_downloaded_maps_title" = "지도를 다운로드하지 않았습니다";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "일";
+
 "placepage_more_button" = "자세히";
 
 "book_button" = "예약";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Kayak의 세부 정보";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Kayak 비활성화";
 
 "placepage_call_button" = "전화";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "계획";
 
-"placepage_remove_stop" = "제거";
+"placepage_remove_stop" = "정류장 제거";
 
 "planning_route_remove_title" = "여기로 끌어와서 제거";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "내려가기";
 
-"elevation_profile_minaltitude" = "산 최소 높이";
+"elevation_profile_min_elevation" = "최소 높이";
 
-"elevation_profile_maxaltitude" = "산 최대 높이";
+"elevation_profile_max_elevation" = "최대 높이";
 
 "elevation_profile_difficulty" = "난이도";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "이 트랙을 삭제하시겠습니까?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "소프트웨어 개발자를 알고 있다면 필요한 기능을 구현하도록 요청할 수 있습니다.";
 
 /* App tip #04 */
-"app_tip_04" = "지도의 아무 곳이나 길게 탭하여 선택할 수 있다는 것을 알고 계셨나요?";
+"app_tip_04" = "지도의 아무 곳이나 탭하여 원하는 항목을 선택합니다. 길게 탭하면 인터페이스를 숨기고 다시 표시할 수 있습니다.";
 
 /* App tip #05 */
 "app_tip_05" = "지도에서 현재 위치를 선택할 수 있다는 것을 알고 계셨나요?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "경로가 비어 있음 - 저장할 항목이 없음";
+
+"edit_track" = "경로 편집";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "우체국";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "감옥";
 
 "type.amenity.pub" = "술집";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "상수도";
 
+"type.amenity.water_point.drinking_water_no" = "상수도";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "블록";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "차고";
 
-"type.building.train_station" = "기차역";
+"type.building.train_station" = "역 빌딩";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "수도꼭지";
 
+"type.man_made.water_tap.drinking_water_no" = "수도꼭지";
+
 "type.man_made.water_tower" = "급수탑";
 
 "type.man_made.water_well" = "우물";
+
+"type.man_made.water_well.drinking_water_no" = "우물";
 
 "type.man_made.windmill" = "풍차";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "관목지";
 
 "type.natural.spring" = "샘";
+
+"type.natural.spring.drinking_water_no" = "샘";
 
 "type.natural.strait" = "해협";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "기차역";
 
+"type.railway.station.light_rail.berlin" = "기차역";
+
 "type.railway.station.light_rail.london" = "기차역";
 
 "type.railway.station.light_rail.porto" = "기차역";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "지하철";
 
 "type.railway.station.subway.hiroshima" = "지하철";
+
+"type.railway.station.subway.hongkong" = "지하철";
 
 "type.railway.station.subway.isfahan" = "지하철";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "지하철";
 
 "type.railway.station.subway.shanghai" = "지하철";
+
+"type.railway.station.subway.shenzhen" = "지하철";
 
 "type.railway.station.subway.shiraz" = "지하철";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "지하철 입구";
 
+"type.railway.subway_entrance.hongkong" = "지하철 입구";
+
 "type.railway.subway_entrance.isfahan" = "지하철 입구";
 
 "type.railway.subway_entrance.istanbul" = "지하철 입구";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "지하철 입구";
 
 "type.railway.subway_entrance.shanghai" = "지하철 입구";
+
+"type.railway.subway_entrance.shenzhen" = "지하철 입구";
 
 "type.railway.subway_entrance.shiraz" = "지하철 입구";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "아웃도어 장비";
 
 "type.shop.outpost" = "픽업 장소";
+
+"type.shop.pasta" = "파스타 가게";
 
 "type.shop.pastry" = "패스트리";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "관광 명소";
 
+"type.attraction.amusement_ride" = "놀이기구";
+
 "type.attraction.animal" = "동물 인클로저";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "캐러셀";
+
+"type.attraction.historic" = "역사적인 명소";
+
+"type.attraction.maze" = "미로";
+
+"type.attraction.roller_coaster" = "롤러 코스터";
+
+"type.attraction.water_slide" = "워터 슬라이드";
 
 "type.tourism.attraction.specified" = "관광 명소";
 

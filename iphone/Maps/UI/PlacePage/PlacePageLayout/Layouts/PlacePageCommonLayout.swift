@@ -1,17 +1,7 @@
 class PlacePageCommonLayout: NSObject, IPlacePageLayout {
   
-  private lazy var distanceFormatter: MKDistanceFormatter = {
-    let formatter =  MKDistanceFormatter()
-    formatter.unitStyle = .abbreviated
-    formatter.units = Settings.measurementUnits() == .imperial ? .imperial : .metric
-    return formatter
-  }()
-
-  private lazy var unitsFormatter: MeasurementFormatter = {
-    let formatter = MeasurementFormatter()
-    formatter.unitOptions = [.providedUnit]
-    return formatter
-  }()
+  private let distanceFormatter = DistanceFormatter.self
+  private let altitudeFormatter = AltitudeFormatter.self
 
   private var placePageData: PlacePageData
   private var interactor: PlacePageInteractor
@@ -53,8 +43,8 @@ class PlacePageCommonLayout: NSObject, IPlacePageLayout {
     return vc
   } ()
 
-  lazy var bookmarkViewController: PlacePageBookmarkViewController = {
-    let vc = storyboard.instantiateViewController(ofType: PlacePageBookmarkViewController.self)
+  lazy var editBookmarkViewController: PlacePageEditBookmarkOrTrackViewController = {
+    let vc = storyboard.instantiateViewController(ofType: PlacePageEditBookmarkOrTrackViewController.self)
     vc.view.isHidden = true
     vc.delegate = interactor
     return vc
@@ -66,6 +56,13 @@ class PlacePageCommonLayout: NSObject, IPlacePageLayout {
     vc.delegate = interactor
     return vc
   } ()
+
+  private func productsViewController() -> ProductsViewController? {
+    let productsManager = FrameworkHelper.self
+    guard let configuration = productsManager.getProductsConfiguration() else { return nil }
+    let viewModel = ProductsViewModel(manager: productsManager, configuration: configuration)
+    return ProductsViewController(viewModel: viewModel)
+  }
 
   lazy var buttonsViewController: PlacePageButtonsViewController = {
     let vc = storyboard.instantiateViewController(ofType: PlacePageButtonsViewController.self)
@@ -95,6 +92,7 @@ class PlacePageCommonLayout: NSObject, IPlacePageLayout {
 
   private func configureViewControllers() -> [UIViewController] {
     var viewControllers = [UIViewController]()
+
     viewControllers.append(wikiDescriptionViewController)
     if let wikiDescriptionHtml = placePageData.wikiDescriptionHtml {
       wikiDescriptionViewController.descriptionHtml = wikiDescriptionHtml
@@ -103,14 +101,18 @@ class PlacePageCommonLayout: NSObject, IPlacePageLayout {
       }
     }
 
-    viewControllers.append(bookmarkViewController)
+    viewControllers.append(editBookmarkViewController)
     if let bookmarkData = placePageData.bookmarkData {
-      bookmarkViewController.bookmarkData = bookmarkData
-      bookmarkViewController.view.isHidden = false
+      editBookmarkViewController.data = .bookmark(bookmarkData)
+      editBookmarkViewController.view.isHidden = false
     }
 
     if placePageData.infoData != nil {
       viewControllers.append(infoViewController)
+    }
+
+    if let productsViewController = productsViewController() {
+      viewControllers.append(productsViewController)
     }
 
     if placePageData.buttonsData != nil {
@@ -181,7 +183,7 @@ extension PlacePageCommonLayout {
   func updateBookmarkRelatedSections() {
     var isBookmark = false
     if let bookmarkData = placePageData.bookmarkData {
-      bookmarkViewController.bookmarkData = bookmarkData
+      editBookmarkViewController.data = .bookmark(bookmarkData)
       isBookmark = true
     }
     if let title = placePageData.previewData.title, let headerViewController = headerViewControllers.compactMap({ $0 as? PlacePageHeaderViewController }).first {
@@ -191,7 +193,7 @@ extension PlacePageCommonLayout {
     }
     presenter?.layoutIfNeeded()
     UIView.animate(withDuration: kDefaultAnimationDuration) { [unowned self] in
-      self.bookmarkViewController.view.isHidden = !isBookmark
+      self.editBookmarkViewController.view.isHidden = !isBookmark
     }
   }
 }
@@ -207,12 +209,7 @@ extension PlacePageCommonLayout: MWMLocationObserver {
 
   func onLocationUpdate(_ location: CLLocation) {
     if placePageData.isMyPosition {
-      /// @todo Use C++ Distance::FormatAltitude function?
-      let imperial = Settings.measurementUnits() == .imperial
-      let alt = imperial ? location.altitude / 0.3048 : location.altitude
-      let altMeasurement = Measurement(value: alt.rounded(), unit: imperial ? UnitLength.feet : UnitLength.meters)
-      let altString = "▲ \(unitsFormatter.string(from: altMeasurement))"
-
+      let altString = "▲ \(altitudeFormatter.altitudeString(fromMeters: location.altitude))"
       if location.speed > 0 && location.timestamp.timeIntervalSinceNow >= -2 {
         let speedMeasure = Measure.init(asSpeed: location.speed)
         let speedString = "\(LocationManager.speedSymbolFor(location.speed))\(speedMeasure.valueAsString) \(speedMeasure.unit)"
@@ -224,7 +221,7 @@ extension PlacePageCommonLayout: MWMLocationObserver {
       let ppLocation = CLLocation(latitude: placePageData.locationCoordinate.latitude,
                                   longitude: placePageData.locationCoordinate.longitude)
       let distance = location.distance(from: ppLocation)
-      let formattedDistance = distanceFormatter.string(fromDistance: distance)
+      let formattedDistance = distanceFormatter.distanceString(fromMeters: distance)
       previewViewController.updateDistance(formattedDistance)
 
       lastLocation = location

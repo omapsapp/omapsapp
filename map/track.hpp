@@ -2,6 +2,8 @@
 
 #include "kml/types.hpp"
 
+#include "map/elevation_info.hpp"
+
 #include "drape_frontend/user_marks_provider.hpp"
 
 #include <string>
@@ -9,9 +11,10 @@
 class Track : public df::UserLineMark
 {
   using Base = df::UserLineMark;
+  using Lengths = std::vector<double>;
 
 public:
-  Track(kml::TrackData && data, bool interactive);
+  Track(kml::TrackData && data);
 
   kml::MarkGroupId GetGroupId() const override { return m_groupID; }
 
@@ -27,8 +30,8 @@ public:
 
   m2::RectD GetLimitRect() const;
   double GetLengthMeters() const;
-  bool IsInteractive() const;
-
+  double GetDurationInSeconds() const;
+  std::optional<ElevationInfo> GetElevationInfo() const;
   std::pair<m2::PointD, double> GetCenterPoint() const;
 
   struct TrackSelectionInfo
@@ -64,28 +67,27 @@ public:
 
   bool GetPoint(double distanceInMeters, m2::PointD & pt) const;
 
-  /// @name This functions are valid only for the single line geometry.
-  /// @{
-  kml::MultiGeometry::LineT const & GetSingleGeometry() const;
-private:
-  std::vector<double> GetLengthsImpl() const;
-  /// @}
-  m2::RectD GetLimitRectImpl() const;
-
-  void CacheDataForInteraction();
+  kml::MultiGeometry::LineT GetGeometry() const;
   bool HasAltitudes() const;
 
-  double GetLengthMetersImpl(kml::MultiGeometry::LineT const & line, size_t ptIdx) const;
+private:
+  std::vector<Lengths> GetLengthsImpl() const;
+  m2::RectD GetLimitRectImpl() const;
+
+  void CacheDataForInteraction() const;
+
+  double GetLengthMetersImpl(size_t lineIndex, size_t ptIdx) const;
 
   kml::TrackData m_data;
   kml::MarkGroupId m_groupID = kml::kInvalidMarkGroupId;
+  mutable std::optional<ElevationInfo> m_elevationInfo;
 
   struct InteractionData
   {
-    std::vector<double> m_lengths;
+    std::vector<Lengths> m_lengths;
     m2::RectD m_limitRect;
   };
-  std::optional<InteractionData> m_interactionData;
+  mutable std::optional<InteractionData> m_interactionData;
 
   mutable bool m_isDirty = true;
 };

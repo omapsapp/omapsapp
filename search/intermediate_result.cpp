@@ -169,7 +169,7 @@ RankerResult::RankerResult(FeatureType & ft, m2::PointD const & center,
 
   m_region.SetParams(fileName, center);
 
-  FillDetails(ft, m_details);
+  FillDetails(ft, m_str, m_details);
 }
 
 RankerResult::RankerResult(FeatureType & ft, std::string const & fileName)
@@ -250,7 +250,7 @@ bool RankerResult::RegionInfo::GetCountryId(storage::CountryInfoGetter const & i
 }
 
 // Functions ---------------------------------------------------------------------------------------
-void FillDetails(FeatureType & ft, Result::Details & details)
+void FillDetails(FeatureType & ft, std::string const & name, Result::Details & details)
 {
   if (details.m_isInitialized)
     return;
@@ -260,6 +260,9 @@ void FillDetails(FeatureType & ft, Result::Details & details)
   std::string brand {ft.GetMetadata(feature::Metadata::FMD_BRAND)};
   if (!brand.empty())
     brand = platform::GetLocalizedBrandName(brand);
+
+  if (name == brand)
+    brand.clear();
 
   /// @todo Avoid temporary string when OpeningHours (boost::spirit) will allow string_view.
   std::string const openHours(ft.GetMetadata(feature::Metadata::FMD_OPEN_HOURS));

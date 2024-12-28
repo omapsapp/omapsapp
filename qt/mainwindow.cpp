@@ -121,10 +121,6 @@ MainWindow::MainWindow(Framework & framework,
   int const height = m_screenshotMode ? static_cast<int>(screenshotParams->m_height) : 0;
   m_pDrawWidget = new DrawWidget(framework, std::move(screenshotParams), this);
 
-  QList<Qt::GestureType> gestures;
-  gestures << Qt::PinchGesture;
-  m_pDrawWidget->grabGestures(gestures);
-
   setCentralWidget(m_pDrawWidget);
 
   if (m_screenshotMode)
@@ -286,9 +282,10 @@ void MainWindow::CreateNavigationBar()
 
     m_layers = new PopupMenuHolder(this);
 
-    m_layers->addAction(QIcon(":/navig64/traffic.png"), tr("Traffic"),
-                        std::bind(&MainWindow::OnLayerEnabled, this, LayerType::TRAFFIC), true);
-    m_layers->setChecked(LayerType::TRAFFIC, m_pDrawWidget->GetFramework().LoadTrafficEnabled());
+    /// @todo Uncomment when we will integrate a traffic provider.
+    // m_layers->addAction(QIcon(":/navig64/traffic.png"), tr("Traffic"),
+    //                     std::bind(&MainWindow::OnLayerEnabled, this, LayerType::TRAFFIC), true);
+    // m_layers->setChecked(LayerType::TRAFFIC, m_pDrawWidget->GetFramework().LoadTrafficEnabled());
 
     m_layers->addAction(QIcon(":/navig64/subway.png"), tr("Public transport"),
                         std::bind(&MainWindow::OnLayerEnabled, this, LayerType::TRANSIT), true);
@@ -297,6 +294,10 @@ void MainWindow::CreateNavigationBar()
     m_layers->addAction(QIcon(":/navig64/isolines.png"), tr("Isolines"),
                         std::bind(&MainWindow::OnLayerEnabled, this, LayerType::ISOLINES), true);
     m_layers->setChecked(LayerType::ISOLINES, m_pDrawWidget->GetFramework().LoadIsolinesEnabled());
+
+    m_layers->addAction(QIcon(":/navig64/isolines.png"), tr("Outdoors"),
+                        std::bind(&MainWindow::OnLayerEnabled, this, LayerType::OUTDOORS), true);
+    m_layers->setChecked(LayerType::OUTDOORS, m_pDrawWidget->GetFramework().LoadOutdoorsEnabled());
 
     pToolBar->addWidget(m_layers->create());
     m_layers->setMainIcon(QIcon(":/navig64/layers.png"));
@@ -875,11 +876,11 @@ void MainWindow::SetLayerEnabled(LayerType type, bool enable)
   auto & frm = m_pDrawWidget->GetFramework();
   switch (type)
   {
-  case LayerType::TRAFFIC:
-    /// @todo Uncomment when we will integrate a traffic provider.
-    // frm.GetTrafficManager().SetEnabled(enable);
-    // frm.SaveTrafficEnabled(enable);
-    break;
+  // @todo Uncomment when we will integrate a traffic provider.
+  // case LayerType::TRAFFIC:
+  //   frm.GetTrafficManager().SetEnabled(enable);
+  //   frm.SaveTrafficEnabled(enable);
+  //   break;
   case LayerType::TRANSIT:
     frm.GetTransitManager().EnableTransitSchemeMode(enable);
     frm.SaveTransitSchemeEnabled(enable);
@@ -888,24 +889,19 @@ void MainWindow::SetLayerEnabled(LayerType type, bool enable)
     frm.GetIsolinesManager().SetEnabled(enable);
     frm.SaveIsolinesEnabled(enable);
     break;
-  default:
-    UNREACHABLE();
+  case LayerType::OUTDOORS:
+    frm.SaveOutdoorsEnabled(enable);
+    if (enable)
+      m_pDrawWidget->SetMapStyleToOutdoors();
+    else
+      m_pDrawWidget->SetMapStyleToDefault();
     break;
   }
 }
 
 void MainWindow::OnLayerEnabled(LayerType layer)
 {
-  for (size_t i = 0; i < LayerType::COUNT; ++i)
-  {
-    if (i == layer)
-      SetLayerEnabled(static_cast<LayerType>(i), m_layers->isChecked(i));
-    else
-    {
-      m_layers->setChecked(i, false);
-      SetLayerEnabled(static_cast<LayerType>(i), false);
-    }
-  }
+  SetLayerEnabled(layer, m_layers->isChecked(layer));
 }
 
 void MainWindow::OnRulerEnabled()

@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
+import androidx.core.view.ViewCompat;
 import app.organicmaps.R;
 import app.organicmaps.WebContainerDelegate;
 import app.organicmaps.base.BaseMwmFragment;
 import app.organicmaps.util.Constants;
+import app.organicmaps.util.WindowInsetUtils;
 
 public class CopyrightFragment extends BaseMwmFragment
 {
@@ -21,6 +23,8 @@ public class CopyrightFragment extends BaseMwmFragment
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
   {
     View root = inflater.inflate(R.layout.fragment_web_view_with_progress, container, false);
+
+    ViewCompat.setOnApplyWindowInsetsListener(root, WindowInsetUtils.PaddingInsetsListener.excludeTop());
 
     mDelegate = new WebContainerDelegate(root, Constants.Url.COPYRIGHT)
     {

@@ -185,6 +185,9 @@ UNIT_CLASS_TEST(SmokeTest, TypesSkipperTest)
 
 UNIT_CLASS_TEST(SmokeTest, CategoriesTest)
 {
+  // Checks all types in categories.txt for their searchability,
+  // which also depends on point drawability and presence of a name.
+
   auto const & cl = classif();
 
   /// @todo Should rewrite test
@@ -231,9 +234,6 @@ UNIT_CLASS_TEST(SmokeTest, CategoriesTest)
 
   // No point drawing rules for country scale range.
   base::StringIL const arrInvisible[] = {
-      {"man_made", "tower"},
-      {"man_made", "water_tower"},
-
       {"place", "continent"},
       {"place", "county"},
       {"place", "region"},
@@ -249,14 +249,17 @@ UNIT_CLASS_TEST(SmokeTest, CategoriesTest)
       {"highway", "motorway_junction"},
       {"landuse"},
       {"man_made", "chimney"},
+      {"man_made", "flagpole"},
+      {"man_made", "mast"},
       {"man_made", "tower"},
+      {"man_made", "water_tower"},
       {"natural"},
       {"office"},
       {"place"},
       {"waterway"},
 
       /// @todo Controversial here.
-      /// Don't have point drawing rules except text -> type will be removed for Feature with empty name.
+      /// Don't have point drawing rules (a label only), hence type will be removed for an empty name Feature.
       {"building", "train_station"},
       {"leisure", "track"},
       {"natural", "beach"},
@@ -265,12 +268,10 @@ UNIT_CLASS_TEST(SmokeTest, CategoriesTest)
   for (auto const & tags : arrNoEmptyNames)
     noEmptyNames.insert(cl.GetTypeByPath(tags));
 
-  uint32_t const commTower = cl.GetTypeByPath({"man_made", "tower", "communication"});
   ftypes::TwoLevelPOIChecker isPoi;
-  auto const isNoEmptyName = [commTower, &isPoi, &noEmptyNames](uint32_t t)
+  auto const isNoEmptyName = [&isPoi, &noEmptyNames](uint32_t t)
   {
-    if (t != commTower)
-      ftype::TruncValue(t, 2);
+    ftype::TruncValue(t, 2);
     if (noEmptyNames.count(t) > 0)
       return true;
 

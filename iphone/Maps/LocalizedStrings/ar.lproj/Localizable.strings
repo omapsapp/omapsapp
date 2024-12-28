@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "تبرع لبناء أفضل الخرائط معًا!";
 
+"already_donated" = "تم التبرع";
+
+"remind_me_later" = "ذكر لاحقاً";
+
+"support_organic_maps" = "دعم Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "حقوق النشر";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "بيانات OpenStreetMap التي أنشأها المجتمع اعتبارًا من %@. تعرف على المزيد حول كيفية تعديل الخريطة وتحديثها على OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "قم بتسجيل الدخول حتى يتمكن باقي المستخدمين من رؤية التغييرات التي قمت بها.";
+"login_to_make_edits_visible" = "أنشئ حساباً على OpenStreetMap أو سجّل الدخول لنشر تعديلاتك على الخريطة للعالم.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "للتنزيل، فأنت تحتاج إلى توفير مساحة أكبر. من فضلك، الرجاء قم بحذف البيانات غير الضرورية.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "المزيد عن خريطة الشارع المفتوحة";
 
-"editor_operator" = "المالك";
+"editor_operator" = "المشغل";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "المالك: %@";
+"operator" = "المشغل: %@";
+
+"editor_category_unsuitable_title" = "لا يمكن العثور على فئة مناسبة؟";
+
+"editor_category_unsuitable_text" = "تسمح الخرائط العضوية بإضافة فئات نقاط بسيطة فقط، وهذا يعني عدم وجود بلدات وطرق وبحيرات ومخططات للمباني وما إلى ذلك. يرجى إضافة هذه الفئات مباشرة إلى <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. راجع موقعنا <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">دليل</a> للحصول على تعليمات مفصلة خطوة بخطوة.";
 
 "downloader_no_downloaded_maps_title" = "لم تقم بتنزيل أية خرائط";
 
@@ -795,6 +805,8 @@
 
 "minute" = "د";
 
+"day" = "يوم";
+
 "placepage_more_button" = "المزيد";
 
 "book_button" = "حجز";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "التفاصيل على Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "تعطيل Kayak";
 
 "placepage_call_button" = "اتصال";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "خطة";
 
-"placepage_remove_stop" = "إزالة";
+"placepage_remove_stop" = "إزالة نقطة توقف";
 
 "planning_route_remove_title" = "اسحب هنا للإزالة";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "تنازلي";
 
-"elevation_profile_minaltitude" = "الحد الأدنى للارتفاع";
+"elevation_profile_min_elevation" = "أقل ارتفاع";
 
-"elevation_profile_maxaltitude" = "الحد الأقصى للارتفاع";
+"elevation_profile_max_elevation" = "أعلى ارتفاع";
 
 "elevation_profile_difficulty" = "درجة الصعوبة";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "حذف المسار";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "هل أنت متأكد من رغبتك في حذف هذا المسار؟";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "اسم المسار";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "إذا كنت تعرف أحد مطوري البرامج، فيمكنك أن تطلب منه تنفيذ الميزة التي تحتاجها.";
 
 /* App tip #04 */
-"app_tip_04" = "هل تعلم أنه يمكنك النقر لفترة طويلة على أي مكان على الخريطة لتحديده؟";
+"app_tip_04" = "اضغط على أي مكان على الخريطة لتحديد أي شيء. اضغط لفترة طويلة لإخفاء الواجهة وإظهارها مرة أخرى.";
 
 /* App tip #05 */
 "app_tip_05" = "هل تعلم أنه يمكنك تحديد موقعك الحالي على الخريطة؟";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "المسار فارغ - لا يوجد شيء للحفظ";
+
+"edit_track" = "تعديل المسار";
 
 
 /********** Types **********/
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "نقطة إعادة تعبة قنينة المياه";
 
+"type.amenity.water_point.drinking_water_no" = "نقطة إعادة تعبة قنينة المياه";
+
 "type.barrier" = "حاجز";
 
 "type.barrier.block" = "حاجز";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "مرآب";
 
-"type.building.train_station" = "محطة قطار";
+"type.building.train_station" = "مبنى المحطة";
 
 "type.building.warehouse" = "مستودع";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "حنفية مياه";
 
+"type.man_made.water_tap.drinking_water_no" = "حنفية مياه";
+
 "type.man_made.water_tower" = "برج مياه";
 
 "type.man_made.water_well" = "بئر ماء";
+
+"type.man_made.water_well.drinking_water_no" = "بئر ماء";
 
 "type.man_made.windmill" = "طاحونة هواء";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "أَيْكَة";
 
 "type.natural.spring" = "ينبوع";
+
+"type.natural.spring.drinking_water_no" = "ينبوع";
 
 "type.natural.strait" = "مضيق";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "محطة قطار";
 
+"type.railway.station.light_rail.berlin" = "محطة قطار";
+
 "type.railway.station.light_rail.london" = "محطة قطار";
 
 "type.railway.station.light_rail.porto" = "محطة قطار";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "محطة مترو";
 
 "type.railway.station.subway.hiroshima" = "محطة مترو";
+
+"type.railway.station.subway.hongkong" = "محطة مترو";
 
 "type.railway.station.subway.isfahan" = "محطة مترو";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "محطة مترو";
 
 "type.railway.station.subway.shanghai" = "محطة مترو";
+
+"type.railway.station.subway.shenzhen" = "محطة مترو";
 
 "type.railway.station.subway.shiraz" = "محطة مترو";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "مدخل المترو";
 
+"type.railway.subway_entrance.hongkong" = "مدخل المترو";
+
 "type.railway.subway_entrance.isfahan" = "مدخل المترو";
 
 "type.railway.subway_entrance.istanbul" = "مدخل المترو";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "مدخل المترو";
 
 "type.railway.subway_entrance.shanghai" = "مدخل المترو";
+
+"type.railway.subway_entrance.shenzhen" = "مدخل المترو";
 
 "type.railway.subway_entrance.shiraz" = "مدخل المترو";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "متجر معداة خارجية";
 
 "type.shop.outpost" = "نقطة الالتقاط";
+
+"type.shop.pasta" = "متجر المكرونة";
 
 "type.shop.pastry" = "متجر معجنات";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "مكان جذاب";
 
+"type.attraction.amusement_ride" = "جولة ترفيهية";
+
 "type.attraction.animal" = "الضميمة الحيوانية";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "كاروسيل";
+
+"type.attraction.historic" = "جاذبية تاريخية";
+
+"type.attraction.maze" = "المتاهة";
+
+"type.attraction.roller_coaster" = "قطار الملاهي الدوارة";
+
+"type.attraction.water_slide" = "منزلق مائي";
 
 "type.tourism.attraction.specified" = "مكان جذاب";
 

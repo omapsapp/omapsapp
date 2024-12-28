@@ -13,6 +13,8 @@ set(SRC
   country_file.hpp
   distance.cpp
   distance.hpp
+  duration.cpp
+  duration.hpp
   downloader_defines.hpp
   downloader_utils.cpp
   downloader_utils.hpp
@@ -51,9 +53,12 @@ set(SRC
   secure_storage.hpp
   servers_list.cpp
   servers_list.hpp
+  products.cpp
+  products.hpp
   settings.cpp
   settings.hpp
   socket.hpp
+  trace.hpp
   string_storage_base.cpp
   string_storage_base.hpp
   utm_mgrs_utils.cpp
@@ -98,6 +103,7 @@ elseif(${PLATFORM_ANDROID})
     platform_android.cpp
     platform_unix_impl.cpp
     platform_unix_impl.hpp
+    trace_android.cpp
   )
 else() # neither iPhone nor Android
   # Find bash first, on Windows it can be either in Git or in WSL

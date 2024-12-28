@@ -1,7 +1,7 @@
 #include "search/highlighting.hpp"
 
-using namespace std;
-
+namespace search
+{
 namespace
 {
 // Makes continuous range for tokens and prefix.
@@ -42,8 +42,7 @@ public:
 };
 }  // namespace
 
-namespace search
-{
+
 void HighlightResult(QueryTokens const & tokens, strings::UniString const & prefix, Result & res)
 {
   using Iter = QueryTokens::const_iterator;
@@ -51,10 +50,19 @@ void HighlightResult(QueryTokens const & tokens, strings::UniString const & pref
 
   CombinedIter beg(tokens.begin(), tokens.end(), prefix.empty() ? nullptr : &prefix);
   CombinedIter end(tokens.end() /* cur */, tokens.end() /* end */, nullptr);
-  auto assignHighlightRange = [&](pair<uint16_t, uint16_t> const & range) {
-    res.AddHighlightRange(range);
-  };
 
-  SearchStringTokensIntersectionRanges(res.GetString(), beg, end, assignHighlightRange);
+  // Highlight Title
+  SearchStringTokensIntersectionRanges(res.GetString(), beg, end,
+                                       [&](std::pair<uint16_t, uint16_t> const & range)
+  {
+    res.AddHighlightRange(range);
+  });
+
+  // Highlight description.
+  SearchStringTokensIntersectionRanges(res.GetAddress(), beg, end,
+                                       [&](std::pair<uint16_t, uint16_t> const & range)
+  {
+    res.AddDescHighlightRange(range);
+  });
 }
 }  // namespace search

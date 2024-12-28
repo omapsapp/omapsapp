@@ -1,5 +1,7 @@
 #import "MWMOpeningHoursClosedSpanTableViewCell.h"
 
+#import "CoreApi/CoreApi-Swift.h"
+
 static NSString * const kLabelText = L(@"editor_hours_closed");
 
 CGFloat labelWidth()
@@ -70,22 +72,17 @@ BOOL isCompactForCellWidth(CGFloat width)
 - (void)refresh
 {
   [super refresh];
-  NSLocale * locale = NSLocale.currentLocale;
   NSCalendar * calendar = NSCalendar.currentCalendar;
-  calendar.locale = locale;
-
-  NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-  dateFormatter.locale = locale;
-  dateFormatter.timeStyle = NSDateFormatterShortStyle;
-  dateFormatter.dateStyle = NSDateFormatterNoStyle;
 
   MWMOpeningHoursSection * section = self.section;
   NSUInteger const row = self.row;
   NSDate * openDate = [calendar dateFromComponents:[section timeForRow:row isStart:YES]];
   NSDate * closeDate = [calendar dateFromComponents:[section timeForRow:row isStart:NO]];
 
-  NSString * openString = [dateFormatter stringFromDate:openDate];
-  NSString * closeString = [dateFormatter stringFromDate:closeDate];
+  NSDateFormatterStyle timeStyle = NSDateFormatterShortStyle;
+  NSDateFormatterStyle dateStyle = NSDateFormatterNoStyle;
+  NSString * openString = [DateTimeFormatter dateStringFrom:openDate dateStyle:dateStyle timeStyle:timeStyle];
+  NSString * closeString = [DateTimeFormatter dateStringFrom:closeDate dateStyle:dateStyle timeStyle:timeStyle];
 
   self.timeSpanLabel.text = [NSString stringWithFormat:@"%@-%@", openString, closeString];
 

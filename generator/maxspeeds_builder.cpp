@@ -178,7 +178,7 @@ public:
           return;
 
         // 0 - not updated, 1 - goto next iteration, 2 - updated
-        int status;
+        int status = 0;
 
         HwTypeT const hwType = GetHighwayType(fid);
 

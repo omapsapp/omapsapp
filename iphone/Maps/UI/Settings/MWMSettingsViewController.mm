@@ -4,7 +4,7 @@
 #import "SwiftBridge.h"
 #import "MWMActivityViewController.h"
 
-#import <CoreApi/CoreApi.h>
+#import <CoreApi/Framework.h>
 
 #include "map/gps_tracker.hpp"
 
@@ -188,7 +188,7 @@ static NSString * const kUDDidShowICloudSynchronizationEnablingAlert = @"kUDDidS
                                                 isOn:[MWMSettings iCLoudSynchronizationEnabled]];
 
   __weak __typeof(self) weakSelf = self;
-  [CloudStorageManager.shared addObserver:self synchronizationStateDidChangeHandler:^(CloudStorageSynchronizationState * state) {
+  [iCloudSynchronizaionManager.shared addObserver:self synchronizationStateDidChangeHandler:^(SynchronizationManagerState * state) {
     __strong auto strongSelf = weakSelf;
     [strongSelf.iCloudSynchronizationCell updateWithSynchronizationState:state];
   }];

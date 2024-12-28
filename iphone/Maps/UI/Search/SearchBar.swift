@@ -21,6 +21,8 @@ final class SearchBar: SolidTouchView {
 
   override var tabBarAreaAffectDirections: MWMAvailableAreaAffectDirections { return alternative(iPhone: [], iPad: .left) }
 
+  override var trackRecordingButtonAreaAffectDirections: MWMAvailableAreaAffectDirections { return alternative(iPhone: .top, iPad: .left) }
+
   @objc var state: SearchBarState = .ready {
     didSet {
       if state != oldValue {

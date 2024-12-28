@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.22.1)
 project(omim C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -163,6 +163,7 @@ option(SKIP_QT_GUI "Skip building of Qt GUI" OFF)
 option(USE_PCH "Use precompiled headers" OFF)
 option(NJOBS "Number of parallel processes" OFF)
 option(ENABLE_VULKAN_DIAGNOSTICS "Enable Vulkan diagnostics" OFF)
+option(ENABLE_TRACE "Enable Tracing" OFF)
 
 if (NJOBS)
   message(STATUS "Number of parallel processes: ${NJOBS}")
@@ -217,6 +218,11 @@ endif()
 if (ENABLE_VULKAN_DIAGNOSTICS)
   message(WARNING "Vulkan diagnostics are enabled. Be aware of performance impact!")
   add_definitions(-DENABLE_VULKAN_DIAGNOSTICS)
+endif()
+
+if (ENABLE_TRACE)
+  message(STATUS "Tracing is enabled")
+  add_definitions(-DENABLE_TRACE)
 endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)

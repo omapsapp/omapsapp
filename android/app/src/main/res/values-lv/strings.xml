@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SECTION: Strings -->
+    <!-- Button text (should be short) -->
+    <string name="back">Atpakaļ</string>
+    <!-- Button text (should be short) -->
+    <string name="cancel">Atcelt</string>
+    <!-- Button which deletes downloaded country -->
+    <string name="delete">Dzēst</string>
+    <string name="download_maps">Lejupielādēt kartes</string>
+    <!-- Settings/Downloader - info for country when download fails -->
+    <string name="download_has_failed">Lejupielāde neizdevās. Pieskarieties, lai mēģinātu vēlreiz.</string>
+    <!-- Settings/Downloader - info for country which started downloading -->
+    <string name="downloading">Lejupielādē…</string>
+    <!-- Choose measurement on first launch alert - choose metric system button -->
+    <string name="kilometres">Kilometri</string>
+    <!-- Choose measurement on first launch alert - choose imperial system button -->
+    <string name="miles">Jūdzes</string>
+    <!-- A text for current gps location point/arrow selected on the map -->
+    <string name="core_my_position">Mana vieta</string>
+    <!-- Update maps later button text -->
+    <string name="later">Vēlāk</string>
+    <!-- View and button titles for accessibility, please also edit it in iphone/plist.txt -->
+    <string name="search">Meklēt</string>
+    <!-- Search box placeholder text; Used when searching on the map itself, not when searching for a map -->
+    <string name="search_map">Meklēt kartē</string>
+    <!-- Location services are disabled by user alert - message -->
+    <string name="location_is_disabled_long_text">Šobrīd ierīcē visi atrašanās vietas pakalpojumi vai to nodrošinošās programmas ir izslēgtas. Ieslēdziet tās iestatījumos.</string>
+    <!-- View and button titles for accessibility -->
+    <string name="zoom_to_country">Rādīt kartē</string>
+    <!-- Message to display at the center of the screen when the country download has failed -->
+    <string name="country_status_download_failed">Lejupielāde neizdevās</string>
+    <!-- Button text for the button under the country_status_download_failed message -->
+    <string name="try_again">Mēģināt vēlreiz</string>
+    <string name="about_menu_title">Par „Organic Maps“</string>
+    <!-- Text in About screen -->
+    <string name="about_headline">Bezmaksas, pieejama visiem un veidota ar mīlestību</string>
+    <!-- Text in About screen -->
+    <string name="about_proposition_1">• Nesatur reklāmas, izsekošanu un nevāc datus</string>
+    <!-- Text in About screen -->
+    <string name="about_proposition_2">• Neizlādē bateriju, darbojas bez interneta pieslēguma</string>
+    <!-- Text in About screen -->
+    <string name="about_proposition_3">• Ātra, minimālistiska un kopienas izstrādāta</string>
+    <!-- Text in About screen -->
+    <string name="about_developed_by_enthusiasts">Atvērtā pirmkoda programma, ko veidojuši entuziasti un brīvprātīgie.</string>
+    <!-- The button that opens system location settings -->
+    <string name="location_settings">Atrašanās vietas iestatījumi</string>
+    <string name="close">Aizvērt</string>
+    <string name="unsupported_phone">Lietotnei nepieciešams „OpenGL“ aparatūras paātrinājums, bet diemžēl Jūsu ierīce to neatbalsta.</string>
+    <string name="download">Lejupielādēt</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disconnect_usb_cable">Lai lietotu „Organic Maps“, atvienojiet USB kabeli vai ievietojiet atmiņas karti.</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="not_enough_free_space_on_sdcard">Lietotnes izmantošanai atbrīvojiet vietu ierīces krātuvē</string>
+    <string name="download_resources">Pirms lietotnes izmantošanas lejupielādējiet kopējo pasaules karti.
+\nTā ierīce krātuvē aizņems %s vietas.</string>
+    <string name="download_resources_continue">Iet uz karti</string>
+    <string name="downloading_country_can_proceed">Lejupielādē „%s“. Tagad varat
+\niet uz karti.</string>
+    <string name="download_country_ask">Vai lejupielādēt „%s“?</string>
+    <string name="update_country_ask">Vai atjaunināt „%s“?</string>
+    <!-- REMOVE THIS STRING AFTER REFACTORING -->
+    <string name="pause">Pauze</string>
+    <!-- REMOVE THIS STRING AFTER REFACTORING -->
+    <string name="continue_button">Turpināt</string>
+    <!-- Show popup notification on top of the map when country download has failed. -->
+    <string name="download_country_failed">„%s“ lejupielāde neizdevās</string>
+    <!-- "Add new bookmark list" dialog title -->
+    <string name="add_new_set">Pievienot jaunu sarakstu</string>
+    <!-- Add Bookmark list dialog - hint when the list name is empty -->
+    <string name="bookmark_set_name">Grāmatzīmju saraksta nosaukums</string>
+    <!-- Should be used in the bookmarks-only context, see bookmarks_and_tracks if tracks are also implied. -->
+    <string name="bookmarks">Grāmatzīmes</string>
+    <!-- "Bookmarks and Tracks" dialog title, also sync it with iphone/plist.txt -->
+    <string name="bookmarks_and_tracks">Grāmatzīmes un ceļi</string>
+    <!-- Default bookmark list name -->
+    <string name="core_my_places">Manas vietas</string>
+    <!-- Add bookmark dialog - bookmark name -->
+    <string name="name">Nosaukums</string>
+    <!-- Editor title above street and house number, duplicates [type.building.address] in types_strings.txt -->
+    <string name="address">Adrese</string>
+    <!-- Add Bookmark dialog/Bookmark list; Bookmarks dialog/Bookmark list cell. -->
+    <string name="list">Saraksts</string>
+    <!-- Settings button in system menu -->
+    <string name="settings">Iestatījumi</string>
+    <!-- Header of settings activity where user defines storage path -->
+    <string name="maps_storage">Kartes saglabāšanas vieta</string>
+    <!-- Detailed description of Maps Storage settings button -->
+    <string name="maps_storage_summary">Norādiet mapi, kurā lejupielādēt kartes.</string>
+    <!-- E.g. "Downloaded maps: 500Mb" in Maps Storage settings -->
+    <string name="maps_storage_downloaded">Lejupielādētās kartes</string>
+    <!-- Internal storage type in Maps Storage settings (not accessible by the user) -->
+    <string name="maps_storage_internal">Iekšējā privātā krātuve</string>
+    <!-- Shared storage type in Maps Storage settings (a primary storage usually) -->
+    <string name="maps_storage_shared">Iekšējā kopīgā krātuve</string>
+    <!-- Removable external storage type in Maps Storage settings, e.g. an SD card -->
+    <string name="maps_storage_removable">SD karte</string>
+    <!-- Generic external storage type in Maps Storage settings -->
+    <string name="maps_storage_external">Ārējā kopīgā krātuve</string>
+    <!-- Free space out of total storage size in Maps Storage settings, e.g. "300 MB free of 2 GB" -->
+    <string name="maps_storage_free_size">%1$s brīva vieta no %2$s</string>
+    <!-- Question dialog for transferring maps from one storage to another -->
+    <string name="move_maps">Vai kartes pārvietot?</string>
+    <!-- Error moving map files from one storage to another -->
+    <string name="move_maps_error">Kļūda, pārvietojot kartes datnes</string>
+    <!-- Ask user to wait several minutes (some long process in modal dialog). -->
+    <string name="wait_several_minutes">Tas var aizņemt vairākas minūtes.
+\nUzgaidiet…</string>
+    <!-- Measurement units title in settings activity -->
+    <string name="measurement_units">Mērvienības</string>
+    <!-- Detailed description of Measurement Units settings button -->
+    <string name="measurement_units_summary">Izvēlieties starp jūdzēm un kilometriem</string>
+
+    <!-- SECTION: Search categories -->
+    <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
+    <string name="category_eat">Kur paēst</string>
+    <!-- Search category for grocery stores; any changes should be duplicated in categories.txt @category_food! -->
+    <string name="category_food">Pārtikas preces</string>
+    <!-- Search category for public transport; any changes should be duplicated in categories.txt @category_transport! -->
+    <string name="category_transport">Transports</string>
+    <!-- Search category for fuel stations; any changes should be duplicated in categories.txt @category_fuel! -->
+    <string name="category_fuel">Degvielas uzpildes stacija</string>
+    <!-- Search category for parking lots; any changes should be duplicated in categories.txt @category_parking! -->
+    <string name="category_parking">Autostāvvieta</string>
+    <!-- Search category for malls/clothes/shoes/gifts/jewellery/sport shops; any changes should be duplicated in categories.txt @category_shopping! -->
+    <string name="category_shopping">Iepirkšanās</string>
+    <!-- Search category for second_hand/charity/antique/auction shops; any changes should be duplicated in categories.txt @category_secondhand! -->
+    <string name="category_secondhand">Lietotas preces</string>
+    <!-- Search category for places to stay; any changes should be duplicated in categories.txt @category_hotel! -->
+    <string name="category_hotel">Viesnīca</string>
+    <!-- Search category sight seeings and touristic attractions; any changes should be duplicated in categories.txt @category_tourism! -->
+    <string name="category_tourism">Apskates objekti</string>
+    <!-- Search category for entertainment; any changes should be duplicated in categories.txt @category_entertainment! -->
+    <string name="category_entertainment">Izklaide</string>
+    <!-- Search category for ATMs; any changes should be duplicated in categories.txt @category_atm! -->
+    <string name="category_atm">Bankomāts</string>
+    <!-- Search category for nightclubs/bars; any changes should be duplicated in categories.txt @category_nightlife! -->
+    <string name="category_nightlife">Naktsdzīve</string>
+    <!-- Search category for water park/disneyland/playground/toys store; any changes should be duplicated in categories.txt @category_children! -->
+    <string name="category_children">Atpūta ģimenei</string>
+    <!-- Search category for banks; any changes should be duplicated in categories.txt @category_bank! -->
+    <string name="category_bank">Banka</string>
+    <!-- Search category for pharmacies; any changes should be duplicated in categories.txt @category_pharmacy! -->
+    <string name="category_pharmacy">Aptieka</string>
+    <!-- Search category for hospitals; any changes should be duplicated in categories.txt @category_hospital! -->
+    <string name="category_hospital">Slimnīca</string>
+    <!-- Search category for toilets; any changes should be duplicated in categories.txt @category_toilet! -->
+    <string name="category_toilet">Tualete</string>
+    <!-- Search category for post offices; any changes should be duplicated in categories.txt @category_post! -->
+    <string name="category_post">Pasts</string>
+    <!-- Search category for police; any changes should be duplicated in categories.txt @category_police! -->
+    <string name="category_police">Policija</string>
+    <!-- Search category for WiFi access; any changes should be duplicated in categories.txt @category_wifi! -->
+    <string name="category_wifi">WiFi</string>
+    <!-- Search category for recycling; any changes should be duplicated in categories.txt @category_recycling! -->
+    <string name="category_recycling">Pārstrāde</string>
+    <!-- Search category for water; any changes should be duplicated in categories.txt @category_water! also used to sort bookmarks by type -->
+    <string name="category_water">Ūdens</string>
+    <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
+    <string name="category_rv">Dzīvojamo auto labierīcības</string>
+
+    <!-- SECTION: Other translations -->
+    <!-- Notes field in Bookmarks view -->
+    <string name="description">Piezīmes</string>
+    <!-- Email Subject when sharing bookmark list -->
+    <string name="share_bookmarks_email_subject">Ar jums kopīgoja „Oranic Maps“ grāmatzīmes</string>
+    <string name="share_bookmarks_email_body">Sveiki!
+\n
+\nPielikumā ir grāmatzīmes. Lūdzu, atveriet tās „Organic Maps“ lietotnē. Ja Jums tā nav instalēta, instalējiet to te: https://omaps.app/get?kmz
+\n
+\nBaudiet ceļošanu ar „Oranic Maps“!</string>
+    <!-- message title of loading file -->
+    <string name="load_kmz_title">Ielādē grāmatzīmes</string>
+    <!-- Kmz file successful loading -->
+    <string name="load_kmz_successful">Grāmatzīmes ir ielādētas! Tās varat atrast kartē un grāmatzīmju pārvaldīšanas ekrānā.</string>
+    <!-- Kml file loading failed -->
+    <string name="load_kmz_failed">Grāmatzīmes ielādēt neizdevās. Iespējams, datne ir bojāta.</string>
+    <!-- Failed to recognize the format of a bookmarks or tracks file. -->
+    <string name="unknown_file_type">Lietotne neatpazīst datnes tipu:
+\n%1$s</string>
+    <!-- Failed to open a bookmarks or tracks file in Organic Maps. -->
+    <string name="failed_to_open_file">Neizdevās atvērt datni %1$s
+\n
+\n%2$s</string>
+    <!-- resource for context menu -->
+    <string name="edit">Rediģēt</string>
+    <!-- Warning message when doing search around current position -->
+    <string name="unknown_current_position">Jūsu atrašanās vieta vēl nav noteikta</string>
+    <!-- Alert message that we can't run Map Storage settings due to some reasons. -->
+    <string name="cant_change_this_setting">Atvainojamies, bet kartes saglabāšanas iestatījumi šobrīd ir izslēgti.</string>
+    <!-- Alert message that downloading is in progress. -->
+    <string name="downloading_is_active">Notiek kartes lejupielāde.</string>
+    <!-- Share my position using SMS, %1$@ contains om:// and %2$@ https://omaps.app link WITHOUT NAME. @NOTE non-ascii symbols in the link will result in max 70 characters SMS instead of 140. -->
+    <string name="my_position_share_sms">Apskatiet manu atrašanās vietu „Organic Maps“ lietotnē! %1$s vai %2$s Vai Jums nav nesaistes kartes? Lejupielādējiet to: https://omaps.app/get</string>
+    <!-- Subject for emailed bookmark -->
+    <string name="bookmark_share_email_subject">Hei, apskatiet manu grāmatzīmi „Organic Maps“ kartē!</string>
+    <!-- Subject for emailed position -->
+    <string name="my_position_share_email_subject">Hei, apskati manu atrašanās vietu „Oganic Maps“ kartē!</string>
+    <!-- Share my position using EMail, %1$@ is om:// and %2$@ is https://omaps.app link WITHOUT NAME -->
+    <string name="my_position_share_email">Hei,
+\n
+\nŠobrīd atrodos te: %1$s. Spied uz šīs %2$s vai šīs %3$s saites, lai kartē redzētu manu atrašanās vietu.
+\n
+\nPaldies!</string>
+    <!-- Share button text which opens menu with more buttons, like Message, EMail, Facebook etc. -->
+    <string name="share">Kopīgot</string>
+    <!-- Share by email button text, also used in editor and About. -->
+    <string name="email">E-pasts</string>
+    <!-- Text for message when used successfully copied something -->
+    <string name="copied_to_clipboard">Nokopēts starpliktuvē: %s</string>
+    <!-- Used for bookmark editing -->
+    <string name="done">Pabeigts</string>
+    <!-- Data version in «About» screen, %@ is replaced by a local, human readable date. -->
+    <string name="data_version">„OpenStreetMap“ dati: %s</string>
+    <!-- Confirmation for OpenStreetMap log out. -->
+    <string name="osm_log_out_confirmation">Vai tiešām vēlaties izrakstīties no „OpenStreetMap“ konta?</string>
+    <!-- Title for tracks category in bookmarks manager -->
+    <string name="tracks_title">Ceļi</string>
+    <!-- Length of track in cell that describes route -->
+    <string name="length">Garums</string>
+    <string name="share_my_location">Kopīgot manu atrašanās vietu</string>
+    <!-- Settings general group in settings screen -->
+    <string name="prefs_group_general">Pamata iestatījumi</string>
+    <!-- Settings information group in settings screen -->
+    <string name="prefs_group_information">Informācija</string>
+    <string name="prefs_group_route">Navigācija</string>
+    <string name="pref_zoom_title">Tālummaiņas pogas</string>
+    <string name="pref_zoom_summary">Rādīt kartē</string>
+    <!-- Settings «Map» category: «Night style» title -->
+    <string name="pref_map_style_title">Nakts režīms</string>
+    <!-- Generic «Off» string -->
+    <string name="off">Izslēgts</string>
+    <!-- Generic «On» string -->
+    <string name="on">Ieslēgts</string>
+    <!-- Generic «Auto» string -->
+    <string name="auto">Automātisks</string>
+    <!-- Settings «Map» category: «Perspective view» title -->
+    <string name="pref_map_3d_title">Perspektīvas skats</string>
+    <!-- Settings «Map» category: «3D buildings» title -->
+    <string name="pref_map_3d_buildings_title">3D ēkas</string>
+    <!-- A message in Settings/Preferences explaining why is it not possible to enable 3D buildings when max power saving mode is enabled -->
+    <string name="pref_map_3d_buildings_disabled_summary">Energotaupības režīmā 3D ēkas ir izslēgtas</string>
+    <!-- Settings «Route» category: «Tts enabled» title -->
+    <string name="pref_tts_enable_title">Balss instrukcijas</string>
+    <!-- Settings «Route» category: «Tts announce street names» title -->
+    <string name="pref_tts_street_names_title">Izrunāt ielu nosaukumus</string>
+    <!-- Settings «Route» category: «Tts announce street names» description -->
+    <string name="pref_tts_street_names_description">Kad ieslēgts, ielas vai ceļa nobrauktuves nosaukumu skaļi izrunās.</string>
+    <!-- Settings «Route» category: «Tts language» title -->
+    <string name="pref_tts_language_title">Balss valoda</string>
+    <!-- Settings «Route» category: «Test Voice Directions» title -->
+    <string name="pref_tts_test_voice_title">Pārbaudīt balss norādes (TTS, teksta pārvēršana runā)</string>
+    <!-- Settings «Route» category: Pop-up message when clicking «Test Voice Directions» -->
+    <string name="pref_tts_playing_test_voice">Ja nedzirdat balsi, pārbaudiet skaļumu vai teksta pārvēršanas runā iestatījumus.</string>
+    <!-- Settings «Route» category: «Tts unavailable» subtitle -->
+    <string name="pref_tts_unavailable">Nav pieejama</string>
+    <string name="pref_map_auto_zoom">Automātisks mērogs</string>
+    <string name="placepage_distance">Attālums</string>
+    <string name="search_show_on_map">Rādīt kartē</string>
+    <!-- Menu button -->
+    <string name="menu">Izvēlne</string>
+    <!-- Text in menu -->
+    <string name="website">Tīmekļa vietne</string>
+    <!-- Text in About menu, opens Organic Maps news website -->
+    <string name="news">Jaunumi</string>
+    <!-- Settings: Send feedback button and dialog title -->
+    <string name="feedback">Atsauksmes</string>
+    <!-- Text in menu -->
+    <string name="rate_the_app">Novērtējiet lietotni</string>
+    <!-- Text in menu -->
+    <string name="help">Palīdzība</string>
+    <!-- Button in the main Help dialog -->
+    <string name="faq">Biežāk uzdotie jautājumi</string>
+    <!-- Button in the main menu -->
+    <string name="donate">Ziedot</string>
+    <!-- Button in the main Help dialog -->
+    <string name="how_to_support_us">Atbalstiet projektu</string>
+    <!-- Button in the main Help dialog -->
+    <string name="copyright">Autortiesības</string>
+    <!-- Text in menu + Button in the main Help dialog -->
+    <string name="report_a_bug">Ziņot par kļūdu</string>
+    <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
+    <string name="compass_calibration_recommended">Uzlabojiet bultiņas virzienu, pārvietojot tālruni astoņniekā, kas kalibrēs kompasu.</string>
+    <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
+    <string name="compass_calibration_required">Pārvietojot tālruni astoņniekā, lai kalibrētu kompasu un labotu bultas virzienu kartē.</string>
+    <!-- Toast text when user hides UI with a long tap anywhere on the map -->
+    <string name="long_tap_toast">Vēlreiz piespiediet un paturiet uz kartes, lai redzētu saskarni</string>
+    <!-- Update all button text -->
+    <string name="downloader_update_all_button">Atjaunināt visu</string>
+    <!-- Cancel all button text -->
+    <string name="downloader_cancel_all">Atcelt visu</string>
+    <!-- Downloaded maps list header -->
+    <string name="downloader_downloaded_subtitle">Lejupielādētās</string>
+    <!-- Country queued for download -->
+    <string name="downloader_queued">Rindota</string>
+    <string name="downloader_near_me_subtitle">Man tuvumā</string>
+    <!-- In maps downloader and country place page shows how many maps are downloaded / to download, e.g. "Maps: 3 of 10" -->
+    <string name="downloader_status_maps">Kartes</string>
+    <string name="downloader_download_all_button">Lejupielādēt visu</string>
+    <string name="downloader_downloading">Lejupielādē:</string>
+    <!-- Displayed in a dialog that appears when a user tries to delete a map while the app is in the follow route mode -->
+    <string name="downloader_delete_map_while_routing_dialog">Lai dzēstu karti, apturiet navigāciju.</string>
+    <!-- PointsInDifferentMWM -->
+    <string name="routing_failed_cross_mwm_building">Maršrutus var izveidot, ja atrodas vienas reģiona kartes robežās.</string>
+    <!-- Context menu item for downloader. -->
+    <string name="downloader_download_map">Lejupielādēt karti</string>
+    <!-- Item status in downloader. -->
+    <string name="downloader_retry">Mēģināt vēlreiz</string>
+    <!-- Item in context menu. -->
+    <string name="downloader_delete_map">Dzēst karti</string>
+    <!-- Item in context menu. -->
+    <string name="downloader_update_map">Atjaunināt karti</string>
+    <!-- Preference title -->
+    <string name="google_play_services">„Google Play“ vietas noteikšanas pakalpojumi</string>
+    <!-- Preference text -->
+    <string name="pref_use_google_play">Ātri nosakiet atrašanās vietu, izmantojot „Bluetooth“, „WiFi“ vai mobilo tīklu</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Viesnīcu saites</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotogrāfijas, atsauksmes, rezervēšanas saites tiek rādītas viesnīcām, kas ir iekļautas Kayak.com sarakstā. Par katru rezervāciju, kas veikta, izmantojot šīs saites, saņemtais ieteikuma bonuss tiek novirzīts Organic Maps attīstībai.</string>
+    <!-- Text for routing error dialog -->
+    <string name="routing_download_maps_along">Lejupielādēt visas maršruta kartes</string>
+    <!-- Text for routing error dialog -->
+    <string name="routing_requires_all_map">Lai izveidotu maršrutu, lejupielādējiet un atjauniniet visas kartes no jūsu atrašanās vietas līdz galamērķim.</string>
+    <!-- Text for routing error dialog -->
+    <string name="routing_not_enough_space">Trūkst vietas</string>
+    <!-- location service disabled -->
+    <string name="enable_location_services">Ieslēdziet ierīces atrašanās vietas noteikšanas pakalpojumus</string>
+    <string name="save">Saglabāt</string>
+    <string name="edit_description_hint">Jūsu apraksti (teksts vai HTML)</string>
+    <string name="create">izveidot</string>
+    <!-- red color -->
+    <string name="red">Sarkana</string>
+    <!-- yellow color -->
+    <string name="yellow">Dzeltena</string>
+    <!-- blue color -->
+    <string name="blue">Zila</string>
+    <!-- green color -->
+    <string name="green">Zaļa</string>
+    <!-- purple color -->
+    <string name="purple">Violeta</string>
+    <!-- orange color -->
+    <string name="orange">Oranža</string>
+    <!-- brown color -->
+    <string name="brown">Brūna</string>
+    <!-- pink color -->
+    <string name="pink">Rozā</string>
+    <!-- deep purple color -->
+    <string name="deep_purple">Tumši violeta</string>
+    <!-- light blue color -->
+    <string name="light_blue">Gaiši zila</string>
+    <!-- cyan color -->
+    <string name="cyan">Ciāna</string>
+    <!-- teal color -->
+    <string name="teal">Tumši ciāna</string>
+    <!-- lime color -->
+    <string name="lime">Dzeltenzaļa</string>
+    <!-- deep orange color -->
+    <string name="deep_orange">Tumši oranža</string>
+    <!-- gray color -->
+    <string name="gray">Pelēka</string>
+    <!-- blue gray color -->
+    <string name="blue_gray">Zilpelēka</string>
+
+    <!-- SECTION: Routing dialogs strings -->
+    <string name="dialog_routing_disclaimer_title">Sekojot maršrutam, ievērojiet:</string>
+    <string name="dialog_routing_disclaimer_priority">— Apstākļiem uz ceļa, ceļu satiksmes noteikumiem un ceļazīmēm vienmēr ir priekšroka pār navigācijas ieteikumiem;</string>
+    <string name="dialog_routing_disclaimer_precision">— Karte var būt kļūdaina, kā arī ieteiktais maršruts ne vienmēr būs optimālākais galamērķa sasniegšanai;</string>
+    <string name="dialog_routing_disclaimer_recommendations">— Jāsaprot, ka ieteiktie maršruti ir tikai ieteikumi;</string>
+    <string name="dialog_routing_disclaimer_borders">— Esiet uzmanīgi ar maršrutiem pie valsts robežām: mūsu lietotnes ģenerētie maršruti reizēm var šķērsot valsts robežas neatļautās vietās.</string>
+    <string name="dialog_routing_disclaimer_beware">Uz ceļa esiet modri un uzmanīgi!</string>
+    <string name="dialog_routing_check_gps">Pārbaudīt GPS signālu</string>
+    <string name="dialog_routing_error_location_not_found">Neizdevās izveidot maršrutu. Neizdevās noteikt pašreizējās GPS koordinātes.</string>
+    <string name="dialog_routing_location_turn_wifi">Pārbaudiet GPS signālu. „Wi-Fi“ ieslēgšana uzlabos atrašanās vietas precizitāti.</string>
+    <string name="dialog_routing_location_turn_on">Ieslēgt vietas noteikšanas servisus</string>
+    <string name="dialog_routing_location_unknown_turn_on">Neizdodas noteikt pašreizējās GPS koordinātes. Ieslēdziet atrašanās vietas servisus, lai aprēķināt maršrutu.</string>
+    <string name="dialog_routing_unable_locate_route">Neizdevās noteikt maršrutu</string>
+    <string name="dialog_routing_cant_build_route">Neizdevās izveidot maršrutu.</string>
+    <string name="dialog_routing_change_start_or_end">Precizējiet savu sākuma punktu vai galamērķi.</string>
+    <string name="dialog_routing_change_start">Precizēt sākuma punktu</string>
+    <string name="dialog_routing_start_not_determined">Maršruts nav izveidots. Neizdodas noteikt sākuma punktu.</string>
+    <string name="dialog_routing_select_closer_start">Atlasiet sākuma punktu tuvāk pie ceļa.</string>
+    <string name="dialog_routing_change_end">Precizēt galamērķi</string>
+    <string name="dialog_routing_end_not_determined">Maršruts nav izveidots. Neizdodas noteikt galamērķi.</string>
+    <string name="dialog_routing_select_closer_end">Atlasiet galamērķa punktu pēc iespējas tuvāk ceļam.</string>
+    <string name="dialog_routing_change_intermediate">Neizdevās noteikt starppunktu.</string>
+    <string name="dialog_routing_intermediate_not_determined">Labojiet starppunktu.</string>
+    <string name="dialog_routing_system_error">Sistēmas kļūda</string>
+    <string name="dialog_routing_application_error">Kļūdas dēļ neizdevās izveidot maršrutu.</string>
+    <string name="dialog_routing_try_again">Mēģiniet vēlreiz</string>
+    <string name="not_now">Ne tagad</string>
+    <string name="dialog_routing_download_and_build_cross_route">Vai vēlaties lejupielādēt karti un izveidot piemērotāku maršrutu, kas ietver vairāk par vienu karti?</string>
+    <string name="dialog_routing_download_cross_route">Lejupielādējiet papildu kartes, lai izveidotu labāku maršrutu, kas šķērso šīs kartes robežu.</string>
+
+    <!-- SECTION: Strings for downloading map from search -->
+    <string name="search_without_internet_advertisement">Lejupielādējiet karti, lai sāktu meklēt un veidot maršrutus. Pēc tam tīkla pieslēgumu vairs nevajadzēs.</string>
+    <string name="search_select_map">Atlasīt karti</string>
+    <!-- «Show» context menu -->
+    <string name="show">Rādīt</string>
+    <!-- «Hide» context menu -->
+    <string name="hide">Slēpt</string>
+    <string name="categories">Kategorijas</string>
+    <string name="history">Vēsture</string>
+    <string name="search_not_found">Vai, nekas nav atrasts!</string>
+    <!-- The message when user did not find anything in the search. -->
+    <string name="search_not_found_query">Lejupielādējiet reģionu, kurā meklēt, vai mēģiniet pievienot tuvumā esošas apdzīvotas vietas nosaukumu.</string>
+    <string name="search_history_title">Meklēšanas vēsture</string>
+    <string name="search_history_text">Apskatiet meklēšanas vēsturi.</string>
+    <string name="clear_search">Notīrīt vēsturi</string>
+    <!-- Place Page link to Wikipedia article (if map object has it). -->
+    <string name="read_in_wikipedia">Vikipēdija</string>
+    <string name="p2p_your_location">Jūsu atrašanās vieta</string>
+    <string name="p2p_start">Sākt</string>
+    <string name="p2p_from_here">Maršruts no</string>
+    <string name="p2p_to_here">Kurp</string>
+    <string name="p2p_only_from_current">Navigācija ir pieejama tikai no jūsu pašreizējās atrašanās vietas.</string>
+    <string name="p2p_reroute_from_current">Vai vēlaties plānot maršrutu no savas pašreizējās atrašanās vietas?</string>
+    <!-- Edit open hours/set time and minutes dialog -->
+    <string name="next_button">Tālāk</string>
+    <!-- Tab title in the Edit Opening Hours time picker -->
+    <string name="editor_time_from">No</string>
+    <!-- Tab title in the Edit Opening Hours time picker -->
+    <string name="editor_time_to">Līdz</string>
+    <string name="editor_time_add">Pievienot grafiku</string>
+    <string name="editor_time_delete">Dzēst grafiku</string>
+    <!-- Text for allday switch. -->
+    <string name="editor_time_allday">Visu dienu (24 stundas)</string>
+    <string name="editor_time_open">Atvērts</string>
+    <string name="editor_time_close">Slēgts</string>
+    <string name="editor_time_add_closed">Pievienot  laiku, kad nestrādā</string>
+    <string name="editor_time_title">Darba laiks</string>
+    <string name="editor_time_advanced">Paplašinātais režīms</string>
+    <string name="editor_time_simple">Parastais režīms</string>
+    <string name="editor_hours_closed">Laiks, kad slēgts</string>
+    <string name="editor_example_values">Piemēra vērtības</string>
+    <string name="editor_correct_mistake">Labot kļūdu</string>
+    <string name="editor_add_select_location">Vieta</string>
+    <string name="editor_report_problem_desription_1">Sīkāk aprakstiet problēmu, lai „OpenStreetMap“ kopiena to varētu novērst.</string>
+    <string name="editor_report_problem_desription_2">Vai arī to izlabo vietnē https://www.openstreetmap.org/</string>
+    <string name="editor_report_problem_send_button">Sūtīt</string>
+    <string name="editor_report_problem_title">Problēma</string>
+    <string name="editor_report_problem_no_place_title">Vieta nepastāv</string>
+    <string name="editor_report_problem_under_construction_title">Aizvērts uz remonta laiku</string>
+    <string name="editor_report_problem_duplicate_place_title">Vieta dublējas</string>
+    <string name="autodownload">Automātiska karšu lejupielāde</string>
+    <!-- Place Page opening hours text -->
+    <string name="daily">Ik dienu</string>
+    <string name="twentyfour_seven">24/7</string>
+    <string name="day_off_today">Šodien slēgts</string>
+    <string name="day_off">Slēgts</string>
+    <string name="today">Šodien</string>
+    <string name="opens_in">Atveras pēc %s</string>
+    <string name="closes_in">Slēgts pēc %s</string>
+    <string name="closed">Slēgts</string>
+    <string name="edit_opening_hours">Rediģēt darba laiku</string>
+    <string name="no_osm_account">Vai jums nav „OpenStreetMap“ konta?</string>
+    <string name="register_at_openstreetmap">Reģistrējieties „OpenStreetMap“</string>
+    <string name="login">Ierakstīties</string>
+    <!-- Status message indicating that user did not login to OSM profile yet. -->
+    <string name="not_signed_in">Neierakstījāties</string>
+    <string name="login_osm">Ierakstīties „OpenStreetMap“</string>
+    <string name="password">Parole</string>
+    <string name="forgot_password">Vai aizmirsāt paroli?</string>
+    <string name="logout">Izrakstīties</string>
+    <string name="edit_place">Rediģēt vietu</string>
+    <string name="add_language">Pievienot valodu</string>
+    <string name="street">Iela</string>
+    <!-- Editable House Number text field (in address block). -->
+    <string name="house_number">Ēkas numurs</string>
+    <string name="details">Vairāk</string>
+    <!-- Text field to enter non-existing street name, below list of known streets around -->
+    <string name="add_street">Pievienot ielu</string>
+    <!-- Error to display when a new street name is not entered in the New street dialog -->
+    <string name="empty_street_name_error">Ierakstiet ielas nosaukumu</string>
+    <string name="choose_language">Izvēlieties valodu</string>
+    <string name="choose_street">Izvēlieties ielu</string>
+    <string name="postal_code">Pasta indekss</string>
+    <string name="cuisine">Virtuve</string>
+    <string name="select_cuisine">Atlasiet virtuvi</string>
+    <!-- login text field -->
+    <string name="email_or_username">E-pasta adrese vai lietotājvārds</string>
+    <string name="editor_add_phone">Pievienot tālruni</string>
+    <string name="level">Stāvs</string>
+    <!-- Building level -->
+    <string name="level_value_generic">Stāvi virs zemes: %s</string>
+    <string name="downloader_delete_map_dialog">Kopā ar karti dzēsīsies visas jūsu veiktās kartes izmaiņas.</string>
+    <string name="downloader_update_maps">Atjaunināt kartes</string>
+    <string name="downloader_mwm_migration_dialog">Lai izveidotu maršrutu, atjauniniet visas kartes un plānojiet maršrutu no jauna.</string>
+    <string name="downloader_search_field_hint">Atrast karti</string>
+    <string name="common_check_internet_connection_dialog">Pārliecinieties, ka ierīce ir savienota ar internetu.</string>
+    <string name="downloader_no_space_title">Trūkst vietas</string>
+    <string name="downloader_no_space_message">Dzēsiet liekos datus</string>
+    <string name="editor_login_error_dialog">Ierakstīšanās kļūda.</string>
+    <string name="editor_profile_changes">Apstiprinātas izmaiņas</string>
+    <string name="editor_focus_map_on_location">Velciet karti, lai atlasītu pareizu objekta atrašanās vietu.</string>
+    <string name="editor_edit_place_title">Rediģēšana</string>
+    <string name="editor_add_place_title">Pievienošana</string>
+    <string name="editor_edit_place_name_hint">Vietas nosaukums</string>
+    <!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+    <string name="editor_default_language_hint">Pieraksts vietējā valodā</string>
+    <string name="editor_edit_place_category_title">Kategorija</string>
+    <string name="detailed_problem_description">Plašāks problēmas apraksts</string>
+    <string name="editor_report_problem_other_title">Cita problēma</string>
+    <string name="placepage_add_business_button">Pievienot uzņēmumu</string>
+    <string name="message_invalid_feature_position">Šeit objekti nevar atrasties</string>
+    <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
+    <string name="osm_presentation">Kopiena veidotie „OpenStreetMap“ dati uz %s. Uzziniet vairāk par to, kā piedalīties kartes rediģēšanā un uzlabošanā vietnē „OpenStreetMap.org“.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) ir kopienas projekts, kura mērķis ir izveidot atvērtajos datos balstītu karti, kura ir pieejama bez maksas. Tas ir Organic Maps galvenais karšu datu avots un darbojas līdzīgi kā Vikipēdija. Jūs varat pievienot vai rediģēt vietas, un tās kļūst pieejamas miljoniem lietotāju visā pasaulē.
+\nPievienojieties kopienai, lai palīdzētu izveidot labāku karti visiem!</string>
+    <string name="login_to_make_edits_visible">Izveidojiet OpenStreetMap kontu vai piesakieties, lai publicētu savas kartes rediģējumus visā pasaulē.</string>
+    <!-- Downloaded 10 **of** 20 <- it is that "of" -->
+    <string name="downloader_of">%1$d no %2$d</string>
+    <string name="download_over_mobile_header">Vai lejupielādēt arī mobilajā tīklā?</string>
+    <string name="download_over_mobile_message">Ja lietojat ierobežotus datus vai viesabonēšanu, tas var izmaksāt dārgi.</string>
+    <string name="error_enter_correct_house_number">Ierakstiet derīgu ēkas numuru</string>
+    <string name="editor_storey_number">Stāvu skaits (maks. %d)</string>
+    <!-- Error message in Editor when a user tries to set the number of floors for a building higher than %d floors -->
+    <string name="error_enter_correct_storey_number">Stāvu skaits nedrīkst pārsniegt %d</string>
+    <string name="editor_zip_code">Pasta indekss</string>
+    <string name="error_enter_correct_zip_code">Ierakstiet pasta indeksu</string>
+    <!-- Place Page title for long tap -->
+    <string name="core_placepage_unknown_place">Nezināma vieta</string>
+    <string name="editor_more_about_osm">Vairāk par „OpenStreetMap“</string>
+    <string name="editor_osm_history">Tava kartes izmaiņu vēsture</string>
+    <string name="editor_osm_notes">Tavas kartes datu piezīmes</string>
+    <string name="editor_operator">Operators</string>
+    <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
+    <string name="operator">Operators: %s</string>
+    <string name="editor_category_unsuitable_title">Vai neatrodat atbilstošu kategoriju?</string>
+    <string name="editor_category_unsuitable_text">„Organic Maps“ ļauj pievienot tikai vienkāršu punktu kategorijas, proti, nevarat pievienot pilsētas, ceļus, ezerus, ēku aprises u.tml. Šādas kategorijas lūdzam pievienot tiešā veidā <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Lai uzzinātu, kā to izdarīt, sekojiet norādēm <a href="https://organicmaps.app/faq/editing/advanced-map-editing">rokasgrāmatā</a>.</string>
+    <string name="downloader_no_downloaded_maps_title">Ierīcē nav lejupielādētas kartes</string>
+    <string name="downloader_no_downloaded_maps_message">Lai darbotos nesaistes navigācija un meklēšana, lejupielādējiet kartes.</string>
+    <string name="current_location_unknown_error_title">Pašreizējā vieta nav zināma.</string>
+    <!-- abbreviation for meters -->
+    <string name="m">m</string>
+    <!-- abbreviation for kilometers -->
+    <string name="km">km</string>
+    <!-- abbreviation for kilometers per hour -->
+    <string name="kilometers_per_hour">km/h</string>
+    <!-- abbreviation for mile(s) -->
+    <string name="mi">mi</string>
+    <!-- A unit of measure -->
+    <string name="ft">ft</string>
+    <string name="miles_per_hour">mph</string>
+    <string name="hour">st.</string>
+    <string name="minute">min.</string>
+    <string name="day">d</string>
+    <string name="placepage_more_button">Vairāk</string>
+    <!-- A referral link on the place page for some hotels -->
+    <string name="more_on_kayak">Foto, atsauksmes, rezervācija</string>
+    <!-- An explanation dialog shown when clicking on more_on_kayak link. -->
+    <string name="dialog_kayak_disclaimer">No ieteikuma saites saņemtais bonuss par katru rezervāciju nonāk „Organic Maps“ attīstīšanai.</string>
+    <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_button">Informācija par „Kayak“</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Atslēgt Kayak</string>
+    <string name="placepage_edit_bookmark_button">Rediģēt grāmatzīmi</string>
+    <string name="editor_comment_hint">Komentārs…</string>
+    <string name="editor_reset_edits_message">Vai izmest visas lokāli saglabātās izmaiņas?</string>
+    <string name="editor_reset_edits_button">Noraidīt</string>
+    <string name="editor_remove_place_message">Vai dzēst pievienoto vietu?</string>
+    <string name="editor_remove_place_button">Dzēst</string>
+    <string name="editor_place_doesnt_exist">Vieta nepastāv</string>
+    <!-- Error message for "Place doesn't exist" dialog when comment is empty -->
+    <string name="delete_place_empty_comment_error">Norādiet šīs vietas dzēšanas iemeslu</string>
+    <!-- Phone number error message -->
+    <string name="error_enter_correct_phone">Ierakstiet derīgu tālruņa numuru</string>
+    <string name="error_enter_correct_web">Ierakstiet derīgu tīmekļa vietnes adresi</string>
+    <string name="error_enter_correct_email">Ierakstiet e-pasta adresi</string>
+    <string name="error_enter_correct_facebook_page">Ierakstiet „Facebook“ lapas adresi, kontu vai mājaslapas nosaukumu</string>
+    <string name="error_enter_correct_instagram_page">Ierakstiet „Instagram“ vietnes adresi vai konta nosaukumu</string>
+    <string name="error_enter_correct_twitter_page">Ierakstiet „Twitter“ vietnes adresi vai lietotājvārdu</string>
+    <string name="error_enter_correct_vk_page">Ierakstiet VK vietnes adresi vai konta nosaukumu</string>
+    <string name="error_enter_correct_line_page">Ierakstiet LINE vietnes adresi vai LINE ID</string>
+    <string name="placepage_add_place_button">Pievienot vietu „OpenStreetMap“</string>
+    <!-- Displayed when saving some edits to the map to warn against publishing personal data -->
+    <string name="editor_share_to_all_dialog_title">Vai vēlaties to nosūtīt visiem lietotājiem?</string>
+    <!-- Dialog before publishing the modifications to the public map. -->
+    <string name="editor_share_to_all_dialog_message_1">Pārliecinieties, ka neievadījāt nekādus privātus vai personīgus datus.</string>
+    <string name="editor_share_to_all_dialog_message_2">„OpenStreetMap“ redaktori pārskatīs veiktās izmaiņas un jautājumu gadījumā ar jums sazināsies.</string>
+    <string name="navigation_stop_button">Apturēt</string>
+    <!-- Shown as toast when starting the recent track recording -->
+    <string name="track_recording">Maršruta reģistrēšana</string>
+    <!-- For the first routing -->
+    <string name="accept">Pieņemt</string>
+    <!-- For the first routing -->
+    <string name="decline">Noraidīt</string>
+    <string name="mobile_data_dialog">Izmantot mobilos datus, lai parādītu plašāku informāciju?</string>
+    <string name="mobile_data_option_always">Izmantot vienmēr</string>
+    <string name="mobile_data_option_today">Tikai šodien</string>
+    <string name="mobile_data_option_not_today">Šodien neizmantot</string>
+    <string name="mobile_data">Mobilie dati</string>
+    <!-- NOTE to translators: please synchronize your translation with the English one. -->
+    <string name="mobile_data_description">Kartes atjauninājumu paziņojumiem un rediģējumu augšupielādēšanai ir nepieciešami mobilie dati.</string>
+    <string name="mobile_data_option_never">Nekad neizmantot</string>
+    <string name="mobile_data_option_ask">Jautāt vienmēr</string>
+    <string name="traffic_update_maps_text">Lai parādītu satiksmes datus, kartes ir jāatjaunina.</string>
+    <string name="big_font">Palielināt fonta lielumu kartē</string>
+    <string name="traffic_update_app">Atjauniniet „Organic Maps“</string>
+    <!-- "traffic" as in "road congestion" -->
+    <string name="traffic_data_unavailable">Satiksmes dati nav pieejami</string>
+    <string name="enable_logging">Ieslēgt žurnalēšanu</string>
+    <!-- Settings: "Send general feedback" button -->
+    <string name="feedback_general">Vispārīgas atsauksmes</string>
+    <string name="prefs_languages_information">Balss norādēm lietotne izmanto teksta pārveides runā sistēmu (TTS). Daudzas „Android“ ierīces izmanto „Google TTS“, ko varat lejupielādēt un atjaunināt „Google Play“ veikalā (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
+    <string name="prefs_languages_information_off">Dažām valodām nepieciešams instalēt runas sintezatoru vai papildu valodas paku, kas parasti atrodama lietotņu veikalā („Google Play“, „Galaxy Store“, „App Gallery“, „FDroid“).
+\nAtveriet ierīces iestatījumus → Valoda un ievade → Runa → Teksta pārveide runā.
+\nTe varat pārvaldīt runas sintēzes iestatījumus (piemēram, lejupielādēt valodas paku lietošanai nesaistē, kā arī varat nomainīt dzini teksta pārvēršanai runā.</string>
+    <string name="prefs_languages_information_off_link">Vairāk informācijas atradīsiet šajā pamācībā</string>
+    <string name="transliteration_title">Transliterācija uz latīņu alfabētu</string>
+    <string name="learn_more">Uzziniet vairāk</string>
+    <!-- Subway exits for public transport marks on the map -->
+    <string name="core_exit">Izeja</string>
+    <!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+    <string name="routing_add_start_point">Lietojiet meklēšanu vai pieskarieties kartei, lai pievienotu galamērķi</string>
+    <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+    <string name="routing_add_finish_point">Lietojiet meklēšanu vai pieskarieties kartei, lai pievienotu sākuma punktu</string>
+    <string name="placepage_remove_stop">Noņemt starppunktu</string>
+    <string name="placepage_add_stop">Pievienot starppunktu</string>
+    <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
+    <string name="alert_reauth_message">Ierakstieties „OpenStreetMap“, lai automātiski augšupielādētu visus kartes rediģējumus. Uzziniet vairāk <a href="https://github.com/organicmaps/organicmaps/issues/6144">te</a>.</string>
+    <string name="dialog_error_storage_title">Krātuves pieejas problēma</string>
+    <string name="dialog_error_storage_message">Ārējā krātuve nav pieejama. Iespējams, ir izņemta vai bojāta SD karte, vai arī datņu sistēma ir tikai lasāma. Pārbaudiet savu SD karti vai sazinieties ar mums, rakstot uz support\@organicmaps.app</string>
+    <string name="setting_emulate_bad_storage">Simulēt bojātu krātuvi</string>
+    <string name="core_entrance">Ieeja</string>
+    <string name="error_enter_correct_name">Ierakstiet pareizu nosaukumu</string>
+    <string name="bookmark_lists">Saraksti</string>
+    <!-- Do not display all bookmark lists on the map -->
+    <string name="bookmark_lists_hide_all">Slēpt visu</string>
+    <string name="bookmark_lists_show_all">Rādīt visu</string>
+    <plurals name="bookmarks_places">
+        <item quantity="zero">%d grāmatzīmju</item>
+        <item quantity="one">%d grāmatzīme</item>
+        <item quantity="other">%d grāmatzīmes</item>
+    </plurals>
+    <string name="bookmarks_create_new_group">Izveidot jaunu sarakstu</string>
+    <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
+    <string name="bookmarks_import">Importēt grāmatzīmes un ceļus</string>
+    <string name="bookmarks_error_message_share_general">Programmas kļūdas dēļ kopīgošana neizdevās</string>
+    <string name="bookmarks_error_title_share_empty">Kopīgošanas kļūda</string>
+    <string name="bookmarks_error_message_share_empty">Nav iespējams kopīgot tukšu sarakstu</string>
+    <string name="bookmarks_error_title_empty_list_name">Nosaukums nevar būt tukšs</string>
+    <string name="bookmarks_error_message_empty_list_name">Ierakstiet saraksta nosaukumu</string>
+    <string name="bookmarks_new_list_hint">Jauns saraksts</string>
+    <string name="bookmarks_error_title_list_name_already_taken">Šāds nosaukums jau ir aizņemts</string>
+    <string name="bookmarks_error_message_list_name_already_taken">Izvēlieties citu nosaukumu</string>
+    <string name="please_wait">Uzgaidiet…</string>
+    <string name="phone_number">Tālruņa numurs</string>
+    <string name="profile">„OpenStraatMap“ profils</string>
+    <plurals name="bookmarks_detect_message">
+        <item quantity="zero">Lietotne atrada %d jaunu datņu. Varat tās apskatīt pēc konvertācijas.</item>
+        <item quantity="one">Lietotne atrada %d jaunu datni. Varat to apskatīt pēc konvertācijas.</item>
+        <item quantity="other">Lietotne atrada %d jaunas datnes. Varat tās apskatīt pēc konvertācijas.</item>
+    </plurals>
+    <string name="restore">Atjaunot</string>
+    <plurals name="tracks">
+        <item quantity="zero">%d ceļu</item>
+        <item quantity="one">%d ceļš</item>
+        <item quantity="other">%d ceļi</item>
+    </plurals>
+    <!-- Settings privacy group in settings screen -->
+    <string name="privacy">Privātums</string>
+    <string name="privacy_policy">Privātuma politika</string>
+    <string name="terms_of_use">Lietošanas noteikumi</string>
+    <string name="button_layer_traffic">Satiksme</string>
+    <string name="button_layer_subway">Metro</string>
+    <string name="layers_title">Kartes stili un slāņi</string>
+    <string name="subway_data_unavailable">Metro karte nav pieejama</string>
+    <string name="bookmarks_empty_list_title">Saraksts ir tukšs</string>
+    <string name="bookmarks_empty_list_message">Lai pievienotu grāmatzīmi, sākumā spiediet uz vietas kartē, bet tad uz zvaigznītes ikonas</string>
+    <string name="category_desc_more">…vairāk</string>
+    <string name="export_file">Eksportēt KMZ</string>
+    <string name="export_file_gpx">GPX eksportēšana</string>
+    <string name="delete_list">Dzēst sarakstu</string>
+    <string name="public_access">Publiska pieeja</string>
+    <string name="limited_access">Ierobežota pieeja</string>
+    <string name="bookmark_list_description_hint">Aprakstiet (teksts vai HTML)</string>
+    <string name="not_shared">Privāts</string>
+    <string name="speedcams_alert_title">Fotoradari</string>
+    <string name="place_description_title">Vietas apraksts</string>
+    <!-- this text will be shown in application notification preferences opposite checkbox which enable/disable downloader notifications. Devices on Android 8+ are affected. -->
+    <string name="notification_channel_downloader">Karšu lejupielādētājs</string>
+    <!-- "Speed cameras" settings menu option (should be short! no more than 47-50 chars) to warn a driver if there is a risk of exceeding the speed limit -->
+    <string name="pref_tts_speedcams_auto">Brīdināt par ātruma pārsniegšanu</string>
+    <!-- Speed camera settings menu option - Always warn (about speedcams) -->
+    <string name="pref_tts_speedcams_always">Brīdināt vienmēr</string>
+    <!-- Speed camera settings menu option - Never warn (about speedcams) -->
+    <string name="pref_tts_speedcams_never">Nekad nebrīdināt</string>
+    <string name="power_managment_title">Energotaupības režīms</string>
+    <string name="power_managment_description">Mēģināt samazināt enerģijas patēriņu, izslēdzot atsevišķas funkcijas.</string>
+    <string name="power_managment_setting_never">Nekad</string>
+    <string name="power_managment_setting_auto">Kad ir zems uzlādes līmenis</string>
+    <string name="power_managment_setting_manual_max">Vienmēr</string>
+    <string name="enable_logging_warning_message">Uz laiku ieslēdziet šo opciju, lai reģistrētu un manuāli nosūtītu sīkākus žurnālus problēmu diagnostikai, izmantojot „Ziņot par kļūdu“ funkciju palīdzības lodziņā. Žurnāli var saturēt informāciju par atrašanās vietu.</string>
+    <string name="access_rules_author_only">Tiešsaistes rediģēšana</string>
+    <string name="driving_options_title">Maršruta opcijas</string>
+    <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
+    <string name="avoid_tolls">Izvairīties no maksas ceļiem</string>
+    <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
+    <string name="avoid_unpaved">Izvairīties no zemes ceļiem</string>
+    <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
+    <string name="avoid_ferry">Izvairīties no prāmjiem</string>
+    <string name="avoid_motorways">Izvairīties no automaģistrālēm</string>
+    <string name="unable_to_calc_alert_title">Neizdevās aprēķināt maršrutu</string>
+    <string name="unable_to_calc_alert_subtitle">Maršrutu neatrada. Iespējams, maršruta iestatījumi ir pārāk ierobežojoši vai trūkst „OpenStreetMap“ datu. Mēģiniet mainīt iestatījumus un atkārtot.</string>
+    <string name="define_to_avoid_btn">Noteikt nevēlamos ceļus</string>
+    <string name="change_driving_options_btn">Maršruta izvēles ir ieslēgtas</string>
+    <string name="toll_road">Maksas ceļš</string>
+    <string name="unpaved_road">Neasfaltēts ceļš</string>
+    <string name="ferry_crossing">Prāmja pārceltuve</string>
+    <!-- A generic "Yes" button in dialogs -->
+    <string name="yes">Jā</string>
+    <!-- A generic "No" button in dialogs -->
+    <string name="no">Nē</string>
+    <!-- E.g. "WiFi:Yes" -->
+    <string name="yes_available">Ir</string>
+    <!-- E.g. "WiFi:No" -->
+    <string name="no_available">Nav</string>
+    <!-- To indicate the capacity of car parkings, bicycle parkings, electric vehicle charging stations... -->
+    <string name="capacity">Ietilpība: %s</string>
+    <!-- To indicate the network of ATMs, bicycle rentals, electric vehicle charging stations... -->
+    <string name="network">Tīkls: %s</string>
+    <string name="trip_finished">Ieradāties galamērķī!</string>
+    <string name="ok">Labi</string>
+    <!-- max. 10 symbols, both iOS and Android -->
+    <string name="sort">Kārtot…</string>
+    <!-- Android, title, max 20-22 symbols -->
+    <string name="sort_bookmarks">Kārtot grāmatzīmes</string>
+    <!-- Android -->
+    <string name="by_default">Pēc noklusējuma</string>
+    <!-- Android -->
+    <string name="by_type">Pēc tipa</string>
+    <!-- Android -->
+    <string name="by_distance">Pēc attāluma</string>
+    <!-- Android -->
+    <string name="by_date">Pēc datuma</string>
+    <!-- Android -->
+    <string name="by_name">Pēc nosaukuma</string>
+    <string name="week_ago_sorttype">Pirms nedēļas</string>
+    <string name="month_ago_sorttype">Pirms mēneša</string>
+    <string name="moremonth_ago_sorttype">Vairāk nekā pirms mēneša</string>
+    <string name="moreyear_ago_sorttype">Vairāk nekā pirms gada</string>
+    <string name="near_me_sorttype">Man tuvumā</string>
+    <string name="others_sorttype">Cits</string>
+
+    <!-- SECTION: Bookmark types used for sorting -->
+    <string name="food_places">Ēdiens</string>
+    <string name="tourist_places">Apskates objekti</string>
+    <string name="museums">Muzeji</string>
+    <string name="parks">Parki</string>
+    <string name="swim_places">Peldvietas</string>
+    <string name="mountains">Kalni</string>
+    <string name="animals">Dzīvnieki</string>
+    <string name="hotels">Viesnīcas</string>
+    <string name="buildings">Ēkas</string>
+    <string name="money">Nauda</string>
+    <string name="shops">Veikali</string>
+    <string name="parkings">Autostāvvietas</string>
+    <string name="fuel_places">Degvielas uzpildes stacija</string>
+    <string name="medicine">Medicīna</string>
+    <string name="search_in_the_list">Meklēt sarakstā</string>
+    <string name="religious_places">Reliģiskas vietas</string>
+    <string name="select_list">Atlasīt sarakstu</string>
+    <string name="transit_not_found">Metro navigācija šajā reģionā nav pieejama</string>
+    <string name="dialog_pedestrian_route_is_long_header">Metro maršruts nav atrasts</string>
+    <string name="dialog_pedestrian_route_is_long_message">Izvēlieties sākuma un beigu punktu tuvāk metro stacijai</string>
+    <string name="button_layer_isolines">Reljefa līnijas</string>
+    <string name="isolines_activation_error_dialog">Reljefa līniju parādīšanai nepieciešamas lejupielādēt šī reģiona karti</string>
+    <string name="isolines_location_error_dialog">Topogrāfiskais slānis šim reģionam nav pieejams</string>
+    <string name="elevation_profile_ascent">Kāpums</string>
+    <string name="elevation_profile_descent">Kritums</string>
+    <string name="elevation_profile_min_elevation">Zemākais punkts</string>
+    <string name="elevation_profile_max_elevation">Augstākais punkts</string>
+    <string name="elevation_profile_difficulty">Sarežģītība</string>
+    <string name="elevation_profile_distance">Attālums:</string>
+    <string name="elevation_profile_time">Laiks:</string>
+    <string name="isolines_toast_zooms_1_10">Pietuviniet, lai izpētītu izolīnijas</string>
+    <string name="downloader_loading_ios">Lejupielādē</string>
+    <string name="download_map_title">Lejupielādēt pasaules karti</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disk_error">Neizdevās izveidot mapi un pārvietot datnes iekšējā atmiņā vai SD kartē</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disk_error_title">Diska kļūda</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="connection_failure">Savienojuma kļūda</string>
+    <!-- Used in DownloadResources startup screen -->
+    <string name="disconnect_usb_cable_title">Atvienojiet USB kabeli</string>
+    <string name="enable_keep_screen_on">Paturēt ekrānu ieslēgtu</string>
+    <!-- Description in preferences -->
+    <string name="enable_keep_screen_on_description">Kad ieslēgts, rādot karti, ekrāns vienmēr būs ieslēgts.</string>
+    <!-- A preference title; keep short! -->
+    <string name="enable_show_on_lock_screen">Rādīt bloķēšanas ekrānā</string>
+    <!-- Description in preferences -->
+    <string name="enable_show_on_lock_screen_description">Ja ieslēgts, lietotne darbosies pat tad, ja ierīce būs nobloķēta.</string>
+    <!-- OpenStreetMap text on splash screen -->
+    <string name="splash_subtitle">Kartes datu avots ir „OpenStreetMap“</string>
+    <!-- App Tip #00 -->
+    <string name="app_tip_00">Paldies, ka izmantojat mūsu kopienas veidotās kartes!</string>
+    <!-- App tip #01 -->
+    <string name="app_tip_01">Ar jūsu ziedojumiem un atbalstu varam izveidot pasaulē labākās kartes!</string>
+    <!-- App tip #02 -->
+    <string name="app_tip_02">lv = Vai jums patīk mūsu lietotne? Lūdzam ziedot tās attīstībai! Varbūt tā nepatīk? Tādā gadījumā lūdzam mums pastāstīt, kas tajā nepatīk, lai varam „Organic Maps“ uzlabot!</string>
+    <!-- App tip #03 -->
+    <string name="app_tip_03">Ja pazīstat kādu programmatūras izstrādātāju, varat viņam vai viņai palūgt ieviest funkciju, kas jums pietrūkst.</string>
+    <!-- App tip #05 -->
+    <string name="app_tip_05">Vai zinājāt, ka ir iespējams atlasīt jūsu pašreizējo atrašanās vietu kartē?</string>
+    <!-- App tip #06 -->
+    <string name="app_tip_06">Varat palīdzēt tulkot lietotni savā valodā.</string>
+    <!-- App tip #07 -->
+    <string name="app_tip_07">Šo lietotni veido daži entuziasti un mūsu kopiena.</string>
+    <!-- App tip #08 -->
+    <string name="app_tip_08">Kartes datus varat viegli labot un papildināt.</string>
+    <!-- App tip #09 -->
+    <string name="app_tip_09">Mūsu mērķis ir izveidot viegli lietojamas kartes, kas respektē jūsu privātumu un kuras jums patiks.</string>
+    <!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+    <string name="car_used_on_the_phone_screen">Tagad „Organic Maps“ izmantojat tālruņa ekrānā</string>
+    <!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
+    <string name="car_used_on_the_car_screen">Tagad „Organic Maps“ izmantojat automobiļa ekrānā</string>
+    <!-- Displayed on the phone screen. Android Auto connected -->
+    <string name="aa_connected_title">Savienojās ar „Android Audio“</string>
+    <!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
+    <string name="car_continue_on_the_phone">Turpināt tālrunī</string>
+    <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+    <string name="car_continue_in_the_car">Uz auto ekrānu</string>
+    <!-- Ask user to grant location permissions -->
+    <string name="aa_location_permissions_request">Lai darbotos navigācija, lietotnei ir nepieciešama ierīces atrašanās vietas informācija.</string>
+    <!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
+    <string name="aa_grant_permissions">Atļaut piekļuvi</string>
+    <!-- Text that will be displayed in the notification title when the app is connected to Android Auto. -->
+    <string name="aa_connected_to_car_notification_title">Savienots ar automobili</string>
+    <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->
+    <string name="button_layer_outdoor">Aktīvā atpūta</string>
+    <!-- Text displayed when a webview or a browser are disabled, and external links can't be opened. -->
+    <string name="browser_not_available">Tīmekļa pārlūkprogramma nav pieejama</string>
+    <string name="volume">Skaļums</string>
+    <!-- Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks -->
+    <string name="bookmarks_export">Eksportēt visas grāmatzīmes un ceļus</string>
+    <!-- button in (app) TTS settings, to open the system TTS settings. -->
+    <string name="pref_tts_open_system_settings">Runas sintēzes sistēmas iestatījumi</string>
+    <!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
+    <string name="pref_tts_no_system_tts">Lietotnes neatrada runas sintēzes iestatījumus. Vai ierīce tos atbalsta?</string>
+    <string name="drive_through">Caurbrauktuve caur</string>
+    <string name="clear_the_search">Notīrīt meklēšanu</string>
+    <string name="zoom_in">Tuvināt</string>
+    <!-- Accessibility text for the zoom-out button on the map -->
+    <string name="zoom_out">Tālināt</string>
+    <!-- Restaurant or other food place's menu URL field in the Editor -->
+    <string name="website_menu">Saite uz ēdienkarti</string>
+    <!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+    <string name="view_menu">Apskatīt ēdienkarti</string>
+    <!-- Title for the "Open In Another App" button on the PlacePage. -->
+    <string name="open_in_app">Atvērt citā lietotnē</string>
+    <!-- To indicate if the place proposed self service... -->
+    <string name="self_service">Pašapkalpošanās</string>
+    <string name="select_option">Atlasīt opciju</string>
+    <!-- To indicate if restaurant or other place has outdoor seating -->
+    <string name="outdoor_seating">Sēdvietas ārā</string>
+    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
+    <string name="power_save_dialog_summary">Lai navigācija būtu pēc iespējas precīzāka, iesakām tālruņa baterijas iesatatījumos izslēgt energotaupības režīmu.</string>
+    <string name="choose_color">Izvēlieties krāsu</string>
+    <string name="edit_track">Ceļa labošana</string>
+
+    <!-- SECTION: Types: Historic -->
+    <string name="type.shop.pasta">Makaronu veikals</string>
+    <string name="type.attraction.amusement_ride">Atrakciju brauciens</string>
+    <string name="type.attraction.carousel">Karuselis</string>
+    <string name="type.attraction.historic">Vēsturiska atrakcija</string>
+    <string name="type.attraction.maze">Labirints</string>
+    <string name="type.attraction.roller_coaster">Amerikāņu kalniņi</string>
+    <string name="type.attraction.water_slide">Ūdens slīdkalniņš</string>
+</resources>

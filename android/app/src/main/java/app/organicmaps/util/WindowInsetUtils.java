@@ -138,17 +138,27 @@ public final class WindowInsetUtils
   public static final class PaddingInsetsListener implements OnApplyWindowInsetsListener
   {
 
+    private final int insetsTypeMask;
     private final boolean top;
     private final boolean bottom;
     private final boolean left;
     private final boolean right;
 
-    public PaddingInsetsListener(boolean top, boolean bottom, boolean left, boolean right)
+    public PaddingInsetsListener(int insetsTypeMask, boolean top, boolean bottom, boolean left, boolean right)
     {
+      this.insetsTypeMask = insetsTypeMask;
       this.top = top;
       this.bottom = bottom;
       this.left = left;
       this.right = right;
+    }
+
+    /**
+     * Creates PaddingInsetsListener with default insetsTypeMask equals TYPE_SAFE_DRAWING
+     */
+    public PaddingInsetsListener(boolean top, boolean bottom, boolean left, boolean right)
+    {
+      this(TYPE_SAFE_DRAWING, top, bottom, left, right);
     }
 
     public static PaddingInsetsListener allSides()
@@ -170,13 +180,81 @@ public final class WindowInsetUtils
     @Override
     public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat windowInsets)
     {
-      final Insets insets = windowInsets.getInsets(TYPE_SAFE_DRAWING);
+      final Insets insets = windowInsets.getInsets(insetsTypeMask);
       v.setPadding(
           left ? insets.left : v.getPaddingLeft(),
           top ? insets.top : v.getPaddingTop(),
           right ? insets.right : v.getPaddingRight(),
           bottom ? insets.bottom : v.getPaddingBottom());
       return windowInsets;
+    }
+
+    public static class Builder {
+
+      private int mInsetsTypeMask = TYPE_SAFE_DRAWING;
+      private boolean mTop;
+      private boolean mBottom;
+      private boolean mLeft;
+      private boolean mRight;
+
+      public Builder setInsetsTypeMask(int insetsTypeMask)
+      {
+        mInsetsTypeMask = insetsTypeMask;
+        return this;
+      }
+
+      public Builder setAllSides() {
+        mTop = true;
+        mBottom = true;
+        mLeft = true;
+        mRight = true;
+        return this;
+      }
+
+      public Builder setExcludeTop() {
+        mTop = false;
+        mBottom = true;
+        mLeft = true;
+        mRight = true;
+        return this;
+      }
+
+      public Builder setExcludeBottom() {
+        mTop = true;
+        mBottom = false;
+        mLeft = true;
+        mRight = true;
+        return this;
+      }
+
+      public Builder setTop(boolean top)
+      {
+        mTop = top;
+        return this;
+      }
+
+      public Builder setBottom(boolean bottom)
+      {
+        mBottom = bottom;
+        return this;
+      }
+
+      public Builder setLeft(boolean left)
+      {
+        mLeft = left;
+        return this;
+      }
+
+      public Builder setRight(boolean right)
+      {
+        mRight = right;
+        return this;
+      }
+
+      public PaddingInsetsListener build()
+      {
+        return new PaddingInsetsListener(mInsetsTypeMask, mTop, mBottom, mLeft, mRight);
+      }
     }
   }
 }

@@ -2,11 +2,11 @@ protocol ActionBarViewControllerDelegate: AnyObject {
   func actionBar(_ actionBar: ActionBarViewController, didPressButton type: ActionBarButtonType)
 }
 
-class ActionBarViewController: UIViewController {
+final class ActionBarViewController: UIViewController {
   @IBOutlet var stackView: UIStackView!
-  var downloadButton: ActionBarButton? = nil
-  var bookmarkButton: ActionBarButton? = nil
-  var popoverSourceView: UIView? {
+  private(set) var downloadButton: ActionBarButton? = nil
+  private(set) var bookmarkButton: ActionBarButton? = nil
+  private var popoverSourceView: UIView? {
     stackView.arrangedSubviews.last
   }
 
@@ -18,6 +18,13 @@ class ActionBarViewController: UIViewController {
   private var additionalButtons: [ActionBarButtonType] = []
 
   weak var delegate: ActionBarViewControllerDelegate?
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureButtons()
+  }
+
+  // MARK: - Private methods
 
   private func configureButtons() {
     if placePageData.isRoutePoint {
@@ -40,66 +47,7 @@ class ActionBarViewController: UIViewController {
       configButton4()
     }
 
-    for buttonType in visibleButtons {
-      let (selected, enabled) = buttonState(buttonType)
-      let button = ActionBarButton(delegate: self,
-                                   buttonType: buttonType,
-                                   isSelected: selected,
-                                   isEnabled: enabled)
-      stackView.addArrangedSubview(button)
-      if buttonType == .download {
-        downloadButton = button
-        updateDownloadButtonState(placePageData.mapNodeAttributes!.nodeStatus)
-      }
-      if buttonType == .bookmark {
-        bookmarkButton = button
-      }
-    }
-  }
-
-  func resetButtons() {
-    stackView.arrangedSubviews.forEach {
-      stackView.removeArrangedSubview($0)
-      $0.removeFromSuperview()
-    }
-    visibleButtons.removeAll()
-    additionalButtons.removeAll()
-    downloadButton = nil
-    bookmarkButton = nil
-    configureButtons()
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    configureButtons()
-  }
-
-  func updateDownloadButtonState(_ nodeStatus: MapNodeStatus) {
-    guard let downloadButton = downloadButton, let mapNodeAttributes = placePageData.mapNodeAttributes else { return }
-    switch mapNodeAttributes.nodeStatus {
-    case .downloading:
-      downloadButton.mapDownloadProgress?.state = .progress
-    case .applying, .inQueue:
-      downloadButton.mapDownloadProgress?.state = .spinner
-    case .error:
-      downloadButton.mapDownloadProgress?.state = .failed
-    case .onDisk, .undefined, .onDiskOutOfDate:
-      downloadButton.mapDownloadProgress?.state = .completed
-    case .notDownloaded, .partly:
-      downloadButton.mapDownloadProgress?.state = .normal
-    @unknown default:
-      fatalError()
-    }
-  }
-
-  func updateBookmarkButtonState(isSelected: Bool) {
-    guard let bookmarkButton else { return }
-    if !isSelected && BookmarksManager.shared().hasRecentlyDeletedBookmark() {
-      bookmarkButton.setBookmarkButtonState(.recover)
-      return
-    }
-    bookmarkButton.setBookmarkButtonState(isSelected ? .delete : .save)
+    setupButtonsState()
   }
 
   private func configButton1() {
@@ -134,11 +82,20 @@ class ActionBarViewController: UIViewController {
 
   private func configButton2() {
     var buttons: [ActionBarButtonType] = []
-    if canAddStop {
-      buttons.append(.routeAddStop)
+    switch placePageData.objectType {
+    case .POI, .bookmark:
+      if canAddStop {
+        buttons.append(.routeAddStop)
+      }
+      buttons.append(.bookmark)
+    case .track:
+      buttons.append(.track)
+    case .trackRecording:
+      // TODO: implement for track recording
+      break
+    @unknown default:
+      fatalError()
     }
-    buttons.append(.bookmark)
-
     assert(buttons.count > 0)
     visibleButtons.append(buttons[0])
     if buttons.count > 1 {
@@ -153,6 +110,40 @@ class ActionBarViewController: UIViewController {
   private func configButton4() {
     guard !additionalButtons.isEmpty else { return }
     additionalButtons.count == 1 ? visibleButtons.append(additionalButtons[0]) : visibleButtons.append(.more)
+  }
+
+  private func setupButtonsState() {
+    for buttonType in visibleButtons {
+      let (selected, enabled) = buttonState(buttonType)
+      let button = ActionBarButton(delegate: self,
+                                   buttonType: buttonType,
+                                   isSelected: selected,
+                                   isEnabled: enabled)
+      stackView.addArrangedSubview(button)
+      switch buttonType {
+      case .download:
+        downloadButton = button
+        updateDownloadButtonState(placePageData.mapNodeAttributes!.nodeStatus)
+      case .bookmark:
+        bookmarkButton = button
+      default:
+        break
+      }
+    }
+  }
+
+  private func buttonState(_ buttonType: ActionBarButtonType) -> (selected: Bool, enabled: Bool) {
+    var selected = false
+    let enabled = true
+    switch buttonType {
+      case .bookmark:
+      selected = placePageData.bookmarkData != nil
+      case .track:
+      selected = placePageData.trackData != nil
+      default:
+      break
+    }
+    return (selected, enabled)
   }
 
   private func showMore() {
@@ -178,22 +169,56 @@ class ActionBarViewController: UIViewController {
     present(actionSheet, animated: true)
   }
 
-  private func buttonState(_ buttonType: ActionBarButtonType) -> (Bool /* selected */, Bool /* enabled */) {
-    var selected = false
-    let enabled = true
-    if buttonType == .bookmark && placePageData.bookmarkData != nil {
-      selected = true
+
+  // MARK: - Public methods
+
+  func resetButtons() {
+    stackView.arrangedSubviews.forEach {
+      stackView.removeArrangedSubview($0)
+      $0.removeFromSuperview()
     }
-    return (selected, enabled)
+    visibleButtons.removeAll()
+    additionalButtons.removeAll()
+    downloadButton = nil
+    bookmarkButton = nil
+    configureButtons()
+  }
+
+  func updateDownloadButtonState(_ nodeStatus: MapNodeStatus) {
+    guard let downloadButton = downloadButton, let mapNodeAttributes = placePageData.mapNodeAttributes else { return }
+    switch mapNodeAttributes.nodeStatus {
+    case .downloading:
+      downloadButton.mapDownloadProgress?.state = .progress
+    case .applying, .inQueue:
+      downloadButton.mapDownloadProgress?.state = .spinner
+    case .error:
+      downloadButton.mapDownloadProgress?.state = .failed
+    case .onDisk, .undefined, .onDiskOutOfDate:
+      downloadButton.mapDownloadProgress?.state = .completed
+    case .notDownloaded, .partly:
+      downloadButton.mapDownloadProgress?.state = .normal
+    @unknown default:
+      fatalError()
+    }
+  }
+
+  func updateBookmarkButtonState(isSelected: Bool) {
+    guard let bookmarkButton else { return }
+    if !isSelected && BookmarksManager.shared().hasRecentlyDeletedBookmark() {
+      bookmarkButton.setBookmarkButtonState(.recover)
+      return
+    }
+    bookmarkButton.setBookmarkButtonState(isSelected ? .delete : .save)
   }
 }
 
 extension ActionBarViewController: ActionBarButtonDelegate {
   func tapOnButton(with type: ActionBarButtonType) {
-    if type == .more {
+    switch type {
+    case .more:
       showMore()
-      return
+    default:
+      delegate?.actionBar(self, didPressButton: type)
     }
-    delegate?.actionBar(self, didPressButton: type)
   }
 }

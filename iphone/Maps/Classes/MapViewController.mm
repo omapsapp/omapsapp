@@ -68,13 +68,17 @@ NSString *const kSettingsSegue = @"Map2Settings";
 
 @interface MapViewController () <MWMFrameworkDrapeObserver,
                                  MWMKeyboardObserver,
-                                 MWMBookmarksObserver>
+                                 MWMBookmarksObserver,
+                                 UIGestureRecognizerDelegate>
 
 @property(nonatomic, readwrite) MWMMapViewControlsManager *controlsManager;
 
 @property(nonatomic) BOOL disableStandbyOnLocationStateMode;
 
 @property(nonatomic) UserTouchesAction userTouchesAction;
+@property(nonatomic) CGPoint pointerLocation API_AVAILABLE(ios(14.0));
+@property(nonatomic) CGFloat currentScale;
+@property(nonatomic) CGFloat currentRotation;
 
 @property(nonatomic, readwrite) MWMMapDownloadDialog *downloadDialog;
 
@@ -106,22 +110,17 @@ NSString *const kSettingsSegue = @"Map2Settings";
 
 #pragma mark - Map Navigation
 
-- (void)showOrUpdatePlacePage {
-  if (!PlacePageData.hasData) {
-    return;
-  }
-
+- (void)showOrUpdatePlacePage:(PlacePageData *)data {
   self.controlsManager.trafficButtonHidden = YES;
-
   if (self.placePageVC != nil) {
-    [PlacePageBuilder update:(PlacePageViewController *)self.placePageVC];
+    [PlacePageBuilder update:(PlacePageViewController *)self.placePageVC with:data];
     return;
   }
-  [self showRegularPlacePage];
+  [self showPlacePageFor:data];
 }
 
-- (void)showRegularPlacePage {
-  self.placePageVC = [PlacePageBuilder build];
+- (void)showPlacePageFor:(PlacePageData *)data {
+  self.placePageVC = [PlacePageBuilder buildFor:data];
   self.placePageContainer.hidden = NO;
   self.placePageVC.view.translatesAutoresizingMaskIntoConstraints = NO;
   [self.placePageContainer addSubview:self.placePageVC.view];
@@ -187,7 +186,11 @@ NSString *const kSettingsSegue = @"Map2Settings";
 }
 
 - (void)onMapObjectSelected {
-  [self showOrUpdatePlacePage];
+  if (!PlacePageData.hasData) {
+    return;
+  }
+  PlacePageData * data = [[PlacePageData alloc] initWithLocalizationProvider:[[OpeinigHoursLocalization alloc] init]];
+  [self showOrUpdatePlacePage:data];
 }
 
 - (void)onMapObjectUpdated {
@@ -317,6 +320,9 @@ NSString *const kSettingsSegue = @"Map2Settings";
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  if (@available(iOS 14.0, *))
+    [self setupTrackPadGestureRecognizers];
+
   self.title = L(@"map");
 
   // On iOS 10 (it was reproduced, it may be also on others), mapView can be uninitialized
@@ -345,7 +351,7 @@ NSString *const kSettingsSegue = @"Map2Settings";
 
   if ([MWMNavigationDashboardManager sharedManager].state == MWMNavigationDashboardStateHidden)
     self.controlsManager.menuState = self.controlsManager.menuRestoreState;
-  
+
   // Added in https://github.com/organicmaps/organicmaps/pull/7333
   // After all users migrate to OAuth2 we can remove next code
   [self migrateOAuthCredentials];
@@ -385,6 +391,33 @@ NSString *const kSettingsSegue = @"Map2Settings";
 - (void)applyTheme {
   [super applyTheme];
   [MapsAppDelegate customizeAppearance];
+}
+
+- (void)setupTrackPadGestureRecognizers API_AVAILABLE(ios(14.0)) {
+  if (!NSProcessInfo.processInfo.isiOSAppOnMac)
+    return;
+  // Mouse zoom
+  UIPanGestureRecognizer * panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+  panRecognizer.allowedScrollTypesMask = UIScrollTypeMaskAll;
+  panRecognizer.allowedTouchTypes = @[@(UITouchTypeIndirect)];
+  [self.view addGestureRecognizer:panRecognizer];
+
+  // Trackpad zoom
+  UIPinchGestureRecognizer * pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+  pinchRecognizer.allowedTouchTypes = @[@(UITouchTypeIndirect)];
+  pinchRecognizer.delegate = self;
+  [self.view addGestureRecognizer:pinchRecognizer];
+
+  // Trackpad rotation
+  UIRotationGestureRecognizer * rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotation:)];
+  rotationRecognizer.allowedTouchTypes = @[@(UITouchTypeIndirect | UITouchTypeDirect)];
+  rotationRecognizer.delegate = self;
+  [self.view addGestureRecognizer:rotationRecognizer];
+
+  // Pointer location
+  UIHoverGestureRecognizer * hoverRecognizer = [[UIHoverGestureRecognizer alloc] initWithTarget:self action:@selector(handlePointerHover:)];
+  hoverRecognizer.allowedTouchTypes = @[@(UITouchTypeIndirectPointer)];
+  [self.view addGestureRecognizer:hoverRecognizer];
 }
 
 - (void)showViralAlertIfNeeded {
@@ -753,6 +786,86 @@ NSString *const kSettingsSegue = @"Map2Settings";
   if (backURL != nil) {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: backURL] options:@{} completionHandler:nil];
   }
+}
+
+// MARK: - Handle macOS trackpad gestures
+
+- (void)handlePan:(UIPanGestureRecognizer *)recognizer API_AVAILABLE(ios(14.0)) {
+  switch (recognizer.state) {
+    case UIGestureRecognizerStateBegan:
+    case UIGestureRecognizerStateChanged:
+    {
+      CGPoint translation = [recognizer translationInView:self.view];
+      if (translation.x == 0 && CGPointEqualToPoint(translation, CGPointZero))
+        return;
+      self.userTouchesAction = UserTouchesActionScale;
+      static const CGFloat kScaleFactor = 0.9;
+      const CGFloat factor = translation.y > 0 ? 1 / kScaleFactor : kScaleFactor;
+      GetFramework().Scale(factor, [self getZoomPoint], false);
+      [recognizer setTranslation:CGPointZero inView:self.view];
+      break;
+    }
+    case UIGestureRecognizerStateEnded:
+      self.userTouchesAction = UserTouchesActionNone;
+      break;
+    default:
+      break;
+  }
+}
+
+- (void)handlePinch:(UIPinchGestureRecognizer *)recognizer API_AVAILABLE(ios(14.0)) {
+  switch (recognizer.state) {
+    case UIGestureRecognizerStateBegan:
+      self.currentScale = 1.0;
+    case UIGestureRecognizerStateChanged:
+    {
+      const CGFloat scale = [recognizer scale];
+      static const CGFloat kScaleDeltaMultiplier = 4.0; // map trackpad scale to the map scale
+      const CGFloat delta = scale - self.currentScale;
+      const CGFloat scaleFactor = 1 + delta * kScaleDeltaMultiplier;
+      GetFramework().Scale(scaleFactor, [self getZoomPoint], false);
+      self.currentScale = scale;
+      break;
+    }
+    case UIGestureRecognizerStateEnded:
+      self.userTouchesAction = UserTouchesActionNone;
+      break;
+    default:
+      break;
+  }
+}
+
+- (void)handleRotation:(UIRotationGestureRecognizer *)recognizer API_AVAILABLE(ios(14.0)) {
+  switch (recognizer.state) {
+    case UIGestureRecognizerStateBegan:
+    case UIGestureRecognizerStateChanged:
+    {
+      self.userTouchesAction = UserTouchesActionDrag;
+      GetFramework().Rotate(self.currentRotation == 0 ? recognizer.rotation : self.currentRotation + recognizer.rotation, false);
+      break;
+    }
+    case UIGestureRecognizerStateEnded:
+      self.currentRotation += recognizer.rotation;
+      self.userTouchesAction = UserTouchesActionNone;
+      break;
+    default:
+      break;
+  }
+}
+
+- (void)handlePointerHover:(UIHoverGestureRecognizer *)recognizer API_AVAILABLE(ios(14.0)) {
+  self.pointerLocation = [recognizer locationInView:self.view];
+}
+
+- (m2::PointD)getZoomPoint API_AVAILABLE(ios(14.0)) {
+  const CGFloat scale = [UIScreen mainScreen].scale;
+  return m2::PointD(self.pointerLocation.x * scale, self.pointerLocation.y * scale);
+}
+
+// MARK: - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+  return YES;
 }
 
 @end

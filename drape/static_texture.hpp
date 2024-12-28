@@ -2,7 +2,6 @@
 
 #include "drape/texture.hpp"
 
-#include <optional>
 #include <string>
 
 namespace dp
@@ -19,8 +18,9 @@ public:
 
   static std::string const kDefaultResource;
 
+  /// @todo All xxxName can be std::string_view after Platform::GetReader (StyleReader) refactoring.
   StaticTexture(ref_ptr<dp::GraphicsContext> context, std::string const & textureName,
-                std::optional<std::string> const & skinPathName, dp::TextureFormat format,
+                std::string const & skinPathName, dp::TextureFormat format,
                 ref_ptr<HWTextureAllocator> allocator, bool allowOptional = false);
 
   ref_ptr<ResourceInfo> FindResource(Key const & key, bool & newResource) override;
@@ -32,15 +32,9 @@ public:
 
 private:
   void Fail(ref_ptr<dp::GraphicsContext> context);
-  bool Load(ref_ptr<dp::GraphicsContext> context, ref_ptr<HWTextureAllocator> allocator);
-
-  std::string const m_textureName;
-  std::optional<std::string> const m_skinPathName;
-  dp::TextureFormat const m_format;
-  bool const m_allowOptional;
 
   drape_ptr<Texture::ResourceInfo> m_info;
 
-  bool m_isLoadingCorrect;
+  bool m_isLoadingCorrect = false;
 };
 }  // namespace dp

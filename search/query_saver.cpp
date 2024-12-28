@@ -11,16 +11,16 @@
 #include "base/logging.hpp"
 #include "base/string_utils.hpp"
 
-#include <cstdint>
-#include <cstring>
 #include <limits>
 #include <memory>
 
+namespace search
+{
 using namespace std;
 
 namespace
 {
-char constexpr kSettingsKey[] = "UserQueries";
+std::string_view constexpr kSettingsKey = "UserQueries";
 using Length = uint16_t;
 Length constexpr kMaxSuggestionsCount = 50;
 
@@ -69,8 +69,7 @@ private:
 };
 }  // namespace
 
-namespace search
-{
+
 QuerySaver::QuerySaver()
 {
   Load();
@@ -163,7 +162,7 @@ void QuerySaver::Load()
   {
     Deserialize(hexData);
   }
-  catch (Reader::SizeException const & /* exception */)
+  catch (RootException const &)
   {
     Clear();
     LOG(LWARNING, ("Search history data corrupted! Creating new one."));

@@ -149,7 +149,7 @@ NSString * const kUDFileLoggingEnabledKey = @"FileLoggingEnabledKey";
 + (NSString *)donateUrl
 {
   std::string url;
-  return settings::Get("DonateUrl", url) ? @(url.c_str()) : nil;
+  return settings::Get(settings::kDonateUrl, url) ? @(url.c_str()) : nil;
 }
 
 + (BOOL)isNY

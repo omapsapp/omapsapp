@@ -312,6 +312,10 @@
     <string name="google_play_services">Google Play Standortdienste</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Ermitteln Sie schnell Ihren ungefähren Standort über Bluetooth, WLAN oder das Mobilfunknetz</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Hotel-Links</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotos, Bewertungen und Buchungslinks werden für Hotels angezeigt, die einen Eintrag auf Kayak.com haben. Der Empfehlungsbonus, den Sie für jede Buchung über diese Links erhalten, fließt in die Entwicklung von Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Karten entlang der Route herunterladen</string>
     <!-- Text for routing error dialog -->
@@ -450,7 +454,7 @@
     <string name="login">Bei OpenStreetMap anmelden</string>
     <!-- Status message indicating that user did not login to OSM profile yet. -->
     <string name="not_signed_in">Nicht angemeldet</string>
-    <string name="login_osm">Melden Sie sich bei OpenStreetMap an</string>
+    <string name="login_osm">Bei OpenStreetMap anmelden</string>
     <string name="password">Passwort</string>
     <string name="forgot_password">Passwort vergessen?</string>
     <string name="logout">Abmelden</string>
@@ -497,7 +501,10 @@
     <string name="message_invalid_feature_position">Ein Objekt kann hier nicht positioniert werden</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Von der Community erstellte OpenStreetMap-Daten (Stand: %s). Erfahre mehr darüber, wie du die Karte bearbeiten und aktualisieren kannst unter OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Melden Sie sich bei openstreetmap.org an, um Ihre Änderungen weltweit zu veröffentlichen.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) ist ein Gemeinschaftsprojekt zum Erstellen einer freien und offenen Karte. Es ist die Hauptquelle für Kartendaten in Organic Maps und funktioniert ähnlich wie Wikipedia. Sie können Orte hinzufügen oder bearbeiten, die dann Millionen von Nutzern auf der ganzen Welt zur Verfügung stehen.
+\nTreten Sie der Gemeinschaft bei und helfen Sie mit, die Karte für alle besser zu machen!</string>
+    <string name="login_to_make_edits_visible">Erstellen Sie ein OpenStreetMap-Konto oder melden Sie sich an, um Ihre Kartenbearbeitungen weltweit zu veröffentlichen.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d von %2$d</string>
     <string name="download_over_mobile_header">Über eine Mobilfunknetzverbindung herunterladen?</string>
@@ -517,9 +524,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Ihre Bearbeitungen werden in die öffentliche <a href="https://wiki.openstreetmap.org/wiki/DE:Über_OSM">OpenStreetMap</a> Datenbank hochgeladen. Bitte tragen Sie keine privaten oder urheberrechtlich geschützten Informationen ein.</string>
     <string name="editor_more_about_osm">Mehr Informationen über OpenStreetMap</string>
-    <string name="editor_operator">Eigentümer</string>
+    <string name="editor_osm_history">Ihr Bearbeitungsverlauf</string>
+    <string name="editor_osm_notes">Ihre Hinweise zu den Kartendaten</string>
+    <string name="editor_operator">Betreiber</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Eigentümer: %s</string>
+    <string name="operator">Betreiber: %s</string>
     <string name="editor_category_unsuitable_title">Keine passende Kategorie gefunden?</string>
     <string name="editor_category_unsuitable_text">Mit Organic Maps kann man nur einfache Punktkategorien hinzufügen, daher keine Städte, Straßen, Seen, Gebäudeumrisse, etc. Bitte füge solche Kategorien direkt bei <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> hinzu. In unserem <a href="https://organicmaps.app/faq/editing/advanced-map-editing">Leitfaden</a> findest du eine detaillierte Schritt-für-Schritt-Anleitung.</string>
     <string name="downloader_no_downloaded_maps_title">Keine Karten heruntergeladen</string>
@@ -538,6 +547,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">d</string>
     <string name="placepage_more_button">Mehr</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotos, bewertungen, buchung</string>
@@ -545,6 +555,8 @@
     <string name="dialog_kayak_disclaimer">Der Empfehlungsbonus, den wir für jede Buchung über diesen Link erhalten, fließt in die Entwicklung von Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Einzelheiten bei Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak deaktivieren</string>
     <string name="placepage_edit_bookmark_button">Lesezeichen bearbeiten</string>
     <string name="editor_comment_hint">Kommentar…</string>
     <string name="editor_reset_edits_message">Alle lokalen Korrekturen verwerfen?</string>
@@ -605,7 +617,7 @@
     <string name="routing_add_start_point">Verwende die Suche oder tippe auf die Karte, um einen Routenstartpunkt hinzuzufügen</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Verwende die Suche oder tippe auf die Karte, um einen Zielpunkt hinzuzufügen</string>
-    <string name="placepage_remove_stop">Entfernen</string>
+    <string name="placepage_remove_stop">Stopp entfernen</string>
     <string name="placepage_add_stop">Stopp einfügen</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Bitte melde dich bei OpenStreetMap an, um alle deine Kartenbearbeitungen automatisch hochzuladen. Erfahre mehr <a href="https://github.com/organicmaps/organicmaps/issues/6144">hier</a>.</string>
@@ -755,8 +767,8 @@
     <string name="isolines_location_error_dialog">Topographieebene ist für dieses Gebiet noch nicht verfügbar</string>
     <string name="elevation_profile_ascent">Bergauf</string>
     <string name="elevation_profile_descent">Bergab</string>
-    <string name="elevation_profile_minaltitude">Min. Höhe</string>
-    <string name="elevation_profile_maxaltitude">Max. Höhe</string>
+    <string name="elevation_profile_min_elevation">Min. Höhe</string>
+    <string name="elevation_profile_max_elevation">Max. Höhe</string>
     <string name="elevation_profile_difficulty">Schwierigkeitsgrad</string>
     <string name="elevation_profile_distance">Entf.:</string>
     <string name="elevation_profile_time">Dauer:</string>
@@ -778,6 +790,8 @@
     <string name="enable_show_on_lock_screen">Auf dem Sperrbildschirm anzeigen</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Wenn aktiviert, muss das Gerät nicht jedes Mal entsperrt werden, wenn die App ausgeführt wird.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Karten-Sprache</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Kartendaten von OpenStreetMap</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -793,7 +807,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Wenn Sie einen Softwareentwickler kennen, können Sie ihn oder sie bitten, eine Funktion zu implementieren, die Sie benötigen.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Wussten Sie, dass Sie jeden Ort auf der Karte lange antippen können, um ihn auszuwählen?</string>
+    <string name="app_tip_04">Tippen Sie irgendwo auf die Karte, um etwas auszuwählen. Tippen Sie lange, um die Oberfläche aus- und wieder einzublenden.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Wussten Sie, dass Sie Ihren aktuellen Standort auf der Karte auswählen können?</string>
     <!-- App tip #06 -->
@@ -863,7 +877,11 @@
     <string name="track_recording_toast_nothing_to_save">Route ist leer - nichts zu speichern</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Das Dialogfeld zur Ordnerauswahl kann nicht angezeigt werden, da keine geeignete App auf Ihrem Gerät installiert ist. Bitte installieren Sie eine Dateimanager-App und versuchen Sie es erneut</string>
+    <string name="choose_color">Farbe auswählen</string>
+    <string name="edit_track">Track bearbeiten</string>
     <string name="uri_open_location_failed">Keine App installiert, die den Speicherort öffnen kann</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Auto in der Navigation</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresse/Block</string>
@@ -888,7 +906,7 @@
     <string name="type.amenity.arts_centre">Kunstzentrum</string>
     <string name="type.amenity.atm">Geldautomat</string>
     <string name="type.amenity.bbq">Grillplatz</string>
-    <string name="type.amenity.bench">Parkbank</string>
+    <string name="type.amenity.bench">Sitzbank</string>
     <string name="type.amenity.bicycle_parking">Fahrradständer</string>
     <string name="type.amenity.bicycle_rental">Fahrradverleih</string>
     <string name="type.amenity.bicycle_repair_station">Fahrrad-Reparaturstation</string>
@@ -898,7 +916,7 @@
     <string name="type.amenity.cafe">Café</string>
     <string name="type.amenity.car_rental">Autovermietung</string>
     <string name="type.amenity.car_sharing">Carsharing</string>
-    <string name="type.amenity.car_wash">Autowäsche</string>
+    <string name="type.amenity.car_wash">Autowaschanlage</string>
     <string name="type.amenity.casino">Kasino</string>
     <string name="type.amenity.gambling">Glücksspiel</string>
     <string name="type.leisure.adult_gaming_centre">Gaming-Zentrum für Erwachsene</string>
@@ -912,7 +930,7 @@
     <string name="type.amenity.clinic">Klinik</string>
     <string name="type.amenity.college">Hochschule</string>
     <string name="type.amenity.community_centre">Bürgerhaus</string>
-    <string name="type.amenity.compressed_air">Pressluft</string>
+    <string name="type.amenity.compressed_air">Druckluft</string>
     <string name="type.amenity.conference_centre">Konferenzzentrum</string>
     <string name="type.amenity.courthouse">Justizgebäude</string>
     <string name="type.amenity.dentist">Zahnarzt</string>
@@ -920,7 +938,7 @@
     <string name="type.amenity.drinking_water">Trinkwasser</string>
     <string name="type.drinking_water.yes">Trinkwasser</string>
     <string name="type.amenity.driving_school">Fahrschule</string>
-    <string name="type.amenity.exhibition_centre">Ausstellungszentrum</string>
+    <string name="type.amenity.exhibition_centre">Messezentrum</string>
     <string name="type.amenity.money_transfer">Geldtransfer</string>
     <string name="type.amenity.music_school">Musikschule</string>
     <string name="type.amenity.language_school">Sprachschule</string>
@@ -983,7 +1001,7 @@
     <string name="type.amenity.place_of_worship.taoist">Tempel</string>
     <string name="type.amenity.police">Polizeistation</string>
     <string name="type.amenity.post_box">Briefkasten</string>
-    <string name="type.amenity.post_office">Poststelle</string>
+    <string name="type.amenity.post_office">Postfiliale</string>
     <string name="type.amenity.prison">Gefängnis</string>
     <string name="type.amenity.pub">Kneipe</string>
     <string name="type.amenity.public_bookcase">Bücherschrank</string>
@@ -1044,6 +1062,7 @@
     <string name="type.amenity.waste_disposal">Müllcontainer</string>
     <string name="type.amenity.waste_transfer_station">Müllumladestation</string>
     <string name="type.amenity.water_point">Wasseranschluss</string>
+    <string name="type.amenity.water_point.drinking_water_no">Wasseranschluss</string>
     <string name="type.barrier">Barriere</string>
     <string name="type.barrier.block">Block</string>
     <string name="type.barrier.bollard">Poller</string>
@@ -1082,7 +1101,7 @@
     <string name="type.building.address">Adresse</string>
     <string name="type.building.has_parts">Gebäude</string>
     <string name="type.building_part">Gebäude</string>
-    <string name="type.building.train_station">Bahnhof</string>
+    <string name="type.building.train_station">Bahnhofsgebäude</string>
     <string name="type.building.warehouse">Lagerhalle</string>
     <string name="type.cemetery.grave">Grab</string>
     <string name="type.craft">Handwerk</string>
@@ -1100,8 +1119,8 @@
     <!-- Heating, Ventilation, and Air Conditioning -->
     <string name="type.craft.hvac">Heizung, Lüftung und Klimatisierung</string>
     <string name="type.craft.key_cutter">Schlüssel-Nachmachdienst</string>
-    <string name="type.craft.locksmith">Schlosser</string>
-    <string name="type.craft.metal_construction">Schlosser</string>
+    <string name="type.craft.locksmith">Schlüsseldienst</string>
+    <string name="type.craft.metal_construction">Metallverarbeitung</string>
     <string name="type.craft.painter">Maler</string>
     <string name="type.craft.photographer">Fotograf</string>
     <string name="type.shop.camera">Kamerageschäft</string>
@@ -1420,7 +1439,7 @@
     <string name="type.historic.ruins">Ruine</string>
     <string name="type.historic.ship">Schiff</string>
     <string name="type.historic.tank">Historischer Panzer</string>
-    <string name="type.historic.tomb">Grabstätte</string>
+    <string name="type.historic.tomb">Historische Grabstätte</string>
     <string name="type.historic.wayside_cross">Wegkreuz</string>
     <string name="type.historic.wayside_shrine">Bildstock</string>
     <string name="type.historic.wreck">Schiffswrack</string>
@@ -1505,6 +1524,7 @@
     <string name="type.man_made.survey_point">Vermessungspunkt</string>
     <string name="type.man_made.flagpole">Fahnenmast</string>
     <string name="type.man_made.lighthouse">Leuchtturm</string>
+    <string name="type.man_made.mast">Mast</string>
     <string name="type.man_made.pier">Anlegestelle</string>
     <string name="type.man_made.silo">Silo</string>
     <string name="type.man_made.storage_tank">Speichertank</string>
@@ -1513,8 +1533,10 @@
     <string name="type.man_made.tower.communication">Funkturm</string>
     <string name="type.man_made.wastewater_plant">Kläranlage</string>
     <string name="type.man_made.water_tap">Wasserhahn</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Wasserhahn</string>
     <string name="type.man_made.water_tower">Wasserturm</string>
     <string name="type.man_made.water_well">Brunnen</string>
+    <string name="type.man_made.water_well.drinking_water_no">Brunnen</string>
     <string name="type.man_made.windmill">Windmühle</string>
     <string name="type.man_made.works">Fabrik</string>
     <string name="type.military">Militärisches Objekt</string>
@@ -1557,6 +1579,7 @@
     <string name="type.natural.rock">Fels</string>
     <string name="type.natural.scrub">Dickicht</string>
     <string name="type.natural.spring">Quelle</string>
+    <string name="type.natural.spring.drinking_water_no">Quelle</string>
     <string name="type.natural.strait">Meerenge</string>
     <string name="type.natural.tree_row">Baumreihe</string>
     <string name="type.natural.vineyard">Weinberg</string>
@@ -1566,7 +1589,7 @@
     <string name="type.natural.wetland.bog">Moor</string>
     <string name="type.natural.wetland.marsh">Sumpf</string>
     <string name="type.office">Büro</string>
-    <string name="type.office.company">Niederlassung</string>
+    <string name="type.office.company">Firmenbüro</string>
     <string name="type.office.estate_agent">Immobilienmakler</string>
     <string name="type.office.government">Behörde</string>
     <string name="type.office.insurance">Versicherungsbüro</string>
@@ -1680,9 +1703,10 @@
     <string name="type.railway.station">Bahnhof</string>
     <string name="type.railway.station.funicular">Standseilbahn</string>
     <string name="type.railway.station.light_rail">Stadtbahnbahnhof</string>
+    <string name="type.railway.station.light_rail.berlin">S-Bahnhof</string>
     <string name="type.railway.station.light_rail.london">Stadtbahnbahnhof</string>
     <string name="type.railway.station.light_rail.porto">Stadtbahnbahnhof</string>
-    <string name="type.railway.station.monorail">Bahnhof</string>
+    <string name="type.railway.station.monorail">Einschienenbahn-Station</string>
     <string name="type.railway.station.subway">U-Bahn-Station</string>
     <string name="type.railway.station.subway.adana">U-Bahn-Station</string>
     <string name="type.railway.station.subway.algiers">U-Bahn-Station</string>
@@ -1722,6 +1746,7 @@
     <string name="type.railway.station.subway.hamburg">U-Bahn-Station</string>
     <string name="type.railway.station.subway.helsinki">U-Bahn-Station</string>
     <string name="type.railway.station.subway.hiroshima">U-Bahn-Station</string>
+    <string name="type.railway.station.subway.hongkong">U-Bahn-Station</string>
     <string name="type.railway.station.subway.isfahan">U-Bahn-Station</string>
     <string name="type.railway.station.subway.istanbul">U-Bahn-Station</string>
     <string name="type.railway.station.subway.izmir">U-Bahn-Station</string>
@@ -1775,6 +1800,7 @@
     <string name="type.railway.station.subway.sendai">U-Bahn-Station</string>
     <string name="type.railway.station.subway.sf">U-Bahn-Station</string>
     <string name="type.railway.station.subway.shanghai">U-Bahn-Station</string>
+    <string name="type.railway.station.subway.shenzhen">U-Bahn-Station</string>
     <string name="type.railway.station.subway.shiraz">U-Bahn-Station</string>
     <string name="type.railway.station.subway.singapore">U-Bahn-Station</string>
     <string name="type.railway.station.subway.sofia">U-Bahn-Station</string>
@@ -1837,6 +1863,7 @@
     <string name="type.railway.subway_entrance.hamburg">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.helsinki">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.hiroshima">U-Bahn-Eingang</string>
+    <string name="type.railway.subway_entrance.hongkong">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.isfahan">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.istanbul">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.izmir">U-Bahn-Eingang</string>
@@ -1890,6 +1917,7 @@
     <string name="type.railway.subway_entrance.sendai">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.sf">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.shanghai">U-Bahn-Eingang</string>
+    <string name="type.railway.subway_entrance.shenzhen">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.shiraz">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.singapore">U-Bahn-Eingang</string>
     <string name="type.railway.subway_entrance.sofia">U-Bahn-Eingang</string>
@@ -1928,7 +1956,7 @@
     <string name="type.shop.butcher">Metzgerei</string>
     <string name="type.shop.cannabis">Cannabis-Laden</string>
     <string name="type.shop.car">Autohaus</string>
-    <string name="type.shop.car_parts">Autoteile</string>
+    <string name="type.shop.car_parts">Autoersatzteile</string>
     <string name="type.shop.car_repair">Autowerkstatt</string>
     <string name="type.shop.car_repair.tyres">Reifenservice</string>
     <string name="type.shop.caravan">Wohnmobilhändler</string>
@@ -1956,11 +1984,12 @@
     <string name="type.shop.funeral_directors">Bestattungsinstitut</string>
     <string name="type.shop.furniture">Möbelhaus</string>
     <string name="type.shop.garden_centre">Gärtnerei</string>
-    <string name="type.shop.gas">Gasspeicher</string>
+    <string name="type.shop.gas">Gas-Geschäft</string>
     <string name="type.shop.gift">Geschenkeladen</string>
     <string name="type.shop.greengrocer">Gemüseladen</string>
-    <string name="type.shop.grocery">Lebensmittelgeschäft</string>
+    <string name="type.shop.grocery">Lebensmittelkonserven</string>
     <string name="type.shop.hairdresser">Friseur</string>
+    <string name="type.shop.hardware">Eisenwarengeschäft</string>
     <string name="type.shop.health_food">Reformhaus</string>
     <string name="type.shop.herbalist">Kräuterladen</string>
     <string name="type.shop.hifi">HiFi-Audio</string>
@@ -1980,10 +2009,11 @@
     <string name="type.shop.optician">Optiker</string>
     <string name="type.shop.outdoor">Outdoor-Ausrüstungs-Laden</string>
     <string name="type.shop.outpost">Abholpunkt</string>
+    <string name="type.shop.pasta">Nudelgeschäft</string>
     <string name="type.shop.pastry">Konditorei</string>
     <string name="type.shop.pawnbroker">Pfandleihe</string>
     <string name="type.shop.pet">Tierhandlung</string>
-    <string name="type.shop.pet_grooming">Haustierpflege</string>
+    <string name="type.shop.pet_grooming">Tiersalon</string>
     <string name="type.shop.photo">Fotofachgeschäft</string>
     <string name="type.shop.rental">Verleih</string>
     <string name="type.shop.rental.bicycle">Fahrradverleih</string>
@@ -1998,7 +2028,7 @@
     <string name="type.shop.ticket">Kartenverkauf</string>
     <string name="type.shop.toys">Spielwarengeschäft</string>
     <string name="type.shop.travel_agency">Reisebüro</string>
-    <string name="type.shop.tyres">Reifen-Shop</string>
+    <string name="type.shop.tyres">Reifenhändler</string>
     <string name="type.shop.variety_store">Billigladen</string>
     <string name="type.shop.video">Videothek</string>
     <string name="type.shop.video_games">Gameshop</string>
@@ -2027,7 +2057,7 @@
     <string name="type.shop.sewing">Nähzubehör</string>
     <string name="type.shop.storage_rental">Lagervermietung</string>
     <string name="type.shop.tobacco">Tabakwarengeschäft</string>
-    <string name="type.shop.trade">Handelsbedarf</string>
+    <string name="type.shop.trade">Baustoffhandel</string>
     <string name="type.shop.watches">Uhrengeschäft</string>
     <string name="type.shop.wholesale">Großhandelsgeschäft</string>
     <string name="type.sport">Sport</string>
@@ -2076,14 +2106,22 @@
     <string name="type.tourism.artwork.sculpture">Skulptur</string>
     <string name="type.tourism.artwork.statue">Statue</string>
     <string name="type.tourism.attraction">Sehenswürdigkeit</string>
+    <string name="type.attraction.amusement_ride">Fahrgeschäft</string>
     <string name="type.attraction.animal">Tiergehege</string>
+    <string name="type.attraction.bumper_car">Autoscooter</string>
+    <string name="type.attraction.big_wheel">Riesenrad</string>
+    <string name="type.attraction.carousel">Karussell</string>
+    <string name="type.attraction.historic">Historische Attraktion</string>
+    <string name="type.attraction.maze">Labyrinth</string>
+    <string name="type.attraction.roller_coaster">Achterbahn</string>
+    <string name="type.attraction.water_slide">Wasserrutsche</string>
     <string name="type.tourism.attraction.specified">Sehenswürdigkeit</string>
     <string name="type.tourism.camp_site">Campingplatz</string>
     <string name="type.tourism.caravan_site">Wohnmobilstellplatz</string>
     <!-- A rentable countryside vacation house. -->
     <string name="type.tourism.chalet">Ferienhaus</string>
     <string name="type.tourism.gallery">Kunstgalerie</string>
-    <string name="type.tourism.guest_house">Gästehaus</string>
+    <string name="type.tourism.guest_house">Pension</string>
     <string name="type.tourism.hostel">Herberge</string>
     <string name="type.tourism.hotel">Hotel</string>
     <string name="type.tourism.information">Touristeninformation</string>
@@ -2157,7 +2195,7 @@
     <string name="type.piste_type.skitour">Skitour Pfad</string>
     <string name="type.amenity.events_venue">Veranstaltungszentrum</string>
     <string name="type.shop.auction">Auktion</string>
-    <string name="type.shop.collector">Sammlerstücke</string>
+    <string name="type.shop.collector">Sammlerartikel</string>
     <string name="type.self_service.yes">Selbstbedienung verfügbar</string>
     <string name="type.self_service.only">Nur Selbstbedienung</string>
     <string name="type.self_service.partially">Teilweise Selbstbedienung</string>

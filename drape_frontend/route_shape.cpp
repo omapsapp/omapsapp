@@ -62,11 +62,10 @@ void GetArrowTextureRegion(ref_ptr<dp::TextureManager> textures,
   textures->GetSymbolRegion("route-arrow", region);
 }
 
-std::vector<m2::PointD> CalculatePoints(m2::PolylineD const & polyline,
-                                        double start, double end)
+void CalculatePoints(m2::PolylineD const & polyline, double start, double end,
+                     std::vector<m2::PointD> & result)
 {
-  std::vector<m2::PointD> result;
-  result.reserve(polyline.GetSize() / 4);
+  result.clear();
 
   auto addIfNotExist = [&result](m2::PointD const & pnt)
   {
@@ -74,20 +73,23 @@ std::vector<m2::PointD> CalculatePoints(m2::PolylineD const & polyline,
       result.push_back(pnt);
   };
 
-  std::vector<m2::PointD> const & path = polyline.GetPoints();
+  auto const & path = polyline.GetPoints();
   double len = 0;
   bool started = false;
-  for (size_t i = 0; i + 1 < path.size(); i++)
+  for (size_t i = 1; i < path.size(); ++i)
   {
-    double const dist = (path[i + 1] - path[i]).Length();
-    if (fabs(dist) < 1e-5)
+    auto const & p1 = path[i - 1];
+    auto const & p2 = path[i];
+    auto const vec = p2 - p1;
+    double const dist = vec.Length();
+    if (dist == 0)
       continue;
 
     double const l = len + dist;
     if (!started && start >= len && start <= l)
     {
       double const k = (start - len) / dist;
-      addIfNotExist(path[i] + (path[i + 1] - path[i]) * k);
+      addIfNotExist(p1 + vec * k);
       started = true;
     }
     if (!started)
@@ -99,16 +101,15 @@ std::vector<m2::PointD> CalculatePoints(m2::PolylineD const & polyline,
     if (end >= len && end <= l)
     {
       double const k = (end - len) / dist;
-      addIfNotExist(path[i] + (path[i + 1] - path[i]) * k);
+      addIfNotExist(p1 + vec * k);
       break;
     }
     else
     {
-      addIfNotExist(path[i + 1]);
+      addIfNotExist(p2);
     }
     len = l;
   }
-  return result;
 }
 
 float SideByNormal(glsl::vec2 const & normal, bool isLeft)
@@ -516,13 +517,14 @@ void RouteShape::CacheRouteArrows(ref_ptr<dp::GraphicsContext> context,
   // Generate arrow geometry.
   auto depth = static_cast<float>(baseDepthIndex * rs::kDepthPerSubroute) + rs::kArrowsDepth;
   float const depthStep = (rs::kArrowsDepth - rs::kRouteDepth) / (1 + borders.size());
+
+  std::vector<m2::PointD> points;
+  points.reserve(polyline.GetSize() / 4);
   for (ArrowBorders const & b : borders)
   {
     depth -= depthStep;
-    std::vector<m2::PointD> points = rs::CalculatePoints(polyline, b.m_startDistance, b.m_endDistance);
-    ASSERT_LESS_OR_EQUAL(points.size(), polyline.GetSize(), ());
-    PrepareArrowGeometry(points, routeArrowsData.m_pivot, region.GetTexRect(), depthStep,
-                         depth, geometryData);
+    rs::CalculatePoints(polyline, b.m_startDistance, b.m_endDistance, points);
+    PrepareArrowGeometry(points, routeArrowsData.m_pivot, region.GetTexRect(), depthStep, depth, geometryData);
   }
 
   geometryData.m_boundingBox.Scale(kBoundingBoxScale);

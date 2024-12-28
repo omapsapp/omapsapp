@@ -196,6 +196,8 @@ public:
 
   void SetKineticScrollEnabled(bool enabled);
 
+  void SetMapLangIndex(int8_t mapLangIndex);
+
   void OnEnterForeground();
   void OnEnterBackground();
 

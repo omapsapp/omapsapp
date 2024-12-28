@@ -12,7 +12,7 @@
 
 namespace dp
 {
-extern char const * kSupportedAntialiasing;
+extern std::string_view kSupportedAntialiasing;
 
 class SupportManager
 {
@@ -39,7 +39,7 @@ public:
 
   using Version = std::array<uint32_t, 3>;
   static bool IsVulkanForbidden();
-  static bool IsVulkanForbidden(std::string const & deviceName, Version apiVersion, Version driverVersion);
+  static bool IsVulkanForbidden(std::string const & deviceName, Version apiVersion, Version driverVersion, bool isCustomROM);
   static bool IsVulkanTexturePartialUpdateBuggy(int sdkVersion, std::string const & deviceName,
                                                 Version apiVersion, Version driverVersion);
 

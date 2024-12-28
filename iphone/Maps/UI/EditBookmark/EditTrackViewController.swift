@@ -17,6 +17,7 @@ final class EditTrackViewController: MWMTableViewController {
   
   private var editingCompleted: (Bool) -> Void
 
+  private var placePageData: PlacePageData?
   private let trackId: MWMTrackID
   private var trackTitle: String?
   private var trackGroupTitle: String?
@@ -24,25 +25,21 @@ final class EditTrackViewController: MWMTableViewController {
   private var trackColor: UIColor
 
   private let bookmarksManager = BookmarksManager.shared()
-  
+
+  @objc
   init(trackId: MWMTrackID, editCompletion completion: @escaping (Bool) -> Void) {
     self.trackId = trackId
     
-    let bm = BookmarksManager.shared()
-    let track = bm.track(withId: trackId)
-    
-    trackTitle = track.trackName
-    trackColor = track.trackColor
+    let track = bookmarksManager.track(withId: trackId)
+    self.trackTitle = track.trackName
+    self.trackColor = track.trackColor
 
-    let category = bm.category(forTrackId: trackId)
-    trackGroupId = category.categoryId
-    trackGroupTitle = category.title
-    
+    let category = bookmarksManager.category(forTrackId: trackId)
+    self.trackGroupId = category.categoryId
+    self.trackGroupTitle = category.title
 
-    editingCompleted = completion
-
+    self.editingCompleted = completion
     super.init(style: .grouped)
-
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -184,10 +181,22 @@ extension EditTrackViewController: BookmarkTitleCellDelegate {
   }
 }
 
+// MARK: - MWMButtonCellDelegate
+
 extension EditTrackViewController: MWMButtonCellDelegate {
   func cellDidPressButton(_ cell: UITableViewCell) {
-    bookmarksManager.deleteTrack(trackId)
-    goBack()
+    guard let indexPath = tableView.indexPath(for: cell) else {
+      fatalError("Invalid cell")
+    }
+    switch Sections(rawValue: indexPath.section) {
+    case .info:
+      break
+    case .delete:
+      bookmarksManager.deleteTrack(trackId)
+      goBack()
+    default:
+      fatalError("Invalid section")
+    }
   }
 }
 

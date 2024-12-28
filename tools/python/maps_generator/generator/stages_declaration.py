@@ -314,13 +314,13 @@ class StageRoutingTransit(Stage):
 
 
 @country_stage
-@production_only
 class StageMwmDiffs(Stage):
     def apply(self, env: Env, country, logger, **kwargs):
         data_dir = diffs.DataDir(
-            mwm_name=env.build_name,
-            new_version_dir=env.build_path,
-            old_version_root_dir=settings.DATA_ARCHIVE_DIR,
+            diff_tool = env.diff_tool,
+            mwm_name = f"{country}.mwm",
+            new_version_dir = env.paths.mwm_path,
+            old_version_root_dir = settings.DATA_ARCHIVE_DIR,
         )
         diffs.mwm_diff_calculation(data_dir, logger, depth=settings.DIFF_VERSION_DEPTH)
 

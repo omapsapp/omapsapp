@@ -12,12 +12,9 @@
 
 #include "base/checked_cast.hpp"
 
-#include <algorithm>
-#include <cstdint>
 #include <limits>
 #include <type_traits>
 #include <unordered_map>
-#include <utility>
 #include <vector>
 
 namespace routing
@@ -227,7 +224,7 @@ private:
       if (m_version != kLastVersion)
       {
         MYTHROW(CorruptedDataException,
-                ("Unknown index graph version ", m_version, ", current version ", kLastVersion));
+                ("Unknown index graph version ", int(m_version), ", current version ", int(kLastVersion)));
       }
 
       m_numRoads = ReadPrimitiveFromSource<decltype(m_numRoads)>(src);

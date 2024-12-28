@@ -14590,6 +14590,121 @@ cont {
   }
 }
 cont {
+  name: "amenity-water_point-drinking_water_no"
+  element {
+    scale: 14
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+}
+cont {
   name: "area:highway-footway"
   element {
     scale: 14
@@ -14830,6 +14945,77 @@ cont {
   }
 }
 cont {
+  name: "attraction-amusement_ride"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
   name: "attraction-animal"
   element {
     scale: 17
@@ -14886,6 +15072,432 @@ cont {
     scale: 20
     symbol {
       name: "animal-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
+  name: "attraction-big_wheel"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
+  name: "attraction-bumper_car"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
+  name: "attraction-carousel"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
+  name: "attraction-historic"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
+  name: "attraction-maze"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+}
+cont {
+  name: "attraction-roller_coaster"
+  element {
+    scale: 17
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "playground-m"
+      priority: 2450
+      min_distance: 24
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "playground-m"
       priority: 2450
       min_distance: 24
     }
@@ -22111,7 +22723,7 @@ cont {
     lines {
       width: 5.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -22121,7 +22733,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -22147,7 +22759,7 @@ cont {
     lines {
       width: 7.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -22157,7 +22769,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -22183,7 +22795,7 @@ cont {
     lines {
       width: 9.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -22193,7 +22805,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -22219,7 +22831,7 @@ cont {
     lines {
       width: 9.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -22229,7 +22841,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -23213,7 +23825,7 @@ cont {
     lines {
       width: 4.8
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -23223,7 +23835,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -23245,7 +23857,7 @@ cont {
     lines {
       width: 7.2
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -23255,7 +23867,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -23277,7 +23889,7 @@ cont {
     lines {
       width: 8.6
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -23287,7 +23899,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -23309,7 +23921,7 @@ cont {
     lines {
       width: 8.6
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -23319,7 +23931,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -24569,7 +25181,7 @@ cont {
     lines {
       width: 5.8
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -24579,7 +25191,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -24605,7 +25217,7 @@ cont {
     lines {
       width: 7.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -24615,7 +25227,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -24641,7 +25253,7 @@ cont {
     lines {
       width: 9.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -24651,7 +25263,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -24677,7 +25289,7 @@ cont {
     lines {
       width: 9.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -24687,7 +25299,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -28657,7 +29269,7 @@ cont {
     lines {
       width: 5.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -28667,7 +29279,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -28693,7 +29305,7 @@ cont {
     lines {
       width: 6.6
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -28703,7 +29315,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -28729,7 +29341,7 @@ cont {
     lines {
       width: 8.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -28739,7 +29351,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -28765,7 +29377,7 @@ cont {
     lines {
       width: 8.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -28775,7 +29387,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -35658,7 +36270,7 @@ cont {
     lines {
       width: 7.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -35668,7 +36280,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -35694,7 +36306,7 @@ cont {
     lines {
       width: 9.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -35704,7 +36316,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -35730,7 +36342,7 @@ cont {
     lines {
       width: 11.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -35740,7 +36352,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -35766,7 +36378,7 @@ cont {
     lines {
       width: 11.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -35776,7 +36388,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -37815,7 +38427,7 @@ cont {
     lines {
       width: 6.0
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -37825,7 +38437,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -37851,7 +38463,7 @@ cont {
     lines {
       width: 7.6
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -37861,7 +38473,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -37887,7 +38499,7 @@ cont {
     lines {
       width: 9.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -37897,7 +38509,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -37923,7 +38535,7 @@ cont {
     lines {
       width: 9.4
       color: 1307438043
-      priority: 50
+      priority: 154
       cap: BUTTCAP
     }
     lines {
@@ -37933,7 +38545,7 @@ cont {
         dd: 2.0
         dd: 2.0
       }
-      priority: 40
+      priority: 153
       cap: BUTTCAP
     }
     path_text {
@@ -37949,17 +38561,45 @@ cont {
 cont {
   name: "highway-traffic_signals"
   element {
+    scale: 15
+    symbol {
+      name: "traffic_signals"
+      priority: 215
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "traffic_signals"
+      priority: 215
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "traffic_signals"
+      priority: 215
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "traffic_signals"
+      priority: 215
+    }
+  }
+  element {
     scale: 19
     symbol {
       name: "traffic_signals"
-      priority: 3165
+      priority: 215
     }
   }
   element {
     scale: 20
     symbol {
       name: "traffic_signals"
-      priority: 3165
+      priority: 215
     }
   }
 }
@@ -48696,35 +49336,35 @@ cont {
   element {
     scale: 16
     area {
-      color: 13029267
+      color: 12700809
       priority: -1920
     }
   }
   element {
     scale: 17
     area {
-      color: 13029267
+      color: 12700809
       priority: -1920
     }
   }
   element {
     scale: 18
     area {
-      color: 13029267
+      color: 12700809
       priority: -1920
     }
   }
   element {
     scale: 19
     area {
-      color: 13029267
+      color: 12700809
       priority: -1920
     }
   }
   element {
     scale: 20
     area {
-      color: 13029267
+      color: 12700809
       priority: -1920
     }
   }
@@ -50943,63 +51583,63 @@ cont {
   element {
     scale: 12
     area {
-      color: 12372094
+      color: 13620648
       priority: -1930
     }
   }
   element {
     scale: 13
     area {
-      color: 11781233
+      color: 13620648
       priority: -1930
     }
   }
   element {
     scale: 14
     area {
-      color: 11453035
+      color: 13620648
       priority: -1930
     }
   }
   element {
     scale: 15
     area {
-      color: 11584112
+      color: 13620648
       priority: -1930
     }
   }
   element {
     scale: 16
     area {
-      color: 11190117
+      color: 13029267
       priority: -1930
     }
   }
   element {
     scale: 17
     area {
-      color: 11190117
+      color: 12372094
       priority: -1930
     }
   }
   element {
     scale: 18
     area {
-      color: 11190117
+      color: 12372094
       priority: -1930
     }
   }
   element {
     scale: 19
     area {
-      color: 11190117
+      color: 12372094
       priority: -1930
     }
   }
   element {
     scale: 20
     area {
-      color: 11190117
+      color: 12372094
       priority: -1930
     }
   }
@@ -55111,6 +55751,20 @@ cont {
 cont {
   name: "man_made-silo"
   element {
+    scale: 14
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
     scale: 16
     symbol {
       name: "storage-tank"
@@ -55175,6 +55829,20 @@ cont {
 }
 cont {
   name: "man_made-storage_tank"
+  element {
+    scale: 14
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
   element {
     scale: 16
     symbol {
@@ -55354,33 +56022,160 @@ cont {
   }
 }
 cont {
-  name: "man_made-tower-communication"
+  name: "man_made-tower"
+  element {
+    scale: 14
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
   element {
     scale: 17
     symbol {
-      name: "dot-m"
+      name: "mast-m"
       priority: 850
     }
   }
   element {
     scale: 18
     symbol {
-      name: "dot-m"
+      name: "mast-m"
       priority: 850
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9150
     }
   }
   element {
     scale: 19
     symbol {
-      name: "dot-m"
+      name: "mast-m"
       priority: 850
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9150
     }
   }
   element {
     scale: 20
     symbol {
-      name: "dot-m"
+      name: "mast-m"
       priority: 850
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9150
+    }
+  }
+}
+cont {
+  name: "man_made-tower-communication"
+  element {
+    scale: 14
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9150
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9150
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "mast-m"
+      priority: 850
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9150
     }
   }
 }
@@ -55478,6 +56273,200 @@ cont {
   }
 }
 cont {
+  name: "man_made-water_tap-drinking_water_no"
+  element {
+    scale: 14
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+}
+cont {
+  name: "man_made-water_tower"
+  element {
+    scale: 14
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9550
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9550
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "storage-tank"
+      priority: 450
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -9550
+    }
+  }
+}
+cont {
   name: "man_made-water_well"
   element {
     scale: 12
@@ -55567,6 +56556,121 @@ cont {
         is_optional: true
       }
       priority: -6950
+    }
+  }
+}
+cont {
+  name: "man_made-water_well-drinking_water_no"
+  element {
+    scale: 14
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
     }
   }
 }
@@ -57582,35 +58686,35 @@ cont {
   element {
     scale: 16
     area {
-      color: 13029267
+      color: 12700809
       priority: -1880
     }
   }
   element {
     scale: 17
     area {
-      color: 13029267
+      color: 12700809
       priority: -1880
     }
   }
   element {
     scale: 18
     area {
-      color: 13029267
+      color: 12700809
       priority: -1880
     }
   }
   element {
     scale: 19
     area {
-      color: 13029267
+      color: 12700809
       priority: -1880
     }
   }
   element {
     scale: 20
     area {
-      color: 13029267
+      color: 12700809
       priority: -1880
     }
   }
@@ -58723,6 +59827,126 @@ cont {
         is_optional: true
       }
       priority: -5350
+    }
+  }
+}
+cont {
+  name: "natural-spring-drinking_water_no"
+  element {
+    scale: 12
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+  }
+  element {
+    scale: 13
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+  }
+  element {
+    scale: 14
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "drinking-water-no-s"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "drinking-water-no-m"
+      priority: 1200
+    }
+    caption {
+      primary {
+        height: 11
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8800
     }
   }
 }
@@ -73256,7 +74480,7 @@ cont {
     lines {
       width: 4.0
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73271,7 +74495,7 @@ cont {
     lines {
       width: 4.4
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73286,7 +74510,7 @@ cont {
     lines {
       width: 4.8
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73301,13 +74525,13 @@ cont {
     lines {
       width: 7.0
       color: 1300267136
-      priority: 40
+      priority: 140
       cap: BUTTCAP
     }
     lines {
       width: 5.8
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73330,13 +74554,13 @@ cont {
     lines {
       width: 10.0
       color: 1300267136
-      priority: 40
+      priority: 140
       cap: BUTTCAP
     }
     lines {
       width: 8.6
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73359,13 +74583,13 @@ cont {
     lines {
       width: 12.8
       color: 1300267136
-      priority: 40
+      priority: 140
       cap: BUTTCAP
     }
     lines {
       width: 11.0
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73388,13 +74612,13 @@ cont {
     lines {
       width: 12.8
       color: 1300267136
-      priority: 40
+      priority: 140
       cap: BUTTCAP
     }
     lines {
       width: 11.0
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -73417,13 +74641,13 @@ cont {
     lines {
       width: 12.8
       color: 1300267136
-      priority: 40
+      priority: 140
       cap: BUTTCAP
     }
     lines {
       width: 11.0
       color: 871230427
-      priority: 50
+      priority: 150
       cap: BUTTCAP
     }
     lines {
@@ -78870,7 +80094,7 @@ cont {
   element {
     scale: 12
     symbol {
-      name: "train-s"
+      name: "funicular-s"
       priority: 6250
     }
     caption {
@@ -78894,7 +80118,7 @@ cont {
   element {
     scale: 13
     symbol {
-      name: "train-s"
+      name: "funicular-s"
       priority: 6250
     }
     caption {
@@ -78918,7 +80142,7 @@ cont {
   element {
     scale: 14
     symbol {
-      name: "train-s"
+      name: "funicular-s"
       priority: 6250
     }
     caption {
@@ -79241,6 +80465,184 @@ cont {
     scale: 20
     symbol {
       name: "train-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+}
+cont {
+  name: "railway-station-light_rail-berlin"
+  element {
+    scale: 13
+    symbol {
+      name: "lightrail-berlin-s"
+      priority: 6250
+    }
+  }
+  element {
+    scale: 14
+    symbol {
+      name: "lightrail-berlin-s"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 11
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 9
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "lightrail-berlin-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 12
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 10
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "lightrail-berlin-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "lightrail-berlin-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "lightrail-berlin-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "lightrail-berlin-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "lightrail-berlin-m"
       priority: 6250
     }
     caption {
@@ -79621,71 +81023,30 @@ cont {
 cont {
   name: "railway-station-monorail"
   element {
-    scale: 12
-    symbol {
-      name: "train-s"
-      priority: 6250
-    }
-    caption {
-      primary {
-        height: 9
-        color: 2236962
-        stroke_color: 1728053247
-        offset_y: 1
-        is_optional: true
-      }
-      secondary {
-        height: 8
-        color: 2236962
-        stroke_color: 1728053247
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3750
-    }
-  }
-  element {
     scale: 13
     symbol {
-      name: "train-s"
+      name: "monorail-s"
       priority: 6250
-    }
-    caption {
-      primary {
-        height: 10
-        color: 2236962
-        stroke_color: 1728053247
-        offset_y: 1
-        is_optional: true
-      }
-      secondary {
-        height: 9
-        color: 2236962
-        stroke_color: 1728053247
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3750
     }
   }
   element {
     scale: 14
     symbol {
-      name: "train-s"
+      name: "monorail-s"
       priority: 6250
     }
     caption {
       primary {
         height: 11
         color: 2236962
-        stroke_color: 1308622847
+        stroke_color: 872415231
         offset_y: 1
         is_optional: true
       }
       secondary {
-        height: 10
+        height: 9
         color: 2236962
-        stroke_color: 1308622847
+        stroke_color: 872415231
         offset_y: 1
         is_optional: true
       }
@@ -79695,7 +81056,7 @@ cont {
   element {
     scale: 15
     symbol {
-      name: "train-m"
+      name: "monorail-m"
       priority: 6250
     }
     caption {
@@ -79719,7 +81080,7 @@ cont {
   element {
     scale: 16
     symbol {
-      name: "train-m"
+      name: "monorail-m"
       priority: 6250
     }
     caption {
@@ -79743,7 +81104,7 @@ cont {
   element {
     scale: 17
     symbol {
-      name: "train-m"
+      name: "monorail-m"
       priority: 6250
     }
     caption {
@@ -79755,7 +81116,7 @@ cont {
         is_optional: true
       }
       secondary {
-        height: 12
+        height: 11
         color: 2236962
         stroke_color: 452984831
         offset_y: 1
@@ -79767,7 +81128,7 @@ cont {
   element {
     scale: 18
     symbol {
-      name: "train-m"
+      name: "monorail-m"
       priority: 6250
     }
     caption {
@@ -79779,7 +81140,7 @@ cont {
         is_optional: true
       }
       secondary {
-        height: 12
+        height: 11
         color: 2236962
         stroke_color: 452984831
         offset_y: 1
@@ -79791,7 +81152,7 @@ cont {
   element {
     scale: 19
     symbol {
-      name: "train-m"
+      name: "monorail-m"
       priority: 6250
     }
     caption {
@@ -79803,7 +81164,7 @@ cont {
         is_optional: true
       }
       secondary {
-        height: 12
+        height: 11
         color: 2236962
         stroke_color: 452984831
         offset_y: 1
@@ -79815,7 +81176,7 @@ cont {
   element {
     scale: 20
     symbol {
-      name: "train-m"
+      name: "monorail-m"
       priority: 6250
     }
     caption {
@@ -79827,7 +81188,7 @@ cont {
         is_optional: true
       }
       secondary {
-        height: 12
+        height: 11
         color: 2236962
         stroke_color: 452984831
         offset_y: 1
@@ -86992,6 +88353,184 @@ cont {
     scale: 20
     symbol {
       name: "subway-hirosima-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+}
+cont {
+  name: "railway-station-subway-hongkong"
+  element {
+    scale: 13
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 6250
+    }
+  }
+  element {
+    scale: 14
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 11
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 9
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "subway-hongkong-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 12
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 10
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "subway-hongkong-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "subway-hongkong-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "subway-hongkong-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "subway-hongkong-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "subway-hongkong-m"
       priority: 6250
     }
     caption {
@@ -96219,6 +97758,184 @@ cont {
   }
 }
 cont {
+  name: "railway-station-subway-shenzhen"
+  element {
+    scale: 13
+    symbol {
+      name: "subway-shenzhen-s"
+      priority: 6250
+    }
+  }
+  element {
+    scale: 14
+    symbol {
+      name: "subway-shenzhen-s"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 11
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 9
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "subway-shenzhen-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 12
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 10
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "subway-shenzhen-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 872415231
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "subway-shenzhen-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "subway-shenzhen-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "subway-shenzhen-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "subway-shenzhen-m"
+      priority: 6250
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -3750
+    }
+  }
+}
+cont {
   name: "railway-station-subway-shiraz"
   element {
     scale: 13
@@ -104286,6 +106003,112 @@ cont {
   }
 }
 cont {
+  name: "railway-subway_entrance-hongkong"
+  element {
+    scale: 16
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 3700
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "subway-hongkong-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+}
+cont {
   name: "railway-subway_entrance-isfahan"
   element {
     scale: 16
@@ -109923,6 +111746,112 @@ cont {
     scale: 20
     symbol {
       name: "subway-shanghai-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+}
+cont {
+  name: "railway-subway_entrance-shenzhen"
+  element {
+    scale: 16
+    symbol {
+      name: "subway-shenzhen-s"
+      priority: 3700
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "subway-shenzhen-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "subway-shenzhen-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "subway-shenzhen-s"
+      priority: 3700
+    }
+    caption {
+      primary {
+        height: 13
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      secondary {
+        height: 11
+        color: 2236962
+        stroke_color: 452984831
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6300
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "subway-shenzhen-s"
       priority: 3700
     }
     caption {
@@ -119518,6 +121447,94 @@ cont {
         is_optional: true
       }
       priority: -8400
+    }
+  }
+}
+cont {
+  name: "shop-pasta"
+  element {
+    scale: 16
+    symbol {
+      name: "shop-m"
+      priority: 2550
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7450
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "shop-m"
+      priority: 2550
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7450
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "shop-m"
+      priority: 2550
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7450
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "shop-m"
+      priority: 2550
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7450
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "shop-m"
+      priority: 2550
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 4473924
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -7450
     }
   }
 }

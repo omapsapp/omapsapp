@@ -192,3 +192,8 @@ rental=ebike : rental=bike
 rental=cargo_bike : rental=bike
 rental=e-bike : rental=bike
 rental=city_bike;ebike : rental=bike
+
+attraction=train : attraction=amusement_ride
+attraction=swing_carousel : attraction=amusement_ride
+attraction=drop_tower : attraction=amusement_ride
+attraction=dark_ride : attraction=amusement_ride

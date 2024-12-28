@@ -16,7 +16,7 @@ using namespace std;
 
 // RoutingOptions -------------------------------------------------------------------------------------
 
-string const RoutingOptions::kAvoidRoutingOptionSettingsForCar = "avoid_routing_options_car";
+std::string_view constexpr kAvoidRoutingOptionSettingsForCar = "avoid_routing_options_car";
 
 // static
 RoutingOptions RoutingOptions::LoadCarOptionsFromSettings()

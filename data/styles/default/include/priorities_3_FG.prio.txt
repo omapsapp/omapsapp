@@ -306,6 +306,22 @@ highway-path-horse                                  # line z14- (also has pathte
 highway-path-tunnel                                 # line z14- (also has line::tunnelBackground z17-, line::tunnelCasing z17-, pathtext z15-)
 === 155
 
+highway-bridleway-tunnel::tunnelBackground          # line::tunnelBackground z17- (also has line z14-, line::tunnelCasing z17-, pathtext z15-)
+highway-cycleway-tunnel::tunnelBackground           # line::tunnelBackground z17- (also has line z13-, line::tunnelCasing z17-, pathtext z15-)
+highway-footway-tunnel::tunnelBackground            # line::tunnelBackground z17- (also has line z15-, line::tunnelCasing z17-, pathtext z15-)
+highway-path-tunnel::tunnelBackground               # line::tunnelBackground z17- (also has line z14-, line::tunnelCasing z17-, pathtext z15-)
+highway-steps-tunnel::tunnelBackground              # line::tunnelBackground z17- (also has line z15-, line::tunnelCasing z17-, pathtext z16-)
+highway-track-tunnel::tunnelBackground              # line::tunnelBackground z17- (also has line z14-, line::tunnelCasing z17-, pathtext z15-)
+=== 154
+
+highway-bridleway-tunnel::tunnelCasing              # line::tunnelCasing z17- (also has line z14-, line::tunnelBackground z17-, pathtext z15-)
+highway-cycleway-tunnel::tunnelCasing               # line::tunnelCasing z17- (also has line z13-, line::tunnelBackground z17-, pathtext z15-)
+highway-footway-tunnel::tunnelCasing                # line::tunnelCasing z17- (also has line z15-, line::tunnelBackground z17-, pathtext z15-)
+highway-path-tunnel::tunnelCasing                   # line::tunnelCasing z17- (also has line z14-, line::tunnelBackground z17-, pathtext z15-)
+highway-steps-tunnel::tunnelCasing                  # line::tunnelCasing z17- (also has line z15-, line::tunnelBackground z17-, pathtext z16-)
+highway-track-tunnel::tunnelCasing                  # line::tunnelCasing z17- (also has line z14-, line::tunnelBackground z17-, pathtext z15-)
+=== 153
+
 highway-bridleway-bridge::bridgewhite               # line::bridgewhite z15- (also has line z14-, line::bridgeblack z17-, pathtext z15-)
 highway-cycleway-bridge::bridgewhite                # line::bridgewhite z15- (also has line z13-, line::bridgeblack z17-, pathtext z15-)
 highway-footway-bridge::bridgewhite                 # line::bridgewhite z15- (also has line z15-, line::bridgeblack z17-, pathtext z15-)
@@ -328,6 +344,7 @@ highway-trunk-bridge::bridgewhite                   # line::bridgewhite z13- (al
 highway-trunk_link-bridge::bridgewhite              # line::bridgewhite z14- (also has line z10-, line::bridgeblack z14-, pathtext z10-, shield::shield z10-)
 highway-unclassified-bridge::bridgewhite            # line::bridgewhite z14- (also has line z11-, line::bridgeblack z14-, pathtext z13-)
 railway-abandoned-bridge::bridgewhite               # line::bridgewhite z16- (also has line z16-, line::bridgeblack z16-)
+railway-light_rail-bridge::bridgewhite              # line::bridgewhite z13- (also has line z13-, line::bridgeblack z16-, line::dash z16-)
 railway-preserved-bridge::bridgewhite               # line::bridgewhite z15- (also has line z15-, line::bridgeblack z16-)
 railway-rail-branch-bridge::bridgewhite             # line::bridgewhite z13- (also has line z11-, line::bridgeblack z16-, line::dash z16-)
 railway-rail-bridge::bridgewhite                    # line::bridgewhite z13- (also has line z11-, line::bridgeblack z16-, line::dash z16-)
@@ -362,6 +379,7 @@ highway-trunk-bridge::bridgeblack                   # line::bridgeblack z13- (al
 highway-trunk_link-bridge::bridgeblack              # line::bridgeblack z14- (also has line z10-, line::bridgewhite z14-, pathtext z10-, shield::shield z10-)
 highway-unclassified-bridge::bridgeblack            # line::bridgeblack z14- (also has line z11-, line::bridgewhite z14-, pathtext z13-)
 railway-abandoned-bridge::bridgeblack               # line::bridgeblack z16- (also has line z16-, line::bridgewhite z16-)
+railway-light_rail-bridge::bridgeblack              # line::bridgeblack z16- (also has line z13-, line::bridgewhite z13-, line::dash z16-)
 railway-preserved-bridge::bridgeblack               # line::bridgeblack z16- (also has line z15-, line::bridgewhite z15-)
 railway-rail-branch-bridge::bridgeblack             # line::bridgeblack z16- (also has line z11-, line::bridgewhite z13-, line::dash z16-)
 railway-rail-bridge::bridgeblack                    # line::bridgeblack z16- (also has line z11-, line::bridgewhite z13-, line::dash z16-)
@@ -425,24 +443,6 @@ isoline-step_50                                     # line z14- (also has pathte
 isoline-step_500                                    # line z11- (also has pathtext z12-)
 isoline-zero                                        # line z15- (also has pathtext z17-)
 === 60
-
-highway-bridleway-tunnel::tunnelBackground          # line::tunnelBackground z17- (also has line z14-, line::tunnelCasing z17-, pathtext z15-)
-highway-cycleway-tunnel::tunnelBackground           # line::tunnelBackground z17- (also has line z13-, line::tunnelCasing z17-, pathtext z15-)
-highway-footway-tunnel::tunnelBackground            # line::tunnelBackground z17- (also has line z15-, line::tunnelCasing z17-, pathtext z15-)
-highway-path-tunnel::tunnelBackground               # line::tunnelBackground z17- (also has line z14-, line::tunnelCasing z17-, pathtext z15-)
-highway-steps-tunnel::tunnelBackground              # line::tunnelBackground z17- (also has line z15-, line::tunnelCasing z17-, pathtext z16-)
-highway-track-tunnel::tunnelBackground              # line::tunnelBackground z17- (also has line z14-, line::tunnelCasing z17-, pathtext z15-)
-railway-light_rail-bridge::bridgewhite              # line::bridgewhite z13- (also has line z13-, line::bridgeblack z16-, line::dash z16-)
-=== 50
-
-highway-bridleway-tunnel::tunnelCasing              # line::tunnelCasing z17- (also has line z14-, line::tunnelBackground z17-, pathtext z15-)
-highway-cycleway-tunnel::tunnelCasing               # line::tunnelCasing z17- (also has line z13-, line::tunnelBackground z17-, pathtext z15-)
-highway-footway-tunnel::tunnelCasing                # line::tunnelCasing z17- (also has line z15-, line::tunnelBackground z17-, pathtext z15-)
-highway-path-tunnel::tunnelCasing                   # line::tunnelCasing z17- (also has line z14-, line::tunnelBackground z17-, pathtext z15-)
-highway-steps-tunnel::tunnelCasing                  # line::tunnelCasing z17- (also has line z15-, line::tunnelBackground z17-, pathtext z16-)
-highway-track-tunnel::tunnelCasing                  # line::tunnelCasing z17- (also has line z14-, line::tunnelBackground z17-, pathtext z15-)
-railway-light_rail-bridge::bridgeblack              # line::bridgeblack z16- (also has line z13-, line::bridgewhite z13-, line::dash z16-)
-=== 40
 
 man_made-breakwater                                 # line z14- and area z12- (also has caption z17-)
 man_made-pier                                       # line z14- and area z12- (also has caption z17-)

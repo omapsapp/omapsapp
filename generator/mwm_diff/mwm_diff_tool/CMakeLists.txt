@@ -1,4 +1,4 @@
-project(pymwm_diff)
+project(mwm_diff_tool)
 
 set(SRC mwm_diff_tool.cpp)
 

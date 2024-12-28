@@ -246,7 +246,7 @@ void EditorTest::GetFeatureTypeInfoTest()
 
     auto const featuresAfter = editor.m_features.Get();
     auto const fti = editor.GetFeatureTypeInfo(*featuresAfter, ft.GetID().m_mwmId, ft.GetID().m_index);
-    TEST_NOT_EQUAL(fti, 0, ());
+    TEST_NOT_EQUAL(fti, nullptr, ());
     TEST_EQUAL(fti->m_object.GetID(), ft.GetID(), ());
   });
 }

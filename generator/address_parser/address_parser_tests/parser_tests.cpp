@@ -164,7 +164,7 @@ UNIT_CLASS_TEST(TestFixture, Generator_Smoke)
 
   Parse(ss);
 
-  BuildAndCheck("./data/osm_test_data/us_tiger_1.osm", 1 /* addrInterpolExpected */, 3 /* addrNodeExpected */);
+  BuildAndCheck("./data/test_data/osm/us_tiger_1.osm", 1 /* addrInterpolExpected */, 3 /* addrNodeExpected */);
 }
 
 UNIT_CLASS_TEST(TestFixture, Generator_Filter_SF1)
@@ -174,7 +174,7 @@ UNIT_CLASS_TEST(TestFixture, Generator_Filter_SF1)
 
   Parse(ss);
 
-  BuildAndCheck("./data/osm_test_data/us_tiger_2.osm", 0 /* addrInterpolExpected */, 0 /* addrNodeExpected */);
+  BuildAndCheck("./data/test_data/osm/us_tiger_2.osm", 0 /* addrInterpolExpected */, 0 /* addrNodeExpected */);
 }
 
 UNIT_CLASS_TEST(TestFixture, Generator_Filter_NY)
@@ -184,7 +184,7 @@ UNIT_CLASS_TEST(TestFixture, Generator_Filter_NY)
 
   Parse(ss);
 
-  BuildAndCheck("./data/osm_test_data/us_tiger_3.osm", 0 /* addrInterpolExpected */, -1 /* addrNodeExpected */);
+  BuildAndCheck("./data/test_data/osm/us_tiger_3.osm", 0 /* addrInterpolExpected */, -1 /* addrNodeExpected */);
 }
 
 UNIT_CLASS_TEST(TestFixture, Generator_Filter_SF2)
@@ -195,7 +195,7 @@ UNIT_CLASS_TEST(TestFixture, Generator_Filter_SF2)
 
   Parse(ss);
 
-  BuildAndCheck("./data/osm_test_data/us_tiger_4.osm", 0 /* addrInterpolExpected */, 0 /* addrNodeExpected */);
+  BuildAndCheck("./data/test_data/osm/us_tiger_4.osm", 0 /* addrInterpolExpected */, 0 /* addrNodeExpected */);
 }
 
 UNIT_CLASS_TEST(TestFixture, Generator_Street_Name)
@@ -206,7 +206,7 @@ UNIT_CLASS_TEST(TestFixture, Generator_Street_Name)
 
   Parse(ss);
 
-  BuildAndCheck("./data/osm_test_data/us_tiger_5.osm", 2 /* addrInterpolExpected */, 4 /* addrNodeExpected */);
+  BuildAndCheck("./data/test_data/osm/us_tiger_5.osm", 2 /* addrInterpolExpected */, 4 /* addrNodeExpected */);
 
   BuildSearch(m_mwmName);
 

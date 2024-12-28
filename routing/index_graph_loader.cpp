@@ -133,20 +133,28 @@ IndexGraphLoaderImpl::GraphPtrT IndexGraphLoaderImpl::CreateIndexGraph(NumMwmId 
   MwmSet::MwmHandle const & handle = m_dataSource.GetHandle(numMwmId);
   MwmValue const * value = handle.GetValue();
 
-  if (!geometry)
+  try
   {
-    auto vehicleModel = m_vehicleModelFactory->GetVehicleModelForCountry(value->GetCountryFileName());
-    geometry = make_shared<Geometry>(GeometryLoader::Create(handle, std::move(vehicleModel), m_loadAltitudes));
+    base::Timer timer;
+
+    if (!geometry)
+    {
+      auto vehicleModel = m_vehicleModelFactory->GetVehicleModelForCountry(value->GetCountryFileName());
+      geometry = make_shared<Geometry>(GeometryLoader::Create(handle, std::move(vehicleModel), m_loadAltitudes));
+    }
+
+    auto graph = make_unique<IndexGraph>(geometry, m_estimator, m_avoidRoutingOptions);
+    graph->SetCurrentTimeGetter(m_currentTimeGetter);
+    DeserializeIndexGraph(*value, m_vehicleType, *graph);
+
+    LOG(LINFO, (ROUTING_FILE_TAG, "section for", value->GetCountryFileName(), "loaded in", timer.ElapsedSeconds(), "seconds"));
+    return graph;
   }
-
-  auto graph = make_unique<IndexGraph>(geometry, m_estimator, m_avoidRoutingOptions);
-  graph->SetCurrentTimeGetter(m_currentTimeGetter);
-
-  base::Timer timer;
-  DeserializeIndexGraph(*value, m_vehicleType, *graph);
-  LOG(LINFO, (ROUTING_FILE_TAG, "section for", value->GetCountryFileName(), "loaded in", timer.ElapsedSeconds(), "seconds"));
-
-  return graph;
+  catch (RootException const & ex)
+  {
+    LOG(LERROR, ("Error reading graph for", value->m_file));
+    throw;
+  }
 }
 
 IndexGraphLoaderImpl::GeometryPtrT IndexGraphLoaderImpl::CreateGeometry(NumMwmId numMwmId)

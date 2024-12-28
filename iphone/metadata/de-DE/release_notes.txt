@@ -1,3 +1,4 @@
-- Track Recorder: Record and save your routes while hiking, biking, running, or navigating.
-- New Map Data: Updated with data as of September 7, including isolines for Egypt and Algeria.
-- Translations: Enhanced Chinese, Hebrew, and Italian, and added translations for trail difficulty.
+• Neue OpenStreetMap-Daten vom 22. November
+• Behobener Fehler im Beschreibung-Editor für Lesezeichen
+• macOS: Karten-Scrolling mit Maus und Trackpad
+• Weitere Suchverbesserungen, Übersetzungs-Updates und Fehlerbehebungen

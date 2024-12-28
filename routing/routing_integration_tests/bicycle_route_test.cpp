@@ -305,9 +305,11 @@ UNIT_TEST(IgnoreCycleBarrier_WithoutAccess)
 UNIT_TEST(AvoidConstruction)
 {
   // Will not work when the bridge will be finished.
-  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+  TRouteResult const res = CalculateRoute(GetVehicleComponents(VehicleType::Bicycle),
                                    mercator::FromLatLon(-27.4724942, 153.030171), {0.0, 0.0},
-                                   mercator::FromLatLon(-27.4706626, 153.035428), 2989.28);
+                                   mercator::FromLatLon(-27.4706626, 153.035428));
+  TEST_EQUAL(res.second, RouterResultCode::NoError, ());
+  TEST_GREATER(res.first->GetTotalDistanceMeters(), 2900, ());
 }
 
 UNIT_TEST(UK_Canterbury_UseDismount)

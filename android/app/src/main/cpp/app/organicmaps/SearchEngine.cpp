@@ -81,6 +81,17 @@ jobject ToJavaResult(Result const & result, search::ProductInfo const & productI
   }
   env->ReleaseIntArrayElements(ranges.get(), rawArr, 0);
 
+  jni::TScopedLocalIntArrayRef descRanges(env, env->NewIntArray(
+          static_cast<jsize>(result.GetDescHighlightRangesCount() * 2)));
+  jint * rawArr2 = env->GetIntArrayElements(descRanges, nullptr);
+  for (size_t i = 0; i < result.GetDescHighlightRangesCount(); i++)
+  {
+    auto const & range = result.GetDescHighlightRange(i);
+    rawArr2[2 * i] = range.first;
+    rawArr2[2 * i + 1] = range.second;
+  }
+  env->ReleaseIntArrayElements(descRanges.get(), rawArr2, 0);
+
   ms::LatLon ll = ms::LatLon::Zero();
   if (result.HasPoint())
     ll = mercator::ToLatLon(result.GetFeatureCenter());
@@ -89,7 +100,7 @@ jobject ToJavaResult(Result const & result, search::ProductInfo const & productI
   {
     jni::TScopedLocalRef name(env, jni::ToJavaString(env, result.GetString()));
     jni::TScopedLocalRef suggest(env, jni::ToJavaString(env, result.GetSuggestionString()));
-    return env->NewObject(g_resultClass, g_suggestConstructor, name.get(), suggest.get(), ll.m_lat, ll.m_lon, ranges.get());
+    return env->NewObject(g_resultClass, g_suggestConstructor, name.get(), suggest.get(), ll.m_lat, ll.m_lon, ranges.get(),descRanges.get());
   }
 
   platform::Distance distance;
@@ -125,7 +136,7 @@ jobject ToJavaResult(Result const & result, search::ProductInfo const & productI
                                                       0/*static_cast<jint>(result.GetRankingInfo().m_popularity)*/));
 
   return env->NewObject(g_resultClass, g_resultConstructor, name.get(), desc.get(), ll.m_lat, ll.m_lon,
-                        ranges.get(), popularity.get());
+                        ranges.get(), descRanges.get(), popularity.get());
 }
 
 jobjectArray BuildSearchResults(vector<search::ProductInfo> const & productInfo,
@@ -232,9 +243,9 @@ extern "C"
     g_resultClass = jni::GetGlobalClassRef(env, "app/organicmaps/search/SearchResult");
     g_resultConstructor = jni::GetConstructorID(
         env, g_resultClass,
-        "(Ljava/lang/String;Lapp/organicmaps/search/SearchResult$Description;DD[I"
+        "(Ljava/lang/String;Lapp/organicmaps/search/SearchResult$Description;DD[I[I"
           "Lapp/organicmaps/search/Popularity;)V");
-    g_suggestConstructor = jni::GetConstructorID(env, g_resultClass, "(Ljava/lang/String;Ljava/lang/String;DD[I)V");
+    g_suggestConstructor = jni::GetConstructorID(env, g_resultClass, "(Ljava/lang/String;Ljava/lang/String;DD[I[I)V");
     g_descriptionClass = jni::GetGlobalClassRef(env, "app/organicmaps/search/SearchResult$Description");
     /*
         Description(FeatureId featureId, String featureType, String region, Distance distance,

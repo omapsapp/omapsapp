@@ -13,18 +13,11 @@
       android:textAppearance="@style/MwmTextAppearance.Body2.Primary"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <TextView
-      android:id="@+id/author"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:textAppearance="@style/MwmTextAppearance.Body3"
-      app:layout_constraintTop_toBottomOf="@id/title" />
-
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical"
-      app:layout_constraintTop_toBottomOf="@id/author">
+      app:layout_constraintTop_toBottomOf="@id/title">
 
     <TextView
         android:id="@+id/text"
@@ -42,7 +35,6 @@
         android:background="@android:color/transparent"
         android:clickable="true"
         android:gravity="start|top"
-        android:padding="@dimen/margin_base"
         android:text="@string/category_desc_more"
         android:textColor="?attr/colorAccent"
         android:layout_marginTop="2dp" />

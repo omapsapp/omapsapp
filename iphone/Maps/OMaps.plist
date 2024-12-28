@@ -282,5 +282,7 @@
 			<string>OrganicMapsDEBUG</string>
 		</dict>
 	</dict>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
 </dict>
 </plist>

@@ -289,6 +289,10 @@
     <string name="google_play_services">Google Play platstjänster</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Fastställ snabbt din ungefärliga position via Bluetooth, WiFi eller mobilnät</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Hotellänkar</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Foton, recensioner, bokningslänkar visas för hotell som har en lista på Kayak.com. Den värvningsbonus som erhålls för varje bokning via dessa länkar går till utveckling av Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Ladda ned kartor längs vägen</string>
     <!-- Text for routing error dialog -->
@@ -467,7 +471,10 @@
     <string name="message_invalid_feature_position">Ett objekt kan inte placeras här</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Community-skapade OpenStreetMap-data från och med %s. Läs mer om hur du redigerar och uppdaterar kartan på OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Logga in så att andra användare kan se de ändringar du gjort.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) är ett community-projekt för att bygga en fri och öppen karta. Det är den huvudsakliga källan till kartdata i Organic Maps och fungerar på samma sätt som Wikipedia. Du kan lägga till eller redigera platser och de blir tillgängliga för miljontals användare över hela världen.
+\nGå med i samhället och hjälp till att skapa en bättre karta för alla!</string>
+    <string name="login_to_make_edits_visible">Skapa ett OpenStreetMap-konto eller logga in för att publicera dina kartredigeringar till hela världen.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d av %2$d</string>
     <string name="download_over_mobile_header">Ladda ned med mobildata?</string>
@@ -487,9 +494,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Dina redigeringar laddas upp till den offentliga <a href="https://wiki.openstreetmap.org/wiki/Sv:Om_OpenStreetMap">OpenStreetMap</a>-databasen. Lägg inte till personlig eller upphovsrättsskyddad information.</string>
     <string name="editor_more_about_osm">Mer om OpenStreetMap</string>
-    <string name="editor_operator">Användare</string>
+    <string name="editor_osm_history">Din redigeringshistorik</string>
+    <string name="editor_osm_notes">Anteckningar om dina kartdata</string>
+    <string name="editor_operator">Operatör</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Användare: %s</string>
+    <string name="operator">Operatör: %s</string>
     <string name="editor_category_unsuitable_title">Hittar du ingen lämplig kategori?</string>
     <string name="editor_category_unsuitable_text">Organic Maps tillåter endast att lägga till enkla punktkategorier, det betyder inga städer, vägar, sjöar, byggnadskonturer etc. Lägg till sådana kategorier direkt till <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Kontrollera vår <a href="https://organicmaps.app/faq/editing/advanced-map-editing">guide</a> för detaljerade steg-för-steg-instruktioner.</string>
     <string name="downloader_no_downloaded_maps_title">Du har inte laddat ner några kartor</string>
@@ -508,6 +517,7 @@
     <string name="miles_per_hour">mi/tim</string>
     <string name="hour">tim</string>
     <string name="minute">min</string>
+    <string name="day">d</string>
     <string name="placepage_more_button">Mer</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Foton, recensioner, bokning</string>
@@ -515,6 +525,8 @@
     <string name="dialog_kayak_disclaimer">Hänvisningsbonusen för varje bokning via denna länk går till utvecklingen av Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Information på Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Inaktivera Kayak</string>
     <string name="placepage_edit_bookmark_button">Redigera bokmärke</string>
     <string name="editor_comment_hint">kommentar…</string>
     <string name="editor_reset_edits_message">Återställ alla lokala ändringar?</string>
@@ -569,7 +581,7 @@
     <string name="routing_add_start_point">Använd sökfunktionen eller tryck på kartan för att lägga till en startpunkt för rutten</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Använd sökfunktionen eller tryck på kartan för att lägga till en destinationspunkt</string>
-    <string name="placepage_remove_stop">Ta bort</string>
+    <string name="placepage_remove_stop">Ta bort stoppet</string>
     <string name="placepage_add_stop">Lägg till stopp</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Logga in på OpenStreetMap för att automatiskt ladda upp alla dina kartredigeringar. Läs mer <a href="https://github.com/organicmaps/organicmaps/issues/6144">här</a>.</string>
@@ -718,8 +730,8 @@
     <string name="isolines_location_error_dialog">Höjningslinjer är ännu inte tillgängligt i den här regionen</string>
     <string name="elevation_profile_ascent">Stigning</string>
     <string name="elevation_profile_descent">Backe</string>
-    <string name="elevation_profile_minaltitude">Min. höjd</string>
-    <string name="elevation_profile_maxaltitude">Max. höjd</string>
+    <string name="elevation_profile_min_elevation">Min. höjd</string>
+    <string name="elevation_profile_max_elevation">Max. höjd</string>
     <string name="elevation_profile_difficulty">Svårighet</string>
     <string name="elevation_profile_distance">Avst.:</string>
     <string name="elevation_profile_time">Tid:</string>
@@ -741,7 +753,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Om du känner en mjukvaruutvecklare kan du be honom eller henne att implementera en funktion som du behöver.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Vet du att du kan trycka länge på vilken plats som helst på kartan för att välja den?</string>
+    <string name="app_tip_04">Tryck var som helst på kartan för att välja något. Tryck länge för att dölja och visa gränssnittet igen.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Vet du att du kan välja din nuvarande plats på kartan?</string>
     <!-- App tip #06 -->
@@ -811,7 +823,11 @@
     <string name="track_recording_toast_nothing_to_save">Routen är tom - inget att spara</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Det går inte att visa dialogrutan för val av mapp eftersom ingen lämplig app är installerad på din enhet. Installera en filhanteringsapp och försök igen</string>
+    <string name="choose_color">Välj färg</string>
+    <string name="edit_track">Redigera rutt</string>
     <string name="uri_open_location_failed">Ingen app installerad som kan öppna platsen</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Auto i navigering</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adress/Block</string>
@@ -922,6 +938,7 @@
     <string name="type.amenity.police">Polis</string>
     <string name="type.amenity.post_box">Postlåda</string>
     <string name="type.amenity.post_office">Postkontor</string>
+    <string name="type.amenity.prison">Fängelse</string>
     <string name="type.amenity.pub">Krog</string>
     <string name="type.amenity.public_bookcase">Bokskåp</string>
 
@@ -963,6 +980,7 @@
     <string name="type.amenity.waste_basket">Papperskorg</string>
     <string name="type.amenity.waste_disposal">Avfallscontainer</string>
     <string name="type.amenity.water_point">Vattenpost</string>
+    <string name="type.amenity.water_point.drinking_water_no">Vattenpost</string>
     <string name="type.barrier.block">Blockering</string>
     <string name="type.barrier.bollard">Stolpe</string>
     <string name="type.barrier.border_control">Gränskontroll</string>
@@ -992,7 +1010,7 @@
     <string name="type.building.address">Adress</string>
     <string name="type.building.has_parts">Byggnad</string>
     <string name="type.building_part">Byggnad</string>
-    <string name="type.building.train_station">Tågstation</string>
+    <string name="type.building.train_station">Stationsbyggnaden</string>
     <string name="type.cemetery.grave">Grav</string>
     <string name="type.craft">Hantverk</string>
     <string name="type.craft.beekeeper">Biodlare</string>
@@ -1371,8 +1389,10 @@
     <string name="type.man_made.tower">Torn</string>
     <string name="type.man_made.tower.communication">Kommunikationstorn</string>
     <string name="type.man_made.water_tap">Vattenkran</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Vattenkran</string>
     <string name="type.man_made.water_tower">Vattentorn</string>
     <string name="type.man_made.water_well">Brunn</string>
+    <string name="type.man_made.water_well.drinking_water_no">Brunn</string>
     <string name="type.man_made.windmill">Väderkvarn</string>
     <string name="type.natural">Natur</string>
     <!-- A rocky land cover. -->
@@ -1410,6 +1430,7 @@
     <string name="type.natural.rock">Bergart</string>
     <string name="type.natural.scrub">Ruggen</string>
     <string name="type.natural.spring">Vattenkälla</string>
+    <string name="type.natural.spring.drinking_water_no">Vattenkälla</string>
     <string name="type.natural.strait">Sund</string>
     <string name="type.natural.tree_row">Trädrad</string>
     <string name="type.natural.vineyard">Vingård</string>
@@ -1503,6 +1524,7 @@
     <string name="type.railway.station">Tågstation</string>
     <string name="type.railway.station.funicular">Linbana</string>
     <string name="type.railway.station.light_rail">Tågstation</string>
+    <string name="type.railway.station.light_rail.berlin">Tågstation</string>
     <string name="type.railway.station.light_rail.london">Tågstation</string>
     <string name="type.railway.station.light_rail.porto">Tågstation</string>
     <string name="type.railway.station.monorail">Tågstation</string>
@@ -1545,6 +1567,7 @@
     <string name="type.railway.station.subway.hamburg">Tunnelbana</string>
     <string name="type.railway.station.subway.helsinki">Tunnelbana</string>
     <string name="type.railway.station.subway.hiroshima">Tunnelbana</string>
+    <string name="type.railway.station.subway.hongkong">Tunnelbana</string>
     <string name="type.railway.station.subway.isfahan">Tunnelbana</string>
     <string name="type.railway.station.subway.istanbul">Tunnelbana</string>
     <string name="type.railway.station.subway.izmir">Tunnelbana</string>
@@ -1598,6 +1621,7 @@
     <string name="type.railway.station.subway.sendai">Tunnelbana</string>
     <string name="type.railway.station.subway.sf">Tunnelbana</string>
     <string name="type.railway.station.subway.shanghai">Tunnelbana</string>
+    <string name="type.railway.station.subway.shenzhen">Tunnelbana</string>
     <string name="type.railway.station.subway.shiraz">Tunnelbana</string>
     <string name="type.railway.station.subway.singapore">Tunnelbana</string>
     <string name="type.railway.station.subway.sofia">Tunnelbana</string>
@@ -1657,6 +1681,7 @@
     <string name="type.railway.subway_entrance.hamburg">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.helsinki">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.hiroshima">Tunnelbana entré</string>
+    <string name="type.railway.subway_entrance.hongkong">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.isfahan">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.istanbul">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.izmir">Tunnelbana entré</string>
@@ -1710,6 +1735,7 @@
     <string name="type.railway.subway_entrance.sendai">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.sf">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.shanghai">Tunnelbana entré</string>
+    <string name="type.railway.subway_entrance.shenzhen">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.shiraz">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.singapore">Tunnelbana entré</string>
     <string name="type.railway.subway_entrance.sofia">Tunnelbana entré</string>
@@ -1794,6 +1820,7 @@
     <string name="type.shop.optician">Optiker</string>
     <string name="type.shop.outdoor">Fritidsutrustning</string>
     <string name="type.shop.outpost">Mötesplats</string>
+    <string name="type.shop.pasta">Pastabutik</string>
     <string name="type.shop.pastry">Bakverk</string>
     <string name="type.shop.pawnbroker">Pantbank</string>
     <string name="type.shop.pet">Djuraffär</string>
@@ -1887,7 +1914,13 @@
     <string name="type.tourism.artwork.sculpture">Konstverk</string>
     <string name="type.tourism.artwork.statue">Konstverk</string>
     <string name="type.tourism.attraction">Attraktion</string>
+    <string name="type.attraction.amusement_ride">Nöjesattraktion</string>
     <string name="type.attraction.animal">Inhägnad för djur</string>
+    <string name="type.attraction.carousel">Karusell</string>
+    <string name="type.attraction.historic">Historisk sevärdhet</string>
+    <string name="type.attraction.maze">Labyrint</string>
+    <string name="type.attraction.roller_coaster">Berg- och dalbana</string>
+    <string name="type.attraction.water_slide">Vattenrutschbana</string>
     <string name="type.tourism.attraction.specified">Attraktion</string>
     <string name="type.tourism.caravan_site">Husvagnsplats</string>
     <!-- A rentable countryside vacation house. -->

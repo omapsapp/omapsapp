@@ -293,6 +293,10 @@
     <string name="google_play_services">บริการตำแหน่งของ Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">ระบุตำแหน่งโดยประมาณของคุณอย่างรวดเร็วโดยใช้บลูทูธ WiFi หรือเครือข่ายมือถือ</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">ลงคโรงแรม Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">รปภาพ รวว ลงกการจองจะแสดงสำหรบโรงแรมทมรายการขอมลบน Kayak.com โบนสผแนะนำทไดรบสำหรบการจองแตละครงผานลงกเหลานจะนำไปใชในการพฒนา Organic Maps</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">ดาวน์โหลดแผนที่ตามเส้นทาง</string>
     <!-- Text for routing error dialog -->
@@ -471,7 +475,10 @@
     <string name="message_invalid_feature_position">ไม่สามารถตั้งวัตถุได้ที่นี่</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">ข้อมูล OpenStreetMap ที่สร้างโดยชุมชน ณ %s เรียนรู้เพิ่มเติมเกี่ยวกับวิธีแก้ไขและอัปเดตแผนที่ได้ที่ OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">ล็อกอินเพื่อให้ผู้ใช้คนอื่นสามารถเห็นการเปลี่ยนแปลงของคุณได้</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) เป็นโครงการชุมชนเพื่อสร้างแผนที่แบบเปิดและเสรี เป็นแหล่งข้อมูลแผนที่หลักในแผนที่ทั่วไปและทำงานคล้ายกับวิกิพีเดีย คุณสามารถเพิ่มหรือแก้ไขสถานที่ได้ และสถานที่เหล่านั้นจะพร้อมให้บริการแก่ผู้ใช้หลายล้านคนทั่วโลก
+\nเข้าร่วมชุมชนและช่วยสร้างแผนที่ที่ดีขึ้นสำหรับทุกคน!</string>
+    <string name="login_to_make_edits_visible">สร้างบัญชี OpenStreetMap หรือเข้าสู่ระบบเพื่อเผยแพร่การแก้ไขแผนที่ของคุณไปทั่วโลก</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d จาก %2$d</string>
     <string name="download_over_mobile_header">ดาวน์โหลดโดยใช้การเชื่อมต่อเครือข่ายมือถือ?</string>
@@ -491,9 +498,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">การแก้ไขของคุณจะถูกอัปโหลดไปยังฐานข้อมูล <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> สาธารณะ กรุณาอย่าเพิ่มข้อมูลส่วนบุคคลหรือข้อมูลที่มีลิขสิทธิ์</string>
     <string name="editor_more_about_osm">ข้อมูลเพิ่มเติมเกี่ยวกับ OpenStreetMap</string>
-    <string name="editor_operator">เจ้าของ</string>
+    <string name="editor_osm_history">ประวัติการแก้ไขของคุณ</string>
+    <string name="editor_osm_notes">บันทึกข้อมูลแผนที่ของคุณ</string>
+    <string name="editor_operator">ตัวดำเนินการ</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">เจ้าของ: %s</string>
+    <string name="operator">ตัวดำเนินการ: %s</string>
     <string name="editor_category_unsuitable_title">ไม่พบหมวดหมู่ที่เหมาะสมใช่ไหม?</string>
     <string name="editor_category_unsuitable_text">แผนที่ทั่วไปอนุญาตให้เพิ่มหมวดหมู่จุดธรรมดาเท่านั้น ซึ่งหมายความว่าไม่มีเมือง ถนน ทะเลสาบ โครงร่างอาคาร ฯลฯ โปรดเพิ่มหมวดหมู่ดังกล่าวลงใน <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. ดู<a href="https://organicmaps.app/faq/editing/advanced-map-editing">คำแนะนำ</a> ของเราเพื่อดูคำแนะนำโดยละเอียดทีละขั้นตอน</string>
     <string name="downloader_no_downloaded_maps_title">คุณยังไม่ได้ดาวน์โหลดแผนที่</string>
@@ -512,6 +521,7 @@
     <string name="miles_per_hour">ไมล์/ชม.</string>
     <string name="hour">ชม.</string>
     <string name="minute">น.</string>
+    <string name="day">วัน</string>
     <string name="placepage_more_button">เพิ่มเติม</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">รูปภาพ รีวิว การจอง</string>
@@ -519,6 +529,8 @@
     <string name="dialog_kayak_disclaimer">โบนัสการแนะนำที่ได้รับสำหรับการจองแต่ละครั้งผ่านลิงก์นี้จะนำไปใช้ในการพัฒนาแผนที่ทั่วไป</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">รายละเอียดบน Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">ปดการใชงาน Kayak</string>
     <string name="placepage_edit_bookmark_button">แก้ไข Bookmark</string>
     <string name="editor_comment_hint">ข้อคิดเห็น</string>
     <string name="editor_reset_edits_message">ตั้งค่าการเปลี่ยนแปลงท้องถิ่นทั้งหมด</string>
@@ -573,7 +585,7 @@
     <string name="routing_add_start_point">ใช้การค้นหาหรือแตะบนแผนที่เพื่อเพิ่มจุดเริ่มต้นเส้นทาง</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">ใช้การค้นหาหรือแตะบนแผนที่เพื่อเพิ่มจุดปลายทาง</string>
-    <string name="placepage_remove_stop">เอาออก</string>
+    <string name="placepage_remove_stop">ลบจุดแวะพัก</string>
     <string name="placepage_add_stop">เพิ่มจุดแวะพัก</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">กรุณาเข้าสู่ระบบ OpenStreetMap เพื่ออัปโหลดการแก้ไขแผนที่ทั้งหมดของคุณโดยอัตโนมัติ เรียนรู้เพิ่มเติม<a href="https://github.com/organicmaps/organicmaps/issues/6144">ที่นี่</a></string>
@@ -721,8 +733,8 @@
     <string name="isolines_location_error_dialog">เลเยอร์แผนที่ภูมิประเทศยังใช้งานไม่ได้ในพื้นที่นี้</string>
     <string name="elevation_profile_ascent">การขึ้น</string>
     <string name="elevation_profile_descent">การลง</string>
-    <string name="elevation_profile_minaltitude">ระดับความสูงต่ำสุด</string>
-    <string name="elevation_profile_maxaltitude">ระดับความสูงสูงสุด</string>
+    <string name="elevation_profile_min_elevation">ต่ำสุด</string>
+    <string name="elevation_profile_max_elevation">สูงสุด</string>
     <string name="elevation_profile_difficulty">ลำบาก</string>
     <string name="elevation_profile_distance">ระยะทาง</string>
     <string name="elevation_profile_time">เวลา:</string>
@@ -742,7 +754,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">หากคุณรู้จักนักพัฒนาซอฟต์แวร์ คุณสามารถขอให้เขาหรือเธอใช้คุณลักษณะที่คุณต้องการได้</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">คุณรู้ไหมว่าคุณสามารถแตะสถานที่ใดก็ได้บนแผนที่ค้างไว้เพื่อเลือกได้</string>
+    <string name="app_tip_04">แตะที่ใดก็ได้บนแผนที่เพื่อเลือกอะไรก็ได้ แตะยาวเพื่อซ่อนและแสดงอินเทอร์เฟซ</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">คุณรู้หรือไม่ว่าคุณสามารถเลือกตำแหน่งปัจจุบันของคุณบนแผนที่ได้?</string>
     <!-- App tip #06 -->
@@ -812,7 +824,11 @@
     <string name="track_recording_toast_nothing_to_save">เส้นทางว่างเปล่า - ไม่มีอะไรจะบันทึก</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">ไม่สามารถแสดงกล่องโต้ตอบการเลือกโฟลเดอร์ได้เนื่องจากไม่ได้ติดตั้งแอปที่เหมาะสมในอุปกรณ์ของคุณ โปรดติดตั้งแอปตัวจัดการไฟล์แล้วลองอีกครั้ง</string>
+    <string name="choose_color">เลือกสี</string>
+    <string name="edit_track">แก้ไขเส้นทาง</string>
     <string name="uri_open_location_failed">ไม่มีการติดตั้งแอปที่สามารถเปิดตำแหน่งได้</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">อัตโนมัติในการนำทาง</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">ที่อยู่/บล็อค</string>
@@ -926,6 +942,7 @@
     <string name="type.amenity.police">ตำรวจ</string>
     <string name="type.amenity.post_box">ตู้จดหมาย</string>
     <string name="type.amenity.post_office">ที่ทำการไปรษณีย์</string>
+    <string name="type.amenity.prison">คุก</string>
     <string name="type.amenity.pub">ผับ</string>
     <string name="type.amenity.public_bookcase">ตู้หนังสือ สถานที่แลกเปลี่ยนหนังสือ</string>
 
@@ -968,6 +985,7 @@
     <string name="type.amenity.waste_basket">ถังขยะ</string>
     <string name="type.amenity.waste_disposal">ขยะ</string>
     <string name="type.amenity.water_point">จุดเติมน้ำ</string>
+    <string name="type.amenity.water_point.drinking_water_no">จุดเติมน้ำ</string>
     <string name="type.barrier.block">บล็อก</string>
     <string name="type.barrier.bollard">เสา</string>
     <string name="type.barrier.border_control">ด่านตรวจคนเข้าเมือง</string>
@@ -998,7 +1016,7 @@
     <string name="type.building.has_parts">อาคาร</string>
     <string name="type.building_part">อาคาร</string>
     <string name="type.building.garage">อาคารจอดรถ</string>
-    <string name="type.building.train_station">สถานีรถไฟ</string>
+    <string name="type.building.train_station">อาคารสถานี</string>
     <string name="type.cemetery.grave">หลุมฝังศพ</string>
     <string name="type.craft">งานฝีมือ</string>
     <string name="type.craft.beekeeper">คนเลี้ยงผึ้ง</string>
@@ -1380,8 +1398,10 @@
     <string name="type.man_made.tower">หอคอย</string>
     <string name="type.man_made.tower.communication">หอสื่อสาร</string>
     <string name="type.man_made.water_tap">ก๊อกน้ำ</string>
+    <string name="type.man_made.water_tap.drinking_water_no">ก๊อกน้ำ</string>
     <string name="type.man_made.water_tower">อ่างเก็บน้ำ</string>
     <string name="type.man_made.water_well">บ่อน้ำ</string>
+    <string name="type.man_made.water_well.drinking_water_no">บ่อน้ำ</string>
     <string name="type.man_made.windmill">กังหันลม</string>
     <string name="type.military.bunker">บังเกอร์</string>
     <string name="type.natural">ธรรมชาติ</string>
@@ -1420,6 +1440,7 @@
     <string name="type.natural.rock">หิน</string>
     <string name="type.natural.scrub">ป่าละเมาะ</string>
     <string name="type.natural.spring">ฤดูใบไม้ผลิ</string>
+    <string name="type.natural.spring.drinking_water_no">ฤดูใบไม้ผลิ</string>
     <string name="type.natural.strait">ช่องแคบ</string>
     <string name="type.natural.tree_row">แถวต้นไม้</string>
     <string name="type.natural.vineyard">ไร่องุ่น</string>
@@ -1513,6 +1534,7 @@
     <string name="type.railway.station">สถานีรถไฟ</string>
     <string name="type.railway.station.funicular">รถกระเช้าไฟฟ้า</string>
     <string name="type.railway.station.light_rail">สถานีรถไฟ</string>
+    <string name="type.railway.station.light_rail.berlin">สถานีรถไฟ</string>
     <string name="type.railway.station.light_rail.london">สถานีรถไฟ</string>
     <string name="type.railway.station.light_rail.porto">สถานีรถไฟ</string>
     <string name="type.railway.station.monorail">สถานีรถไฟ</string>
@@ -1555,6 +1577,7 @@
     <string name="type.railway.station.subway.hamburg">รถไฟ</string>
     <string name="type.railway.station.subway.helsinki">รถไฟ</string>
     <string name="type.railway.station.subway.hiroshima">รถไฟ</string>
+    <string name="type.railway.station.subway.hongkong">รถไฟ</string>
     <string name="type.railway.station.subway.isfahan">รถไฟ</string>
     <string name="type.railway.station.subway.istanbul">รถไฟ</string>
     <string name="type.railway.station.subway.izmir">รถไฟ</string>
@@ -1608,6 +1631,7 @@
     <string name="type.railway.station.subway.sendai">รถไฟ</string>
     <string name="type.railway.station.subway.sf">รถไฟ</string>
     <string name="type.railway.station.subway.shanghai">รถไฟ</string>
+    <string name="type.railway.station.subway.shenzhen">รถไฟ</string>
     <string name="type.railway.station.subway.shiraz">รถไฟ</string>
     <string name="type.railway.station.subway.singapore">รถไฟ</string>
     <string name="type.railway.station.subway.sofia">รถไฟ</string>
@@ -1667,6 +1691,7 @@
     <string name="type.railway.subway_entrance.hamburg">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.helsinki">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.hiroshima">ทางเข้ารถไฟใต้ดิน</string>
+    <string name="type.railway.subway_entrance.hongkong">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.isfahan">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.istanbul">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.izmir">ทางเข้ารถไฟใต้ดิน</string>
@@ -1720,6 +1745,7 @@
     <string name="type.railway.subway_entrance.sendai">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.sf">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.shanghai">ทางเข้ารถไฟใต้ดิน</string>
+    <string name="type.railway.subway_entrance.shenzhen">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.shiraz">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.singapore">ทางเข้ารถไฟใต้ดิน</string>
     <string name="type.railway.subway_entrance.sofia">ทางเข้ารถไฟใต้ดิน</string>
@@ -1806,6 +1832,7 @@
     <string name="type.shop.optician">ร้านแว่น</string>
     <string name="type.shop.outdoor">อุปกรณ์กลางแจ้ง</string>
     <string name="type.shop.outpost">จุดรับของ</string>
+    <string name="type.shop.pasta">ร้านพาสต้า</string>
     <string name="type.shop.pastry">ขนมอบ</string>
     <string name="type.shop.pawnbroker">ผู้รับจำนำ</string>
     <string name="type.shop.pet">เพ็ทชอป</string>
@@ -1898,7 +1925,13 @@
     <string name="type.tourism.artwork.sculpture">งานศิลปะ</string>
     <string name="type.tourism.artwork.statue">งานศิลปะ</string>
     <string name="type.tourism.attraction">การท่องเที่ยว</string>
+    <string name="type.attraction.amusement_ride">ขี่สนุก</string>
     <string name="type.attraction.animal">สิ่งที่แนบมากับสัตว์</string>
+    <string name="type.attraction.carousel">ม้าหมุน</string>
+    <string name="type.attraction.historic">แหล่งท่องเที่ยวทางประวัติศาสตร์</string>
+    <string name="type.attraction.maze">เขาวงกต</string>
+    <string name="type.attraction.roller_coaster">รถไฟเหาะ</string>
+    <string name="type.attraction.water_slide">สไลเดอร์น้ำ</string>
     <string name="type.tourism.attraction.specified">การท่องเที่ยว</string>
     <string name="type.tourism.camp_site">การตั้งแคมป์</string>
     <string name="type.tourism.caravan_site">ขบวนนักเดินทาง</string>

@@ -174,11 +174,6 @@ void Spline::iterator::Advance(double step)
     AdvanceForward(step);
 }
 
-double Spline::iterator::GetLength() const
-{
-  return std::accumulate(m_spl->m_length.begin(), m_spl->m_length.begin() + m_index, m_dist);
-}
-
 double Spline::iterator::GetFullLength() const
 {
   return m_spl->GetLength();

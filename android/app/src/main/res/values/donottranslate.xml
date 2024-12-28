@@ -40,6 +40,7 @@
   <string name="pref_power_management" translatable="false">PowerManagment</string>
   <string name="pref_keep_screen_on" translatable="false">KeepScreenOn</string>
   <string name="pref_show_on_lock_screen" translatable="false">ShowOnLockScreen</string>
+  <string name="pref_map_locale" translatable="false">MapLanguage</string>
 
   <string name="notification_ticker_ltr" translatable="false">%1$s: %2$s</string>
   <string name="notification_ticker_rtl" translatable="false">%2$s :%1$s</string>
@@ -51,6 +52,7 @@
   <string name="theme_default" translatable="false">default</string>
   <string name="theme_night" translatable="false">night</string>
   <string name="theme_auto" translatable="false">auto</string>
+  <string name="theme_nav_auto" translatable="false">nav-auto</string>
 
   <!-- Tags -->
   <string name="tag_menu_collapse" translatable="false">collapse</string>
@@ -58,9 +60,11 @@
 
   <string name="pref_privacy" translatable="false">pref_privacy</string>
   <string name="pref_search_history" translatable="false">pref_search_history</string>
+  <string name="pref_display_kayak" translatable="false">DisplayKayak</string>
   <string name="never_enum_value" translatable="false">NEVER</string>
   <string name="always_enum_value" translatable="false">ALWAYS</string>
   <string name="auto_enum_value" translatable="false">AUTO</string>
+
   <string name="placepage_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
   <string name="car_notification_channel_name" translatable="false">CAR_NOTIFICATION_CHANNEL</string>
 

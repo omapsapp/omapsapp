@@ -7,8 +7,9 @@
 #include "drape/glsl_types.hpp"
 #include "drape/graphics_context.hpp"
 #include "drape/mesh_object.hpp"
-#include "drape/texture_manager.hpp"
 #include "drape/render_state.hpp"
+
+#include "platform/trace.hpp"
 
 #include "base/assert.hpp"
 
@@ -150,6 +151,7 @@ PostprocessRenderer::~PostprocessRenderer()
 void PostprocessRenderer::Init(ref_ptr<dp::GraphicsContext> context, dp::FramebufferFallback && fallback,
                                PrerenderFrame && prerenderFrame)
 {
+  TRACE_SECTION("[drape] PostprocessRenderer::Init");
   m_apiVersion = context->GetApiVersion();
   m_screenQuadRenderer = make_unique_dp<ScreenQuadRenderer>(context);
   m_framebufferFallback = std::move(fallback);
@@ -247,6 +249,7 @@ bool PostprocessRenderer::CanRenderAntialiasing() const
 bool PostprocessRenderer::BeginFrame(ref_ptr<dp::GraphicsContext> context, ScreenBase const & modelView,
                                      bool activeFrame)
 {
+  TRACE_SECTION("[drape] PostprocessRenderer::BeginFrame");
   if (!IsEnabled())
   {
     CHECK(m_prerenderFrame != nullptr, ());
@@ -276,6 +279,7 @@ bool PostprocessRenderer::EndFrame(ref_ptr<dp::GraphicsContext> context,
                                    ref_ptr<gpu::ProgramManager> gpuProgramManager,
                                    dp::Viewport const & viewport)
 {
+  TRACE_SECTION("[drape] PostprocessRenderer::EndFrame");
   if (!IsEnabled())
     return true;
 
@@ -296,6 +300,7 @@ bool PostprocessRenderer::EndFrame(ref_ptr<dp::GraphicsContext> context,
 
     // Render edges to texture.
     {
+      TRACE_SECTION("[drape][SMAA] Edges rendering");
       context->SetFramebuffer(make_ref(m_edgesFramebuffer));
       context->Clear(dp::ClearBits::ColorBit, dp::ClearBits::ColorBit | dp::ClearBits::StencilBit /* storeBits */);
       if (m_apiVersion == dp::ApiVersion::Metal || m_apiVersion == dp::ApiVersion::Vulkan)
@@ -318,6 +323,7 @@ bool PostprocessRenderer::EndFrame(ref_ptr<dp::GraphicsContext> context,
 
     // Render blending weight to texture.
     {
+      TRACE_SECTION("[drape][SMAA] Blending weight rendering");
       context->SetFramebuffer(make_ref(m_blendingWeightFramebuffer));
       context->Clear(dp::ClearBits::ColorBit, dp::ClearBits::ColorBit | dp::ClearBits::StencilBit /* storeBits */);
       context->SetStencilFunction(dp::StencilFace::FrontAndBack, dp::TestFunction::Equal);
@@ -340,6 +346,7 @@ bool PostprocessRenderer::EndFrame(ref_ptr<dp::GraphicsContext> context,
     // SMAA final pass.
     context->SetStencilTestEnabled(false);
     {
+      TRACE_SECTION("[drape][SMAA] Final pass rendering");
       context->SetFramebuffer(make_ref(m_smaaFramebuffer));
       context->Clear(dp::ClearBits::ColorBit, dp::ClearBits::ColorBit /* storeBits */);
       context->ApplyFramebuffer("SMAA final");
@@ -368,10 +375,11 @@ bool PostprocessRenderer::EndFrame(ref_ptr<dp::GraphicsContext> context,
   bool m_wasRendered = false;
   if (m_framebufferFallback())
   {
+    TRACE_SECTION("[drape] Postprocessing composition");
     context->Clear(dp::ClearBits::ColorBit, dp::ClearBits::ColorBit /* storeBits */);
     context->ApplyFramebuffer("Dynamic frame");
     viewport.Apply(context);
-    
+
     DefaultScreenQuadRenderParams params;
     params.SetParams(finalFramebuffer->GetTexture());
 
@@ -405,6 +413,7 @@ void PostprocessRenderer::DisableWritingToStencil(ref_ptr<dp::GraphicsContext> c
 void PostprocessRenderer::UpdateFramebuffers(ref_ptr<dp::GraphicsContext> context,
                                              uint32_t width, uint32_t height)
 {
+  TRACE_SECTION("[drape] PostprocessRenderer::UpdateFramebuffers");
   ASSERT_NOT_EQUAL(width, 0, ());
   ASSERT_NOT_EQUAL(height, 0, ());
 

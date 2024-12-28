@@ -537,4 +537,26 @@ UNIT_CLASS_TEST(TestAccessFixture, Locked)
   }
 }
 
+UNIT_CLASS_TEST(TestAccessFixture, CycleBarrier)
+{
+  CreateCollectors();
+
+  AddWay(MakeOsmElementWithNodes(1, {{"highway", "track"}},
+                                 OsmElement::EntityType::Way, {10, 11, 12}));
+  AddNode(MakeOsmElement(10, {{"barrier", "cycle_barrier"}},
+                         OsmElement::EntityType::Node));
+  AddNode(MakeOsmElement(11, {{"barrier", "cycle_barrier"}, {"bicycle", "dismount"}},
+                         OsmElement::EntityType::Node));
+  AddNode(MakeOsmElement(12, {{"barrier", "cycle_barrier"}, {"bicycle", "no"}},
+                         OsmElement::EntityType::Node));
+  Finish();
+  auto const bicycle = Get(VehicleType::Bicycle);
+  TEST_EQUAL(bicycle.GetAccessWithoutConditional({1, 0}),
+             make_pair(RoadAccess::Type::Yes, RoadAccess::Confidence::Sure), ());
+  TEST_EQUAL(bicycle.GetAccessWithoutConditional({1, 1}),
+             make_pair(RoadAccess::Type::Yes, RoadAccess::Confidence::Sure), ());
+  TEST_EQUAL(bicycle.GetAccessWithoutConditional({1, 2}),
+             make_pair(RoadAccess::Type::No, RoadAccess::Confidence::Sure), ());
+}
+
 }  // namespace road_access_test

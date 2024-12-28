@@ -24,8 +24,16 @@ map<string, vector<string>> const kSynonyms = {
     {"ne",   {"northeast"}},
     {"sw",   {"southwest"}},
     {"se",   {"southeast"}},
+
+    /// @todo Should not duplicate Street synonyms defined in StreetsSynonymsHolder (avoid useless double queries).
+    /// Remove "street" and "avenue" here, but should update GetNameScore.
     {"st",   {"saint", "street"}},
     {"dr",   {"doctor"}},
+
+    // widely used in LATAM, like "Ntra Sra Asuncion Zelaya"
+    {"ntra",  {"nuestra"}},
+    {"sra",   {"senora"}},
+    {"sta",   {"santa"}},
 
     {"al",    {"allee", "alle"}},
     {"ave",   {"avenue"}},
@@ -203,19 +211,21 @@ void QueryParams::AddSynonyms()
   {
     string const ss = ToUtf8(MakeLowerCase(token.GetOriginal()));
     auto const it = kSynonyms.find(ss);
-    if (it == kSynonyms.end())
-      continue;
-
-    for (auto const & synonym : it->second)
-      token.AddSynonym(synonym);
+    if (it != kSynonyms.end())
+    {
+      for (auto const & synonym : it->second)
+        token.AddSynonym(synonym);
+    }
   }
   if (m_hasPrefix)
   {
     string const ss = ToUtf8(MakeLowerCase(m_prefixToken.GetOriginal()));
     auto const it = kSynonyms.find(ss);
     if (it != kSynonyms.end())
+    {
       for (auto const & synonym : it->second)
         m_prefixToken.AddSynonym(synonym);
+    }
   }
 }
 

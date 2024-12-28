@@ -18,8 +18,8 @@ using namespace std::placeholders;
 
 namespace
 {
-std::string const kLocationStateMode = "LastLocationStateMode";
-std::string const kLastEnterBackground = "LastEnterBackground";
+std::string_view constexpr kLocationStateMode = "LastLocationStateMode";
+std::string_view constexpr kLastEnterBackground = "LastEnterBackground";
 }
 
 DrapeEngine::DrapeEngine(Params && params)
@@ -646,6 +646,17 @@ void DrapeEngine::Allow3dMode(bool allowPerspectiveInNavigation, bool allow3dBui
   m_threadCommutator->PostMessage(ThreadsCommutator::RenderThread,
                                   make_unique_dp<Allow3dModeMessage>(allowPerspectiveInNavigation,
                                                                      allow3dBuildings),
+                                  MessagePriority::Normal);
+}
+
+void DrapeEngine::SetMapLangIndex(int8_t mapLangIndex)
+{
+  m_threadCommutator->PostMessage(ThreadsCommutator::ResourceUploadThread,
+                                  make_unique_dp<SetMapLangIndexMessage>(mapLangIndex),
+                                  MessagePriority::Normal);
+
+  m_threadCommutator->PostMessage(ThreadsCommutator::RenderThread,
+                                  make_unique_dp<SetMapLangIndexMessage>(mapLangIndex),
                                   MessagePriority::Normal);
 }
 

@@ -46,6 +46,7 @@ std::map<std::string, BookmarkMatchInfo> const kFeatureTypeToBookmarkMatchInfo =
   {"amenity-bar", {kml::BookmarkIcon::Bar, BookmarkBaseType::Food}},
   {"amenity-biergarten", {kml::BookmarkIcon::Pub, BookmarkBaseType::Food}},
   {"amenity-pub", {kml::BookmarkIcon::Pub, BookmarkBaseType::Food}},
+  {"amenity-cafe", {kml::BookmarkIcon::Cafe, BookmarkBaseType::Food}},
 
   {"amenity-place_of_worship-buddhist", {kml::BookmarkIcon::Buddhism, BookmarkBaseType::ReligiousPlace}},
 
@@ -68,12 +69,15 @@ std::map<std::string, BookmarkMatchInfo> const kFeatureTypeToBookmarkMatchInfo =
   {"amenity-casino", {kml::BookmarkIcon::Entertainment, BookmarkBaseType::Entertainment}},
   {"amenity-cinema", {kml::BookmarkIcon::Entertainment, BookmarkBaseType::Entertainment}},
   {"amenity-nightclub", {kml::BookmarkIcon::Entertainment, BookmarkBaseType::Entertainment}},
-  {"amenity-theatre", {kml::BookmarkIcon::Entertainment, BookmarkBaseType::Entertainment}},
   {"shop-bookmaker", {kml::BookmarkIcon::Entertainment, BookmarkBaseType::Entertainment}},
   {"tourism-theme_park", {kml::BookmarkIcon::Entertainment, BookmarkBaseType::Entertainment}},
+    
+  {"amenity-theatre", {kml::BookmarkIcon::Theatre, BookmarkBaseType::Entertainment}},
 
-  {"amenity-atm", {kml::BookmarkIcon::Exchange, BookmarkBaseType::Exchange}},
-  {"amenity-bank", {kml::BookmarkIcon::Exchange, BookmarkBaseType::Exchange}},
+  {"amenity-atm", {kml::BookmarkIcon::Bank, BookmarkBaseType::Exchange}},
+  {"amenity-bank", {kml::BookmarkIcon::Bank, BookmarkBaseType::Exchange}},
+  {"shop-money_lender", {kml::BookmarkIcon::Bank, BookmarkBaseType::Exchange}},
+
   {"amenity-bureau_de_change", {kml::BookmarkIcon::Exchange, BookmarkBaseType::Exchange}},
 
   {"amenity-bbq", {kml::BookmarkIcon::Food, BookmarkBaseType::Food}},
@@ -107,8 +111,9 @@ std::map<std::string, BookmarkMatchInfo> const kFeatureTypeToBookmarkMatchInfo =
   {"amenity-dentist", {kml::BookmarkIcon::Medicine, BookmarkBaseType::Medicine}},
   {"amenity-doctors", {kml::BookmarkIcon::Medicine, BookmarkBaseType::Medicine}},
   {"amenity-hospital", {kml::BookmarkIcon::Medicine, BookmarkBaseType::Medicine}},
-  {"amenity-pharmacy", {kml::BookmarkIcon::Medicine, BookmarkBaseType::Medicine}},
   {"emergency-defibrillator", {kml::BookmarkIcon::Medicine, BookmarkBaseType::Medicine}},
+    
+  {"amenity-pharmacy", {kml::BookmarkIcon::Pharmacy, BookmarkBaseType::Medicine}},
 
   {"natural-bare_rock", {kml::BookmarkIcon::Mountain, BookmarkBaseType::Mountain}},
   {"natural-cave_entrance", {kml::BookmarkIcon::Mountain, BookmarkBaseType::Mountain}},
@@ -116,8 +121,9 @@ std::map<std::string, BookmarkMatchInfo> const kFeatureTypeToBookmarkMatchInfo =
   {"natural-rock", {kml::BookmarkIcon::Mountain, BookmarkBaseType::Mountain}},
   {"natural-volcano", {kml::BookmarkIcon::Mountain, BookmarkBaseType::Mountain}},
 
-  {"amenity-arts_centre", {kml::BookmarkIcon::Museum, BookmarkBaseType::Museum}},
-  {"tourism-gallery", {kml::BookmarkIcon::Museum, BookmarkBaseType::Museum}},
+  {"amenity-arts_centre", {kml::BookmarkIcon::Art, BookmarkBaseType::Museum}},
+  {"tourism-gallery", {kml::BookmarkIcon::Art, BookmarkBaseType::Museum}},
+
   {"tourism-museum", {kml::BookmarkIcon::Museum, BookmarkBaseType::Museum}},
 
   {"boundary-national_park", {kml::BookmarkIcon::Park, BookmarkBaseType::Park}},
@@ -154,13 +160,18 @@ std::map<std::string, BookmarkMatchInfo> const kFeatureTypeToBookmarkMatchInfo =
   {"tourism-attraction", {kml::BookmarkIcon::Sights, BookmarkBaseType::Sights}},
   {"waterway-waterfall", {kml::BookmarkIcon::Sights, BookmarkBaseType::Sights}},
 
+  {"tourism-information", {kml::BookmarkIcon::Information, BookmarkBaseType::Sights}},
+  {"tourism-information-office", {kml::BookmarkIcon::Information, BookmarkBaseType::Sights}},
+  {"tourism-information-visitor_centre", {kml::BookmarkIcon::Information, BookmarkBaseType::Sights}},
+
   {"leisure-fitness_centre", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
   {"leisure-skiing", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
   {"leisure-sports_centre-climbing", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
   {"leisure-sports_centre-shooting", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
   {"leisure-sports_centre-yoga", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
-  {"leisure-stadium", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
   {"sport", {kml::BookmarkIcon::Sport, BookmarkBaseType::Entertainment}},
+    
+  {"leisure-stadium", {kml::BookmarkIcon::Stadium, BookmarkBaseType::Entertainment}},
 
   {"leisure-sports_centre-swimming", {kml::BookmarkIcon::Swim, BookmarkBaseType::Swim}},
   {"leisure-swimming_pool", {kml::BookmarkIcon::Swim, BookmarkBaseType::Swim}},

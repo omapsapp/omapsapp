@@ -17,6 +17,7 @@ set(SRC
   search_api_tests.cpp
   transliteration_test.cpp
   working_time_tests.cpp
+  elevation_info_tests.cpp
 )
 
 omim_add_test(${PROJECT_NAME} ${SRC} REQUIRE_QT REQUIRE_SERVER)

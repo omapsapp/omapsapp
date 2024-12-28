@@ -15,18 +15,24 @@ TypesSkipper::TypesSkipper()
 {
   Classificator const & c = classif();
 
+  /// @todo(pastk): why "office-*" are skipped?
+  /// also could be unnamed (yet) place-hamlet/isolated_dwelling?
+  /// and natural-water-pond/lake?
+  // POIs like natural-spring, waterway-waterfall, highway-bus_stop are saved from skipping by the TwoLevelPOIChecker().
   StringIL const arrSkipEmptyName1[] = {
     {"area:highway"}, {"building"}, {"highway"}, {"landuse"}, {"natural"}, {"office"}, {"place"}, {"waterway"},
   };
   for (auto const & e : arrSkipEmptyName1)
     m_skipIfEmptyName[0].push_back(c.GetTypeByPath(e));
 
-  // Test for exact type (man_made-tower-communication is not).
-  StringIL const arrSkipEmptyNameExact[] = {
+  StringIL const arrSkipEmptyName2[] = {
     {"man_made", "chimney"},
+    {"man_made", "flagpole"},
+    {"man_made", "mast"},
     {"man_made", "tower"},
+    {"man_made", "water_tower"},
   };
-  for (auto const & e : arrSkipEmptyNameExact)
+  for (auto const & e : arrSkipEmptyName2)
     m_skipIfEmptyName[1].push_back(c.GetTypeByPath(e));
 
   m_skipAlways[0].push_back(c.GetTypeByPath({"isoline"}));
@@ -46,6 +52,7 @@ void TypesSkipper::SkipEmptyNameTypes(feature::TypesHolder & types) const
     if (m_isPoi(type))
       return false;
 
+    ftype::TruncValue(type, 2);
     if (HasType(m_skipIfEmptyName[1], type))
       return true;
 

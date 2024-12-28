@@ -1,9 +1,11 @@
 import UIKit
 
-final class BottomTabBarButton: MWMButton {
+class BottomTabBarButton: MWMButton {
   @objc override func applyTheme() {
-    styleName = "BottomTabBarButton"
-    
+    if styleName.isEmpty {
+      styleName = "BottomTabBarButton"
+    }
+
     for style in StyleManager.shared.getStyle(styleName) where !style.isEmpty && !style.hasExclusion(view: self) {
       BottomTabBarButtonRenderer.render(self, style: style)
     }

@@ -20,7 +20,7 @@ namespace
 {
 // See search/search_quality/scoring_model.py for details.  In short,
 // these coeffs correspond to coeffs in a linear model.
-double constexpr kHasName = 0.5;
+double constexpr kCategoriesHasName = 0.25;
 double constexpr kCategoriesPopularity = 0.05;
 double constexpr kCategoriesDistanceToPivot = -0.6874177;
 double constexpr kCategoriesRank = 1.0000000;
@@ -115,7 +115,7 @@ static_assert(std::size(kStreetType) == base::Underlying(StreetType::Count));
 static_assert(kType[Model::TYPE_BUILDING] > kStreetType[StreetType::Motorway]);
 
 // Coeffs sanity checks.
-static_assert(kHasName >= 0, "");
+static_assert(kCategoriesHasName >= 0 && kCategoriesHasName < kViewportDiffThreshold);
 static_assert(kCategoriesPopularity >= 0, "");
 static_assert(kDistanceToPivot <= 0, "");
 static_assert(kRank >= 0, "");
@@ -223,7 +223,6 @@ public:
       {"amenity", "police"},
       {"amenity", "post_office"},
       {"amenity", "stripclub"},
-      {"amenity", "taxi"},
       {"amenity", "theatre"},
     };
 
@@ -418,7 +417,7 @@ double RankingInfo::GetLinearModelRank(bool viewportMode /* = false */) const
     if (m_falseCats)
       result += kCategoriesFalseCats;
     if (m_hasName)
-      result += kHasName;
+      result += kCategoriesHasName;
   }
 
   // Trying to fix https://github.com/organicmaps/organicmaps/issues/5251.
@@ -444,8 +443,16 @@ double RankingInfo::GetErrorsMadePerToken() const
 
 NameScore RankingInfo::GetNameScore() const
 {
+  // See Pois_Rank test.
   if (!m_pureCats && Model::IsPoi(m_type) && m_classifType.poi <= PoiType::Attraction)
   {
+    // Promote POI's name rank if all tokens were matched with TYPE_SUBPOI/TYPE_COMPLEXPOI only.
+    for (int i = Model::TYPE_BUILDING; i < Model::TYPE_COUNT; ++i)
+    {
+      if (!m_tokenRanges[i].Empty())
+        return m_nameScore;
+    }
+
     // It's better for ranking when POIs would be equal by name score in the next cases:
 
     if (m_nameScore == NameScore::FULL_PREFIX)
@@ -496,7 +503,7 @@ PoiType GetPoiType(feature::TypesHolder const & th)
   {
     return PoiType::TransportMajor;
   }
-  if (IsPublicTransportStopChecker::Instance()(th))
+  if (IsPublicTransportStopChecker::Instance()(th) || IsTaxiChecker::Instance()(th))
     return PoiType::TransportLocal;
 
   static IsAttraction const attractionCheck;

@@ -101,7 +101,7 @@ final class CategorySettingsViewController: MWMTableViewController {
       changesMade = true
     }
 
-    if let newAnnotation = newAnnotation, !newAnnotation.isEmpty {
+    if let newAnnotation = newAnnotation {
       BookmarksManager.shared().setCategory(bookmarkGroup.categoryId, description: newAnnotation)
       changesMade = true
     }

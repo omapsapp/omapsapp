@@ -1,15 +1,8 @@
 package app.organicmaps.downloader;
 
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.core.graphics.Insets;
-import androidx.core.view.OnApplyWindowInsetsListener;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import app.organicmaps.util.WindowInsetUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import app.organicmaps.R;
 import app.organicmaps.util.StringUtils;
@@ -62,36 +55,6 @@ class BottomPanel
     });
 
     mButton = frame.findViewById(R.id.action);
-
-    ViewCompat.setOnApplyWindowInsetsListener(frame, new OnApplyWindowInsetsListener()
-    {
-      @NonNull
-      @Override
-      public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets)
-      {
-        Insets safeInsets = insets.getInsets(WindowInsetUtils.TYPE_SAFE_DRAWING);
-        int baseMargin = UiUtils.dimen(v.getContext(), R.dimen.margin_base);
-
-        ViewGroup.MarginLayoutParams fabParams = (ViewGroup.MarginLayoutParams) mFab.getLayoutParams();
-        ViewGroup.MarginLayoutParams buttonParams = (ViewGroup.MarginLayoutParams) mButton.getLayoutParams();
-
-        final boolean isButtonVisible = UiUtils.isVisible(mButton);
-
-        buttonParams.bottomMargin = safeInsets.bottom;
-        mButton.setPadding(safeInsets.left, mButton.getPaddingTop(), safeInsets.right, mButton.getPaddingBottom());
-
-        fabParams.rightMargin = safeInsets.right + baseMargin;
-        if (isButtonVisible)
-          fabParams.bottomMargin = baseMargin;
-        else
-          fabParams.bottomMargin = safeInsets.bottom + baseMargin;
-
-        mFab.requestLayout();
-        mButton.requestLayout();
-
-        return insets;
-      }
-    });
   }
 
   private void setUpdateAllState(UpdateInfo info)
@@ -161,5 +124,7 @@ class BottomPanel
     }
 
     UiUtils.showIf(show, mButton);
+
+    mFragment.requireView().requestApplyInsets();
   }
 }

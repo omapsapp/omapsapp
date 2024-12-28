@@ -107,8 +107,13 @@ public:
   bool IsEqualFeature(Result const & r) const;
 
   void AddHighlightRange(std::pair<uint16_t, uint16_t> const & range);
+  void AddDescHighlightRange(const std::pair<uint16_t, uint16_t> & range);
   std::pair<uint16_t, uint16_t> const & GetHighlightRange(size_t idx) const;
   size_t GetHighlightRangesCount() const { return m_hightlightRanges.size(); }
+  
+  //returns ranges to hightlight in address
+  std::pair<uint16_t, uint16_t> const & GetDescHighlightRange(size_t idx) const;
+  size_t GetDescHighlightRangesCount() const { return m_descHightlightRanges.size(); }
 
   void PrependCity(std::string_view name);
 
@@ -151,6 +156,7 @@ private:
   uint32_t m_matchedType = 0;
   std::string m_suggestionStr;
   buffer_vector<std::pair<uint16_t, uint16_t>, 4> m_hightlightRanges;
+  buffer_vector<std::pair<uint16_t, uint16_t>, 4> m_descHightlightRanges;
 
   std::shared_ptr<RankingInfo> m_dbgInfo;   // used in debug logs and tests, nullptr in production
 

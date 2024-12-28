@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 16 16" width="12" height="12" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+ <g opacity="1">
+  <rect id="Rectangle" width="16" height="16" rx="2.5" fill="#fff" opacity=".6" />
+  <rect x=".66667" y=".66667" width="14.667" height="14.667" rx="2" fill="#2F6499" />
+  <path id="Shape" d="M4.001,2.661L4,7.332L2.667,6.667L2.667,8L13.333,13.333L13.333,12L12,11.333L11.989,6.681L4.001,2.661ZM5.333,6.667L5.333,4.666L6.667,5.333L6.667,7.332L5.333,6.667ZM7.331,5.667L8.664,6.332L8.664,8.332L7.331,7.668L7.331,5.667ZM9.333,6.667L10.655,7.332L10.667,9.333L9.335,8.667L9.333,6.667Z" style="fill:#fff;"/>
+ </g>
+</svg>

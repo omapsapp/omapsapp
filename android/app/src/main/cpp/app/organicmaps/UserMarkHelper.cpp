@@ -75,7 +75,7 @@ jobject CreateMapObject(JNIEnv * env, place_page::Info const & info, int mapObje
   jni::TScopedLocalRef jTitle(env, jni::ToJavaString(env, info.GetTitle()));
   jni::TScopedLocalRef jSecondaryTitle(env, jni::ToJavaString(env, info.GetSecondaryTitle()));
   jni::TScopedLocalRef jSubtitle(env, jni::ToJavaString(env, info.GetSubtitle()));
-  jni::TScopedLocalRef jAddress(env, jni::ToJavaString(env, info.GetAddress()));
+  jni::TScopedLocalRef jAddress(env, jni::ToJavaString(env, info.GetSecondarySubtitle()));
   jni::TScopedLocalRef jApiId(env, jni::ToJavaString(env, parseApi ? info.GetApiUrl() : ""));
   jni::TScopedLocalRef jWikiDescription(env, jni::ToJavaString(env, info.GetWikiDescription()));
   jobject mapObject =
@@ -119,7 +119,7 @@ jobject CreateBookmark(JNIEnv *env, const place_page::Info &info,
   jni::TScopedLocalRef jTitle(env, jni::ToJavaString(env, info.GetTitle()));
   jni::TScopedLocalRef jSecondaryTitle(env, jni::ToJavaString(env, info.GetSecondaryTitle()));
   jni::TScopedLocalRef jSubtitle(env, jni::ToJavaString(env, info.GetSubtitle()));
-  jni::TScopedLocalRef jAddress(env, jni::ToJavaString(env, info.GetAddress()));
+  jni::TScopedLocalRef jAddress(env, jni::ToJavaString(env, info.GetSecondarySubtitle()));
   jni::TScopedLocalRef jWikiDescription(env, jni::ToJavaString(env, info.GetWikiDescription()));
   jobject mapObject = env->NewObject(
           g_bookmarkClazz, ctorId, jFeatureId.get(), static_cast<jlong>(categoryId),
@@ -140,7 +140,7 @@ jobject CreateElevationPoint(JNIEnv * env, ElevationInfo::Point const & point)
   static jmethodID const pointCtorId =
       jni::GetConstructorID(env, pointClass, "(DI)V");
   return env->NewObject(pointClass, pointCtorId, static_cast<jdouble >(point.m_distance),
-                        static_cast<jint>(point.m_altitude));
+                        static_cast<jint>(point.m_point.GetAltitude()));
 }
 
 jobjectArray ToElevationPointArray(JNIEnv * env, ElevationInfo::Points const & points)
@@ -164,16 +164,14 @@ jobject CreateElevationInfo(JNIEnv * env, ElevationInfo const & info)
       jni::GetConstructorID(env, g_elevationInfoClazz, "(JLjava/lang/String;Ljava/lang/String;"
                                                        "[Lapp/organicmaps/bookmarks/data/ElevationInfo$Point;"
                                                        "IIIIIJ)V");
-  jni::TScopedLocalRef jName(env, jni::ToJavaString(env, info.GetName()));
   jni::TScopedLocalObjectArrayRef jPoints(env, ToElevationPointArray(env, info.GetPoints()));
-  return env->NewObject(g_elevationInfoClazz, ctorId, static_cast<jlong>(info.GetId()),
-                        jName.get(), jPoints.get(),
+  return env->NewObject(g_elevationInfoClazz, ctorId,
+                        jPoints.get(),
                         static_cast<jint>(info.GetAscent()),
                         static_cast<jint>(info.GetDescent()),
                         static_cast<jint>(info.GetMinAltitude()),
                         static_cast<jint>(info.GetMaxAltitude()),
-                        static_cast<jint>(info.GetDifficulty()),
-                        static_cast<jlong>(info.GetDuration()));
+                        static_cast<jint>(info.GetDifficulty()));
 }
 
 jobject CreateMapObject(JNIEnv * env, place_page::Info const & info)

@@ -213,14 +213,7 @@ public class NavMenu
       return;
 
     Pair<String, String> speedAndUnits = StringUtils.nativeFormatSpeedAndUnits(last.getSpeed());
-
-    if (info.speedLimitMps > 0.0)
-    {
-      Pair<String, String> speedLimitAndUnits = StringUtils.nativeFormatSpeedAndUnits(info.speedLimitMps);
-      mSpeedValue.setText(speedAndUnits.first + "\u202F/\u202F" + speedLimitAndUnits.first);
-    }
-    else
-      mSpeedValue.setText(speedAndUnits.first);
+    mSpeedValue.setText(speedAndUnits.first);
 
     if (info.speedLimitMps > 0.0 && last.getSpeed() > info.speedLimitMps)
     {

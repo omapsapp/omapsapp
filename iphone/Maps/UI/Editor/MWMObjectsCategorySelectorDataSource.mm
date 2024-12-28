@@ -6,11 +6,10 @@
 
 #include "platform/localization.hpp"
 
-using namespace osm;
 
 namespace
 {
-using Category = std::pair<std::string, NewFeatureCategories::TypeName>;
+using Category = std::pair<std::string, osm::NewFeatureCategories::TypeName>;
 using Categories = std::vector<Category>;
 
 std::string locale()
@@ -21,9 +20,8 @@ std::string locale()
 
 @interface MWMObjectsCategorySelectorDataSource()
 {
-  NewFeatureCategories m_categories;
-  Categories m_filteredCategories;
-  Categories m_allCategories;
+  osm::NewFeatureCategories m_categories;
+  Categories m_categoriesList;
 }
 
 @end
@@ -39,62 +37,48 @@ std::string locale()
   return self;
 }
 
+- (void)initializeList:(osm::NewFeatureCategories::TypeNames const &)types
+{
+  m_categoriesList.clear();
+  for (auto const & type : types)
+    m_categoriesList.emplace_back(platform::GetLocalizedTypeName(type), type);
+
+  std::sort(m_categoriesList.begin(), m_categoriesList.end());
+}
+
 - (void)load
 {
   m_categories = GetFramework().GetEditorCategories();
   m_categories.AddLanguage(locale());
-  auto const & types = m_categories.GetAllCreatableTypeNames();
-  
-  m_allCategories.reserve(types.size());
-  for (auto const & type : types)
-    m_allCategories.emplace_back(platform::GetLocalizedTypeName(type), type);
+  m_categories.AddLanguage("en");
 
-  std::sort(m_allCategories.begin(), m_allCategories.end());
+  auto const & types = m_categories.GetAllCreatableTypeNames();
+  m_categoriesList.reserve(types.size());
+
+  [self initializeList: types];
 }
 
 - (void)search:(NSString *)query
 {
-  m_filteredCategories.clear();
-  
   if (query.length == 0)
-    return;
-  
-  auto const types = m_categories.Search([query UTF8String]);
-  
-  m_filteredCategories.reserve(types.size());
-  for (auto const & type : types)
-    m_filteredCategories.emplace_back(platform::GetLocalizedTypeName(type), type);
-  
-  std::sort(m_filteredCategories.begin(), m_filteredCategories.end());
+    [self initializeList: m_categories.GetAllCreatableTypeNames()];
+  else
+    [self initializeList: m_categories.Search([query UTF8String])];
 }
 
 - (NSString *)getTranslation:(NSInteger)row
 {
-  return m_filteredCategories.empty()
-      ? @(m_allCategories[row].first.c_str()) : @(m_filteredCategories[row].first.c_str());
+  return @(m_categoriesList[row].first.c_str());
 }
 
 - (NSString *)getType:(NSInteger)row
 {
-  return m_filteredCategories.empty()
-      ? @(m_allCategories[row].second.c_str()) : @(m_filteredCategories[row].second.c_str());
-}
-
-- (NSInteger)getTypeIndex:(NSString *)type
-{
-  auto const it = find_if(m_allCategories.cbegin(), m_allCategories.cend(),
-                          [type](Category const & item)
-                          {
-                            return type.UTF8String == item.second;
-                          });
-  
-  NSAssert(it != m_allCategories.cend(), @"Incorrect category!");
-  return distance(m_allCategories.cbegin(), it);
+  return @(m_categoriesList[row].second.c_str());
 }
 
 - (NSInteger)size
 {
-  return m_filteredCategories.empty() ? m_allCategories.size() : m_filteredCategories.size();
+  return m_categoriesList.size();
 }
 
 @end

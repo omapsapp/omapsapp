@@ -284,6 +284,10 @@
     <string name="google_play_services">Google Play स्थान सेवा</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">ब्लूटूथ, वायफाय किंवा मोबाइल नेटवर्क वापरून तुमचे अंदाजे स्थान द्रुतपणे निर्धारित करा</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com हटल लकस</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Kayak.com वर सच असललय हटलसठ फट, पनरवलकन, बकग लकस परदरशत कल जतत. य लकसदवर परतयक बकगसठ मळलल रफरल बनस Organic Maps चय वकससठ जत.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">तुमच्या मार्गावरील सर्व नकाशे डाउनलोड करा</string>
     <!-- Text for routing error dialog -->
@@ -466,7 +470,10 @@
     <string name="message_invalid_feature_position">इथे कोणतीही वस्तू ठेवू शकत नाही</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">समुदाय-निर्मित OpenStreetMap डेटा %s नुसार. OpenStreetMap.org वर नकाशा संपादित आणि अपडेट कसा करायचा याबद्दल अधिक जाणून घ्या</string>
-    <string name="login_to_make_edits_visible">इतर वापरकर्त्यांना तुम्ही केलेले बदल दिसण्यासाठी लॉग इन करा</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) हा एक विनामूल्य आणि खुला नकाशा तयार करण्यासाठी एक समुदाय प्रकल्प आहे. ऑरगॅनिक नकाशे मधील नकाशा डेटाचा हा मुख्य स्त्रोत आहे आणि विकिपीडिया प्रमाणेच कार्य करतो. तुम्ही ठिकाणे जोडू किंवा संपादित करू शकता आणि ती जगभरातील लाखो वापरकर्त्यांसाठी उपलब्ध होतील.
+\nसमुदायामध्ये सामील व्हा आणि प्रत्येकासाठी चांगला नकाशा बनवण्यात मदत करा!</string>
+    <string name="login_to_make_edits_visible">एक OpenStreetMap खाते तयार करा किंवा तुमची नकाशा संपादने जगासमोर प्रकाशित करण्यासाठी लॉग इन करा.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%2$d पैकी %1$d</string>
     <string name="download_over_mobile_header">मोबाईल डेटा वापरून डाउनलोड करायचे?</string>
@@ -486,9 +493,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">तुमची संपादने सार्वजनिक <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> डेटाबेसवर अपलोड केली जातात. कृपया वैयक्तिक किंवा कॉपीराइट केलेली माहिती जोडू नका.</string>
     <string name="editor_more_about_osm">OpenStreetMap बद्दल अधिक</string>
-    <string name="editor_operator">मालक</string>
+    <string name="editor_osm_history">तुमचा संपादन इतिहास</string>
+    <string name="editor_osm_notes">तुमचा नकाशा डेटा नोट्स</string>
+    <string name="editor_operator">ऑपरेटर</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">मालक: %s</string>
+    <string name="operator">ऑपरेटर: %s</string>
     <string name="editor_category_unsuitable_title">योग्य श्रेणी शोधू शकत नाही?</string>
     <string name="editor_category_unsuitable_text">ऑरगॅनिक नकाशे फक्त साध्या बिंदू श्रेणी जोडण्याची परवानगी देतात, म्हणजे शहरे, रस्ते, तलाव, इमारत बाह्यरेखा इ. कृपया अशा श्रेणी थेट <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> वर जोडा. तपशीलवार चरण-दर-चरण सूचनांसाठी आमचे <a href="https://organicmaps.app/faq/editing/advanced-map-editing">मार्गदर्शक</a> पहा.</string>
     <string name="downloader_no_downloaded_maps_title">तुम्ही कोणतेही नकाशे डाउनलोड केलेले नाहीत</string>
@@ -507,6 +516,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">तास</string>
     <string name="minute">मिनिट</string>
+    <string name="day">दि</string>
     <string name="placepage_more_button">अधिक</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">फोटोपुनरावलोकनेबुकिंगबुकिंग</string>
@@ -514,6 +524,8 @@
     <string name="dialog_kayak_disclaimer">या लिंकद्वारे प्रत्येक बुकिंगसाठी मिळणारा रेफरल बोनस ऑरगॅनिक नकाशांच्या विकासासाठी जातो.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">कायाक वर तपशील</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak अकषम कर</string>
     <string name="placepage_edit_bookmark_button">खूणपत्र संपादित करा</string>
     <string name="editor_comment_hint">टिप्पणी</string>
     <string name="editor_reset_edits_message">सर्व स्थानिक बदल टाकून द्यायचे?</string>
@@ -572,7 +584,7 @@
     <string name="routing_add_start_point">मार्ग प्रारंभ बिंदू जोडण्यासाठी नकाशावर शोध वापरा किंवा टॅप करा</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">गंतव्य बिंदू जोडण्यासाठी नकाशावर शोधा किंवा टॅप करा</string>
-    <string name="placepage_remove_stop">काढा</string>
+    <string name="placepage_remove_stop">थांबा काढा</string>
     <string name="placepage_add_stop">स्टॉप जोडा</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">तुमची सर्व नकाशा संपादने स्वयंचलितपणे अपलोड करण्यासाठी कृपया OpenStreetMap वर लॉग इन करा. <a href="https://github.com/organicmaps/organicmaps/issues/6144">येथे</a> अधिक जाणून घ्या.</string>
@@ -722,8 +734,8 @@
     <string name="isolines_location_error_dialog">या भागात भूस्वरूप स्तर अद्याप उपलब्ध नाही</string>
     <string name="elevation_profile_ascent">चढण</string>
     <string name="elevation_profile_descent">उतरण</string>
-    <string name="elevation_profile_minaltitude">किमान उच्चता</string>
-    <string name="elevation_profile_maxaltitude">कमाल उच्चता</string>
+    <string name="elevation_profile_min_elevation">किमान उंची</string>
+    <string name="elevation_profile_max_elevation">कमाल उंची</string>
     <string name="elevation_profile_difficulty">काठिण्य</string>
     <string name="elevation_profile_distance">अंतर.:</string>
     <string name="elevation_profile_time">वेळ:</string>
@@ -745,6 +757,8 @@
     <string name="enable_show_on_lock_screen">लॉक पटलावर (स्क्रीनवर) दाखवा</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">चालू असल्यास, ऍप चालू असताना प्रत्येक वेळी तुम्हाला तुमचे उपकरण अनलॉक करण्याची आवश्यकता नाही.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">नकाशाची भाषा</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
     <string name="translated_om_site_url">https://organicmaps.app/mr/</string>
     <!-- App Tip #00 -->
@@ -756,7 +770,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">तुम्हाला सॉफ्टवेअर डेव्हलपर माहीत असल्यास, तुम्ही त्याला किंवा तिला तुम्हाला आवश्यक असलेले वैशिष्ट्य लागू करण्यास सांगू शकता.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">तुम्हाला माहीत आहे का की तुम्ही नकाशावरील कोणतेही ठिकाण निवडण्यासाठी लांब-टॅप करू शकता?</string>
+    <string name="app_tip_04">काहीही निवडण्यासाठी नकाशावर कुठेही टॅप करा. इंटरफेस लपवण्यासाठी आणि परत दर्शविण्यासाठी दीर्घ-टॅप करा.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">तुम्हाला माहीत आहे का की तुम्ही नकाशावर तुमचे वर्तमान स्थान निवडू शकता?</string>
     <!-- App tip #06 -->
@@ -826,7 +840,11 @@
     <string name="track_recording_toast_nothing_to_save">मार्ग रिकामा आहे - जतन करण्यासाठी काहीही नाही</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">फोल्डर निवड संवाद प्रदर्शित करण्यात अक्षम कारण आपल्या डिव्हाइसवर कोणतेही योग्य ॲप स्थापित केलेले नाही. कृपया फाइल व्यवस्थापक ॲप स्थापित करा आणि पुन्हा प्रयत्न करा</string>
+    <string name="choose_color">रंग निवडा</string>
+    <string name="edit_track">मार्ग संपादित करा</string>
     <string name="uri_open_location_failed">स्थान उघडू शकणारे कोणतेही ॲप स्थापित केलेले नाही</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">नेव्हिगेशनमध्ये ऑटो</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">पत्ता/ब्लॉक</string>
@@ -1033,7 +1051,7 @@
     <string name="type.building.has_parts">इमारत</string>
     <string name="type.building_part">इमारत</string>
     <string name="type.building.garage">गराज</string>
-    <string name="type.building.train_station">रेल्वे स्थानक</string>
+    <string name="type.building.train_station">स्टेशन बिल्डिंग</string>
     <string name="type.building.warehouse">वखार</string>
     <string name="type.craft">हस्तकला</string>
     <string name="type.craft.beekeeper">मधमाश्या पाळणारा</string>
@@ -1395,8 +1413,10 @@
     <string name="type.man_made.tower.communication">कम्युनिकेशन टॉवर</string>
     <string name="type.man_made.wastewater_plant">सांडपाणी संयंत्र(प्लांट)</string>
     <string name="type.man_made.water_tap">पाण्याचा नळ</string>
+    <string name="type.man_made.water_tap.drinking_water_no">पाण्याचा नळ</string>
     <string name="type.man_made.water_tower">पाण्याचा मनोरा(टाकी)</string>
     <string name="type.man_made.water_well">पाण्याची विहीर</string>
+    <string name="type.man_made.water_well.drinking_water_no">पाण्याची विहीर</string>
     <string name="type.man_made.windmill">पवनचक्की</string>
     <string name="type.man_made.works">औद्योगिक कामे</string>
     <string name="type.military">लष्करी</string>
@@ -1438,6 +1458,7 @@
     <string name="type.natural.rock">खडक</string>
     <string name="type.natural.scrub">खुरटी झाडे</string>
     <string name="type.natural.spring">झरे</string>
+    <string name="type.natural.spring.drinking_water_no">झरे</string>
     <string name="type.natural.strait">सामुद्रधुनी</string>
     <string name="type.natural.tree_row">झाडाची रांग</string>
     <string name="type.natural.vineyard">द्राक्षमळा</string>
@@ -1553,6 +1574,7 @@
     <string name="type.railway.station">रेल्वे स्थानक</string>
     <string name="type.railway.station.funicular">फ्युनिक्युलर</string>
     <string name="type.railway.station.light_rail">रेल्वे स्थानक</string>
+    <string name="type.railway.station.light_rail.berlin">रेल्वे स्थानक</string>
     <string name="type.railway.station.light_rail.london">रेल्वे स्थानक</string>
     <string name="type.railway.station.light_rail.porto">रेल्वे स्थानक</string>
     <string name="type.railway.station.monorail">रेल्वे स्थानक</string>
@@ -1595,6 +1617,7 @@
     <string name="type.railway.station.subway.hamburg">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.helsinki">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.hiroshima">भुयारी मार्ग</string>
+    <string name="type.railway.station.subway.hongkong">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.isfahan">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.istanbul">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.izmir">भुयारी मार्ग</string>
@@ -1648,6 +1671,7 @@
     <string name="type.railway.station.subway.sendai">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.sf">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.shanghai">भुयारी मार्ग</string>
+    <string name="type.railway.station.subway.shenzhen">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.shiraz">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.singapore">भुयारी मार्ग</string>
     <string name="type.railway.station.subway.sofia">भुयारी मार्ग</string>
@@ -1710,6 +1734,7 @@
     <string name="type.railway.subway_entrance.hamburg">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.helsinki">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.hiroshima">भुयारी प्रवेशद्वार</string>
+    <string name="type.railway.subway_entrance.hongkong">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.isfahan">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.istanbul">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.izmir">भुयारी प्रवेशद्वार</string>
@@ -1763,6 +1788,7 @@
     <string name="type.railway.subway_entrance.sendai">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.sf">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.shanghai">भुयारी प्रवेशद्वार</string>
+    <string name="type.railway.subway_entrance.shenzhen">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.shiraz">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.singapore">भुयारी प्रवेशद्वार</string>
     <string name="type.railway.subway_entrance.sofia">भुयारी प्रवेशद्वार</string>
@@ -1844,6 +1870,7 @@
     <string name="type.shop.optician">चष्मेविक्रेता</string>
     <string name="type.shop.outdoor">भटकंतीचे साहित्य</string>
     <string name="type.shop.outpost">पिकअप पॉइंट</string>
+    <string name="type.shop.pasta">पास्ता दुकान</string>
     <string name="type.shop.pastry">बेकरी</string>
     <string name="type.shop.pet">पाळीव प्राण्यांचे दुकान</string>
     <string name="type.shop.pet_grooming">पाळीव प्राणी ग्रूमिंग</string>
@@ -1908,7 +1935,13 @@
     <string name="type.tourism.artwork.sculpture">कलाकृती</string>
     <string name="type.tourism.artwork.statue">कलाकृती</string>
     <string name="type.tourism.attraction">आकर्षण</string>
+    <string name="type.attraction.amusement_ride">मनोरंजन राइड</string>
     <string name="type.attraction.animal">प्राणी संलग्न</string>
+    <string name="type.attraction.carousel">कॅरोसेल</string>
+    <string name="type.attraction.historic">ऐतिहासिक आकर्षण</string>
+    <string name="type.attraction.maze">चक्रव्यूह</string>
+    <string name="type.attraction.roller_coaster">रोलर कोस्टर</string>
+    <string name="type.attraction.water_slide">वॉटर स्लाइड</string>
     <string name="type.tourism.attraction.specified">आकर्षण</string>
     <string name="type.tourism.camp_site">शिबिरवास(कॅम्पिंग)</string>
     <!-- A rentable countryside vacation house. -->

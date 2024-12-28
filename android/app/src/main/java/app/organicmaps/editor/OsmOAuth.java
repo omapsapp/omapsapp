@@ -100,6 +100,11 @@ public final class OsmOAuth
     return nativeGetHistoryUrl(getUsername(context));
   }
 
+  public static String getNotesUrl(@NonNull Context context)
+  {
+    return nativeGetNotesUrl(getUsername(context));
+  }
+
   /*
    Returns 5 strings: ServerURL, ClientId, ClientSecret, Scope, RedirectUri
    */
@@ -132,6 +137,10 @@ public final class OsmOAuth
   @WorkerThread
   @NonNull
   public static native String nativeGetHistoryUrl(String user);
+
+  @WorkerThread
+  @NonNull
+  public static native String nativeGetNotesUrl(String user);
 
   /**
    * @return < 0 if failed to get changesets count.

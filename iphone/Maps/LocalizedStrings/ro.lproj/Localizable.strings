@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Donează pentru a construi împreună cele mai bune hărți!";
 
+"already_donated" = "Deja donat";
+
+"remind_me_later" = "Amintește mai târziu";
+
+"support_organic_maps" = "Susține Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Drepturi de autor";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Date OpenStreetMap create de comunitate la data de %@. Aflați mai multe despre cum să editați și să actualizați harta la OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Autentifică-te pentru ca modificările pe care le-ai făcut să poată fi văzute și de alți utilizatori.";
+"login_to_make_edits_visible" = "Creați un cont OpenStreetMap sau conectați-vă pentru a vă publica edițiile de hartă în întreaga lume.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Ai nevoie de mai mult spațiu pentru a descărca. Șterge datele care nu sunt necesare.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Mai multe despre OpenStreetMap";
 
-"editor_operator" = "Proprietar";
+"editor_operator" = "Operator";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Proprietar: %@";
+"operator" = "Operator: %@";
+
+"editor_category_unsuitable_title" = "Nu găsiți o categorie potrivită?";
+
+"editor_category_unsuitable_text" = "Organic Maps permite adăugarea doar a unor categorii de puncte simple, ceea ce înseamnă că nu există orașe, drumuri, lacuri, contururi de clădiri, etc. Vă rugăm să adăugați astfel de categorii direct la <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Consultați <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">ghidul nostru</a> pentru instrucțiuni detaliate pas cu pas.";
 
 "downloader_no_downloaded_maps_title" = "Nu ai descărcat nicio hartă";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "z";
+
 "placepage_more_button" = "Mai mult";
 
 "book_button" = "Rezervare";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Detalii pe Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Dezactivați Kayak";
 
 "placepage_call_button" = "Apelează";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Planifică";
 
-"placepage_remove_stop" = "Elimină";
+"placepage_remove_stop" = "Scoateți opritorul";
 
 "planning_route_remove_title" = "Trage aici pentru a elimina";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Coborâre";
 
-"elevation_profile_minaltitude" = "Înălțime minimă";
+"elevation_profile_min_elevation" = "Min. altitudine";
 
-"elevation_profile_maxaltitude" = "Înălțime maximă";
+"elevation_profile_max_elevation" = "Max. altitudine";
 
 "elevation_profile_difficulty" = "Dificultate";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Elimină traseul";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Sunteți sigur că doriți să ștergeți această pistă?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Numele traseului";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Dacă cunoașteți un dezvoltator de software, îi puteți cere să implementeze o caracteristică de care aveți nevoie.";
 
 /* App tip #04 */
-"app_tip_04" = "Știți că puteți atinge lung orice loc de pe hartă pentru a-l selecta?";
+"app_tip_04" = "Atingeți oriunde pe hartă pentru a selecta orice. Atingeți lung pentru a ascunde și a reda interfața.";
 
 /* App tip #05 */
 "app_tip_05" = "Știți că vă puteți selecta locația curentă pe hartă?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Traseul este gol - nu este nimic de salvat";
+
+"edit_track" = "Editează traseul";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Oficiu poștal";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "Închisoare";
 
 "type.amenity.pub" = "Pub";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Punct de alimentare cu apă";
 
+"type.amenity.water_point.drinking_water_no" = "Punct de alimentare cu apă";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Bloc";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garaj";
 
-"type.building.train_station" = "Feroviar";
+"type.building.train_station" = "Clădirea gării";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Robinet cu apă";
 
+"type.man_made.water_tap.drinking_water_no" = "Robinet cu apă";
+
 "type.man_made.water_tower" = "Turn de apă";
 
 "type.man_made.water_well" = "Puț de apă";
+
+"type.man_made.water_well.drinking_water_no" = "Puț de apă";
 
 "type.man_made.windmill" = "Moară de vânt";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Boschet";
 
 "type.natural.spring" = "Izvor";
+
+"type.natural.spring.drinking_water_no" = "Izvor";
 
 "type.natural.strait" = "Strâmtoare";
 
@@ -2963,7 +2991,7 @@
 
 "type.railway.funicular.tunnel" = "Funicular Tunnel";
 
-"type.railway.halt" = "Feroviar";
+"type.railway.halt" = "Gară";
 
 "type.railway.level_crossing" = "Trecere feroviară";
 
@@ -3044,17 +3072,19 @@
 
 "type.railway.rail.service.tunnel" = "Tunel de cale ferată";
 
-"type.railway.station" = "Feroviar";
+"type.railway.station" = "Gară";
 
 "type.railway.station.funicular" = "Funicular";
 
-"type.railway.station.light_rail" = "Feroviar";
+"type.railway.station.light_rail" = "Gară";
 
-"type.railway.station.light_rail.london" = "Feroviar";
+"type.railway.station.light_rail.berlin" = "Gară";
 
-"type.railway.station.light_rail.porto" = "Feroviar";
+"type.railway.station.light_rail.london" = "Gară";
 
-"type.railway.station.monorail" = "Feroviar";
+"type.railway.station.light_rail.porto" = "Gară";
+
+"type.railway.station.monorail" = "Gară";
 
 "type.railway.station.subway" = "Metrou";
 
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Metrou";
 
 "type.railway.station.subway.hiroshima" = "Metrou";
+
+"type.railway.station.subway.hongkong" = "Metrou";
 
 "type.railway.station.subway.isfahan" = "Metrou";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Metrou";
 
 "type.railway.station.subway.shanghai" = "Metrou";
+
+"type.railway.station.subway.shenzhen" = "Metrou";
 
 "type.railway.station.subway.shiraz" = "Metrou";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Intrare în metro";
 
+"type.railway.subway_entrance.hongkong" = "Intrare în metro";
+
 "type.railway.subway_entrance.isfahan" = "Intrare în metro";
 
 "type.railway.subway_entrance.istanbul" = "Intrare în metro";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Intrare în metro";
 
 "type.railway.subway_entrance.shanghai" = "Intrare în metro";
+
+"type.railway.subway_entrance.shenzhen" = "Intrare în metro";
 
 "type.railway.subway_entrance.shiraz" = "Intrare în metro";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Echipament de exterior";
 
 "type.shop.outpost" = "Punct de ridicare";
+
+"type.shop.pasta" = "Magazin de paste";
 
 "type.shop.pastry" = "Patiserie";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Punct de atracție";
 
+"type.attraction.amusement_ride" = "Călătorie de distracție";
+
 "type.attraction.animal" = "Incintă pentru animale";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Carusel";
+
+"type.attraction.historic" = "Atracție istorică";
+
+"type.attraction.maze" = "Labirint";
+
+"type.attraction.roller_coaster" = "Rollercoaster";
+
+"type.attraction.water_slide" = "Tobogan de apă";
 
 "type.tourism.attraction.specified" = "Punct de atracție";
 
@@ -3931,13 +3987,13 @@
 
 "type.waterway.river.tunnel" = "Râu";
 
-"type.waterway.stream" = "Râu";
+"type.waterway.stream" = "Pârâu";
 
-"type.waterway.stream.ephemeral" = "Râu";
+"type.waterway.stream.ephemeral" = "Pârâu";
 
-"type.waterway.stream.intermittent" = "Râu";
+"type.waterway.stream.intermittent" = "Pârâu";
 
-"type.waterway.stream.tunnel" = "Râu";
+"type.waterway.stream.tunnel" = "Pârâu";
 
 "type.waterway.waterfall" = "Cascadă";
 

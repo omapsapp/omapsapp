@@ -112,4 +112,10 @@ Java_app_organicmaps_editor_OsmOAuth_nativeGetHistoryUrl(JNIEnv * env, jclass, j
 {
   return jni::ToJavaString(env, OsmOAuth::ServerAuth().GetHistoryURL(jni::ToNativeString(env, user)));
 }
+
+JNIEXPORT jstring JNICALL
+Java_app_organicmaps_editor_OsmOAuth_nativeGetNotesUrl(JNIEnv * env, jclass, jstring user)
+{
+  return jni::ToJavaString(env, OsmOAuth::ServerAuth().GetNotesURL(jni::ToNativeString(env, user)));
+}
 } // extern "C"

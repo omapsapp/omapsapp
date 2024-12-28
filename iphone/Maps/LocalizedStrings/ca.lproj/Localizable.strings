@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Fes una donació per construir els millors mapes junts!";
 
+"already_donated" = "Ja donat";
+
+"remind_me_later" = "Recorda més tard";
+
+"support_organic_maps" = "Donar suport a Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Copyright";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Dades de l’OpenStreetMap creades per la comunitat a partir de %@. Obteniu més informació sobre com editar i actualitzar el mapa a OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Inicieu sessió a openstreetmap.org perquè altres usuaris puguin veure els vostres canvis.";
+"login_to_make_edits_visible" = "Creeu un compte d'OpenStreetMap o inicieu sessió per publicar les vostres edicions de mapes al món.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Per a la baixada, us cal més espai. Suprimiu les dades no necessàries.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Més sobre l'OpenStreetMap";
 
-"editor_operator" = "Propietari";
+"editor_operator" = "Operador";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Propietari: %@";
+"operator" = "Operador: %@";
+
+"editor_category_unsuitable_title" = "No trobeu una categoria adequada?";
+
+"editor_category_unsuitable_text" = "Organic Maps només permet afegir categories de punts simples, això vol dir que no hi ha ciutats, carreteres, llacs, contorns d'edificis, etc. Si us plau, afegiu aquestes categories directament a <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Consulteu la nostra <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">guia</a> per obtenir instruccions detallades pas a pas.";
 
 "downloader_no_downloaded_maps_title" = "No heu baixat cap mapa";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "Més";
 
 "book_button" = "Reserva";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Detalls a Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Desactiva Kayak";
 
 "placepage_call_button" = "Truca-hi";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Planifica";
 
-"placepage_remove_stop" = "Elimina";
+"placepage_remove_stop" = "Elimina parada";
 
 "planning_route_remove_title" = "Arrossegueu-lo aquí per a eliminar-lo";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Descens";
 
-"elevation_profile_minaltitude" = "Altitud mín.";
+"elevation_profile_min_elevation" = "Min. elevació";
 
-"elevation_profile_maxaltitude" = "Altitud màx.";
+"elevation_profile_max_elevation" = "Màx. elevació";
 
 "elevation_profile_difficulty" = "Dificultat";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Esborra la traça";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Esteu segur que voleu suprimir aquesta pista?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Nom de la traça";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Si coneixeu un desenvolupador de programari, podeu demanar-li que implementi una funcionalitat que necessiteu.";
 
 /* App tip #04 */
-"app_tip_04" = "Sabíeu que podeu tocar llargament qualsevol lloc del mapa per seleccionar-lo?";
+"app_tip_04" = "Toqueu qualsevol lloc del mapa per seleccionar qualsevol cosa. Toqueu llargament per ocultar i mostrar la interfície.";
 
 /* App tip #05 */
 "app_tip_05" = "Sabíeu que podeu seleccionar la vostra ubicació actual al mapa?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "El recorregut està buit, no hi ha res a desar";
+
+"edit_track" = "Edita el recorregut";
 
 
 /********** Types **********/
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Punt d’aigua";
 
+"type.amenity.water_point.drinking_water_no" = "Punt d’aigua";
+
 "type.barrier" = "Barrera";
 
 "type.barrier.block" = "Bloc";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garage";
 
-"type.building.train_station" = "Train Station";
+"type.building.train_station" = "Edifici de l'Estació";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -1877,7 +1899,7 @@
 "type.craft.handicraft" = "Handicraft";
 
 /* Heating, Ventilation, and Air Conditioning */
-"type.craft.hvac" = "HVAC Shop";
+"type.craft.hvac" = "HVAC";
 
 "type.craft.key_cutter" = "Tall de claus";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Water Tap";
 
+"type.man_made.water_tap.drinking_water_no" = "Water Tap";
+
 "type.man_made.water_tower" = "Water Tower";
 
 "type.man_made.water_well" = "Water Well";
+
+"type.man_made.water_well.drinking_water_no" = "Water Well";
 
 "type.man_made.windmill" = "Windmill";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Scrub";
 
 "type.natural.spring" = "Natural Spring";
+
+"type.natural.spring.drinking_water_no" = "Natural Spring";
 
 "type.natural.strait" = "Strait";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Train Station";
 
+"type.railway.station.light_rail.berlin" = "Train Station";
+
 "type.railway.station.light_rail.london" = "Train Station";
 
 "type.railway.station.light_rail.porto" = "Train Station";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Subway Station";
 
 "type.railway.station.subway.hiroshima" = "Subway Station";
+
+"type.railway.station.subway.hongkong" = "Subway Station";
 
 "type.railway.station.subway.isfahan" = "Subway Station";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Subway Station";
 
 "type.railway.station.subway.shanghai" = "Subway Station";
+
+"type.railway.station.subway.shenzhen" = "Subway Station";
 
 "type.railway.station.subway.shiraz" = "Subway Station";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Subway Entrance";
 
+"type.railway.subway_entrance.hongkong" = "Subway Entrance";
+
 "type.railway.subway_entrance.isfahan" = "Subway Entrance";
 
 "type.railway.subway_entrance.istanbul" = "Subway Entrance";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Subway Entrance";
 
 "type.railway.subway_entrance.shanghai" = "Subway Entrance";
+
+"type.railway.subway_entrance.shenzhen" = "Subway Entrance";
 
 "type.railway.subway_entrance.shiraz" = "Subway Entrance";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Outdoor Equipment Shop";
 
 "type.shop.outpost" = "Punt de recollida";
+
+"type.shop.pasta" = "Botiga de pasta";
 
 "type.shop.pastry" = "Forn de pa";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Atracció";
 
+"type.attraction.amusement_ride" = "Passeig de diversió";
+
 "type.attraction.animal" = "Recinte d’animals";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Carrusel";
+
+"type.attraction.historic" = "Atracció històrica";
+
+"type.attraction.maze" = "Laberint";
+
+"type.attraction.roller_coaster" = "Muntanya Russa";
+
+"type.attraction.water_slide" = "Tobogan aquàtic";
 
 "type.tourism.attraction.specified" = "Atracció";
 

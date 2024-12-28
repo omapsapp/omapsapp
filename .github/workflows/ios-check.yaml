@@ -59,7 +59,7 @@ jobs:
         shell: bash
         run: git submodule update --depth 1 --init --recursive --jobs=$(($(sysctl -n hw.logicalcpu) * 20))
 
-      - name: Configure
+      - name: Configure repository
         shell: bash
         run: ./configure.sh
 

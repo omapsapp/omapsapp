@@ -69,7 +69,7 @@ public final class ThemeUtils
 
   public static boolean isAutoTheme(@NonNull Context context)
   {
-    return isAutoTheme(context, Config.getCurrentUiTheme(context));
+    return isAutoTheme(context, Config.getUiThemeSettings(context));
   }
 
   public static boolean isAutoTheme(@NonNull Context context, String theme)
@@ -77,6 +77,17 @@ public final class ThemeUtils
     String autoTheme = context.getString(R.string.theme_auto);
     return autoTheme.equals(theme);
   }
+
+  public static boolean isNavAutoTheme(@NonNull Context context)
+  {
+    return isNavAutoTheme(context, Config.getUiThemeSettings(context));
+  }
+
+  public static boolean isNavAutoTheme(@NonNull Context context, String theme)
+  {
+    String navAutoTheme = context.getString(R.string.theme_nav_auto);
+    return navAutoTheme.equals(theme);
+}
 
   public static boolean isValidTheme(@NonNull Context context, String theme)
   {

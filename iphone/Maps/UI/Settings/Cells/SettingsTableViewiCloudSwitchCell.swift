@@ -1,7 +1,7 @@
 final class SettingsTableViewiCloudSwitchCell: SettingsTableViewDetailedSwitchCell {
 
   @objc
-  func updateWithSynchronizationState(_ state: CloudStorageSynchronizationState) {
+  func updateWithSynchronizationState(_ state: SynchronizationManagerState) {
     guard state.isAvailable else {
       accessoryView = nil
       accessoryType = .detailButton

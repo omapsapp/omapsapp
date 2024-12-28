@@ -1,0 +1,4084 @@
+
+/********** Strings **********/
+
+/* Button text (should be short) */
+"cancel" = "Одустани";
+
+/* Button which interrupts country download */
+"cancel_download" = "Обустави преузимање";
+
+/* Button which deletes downloaded country */
+"delete" = "Обриши";
+
+"download_maps" = "Преузми мапе";
+
+/* Settings/Downloader - info for country which started downloading */
+"downloading" = "Преузимање…";
+
+/* Choose measurement on first launch alert - choose metric system button */
+"kilometres" = "Колиметри";
+
+/* Leave Review dialog - Review button */
+"leave_a_review" = "Оставите рецензију";
+
+/* Choose measurement on first launch alert - choose imperial system button */
+"miles" = "Миље";
+
+/* A text for current gps location point/arrow selected on the map */
+"core_my_position" = "Моја позиција";
+
+/* Update maps later button text */
+"later" = "Касније";
+
+/* View and button titles for accessibility, please also edit it in iphone/plist.txt */
+"search" = "Тражи";
+
+/* Settings/Downloader - 3G download warning dialog confirm button */
+"use_cellular_data" = "Да";
+
+/* View and button titles for accessibility */
+"zoom_to_country" = "Прикажи на мапи";
+
+/* Button text for the button at the center of the screen when the country is not downloaded and the size should not be shown */
+"country_status_download_without_size" = "Преузми мапу";
+
+/* Message to display at the center of the screen when the country download has failed */
+"country_status_download_failed" = "Преузимање није успело";
+
+/* Text in About screen */
+"about_headline" = "Слободна за све, направљена с љубављу";
+
+/* Text in About screen */
+"about_proposition_1" = "• Без реклама, без праћења, без сакупљања података";
+
+/* Text in About screen */
+"about_proposition_2" = "• Без непотребне потрошње батерије, ради и без интернета";
+
+/* Text in About screen */
+"about_proposition_3" = "• Брза, минималистичка, направљена од стране заједнице";
+
+"close" = "Затвори";
+
+"download" = "Преузми";
+
+/* REMOVE THIS STRING AFTER REFACTORING */
+"continue_button" = "Настави";
+
+/* "Add new bookmark list" dialog title */
+"add_new_set" = "Направи нову листу";
+
+/* Add Bookmark list dialog - hint when the list name is empty */
+"bookmark_set_name" = "Назив листе маркера";
+
+/* "Bookmark Lists" dialog title */
+"bookmark_sets" = "Листе маркера";
+
+/* Should be used in the bookmarks-only context, see bookmarks_and_tracks if tracks are also implied. */
+"bookmarks" = "Маркери";
+
+/* "Bookmarks and Tracks" dialog title, also sync it with iphone/plist.txt */
+"bookmarks_and_tracks" = "Маркери и путање";
+
+/* Default bookmark list name */
+"core_my_places" = "Моја места";
+
+/* Editor title above street and house number, duplicates [type.building.address] in types_strings.txt */
+"address" = "Адреса";
+
+/* Settings button in system menu */
+"settings" = "Подешавања";
+
+/* Measurement units title in settings activity */
+"measurement_units" = "Јединице мере";
+
+
+/********** Search categories **********/
+
+/* Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! */
+"category_eat" = "Где јести";
+
+/* Search category for grocery stores; any changes should be duplicated in categories.txt @category_food! */
+"category_food" = "Намирнице";
+
+/* Search category for public transport; any changes should be duplicated in categories.txt @category_transport! */
+"category_transport" = "Транспорт";
+
+/* Search category for fuel stations; any changes should be duplicated in categories.txt @category_fuel! */
+"category_fuel" = "Гориво";
+
+/* Search category for parking lots; any changes should be duplicated in categories.txt @category_parking! */
+"category_parking" = "Паркинг";
+
+/* Search category for malls/clothes/shoes/gifts/jewellery/sport shops; any changes should be duplicated in categories.txt @category_shopping! */
+"category_shopping" = "Куповина";
+
+/* Search category for second_hand/charity/antique/auction shops; any changes should be duplicated in categories.txt @category_secondhand! */
+"category_secondhand" = "Second Hand";
+
+/* Search category for places to stay; any changes should be duplicated in categories.txt @category_hotel! */
+"category_hotel" = "Хотел";
+
+/* Search category sight seeings and touristic attractions; any changes should be duplicated in categories.txt @category_tourism! */
+"category_tourism" = "Атракција";
+
+/* Search category for entertainment; any changes should be duplicated in categories.txt @category_entertainment! */
+"category_entertainment" = "Забава";
+
+/* Search category for ATMs; any changes should be duplicated in categories.txt @category_atm! */
+"category_atm" = "Банкомат";
+
+/* Search category for nightclubs/bars; any changes should be duplicated in categories.txt @category_nightlife! */
+"category_nightlife" = "Ноћни живот";
+
+/* Search category for water park/disneyland/playground/toys store; any changes should be duplicated in categories.txt @category_children! */
+"category_children" = "Породични одмор";
+
+/* Search category for banks; any changes should be duplicated in categories.txt @category_bank! */
+"category_bank" = "Банка";
+
+/* Search category for pharmacies; any changes should be duplicated in categories.txt @category_pharmacy! */
+"category_pharmacy" = "Апотека";
+
+/* Search category for hospitals; any changes should be duplicated in categories.txt @category_hospital! */
+"category_hospital" = "Болница";
+
+/* Search category for toilets; any changes should be duplicated in categories.txt @category_toilet! */
+"category_toilet" = "Тоалет";
+
+/* Search category for post offices; any changes should be duplicated in categories.txt @category_post! */
+"category_post" = "Пошта";
+
+/* Search category for police; any changes should be duplicated in categories.txt @category_police! */
+"category_police" = "Полиција";
+
+/* Search category for WiFi access; any changes should be duplicated in categories.txt @category_wifi! */
+"category_wifi" = "WiFi";
+
+/* Search category for recycling; any changes should be duplicated in categories.txt @category_recycling! */
+"category_recycling" = "Рециклажа";
+
+/* Search category for water; any changes should be duplicated in categories.txt @category_water! also used to sort bookmarks by type */
+"category_water" = "Вода";
+
+/* Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! */
+"category_rv" = "За кампер возила";
+
+
+/********** Other translations **********/
+
+"share_bookmarks_email_body" = "Здраво!\n\nУ прилогу су моји маркери; молим те да их отвориш у Organic Maps-у. Ако га немаш већ инсталираног, можеш да га преузмеш одавде: https://omaps.app/get?kmz\n\nУживај у путовању са Organic Maps-ом!";
+
+/* message title of loading file */
+"load_kmz_title" = "Учитавање маркера";
+
+/* Kmz file successful loading */
+"load_kmz_successful" = "Маркери су успешно учитани! Можете их проначи на мапи помоћу Менаџера маркера.";
+
+/* Kml file loading failed */
+"load_kmz_failed" = "Неуспешно учитавање маркера. Могуће је да је фајл оштећен или неисправан.";
+
+/* resource for context menu */
+"edit" = "Измени";
+
+/* Warning message when doing search around current position */
+"unknown_current_position" = "Ваша локација још није одређена";
+
+/* Subject for emailed bookmark */
+"bookmark_share_email_subject" = "Хеј, види мој маркер у Organic Maps-у!";
+
+/* Subject for emailed position */
+"my_position_share_email_subject" = "Хеј, види моју тренутну локацију на Organic Maps мапи!";
+
+/* Share by email button text, also used in editor and About. */
+"email" = "Email";
+
+/* Text for message when used successfully copied something */
+"copied_to_clipboard" = "Копирано у клипборд: %@";
+
+/* place preview title */
+"info" = "Информације";
+
+/* Used for bookmark editing */
+"done" = "Готово";
+
+/* Prints version number in About dialog */
+"version" = "Organic Maps верзија: %@";
+
+/* Title for tracks category in bookmarks manager */
+"tracks_title" = "Путање";
+
+/* Length of track in cell that describes route */
+"length" = "Дужина";
+
+"share_my_location" = "Подели моју локацију";
+
+"prefs_group_route" = "Навигација";
+
+"pref_zoom_title" = "Дугмад за увећавање/умањивање";
+
+/* Settings «Map» category: «Appearance» title */
+"pref_appearance_title" = "Изглед";
+
+/* Settings "Appearance" category: "Light" title, should be consistent with the pref_appearance_title translation. */
+"pref_appearance_light" = "Светло";
+
+/* Settings "Appearance" category: "Dark" title, should be consistent with the pref_appearance_title translation. */
+"pref_appearance_dark" = "Тамно";
+
+/* Generic «Off» string */
+"off" = "Искључено";
+
+/* Generic «On» string */
+"on" = "Укључено";
+
+/* Generic «Auto» string */
+"auto" = "Аутоматски";
+
+/* Settings «Map» category: «Perspective view» title */
+"pref_map_3d_title" = "Приказ перспективе";
+
+/* Settings «Map» category: «3D buildings» title */
+"pref_map_3d_buildings_title" = "3D зграде";
+
+/* A message in Settings/Preferences explaining why is it not possible to enable 3D buildings when max power saving mode is enabled */
+"pref_map_3d_buildings_disabled_summary" = "3D зграде се не приказују у режиму чувања батерије";
+
+/* Settings «Route» category: «Tts enabled» title */
+"pref_tts_enable_title" = "Гласовне инструкције";
+
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Најави име улице";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Када је укључено, име улице или излаз на који треба скренути ће бити изговорен.";
+
+/* Settings «Route» category: «Tts language» title */
+"pref_tts_language_title" = "Језик гласа";
+
+/* Settings «Route» category: «Test Voice Directions» title */
+"pref_tts_test_voice_title" = "Тестирај гласовне инструкције (Текст-у-говор)";
+
+/* Title for "Other" section in TTS settings. */
+"pref_tts_other_section_title" = "Остало";
+
+"pref_map_auto_zoom" = "Аутоматско увећавање";
+
+"placepage_distance" = "Раздаљина";
+
+"search_show_on_map" = "Погледај на мапи";
+
+/* Text in menu */
+"website" = "Веб-сајт";
+
+/* Text in About menu, opens Organic Maps news website */
+"news" = "Новости";
+
+/* Text in menu */
+"facebook" = "Facebook";
+
+/* Text in menu */
+"twitter" = "X (Twitter)";
+
+/* Text in menu */
+"instagram" = "Instagram";
+
+/* Text in the editor */
+"vk" = "VK";
+
+/* Text in menu */
+"rate_the_app" = "Оцена апликације";
+
+/* Text in menu */
+"help" = "Помоћ";
+
+/* Button in the main Help dialog */
+"faq" = "Често постављена питања";
+
+/* Button in the main menu */
+"donate" = "Донација";
+
+/* Tex label above the Donate button */
+"donate_description" = "Донирате да бисмо заједно направили најбоље мапе!";
+
+"already_donated" = "Already donated";
+
+"remind_me_later" = "Remind later";
+
+"support_organic_maps" = "Support Organic Maps";
+
+/* Button in the main Help dialog */
+"copyright" = "Copyright";
+
+/* Text in menu + Button in the main Help dialog */
+"report_a_bug" = "Пријави проблем";
+
+/* Button in the About screen */
+"report_incorrect_map_bug" = "Пријавите или поправите нетачне податке на мапи";
+
+/* Button in the About screen */
+"volunteer" = "Волонтирајте";
+
+/* "Social media" section header in the About screen */
+"follow_us" = "Пратите и контактирајте нас:";
+
+/* Alert text */
+"email_error_body" = "Email клијент није подешен. Молимо вас да га подесите или нас контактирајте на %@";
+
+/* Alert title */
+"email_error_title" = "Грешка приликом слања email-а";
+
+/* Settings item title */
+"pref_calibration_title" = "Калибрација компаса";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Додирните дуго мапу да бисте поново видели интерфејс";
+
+/* Update all button text */
+"downloader_update_all_button" = "Ажурирај све";
+
+/* Downloaded maps list header */
+"downloader_downloaded_subtitle" = "Преузето";
+
+/* Downloaded maps category */
+"downloader_available_maps" = "Расположиве";
+
+/* Country queued for download */
+"downloader_queued" = "На чекању";
+
+"downloader_near_me_subtitle" = "Близу мене";
+
+/* In maps downloader and country place page shows how many maps are downloaded / to download, e.g. "Maps: 3 of 10" */
+"downloader_status_maps" = "Мапе";
+
+"downloader_download_all_button" = "Преузми све";
+
+"downloader_downloading" = "Преузимање:";
+
+"downloader_search_results" = "Пронађено";
+
+/* Status of outdated country in the list */
+"downloader_status_outdated" = "Ажурирано";
+
+/* Status of failed country in the list */
+"downloader_status_failed" = "Неуспешно";
+
+/* Displayed in a dialog that appears when a user tries to delete a map while the app is in the follow route mode */
+"downloader_delete_map_while_routing_dialog" = "Да бисте обрисали мапу, зауставите навигацију.";
+
+/* PointsInDifferentMWM */
+"routing_failed_cross_mwm_building" = "Могу се креирати само руте које се комплетно налазе у оквиру мапе једног региона.";
+
+/* Context menu item for downloader. */
+"downloader_download_map" = "Преузми мапу";
+
+/* Item status in downloader. */
+"downloader_retry" = "Покушај поново";
+
+/* Item in context menu. */
+"downloader_delete_map" = "Обриши мапу";
+
+/* Text for routing error dialog */
+"routing_download_maps_along" = "Преузми све мапе које се налазе на рути";
+
+/* Text for routing error dialog */
+"routing_requires_all_map" = "Да би рута могла да се креира, потребно је да преузимање и ажурирање свих мапа између ваше локације и вашег одредишта.";
+
+/* bookmark button text */
+"bookmark" = "маркер";
+
+"save" = "Сачувај";
+
+"create" = "креирај";
+
+/* red color */
+"red" = "Црвена";
+
+/* yellow color */
+"yellow" = "Жута";
+
+/* blue color */
+"blue" = "Плава";
+
+/* green color */
+"green" = "Зелена";
+
+/* purple color */
+"purple" = "Љубичаста";
+
+/* orange color */
+"orange" = "Наранџаста";
+
+/* brown color */
+"brown" = "Браон";
+
+/* pink color */
+"pink" = "Розе";
+
+/* deep purple color */
+"deep_purple" = "Тамно љубичаста";
+
+/* light blue color */
+"light_blue" = "Светло плава";
+
+/* cyan color */
+"cyan" = "Цијан";
+
+/* teal color */
+"teal" = "Теал";
+
+/* lime color */
+"lime" = "Лимета";
+
+/* deep orange color */
+"deep_orange" = "Тамно наранџаста";
+
+/* gray color */
+"gray" = "Сива";
+
+/* blue gray color */
+"blue_gray" = "Плаво сива";
+
+
+/********** Routing dialogs strings **********/
+
+"dialog_routing_disclaimer_title" = "Када пратите руту, обратите пажњу на:";
+
+"dialog_routing_disclaimer_priority" = "— Услови на путу, саобраћајни прописи и знакови имају приоритет у односу на навигацију;";
+
+"dialog_routing_disclaimer_precision" = "— Мапа може бити нетачна и предложена рута не мора увек бити најоптималнији начин да стигнете на одредиште;";
+
+"dialog_routing_disclaimer_recommendations" = "— Предложену руту треба да схватите само као предлог;";
+
+"dialog_routing_disclaimer_borders" = "— Будите пажљиви са рутама које пролазе и близини граница: руте које креира наша апликација могу понекад прелазити границе дражава на недозвољеним местима.";
+
+"dialog_routing_disclaimer_beware" = "Молимо Вас да будете опрезни и безбедни на путу!";
+
+"dialog_routing_check_gps" = "Провери GPS сигнал";
+
+"dialog_routing_error_location_not_found" = "Не могу да направим руту. Тренутне GPS координате не могу да се одреде.";
+
+"dialog_routing_location_turn_wifi" = "Молим Вас да проверите ваш GPS сигнал. Укључивање Wi-Fi-а ће поправити прецизност ваше локације.";
+
+"dialog_routing_location_turn_on" = "Укључи Локацијске сервисе";
+
+"dialog_routing_location_unknown_turn_on" = "Није могуће одредити тренутне GPS координате. Укључи локацијске сервисе ради проналажења руте.";
+
+"dialog_routing_download_files" = "Преузимање потребних фајлова";
+
+"dialog_routing_download_and_update_all" = "Преузимање или ажурирање свих мапа које се налазе на предвиђеној путањи ради израчунавања руте.";
+
+"dialog_routing_unable_locate_route" = "Не могу да пронађем руту";
+
+"dialog_routing_change_start_or_end" = "Молим Вас да подесите почетну или одредишну тачку.";
+
+"dialog_routing_change_start" = "Подеси почетну тачку";
+
+"dialog_routing_start_not_determined" = "Рута није креирана. Не могу да одредим почетну тачку.";
+
+"dialog_routing_select_closer_start" = "Молим вас да изаберете почетну тачку ближе путу.";
+
+"dialog_routing_change_end" = "Подеси одредишну тачку";
+
+"dialog_routing_end_not_determined" = "Рута није направљена. Не могу да пронађем одредиште.";
+
+"dialog_routing_select_closer_end" = "Молим Вас да изаберете одредишну тачну ближе путу.";
+
+"dialog_routing_change_intermediate" = "Не могу да пронађем успутну тачку.";
+
+"dialog_routing_intermediate_not_determined" = "Молим Вас да подесите успутну тачку.";
+
+"dialog_routing_system_error" = "Системска грешка";
+
+"dialog_routing_application_error" = "Не могу да направим руту због грешке у апликацији.";
+
+"dialog_routing_try_again" = "Молим Вас, покушајте поново";
+
+"dialog_routing_download_and_build_cross_route" = "Да ли желите да преузмете мапу и направите оптималнију руту која се простире на више од једне мапе?";
+
+"dialog_routing_download_cross_route" = "Преузми додатне мапе и направи бољу руту која се престире преко граница ове мапе.";
+
+
+/********** Strings for downloading map from search **********/
+
+/* «Show» context menu */
+"show" = "Прикажи";
+
+/* «Hide» context menu */
+"hide" = "Сакриј";
+
+/* Failed planning route message in navigation view */
+"routing_planning_error" = "Планирање руте није успело";
+
+/* Arrive routing message in navigation view */
+"routing_arrive" = "Долазак у: %@";
+
+/* Text for routing::RouterResultCode::FileTooOld dialog. */
+"dialog_routing_download_and_update_maps" = "Преузимање и ажурирање свих мапа уз пројектовану путању ради израчунавања руте.";
+
+"categories" = "Категорије";
+
+"history" = "Историја";
+
+"search_not_found" = "Упс, нема резултата.";
+
+/* The message when user did not find anything in the search. */
+"search_not_found_query" = "Преузмите регион где вршите претрагу, или пробајте да додате име оближњег насеља.";
+
+"search_history_title" = "Историја претраге";
+
+"search_history_text" = "Погледајте ваше недавне претраге.";
+
+"clear_search" = "Обриши историју претраге";
+
+/* Place Page link to Wikipedia article (if map object has it). */
+"read_in_wikipedia" = "Википедија";
+
+/* Place Page link to Wikimedia Commons. */
+"wikimedia_commons" = "Викимедијина остава";
+
+"p2p_your_location" = "Ваша локација";
+
+"p2p_start" = "Крени";
+
+"p2p_from_here" = "Рута од";
+
+"p2p_to_here" = "Рута до";
+
+"p2p_only_from_current" = "Навигација је могућа само од ваше тренутне локације.";
+
+"p2p_reroute_from_current" = "Да ли желите да направите руту од ваше тренутне локације?";
+
+"editor_time_add" = "Додај време";
+
+"editor_time_delete" = "Обриши време";
+
+/* Text for allday switch. */
+"editor_time_allday" = "Нон-стоп (24 сата)";
+
+"editor_time_open" = "Отворено";
+
+"editor_time_close" = "Затворено";
+
+"editor_time_add_closed" = "Додај нерадно време";
+
+"editor_time_title" = "Радно време";
+
+"editor_time_advanced" = "Напредни режим";
+
+"editor_time_simple" = "Једноставни режим";
+
+"editor_hours_closed" = "Нерадно време";
+
+"editor_example_values" = "Примери";
+
+"editor_add_select_location" = "Локација";
+
+"editor_done_dialog_1" = "Направили сте промену на мапи света! Не чувајте је само за себе; реците својим пријатељима и наставите да је мењате заједно.";
+
+"share_with_friends" = "Подели са пријатељима";
+
+"editor_report_problem_send_button" = "Пошаљи";
+
+"autodownload" = "Аутоматско преузимање мапа";
+
+/* Place Page opening hours text */
+"closed_now" = "Затворено сада";
+
+/* Place Page opening hours text */
+"daily" = "Сваки дан";
+
+"twentyfour_seven" = "24/7";
+
+"day_off_today" = "Данас не ради";
+
+"day_off" = "Затворено";
+
+"today" = "Данас";
+
+"opens_tomorrow_at" = "Отвара се сутра у %@";
+
+"opens_dayoftheweek_at" = "Отвара се %1$@ у %2$@";
+
+"opens_at" = "Отвара се у %@";
+
+"opens_in" = "Отвара се за %@";
+
+"closes_at" = "Затвара се у %@";
+
+"closes_in" = "Затвара се за %@";
+
+"closed" = "Затворено";
+
+"add_opening_hours" = "Додај радно време";
+
+"no_osm_account" = "Немате OpenStreetMap налог?";
+
+"register_at_openstreetmap" = "Региструјте се на OpenStreetMap-у";
+
+"password_8_chars_min" = "Лозинка (минимум 8 знакова)";
+
+"invalid_username_or_password" = "Неисправно корисничко име или лозинка";
+
+"login" = "Пријави се";
+
+"login_osm" = "Пријава на OpenStreetMap";
+
+"forgot_password" = "Заборављена лозинка?";
+
+"osm_account" = "OSM налог";
+
+"logout" = "Одјави се";
+
+/* Information text: "Last upload 11.01.2016" */
+"last_upload" = "Последње слање";
+
+"thank_you" = "Хвала";
+
+"edit_place" = "Измени место";
+
+"place_name" = "Назив места";
+
+"add_language" = "Додај језик";
+
+/* Editable House Number text field (in address block). */
+"house_number" = "Кућни број";
+
+"details" = "Детаљи";
+
+/* Text field to enter non-existing street name, below list of known streets around */
+"add_street" = "Додај улицу";
+
+"choose_language" = "Изаберите језик";
+
+"choose_street" = "Изаберите улицу";
+
+"postal_code" = "Поштански број";
+
+"cuisine" = "Кухиња";
+
+"select_cuisine" = "Изаберите кухињу";
+
+/* login text field */
+"email_or_username" = "Email или корисничко име";
+
+"phone" = "Телефон";
+
+"level" = "Спрат";
+
+"please_note" = "Обратите пажњу";
+
+"downloader_delete_map_dialog" = "Све ваше промене на мапи ће бити обрисане заједно са мапом.";
+
+"downloader_update_maps" = "Ажурирај мапе";
+
+"downloader_search_field_hint" = "Пронађи мапу";
+
+"migration_download_error_dialog" = "Грешка приликом преузимања";
+
+"common_check_internet_connection_dialog" = "Молим Вас да проверите да ли је Ваш уређај повезан на интернет.";
+
+"downloader_no_space_title" = "Нема довољно простора";
+
+"downloader_no_space_message" = "Молим Вас да обришете непотребне податке";
+
+"editor_profile_changes" = "Верификоване промене";
+
+"editor_focus_map_on_location" = "Превуците мапу да бисте изабрали тачну локацију објекта.";
+
+"editor_add_select_category" = "Изаберите категорију";
+
+"editor_add_select_category_popular_subtitle" = "Популарно";
+
+"editor_add_select_category_all_subtitle" = "Све категорије";
+
+"editor_edit_place_title" = "Измена";
+
+"editor_add_place_title" = "Додавање";
+
+"editor_edit_place_name_hint" = "Назив места";
+
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Као што је написано на локалном језику";
+
+"editor_edit_place_category_title" = "Категорија";
+
+"whatsnew_editor_message_1" = "Додајте нова места на мапу, или промените постојећа директно из апликације.";
+
+"dialog_incorrect_feature_position" = "Промените локацију";
+
+"message_invalid_feature_position" = "Објекат не може бити на овом месту";
+
+/* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
+"osm_presentation" = "Подаци са OpenStreetMap-а које је креирала заједница до %@. Научите више о томе како да мењате и ажурирате мапу на OpenStreetMap.org";
+
+"login_to_make_edits_visible" = "Пријавите се на openstreetmap.org да бисте објавили ваше промене остатку света.";
+
+/* Error dialog no space */
+"migration_no_space_message" = "Да бисте завршили преузимање потребно је више слободног простора. Молим Вас да обришете непотребне податке.";
+
+"editor_sharing_title" = "Ја сам поправио/ла мапе у Organic Maps-у";
+
+/* Downloaded 10 **of** 20 <- it is that "of" */
+"downloader_of" = "%1$d од %2$d";
+
+"download_over_mobile_header" = "Преузимање преко мобилне мреже?";
+
+"download_over_mobile_message" = "Ово може бити значајно скупље у оквиру одређених пакета или у ромингу.";
+
+"error_enter_correct_house_number" = "Унесте исправан кућни број";
+
+"editor_storey_number" = "Број спратова (макс. %d)";
+
+/* Error message in Editor when a user tries to set the number of floors for a building higher than %d floors */
+"error_enter_correct_storey_number" = "Број спратова не сме да прелази %d";
+
+"editor_zip_code" = "Поштански број";
+
+"error_enter_correct_zip_code" = "Унесите исправан поштански број";
+
+/* Place Page title for long tap */
+"core_placepage_unknown_place" = "Непознато место";
+
+/* Title for OSM note section in the editor */
+"editor_other_info" = "Напомена за OpenStreetMap волонтере (није обавезна)";
+
+"editor_detailed_description_hint" = "Детаљан коментар";
+
+"editor_detailed_description" = "Ваши предлози промена на мапи ће бити послати OpenStreetMap заједници. Молим Вас опишите евентуалне додатне детаље који не могу да се промене помоћу Organic Maps-а.";
+
+"editor_more_about_osm" = "Више о OpenStreetMap-у";
+
+"editor_operator" = "Оператор";
+
+/* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
+"operator" = "Оператор: %@";
+
+"editor_category_unsuitable_title" = "Не можете да пронађете одговарајућу категорију?";
+
+"editor_category_unsuitable_text" = "Organic Maps омогућава додавање једноставних категорија за тачке на мапи, што искључује градове, путеве, језера, тлоцрте зграда, итд. Молимо Вас да такве категорије додате директно на <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Прочитајте наше <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">упутство</a> за детаљне инструкције, корак-по-корак.";
+
+"downloader_no_downloaded_maps_title" = "Нисте преузели ни једну мапу";
+
+"downloader_no_downloaded_maps_message" = "Преузмите мапе да бисте претраживали и користили навигацију без интернета.";
+
+"current_location_unknown_error_title" = "Тренутна локација није позната.";
+
+"current_location_unknown_error_message" = "Десила се грешка приликом утврђивања ваше локације. Проверите да ли је ваш уређај исправан и покушајте поново касније.";
+
+"location_services_disabled_header" = "Локацијски сервиси су искључени";
+
+"location_services_disabled_message" = "Омогућите приступ геолокацији у подешавањима вашег уређаја";
+
+"location_services_disabled_1" = "1. Отворите Подешавања";
+
+"location_services_disabled_2" = "2. Додирните опцију Локација";
+
+/* iOS Dialog for the case when the location permission is not granted; you might find the exact wording for your language here: https://support.apple.com/en-us/102647 (replace 'en-us' in URL with your language/region) */
+"location_services_disabled_3" = "3. Изаберите За време коришћенја апликације";
+
+"location_services_disabled_on_device_2" = "2. Изаберите Приватност";
+
+"location_services_disabled_on_device_3" = "3. Изаберите Локацијски сервиси";
+
+"location_services_disabled_on_device_4" = "4. Укључите Локацијске сервисе";
+
+"location_services_disabled_on_device_additional_message" = "Или наставите да користите Organic Maps без локације";
+
+/* abbreviation for meters */
+"m" = "м";
+
+/* abbreviation for kilometers */
+"km" = "км";
+
+/* abbreviation for kilometers per hour */
+"kilometers_per_hour" = "км/ч";
+
+/* abbreviation for mile(s) */
+"mi" = "ми";
+
+/* A unit of measure */
+"ft" = "стопа";
+
+"miles_per_hour" = "ми/ч";
+
+"hour" = "ч";
+
+"minute" = "мин";
+
+"day" = "д";
+
+"placepage_more_button" = "Више";
+
+"book_button" = "Резервиши";
+
+/* A referral link on the place page for some hotels */
+"more_on_kayak" = "Фотографије, утисци, резервације";
+
+/* An explanation dialog shown when clicking on more_on_kayak link. */
+"dialog_kayak_disclaimer" = "Награда за сваку резервацију која је направљена преко овог линка биће усмерена у развој Organic Maps-а.";
+
+/* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_button" = "Детаљи на Kayak-у";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Disable Kayak";
+
+"placepage_call_button" = "Позови";
+
+"placepage_edit_bookmark_button" = "Измени маркер";
+
+"placepage_bookmark_name_hint" = "Коментар…";
+
+"placepage_personal_notes_hint" = "Приватна напомена";
+
+"placepage_delete_bookmark_button" = "Обриши маркер";
+
+"editor_edits_sent_message" = "Ваша напомена ће бити послана на OpenStreetMap";
+
+"editor_comment_hint" = "Коментар…";
+
+"editor_reset_edits_message" = "Брисање свих измена које нису послате?";
+
+"editor_reset_edits_button" = "Обриши";
+
+"editor_remove_place_message" = "Брисање додатог места?";
+
+"editor_remove_place_button" = "Обриши";
+
+"editor_place_doesnt_exist" = "Место не постоји";
+
+"text_more_button" = "…још";
+
+/* Phone number error message */
+"error_enter_correct_phone" = "Унесите исправан број телефона";
+
+"error_enter_correct_web" = "Унесите исправну веб адресу";
+
+"error_enter_correct_email" = "Унесите исправан email";
+
+"refresh" = "Ажурирај";
+
+"placepage_add_place_button" = "Додај место на OpenStreetMap";
+
+/* Displayed when saving some edits to the map to warn against publishing personal data */
+"editor_share_to_all_dialog_title" = "Да ли желите да поделите са свим другим корисницима?";
+
+/* Dialog before publishing the modifications to the public map. */
+"editor_share_to_all_dialog_message_1" = "Проверите да нисте унели приватне или личне податке.";
+
+"editor_share_to_all_dialog_message_2" = "OpenStreetMap мапери ће проверити промене и контактирати Вас уколико буду имали питања.";
+
+"navigation_stop_button" = "Стоп";
+
+/* iOS dialog for the case when recent track recording is on and the app comes back from background */
+"recent_track_background_dialog_title" = "Искључити снимање ваше недавно пређене руте?";
+
+"off_recent_track_background_button" = "Искључи";
+
+/* For sharing via SMS and so on */
+"sharing_call_action_look" = "Погледај";
+
+"recent_track_background_dialog_message" = "Organic Maps користи у позадини вашу локацију да би сачувао вашу недавно пређену руту.";
+
+"general_settings" = "Општа подешавања";
+
+/* For the first routing */
+"accept" = "Прихвати";
+
+/* For the first routing */
+"decline" = "Одбиј";
+
+/* A noun - a button name used to show search results in list form */
+"search_in_table" = "Листа";
+
+"mobile_data_dialog" = "Користи мобилни интернет ради приказа детљних информација?";
+
+"mobile_data_option_always" = "Увек користи";
+
+"mobile_data_option_today" = "Само данас";
+
+"mobile_data_option_not_today" = "Немој данас";
+
+"mobile_data" = "Мобилни интернет";
+
+/* NOTE to translators: please synchronize your translation with the English one. */
+"mobile_data_description" = "Мобилни интернет је потребан за обавештења о ажурирању мапе и за слање измена.";
+
+"mobile_data_option_never" = "Никад не користи";
+
+"mobile_data_option_ask" = "Увек ме питај";
+
+"traffic_update_maps_text" = "Да би се приказали подаци о саобраћају, мапа мора да се ажурира.";
+
+"big_font" = "Повећај слова на мапи";
+
+/* "traffic" as in road congestion */
+"traffic_update_app_message" = "Да бисте видели податке о саобраћају, морате да ажурирате апликацију.";
+
+/* "traffic" as in "road congestion" */
+"traffic_data_unavailable" = "Подаци о саобраћају нису доступни";
+
+"enable_logging" = "Омогући снимање лог фајлова";
+
+"log_file_size" = "Величина лог фајла: %@";
+
+"transliteration_title" = "Транслитерација у латиницу";
+
+/* Subway exits for public transport marks on the map */
+"core_exit" = "Излаз";
+
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Користите претрагу или кратко додирните мапу да бисте додали почетну тачку руте";
+
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Користите претрагу или кратко додирните мапу да бисте додали одредишну тачку";
+
+"planning_route_manage_route" = "Измени руту";
+
+"button_plan" = "План";
+
+"placepage_remove_stop" = "Уклони стајање";
+
+"planning_route_remove_title" = "Превуците овде за уклањање";
+
+"placepage_add_stop" = "Додај стајање";
+
+"start_from_my_position" = "Крени од";
+
+/* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
+"alert_reauth_message_ios" = "Молим вас да се улогујете на OpenStreetMap да бисте аутоматски послали све ваше промене на мапи. Сазнајте више";
+
+/* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's link part */
+"alert_reauth_link_text_ios" = "овде";
+
+"core_entrance" = "Улаз";
+
+"error_enter_correct_name" = "Молим Вас да унесете исправан назив";
+
+"bookmark_lists" = "Листе";
+
+/* Do not display all bookmark lists on the map */
+"bookmark_lists_hide_all" = "Сакриј све";
+
+"bookmark_lists_show_all" = "Прикажи све";
+
+"bookmarks_create_new_group" = "Креирај нову листу";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Увези маркере и путање";
+
+"downloader_hide_screen" = "Сакриј екран";
+
+"downloader_percent" = "%@ (%@ од %@)";
+
+"downloader_process" = "Преузимам %@…";
+
+"downloader_applying" = "Примењујем %@…";
+
+"bookmarks_error_message_share_general" = "Дељење није могуће због грешке у апликацији";
+
+"bookmarks_error_title_share_empty" = "Грешка приликом дељења";
+
+"bookmarks_error_message_share_empty" = "Не може се поделити празна листа";
+
+"bookmarks_error_message_empty_list_name" = "Молим Вас унесите име листе";
+
+"bookmarks_error_title_list_name_already_taken" = "Овај назив већ постоји";
+
+"bookmarks_error_title_list_name_too_long" = "Изабрано име је предугачко";
+
+"profile" = "OpenStreetMap профил";
+
+"bookmarks_detect_title" = "Пронађени су нови фајлови";
+
+"button_convert" = "Конвертуј";
+
+"bookmarks_convert_error_title" = "Грешка";
+
+"bookmarks_convert_error_message" = "Неки фајлови нису конвертовани";
+
+"restore" = "Реконструиши";
+
+"privacy_policy" = "Политика приватности";
+
+"terms_of_use" = "Услови коришћења";
+
+"button_layer_subway" = "Метро";
+
+"layers_title" = "Стилови мапе и слојеви";
+
+"subway_data_unavailable" = "Мапа метроа не постоји";
+
+"title_error_downloading_bookmarks" = "Десила се грешка";
+
+"popular_place" = "Популарно";
+
+"export_file" = "Експортуј KMZ";
+
+"export_file_gpx" = "Експортуј GPX";
+
+"delete_list" = "Обриши листу";
+
+"hide_from_map" = "Сакриј на карти";
+
+"bookmark_list_description_hint" = "Унесите опис (текст или html)";
+
+"tags_loading_error_subtitle" = "Десила се грешка приликом учитавања тагова, покушајте поново";
+
+"download_button" = "Преузми";
+
+"speedcams_alert_title" = "Саобраћајне камере";
+
+"place_description_title" = "Опис места";
+
+/* "Speed cameras" settings menu option (should be short! no more than 47-50 chars) to warn a driver if there is a risk of exceeding the speed limit */
+"pref_tts_speedcams_auto" = "Упозорење на прекорачење брзине";
+
+/* Speed camera settings menu option - Always warn (about speedcams) */
+"pref_tts_speedcams_always" = "Увек ме упозори";
+
+/* Speed camera settings menu option - Never warn (about speedcams) */
+"pref_tts_speedcams_never" = "Немој да ме упозораваш";
+
+"power_managment_title" = "Режим чувања батерије";
+
+"power_managment_description" = "Смањује потрошњу електричне енергије искључивањем одређених функционалности.";
+
+"power_managment_setting_never" = "Никад";
+
+"power_managment_setting_auto" = "Када је батерија при крају";
+
+"power_managment_setting_manual_max" = "Увек";
+
+"enable_logging_warning_message" = "Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције \"Пријави проблем\" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.";
+
+"driving_options_title" = "Опције рутирања";
+
+/* Recommended length for CarPlay and Android Auto is around 25-27 characters */
+"avoid_tolls" = "Избегавај путарине";
+
+/* Recommended length for CarPlay and Android Auto is around 25-27 characters */
+"avoid_unpaved" = "Избегавај неасфалтиране путеве";
+
+/* Recommended length for CarPlay and Android Auto is around 25-27 characters */
+"avoid_ferry" = "Избегавај трајекте";
+
+"avoid_motorways" = "Избегавај аутопутеве";
+
+"unable_to_calc_alert_title" = "Није могуће израчунати руту";
+
+"unable_to_calc_alert_subtitle" = "Рута није пронађена. Узрок могу бити опције рутирања или непотпуни OpenStreetMap подаци. Молим Вас да промените ваше опције рутирања и покушате поново.";
+
+"define_to_avoid_btn" = "Изабери путеве за избегавање";
+
+"change_driving_options_btn" = "Опције рутирања су укључене";
+
+"toll_road" = "Путеви са путаринама";
+
+"unpaved_road" = "Неасфалтирани путеви";
+
+"ferry_crossing" = "Линије трајекта";
+
+"trip_start" = "Крећемо";
+
+"pick_destination" = "Одредиште";
+
+"follow_my_position" = "Центрирај";
+
+"search_results" = "Резултати претраге";
+
+"then_turn" = "Затим";
+
+"redirect_route_alert" = "Да ли желите да поново направим руту?";
+
+/* A generic "Yes" button in dialogs */
+"yes" = "Да";
+
+/* A generic "No" button in dialogs */
+"no" = "Не";
+
+/* E.g. "WiFi:Yes" */
+"yes_available" = "Да";
+
+/* E.g. "WiFi:No" */
+"no_available" = "Не";
+
+/* To indicate the capacity of car parkings, bicycle parkings, electric vehicle charging stations... */
+"capacity" = "Број места: %@";
+
+/* To indicate the network of ATMs, bicycle rentals, electric vehicle charging stations... */
+"network" = "Мрежа: %@";
+
+"trip_finished" = "Стигли сте!";
+
+"keyboard_availability_alert" = "Тастатура је онемогућена у току вожње";
+
+"dialog_routing_change_start_carplay" = "Није могуће направити руту са ваше тренутне локације";
+
+"dialog_routing_change_end_carplay" = "Није могуће направити руту до изабраног одредишта. Молим Вас изаберите другу крајњу тачку.";
+
+"dialog_routing_check_gps_carplay" = "Нема GPS сигнала. Молим Вас да се померите на отворен простор.";
+
+"dialog_routing_unable_locate_route_carplay" = "Није могуће направити руту. Изаберите друге тачке на рути.";
+
+"dialog_routing_download_files_carplay" = "Да бисте направили руту, преузмите недостајуће мапе на ваш уређај";
+
+"dialog_routing_system_error_carplay" = "Дошло је до грешке. Молим Вас рестартујте апликацију";
+
+"dialog_routing_rebuild_from_current_location_carplay" = "Рута ће бити поново направљена од ваше тренутне локације";
+
+"dialog_routing_rebuild_for_vehicle_carplay" = "Рута ће бити прилагођена за кретање аутомобилом";
+
+"not_all_shown_bookmarks_carplay" = "Нису приказани сви маркери";
+
+"switch_to_phone_bookmarks_carplay" = "Пребаците се на телефон да бисте видели све маркере";
+
+"ok" = "ОК";
+
+"speedcams_alert_title_carplay_1" = "Саобраћајне камере";
+
+"speedcams_alert_title_carplay_2" = "Упозорење прекорачења";
+
+"download_map_carplay" = "Молим Вас да преузмете мапе у апликацији на Вашем мобилном уређају";
+
+"carplay_roundabout_exit" = "%@ излаз";
+
+/* max. 10 symbols, both iOS and Android */
+"sort" = "Сортирање…";
+
+/* iOS */
+"sort_default" = "Подразумевано сортирање";
+
+"sort_type" = "Сортирање по типу";
+
+"sort_distance" = "Сортирање по удаљености";
+
+"sort_date" = "Сортирање по датуму";
+
+"sort_name" = "Сортирање по називу";
+
+"week_ago_sorttype" = "Пре недељу дана";
+
+"month_ago_sorttype" = "Пре месец дана";
+
+"moremonth_ago_sorttype" = "Пре више од месец дана";
+
+"moreyear_ago_sorttype" = "Пре више од годину дана";
+
+"near_me_sorttype" = "Близу мене";
+
+"others_sorttype" = "Остали";
+
+
+/********** Bookmark types used for sorting **********/
+
+"food_places" = "Храна";
+
+"tourist_places" = "Атракције";
+
+"museums" = "Музеји";
+
+"parks" = "Паркови";
+
+"swim_places" = "Пливање";
+
+"mountains" = "Планине";
+
+"animals" = "Животиње";
+
+"hotels" = "Хотели";
+
+"buildings" = "Зграде";
+
+"money" = "Новац";
+
+"shops" = "Продавнице";
+
+"parkings" = "Паркинг";
+
+"fuel_places" = "Бензинске станице";
+
+"medicine" = "Медицина";
+
+"search_in_the_list" = "Претражи листу";
+
+"religious_places" = "Верска места";
+
+"transit_not_found" = "Навигација у метроу у овом региону још није доступна";
+
+"dialog_pedestrian_route_is_long_header" = "Није пронађена метро рута";
+
+"dialog_pedestrian_route_is_long_message" = "Молим вас изаберите почетну и крајњу тачку ближе метро станицама";
+
+"button_layer_isolines" = "Изолиније";
+
+"isolines_activation_error_dialog" = "Приказивање изолинија захтева преузмање података са мапе за ову област";
+
+"isolines_location_error_dialog" = "Изолиније нису доступне за ову област";
+
+"elevation_profile_diff_level" = "Тежина";
+
+"elevation_profile_diff_level_easy" = "Лако";
+
+"elevation_profile_diff_level_moderate" = "Умерено";
+
+"elevation_profile_diff_level_hard" = "Тешко";
+
+"elevation_profile_ascent" = "Успон";
+
+"elevation_profile_descent" = "Спуст";
+
+"elevation_profile_min_elevation" = "Min. elevation";
+
+"elevation_profile_max_elevation" = "Max. elevation";
+
+"elevation_profile_difficulty" = "Тежина";
+
+"elevation_profile_time" = "Време:";
+
+"isolines_toast_zooms_1_10" = "Увећајте да бисте видели изолиније";
+
+"downloader_updating_ios" = "Ажурирање";
+
+"downloader_loading_ios" = "Преузимање";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_title" = "Ажурирај преузете мапе";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_message" = "Ажурирање мапа обезбеђује да су подаци о објектима ажурни";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_button_size" = "Ажурирај (%@)";
+
+/* Autoupdate dialog on start */
+"whats_new_auto_update_button_later" = "Ручно ажурирај касније";
+
+/* Delete track button on track edit screen */
+"placepage_delete_track_button" = "Обриши путању";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Are you sure you want to delete this track?";
+
+/* Placeholder for track name input on track edit screen */
+"placepage_track_name_hint" = "Назив путање";
+
+/* move track or bookmark from the list button text */
+"move" = "Премести";
+
+/* edit track screen title */
+"track_title" = "Путања";
+
+/* Telegram group url for the "?" About page */
+"telegram_url" = "https://t.me/OrganicMapsApp";
+
+/* Instagram account url for the "?" About page */
+"instagram_url" = "https://www.instagram.com/organicmaps.app";
+
+/* Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content */
+"translated_om_site_url" = "https://organicmaps.app/";
+
+/* Link to OSM wiki for Editor, Profile and About pages */
+"osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
+
+/* App Tip #00 */
+"app_tip_00" = "Хвала што користите мапе које је направила заједница!";
+
+/* App tip #01 */
+"app_tip_01" = "Са вашим донацијама и подршком, можемо да направимо најбоље мапе на свету!";
+
+/* App tip #02 */
+"app_tip_02" = "Да ли вам се допада наша апликација? Молим Вас да донирате да бисте подржали даљи развој! Још вам се не допада? Молимо Вас да нам јавите зашто, па ћемо да је поправимо!";
+
+/* App tip #03 */
+"app_tip_03" = "Ако знате неког програмера, можете да га замолите да имплементира функционалност која вам је потребна.";
+
+/* App tip #04 */
+"app_tip_04" = "Додирните било где на мапи да бисте изабрали било шта. Дуг додир се користи да се сакрије и прикаже интерфејс.";
+
+/* App tip #05 */
+"app_tip_05" = "Да ли сте знали да можете да изаберете вашу тренутну локацију на мапи?";
+
+/* App tip #06 */
+"app_tip_06" = "Можете да помогнете да се апликација преведе на ваш језик.";
+
+/* App tip #07 */
+"app_tip_07" = "Наша апликација је развијена од стране неколико ентузијаста и заједнице.";
+
+/* App tip #08 */
+"app_tip_08" = "Лако можете да поправите или унапредите податке на мапи.";
+
+/* App tip #09 */
+"app_tip_09" = "Наш главни циљ је да направимо брзу апликацију за мапе, једноставну за коришћење, оријентисану на приватност, коју ћете волети.";
+
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Ви сада користите Organic Maps на екрану телефона";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Ви сада користите Organic Maps на екрану аутомобила";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Настави на телефону";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Пребаци на екран аутомобила";
+
+/* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
+"button_layer_outdoor" = "На отвореном";
+
+/* Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks */
+"bookmarks_export" = "Експортуј све маркере и путање";
+
+/* Text for the editing the Track's color button. */
+"change_color" = "Промени боју";
+
+/* Main screen title "Map" displayed in the navigation back button's menu. */
+"map" = "Мапа";
+
+"drive_through" = "Пролаз за возила";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Линк менија";
+
+/* Message for the bug report alert. */
+"bugreport_alert_message" = "Да ли желите да пошаљете пријаву бага програмерима?\nОслањамо се на кориснике пошто Organic Maps не прикупља податке о грешкама аутоматски. Хвала унапред што подржавате Organic Maps!";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Омогући iCloud синхронизацију";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud синхронизација је експеримантална функционалност која је још увек у развоју. Проверите да ли сте направили резервну копију (бекап) свих ваших маркера и путања.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud је искључен";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Молим Вас да укључите iCloud у подешавањима вашег уређаја да бисте користили ову опцију.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Укључи";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Резервна копија";
+
+/* Title for the "iCloud synchronization failure" alert. */
+"icloud_synchronization_error_alert_title" = "Неуспешна iCloud синхронизација";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Грешка: синхронизација није успела због грешке приликом повезивања";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Грешка: синхронизација није успела због прекорачења iCloud квоте";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Грешка: iCloud није доступан";
+
+/* Title for the "Open In Another App" button on the PlacePage. */
+"open_in_app" = "Отвори у другој апликацији";
+
+/* To indicate if restaurant or other place has outdoor seating */
+"outdoor_seating" = "Башта";
+
+/* Title for the "Recently Deleted Lists" button on the Bookmarks and Lists screen. */
+"bookmarks_recently_deleted" = "Недавно обрисане листе";
+
+/* Title for the "Clear" button on the Recently Deleted Lists screen. */
+"clear" = "Обриши";
+
+/* Title for the "Delete All" button on the Recently Deleted Lists screen. */
+"delete_all" = "Обриши све";
+
+/* Title for the "Recover" button on the Recently Deleted Lists screen. */
+"recover" = "Поврати";
+
+/* Title for the "Recover All" button on the Recently Deleted Lists screen. */
+"recover_all" = "Поврати све";
+
+/* Prompt to start recording a track. */
+"start_track_recording" = "Сними путању";
+
+/* Prompt for stopping a track recording. */
+"stop_track_recording" = "Заустави снимање путање";
+
+/* Title for the "Stop Without Saving" action for the alert when saving a track recording. */
+"stop_without_saving" = "Заустави без снимања";
+
+/* Title for the "Stop Without Saving" action for the alert when saving a track recording. */
+"continue_recording" = "Настави снимање";
+
+/* Title for the alert when saving a track recording. */
+"track_recording_alert_title" = "Сачувати у маркерима и путањама?";
+
+/* Message for the toast when saving the track recording is finished but nothing to save. */
+"track_recording_toast_nothing_to_save" = "Путања је празна, нема шта да се сачува";
+
+"edit_track" = "Измените путању";
+
+
+/********** Types **********/
+
+"type.addr_interpolation" = "Адреса/Блок";
+
+"type.addr_interpolation.even" = "Адреса/Блок";
+
+"type.addr_interpolation.odd" = "Адреса/Блок";
+
+"type.aerialway" = "Гондола";
+
+"type.aerialway.cable_car" = "Ваздушни трамвај";
+
+"type.aerialway.chair_lift" = "Ски-лифт";
+
+"type.aerialway.drag_lift" = "Ски-лифт једносед";
+
+"type.aerialway.gondola" = "Гондола";
+
+"type.aerialway.mixed_lift" = "Комбинована жичара";
+
+"type.aerialway.station" = "Станица жичаре";
+
+"type.aeroway" = "Ваздушна инфраструктура";
+
+"type.aeroway.aerodrome" = "Аеродром";
+
+"type.aeroway.aerodrome.international" = "Интернационални аеродром";
+
+"type.aeroway.apron" = "Перон";
+
+"type.aeroway.gate" = "Капија за укрцавање";
+
+"type.aeroway.helipad" = "Хелиодром";
+
+"type.aeroway.runway" = "Писта";
+
+"type.aeroway.taxiway" = "Рулна стаза";
+
+"type.aeroway.terminal" = "Терминал";
+
+"type.amenity" = "Инфраструктурни објекти";
+
+"type.amenity.arts_centre" = "Центар уметности";
+
+"type.amenity.atm" = "Банкомат";
+
+"type.amenity.bank" = "Банка";
+
+"type.amenity.bar" = "Бар";
+
+"type.amenity.bbq" = "Грил";
+
+"type.amenity.bench" = "Клупа";
+
+"type.amenity.bicycle_parking" = "Паркинг за бицикле";
+
+"type.amenity.bicycle_rental" = "Рентирање бицикли";
+
+"type.amenity.bicycle_repair_station" = "Станица за поправку бицикала";
+
+"type.amenity.biergarten" = "Пивска башта";
+
+"type.amenity.brothel" = "Јавна кућа";
+
+"type.amenity.bureau_de_change" = "Мењачница";
+
+"type.amenity.bus_station" = "Аутобуска станица";
+
+"type.amenity.cafe" = "Кафе";
+
+"type.amenity.car_rental" = "Рентакар";
+
+"type.amenity.car_sharing" = "Дељење аутомобила";
+
+"type.amenity.car_wash" = "Перионица";
+
+"type.amenity.casino" = "Казино";
+
+"type.amenity.gambling" = "Коцкарница";
+
+"type.leisure.adult_gaming_centre" = "Центар за игру одраслих";
+
+"type.leisure.amusement_arcade" = "Играоница за одрасле";
+
+"type.amenity.charging_station" = "Станица за пуњење ЕВ";
+
+"type.amenity.charging_station.bicycle" = "Станица за пуњење бицикала";
+
+"type.amenity.charging_station.motorcar" = "Станица за пуњење аутомобила";
+
+"type.amenity.childcare" = "Вртић";
+
+"type.amenity.cinema" = "Биоскоп";
+
+"type.leisure.bowling_alley" = "Куглана";
+
+"type.amenity.clinic" = "Дом здравља / Поликлиника";
+
+"type.amenity.college" = "Факултет";
+
+"type.amenity.community_centre" = "Дом културе";
+
+"type.amenity.compressed_air" = "Компримовани ваздух";
+
+"type.amenity.conference_centre" = "Конференцијски центар";
+
+"type.amenity.courthouse" = "Суд";
+
+"type.amenity.dentist" = "Стоматолог";
+
+"type.amenity.doctors" = "Доктор";
+
+"type.amenity.drinking_water" = "Вода за пиће";
+
+"type.drinking_water.yes" = "Вода за пиће";
+
+"type.amenity.driving_school" = "Ауто-школа";
+
+"type.amenity.exhibition_centre" = "Изложбени центар";
+
+"type.amenity.money_transfer" = "Трансфер новца";
+
+"type.amenity.music_school" = "Музичка школа";
+
+"type.amenity.language_school" = "Школа језика";
+
+"type.office.diplomatic" = "Амбасада";
+
+"type.amenity.fast_food" = "Брза храна";
+
+"type.amenity.ferry_terminal" = "Трајект";
+
+"type.amenity.fire_station" = "Ватрогасна станица";
+
+"type.amenity.food_court" = "Ресторанска башта";
+
+"type.amenity.fountain" = "Фонтана";
+
+"type.amenity.fuel" = "Бензинска станица";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.amenity.grave_yard" = "Гробље";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.amenity.grave_yard.christian" = "Хришћанско гробље";
+
+"type.amenity.hospital" = "Болница";
+
+"type.amenity.hunting_stand" = "Ловачка чека";
+
+"type.amenity.ice_cream" = "Сладолед";
+
+"type.amenity.internet_cafe" = "Интернет кафе";
+
+"type.amenity.kindergarten" = "Вртић";
+
+"type.amenity.library" = "Библиотека";
+
+"type.amenity.loading_dock" = "Утоварна станица";
+
+"type.amenity.marketplace" = "Маркет";
+
+"type.amenity.motorcycle_parking" = "Паркинг за мотоцикле";
+
+"type.amenity.nightclub" = "Ноћни клуб";
+
+"type.amenity.nursing_home" = "Старачки дом";
+
+"type.amenity.parking" = "Паркинг";
+
+"type.amenity.parking.fee" = "Паркинг";
+
+"type.amenity.parking.multi.storey" = "Вишеспратни паркинг";
+
+"type.amenity.parking.multi.storey.fee" = "Вишеспратни паркинг";
+
+"type.amenity.parking.no.access" = "Приватни паркинг";
+
+"type.amenity.parking.permissive" = "Приватни паркинг";
+
+"type.amenity.parking.private" = "Приватни паркинг";
+
+"type.amenity.parking.park_and_ride" = "Паркирај и вози паркинг";
+
+"type.amenity.parking.underground" = "Подземни паркинг";
+
+"type.amenity.parking.underground.fee" = "Подземни паркинг";
+
+"type.amenity.parking.underground.private" = "Приватни подземни паркинг";
+
+"type.amenity.parking.street_side" = "Паркинг поред пута";
+
+"type.amenity.parking.street_side.fee" = "Паркинг поред пута";
+
+"type.amenity.parking.street_side.private" = "Приватни паркинг поред пута";
+
+"type.amenity.parking.lane" = "Линијски паркинг";
+
+"type.amenity.parking.lane.fee" = "Линијски паркинг";
+
+"type.amenity.parking.lane.private" = "Приватни линијски паркинг";
+
+"type.amenity.parking_entrance" = "Улаз на паркинг";
+
+"type.amenity.parking_entrance.private" = "Улаз на приватни паркинг";
+
+"type.amenity.parking_entrance.permissive" = "Улаз на паркинг";
+
+"type.amenity.parking_space" = "Паркинг место";
+
+"type.amenity.parking_space.permissive" = "Паркинг место";
+
+"type.amenity.parking_space.private" = "Паркинг место";
+
+"type.amenity.parking_space.underground" = "Паркинг место";
+
+"type.amenity.parking_space.disabled" = "Паркинг место за инвалиде";
+
+"type.amenity.payment_terminal" = "Терминал за наплату";
+
+"type.amenity.pharmacy" = "Апотека";
+
+"type.amenity.place_of_worship" = "Храм";
+
+"type.amenity.place_of_worship.buddhist" = "Будистички храм";
+
+"type.amenity.place_of_worship.christian" = "Црква";
+
+"type.amenity.place_of_worship.christian.mormon" = "Црква Исуса Христа светаца последњих дана";
+
+"type.amenity.place_of_worship.christian.jehovahs_witness" = "Сала краљевства Јеховиних сведока";
+
+"type.amenity.place_of_worship.hindu" = "Хинду храм";
+
+"type.amenity.place_of_worship.jewish" = "Синагога";
+
+"type.amenity.place_of_worship.muslim" = "Џамија";
+
+"type.amenity.place_of_worship.shinto" = "Шинтоистички храм";
+
+"type.amenity.place_of_worship.taoist" = "Таоистички храм";
+
+"type.amenity.police" = "Полиција";
+
+"type.amenity.post_box" = "Поштанско сандуче";
+
+"type.amenity.post_office" = "Пошта";
+
+"type.amenity.prison" = "Затвор";
+
+"type.amenity.pub" = "Паб";
+
+"type.amenity.public_bookcase" = "Размена књига";
+
+
+/********** Types: Recycling **********/
+
+"type.amenity.recycling.centre" = "Центар за рециклажу";
+
+"type.amenity.recycling" = "Контејнер за рециклажу";
+
+"type.amenity.recycling.container" = "Контејнер за рециклажу";
+
+"type.recycling.batteries" = "Бетерије";
+
+"type.recycling.clothes" = "Стара одећа";
+
+"type.recycling.glass_bottles" = "Стаклене флаше";
+
+"type.recycling.paper" = "Папир";
+
+"type.recycling.plastic" = "Пластика";
+
+"type.recycling.plastic_bottles" = "Пластичне флаше";
+
+"type.recycling.scrap_metal" = "Старо гвожђе";
+
+"type.recycling.small_appliances" = "Електроотпад";
+
+"type.recycling.cardboard" = "Картон";
+
+"type.recycling.cans" = "Конзерве";
+
+"type.recycling.shoes" = "Ципеле";
+
+"type.recycling.green_waste" = "Биолошки отпад";
+
+"type.recycling.cartons" = "Картон и папир";
+
+"type.amenity.restaurant" = "Ресторан";
+
+"type.amenity.sanitary_dump_station" = "Станица за одлагање резервоара";
+
+"type.amenity.school" = "Школа";
+
+/* Weather shelter (including sun shelters and natural rock shelters). */
+"type.amenity.shelter" = "Склониште";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Склониште";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Колиба за ноћење";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Склониште типа шупе";
+
+"type.amenity.public_bath" = "Јавно купатило";
+
+"type.amenity.shower" = "Туш";
+
+"type.amenity.stripclub" = "Стриптиз клуб";
+
+"type.amenity.taxi" = "Такси станица";
+
+"type.amenity.telephone" = "Телефон";
+
+"type.amenity.theatre" = "Позориште";
+
+"type.amenity.toilets" = "Тоалет";
+
+"type.toilets.yes" = "Тоалет";
+
+"type.amenity.townhall" = "Локална самоуправа";
+
+"type.amenity.university" = "Универзитет";
+
+"type.amenity.vending_machine" = "Аутомат";
+
+"type.amenity.vending_machine.cigarettes" = "Аутомат за цигарете";
+
+"type.amenity.vending_machine.coffee" = "Аутомат за кафу";
+
+"type.amenity.vending_machine.condoms" = "Аутомат за кондоме";
+
+"type.amenity.vending_machine.drinks" = "Аутомат за пиће";
+
+"type.amenity.vending_machine.food" = "Аутомат за храну";
+
+"type.amenity.vending_machine.newspapers" = "Аутомат за новине";
+
+"type.amenity.vending_machine.parking_tickets" = "Паркомат";
+
+"type.amenity.vending_machine.public_transport_tickets" = "Аутомат за продају карата";
+
+"type.amenity.vending_machine.sweets" = "Аутомат за слаткише";
+
+"type.amenity.vending_machine.excrement_bags" = "Кесе за псећи измет";
+
+"type.amenity.parcel_locker" = "Пакетомат";
+
+"type.amenity.vehicle_inspection" = "Контрола возила";
+
+"type.amenity.vending_machine.fuel" = "Пумпа за гориво";
+
+"type.amenity.veterinary" = "Ветеринар";
+
+"type.amenity.waste_basket" = "Канта за смеће";
+
+"type.amenity.waste_disposal" = "Контејнер за смеће";
+
+"type.amenity.waste_transfer_station" = "Станица за прераду отпада";
+
+"type.amenity.water_point" = "Чесма";
+
+"type.amenity.water_point.drinking_water_no" = "Чесма";
+
+"type.barrier" = "Баријера";
+
+"type.barrier.block" = "Блок";
+
+"type.barrier.bollard" = "Стуб";
+
+"type.barrier.border_control" = "Гранична контрола";
+
+"type.barrier.chain" = "Ланац";
+
+"type.barrier.city_wall" = "Градски зид";
+
+"type.barrier.cycle_barrier" = "Бедем";
+
+"type.waterway.ditch" = "Канал";
+
+"type.natural.water.moat" = "Шанац";
+
+"type.natural.water.wastewater" = "Отпадна вода";
+
+"type.barrier.entrance" = "Пролаз";
+
+"type.barrier.fence" = "Ограда";
+
+"type.barrier.gate" = "Капија";
+
+"type.barrier.hedge" = "Жива ограда";
+
+"type.barrier.kissing_gate" = "Капија";
+
+"type.barrier.lift_gate" = "Рампа";
+
+"type.barrier.retaining_wall" = "Потпорни зид";
+
+"type.barrier.stile" = "Прелаз преко ограде";
+
+"type.barrier.turnstile" = "Окретна капија";
+
+"type.barrier.swing_gate" = "Рампа";
+
+"type.barrier.toll_booth" = "Наплатна рампа";
+
+"type.barrier.wall" = "Зид";
+
+"type.boundary" = "Граница";
+
+"type.boundary.administrative" = "Административна граница";
+
+/* Borders between countries. */
+"type.boundary.administrative.2" = "Гранични прелаз";
+
+/* Country's primary subdivision borders, e.g. between regions, provinces, states.. */
+"type.boundary.administrative.3" = "Регионална граница";
+
+/* Country's primary subdivision borders, e.g. between regions, provinces, states.. */
+"type.boundary.administrative.4" = "Регионална граница";
+
+"type.boundary.national_park" = "Национални парк";
+
+"type.boundary.aboriginal_lands" = "Домородачка земља";
+
+"type.boundary.protected_area" = "Заштићено подручје";
+
+"type.boundary.protected_area.1" = "Заштићено подручје";
+
+"type.boundary.protected_area.2" = "Заштићено подручје";
+
+"type.boundary.protected_area.3" = "Заштићено подручје";
+
+"type.boundary.protected_area.4" = "Заштићено подручје";
+
+"type.boundary.protected_area.5" = "Заштићено подручје";
+
+"type.boundary.protected_area.6" = "Заштићено подручје";
+
+"type.building" = "Зграда";
+
+/* Duplicates [address] in strings.txt */
+"type.building.address" = "Адреса";
+
+"type.building.has_parts" = "Зграда";
+
+"type.building_part" = "Зграда";
+
+"type.building.garage" = "Гаража";
+
+"type.building.train_station" = "Станична зграда";
+
+"type.building.warehouse" = "Депо";
+
+"type.cemetery.grave" = "Гробље";
+
+"type.craft" = "Занатлије";
+
+"type.craft.beekeeper" = "Пчелар";
+
+"type.craft.blacksmith" = "Ковач";
+
+"type.craft.brewery" = "Пивара";
+
+"type.craft.caterer" = "Угоститељ";
+
+"type.craft.carpenter" = "Столар";
+
+"type.craft.confectionery" = "Посластичарница";
+
+"type.craft.electrician" = "Електрика";
+
+"type.craft.electronics_repair" = "Сервис електронике";
+
+"type.craft.gardener" = "Баштован";
+
+"type.craft.grinding_mill" = "Млин";
+
+"type.craft.handicraft" = "Занатска радионица";
+
+/* Heating, Ventilation, and Air Conditioning */
+"type.craft.hvac" = "Грејање, вентилација и климатизација";
+
+"type.craft.key_cutter" = "Нарезивање кључева";
+
+"type.craft.locksmith" = "Бравар";
+
+"type.craft.metal_construction" = "Металне конструкције";
+
+"type.craft.painter" = "Молер";
+
+"type.craft.photographer" = "Фотограф";
+
+"type.shop.camera" = "Продавница фотоапарата";
+
+"type.craft.plumber" = "Водоинсталатер";
+
+"type.craft.sawmill" = "Стругара";
+
+"type.craft.shoemaker" = "Обућар";
+
+"type.craft.winery" = "Винарија";
+
+"type.craft.tailor" = "Атеље";
+
+"type.cuisine.african" = "Афричка";
+
+"type.cuisine.american" = "Америчка";
+
+"type.cuisine.arab" = "Арапска";
+
+"type.cuisine.argentinian" = "Аргентинска";
+
+"type.cuisine.asian" = "Азијска";
+
+"type.cuisine.austrian" = "Аустријска";
+
+"type.cuisine.bagel" = "Багел";
+
+"type.cuisine.balkan" = "Балканска";
+
+"type.cuisine.barbecue" = "Роштиљ";
+
+"type.cuisine.bavarian" = "Баварска";
+
+"type.cuisine.beef_bowl" = "Говедина";
+
+"type.cuisine.brazilian" = "Бразилска";
+
+"type.cuisine.breakfast" = "Доручак";
+
+"type.cuisine.bubble_tea" = "Чај са мехурићима";
+
+"type.cuisine.burger" = "Хамбургер";
+
+"type.cuisine.buschenschank" = "Таверна";
+
+"type.cuisine.cake" = "Колачи";
+
+"type.cuisine.caribbean" = "Карибска";
+
+"type.cuisine.chicken" = "Пилетина";
+
+"type.cuisine.chinese" = "Кинеска";
+
+"type.cuisine.coffee_shop" = "Кафа";
+
+"type.cuisine.crepe" = "Палачинке";
+
+"type.cuisine.croatian" = "Хрватска";
+
+"type.cuisine.curry" = "Кари";
+
+"type.cuisine.deli" = "Деликатеси";
+
+"type.cuisine.diner" = "Ресторан";
+
+"type.cuisine.donut" = "Крофне";
+
+"type.cuisine.ethiopian" = "Етиопијска";
+
+"type.cuisine.filipino" = "Филипинска";
+
+"type.cuisine.fine_dining" = "Ексклузивни ресторан";
+
+"type.cuisine.fish" = "Риба";
+
+"type.cuisine.fish_and_chips" = "Риба и помфрит";
+
+"type.cuisine.french" = "Француска";
+
+"type.cuisine.friture" = "Пржена храна";
+
+"type.cuisine.georgian" = "Грузијска";
+
+"type.cuisine.german" = "Немачка";
+
+"type.cuisine.greek" = "Грчка";
+
+"type.cuisine.grill" = "Грил";
+
+"type.cuisine.heuriger" = "Винска таверна";
+
+"type.cuisine.hotdog" = "Hotdog";
+
+"type.cuisine.hungarian" = "Мађарска";
+
+"type.cuisine.ice_cream" = "Сладолед";
+
+"type.cuisine.indian" = "Индијска";
+
+"type.cuisine.indonesian" = "Индонежанска";
+
+"type.cuisine.international" = "Интернационална";
+
+"type.cuisine.irish" = "Ирска";
+
+"type.cuisine.italian" = "Италијанска";
+
+"type.cuisine.italian_pizza" = "Пица";
+
+"type.cuisine.japanese" = "Јапанска";
+
+"type.cuisine.kebab" = "Кебаб";
+
+"type.cuisine.korean" = "Корејска";
+
+"type.cuisine.lao" = "Лаоска";
+
+"type.cuisine.lebanese" = "Либанска";
+
+"type.cuisine.local" = "Локална";
+
+"type.cuisine.malagasy" = "Мадагаскарска";
+
+"type.cuisine.malaysian" = "Малезијска";
+
+"type.cuisine.mediterranean" = "Медитеранска";
+
+"type.cuisine.mexican" = "Мексичка";
+
+"type.cuisine.moroccan" = "Мароканска";
+
+"type.cuisine.noodles" = "Нудле";
+
+"type.cuisine.oriental" = "Оријентална";
+
+"type.cuisine.pancake" = "Палачинке";
+
+"type.cuisine.pasta" = "Паста";
+
+"type.cuisine.persian" = "Персијска";
+
+"type.cuisine.peruvian" = "Перуанска";
+
+"type.cuisine.pizza" = "Пица";
+
+"type.cuisine.polish" = "Пољска";
+
+"type.cuisine.portuguese" = "Португалска";
+
+"type.cuisine.ramen" = "Рамен (јапанска супа са резанцима)";
+
+"type.cuisine.regional" = "Регионална";
+
+"type.cuisine.russian" = "Руска";
+
+"type.cuisine.sandwich" = "Сендвич";
+
+"type.cuisine.sausage" = "Кобасица";
+
+"type.cuisine.savory_pancakes" = "Слане палачинке";
+
+"type.cuisine.seafood" = "Морски плодови";
+
+"type.cuisine.soba" = "Соба";
+
+"type.cuisine.spanish" = "Шпанска";
+
+"type.cuisine.steak_house" = "Стек";
+
+"type.cuisine.sushi" = "Суши";
+
+"type.cuisine.tapas" = "Тапас";
+
+"type.cuisine.tea" = "Чај";
+
+"type.cuisine.thai" = "Тајландска";
+
+"type.cuisine.turkish" = "Турска";
+
+"type.cuisine.vegan" = "Веганска";
+
+"type.cuisine.vegetarian" = "Вегетаријанска";
+
+"type.cuisine.vietnamese" = "Вијетнамска";
+
+"type.emergency" = "Хитна служба";
+
+"type.emergency.assembly_point" = "Сабирно место за хитне случајеве";
+
+"type.emergency.defibrillator" = "Дефибрилатор";
+
+"type.emergency.fire_hydrant" = "Пожарни хидрант";
+
+"type.emergency.phone" = "Ургентни телефон";
+
+/* This is for secondary entrances, for main entrances see type.entrance.main */
+"type.entrance" = "Улаз";
+
+/* This is for main/primary entrances, for secondary entrances see type.entrance */
+"type.entrance.main" = "Главни улаз";
+
+"type.entrance.exit" = "Излаз";
+
+"type.fee.yes" = "$";
+
+"type.fee.no" = "Бесплатно";
+
+"type.healthcare.laboratory" = "Медицинска лабораторија";
+
+"type.healthcare.physiotherapist" = "Физиотерапеут";
+
+"type.healthcare.alternative" = "Алтернативна медицина";
+
+"type.healthcare.audiologist" = "Аудиологија";
+
+"type.healthcare.blood_donation" = "Завод за трансфузију крви";
+
+"type.healthcare.optometrist" = "Оптометрија";
+
+"type.healthcare.podiatrist" = "Подолог";
+
+"type.healthcare.psychotherapist" = "Психотерапеут";
+
+"type.healthcare.sample_collection" = "Прикупљање анализа";
+
+"type.healthcare.speech_therapist" = "Логопед";
+
+
+/********** Types: Roads **********/
+
+"type.highway" = "Ауто-пут";
+
+"type.highway.bridleway" = "Коњска стаза";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.bridleway.bridge" = "Мост";
+
+"type.highway.bridleway.permissive" = "Коњска стаза";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.bridleway.tunnel" = "Тунел";
+
+"type.highway.busway" = "Наменски аутобуски пут";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.busway.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.busway.tunnel" = "Тунел";
+
+"type.highway.bus_stop" = "Аутобуско стајалиште";
+
+"type.highway.construction" = "Пут у изградњи";
+
+"type.highway.cycleway" = "Бициклистичка стаза";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.cycleway.bridge" = "Мост";
+
+"type.highway.cycleway.permissive" = "Бициклистичка стаза";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.cycleway.tunnel" = "Тунел";
+
+"type.highway.elevator" = "Лифт";
+
+"type.highway.footway" = "Пешачка стаза";
+
+"type.highway.footway.sidewalk" = "Тротоар";
+
+"type.highway.footway.crossing" = "Пешачки прелаз";
+
+"type.highway.footway.area" = "Пешачка зона";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.footway.bridge" = "Пасарела";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.footway.tunnel" = "Пешачки тунел";
+
+"type.highway.ford" = "Брод";
+
+"type.highway.living_street" = "Улица у стамбеној зони";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.living_street.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.living_street.tunnel" = "Тунел";
+
+"type.highway.motorway" = "Мото-пут";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.motorway.bridge" = "Мост на мото-путу";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.motorway.tunnel" = "Тунел на мото-путу";
+
+"type.highway.motorway_junction" = "Излаз са ауто-пута";
+
+"type.highway.motorway_link" = "Излаз са мото-пута";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.motorway_link.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.motorway_link.tunnel" = "Тунел";
+
+"type.highway.path" = "Стаза";
+
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Тешка или слабо видљива стаза";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Веома тешка или нејасна стаза";
+
+"type.highway.path.bicycle" = "Пут за бициклисте и пешаке";
+
+"type.highway.footway.bicycle" = "Пут за бициклисте и пешаке";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.path.bridge" = "Мост";
+
+"type.highway.path.horse" = "Коњска стаза";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.path.tunnel" = "Тунел";
+
+"type.highway.pedestrian" = "Пешачка улица";
+
+"type.highway.pedestrian.area" = "Пешачка зона";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.pedestrian.bridge" = "Пешачки мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.pedestrian.tunnel" = "Пешачки тунел";
+
+"type.highway.primary" = "Пут прве класе";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.primary.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.primary.tunnel" = "Тунел";
+
+"type.highway.primary_link" = "Приступни пут";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.primary_link.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.primary_link.tunnel" = "Тунел";
+
+"type.highway.raceway" = "Тркачка стаза";
+
+"type.highway.residential" = "Стамбена улица";
+
+"type.highway.residential.area" = "Стамбена улица";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.residential.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.residential.tunnel" = "Тунел";
+
+"type.highway.rest_area" = "Одмориште";
+
+"type.highway.road" = "Пут";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.road.bridge" = "Мост";
+
+/* A bridge structure outline. */
+"type.man_made.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.road.tunnel" = "Тунел";
+
+"type.highway.secondary" = "Пут друге класе";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.secondary.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.secondary.tunnel" = "Тунел";
+
+"type.highway.secondary_link" = "Излаз са пута";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.secondary_link.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.secondary_link.tunnel" = "Тунел";
+
+"type.highway.service" = "Сервисни пут";
+
+"type.highway.service.area" = "Сервисни пут";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.service.bridge" = "Мост";
+
+"type.highway.service.driveway" = "Прилаз";
+
+"type.highway.service.parking_aisle" = "Пут на паркингу";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.service.tunnel" = "Тунел";
+
+"type.highway.services" = "Сервисна зона";
+
+"type.highway.speed_camera" = "Прекршајна камера";
+
+"type.highway.steps" = "Мердевине";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.steps.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.steps.tunnel" = "Тунел";
+
+"type.highway.tertiary" = "Пут треће класе";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.tertiary.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.tertiary.tunnel" = "Тунел";
+
+"type.highway.tertiary_link" = "Пут треће класе";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.tertiary_link.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.tertiary_link.tunnel" = "Тунел";
+
+"type.highway.track" = "Макадам";
+
+"type.highway.track.area" = "Макадам";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.track.bridge" = "Мост";
+
+"type.highway.track.grade1" = "Макадам";
+
+"type.highway.track.no.access" = "Макадам";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.track.tunnel" = "Тунел";
+
+"type.highway.traffic_signals" = "Семафор";
+
+"type.highway.trunk" = "Улица";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.trunk.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.trunk.tunnel" = "Тунел";
+
+"type.highway.trunk_link" = "Улица";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.trunk_link.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.trunk_link.tunnel" = "Тунел";
+
+"type.highway.unclassified" = "Некласификовани пут";
+
+"type.highway.unclassified.area" = "Некласификовани пут";
+
+/* These translations are used for all type.highway.*.bridge. */
+"type.highway.unclassified.bridge" = "Мост";
+
+/* These translations are used for all type.highway.*.tunnel. */
+"type.highway.unclassified.tunnel" = "Тунел";
+
+"type.area_highway.cycleway" = "Бициклистичка стаза";
+
+"type.area_highway.footway" = "Пешачка стаза";
+
+"type.area_highway.living_street" = "Улица у стамбеној зони";
+
+"type.area_highway.motorway" = "Мото-пут";
+
+"type.area_highway.path" = "Стаза";
+
+"type.area_highway.pedestrian" = "Пешачка улица";
+
+"type.area_highway.primary" = "Пут прве класе";
+
+"type.area_highway.residential" = "Стамбена улица";
+
+"type.area_highway.secondary" = "Пут друге класе";
+
+"type.area_highway.service" = "Сервисни пут";
+
+"type.area_highway.tertiary" = "Пут треће класе";
+
+"type.area_highway.steps" = "Мердевине";
+
+"type.area_highway.track" = "Макадам";
+
+"type.area_highway.trunk" = "Улица";
+
+"type.area_highway.unclassified" = "Некласификовани пут";
+
+"type.highway.world_level" = "highway-world_level";
+
+"type.highway.world_towns_level" = "highway-world_towns_level";
+
+
+/********** Types: Historic **********/
+
+"type.historic" = "Историјски објекат";
+
+"type.historic.aircraft" = "Историјски авион";
+
+"type.historic.anchor" = "Историјско сидро";
+
+"type.historic.archaeological_site" = "Археолошко налазиште";
+
+"type.historic.battlefield" = "Историјско бојно поље";
+
+"type.historic.boundary_stone" = "Гранични камен";
+
+"type.historic.cannon" = "Топ";
+
+"type.historic.castle" = "Замак";
+
+"type.historic.castle.castrum" = "Римска тврђава";
+
+"type.historic.castle.defensive" = "Замак";
+
+"type.historic.castle.fortified_church" = "Утврђена црква";
+
+"type.historic.castle.fortress" = "Тврђава";
+
+"type.historic.castle.hillfort" = "Тврђава";
+
+"type.historic.castle.kremlin" = "Кремљ";
+
+"type.historic.castle.manor" = "Каштел";
+
+"type.historic.castle.palace" = "Палата";
+
+"type.historic.castle.shiro" = "Јапански каштел";
+
+"type.historic.castle.stately" = "Замак";
+
+"type.historic.city_gate" = "Градска капија";
+
+"type.historic.citywalls" = "Градски зид";
+
+"type.historic.fort" = "Утврђење";
+
+"type.historic.gallows" = "Вешала";
+
+"type.historic.locomotive" = "Историјска локомотива";
+
+"type.historic.memorial" = "Споменик";
+
+"type.historic.memorial.cross" = "Спомен-крст";
+
+"type.historic.memorial.plaque" = "Спомен-плоча";
+
+"type.historic.memorial.sculpture" = "Скулптура";
+
+"type.historic.memorial.statue" = "Статуа";
+
+"type.historic.memorial.stolperstein" = "Столперстеин";
+
+"type.historic.stone" = "Историјски камен";
+
+"type.historic.memorial.war_memorial" = "Војни меморијал";
+
+"type.historic.mine" = "Историјски рудник";
+
+"type.historic.monument" = "Споменик";
+
+"type.historic.pillory" = "Стуб срама";
+
+"type.historic.ruins" = "Историјске рушевине";
+
+"type.historic.ship" = "Лађа";
+
+"type.historic.tank" = "Историјски тенк";
+
+"type.historic.tomb" = "Гробница";
+
+"type.historic.wayside_cross" = "Крст поред пута";
+
+"type.historic.wayside_shrine" = "Светилиште поред пута";
+
+"type.historic.wreck" = "Историјски бродолом";
+
+"type.hwtag" = "hwtag";
+
+"type.hwtag.bidir_bicycle" = "hwtag-bidir_bicycle";
+
+"type.hwtag.onedir_bicycle" = "hwtag-onedir_bicycle";
+
+"type.hwtag.lit" = "hwtag-lit";
+
+"type.hwtag.nobicycle" = "hwtag-nobicycle";
+
+"type.hwtag.nocar" = "hwtag-nocar";
+
+"type.hwtag.nofoot" = "hwtag-nofoot";
+
+"type.hwtag.oneway" = "hwtag-oneway";
+
+"type.hwtag.private" = "hwtag-private";
+
+"type.hwtag.toll" = "hwtag-toll";
+
+"type.hwtag.yesbicycle" = "hwtag-yesbicycle";
+
+"type.hwtag.yescar" = "hwtag-yescar";
+
+"type.hwtag.yesfoot" = "hwtag-yesfoot";
+
+"type.internet_access" = "Интернет";
+
+"type.internet_access.wlan" = "Интернет";
+
+"type.junction" = "Раскрсница";
+
+"type.junction.circular" = "Кружни ток";
+
+"type.junction.roundabout" = "Кружни ток";
+
+"type.landuse" = "Пољопривредно земљиште";
+
+"type.landuse.allotments" = "Парцела";
+
+"type.landuse.basin" = "Резервоар";
+
+"type.landuse.brownfield" = "Грађевинско земљиште";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.landuse.cemetery" = "Гробље";
+
+/* In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. */
+"type.landuse.cemetery.christian" = "Хришћанско гробље";
+
+"type.landuse.churchyard" = "Двориште цркве";
+
+"type.landuse.commercial" = "Кмерцијална област";
+
+"type.landuse.construction" = "Градилиште";
+
+"type.landuse.education" = "Образовна установа";
+
+"type.landuse.farmland" = "Пољопривредно земљиште";
+
+"type.landuse.farmyard" = "Пољопривредно земљиште";
+
+"type.landuse.field" = "Поље";
+
+"type.landuse.flowerbed" = "Цветно острво";
+
+"type.landuse.forest" = "Шума";
+
+"type.landuse.forest.coniferous" = "Четинарска шума";
+
+"type.landuse.forest.deciduous" = "Листопадна шума";
+
+"type.landuse.forest.mixed" = "Шума";
+
+"type.landuse.garages" = "Гаража";
+
+"type.landuse.grass" = "Травњак";
+
+"type.landuse.greenfield" = "Грађевинско земљиште";
+
+"type.landuse.greenhouse_horticulture" = "Стакленик";
+
+"type.landuse.industrial" = "Индустријска зона";
+
+"type.landuse.landfill" = "Депонија";
+
+"type.landuse.meadow" = "Ливада";
+
+"type.landuse.military" = "Војна област";
+
+"type.landuse.orchard" = "Воћњак";
+
+"type.landuse.quarry" = "Каменолом";
+
+"type.landuse.railway" = "Железничке просторије";
+
+"type.landuse.recreation_ground" = "Простор за рекреацију";
+
+"type.landuse.reservoir" = "Вештачко језеро";
+
+"type.landuse.residential" = "Стамбена зона";
+
+"type.landuse.retail" = "Пословна зона";
+
+"type.landuse.salt_pond" = "Слано језеро";
+
+"type.landuse.village_green" = "Зеленило";
+
+"type.landuse.vineyard" = "Виноград";
+
+"type.leisure" = "Слободно време";
+
+"type.leisure.common" = "Јавно земљиште";
+
+"type.leisure.dog_park" = "Парк за псе";
+
+"type.leisure.fitness_centre" = "Фитнес центар";
+
+"type.leisure.fitness_station" = "Фитнес станица";
+
+"type.leisure.dance" = "Плесна дворана";
+
+"type.leisure.garden" = "Башта";
+
+"type.leisure.garden.residential" = "Врт у дворишту";
+
+"type.leisure.golf_course" = "Терен за голф";
+
+"type.leisure.miniature_golf" = "Мини-голф";
+
+"type.leisure.hackerspace" = "Hackerspace";
+
+"type.leisure.ice_rink" = "Клизалиште";
+
+"type.leisure.marina" = "Марина";
+
+"type.leisure.nature_reserve" = "Природни резерват";
+
+"type.leisure.outdoor_seating" = "Седење на отвореном";
+
+"type.leisure.park" = "Парк";
+
+"type.leisure.park.no.access" = "Парк";
+
+"type.leisure.park.permissive" = "Парк";
+
+"type.leisure.park.private" = "Парк";
+
+"type.leisure.picnic_table" = "Сто за пикник";
+
+"type.leisure.pitch" = "Спортски терен";
+
+"type.leisure.playground" = "Игралиште";
+
+"type.leisure.recreation_ground" = "Recreation Ground";
+
+"type.leisure.sauna" = "Сауна";
+
+"type.leisure.slipway" = "Навоз";
+
+"type.leisure.sports_centre" = "Спортски центар";
+
+"type.sport.climbing" = "Зид за пењање";
+
+"type.sport.yoga" = "Јога студио";
+
+"type.leisure.stadium" = "Стадион";
+
+"type.leisure.swimming_pool" = "Базен";
+
+"type.leisure.swimming_pool.private" = "Приватни базен";
+
+"type.leisure.track" = "Тркачка стаза";
+
+"type.leisure.track.area" = "Тркачка стаза";
+
+"type.leisure.water_park" = "Водени парк";
+
+"type.leisure.beach_resort" = "Ресорт на плажи";
+
+"type.man_made" = "Грађевинске структуре";
+
+"type.man_made.breakwater" = "Лукобран";
+
+"type.man_made.cairn" = "Cairn";
+
+"type.man_made.chimney" = "Димњак";
+
+"type.man_made.cutline" = "Шумски пут";
+
+"type.man_made.survey_point" = "Геодетска тачка";
+
+"type.man_made.flagpole" = "Јарбол са заставом";
+
+"type.man_made.lighthouse" = "Светионик";
+
+"type.man_made.mast" = "Јарбол";
+
+"type.man_made.pier" = "Док";
+
+"type.man_made.pipeline" = "Цевовод";
+
+"type.man_made.pipeline.overground" = "Подземни цевовод";
+
+"type.man_made.silo" = "Силос";
+
+"type.man_made.storage_tank" = "Резервоар";
+
+"type.man_made.surveillance" = "Сигурносна камера";
+
+"type.man_made.tower" = "Торањ";
+
+"type.man_made.tower.communication" = "Телекомуникациони торањ";
+
+"type.man_made.wastewater_plant" = "Пречишћивач отпадних вода";
+
+"type.man_made.water_tap" = "Јавна чесма";
+
+"type.man_made.water_tap.drinking_water_no" = "Јавна чесма";
+
+"type.man_made.water_tower" = "Водоторањ";
+
+"type.man_made.water_well" = "Бунар";
+
+"type.man_made.water_well.drinking_water_no" = "Бунар";
+
+"type.man_made.windmill" = "Ветрењача";
+
+"type.man_made.works" = "Фабрика";
+
+"type.mapswithme" = "mapswithme";
+
+"type.mapswithme.grid" = "mapswithme-grid";
+
+"type.military" = "Војска";
+
+"type.military.bunker" = "Бункер";
+
+"type.mountain_pass" = "Планински превој";
+
+"type.natural" = "Природа";
+
+/* A rocky land cover. */
+"type.natural.bare_rock" = "Камењар";
+
+/* A land cover consisting of rounded rock fragments (pebbles) on a beach or riverbed. */
+"type.natural.shingle" = "Шљунак";
+
+/* A loose surface consisting of angular, sharp stones. Usually on a mountain slope and prone to landslides. */
+"type.natural.scree" = "Камени крш";
+
+"type.natural.bay" = "Залив";
+
+"type.natural.beach" = "Плажа";
+
+"type.natural.beach.sand" = "Пешчана плажа";
+
+"type.natural.beach.gravel" = "Шљунковита плажа";
+
+"type.natural.cape" = "Рт";
+
+"type.natural.cave_entrance" = "Пећина";
+
+"type.natural.cliff" = "Литица";
+
+"type.natural.earth_bank" = "Насип";
+
+"type.man_made.embankment" = "Насип";
+
+"type.natural.coastline" = "Обала";
+
+"type.natural.desert" = "Пустиња";
+
+"type.natural.geyser" = "Гејзир";
+
+"type.natural.glacier" = "Глечер";
+
+"type.natural.grassland" = "Пашњак";
+
+"type.natural.heath" = "Пуста земља";
+
+"type.natural.hot_spring" = "Термални извор";
+
+"type.natural.water.lake" = "Језеро";
+
+"type.natural.water.lock" = "Преводница";
+
+"type.natural.water.pond" = "Језерце";
+
+"type.natural.water.reservoir" = "Резервоар";
+
+"type.natural.water.basin" = "Природни базен";
+
+"type.natural.water.river" = "Река";
+
+"type.natural.land" = "Земљиште";
+
+"type.natural.meadow" = "Ливада";
+
+"type.natural.orchard" = "Воћњак";
+
+"type.natural.peak" = "Врх";
+
+"type.natural.saddle" = "Планинско седло";
+
+"type.natural.rock" = "Камен";
+
+"type.natural.scrub" = "Шикара";
+
+"type.natural.spring" = "Извор";
+
+"type.natural.spring.drinking_water_no" = "Извор";
+
+"type.natural.strait" = "Теснац";
+
+"type.natural.tree_row" = "Дрворед";
+
+"type.natural.vineyard" = "Виноград";
+
+"type.natural.volcano" = "Вулкан";
+
+"type.natural.water" = "Вода";
+
+"type.natural.wetland" = "Мочвара";
+
+"type.natural.wetland.bog" = "Тресет";
+
+"type.natural.wetland.marsh" = "Мочвара";
+
+"type.noexit" = "Крај пута";
+
+"type.office" = "Канцеларија";
+
+"type.office.company" = "Компанија";
+
+"type.office.estate_agent" = "Агент за некретнине";
+
+"type.office.government" = "Владина канцеларија";
+
+"type.office.insurance" = "Осигурање";
+
+"type.office.lawyer" = "Адвокат";
+
+"type.office.ngo" = "НВО";
+
+"type.office.telecommunication" = "Мобилни оператер";
+
+"type.organic.only" = "Еко";
+
+"type.organic.yes" = "Еко";
+
+"type.place.city" = "Град";
+
+"type.place.city.capital" = "Главни град";
+
+"type.place.city.capital.10" = "Град";
+
+"type.place.city.capital.11" = "Град";
+
+"type.place.city.capital.2" = "Главни град";
+
+"type.place.city.capital.3" = "Град";
+
+"type.place.city.capital.4" = "Град";
+
+"type.place.city.capital.5" = "Град";
+
+"type.place.city.capital.6" = "Град";
+
+"type.place.city.capital.7" = "Град";
+
+"type.place.city.capital.8" = "Град";
+
+"type.place.city.capital.9" = "Град";
+
+"type.place.continent" = "Континент";
+
+"type.place.country" = "Држава";
+
+"type.place.county" = "Округ";
+
+"type.place.farm" = "Фарма";
+
+"type.place.hamlet" = "Село";
+
+"type.place.island" = "Острво";
+
+"type.place.islet" = "Острвце";
+
+"type.place.isolated_dwelling" = "Изолована кућа";
+
+"type.place.locality" = "Локалитет";
+
+"type.place.neighbourhood" = "Насеље";
+
+"type.place.ocean" = "Океан";
+
+"type.place.region" = "Регион";
+
+"type.place.sea" = "Море";
+
+"type.place.square" = "Трг";
+
+"type.place.state" = "Држава";
+
+"type.place.state.USA" = "Држава";
+
+"type.place.suburb" = "Кварт";
+
+"type.place.town" = "Град";
+
+"type.place.village" = "Село";
+
+"type.power" = "Енергетика";
+
+"type.power.generator" = "Генератор";
+
+"type.power.generator.solar" = "Соларни генератор";
+
+"type.power.generator.wind" = "Ветрогенератор";
+
+"type.power.generator.gas" = "Гасно-турбинска електрана";
+
+"type.power.generator.hydro" = "Хидроелектрана";
+
+"type.power.line" = "Далековод";
+
+"type.power.line.underground" = "Подземни далековод";
+
+"type.power.minor_line" = "Minor Power Line";
+
+"type.power.plant" = "Електрана";
+
+"type.power.plant.coal" = "Термоелектрана";
+
+"type.power.plant.gas" = "Гасно-турбинска електрана";
+
+"type.power.plant.hydro" = "Хидроелектрана";
+
+"type.power.plant.solar" = "Соларна електрана";
+
+"type.power.plant.wind" = "Ветропарк";
+
+"type.power.station" = "Електрична станица";
+
+"type.power.substation" = "Подстаница";
+
+"type.power.tower" = "Далековод";
+
+"type.psurface" = "Површина";
+
+"type.psurface.paved_bad" = "Лош асфалт";
+
+"type.psurface.paved_good" = "Добар асфалт";
+
+"type.psurface.unpaved_bad" = "Лош макадам";
+
+"type.psurface.unpaved_good" = "Добар макадам";
+
+"type.public_transport" = "Јавни превоз";
+
+"type.public_transport.platform" = "Стајалиште јавног превоза";
+
+"type.railway" = "Железница";
+
+"type.railway.abandoned" = "Напуштена пруга";
+
+"type.railway.abandoned.bridge" = "Напуштен железнички мост";
+
+"type.railway.abandoned.tunnel" = "Напуштен железнички тунел";
+
+"type.railway.construction" = "Пруга у изградњи";
+
+"type.railway.crossing" = "Пружни прелаз";
+
+"type.railway.disused" = "Напуштена пруга";
+
+"type.railway.funicular" = "Успињача";
+
+"type.railway.funicular.bridge" = "Funicular Bridge";
+
+"type.railway.funicular.tunnel" = "Funicular Tunnel";
+
+"type.railway.halt" = "Железничка станица";
+
+"type.railway.level_crossing" = "Пружни прелаз";
+
+"type.railway.light_rail" = "Железнички семафор";
+
+"type.railway.light_rail.bridge" = "Лака железница";
+
+"type.railway.light_rail.tunnel" = "Light Rail Tunnel";
+
+"type.railway.monorail" = "Једношинска пруга";
+
+"type.railway.monorail.bridge" = "Једношински мост";
+
+"type.railway.monorail.tunnel" = "Једношински тунел";
+
+"type.railway.narrow_gauge" = "Пруга уског колосека";
+
+"type.railway.narrow_gauge.bridge" = "Narrow Gauge Rail Bridge";
+
+"type.railway.narrow_gauge.tunnel" = "Narrow Gauge Rail Tunnel";
+
+"type.railway.platform" = "Железнички перон";
+
+"type.railway.preserved" = "Туристичка пруга";
+
+"type.railway.preserved.bridge" = "Preserved Rail Bridge";
+
+"type.railway.preserved.tunnel" = "Preserved Rail Tunnel";
+
+"type.railway.rail" = "Пруга";
+
+"type.railway.rail.highspeed" = "Пруга велике брзине";
+
+"type.railway.rail.tourism" = "Туристичка железница";
+
+"type.railway.rail.main" = "Железница";
+
+/* Includes ordinary railway=rail w/o more specific usage= and service= tags. */
+"type.railway.rail.branch" = "Секундарна железница";
+
+/* Non-passenger utility tracks: industrial, military, test. */
+"type.railway.rail.utility" = "Индустријска пруга";
+
+"type.railway.rail.spur" = "Железнички чвор";
+
+/* Short service tracks: siding, yard, crossover. */
+"type.railway.rail.service" = "Помоћна железничка пруга";
+
+"type.railway.rail.bridge" = "Железнички мост";
+
+"type.railway.rail.highspeed.bridge" = "Железнички мост";
+
+"type.railway.rail.tourism.bridge" = "Железнички мост";
+
+"type.railway.rail.main.bridge" = "Железнички мост";
+
+"type.railway.rail.branch.bridge" = "Железнички мост";
+
+"type.railway.rail.utility.bridge" = "Железнички мост";
+
+"type.railway.rail.spur.bridge" = "Железнички мост";
+
+"type.railway.rail.service.bridge" = "Железнички мост";
+
+"type.railway.rail.tunnel" = "Железнички тунел";
+
+"type.railway.rail.highspeed.tunnel" = "Железнички тунел";
+
+"type.railway.rail.tourism.tunnel" = "Железнички тунел";
+
+"type.railway.rail.main.tunnel" = "Железнички тунел";
+
+"type.railway.rail.branch.tunnel" = "Железнички тунел";
+
+"type.railway.rail.utility.tunnel" = "Железнички тунел";
+
+"type.railway.rail.spur.tunnel" = "Железнички тунел";
+
+"type.railway.rail.service.tunnel" = "Железнички тунел";
+
+"type.railway.station" = "Железничка станица";
+
+"type.railway.station.funicular" = "Успињача";
+
+"type.railway.station.light_rail" = "Железничка станица";
+
+"type.railway.station.light_rail.berlin" = "Железничка станица";
+
+"type.railway.station.light_rail.london" = "Железничка станица";
+
+"type.railway.station.light_rail.porto" = "Железничка станица";
+
+"type.railway.station.monorail" = "Железничка станица";
+
+"type.railway.station.subway" = "Метро станица";
+
+"type.railway.station.subway.adana" = "Метро станица";
+
+"type.railway.station.subway.algiers" = "Метро станица";
+
+"type.railway.station.subway.almaty" = "Метро станица";
+
+"type.railway.station.subway.amsterdam" = "Метро станица";
+
+"type.railway.station.subway.ankara" = "Метро станица";
+
+"type.railway.station.subway.athens" = "Метро станица";
+
+"type.railway.station.subway.baku" = "Метро станица";
+
+"type.railway.station.subway.bangkok" = "Метро станица";
+
+"type.railway.station.subway.barcelona" = "Метро станица";
+
+"type.railway.station.subway.beijing" = "Метро станица";
+
+"type.railway.station.subway.bengalore" = "Метро станица";
+
+"type.railway.station.subway.berlin" = "Метро станица";
+
+"type.railway.station.subway.bilbao" = "Метро станица";
+
+"type.railway.station.subway.brasilia" = "Метро станица";
+
+"type.railway.station.subway.brescia" = "Метро станица";
+
+"type.railway.station.subway.brussels" = "Метро станица";
+
+"type.railway.station.subway.bucharest" = "Метро станица";
+
+"type.railway.station.subway.budapest" = "Метро станица";
+
+"type.railway.station.subway.buenos_aires" = "Метро станица";
+
+"type.railway.station.subway.bursa" = "Метро станица";
+
+"type.railway.station.subway.cairo" = "Метро станица";
+
+"type.railway.station.subway.caracas" = "Метро станица";
+
+"type.railway.station.subway.catania" = "Метро станица";
+
+"type.railway.station.subway.changchun" = "Метро станица";
+
+"type.railway.station.subway.chengdu" = "Метро станица";
+
+"type.railway.station.subway.chicago" = "Метро станица";
+
+"type.railway.station.subway.chongqing" = "Метро станица";
+
+"type.railway.station.subway.dalian" = "Метро станица";
+
+"type.railway.station.subway.delhi" = "Метро станица";
+
+"type.railway.station.subway.dnepro" = "Метро станица";
+
+"type.railway.station.subway.dubai" = "Метро станица";
+
+"type.railway.station.subway.ekb" = "Метро станица";
+
+"type.railway.station.subway.fukuoka" = "Метро станица";
+
+"type.railway.station.subway.glasgow" = "Метро станица";
+
+"type.railway.station.subway.guangzhou" = "Метро станица";
+
+"type.railway.station.subway.hamburg" = "Метро станица";
+
+"type.railway.station.subway.helsinki" = "Метро станица";
+
+"type.railway.station.subway.hiroshima" = "Метро станица";
+
+"type.railway.station.subway.hongkong" = "Метро станица";
+
+"type.railway.station.subway.isfahan" = "Метро станица";
+
+"type.railway.station.subway.istanbul" = "Метро станица";
+
+"type.railway.station.subway.izmir" = "Метро станица";
+
+"type.railway.station.subway.kazan" = "Метро станица";
+
+"type.railway.station.subway.kharkiv" = "Метро станица";
+
+"type.railway.station.subway.kiev" = "Метро станица";
+
+"type.railway.station.subway.kobe" = "Метро станица";
+
+"type.railway.station.subway.kolkata" = "Метро станица";
+
+"type.railway.station.subway.kunming" = "Метро станица";
+
+"type.railway.station.subway.kyoto" = "Метро станица";
+
+"type.railway.station.subway.la" = "Метро станица";
+
+"type.railway.station.subway.lausanne" = "Метро станица";
+
+"type.railway.station.subway.lille" = "Метро станица";
+
+"type.railway.station.subway.lima" = "Метро станица";
+
+"type.railway.station.subway.lisboa" = "Метро станица";
+
+"type.railway.station.subway.london" = "Метро станица";
+
+"type.railway.station.subway.lyon" = "Метро станица";
+
+"type.railway.station.subway.madrid" = "Метро станица";
+
+"type.railway.station.subway.malaga" = "Метро станица";
+
+"type.railway.station.subway.manila" = "Метро станица";
+
+"type.railway.station.subway.maracaibo" = "Метро станица";
+
+"type.railway.station.subway.mashhad" = "Метро станица";
+
+"type.railway.station.subway.mecca" = "Метро станица";
+
+"type.railway.station.subway.medellin" = "Метро станица";
+
+"type.railway.station.subway.mexico" = "Метро станица";
+
+"type.railway.station.subway.milan" = "Метро станица";
+
+"type.railway.station.subway.minsk" = "Метро станица";
+
+"type.railway.station.subway.montreal" = "Метро станица";
+
+"type.railway.station.subway.moscow" = "Метро станица";
+
+"type.railway.station.subway.munchen" = "Метро станица";
+
+"type.railway.station.subway.nagoya" = "Метро станица";
+
+"type.railway.station.subway.newyork" = "Метро станица";
+
+"type.railway.station.subway.nnov" = "Метро станица";
+
+"type.railway.station.subway.novosibirsk" = "Метро станица";
+
+"type.railway.station.subway.osaka" = "Метро станица";
+
+"type.railway.station.subway.oslo" = "Метро станица";
+
+"type.railway.station.subway.palma" = "Метро станица";
+
+"type.railway.station.subway.panama" = "Метро станица";
+
+"type.railway.station.subway.paris" = "Метро станица";
+
+"type.railway.station.subway.philadelphia" = "Метро станица";
+
+"type.railway.station.subway.pyongyang" = "Метро станица";
+
+"type.railway.station.subway.rennes" = "Метро станица";
+
+"type.railway.station.subway.rio" = "Метро станица";
+
+"type.railway.station.subway.roma" = "Метро станица";
+
+"type.railway.station.subway.rotterdam" = "Метро станица";
+
+"type.railway.station.subway.samara" = "Метро станица";
+
+"type.railway.station.subway.santiago" = "Метро станица";
+
+"type.railway.station.subway.santo_domingo" = "Метро станица";
+
+"type.railway.station.subway.saopaulo" = "Метро станица";
+
+"type.railway.station.subway.sapporo" = "Метро станица";
+
+"type.railway.station.subway.sendai" = "Метро станица";
+
+"type.railway.station.subway.sf" = "Метро станица";
+
+"type.railway.station.subway.shanghai" = "Метро станица";
+
+"type.railway.station.subway.shenzhen" = "Метро станица";
+
+"type.railway.station.subway.shiraz" = "Метро станица";
+
+"type.railway.station.subway.singapore" = "Метро станица";
+
+"type.railway.station.subway.sofia" = "Метро станица";
+
+"type.railway.station.subway.spb" = "Метро станица";
+
+"type.railway.station.subway.stockholm" = "Метро станица";
+
+"type.railway.station.subway.tabriz" = "Метро станица";
+
+"type.railway.station.subway.taipei" = "Метро станица";
+
+"type.railway.station.subway.taoyuan" = "Метро станица";
+
+"type.railway.station.subway.tashkent" = "Метро станица";
+
+"type.railway.station.subway.tbilisi" = "Метро станица";
+
+"type.railway.station.subway.tehran" = "Метро станица";
+
+"type.railway.station.subway.tianjin" = "Метро станица";
+
+"type.railway.station.subway.tokyo" = "Метро станица";
+
+"type.railway.station.subway.valencia" = "Метро станица";
+
+"type.railway.station.subway.vienna" = "Метро станица";
+
+"type.railway.station.subway.warszawa" = "Метро станица";
+
+"type.railway.station.subway.washington" = "Метро станица";
+
+"type.railway.station.subway.wuhan" = "Метро станица";
+
+"type.railway.station.subway.yerevan" = "Метро станица";
+
+"type.railway.station.subway.yokohama" = "Метро станица";
+
+"type.railway.subway" = "Метро";
+
+"type.railway.subway.bridge" = "Метро мост";
+
+"type.railway.subway.tunnel" = "Метро тунел";
+
+"type.railway.subway_entrance" = "Улаз у метро";
+
+"type.railway.subway_entrance.adana" = "Улаз у метро";
+
+"type.railway.subway_entrance.algiers" = "Улаз у метро";
+
+"type.railway.subway_entrance.almaty" = "Улаз у метро";
+
+"type.railway.subway_entrance.amsterdam" = "Улаз у метро";
+
+"type.railway.subway_entrance.ankara" = "Улаз у метро";
+
+"type.railway.subway_entrance.athens" = "Улаз у метро";
+
+"type.railway.subway_entrance.baku" = "Улаз у метро";
+
+"type.railway.subway_entrance.bangkok" = "Улаз у метро";
+
+"type.railway.subway_entrance.barcelona" = "Улаз у метро";
+
+"type.railway.subway_entrance.beijing" = "Улаз у метро";
+
+"type.railway.subway_entrance.bengalore" = "Улаз у метро";
+
+"type.railway.subway_entrance.berlin" = "Улаз у метро";
+
+"type.railway.subway_entrance.bilbao" = "Улаз у метро";
+
+"type.railway.subway_entrance.brasilia" = "Улаз у метро";
+
+"type.railway.subway_entrance.brescia" = "Улаз у метро";
+
+"type.railway.subway_entrance.brussels" = "Улаз у метро";
+
+"type.railway.subway_entrance.bucharest" = "Улаз у метро";
+
+"type.railway.subway_entrance.budapest" = "Улаз у метро";
+
+"type.railway.subway_entrance.buenos_aires" = "Улаз у метро";
+
+"type.railway.subway_entrance.bursa" = "Улаз у метро";
+
+"type.railway.subway_entrance.cairo" = "Улаз у метро";
+
+"type.railway.subway_entrance.caracas" = "Улаз у метро";
+
+"type.railway.subway_entrance.catania" = "Улаз у метро";
+
+"type.railway.subway_entrance.changchun" = "Улаз у метро";
+
+"type.railway.subway_entrance.chengdu" = "Улаз у метро";
+
+"type.railway.subway_entrance.chicago" = "Улаз у метро";
+
+"type.railway.subway_entrance.chongqing" = "Улаз у метро";
+
+"type.railway.subway_entrance.dalian" = "Улаз у метро";
+
+"type.railway.subway_entrance.delhi" = "Улаз у метро";
+
+"type.railway.subway_entrance.dnepro" = "Улаз у метро";
+
+"type.railway.subway_entrance.dubai" = "Улаз у метро";
+
+"type.railway.subway_entrance.ekb" = "Улаз у метро";
+
+"type.railway.subway_entrance.fukuoka" = "Улаз у метро";
+
+"type.railway.subway_entrance.glasgow" = "Улаз у метро";
+
+"type.railway.subway_entrance.guangzhou" = "Улаз у метро";
+
+"type.railway.subway_entrance.hamburg" = "Улаз у метро";
+
+"type.railway.subway_entrance.helsinki" = "Улаз у метро";
+
+"type.railway.subway_entrance.hiroshima" = "Улаз у метро";
+
+"type.railway.subway_entrance.hongkong" = "Улаз у метро";
+
+"type.railway.subway_entrance.isfahan" = "Улаз у метро";
+
+"type.railway.subway_entrance.istanbul" = "Улаз у метро";
+
+"type.railway.subway_entrance.izmir" = "Улаз у метро";
+
+"type.railway.subway_entrance.kazan" = "Улаз у метро";
+
+"type.railway.subway_entrance.kharkiv" = "Улаз у метро";
+
+"type.railway.subway_entrance.kiev" = "Улаз у метро";
+
+"type.railway.subway_entrance.kobe" = "Улаз у метро";
+
+"type.railway.subway_entrance.kolkata" = "Улаз у метро";
+
+"type.railway.subway_entrance.kunming" = "Улаз у метро";
+
+"type.railway.subway_entrance.kyoto" = "Улаз у метро";
+
+"type.railway.subway_entrance.la" = "Улаз у метро";
+
+"type.railway.subway_entrance.lausanne" = "Улаз у метро";
+
+"type.railway.subway_entrance.lille" = "Улаз у метро";
+
+"type.railway.subway_entrance.lima" = "Улаз у метро";
+
+"type.railway.subway_entrance.lisboa" = "Улаз у метро";
+
+"type.railway.subway_entrance.london" = "Улаз у метро";
+
+"type.railway.subway_entrance.lyon" = "Улаз у метро";
+
+"type.railway.subway_entrance.madrid" = "Улаз у метро";
+
+"type.railway.subway_entrance.malaga" = "Улаз у метро";
+
+"type.railway.subway_entrance.manila" = "Улаз у метро";
+
+"type.railway.subway_entrance.maracaibo" = "Улаз у метро";
+
+"type.railway.subway_entrance.mashhad" = "Улаз у метро";
+
+"type.railway.subway_entrance.mecca" = "Улаз у метро";
+
+"type.railway.subway_entrance.medellin" = "Улаз у метро";
+
+"type.railway.subway_entrance.mexico" = "Улаз у метро";
+
+"type.railway.subway_entrance.milan" = "Улаз у метро";
+
+"type.railway.subway_entrance.minsk" = "Улаз у метро";
+
+"type.railway.subway_entrance.montreal" = "Улаз у метро";
+
+"type.railway.subway_entrance.moscow" = "Улаз у метро";
+
+"type.railway.subway_entrance.munchen" = "Улаз у метро";
+
+"type.railway.subway_entrance.nagoya" = "Улаз у метро";
+
+"type.railway.subway_entrance.newyork" = "Улаз у метро";
+
+"type.railway.subway_entrance.nnov" = "Улаз у метро";
+
+"type.railway.subway_entrance.novosibirsk" = "Улаз у метро";
+
+"type.railway.subway_entrance.osaka" = "Улаз у метро";
+
+"type.railway.subway_entrance.oslo" = "Улаз у метро";
+
+"type.railway.subway_entrance.palma" = "Улаз у метро";
+
+"type.railway.subway_entrance.panama" = "Улаз у метро";
+
+"type.railway.subway_entrance.paris" = "Улаз у метро";
+
+"type.railway.subway_entrance.philadelphia" = "Улаз у метро";
+
+"type.railway.subway_entrance.pyongyang" = "Улаз у метро";
+
+"type.railway.subway_entrance.rennes" = "Улаз у метро";
+
+"type.railway.subway_entrance.rio" = "Улаз у метро";
+
+"type.railway.subway_entrance.roma" = "Улаз у метро";
+
+"type.railway.subway_entrance.rotterdam" = "Улаз у метро";
+
+"type.railway.subway_entrance.samara" = "Улаз у метро";
+
+"type.railway.subway_entrance.santiago" = "Улаз у метро";
+
+"type.railway.subway_entrance.santo_domingo" = "Улаз у метро";
+
+"type.railway.subway_entrance.saopaulo" = "Улаз у метро";
+
+"type.railway.subway_entrance.sapporo" = "Улаз у метро";
+
+"type.railway.subway_entrance.sendai" = "Улаз у метро";
+
+"type.railway.subway_entrance.sf" = "Улаз у метро";
+
+"type.railway.subway_entrance.shanghai" = "Улаз у метро";
+
+"type.railway.subway_entrance.shenzhen" = "Улаз у метро";
+
+"type.railway.subway_entrance.shiraz" = "Улаз у метро";
+
+"type.railway.subway_entrance.singapore" = "Улаз у метро";
+
+"type.railway.subway_entrance.sofia" = "Улаз у метро";
+
+"type.railway.subway_entrance.spb" = "Улаз у метро";
+
+"type.railway.subway_entrance.stockholm" = "Улаз у метро";
+
+"type.railway.subway_entrance.tabriz" = "Улаз у метро";
+
+"type.railway.subway_entrance.taipei" = "Улаз у метро";
+
+"type.railway.subway_entrance.taoyuan" = "Улаз у метро";
+
+"type.railway.subway_entrance.tashkent" = "Улаз у метро";
+
+"type.railway.subway_entrance.tbilisi" = "Улаз у метро";
+
+"type.railway.subway_entrance.tehran" = "Улаз у метро";
+
+"type.railway.subway_entrance.tianjin" = "Улаз у метро";
+
+"type.railway.subway_entrance.tokyo" = "Улаз у метро";
+
+"type.railway.subway_entrance.valencia" = "Улаз у метро";
+
+"type.railway.subway_entrance.vienna" = "Улаз у метро";
+
+"type.railway.subway_entrance.warszawa" = "Улаз у метро";
+
+"type.railway.subway_entrance.washington" = "Улаз у метро";
+
+"type.railway.subway_entrance.wuhan" = "Улаз у метро";
+
+"type.railway.subway_entrance.yerevan" = "Улаз у метро";
+
+"type.railway.subway_entrance.yokohama" = "Улаз у метро";
+
+"type.railway.tram" = "Трамвај";
+
+"type.railway.tram.bridge" = "Трамвајски мост";
+
+"type.railway.tram.tunnel" = "Трамвајски тунел";
+
+"type.railway.tram_stop" = "Трамвајска станица";
+
+"type.route" = "Рута";
+
+"type.route.ferry" = "Трајект";
+
+"type.route.shuttle_train" = "route-shuttle_train";
+
+"type.shop" = "Продавница";
+
+"type.shop.alcohol" = "Продавница пића";
+
+"type.shop.bakery" = "Пекара";
+
+"type.shop.bathroom_furnishing" = "Намештај за купатило";
+
+"type.shop.beauty" = "Козметички салон";
+
+"type.shop.beverages" = "Пића";
+
+"type.shop.bicycle" = "Продавница бисикла";
+
+"type.shop.bookmaker" = "Кладионица";
+
+"type.shop.books" = "Књижара";
+
+"type.shop.butcher" = "Месара";
+
+"type.shop.cannabis" = "Канабис шоп";
+
+"type.shop.car" = "Продаја аутомобила";
+
+"type.shop.car_parts" = "Ауто-делови";
+
+"type.shop.car_repair" = "Ауто-сервис";
+
+"type.shop.car_repair.tyres" = "Гуме";
+
+"type.shop.caravan" = "Продаја каравана";
+
+"type.shop.carpet" = "Продавница тепиха";
+
+"type.shop.chemist" = "Кућна хемија";
+
+"type.shop.chocolate" = "Чоколада";
+
+"type.shop.clothes" = "Одећа";
+
+"type.shop.coffee" = "Кафа";
+
+"type.shop.computer" = "Компјутери";
+
+"type.shop.confectionery" = "Слаткиши";
+
+"type.shop.convenience" = "Мини-маркет";
+
+"type.shop.copyshop" = "Копирница";
+
+"type.shop.cosmetics" = "Козметика";
+
+"type.shop.curtain" = "Завесе";
+
+"type.shop.deli" = "Десликатеси";
+
+"type.shop.department_store" = "Тржни центар";
+
+"type.shop.doityourself" = "Грађевинска радња";
+
+"type.shop.dry_cleaning" = "Хемијско чишћење";
+
+"type.shop.electronics" = "Електроника";
+
+"type.shop.erotic" = "Секс шоп";
+
+"type.shop.fabric" = "Текстил";
+
+"type.shop.farm" = "Пиљара";
+
+"type.shop.fashion_accessories" = "Модни аксесоари";
+
+"type.shop.florist" = "Цвећара";
+
+"type.shop.funeral_directors" = "Погребна опрема";
+
+"type.shop.furniture" = "Намештај";
+
+"type.shop.garden_centre" = "Баштенски производи";
+
+"type.shop.gas" = "Индустријски гасови";
+
+"type.shop.gift" = "Даротека";
+
+"type.shop.greengrocer" = "Поврће и воће";
+
+"type.shop.grocery" = "Бакалница";
+
+"type.shop.hairdresser" = "Фризер";
+
+"type.shop.hardware" = "Гвожђара";
+
+"type.shop.health_food" = "Здрава храна";
+
+"type.shop.herbalist" = "Продавница биља";
+
+"type.shop.hifi" = "HiFi аудио";
+
+"type.shop.houseware" = "Кућне потрепштине";
+
+"type.shop.jewelry" = "Златара";
+
+"type.shop.kiosk" = "Киоск";
+
+"type.shop.kitchen" = "Кухињска опрема";
+
+"type.shop.laundry" = "Перионица веша";
+
+"type.shop.mall" = "Тржни центар";
+
+"type.shop.massage" = "Масажа";
+
+"type.shop.mobile_phone" = "Мобилни телефони";
+
+"type.shop.money_lender" = "Новчане позајмице";
+
+"type.shop.motorcycle" = "Мотори";
+
+"type.shop.motorcycle_repair" = "Сервис мотора";
+
+"type.shop.music" = "Музика";
+
+"type.shop.musical_instrument" = "Музички инструменти";
+
+"type.shop.newsagent" = "Новинарница";
+
+"type.shop.optician" = "Оптика";
+
+"type.shop.outdoor" = "Пешачење, пењање и камповање";
+
+"type.shop.outpost" = "Преузимање пакета";
+
+"type.shop.pasta" = "Тестенине";
+
+"type.shop.pastry" = "Посластичарница";
+
+"type.shop.pawnbroker" = "Залагаоница";
+
+"type.shop.pet" = "Пет шоп";
+
+"type.shop.pet_grooming" = "Грумер";
+
+"type.shop.photo" = "Фотограф";
+
+"type.shop.rental" = "Центар за изнајмљивање";
+
+"type.shop.rental.bicycle" = "Изнајмљивање бицикала";
+
+"type.shop.seafood" = "Рибарница";
+
+"type.shop.second_hand" = "Половна одећа";
+
+"type.shop.shoes" = "Обућа";
+
+"type.shop.sports" = "Спортска опрема";
+
+"type.shop.stationery" = "Школски и канцеларијски прибор";
+
+"type.shop.supermarket" = "Супермаркет";
+
+"type.shop.tattoo" = "Тетоважа";
+
+"type.shop.tea" = "Чајеви";
+
+"type.shop.ticket" = "Билетарница";
+
+"type.shop.toys" = "Играчке";
+
+"type.shop.travel_agency" = "Туристичка агенција";
+
+"type.shop.tyres" = "Гуме";
+
+"type.shop.variety_store" = "Све по истој цени";
+
+"type.shop.video" = "Видео-клуб";
+
+"type.shop.video_games" = "Видео-игре";
+
+"type.shop.wine" = "Винарија";
+
+"type.shop.agrarian" = "Пољопривредна опрема";
+
+"type.shop.antiques" = "Антикварница";
+
+"type.shop.appliance" = "Продавница апарата";
+
+/* maybe change to Art Gallery for en-US when supported */
+"type.shop.art" = "Уметнички радови";
+
+"type.shop.baby_goods" = "Беби-опрема";
+
+"type.shop.bag" = "Торбе";
+
+"type.shop.bed" = "Душеци / кревети";
+
+"type.shop.boutique" = "Бутик";
+
+"type.shop.charity" = "Добротворна радња";
+
+"type.shop.cheese" = "Сир";
+
+"type.shop.craft" = "Уметност и занати";
+
+"type.shop.dairy" = "Млечни производи";
+
+"type.shop.electrical" = "Електроматеријал";
+
+"type.shop.fishing" = "Рибарница";
+
+"type.shop.interior_decoration" = "Унутрашње декорације";
+
+"type.shop.lottery" = "Лутрија";
+
+"type.shop.medical_supply" = "Фармацеутска компанија";
+
+"type.shop.nutrition_supplements" = "Суплементи";
+
+"type.shop.paint" = "Фарбара";
+
+"type.shop.perfumery" = "Парфимерија";
+
+"type.shop.sewing" = "Позамантерија";
+
+"type.shop.storage_rental" = "Изнајмљивање складишта";
+
+"type.shop.tobacco" = "Дуван";
+
+"type.shop.trade" = "Занатске потрепштине";
+
+"type.shop.watches" = "Сатови";
+
+"type.shop.wholesale" = "Велепродаја";
+
+"type.sport" = "Спорт";
+
+"type.sport.american_football" = "Амерички фудбал";
+
+"type.sport.archery" = "Стреличарство";
+
+"type.sport.athletics" = "Атлетика";
+
+"type.sport.australian_football" = "Аустралијски фудбал";
+
+"type.sport.baseball" = "Бејзбол";
+
+"type.sport.basketball" = "Кошарка";
+
+"type.sport.beachvolleyball" = "Одбојка на песку";
+
+"type.sport.bowls" = "Куглање";
+
+"type.sport.chess" = "Шах";
+
+"type.sport.cricket" = "Крикет";
+
+"type.sport.curling" = "Карлинг";
+
+"type.sport.equestrian" = "Коњички спорт";
+
+"type.sport.golf" = "Голф";
+
+"type.sport.gymnastics" = "Гимнастика";
+
+"type.sport.handball" = "Рукомет";
+
+"type.sport.multi" = "Разни спортови";
+
+/* Used to tag a scuba diving site. */
+"type.sport.scuba_diving" = "Роњење";
+
+"type.sport.shooting" = "Стрељана";
+
+"type.sport.skateboard" = "Скејтборд";
+
+"type.sport.skiing" = "Скијање";
+
+"type.sport.soccer" = "Фудбал";
+
+"type.sport.swimming" = "Пливање";
+
+"type.sport.table_tennis" = "Стони тенис";
+
+"type.sport.tennis" = "Тенис";
+
+"type.sport.volleyball" = "Одбојка";
+
+"type.sport.10pin" = "Куглање";
+
+"type.sport.9pin" = "Куглање";
+
+"type.sport.padel" = "Падел";
+
+"type.sport.futsal" = "Футсал";
+
+"type.sport.ice_hockey" = "Хокеј";
+
+"type.sport.field_hockey" = "Хокеј на трави";
+
+"type.sport.badminton" = "Бадминтон";
+
+"type.sport.pelota" = "Баскијска пелота";
+
+"type.tourism" = "Туризам";
+
+"type.tourism.aquarium" = "Акваријум";
+
+/* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
+"type.tourism.alpine_hut" = "Планинарска колиба";
+
+"type.tourism.apartment" = "Апартман за одмор";
+
+"type.tourism.artwork" = "Уметничка скулптура";
+
+"type.tourism.artwork.architecture" = "Архитектонско уметничко дело";
+
+"type.tourism.artwork.painting" = "Уметничко дело";
+
+"type.tourism.artwork.sculpture" = "Скулптура";
+
+"type.tourism.artwork.statue" = "Статуа";
+
+"type.tourism.attraction" = "Атракција";
+
+"type.attraction.amusement_ride" = "Забавни парк";
+
+"type.attraction.animal" = "Животињски кавез";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Аутићи на струју";
+
+"type.attraction.historic" = "Историјска атракција";
+
+"type.attraction.maze" = "Лавиринт";
+
+"type.attraction.roller_coaster" = "Ролеркостер";
+
+"type.attraction.water_slide" = "Тобоган";
+
+"type.tourism.attraction.specified" = "Атракција";
+
+"type.tourism.camp_site" = "Камп";
+
+"type.tourism.caravan_site" = "Камп за караване";
+
+/* A rentable countryside vacation house. */
+"type.tourism.chalet" = "Викендица";
+
+"type.tourism.gallery" = "Уметничка галерија";
+
+"type.tourism.guest_house" = "Кућа духова";
+
+"type.tourism.hostel" = "Хостел";
+
+"type.tourism.hotel" = "Хотел";
+
+"type.tourism.information" = "Туристичке информације";
+
+"type.tourism.information.board" = "Информациона табла";
+
+"type.tourism.information.guidepost" = "Путоказ";
+
+"type.tourism.information.map" = "Туристичка мапа";
+
+"type.tourism.information.office" = "Туристички биро";
+
+"type.tourism.information.visitor_centre" = "Центар за посетиоце";
+
+"type.tourism.motel" = "Мотел";
+
+"type.tourism.museum" = "Музеј";
+
+"type.tourism.picnic_site" = "Пикник";
+
+"type.leisure.resort" = "Ресорт хотел";
+
+"type.tourism.theme_park" = "Забавни парк";
+
+"type.tourism.viewpoint" = "Видиковац";
+
+/* Typically more basic, not staffed and free (compared to alpine_hut). */
+"type.tourism.wilderness_hut" = "Планинска кућа за туристе";
+
+"type.tourism.zoo" = "Зоолошки врт";
+
+"type.tourism.zoo.petting" = "Контактни зоо-врт";
+
+"type.traffic_calming" = "Пешачки прелаз";
+
+"type.traffic_calming.bump" = "Лежећи полицајац (грба)";
+
+"type.traffic_calming.hump" = "Лежећи полицајац";
+
+"type.waterway" = "Водени ток";
+
+"type.waterway.canal" = "Канал";
+
+"type.waterway.canal.tunnel" = "Тунел у каналу";
+
+"type.waterway.fish_pass" = "Рибљи пут";
+
+"type.waterway.dam" = "Брана";
+
+"type.barrier.ditch" = "Јарак";
+
+"type.natural.water.ditch" = "Канал";
+
+"type.waterway.ditch.tunnel" = "Канал";
+
+"type.waterway.dock" = "Преводница";
+
+"type.waterway.drain" = "Канал";
+
+"type.natural.water.drain" = "Канал";
+
+"type.waterway.drain.tunnel" = "Канал";
+
+"type.waterway.lock_gate" = "Капија";
+
+"type.waterway.river" = "Река";
+
+"type.waterway.river.tunnel" = "Река";
+
+"type.waterway.stream" = "Поток";
+
+"type.waterway.stream.ephemeral" = "Повремени поток";
+
+"type.waterway.stream.intermittent" = "Повремени поток";
+
+"type.waterway.stream.tunnel" = "Поток";
+
+"type.waterway.waterfall" = "Водопад";
+
+"type.waterway.weir" = "Брана";
+
+"type.wheelchair" = "Приступ инвалидским колицима";
+
+"type.wheelchair.limited" = "Лимитирани приступ инвалидским колицима";
+
+"type.wheelchair.no" = "Није приступно инвалидским колицима";
+
+"type.wheelchair.yes" = "Пун приступ инвалидским колицима";
+
+"type.aerialway.j.bar" = "Жичара са Ј пречком";
+
+"type.aerialway.magic_carpet" = "Магични тепих";
+
+"type.aerialway.platter" = "Жичара са тањир седиштем";
+
+"type.aerialway.rope_tow" = "Вучно уже";
+
+"type.aerialway.t.bar" = "Жичара са Т седиштем";
+
+"type.piste_type.downhill" = "Спуст стаза";
+
+"type.piste_type.downhill.area" = "Спуст стаза";
+
+"type.piste_type.downhill.advanced" = "Скијање за напредне";
+
+"type.piste_type.downhill.advanced.area" = "Скијање за напредне";
+
+"type.piste_type.downhill.easy" = "Скијање за почетнике";
+
+"type.piste_type.downhill.easy.area" = "Скијање за почетнике";
+
+"type.piste_type.downhill.expert" = "Скијање за професионалце";
+
+"type.piste_type.downhill.expert.area" = "Скијање за професионалце";
+
+"type.piste_type.downhill.freeride" = "Бесплатно скијање";
+
+"type.piste_type.downhill.intermediate" = "Средња ски-стаза";
+
+"type.piste_type.downhill.intermediate.area" = "Средња ски-стаза";
+
+"type.piste_type.downhill.novice" = "Скијање за потпуне почетнике";
+
+"type.piste_type.downhill.novice.area" = "Скијање за потпуне почетнике";
+
+"type.piste_type.nordic" = "Стаза за нордијско скијање";
+
+"type.piste_type.sled" = "Стаза за санкање";
+
+"type.piste_type.sled.area" = "Стаза за санкање";
+
+"type.piste_type.snow_park" = "Снежни парк";
+
+"type.piste_type.hike" = "Снежна стаза за ходање";
+
+"type.piste_type.connection" = "Веза између стаза";
+
+"type.piste_type.skitour" = "Ски-тур стаза";
+
+"type.amenity.events_venue" = "Место одржавања догађаја";
+
+"type.shop.auction" = "Аукција";
+
+"type.shop.collector" = "Колекционарство";
+
+"type.self_service.yes" = "Доступно самопослужење";
+
+"type.self_service.only" = "Самопослуживање";
+
+"type.self_service.partially" = "Делимично самопослуживање";
+
+"type.self_service.no" = "Нема самопослуживања";
+
+/* https://wiki.openstreetmap.org/wiki/Key:social_facility */
+"type.amenity.social_facility" = "Социјална установа";
+
+/* https://wiki.openstreetmap.org/wiki/Tag:emergency=emergency_ward_entrance */
+"type.emergency.emergency_ward_entrance" = "Улаз у хитну помоћ";
+
+/* https://wiki.openstreetmap.org/wiki/Tag:amenity=dojo */
+"type.amenity.dojo" = "Дојо";
+
+/* https://wiki.openstreetmap.org/wiki/Tag:leisure=sports_hall */
+"type.leisure.sports_hall" = "Спортска хала";

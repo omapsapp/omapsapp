@@ -67,7 +67,7 @@ final class PlacePagePreviewViewController: UIViewController {
     updateViews()
   }
 
-  private func updateViews() {
+  func updateViews() {
     if placePagePreviewData.isMyPosition {
       if let speedAndAltitude = speedAndAltitude {
         subtitleLabel.text = speedAndAltitude
@@ -91,7 +91,7 @@ final class PlacePagePreviewViewController: UIViewController {
 
     placePageDirectionView = subtitleDirectionView
 
-    if let address = placePagePreviewData.address {
+    if let address = placePagePreviewData.secondarySubtitle {
       addressLabel.text = address
       placePageDirectionView = addressDirectionView
     } else {
@@ -140,81 +140,80 @@ final class PlacePagePreviewViewController: UIViewController {
   // MARK: private
 
   private func configSchedule() {
-    let now = time_t(Date().timeIntervalSince1970);
-    
-    let hourFormatter = DateFormatter()
-    hourFormatter.locale = Locale.current
-    hourFormatter.timeStyle = .short
-    
+    let now = time_t(Date().timeIntervalSince1970)
+
+    func stringFromTime(_ time: Int) -> String {
+      DateTimeFormatter.dateString(from: Date(timeIntervalSince1970: TimeInterval(time)),
+                                   dateStyle: .none,
+                                   timeStyle: .short)
+    }
+
     switch placePagePreviewData.schedule.state {
+    case .unknown:
+      scheduleContainerView.isHidden = true
     case .allDay:
       setScheduleLabel(state: L("twentyfour_seven"),
                        stateColor: UIColor.systemGreen,
-                       details: nil);
+                       details: nil)
       
     case .open:
-      let nextTimeClosed = placePagePreviewData.schedule.nextTimeClosed;
-      let minutesUntilClosed = (nextTimeClosed - now) / 60;
-      let stringTimeInterval = getTimeIntervalString(minutes: minutesUntilClosed);
-      let stringTime = hourFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(nextTimeClosed)));
-      
-      let details: String?;
+      let nextTimeClosed = placePagePreviewData.schedule.nextTimeClosed
+      let minutesUntilClosed = (nextTimeClosed - now) / 60
+      let stringTimeInterval = getTimeIntervalString(minutes: minutesUntilClosed)
+      let stringTime = stringFromTime(nextTimeClosed)
+
+      let details: String?
       if (minutesUntilClosed < 3 * 60)  // Less than 3 hours
       {
-        details = String(format: L("closes_in"), stringTimeInterval) + " • " + stringTime;
+        details = String(format: L("closes_in"), stringTimeInterval) + " • " + stringTime
       }
       else if (minutesUntilClosed < 24 * 60)  // Less than 24 hours
       {
-        details = String(format: L("closes_at"), stringTime);
+        details = String(format: L("closes_at"), stringTime)
       }
       else
       {
-        details = nil;
+        details = nil
       }
       
       setScheduleLabel(state: L("editor_time_open"),
                        stateColor: UIColor.systemGreen,
-                       details: details);
+                       details: details)
       
     case .closed:
-      let nextTimeOpen = placePagePreviewData.schedule.nextTimeOpen;
-      let nextTimeOpenDate = Date(timeIntervalSince1970: TimeInterval(nextTimeOpen));
+      let nextTimeOpen = placePagePreviewData.schedule.nextTimeOpen
+      let nextTimeOpenDate = Date(timeIntervalSince1970: TimeInterval(nextTimeOpen))
       
-      let minutesUntilOpen = (nextTimeOpen - now) / 60;
-      let stringTimeInterval = getTimeIntervalString(minutes: minutesUntilOpen);
-      let stringTime = hourFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(nextTimeOpen)));
-      
-      let details: String?;
+      let minutesUntilOpen = (nextTimeOpen - now) / 60
+      let stringTimeInterval = getTimeIntervalString(minutes: minutesUntilOpen)
+      let stringTime = stringFromTime(nextTimeOpen)
+
+      let details: String?
       if (minutesUntilOpen < 3 * 60)  // Less than 3 hours
       {
-        details = String(format: L("opens_in"), stringTimeInterval) + " • " + stringTime;
+        details = String(format: L("opens_in"), stringTimeInterval) + " • " + stringTime
       }
       else if (Calendar.current.isDateInToday(nextTimeOpenDate))   // Today
       {
-        details = String(format: L("opens_at"), stringTime);
+        details = String(format: L("opens_at"), stringTime)
       }
       else if (minutesUntilOpen < 24 * 60)   // Less than 24 hours
       {
-        details = String(format: L("opens_tomorrow_at"), stringTime);
+        details = String(format: L("opens_tomorrow_at"), stringTime)
       }
       else if (minutesUntilOpen < 7 * 24 * 60)  // Less than 1 week
       {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE";
-        let dayOfWeek = dateFormatter.string(from: nextTimeOpenDate);
-        details = String(format: L("opens_dayoftheweek_at"), dayOfWeek, stringTime);
+        let dayOfWeek = DateTimeFormatter.dateString(from: nextTimeOpenDate, format: "EEEE")
+        details = String(format: L("opens_dayoftheweek_at"), dayOfWeek, stringTime)
       }
       else
       {
-        details = nil;
+        details = nil
       }
       
       setScheduleLabel(state: L("closed_now"),
                        stateColor: UIColor.systemRed,
-                       details: details);
-      
-    case .unknown:
-      scheduleContainerView.isHidden = true
+                       details: details)
       
     @unknown default:
       fatalError()
@@ -222,28 +221,28 @@ final class PlacePagePreviewViewController: UIViewController {
   }
   
   private func getTimeIntervalString(minutes: Int) -> String {
-    var str = "";
+    var str = ""
     if (minutes >= 60)
     {
-      str = String(minutes / 60) + " " + L("hour") + " ";
+      str = String(minutes / 60) + " " + L("hour") + " "
     }
-    str += String(minutes % 60) + " " + L("minute");
-    return str;
+    str += String(minutes % 60) + " " + L("minute")
+    return str
   }
   
   private func setScheduleLabel(state: String, stateColor: UIColor, details: String?) {
-    let attributedString = NSMutableAttributedString();
+    let attributedString = NSMutableAttributedString()
     let stateString = NSAttributedString(string: state,
                                          attributes: [NSAttributedString.Key.font: UIFont.regular14(),
-                                                      NSAttributedString.Key.foregroundColor: stateColor]);
-    attributedString.append(stateString);
+                                                      NSAttributedString.Key.foregroundColor: stateColor])
+    attributedString.append(stateString)
     if (details != nil)
     {
       let detailsString = NSAttributedString(string: " • " + details!,
                                              attributes: [NSAttributedString.Key.font: UIFont.regular14(),
-                                                          NSAttributedString.Key.foregroundColor: UIColor.blackSecondaryText()]);
-      attributedString.append(detailsString);
+                                                          NSAttributedString.Key.foregroundColor: UIColor.blackSecondaryText()])
+      attributedString.append(detailsString)
     }
-    scheduleLabel.attributedText = attributedString;
+    scheduleLabel.attributedText = attributedString
   }
 }

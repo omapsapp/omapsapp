@@ -140,18 +140,9 @@ NSString * const kUDDidShowLongTapToShowSideButtonsToast = @"kUDDidShowLongTapTo
 - (void)setHidden:(BOOL)hidden 
 {
   if (!self.hidden && hidden)
-    [self showLongTapToShowSideButtonsToastOnFirstHiding];
+    [[MWMToast toastWithText:L(@"long_tap_toast")] show];
 
   return [self.sideView setHidden:hidden animated:YES];
-}
-
-- (void)showLongTapToShowSideButtonsToastOnFirstHiding
-{
-  if (![NSUserDefaults.standardUserDefaults boolForKey:kUDDidShowLongTapToShowSideButtonsToast])
-  {
-    [[MWMToast toastWithText:L(@"long_tap_toast")] show];
-    [NSUserDefaults.standardUserDefaults setBool:YES forKey:kUDDidShowLongTapToShowSideButtonsToast];
-  }
 }
 
 @end

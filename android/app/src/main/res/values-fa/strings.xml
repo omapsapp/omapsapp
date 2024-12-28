@@ -280,6 +280,10 @@
     <string name="google_play_services">خدمات مکان Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">به سرعت مکان تقریبی خود را با استفاده از بلوتوث، WiFi یا شبکه تلفن همراه تعیین کنید</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">لینک های هتل Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">عکسu200cها، نظرات، لینکu200cهای رزرو برای هتلu200cهایی که فهرستی در Kayak.com دارند نمایش داده میu200cشوند. پاداش ارجاعی دریافت شده برای هر رزرو از طریق این پیوندها به سمت توسعه Organic Maps می رود.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">دانلود تمامی نقشه‌ها در طول مسیر‌تان</string>
     <!-- Text for routing error dialog -->
@@ -462,7 +466,10 @@
     <string name="message_invalid_feature_position">نمی توان شی ای در این مکان باشد</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">داده های OpenStreetMap ایجاد شده توسط انجمن از %s. درباره نحوه ویرایش و به روز رسانی نقشه در OpenStreetMap.org بیشتر بیاموزید</string>
-    <string name="login_to_make_edits_visible">وارد شوید تا دیگر کاربران نیز بتوانند تغییرات ایجاد شده توسط شما را ببینند</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) یک پروژه اجتماعی برای ساخت یک نقشه رایگان و باز است. این منبع اصلی داده های نقشه در نقشه های ارگانیک است و مشابه ویکی پدیا کار می کند. میu200cتوانید مکانu200cها را اضافه یا ویرایش کنید تا در دسترس میلیونu200cها کاربر در سراسر جهان قرار گیرند.
+\nبه انجمن بپیوندید و به ایجاد نقشه بهتر برای همه کمک کنید!</string>
+    <string name="login_to_make_edits_visible">یک حساب OpenStreetMap ایجاد کنید یا وارد شوید تا ویرایش های نقشه خود را در جهان منتشر کنید.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d  از  %2$d</string>
     <string name="download_over_mobile_header">دانلود بر روی یک شبکه دیتای موبایل؟</string>
@@ -482,9 +489,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">ویرایش های شما در پایگاه داده عمومی <a href="https://wiki.openstreetmap.org/wiki/Fa:About_OpenStreetMap">OpenStreetMap</a> آپلود می شود. لطفا اطلاعات شخصی یا دارای حق چاپ را اضافه نکنید.</string>
     <string name="editor_more_about_osm">در مورد OpenStreetMap بیشتر بدانید</string>
-    <string name="editor_operator">مالک</string>
+    <string name="editor_osm_history">سابقه ویرایش شما</string>
+    <string name="editor_osm_notes">یادداشت های داده های نقشه شما</string>
+    <string name="editor_operator">اپراتور</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">مالک: %s</string>
+    <string name="operator">اپراتور: %s</string>
     <string name="editor_category_unsuitable_title">آیا نمی توانید یک دسته بندی مناسب پیدا کنید؟</string>
     <string name="editor_category_unsuitable_text">Organic Maps اجازه میu200cدهد فقط دستهu200cهای نقطهu200cای ساده را اضافه کند، یعنی هیچ شهر، جاده، دریاچه، طرح کلی ساختمان و غیره وجود ندارد. لطفاً این دستهu200cها را مستقیماً به <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> اضافه کنید. برای دستورالعملu200cهای گام به گام، <a href="https://organicmaps.app/faq/editing/advanced-map-editing">راهنمای</a> ما را بررسی کنید.</string>
     <string name="downloader_no_downloaded_maps_title">شما هیچ نقشه دانلود شده ای ندارید</string>
@@ -503,6 +512,7 @@
     <string name="miles_per_hour">مایل بر ساعت (mph)</string>
     <string name="hour">ساعت</string>
     <string name="minute">دقیقه</string>
+    <string name="day">روز</string>
     <string name="placepage_more_button">بیشتر</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">عکس ها، نظرات، رزرو</string>
@@ -510,6 +520,8 @@
     <string name="dialog_kayak_disclaimer">پاداش ارجاعی دریافت شده برای هر رزرو از طریق این پیوند به سمت توسعه نقشه های ارگانیک می رود.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">جزئیات در Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak را غیرفعال کنید</string>
     <string name="placepage_edit_bookmark_button">ویرایش نشانه‌ها</string>
     <string name="editor_comment_hint">اظهار نظر</string>
     <string name="editor_reset_edits_message">آیا تغییرات محلی را نادیده می گیرید؟</string>
@@ -563,7 +575,7 @@
     <string name="routing_add_start_point">برای افزودن نقطه شروع مسیر، از جستجو استفاده کنید یا روی نقشه ضربه بزنید</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">برای افزودن نقطه مقصد، از جستجو استفاده کنید یا روی نقشه ضربه بزنید</string>
-    <string name="placepage_remove_stop">حذف</string>
+    <string name="placepage_remove_stop">توقف را حذف کنید</string>
     <string name="placepage_add_stop">اضافه کردن توقف</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">لطفاً به OpenStreetMap وارد شوید تا به طور خودکار تمام ویرایش های نقشه خود را آپلود کنید. <a href="https://github.com/organicmaps/organicmaps/issues/6144">اینجا</a> بیشتر بیاموزید.</string>
@@ -714,8 +726,8 @@
     <string name="isolines_location_error_dialog">لایه توپوگرافی هنوز برای این منطقه در دسترس نیست</string>
     <string name="elevation_profile_ascent">بالا رفتن</string>
     <string name="elevation_profile_descent">پایین آمدن</string>
-    <string name="elevation_profile_minaltitude">کمینه ارتفاع</string>
-    <string name="elevation_profile_maxaltitude">بیشینه ارتفاع</string>
+    <string name="elevation_profile_min_elevation">کم ارتفاع</string>
+    <string name="elevation_profile_max_elevation">بیش ارتفاع</string>
     <string name="elevation_profile_difficulty">دشواری</string>
     <string name="elevation_profile_distance">مسافت</string>
     <string name="elevation_profile_time">زمان:</string>
@@ -739,7 +751,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">اگر یک توسعه‌دهنده نرم‌افزار را می‌شناسید، می‌توانید از او بخواهید ویژگی مورد نیاز خود را پیاده‌سازی کند.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">آیا می‌دانید که می‌توانید روی هر مکانی روی نقشه ضربه طولانی بزنید تا آن را انتخاب کنید؟</string>
+    <string name="app_tip_04">برای انتخاب هر چیزی روی هر نقطه از نقشه ضربه بزنید. برای مخفی کردن و نشان دادن رابط، ضربه طولانی بزنید.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">آیا می دانید که می توانید مکان فعلی خود را روی نقشه انتخاب کنید؟</string>
     <!-- App tip #06 -->
@@ -809,7 +821,11 @@
     <string name="track_recording_toast_nothing_to_save">مسیر خالی است - چیزی برای ذخیره کردن وجود ندارد</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">امکان نمایش گفتگوی انتخاب پوشه وجود ندارد زیرا برنامه مناسبی روی دستگاه شما نصب نشده است. لطفاً یک برنامه مدیریت فایل نصب کنید و دوباره امتحان کنید</string>
+    <string name="choose_color">انتخاب رنگ</string>
+    <string name="edit_track">ویرایش مسیر</string>
     <string name="uri_open_location_failed">هیچ برنامه ای نصب نشده است که بتواند مکان را باز کند</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">خودکار در ناوبری</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">آدرس/بلاک</string>
@@ -921,6 +937,7 @@
     <string name="type.amenity.police">کلانتری</string>
     <string name="type.amenity.post_box">صندوق پست</string>
     <string name="type.amenity.post_office">دفتر پست</string>
+    <string name="type.amenity.prison">زندا   ن</string>
     <string name="type.amenity.pub">میکده</string>
 
     <!-- SECTION: Types: Recycling -->
@@ -962,6 +979,7 @@
     <string name="type.amenity.waste_basket">سطل زباله</string>
     <string name="type.amenity.waste_disposal">زباله دانی</string>
     <string name="type.amenity.water_point">شیر آب قابل شرب</string>
+    <string name="type.amenity.water_point.drinking_water_no">شیر آب قابل شرب</string>
     <string name="type.barrier.block">بلوک</string>
     <string name="type.barrier.bollard">ستون</string>
     <string name="type.barrier.border_control">کنترل مرزی</string>
@@ -992,7 +1010,7 @@
     <string name="type.building.has_parts">ساختمان</string>
     <string name="type.building_part">ساختمان</string>
     <string name="type.building.garage">گاراژ</string>
-    <string name="type.building.train_station">ایستگاه قطار</string>
+    <string name="type.building.train_station">ساختمان ایستگاه</string>
     <string name="type.cemetery.grave">ﺮﺒﻗ</string>
     <string name="type.craft">صنعت‌گری</string>
     <string name="type.craft.beekeeper">زنبوردار</string>
@@ -1286,8 +1304,10 @@
     <string name="type.man_made.tower">برج</string>
     <string name="type.man_made.tower.communication">برج ارتباطات</string>
     <string name="type.man_made.water_tap">شیراب</string>
+    <string name="type.man_made.water_tap.drinking_water_no">شیراب</string>
     <string name="type.man_made.water_tower">منبع اب</string>
     <string name="type.man_made.water_well">چاه اب</string>
+    <string name="type.man_made.water_well.drinking_water_no">چاه اب</string>
     <string name="type.man_made.windmill">توربین بادی</string>
     <string name="type.military.bunker">پناهگاه</string>
     <string name="type.natural">طبیعت</string>
@@ -1327,6 +1347,7 @@
     <string name="type.natural.rock">سنگ</string>
     <string name="type.natural.scrub">بوته زار</string>
     <string name="type.natural.spring">چشمه</string>
+    <string name="type.natural.spring.drinking_water_no">چشمه</string>
     <string name="type.natural.strait">تنگه</string>
     <string name="type.natural.tree_row">ردیف درخت</string>
     <string name="type.natural.vineyard">تاکستان</string>
@@ -1419,6 +1440,7 @@
     <string name="type.railway.station">ایستگاه قطار</string>
     <string name="type.railway.station.funicular">فونیکولور</string>
     <string name="type.railway.station.light_rail">ایستگاه قطار</string>
+    <string name="type.railway.station.light_rail.berlin">ایستگاه قطار</string>
     <string name="type.railway.station.light_rail.london">ایستگاه قطار</string>
     <string name="type.railway.station.light_rail.porto">ایستگاه قطار</string>
     <string name="type.railway.station.monorail">ایستگاه قطار</string>
@@ -1461,6 +1483,7 @@
     <string name="type.railway.station.subway.hamburg">حمل و نقل</string>
     <string name="type.railway.station.subway.helsinki">حمل و نقل</string>
     <string name="type.railway.station.subway.hiroshima">حمل و نقل</string>
+    <string name="type.railway.station.subway.hongkong">حمل و نقل</string>
     <string name="type.railway.station.subway.isfahan">حمل و نقل</string>
     <string name="type.railway.station.subway.istanbul">حمل و نقل</string>
     <string name="type.railway.station.subway.izmir">حمل و نقل</string>
@@ -1514,6 +1537,7 @@
     <string name="type.railway.station.subway.sendai">حمل و نقل</string>
     <string name="type.railway.station.subway.sf">حمل و نقل</string>
     <string name="type.railway.station.subway.shanghai">حمل و نقل</string>
+    <string name="type.railway.station.subway.shenzhen">حمل و نقل</string>
     <string name="type.railway.station.subway.shiraz">حمل و نقل</string>
     <string name="type.railway.station.subway.singapore">حمل و نقل</string>
     <string name="type.railway.station.subway.sofia">حمل و نقل</string>
@@ -1573,6 +1597,7 @@
     <string name="type.railway.subway_entrance.hamburg">ورودی مترو</string>
     <string name="type.railway.subway_entrance.helsinki">ورودی مترو</string>
     <string name="type.railway.subway_entrance.hiroshima">ورودی مترو</string>
+    <string name="type.railway.subway_entrance.hongkong">ورودی مترو</string>
     <string name="type.railway.subway_entrance.isfahan">ورودی مترو</string>
     <string name="type.railway.subway_entrance.istanbul">ورودی مترو</string>
     <string name="type.railway.subway_entrance.izmir">ورودی مترو</string>
@@ -1626,6 +1651,7 @@
     <string name="type.railway.subway_entrance.sendai">ورودی مترو</string>
     <string name="type.railway.subway_entrance.sf">ورودی مترو</string>
     <string name="type.railway.subway_entrance.shanghai">ورودی مترو</string>
+    <string name="type.railway.subway_entrance.shenzhen">ورودی مترو</string>
     <string name="type.railway.subway_entrance.shiraz">ورودی مترو</string>
     <string name="type.railway.subway_entrance.singapore">ورودی مترو</string>
     <string name="type.railway.subway_entrance.sofia">ورودی مترو</string>
@@ -1712,6 +1738,7 @@
     <string name="type.shop.optician">فروشگاه</string>
     <string name="type.shop.outdoor">فروشگاه</string>
     <string name="type.shop.outpost">نقطه وانت</string>
+    <string name="type.shop.pasta">فروشگاه ماکارونی</string>
     <string name="type.shop.pastry">ﯽﻨﯾﺮﯿﺷ</string>
     <string name="type.shop.pawnbroker">عتیقه فروشی</string>
     <string name="type.shop.pet">فروشگاه</string>
@@ -1807,7 +1834,13 @@
     <string name="type.tourism.artwork.sculpture">گردشگری</string>
     <string name="type.tourism.artwork.statue">گردشگری</string>
     <string name="type.tourism.attraction">گردشگری</string>
+    <string name="type.attraction.amusement_ride">سواری تفریحی</string>
     <string name="type.attraction.animal">محوطه حیوانات</string>
+    <string name="type.attraction.carousel">چرخ فلک</string>
+    <string name="type.attraction.historic">جاذبه تاریخی</string>
+    <string name="type.attraction.maze">ماز</string>
+    <string name="type.attraction.roller_coaster">ترن هوایی</string>
+    <string name="type.attraction.water_slide">سرسره آبی</string>
     <string name="type.tourism.attraction.specified">گردشگری</string>
     <string name="type.tourism.camp_site">محل چادر زنی</string>
     <!-- A rentable countryside vacation house. -->

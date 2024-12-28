@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Adományozz, hogy együtt építsük a legjobb térképeket!";
 
+"already_donated" = "Már adományozva";
+
+"remind_me_later" = "Emlékeztessen később";
+
+"support_organic_maps" = "Organic Maps támogatása";
+
 /* Button in the main Help dialog */
 "copyright" = "Szerzői jog";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Közösség által létrehozott OpenStreetMap adatok %@-tól. Tudjon meg többet a térkép szerkesztéséről és frissítéséről az OpenStreetMap.org oldalon.";
 
-"login_to_make_edits_visible" = "Jelentkezzen be, hogy más felhasználók is láthassák a változtatásait.";
+"login_to_make_edits_visible" = "Hozzon létre egy OpenStreetMap-fiókot, vagy jelentkezzen be, hogy közzétehesse térképszerkesztéseit a világ számára.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "A letöltéshez több szabad tárhelyre van szükség. Kérjük, töröld a szükségtelen adatokat.";
@@ -746,6 +752,10 @@
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
 "operator" = "Üzemeltető: %@";
+
+"editor_category_unsuitable_title" = "Nem találja a megfelelő kategóriát?";
+
+"editor_category_unsuitable_text" = "Az Organic Maps csak egyszerű pontkategóriák hozzáadását teszi lehetővé, azaz nem tartalmaz városokat, utakat, tavakat, épületek körvonalait stb. Kérjük, hogy az ilyen kategóriákat közvetlenül a <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a> oldalon adja hozzá. A részletes, lépésről lépésre történő útmutatásért tekintse meg <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">útmutatónkat</a>.";
 
 "downloader_no_downloaded_maps_title" = "Még nem töltött le térképet";
 
@@ -795,6 +805,8 @@
 
 "minute" = "p";
 
+"day" = "nap";
+
 "placepage_more_button" = "Még";
 
 "book_button" = "Foglalás";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Részletek a Kayak-on";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Kayak kikapcsolása";
 
 "placepage_call_button" = "Hívás";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Terv";
 
-"placepage_remove_stop" = "Eltávolítja";
+"placepage_remove_stop" = "Távolítsa el a stopot";
 
 "planning_route_remove_title" = "Húzza ide az eltávolításhoz";
 
@@ -950,7 +965,7 @@
 "bookmarks_create_new_group" = "Új lista létrehozása";
 
 /* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
-"bookmarks_import" = "Könyvjelzők és sávok importálása";
+"bookmarks_import" = "Könyvjelzők és nyomvonalak importálása";
 
 "downloader_hide_screen" = "Képernyő elrejtése";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Leereszkedés";
 
-"elevation_profile_minaltitude" = "Min. magasság";
+"elevation_profile_min_elevation" = "Min. magasság";
 
-"elevation_profile_maxaltitude" = "Max. magasság";
+"elevation_profile_max_elevation" = "Max. magasság";
 
 "elevation_profile_difficulty" = "Nehézség";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Biztos, hogy törölni szeretné ezt a zeneszámot?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Ha ismer egy szoftverfejlesztőt, megkérheti őt egy olyan funkció megvalósítására, amelyre szüksége van.";
 
 /* App tip #04 */
-"app_tip_04" = "Tudja, hogy a térkép bármely pontjára hosszan koppintva kiválaszthatja azt?";
+"app_tip_04" = "Koppintson a térképen bárhová, hogy bármit kiválaszthasson. Hosszú koppintással elrejtheti és visszahozhatja a felületet.";
 
 /* App tip #05 */
 "app_tip_05" = "Tudja, hogy kijelölheti pozícióját a térképen?";
@@ -1309,7 +1327,7 @@
 "button_layer_outdoor" = "Túrázás";
 
 /* Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks */
-"bookmarks_export" = "Az összes könyvjelző és sáv exportálása";
+"bookmarks_export" = "Az összes könyvjelző és nyomvonal exportálása";
 
 /* Text for the editing the Track's color button. */
 "change_color" = "Szín megváltoztatása";
@@ -1394,6 +1412,8 @@
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Az útvonal üres - nincs mit menteni";
 
+"edit_track" = "Útvonal szerkesztése";
+
 
 /********** Types **********/
 
@@ -1449,7 +1469,7 @@
 
 "type.amenity.bench" = "Pad";
 
-"type.amenity.bicycle_parking" = "Kerékpárparkoló";
+"type.amenity.bicycle_parking" = "Kerékpártároló";
 
 "type.amenity.bicycle_rental" = "Kerékpárkölcsönző";
 
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Posta";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "Börtön";
 
 "type.amenity.pub" = "Kocsma";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Vízvételi pont";
 
+"type.amenity.water_point.drinking_water_no" = "Vízvételi pont";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Blokk";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garázs";
 
-"type.building.train_station" = "Vasútállomás";
+"type.building.train_station" = "Állomásépület";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Vízcsap";
 
+"type.man_made.water_tap.drinking_water_no" = "Vízcsap";
+
 "type.man_made.water_tower" = "Víztorony";
 
 "type.man_made.water_well" = "Ivókút";
+
+"type.man_made.water_well.drinking_water_no" = "Ivókút";
 
 "type.man_made.windmill" = "Szélmalom";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Cserjés";
 
 "type.natural.spring" = "Természetes forrás";
+
+"type.natural.spring.drinking_water_no" = "Természetes forrás";
 
 "type.natural.strait" = "Szoros";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Vasútállomás";
 
+"type.railway.station.light_rail.berlin" = "Vasútállomás";
+
 "type.railway.station.light_rail.london" = "Vasútállomás";
 
 "type.railway.station.light_rail.porto" = "Vasútállomás";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Metrómegálló";
 
 "type.railway.station.subway.hiroshima" = "Metrómegálló";
+
+"type.railway.station.subway.hongkong" = "Metrómegálló";
 
 "type.railway.station.subway.isfahan" = "Metrómegálló";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Metrómegálló";
 
 "type.railway.station.subway.shanghai" = "Metrómegálló";
+
+"type.railway.station.subway.shenzhen" = "Metrómegálló";
 
 "type.railway.station.subway.shiraz" = "Metrómegálló";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Metróbejárat";
 
+"type.railway.subway_entrance.hongkong" = "Metróbejárat";
+
 "type.railway.subway_entrance.isfahan" = "Metróbejárat";
 
 "type.railway.subway_entrance.istanbul" = "Metróbejárat";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Metróbejárat";
 
 "type.railway.subway_entrance.shanghai" = "Metróbejárat";
+
+"type.railway.subway_entrance.shenzhen" = "Metróbejárat";
 
 "type.railway.subway_entrance.shiraz" = "Metróbejárat";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Túrafelszerelés";
 
 "type.shop.outpost" = "Felvevő pont";
+
+"type.shop.pasta" = "Tészta bolt";
 
 "type.shop.pastry" = "Cukrászda";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Látnivaló";
 
+"type.attraction.amusement_ride" = "Vidámpark";
+
 "type.attraction.animal" = "Állatok tartása";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Körhinta";
+
+"type.attraction.historic" = "Történelmi látványosság";
+
+"type.attraction.maze" = "Labirintus";
+
+"type.attraction.roller_coaster" = "Hullámvasút";
+
+"type.attraction.water_slide" = "Vízicsúszda";
 
 "type.tourism.attraction.specified" = "Látnivaló";
 

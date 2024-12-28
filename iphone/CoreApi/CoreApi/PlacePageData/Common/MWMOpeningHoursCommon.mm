@@ -1,4 +1,5 @@
 #import "MWMOpeningHoursCommon.h"
+#import "CoreApi/CoreApi-Swift.h"
 
 NSDateComponents * dateComponentsFromTime(osmoh::Time const & time)
 {
@@ -17,11 +18,9 @@ NSDate * dateFromTime(osmoh::Time const & time)
 
 NSString * stringFromTime(osmoh::Time const & time)
 {
-  NSDateFormatter * fmt = [[NSDateFormatter alloc] init];
-  fmt.locale = NSLocale.currentLocale;
-  fmt.timeStyle = NSDateFormatterShortStyle;
-  fmt.dateStyle = NSDateFormatterNoStyle;
-  return [fmt stringFromDate:dateFromTime(time)];
+  return [DateTimeFormatter dateStringFrom:dateFromTime(time)
+                                 dateStyle:NSDateFormatterNoStyle
+                                 timeStyle:NSDateFormatterShortStyle];
 }
 
 NSString * stringFromOpeningDays(editor::ui::OpeningDays const & openingDays)

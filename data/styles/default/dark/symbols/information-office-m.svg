@@ -1,10 +1,11 @@
-<svg version="1.1" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
- <title>information-m</title>
- <g id="Page-2:-Night" fill="none" fill-rule="evenodd" opacity="1">
-  <g id="information-m" fill-rule="nonzero">
-   <circle id="Oval" cx="12" cy="12" r="12" fill="#000" opacity=".6"/>
-   <circle id="Oval" cx="12" cy="12" r="11" fill="#717065"/>
-   <path id="Shape" d="m12 5c-3.864 0-7 3.136-7 7s3.136 7 7 7 7-3.136 7-7-3.136-7-7-7zm0 10.5c-0.385 0-0.7-0.315-0.7-0.7v-2.8c0-0.385 0.315-0.7 0.7-0.7s0.7 0.315 0.7 0.7v2.8c0 0.385-0.315 0.7-0.7 0.7zm0.7-5.6h-1.4v-1.4h1.4v1.4z" fill="#000"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18" height="18" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+ <circle cx="9" cy="9" r="9" fill="#000" opacity=".6"/>
+ <circle cx="9" cy="9" r="8.25" fill="#717065"/>
+ <g fill="#000">
+  <circle cx="9" cy="5" r="1.5"/>
+  <rect x="7" y="7" width="3" height="1.5" rx=".5" ry=".5"/>
+  <rect x="8" y="8" width="2" height="5"/>
+  <rect x="7" y="12.5" width="4" height="1.5" rx=".5" ry=".5"/>
  </g>
 </svg>

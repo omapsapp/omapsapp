@@ -208,7 +208,7 @@ IsPostPoiChecker::IsPostPoiChecker()
 IsOperatorOthersPoiChecker::IsOperatorOthersPoiChecker()
 {
   Classificator const & c = classif();
-  for (char const * val : {"bicycle_rental", "bureau_de_change", "car_sharing", "car_rental", "fuel", "charging_station", 
+  for (char const * val : {"bicycle_rental", "bureau_de_change", "car_sharing", "car_rental", "fuel", "charging_station",
                            "parking", "motorcycle_parking", "bicycle_parking", "payment_terminal", "university", "vending_machine"})
     m_types.push_back(c.GetTypeByPath({"amenity", val}));
 }
@@ -353,10 +353,22 @@ IsStreetOrSquareChecker::IsStreetOrSquareChecker()
     m_types.push_back(t);
 }
 
+// Used to determine for which features to display address in PP and in search results.
+// If such a feature has a housenumber and a name then its enriched with a postcode (at the generation stage).
 IsAddressObjectChecker::IsAddressObjectChecker() : BaseChecker(1 /* level */)
 {
+  /// @todo(pastk): some objects in TwoLevelPOIChecker can have addresses also.
   m_types = OneLevelPOIChecker().GetTypes();
 
+  Classificator const & c = classif();
+  for (auto const * p : {"addr:interpolation", "building", "entrance"})
+    m_types.push_back(c.GetTypeByPath({p}));
+}
+
+// Used to insert exact address (street and house number) instead of
+// an empty name in search results (see ranker.cpp)
+IsAddressChecker::IsAddressChecker() : BaseChecker(1 /* level */)
+{
   Classificator const & c = classif();
   for (auto const * p : {"addr:interpolation", "building", "entrance"})
     m_types.push_back(c.GetTypeByPath({p}));
@@ -424,6 +436,7 @@ IsPisteChecker::IsPisteChecker() : BaseChecker(1 /* level */)
 }
 
 
+// Used in IsPoiChecker and in IsAddressObjectChecker.
 OneLevelPOIChecker::OneLevelPOIChecker() : ftypes::BaseChecker(1 /* level */)
 {
   Classificator const & c = classif();
@@ -433,6 +446,7 @@ OneLevelPOIChecker::OneLevelPOIChecker() : ftypes::BaseChecker(1 /* level */)
     m_types.push_back(c.GetTypeByPath({path}));
 }
 
+// Used in IsPoiChecker and also in TypesSkipper to keep types in the search index.
 TwoLevelPOIChecker::TwoLevelPOIChecker() : ftypes::BaseChecker(2 /* level */)
 {
   Classificator const & c = classif();
@@ -493,6 +507,9 @@ AttractionsChecker::AttractionsChecker() : BaseChecker(2 /* level */)
       {"historic", "gallows"},
       {"historic", "memorial"},
       {"historic", "monument"},
+      {"historic", "locomotive"},
+      {"historic", "tank"},
+      {"historic", "aircraft"},
       {"historic", "pillory"},
       {"historic", "ruins"},
       {"historic", "ship"},
@@ -711,6 +728,12 @@ IsPublicTransportStopChecker::IsPublicTransportStopChecker()
   m_types.push_back(c.GetTypeByPath({"highway", "bus_stop"}));
   m_types.push_back(c.GetTypeByPath({"railway", "halt"}));
   m_types.push_back(c.GetTypeByPath({"railway", "tram_stop"}));
+}
+
+IsTaxiChecker::IsTaxiChecker()
+{
+  Classificator const & c = classif();
+  m_types.push_back(c.GetTypeByPath({"amenity", "taxi"}));
 }
 
 IsMotorwayJunctionChecker::IsMotorwayJunctionChecker()

@@ -256,8 +256,6 @@
     <!-- Button in the main menu -->
     <string name="donate">Doar</string>
     <!-- Button in the main Help dialog -->
-    <string name="how_to_support_us">Apoie o projeto</string>
-    <!-- Button in the main Help dialog -->
     <string name="copyright">Direitos autorais</string>
     <!-- Text in menu + Button in the main Help dialog -->
     <string name="report_a_bug">Relatar um problema</string>
@@ -292,6 +290,10 @@
     <string name="downloader_update_map">Atualizar mapa</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Determine rapidamente sua localização aproximada via Bluetooth, WiFi ou rede móvel</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Links de hotéis do Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotos, avaliações e links de reserva são exibidos para os hotéis que estão listados no Kayak.com. O bônus de indicação recebido por cada reserva feita por meio desses links é destinado ao desenvolvimento do Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Baixar todos os mapas ao longo do trajeto</string>
     <!-- Text for routing error dialog -->
@@ -456,7 +458,10 @@
     <string name="message_invalid_feature_position">Nenhum objeto pode ser posicionado aqui</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Dados do OpenStreetMap criados pela comunidade a partir de %s. Saiba mais sobre como editar e atualizar o mapa em OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Fazer login para que outros usuários vejam as mudanças que você fez.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">O OpenStreetMap (OSM) é um projeto comunitário aberto para construir um mapa gratuito. O OSM é a principal fonte de dados de mapas do Organic Maps e funciona de forma semelhante à Wikipédia. Você pode adicionar ou editar lugares e eles ficam disponíveis para milhões de usuários no mundo todo.
+\nJunte-se à comunidade e ajude a criar um mapa melhor para todos!</string>
+    <string name="login_to_make_edits_visible">Crie uma conta no OpenStreetMap ou faça login para publicar suas edições de mapas para o mundo.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d de %2$d</string>
     <string name="download_over_mobile_header">Baixar usando uma conexão de rede celular?</string>
@@ -472,9 +477,6 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">As suas edições são enviadas à base de dados pública <a href="https://wiki.openstreetmap.org/wiki/Pt:Sobre_o_OpenStreetMap">OpenStreetMap</a>. Não adicione informações pessoais ou protegidas por direitos autorais.</string>
     <string name="editor_more_about_osm">Mais sobre OpenStreetMap</string>
-    <string name="editor_operator">Operador</string>
-    <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Operador: %s</string>
     <string name="editor_category_unsuitable_title">Você não encontra uma categoria adequada?</string>
     <string name="editor_category_unsuitable_text">O Organic Maps permite que você adicione apenas categorias de pontos simples, o que significa que não há cidades, estradas, lagos, contornos de edifícios etc. Por favor, adicione essas categorias diretamente no <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Consulte nosso <a href="https://organicmaps.app/faq/editing/advanced-map-editing">guia</a> para obter instruções detalhadas passo a passo.</string>
     <string name="downloader_no_downloaded_maps_title">Você não fez o download de nenhum mapa</string>
@@ -493,11 +495,14 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">dia</string>
     <string name="placepage_more_button">Mais</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotos, avaliações, reservas</string>
     <!-- An explanation dialog shown when clicking on more_on_kayak link. -->
     <string name="dialog_kayak_disclaimer">O bônus de indicação recebido por cada reserva feita por meio deste link é destinado ao desenvolvimento do Organic Maps.</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Desativar Kayak</string>
     <string name="placepage_edit_bookmark_button">Editar favorito</string>
     <string name="editor_comment_hint">Comentar…</string>
     <string name="editor_reset_edits_message">Descartar todas as modificações locais?</string>
@@ -550,7 +555,7 @@
     <string name="routing_add_start_point">Use a busca ou toque no mapa para adicionar um ponto de partida da rota</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Use a busca ou toque no mapa para adicionar um ponto de destino</string>
-    <string name="placepage_remove_stop">Remover</string>
+    <string name="placepage_remove_stop">Remover parada</string>
     <string name="placepage_add_stop">Adicionar parada</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Faça login no OpenStreetMap para carregar automaticamente todas as edições de mapas que você fizer. Saiba mais <a href="https://github.com/organicmaps/organicmaps/issues/6144">aqui</a>.</string>
@@ -587,8 +592,8 @@
     </plurals>
     <string name="restore">Restaurar</string>
     <plurals name="tracks">
-        <item quantity="one">%d trajeto</item>
-        <item quantity="other">%d trajetos</item>
+        <item quantity="one">%d trilha</item>
+        <item quantity="other">%d trilhas</item>
     </plurals>
     <string name="privacy_policy">Política de privacidade</string>
     <string name="terms_of_use">Termos de uso</string>
@@ -686,8 +691,8 @@
     <string name="button_layer_isolines">Relevo</string>
     <string name="isolines_activation_error_dialog">Para ativar e usar a camada Relevo, atualize ou baixe o mapa da região</string>
     <string name="isolines_location_error_dialog">A camada Relevo ainda não está disponível para esta região</string>
-    <string name="elevation_profile_minaltitude">Altitude mínima</string>
-    <string name="elevation_profile_maxaltitude">Altitude máxima</string>
+    <string name="elevation_profile_min_elevation">Elevação mín.</string>
+    <string name="elevation_profile_max_elevation">Elevação máx.</string>
     <string name="elevation_profile_distance">Dist.:</string>
     <string name="elevation_profile_time">Tempo:</string>
     <string name="isolines_toast_zooms_1_10">Use o zoom para explorar as isolinhas</string>
@@ -708,6 +713,8 @@
     <string name="enable_show_on_lock_screen">Mostrar na tela de bloqueio</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Quando ativado, você não precisará debloquear seu dispositivo toda vez que o aplicativo estiver funcionando</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Idioma do mapa</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Dados do mapa do OpenStreetMap</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -721,7 +728,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Se você conhece algum desenvolvedor de software, pode lhe pedir que implemente um recurso de que você precisa.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Você sabia que pode tocar longamente em qualquer lugar do mapa para selecioná-lo?</string>
+    <string name="app_tip_04">Toque em qualquer lugar do mapa para selecionar qualquer coisa. Toque longamente para ocultar e mostrar a interface.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Você sabia que sua posição atual no mapa pode ser selecionada?</string>
     <!-- App tip #06 -->
@@ -784,7 +791,11 @@
     <string name="track_recording_toast_nothing_to_save">A trilha está vazia - não há nada para salvar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Não é possível exibir a caixa de diálogo de seleção de pastas porque nenhum aplicativo adequado está instalado no seu dispositivo. Instale um aplicativo gerenciador de arquivos e tente novamente</string>
+    <string name="choose_color">Escolher cor</string>
+    <string name="edit_track">Editar trilha</string>
     <string name="uri_open_location_failed">Nenhum aplicativo instalado que possa abrir o local</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Automático na navegação</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Endereço/Bloco</string>
@@ -946,6 +957,7 @@
     <string name="type.amenity.waste_disposal">Depósito de lixo</string>
     <string name="type.amenity.waste_transfer_station">Estação de transferência de resíduos</string>
     <string name="type.amenity.water_point">Ponto de água</string>
+    <string name="type.amenity.water_point.drinking_water_no">Ponto de água</string>
     <string name="type.barrier">Barreira</string>
     <string name="type.barrier.block">Bloco</string>
     <string name="type.barrier.bollard">Pilarete</string>
@@ -988,7 +1000,6 @@
     <string name="type.building.has_parts">Edifício</string>
     <string name="type.building_part">Edifício</string>
     <string name="type.building.garage">Garagem</string>
-    <string name="type.building.train_station">Estação de trem</string>
     <string name="type.building.warehouse">Armazém</string>
     <string name="type.cemetery.grave">Túmulo</string>
     <string name="type.craft.caterer">Serviço de bufê</string>
@@ -1371,8 +1382,10 @@
     <string name="type.man_made.tower.communication">Torre de comunicação</string>
     <string name="type.man_made.wastewater_plant">Estação de tratamento de esgoto</string>
     <string name="type.man_made.water_tap">Torneira de água</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Torneira de água</string>
     <string name="type.man_made.water_tower">Torre de água</string>
     <string name="type.man_made.water_well">Poço de água</string>
+    <string name="type.man_made.water_well.drinking_water_no">Poço de água</string>
     <string name="type.man_made.windmill">Moinho de vento</string>
     <string name="type.man_made.works">Fábrica</string>
     <string name="type.military">Militar</string>
@@ -1443,6 +1456,7 @@
     <string name="type.railway.rail">Ferrovia</string>
     <string name="type.railway.station">Estação de trem</string>
     <string name="type.railway.station.light_rail">Estação de trem</string>
+    <string name="type.railway.station.light_rail.berlin">Estação de trem</string>
     <string name="type.railway.station.light_rail.london">Estação de trem</string>
     <string name="type.railway.station.light_rail.porto">Estação de trem</string>
     <string name="type.railway.station.monorail">Estação de trem</string>
@@ -1485,6 +1499,7 @@
     <string name="type.railway.station.subway.hamburg">Estação de metrô</string>
     <string name="type.railway.station.subway.helsinki">Estação de metrô</string>
     <string name="type.railway.station.subway.hiroshima">Estação de metrô</string>
+    <string name="type.railway.station.subway.hongkong">Estação de metrô</string>
     <string name="type.railway.station.subway.isfahan">Estação de metrô</string>
     <string name="type.railway.station.subway.istanbul">Estação de metrô</string>
     <string name="type.railway.station.subway.izmir">Estação de metrô</string>
@@ -1538,6 +1553,7 @@
     <string name="type.railway.station.subway.sendai">Estação de metrô</string>
     <string name="type.railway.station.subway.sf">Estação de metrô</string>
     <string name="type.railway.station.subway.shanghai">Estação de metrô</string>
+    <string name="type.railway.station.subway.shenzhen">Estação de metrô</string>
     <string name="type.railway.station.subway.shiraz">Estação de metrô</string>
     <string name="type.railway.station.subway.singapore">Estação de metrô</string>
     <string name="type.railway.station.subway.sofia">Estação de metrô</string>
@@ -1600,6 +1616,7 @@
     <string name="type.railway.subway_entrance.hamburg">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.helsinki">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.hiroshima">Entrada do metrô</string>
+    <string name="type.railway.subway_entrance.hongkong">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.isfahan">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.istanbul">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.izmir">Entrada do metrô</string>
@@ -1653,6 +1670,7 @@
     <string name="type.railway.subway_entrance.sendai">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.sf">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.shanghai">Entrada do metrô</string>
+    <string name="type.railway.subway_entrance.shenzhen">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.shiraz">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.singapore">Entrada do metrô</string>
     <string name="type.railway.subway_entrance.sofia">Entrada do metrô</string>
@@ -1814,6 +1832,8 @@
     <string name="type.tourism.alpine_hut">Alojamento na montanha</string>
     <string name="type.tourism.apartment">Apartamento de temporada</string>
     <string name="type.tourism.artwork.architecture">Arte arquitetônica</string>
+    <string name="type.attraction.bumper_car">Bate-bate</string>
+    <string name="type.attraction.water_slide">Toboágua</string>
     <string name="type.tourism.camp_site">Local de camping</string>
     <string name="type.tourism.caravan_site">Área de trailers</string>
     <string name="type.tourism.guest_house">Pousada</string>

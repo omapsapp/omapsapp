@@ -137,9 +137,6 @@
       location = "container:platform/platform.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:qt/qt.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "container:routing/routing.xcodeproj">
    </FileRef>
    <FileRef

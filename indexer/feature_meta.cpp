@@ -15,6 +15,13 @@ char constexpr const * kBaseWikiUrl =
 #else
     ".wikipedia.org/wiki/";
 #endif
+
+char constexpr const * kBaseCommonsUrl =
+#ifdef OMIM_OS_MOBILE
+    "https://commons.m.wikimedia.org/wiki/";
+#else
+    "https://commons.wikimedia.org/wiki/";
+#endif
 } // namespace
 
 string Metadata::ToWikiURL(std::string v)
@@ -55,7 +62,12 @@ string Metadata::ToWikimediaCommonsURL(std::string const & v)
   if (v.empty())
     return v;
 
-  return "https://commons.wikimedia.org/wiki/" + v;
+  // Use the media viewer for single files
+  if (v.starts_with("File:"))
+    return kBaseCommonsUrl + v + "#/media/" + v;
+
+  // or standard if it's a category
+  return kBaseCommonsUrl + v;
 }
 
 // static

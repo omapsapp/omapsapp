@@ -6,4 +6,6 @@ public interface DataSource<D>
 {
   @NonNull
   D getData();
+
+  void invalidate();
 }

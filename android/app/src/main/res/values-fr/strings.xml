@@ -171,7 +171,7 @@
 \n
 \nVous trouverez ci-joint mes signets de l\'appli Organic Maps. Veuillez les ouvrir si vous avez installé Organic Maps. Si vous ne l\'avez pas, téléchargez l\'application pour votre appareil iOS ou Android en suivant ce lien : https://omaps.app/get?kmz
 \n
-\nBon voyage avec Organic Maps!</string>
+\nBon voyage avec Organic Maps !</string>
     <!-- message title of loading file -->
     <string name="load_kmz_title">Chargement des signets</string>
     <!-- Kmz file successful loading -->
@@ -317,6 +317,10 @@
     <string name="google_play_services">Services de localisation de Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Détermine rapidement ta position approximative via Bluetooth, WiFi ou le réseau mobile</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Liens vers les hôtels Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Des photos, des commentaires et des liens de réservation sont affichés pour les hôtels répertoriés sur Kayak.com. La prime de parrainage reçue pour chaque réservation effectuée par le biais de ces liens est destinée au développement d\'Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Téléchargez toutes les cartes le long de votre itinéraire</string>
     <!-- Text for routing error dialog -->
@@ -363,10 +367,10 @@
 
     <!-- SECTION: Routing dialogs strings -->
     <string name="dialog_routing_disclaimer_title">Lorsque vous suivez l\'itinéraire, gardez à l\'esprit les points suivants :</string>
-    <string name="dialog_routing_disclaimer_priority">— Les conditions de circulation, le code de la route et les panneaux de signalisation ont la priorité sur l\'appareil de navigation;</string>
-    <string name="dialog_routing_disclaimer_precision">— La carte peut être imprécise et l\'itinéraire proposé n\'est pas forcément le plus direct pour arriver à destination;</string>
-    <string name="dialog_routing_disclaimer_recommendations">— L\'itinéraire proposé doit être considéré comme une simple recommandation;</string>
-    <string name="dialog_routing_disclaimer_borders">— Faites attention aux itinéraires traversant des zones frontalières : les itinéraires générés par l\'application peuvent parfois franchir des frontières étatiques dans des zones interdites;</string>
+    <string name="dialog_routing_disclaimer_priority">— Les conditions de circulation, le code de la route et les panneaux de signalisation ont la priorité sur l\'appareil de navigation ;</string>
+    <string name="dialog_routing_disclaimer_precision">— La carte peut être imprécise et l\'itinéraire proposé n\'est pas forcément le plus direct pour arriver à destination ;</string>
+    <string name="dialog_routing_disclaimer_recommendations">— L\'itinéraire proposé doit être considéré comme une simple recommandation ;</string>
+    <string name="dialog_routing_disclaimer_borders">— Faites attention aux itinéraires traversant des zones frontalières : les itinéraires générés par l\'application peuvent parfois franchir des frontières étatiques dans des zones interdites ;</string>
     <string name="dialog_routing_disclaimer_beware">Restez vigilant et soyez prudent sur la route !</string>
     <string name="dialog_routing_check_gps">Vérifiez le signal GPS</string>
     <string name="dialog_routing_error_location_not_found">Impossible de créer l\'itinéraire. Les coordonnées GPS actuelles n\'ont pas pu être identifiées.</string>
@@ -388,7 +392,7 @@
     <string name="dialog_routing_application_error">Impossible de créer l\'itinéraire à cause d\'une erreur dans l\'application.</string>
     <string name="dialog_routing_try_again">Veuillez réessayer</string>
     <string name="not_now">Pas maintenant</string>
-    <string name="dialog_routing_download_and_build_cross_route">Voulez-vous télécharger la carte et créer un itinéraire plus direct s\'étendant sur plus d\'une carte?</string>
+    <string name="dialog_routing_download_and_build_cross_route">Voulez-vous télécharger la carte et créer un itinéraire plus direct s\'étendant sur plus d\'une carte ?</string>
     <string name="dialog_routing_download_cross_route">Téléchargez des cartes pour créer un itinéraire plus direct sortant des limites de cette carte.</string>
 
     <!-- SECTION: Strings for downloading map from search -->
@@ -504,7 +508,10 @@
     <string name="message_invalid_feature_position">Aucun objet ne peut être localisé ici</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Données OpenStreetMap créées par la communauté en date du %s. Pour en savoir plus sur la façon de modifier et de mettre à jour la carte, consulte le site OpenStreetMap.org.</string>
-    <string name="login_to_make_edits_visible">Connectez vous à votre compte openstreetmap.org pour que d\'autres utilisateurs puissent voir vos changements.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) est un projet communautaire visant à créer une carte libre et ouverte. C\'est la principale source de données cartographiques d\'Organic Maps et son fonctionnement est similaire à celui de Wikipédia. Vous pouvez ajouter ou modifier des lieux et ils deviennent accessibles à des millions d\'utilisateurs dans le monde entier.
+\nRejoignez la communauté et aidez-nous à créer une meilleure carte pour tout le monde !</string>
+    <string name="login_to_make_edits_visible">Créez un compte OpenStreetMap ou connectez-vous pour publier vos modifications de cartes dans le monde entier.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d de %2$d</string>
     <string name="download_over_mobile_header">Téléchargement avec une connexion réseau cellulaire ?</string>
@@ -524,6 +531,8 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Vos modifications sont téléchargées dans la base de données publique <a href="https://wiki.openstreetmap.org/wiki/FR:À_propos_d’OpenStreetMap">OpenStreetMap</a>. Veuillez ne pas ajouter d\'informations personnelles ou protégées par le droit d\'auteur.</string>
     <string name="editor_more_about_osm">En savoir plus sur OpenStreetMap</string>
+    <string name="editor_osm_history">Votre historique d\'édition</string>
+    <string name="editor_osm_notes">Vos notes sur les données cartographiques</string>
     <string name="editor_operator">Opérateur</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Opérateur : %s</string>
@@ -545,6 +554,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">j</string>
     <string name="placepage_more_button">Plus</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Photos, commentaires, réservations</string>
@@ -552,6 +562,8 @@
     <string name="dialog_kayak_disclaimer">La prime de parrainage reçue pour chaque réservation effectuée par l\'intermédiaire de ce lien sert à développer Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Détails sur Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Désactiver Kayak</string>
     <string name="placepage_edit_bookmark_button">Éditer le signet</string>
     <string name="editor_comment_hint">Commentaire…</string>
     <string name="editor_reset_edits_message">Abandonner toutes les modifications locales ?</string>
@@ -610,7 +622,7 @@
     <string name="routing_add_start_point">Utilise la recherche ou tape sur la carte pour ajouter un point de départ d\'itinéraire</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Utilise la recherche ou tape sur la carte pour ajouter un point de destination</string>
-    <string name="placepage_remove_stop">Supprimer</string>
+    <string name="placepage_remove_stop">Supprimer l\'arrêt</string>
     <string name="placepage_add_stop">Ajouter un arrêt</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Connecte-toi à OpenStreetMap pour télécharger automatiquement toutes tes modifications de cartes. En savoir plus <a href="https://github.com/organicmaps/organicmaps/issues/6144">ici</a>.</string>
@@ -760,11 +772,11 @@
     <string name="isolines_location_error_dialog">Les lignes d\'élévation ne sont pas encore disponibles dans cette région</string>
     <string name="elevation_profile_ascent">Montée</string>
     <string name="elevation_profile_descent">Descente</string>
-    <string name="elevation_profile_minaltitude">Hauteur minimale</string>
-    <string name="elevation_profile_maxaltitude">Hauteur maximale</string>
+    <string name="elevation_profile_min_elevation">Min. élévation</string>
+    <string name="elevation_profile_max_elevation">Max. élévation</string>
     <string name="elevation_profile_difficulty">Difficulté</string>
     <string name="elevation_profile_distance">Distance :</string>
-    <string name="elevation_profile_time">Temps:</string>
+    <string name="elevation_profile_time">Temps :</string>
     <string name="isolines_toast_zooms_1_10">Zoomez pour voir les courbes de niveaux</string>
     <string name="downloader_loading_ios">Téléchargement</string>
     <string name="download_map_title">Télécharger la carte du monde</string>
@@ -783,6 +795,8 @@
     <string name="enable_show_on_lock_screen">Afficher sur l\'écran de verrouillage</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Lorsqu\'il est activé, vous n\'avez pas besoin de déverrouiller votre appareil à chaque fois que l\'application est en fonctionnement.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Langue de la carte</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Données cartographiques d\'OpenStreetMap</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -794,11 +808,11 @@
     <!-- App tip #01 -->
     <string name="app_tip_01">Avec vos dons et votre soutien, nous pouvons créer les meilleures cartes du monde !</string>
     <!-- App tip #02 -->
-    <string name="app_tip_02">Aimez-vous notre application? Veuillez faire un don pour soutenir le développement ! Vous ne l\'aimez pas encore ? S\'il vous plaît laissez-nous savoir et nous y remédierons !</string>
+    <string name="app_tip_02">Aimez-vous notre application ? Veuillez faire un don pour soutenir le développement ! Vous ne l\'aimez pas encore ? S\'il vous plaît laissez-nous savoir et nous y remédierons !</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Si vous connaissez un développeur de logiciels, vous pouvez lui demander d\'implémenter une fonctionnalité dont vous avez besoin.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Savez-vous que vous pouvez appuyer longuement sur n\'importe quel endroit de la carte pour le sélectionner ?</string>
+    <string name="app_tip_04">Tapez n\'importe où sur la carte pour sélectionner quelque chose. Touchez longuement pour masquer et réafficher l\'interface.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Savez-vous que vous pouvez sélectionner votre position actuelle sur la carte ?</string>
     <!-- App tip #06 -->
@@ -868,7 +882,11 @@
     <string name="track_recording_toast_nothing_to_save">L\'itinéraire est vide - il n\'y a rien à sauvegarder</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Impossible d\'afficher la boîte de dialogue de sélection des dossiers car aucune application appropriée n\'est installée sur votre appareil. Veuillez installer une application de gestion de fichiers et réessayer</string>
+    <string name="choose_color">Choisir la couleur</string>
+    <string name="edit_track">Modifier le trace</string>
     <string name="uri_open_location_failed">Aucune application installée ne permet d\'ouvrir l\'emplacement</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Auto dans la navigation</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresse/Bloc</string>
@@ -988,6 +1006,7 @@
     <string name="type.amenity.place_of_worship.taoist">Temmple Taoïste</string>
     <string name="type.amenity.post_box">Boîte aux lettres</string>
     <string name="type.amenity.post_office">Bureau de poste</string>
+    <string name="type.amenity.prison">Prison</string>
     <string name="type.amenity.pub">Pub</string>
     <string name="type.amenity.public_bookcase">Microbibliothèque</string>
 
@@ -1044,6 +1063,7 @@
     <string name="type.amenity.waste_disposal">Déchets</string>
     <string name="type.amenity.waste_transfer_station">Station de transfert de déchets</string>
     <string name="type.amenity.water_point">Point d’eau</string>
+    <string name="type.amenity.water_point.drinking_water_no">Point d’eau</string>
     <string name="type.barrier">Barrière</string>
     <string name="type.barrier.block">Bloc</string>
     <string name="type.barrier.bollard">Poteau</string>
@@ -1088,7 +1108,7 @@
     <string name="type.building.address">Adresse</string>
     <string name="type.building.has_parts">Bâtiment</string>
     <string name="type.building_part">Bâtiment</string>
-    <string name="type.building.train_station">Gare ferroviaire</string>
+    <string name="type.building.train_station">Bâtiment de la gare</string>
     <string name="type.building.warehouse">Entrepôt</string>
     <string name="type.cemetery.grave">Tombe</string>
     <string name="type.craft">Artisanat</string>
@@ -1510,8 +1530,10 @@
     <string name="type.man_made.tower.communication">Tour de communication</string>
     <string name="type.man_made.wastewater_plant">Station d\'épuration</string>
     <string name="type.man_made.water_tap">Robinet d\'eau</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Robinet d\'eau</string>
     <string name="type.man_made.water_tower">Château d\'eau</string>
     <string name="type.man_made.water_well">Puits à eau</string>
+    <string name="type.man_made.water_well.drinking_water_no">Puits à eau</string>
     <string name="type.man_made.windmill">Moulin à vent</string>
     <string name="type.mountain_pass">Col de montagne</string>
     <string name="type.natural">Nature</string>
@@ -1551,6 +1573,7 @@
     <string name="type.natural.rock">Rocher</string>
     <string name="type.natural.scrub">Fourré</string>
     <string name="type.natural.spring">Source</string>
+    <string name="type.natural.spring.drinking_water_no">Source</string>
     <string name="type.natural.strait">Détroit</string>
     <string name="type.natural.tree_row">Rangée d\'arbres</string>
     <string name="type.natural.vineyard">Vignoble</string>
@@ -1665,6 +1688,7 @@
     <string name="type.railway.station">Gare ferroviaire</string>
     <string name="type.railway.station.funicular">Funiculaire</string>
     <string name="type.railway.station.light_rail">Gare ferroviaire</string>
+    <string name="type.railway.station.light_rail.berlin">Gare ferroviaire</string>
     <string name="type.railway.station.light_rail.london">Gare ferroviaire</string>
     <string name="type.railway.station.light_rail.porto">Gare ferroviaire</string>
     <string name="type.railway.station.monorail">Gare ferroviaire</string>
@@ -1707,6 +1731,7 @@
     <string name="type.railway.station.subway.hamburg">Station de métro</string>
     <string name="type.railway.station.subway.helsinki">Station de métro</string>
     <string name="type.railway.station.subway.hiroshima">Station de métro</string>
+    <string name="type.railway.station.subway.hongkong">Station de métro</string>
     <string name="type.railway.station.subway.isfahan">Station de métro</string>
     <string name="type.railway.station.subway.istanbul">Station de métro</string>
     <string name="type.railway.station.subway.izmir">Station de métro</string>
@@ -1760,6 +1785,7 @@
     <string name="type.railway.station.subway.sendai">Station de métro</string>
     <string name="type.railway.station.subway.sf">Station de métro</string>
     <string name="type.railway.station.subway.shanghai">Station de métro</string>
+    <string name="type.railway.station.subway.shenzhen">Station de métro</string>
     <string name="type.railway.station.subway.shiraz">Station de métro</string>
     <string name="type.railway.station.subway.singapore">Station de métro</string>
     <string name="type.railway.station.subway.sofia">Station de métro</string>
@@ -1822,6 +1848,7 @@
     <string name="type.railway.subway_entrance.hamburg">Entrée du métro</string>
     <string name="type.railway.subway_entrance.helsinki">Entrée du métro</string>
     <string name="type.railway.subway_entrance.hiroshima">Entrée du métro</string>
+    <string name="type.railway.subway_entrance.hongkong">Entrée du métro</string>
     <string name="type.railway.subway_entrance.isfahan">Entrée du métro</string>
     <string name="type.railway.subway_entrance.istanbul">Entrée du métro</string>
     <string name="type.railway.subway_entrance.izmir">Entrée du métro</string>
@@ -1875,6 +1902,7 @@
     <string name="type.railway.subway_entrance.sendai">Entrée du métro</string>
     <string name="type.railway.subway_entrance.sf">Entrée du métro</string>
     <string name="type.railway.subway_entrance.shanghai">Entrée du métro</string>
+    <string name="type.railway.subway_entrance.shenzhen">Entrée du métro</string>
     <string name="type.railway.subway_entrance.shiraz">Entrée du métro</string>
     <string name="type.railway.subway_entrance.singapore">Entrée du métro</string>
     <string name="type.railway.subway_entrance.sofia">Entrée du métro</string>
@@ -1965,6 +1993,7 @@
     <string name="type.shop.optician">Opticien</string>
     <string name="type.shop.outdoor">Matériel de loisirs de plein air</string>
     <string name="type.shop.outpost">Point de retrait</string>
+    <string name="type.shop.pasta">Boutique de pâtes</string>
     <string name="type.shop.pastry">Pâtisserie</string>
     <string name="type.shop.pawnbroker">Prêteur sur gages</string>
     <string name="type.shop.pet">Animalerie</string>
@@ -2060,7 +2089,14 @@
     <string name="type.tourism.artwork.painting">Œuvre</string>
     <string name="type.tourism.artwork.sculpture">Œuvre</string>
     <string name="type.tourism.artwork.statue">Œuvre</string>
+    <string name="type.attraction.amusement_ride">Manège</string>
     <string name="type.attraction.animal">Enclos pour animaux</string>
+    <string name="type.attraction.bumper_car">Auto-tamponneuse</string>
+    <string name="type.attraction.carousel">Carrousel</string>
+    <string name="type.attraction.historic">Attraction historique</string>
+    <string name="type.attraction.maze">Labyrinthe</string>
+    <string name="type.attraction.roller_coaster">Les montagnes russes</string>
+    <string name="type.attraction.water_slide">Toboggan aquatique</string>
     <string name="type.tourism.camp_site">Camping</string>
     <string name="type.tourism.caravan_site">Aire de camping-car</string>
     <!-- A rentable countryside vacation house. -->

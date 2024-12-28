@@ -78,6 +78,10 @@
     <string name="google_play_services">Huduma za Mahali za Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Tambua kwa haraka kadirio la eneo lako kwa kutumia Bluetooth, WiFi au mtandao wa simu</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Viungo vya Hoteli ya Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Picha, maoni, viungo vya kuweka nafasi vinaonyeshwa kwa hoteli ambazo zimeorodheshwa kwenye Kayak.com. Bonasi ya rufaa inayopokelewa kwa kila nafasi iliyowekwa kupitia viungo hivi huenda kwenye uundaji wa Organic Maps.</string>
     <!-- deep purple color -->
     <string name="deep_purple">Zambarau Iliyoiva</string>
     <!-- light blue color -->
@@ -110,12 +114,21 @@
     <string name="editor_default_language_hint">Kama ilivyoandikwa katika lugha ya kienyeji</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Data ya OpenStreetMap iliyoundwa na jumuiya kufikia %s. Pata maelezo zaidi kuhusu jinsi ya kuhariri na kusasisha ramani katika OpenStreetMap.org</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) ni mradi wa jumuiya wa kujenga ramani isiyolipishwa na iliyo wazi. Ndiyo chanzo kikuu cha data ya ramani katika Ramani za Kikaboni na inafanya kazi sawa na Wikipedia. Unaweza kuongeza au kubadilisha maeneo na yanapatikana kwa mamilioni ya watumiaji kote Ulimwenguni.
+\nJiunge na jumuiya na usaidie kutengeneza ramani bora kwa kila mtu!</string>
+    <string name="login_to_make_edits_visible">Fungua akaunti ya OpenStreetMap au ingia ili kuchapisha mabadiliko yako ya ramani kwa ulimwengu.</string>
     <!-- Title for OSM note section in the editor -->
     <string name="editor_other_info">Kumbuka kwa wanaojitolea wa OpenStreetMap (si lazima)</string>
     <!-- Hint of the input field in the OSM note section of the editor -->
     <string name="editor_note_hint">Eleza hitilafu kwenye ramani au kile ambacho hakiwezi kuhaririwa kwa kutumia Ramani za Kikaboni</string>
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Mabadiliko yako yanapakiwa kwenye hifadhidata ya <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> ya umma. Tafadhali usiongeze maelezo ya kibinafsi au yenye hakimiliki.</string>
+    <string name="editor_osm_history">Historia yako ya uhariri</string>
+    <string name="editor_osm_notes">Vidokezo vya data ya ramani yako</string>
+    <string name="editor_operator">Mwendeshaji</string>
+    <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
+    <string name="operator">Mwendeshaji: %s</string>
     <string name="editor_category_unsuitable_title">Je, huwezi kupata aina inayofaa?</string>
     <string name="editor_category_unsuitable_text">Ramani za Kikaboni huruhusu kuongeza kategoria rahisi pekee, hiyo inamaanisha hakuna miji, barabara, maziwa, muhtasari wa majengo, n.k. Tafadhali ongeza kategoria kama hizo moja kwa moja kwenye <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Angalia <a href="https://organicmaps.app/faq/editing/advanced-map-editing">mwongozo wetu</a> kwa maagizo ya kina ya hatua kwa hatua.</string>
     <!-- A referral link on the place page for some hotels -->
@@ -124,6 +137,8 @@
     <string name="dialog_kayak_disclaimer">Bonasi ya rufaa inayopokelewa kwa kila nafasi uliyohifadhi kupitia kiungo hiki huenda kwenye uundaji wa ramani za kikaboni.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Maelezo kuhusu Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Lemaza Kayak</string>
     <string name="placepage_add_place_button">Ongeza Mahali kwa OpenStreetMap</string>
     <string name="editor_share_to_all_dialog_message_2">Wahariri wa OpenStreetMap watakagua mabadiliko na kuwasiliana nawe ikiwa wana maswali yoyote.</string>
     <!-- Shown as toast when starting the recent track recording -->
@@ -143,7 +158,7 @@
     <string name="routing_add_start_point">Tumia utafutaji au uguse kwenye ramani ili kuongeza mahali pa kuanzia</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Tumia utafutaji au uguse kwenye ramani ili kuongeza mahali unakoenda</string>
-    <string name="placepage_remove_stop">Ondoa</string>
+    <string name="placepage_remove_stop">Ondoa eneo la kusimama</string>
     <string name="placepage_add_stop">Ongeza eneo la kusimama</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Tafadhali ingia kwenye OpenStreetMap ili kupakia kiotomatiki hariri zako zote za ramani. Pata maelezo zaidi <a href="https://github.com/organicmaps/organicmaps/issues/6144">hapa</a>.</string>
@@ -291,8 +306,8 @@
     <string name="isolines_location_error_dialog">Tabaka la sura ya nchi bado haipatikani katika eneo hili</string>
     <string name="elevation_profile_ascent">Upandaji</string>
     <string name="elevation_profile_descent">Ushukaji</string>
-    <string name="elevation_profile_minaltitude">Mwinuko wa chini kabisa</string>
-    <string name="elevation_profile_maxaltitude">Mwinuko wa juu kabisa</string>
+    <string name="elevation_profile_min_elevation">Min. mwinuko</string>
+    <string name="elevation_profile_max_elevation">Max. mwinuko</string>
     <string name="elevation_profile_difficulty">Ugumu</string>
     <string name="elevation_profile_distance">Umbali:</string>
     <string name="elevation_profile_time">Muda:</string>
@@ -312,7 +327,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Ikiwa unajua msanidi programu, unaweza kumwomba kutekeleza kipengele unachohitaji.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Je, unajua kwamba unaweza kugonga kwa muda mrefu sehemu yoyote kwenye ramani ili kuichagua?</string>
+    <string name="app_tip_04">Gusa popote kwenye ramani ili kuchagua chochote. Gusa kwa muda mrefu ili kuficha na kuonyesha kiolesura.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Je, unajua kwamba unaweza kuchagua eneo lako la sasa kwenye ramani?</string>
     <!-- App tip #06 -->
@@ -382,7 +397,11 @@
     <string name="track_recording_toast_nothing_to_save">Njia ni tupu - hakuna cha kuhifadhi</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Haiwezi kuonyesha kidirisha cha kuchagua folda kwa sababu hakuna programu inayofaa iliyosakinishwa kwenye kifaa chako. Tafadhali sakinisha programu ya kidhibiti faili na ujaribu tena</string>
+    <string name="choose_color">Chagua Rangi</string>
+    <string name="edit_track">Hariri Njia</string>
     <string name="uri_open_location_failed">Hakuna Programu iliyosakinishwa inayoweza kufungua eneo</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Urambazaji otomatiki</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Anwani/Zuia</string>
@@ -432,6 +451,7 @@
     <string name="type.amenity.place_of_worship.christian.mormon">Kanisa la Yesu Kristo la Watakatifu wa Siku za Mwisho</string>
     <string name="type.amenity.place_of_worship.christian.jehovahs_witness">Ukumbi wa Ufalme wa Mashahidi wa Yehova</string>
     <string name="type.amenity.post_office">Ofisi ya posta</string>
+    <string name="type.amenity.prison">Jela</string>
 
     <!-- SECTION: Types: Recycling -->
     <string name="type.recycling.batteries">Betri</string>
@@ -457,6 +477,7 @@
     <string name="type.boundary.protected_area.6">Eneo Lindwa</string>
     <!-- Duplicates [address] in strings.txt -->
     <string name="type.building.address">Anwani</string>
+    <string name="type.building.train_station">Jengo la Kituo</string>
     <string name="type.cemetery.grave">Kaburi</string>
     <string name="type.craft">Ufundi</string>
     <string name="type.craft.beekeeper">Mfugaji nyuki</string>
@@ -702,6 +723,7 @@
     <string name="type.natural.rock">Mwamba</string>
     <string name="type.natural.scrub">Eneo la Vichaka</string>
     <string name="type.natural.spring">Chemchemi</string>
+    <string name="type.natural.spring.drinking_water_no">Chemchemi</string>
     <string name="type.natural.strait">Mlango Bahari</string>
     <string name="type.natural.tree_row">Safu ya mti</string>
     <string name="type.natural.vineyard">Shamba la mizabibu</string>
@@ -821,6 +843,7 @@
     <string name="type.railway.subway_entrance.hamburg">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.helsinki">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.hiroshima">Lango la kuingilia stesheni ya reli</string>
+    <string name="type.railway.subway_entrance.hongkong">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.isfahan">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.istanbul">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.izmir">Lango la kuingilia stesheni ya reli</string>
@@ -874,6 +897,7 @@
     <string name="type.railway.subway_entrance.sendai">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.sf">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.shanghai">Lango la kuingilia stesheni ya reli</string>
+    <string name="type.railway.subway_entrance.shenzhen">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.shiraz">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.singapore">Lango la kuingilia stesheni ya reli</string>
     <string name="type.railway.subway_entrance.sofia">Lango la kuingilia stesheni ya reli</string>
@@ -911,6 +935,7 @@
     <string name="type.shop.kitchen">Duka la Jikoni</string>
     <string name="type.shop.motorcycle_repair">Ukarabati wa Pikipiki</string>
     <string name="type.shop.outpost">Sehemu ya kuchukua</string>
+    <string name="type.shop.pasta">Duka la Pasta</string>
     <string name="type.shop.pastry">Keki</string>
     <string name="type.shop.pet_grooming">Utunzaji wa Kipenzi</string>
     <string name="type.shop.rental">Duka la Kukodisha</string>
@@ -981,7 +1006,13 @@
     <!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
     <string name="type.tourism.alpine_hut">Mlima lodge</string>
     <string name="type.tourism.apartment">Ghorofa ya Likizo</string>
+    <string name="type.attraction.amusement_ride">Safari ya Burudani</string>
     <string name="type.attraction.animal">Hifadhi ya Wanyama</string>
+    <string name="type.attraction.carousel">Jukwaa</string>
+    <string name="type.attraction.historic">Kivutio cha kihistoria</string>
+    <string name="type.attraction.maze">Maze</string>
+    <string name="type.attraction.roller_coaster">Roller Coaster</string>
+    <string name="type.attraction.water_slide">Slaidi ya Maji</string>
     <!-- A rentable countryside vacation house. -->
     <string name="type.tourism.chalet">Nyumba ndogo ya Likizo</string>
     <string name="type.tourism.information">Taarifa za Watalii</string>

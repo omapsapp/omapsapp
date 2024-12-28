@@ -420,6 +420,7 @@ class Env:
         self.gen_tool = self.setup_generator_tool()
         if WORLD_NAME in self.countries:
             self.world_roads_builder_tool = self.setup_world_roads_builder_tool()
+        self.diff_tool = self.setup_mwm_diff_tool()
 
         logger.info(f"Build name is {self.build_name}.")
         logger.info(f"Build path is {self.build_path}.")
@@ -531,6 +532,12 @@ class Env:
         logger.info(f"world_roads_builder_tool found - {world_roads_builder_tool_path}")
         return world_roads_builder_tool_path
 
+    @staticmethod
+    def setup_mwm_diff_tool() -> AnyStr:
+        logger.info(f"Check mwm_diff_tool. Looking for it in {settings.BUILD_PATH} ...")
+        mwm_diff_tool_path = find_executable(settings.BUILD_PATH, "mwm_diff_tool")
+        logger.info(f"mwm_diff_tool found - {mwm_diff_tool_path}")
+        return mwm_diff_tool_path
 
     @staticmethod
     def setup_osm_tools() -> Dict[AnyStr, AnyStr]:

@@ -305,6 +305,10 @@
     <string name="google_play_services">Google Play helymeghatározási szolgáltatások</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Bluetooth, Wi-Fi vagy mobilhálózat segítségével gyorsan meghatározhatja hozzávetőleges tartózkodási helyét</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Hotel Linkek</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">A Kayak.com-on szereplő szállodák esetében fényképek, értékelések, foglalási linkek jelennek meg. Az ezeken a linkeken keresztül történő minden egyes foglalásért kapott ajánlói bónusz az Organic Maps fejlesztését szolgálja.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Tölts le térképeket az útvonal mellett</string>
     <!-- Text for routing error dialog -->
@@ -483,7 +487,10 @@
     <string name="message_invalid_feature_position">Célpont áthelyezése ide nem lehetséges</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Közösség által létrehozott OpenStreetMap adatok %s-tól. Tudjon meg többet a térkép szerkesztéséről és frissítéséről az OpenStreetMap.org oldalon.</string>
-    <string name="login_to_make_edits_visible">Jelentkezzen be, hogy más felhasználók is láthassák a változtatásait.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">Az OpenStreetMap.org (OSM) egy közösségi projekt, amelynek célja egy ingyenes és nyílt térkép létrehozása. Ez az Organic Maps térképadatok fő forrása, és a Wikipédiához hasonlóan működik. Helyeket adhatsz hozzá vagy szerkeszthetsz, és azok világszerte felhasználók milliói számára válnak elérhetővé.
+\nLépj be a közösségbe, és segíts egy jobb térképet készíteni mindenki számára!</string>
+    <string name="login_to_make_edits_visible">Hozzon létre egy OpenStreetMap-fiókot, vagy jelentkezzen be, hogy közzétehesse térképszerkesztéseit a világ számára.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Letöltés mobilhálózati kapcsolat segítségével?</string>
@@ -503,6 +510,8 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Az Ön szerkesztései feltöltődnek a nyilvános <a href="https://wiki.openstreetmap.org/wiki/Hu:Névjegy">OpenStreetMap</a> adatbázisba. Kérjük, ne adjon hozzá személyes vagy szerzői jogvédelem alatt álló információkat.</string>
     <string name="editor_more_about_osm">További részletek az OpenStreetMap-ról</string>
+    <string name="editor_osm_history">Az Ön szerkesztési előzményei</string>
+    <string name="editor_osm_notes">A térképadatok jegyzetei</string>
     <string name="editor_operator">Üzemeltető</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Üzemeltető: %s</string>
@@ -523,6 +532,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">ó</string>
     <string name="minute">p</string>
+    <string name="day">nap</string>
     <string name="placepage_more_button">Még</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fényképek, vélemények, foglalás</string>
@@ -530,6 +540,8 @@
     <string name="dialog_kayak_disclaimer">Az ezen a linken keresztül történő minden egyes foglalásért kapott ajánlói bónusz az Organic Maps fejlesztését szolgálja.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Részletek a Kayak-on</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak kikapcsolása</string>
     <string name="placepage_edit_bookmark_button">Könyvjelző szerkesztése</string>
     <string name="editor_comment_hint">Megjegyzés…</string>
     <string name="editor_reset_edits_message">Elveti az összes helyi módosítást?</string>
@@ -582,7 +594,7 @@
     <string name="routing_add_start_point">Használja a keresést, vagy koppintson a térképre az útvonal kezdőpontjának hozzáadásához</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Használja a keresést, vagy koppintson a térképre egy célpont hozzáadásához</string>
-    <string name="placepage_remove_stop">Eltávolítja</string>
+    <string name="placepage_remove_stop">Távolítsa el a stopot</string>
     <string name="placepage_add_stop">Hozzáad megállót</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Kérjük, jelentkezzen be az OpenStreetMap rendszerébe, hogy automatikusan feltölthesse az összes térképszerkesztését. További információ <a href="https://github.com/organicmaps/organicmaps/issues/6144">itt</a>.</string>
@@ -600,7 +612,7 @@
     </plurals>
     <string name="bookmarks_create_new_group">Új lista létrehozása</string>
     <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
-    <string name="bookmarks_import">Könyvjelzők és sávok importálása</string>
+    <string name="bookmarks_import">Könyvjelzők és nyomvonalak importálása</string>
     <string name="bookmarks_error_message_share_general">Nem lehet megosztani alkalmazáshiba miatt</string>
     <string name="bookmarks_error_title_share_empty">Megosztási hiba</string>
     <string name="bookmarks_error_message_share_empty">Üres lista nem osztható meg</string>
@@ -613,8 +625,8 @@
     <string name="phone_number">Telefonszám</string>
     <string name="profile">OpenStreetMap profil</string>
     <plurals name="bookmarks_detect_message">
-        <item quantity="one">%d fájlt találtunk. Látni fogja őket a megtérés után.</item>
-        <item quantity="other">%d fájl található. Látni fogja őket a megtérés után.</item>
+        <item quantity="one">%d fájlt találtunk. Látni fogja őket a konvertálás után.</item>
+        <item quantity="other">%d fájl található. Látni fogja őket a konvertálás után.</item>
     </plurals>
     <string name="restore">Visszaállítás</string>
     <plurals name="tracks">
@@ -731,8 +743,8 @@
     <string name="isolines_location_error_dialog">Ezen a területen a topográfiai réteg még nem elérhető</string>
     <string name="elevation_profile_ascent">Felemelkedés</string>
     <string name="elevation_profile_descent">Leereszkedés</string>
-    <string name="elevation_profile_minaltitude">Min. magasság</string>
-    <string name="elevation_profile_maxaltitude">Max. magasság</string>
+    <string name="elevation_profile_min_elevation">Min. magasság</string>
+    <string name="elevation_profile_max_elevation">Max. magasság</string>
     <string name="elevation_profile_difficulty">Nehézség</string>
     <string name="elevation_profile_distance">Táv.:</string>
     <string name="elevation_profile_time">Idő</string>
@@ -745,6 +757,8 @@
     <string name="enable_show_on_lock_screen">Megjelenítés a zárolt képernyőn</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Ha engedélyezve van, nem kell minden alkalommal feloldania a telefont, amíg az alkalmazás fut.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Térkép nyelve</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Térképadatok az OpenStreetMapből</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -760,7 +774,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Ha ismer egy szoftverfejlesztőt, megkérheti őt egy olyan funkció megvalósítására, amelyre szüksége van.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Tudja, hogy a térkép bármely pontjára hosszan koppintva kiválaszthatja azt?</string>
+    <string name="app_tip_04">Koppintson a térképen bárhová, hogy bármit kiválaszthasson. Hosszú koppintással elrejtheti és visszahozhatja a felületet.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Tudja, hogy kijelölheti pozícióját a térképen?</string>
     <!-- App tip #06 -->
@@ -793,7 +807,7 @@
     <string name="browser_not_available">A webböngésző nem elérhető</string>
     <string name="volume">Hangerő</string>
     <!-- Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks -->
-    <string name="bookmarks_export">Az összes könyvjelző és sáv exportálása</string>
+    <string name="bookmarks_export">Az összes könyvjelző és nyomvonal exportálása</string>
     <!-- button in (app) TTS settings, to open the system TTS settings. -->
     <string name="pref_tts_open_system_settings">Beszédszintetizáló rendszer beállításai</string>
     <!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
@@ -828,7 +842,11 @@
     <string name="track_recording_toast_nothing_to_save">Az útvonal üres - nincs mit menteni</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nem lehet megjeleníteni a mappaválasztó párbeszédpanelt, mert nincs megfelelő alkalmazás telepítve a készülékén. Kérjük, telepítsen egy fájlkezelő alkalmazást, és próbálja meg újra</string>
+    <string name="choose_color">Válasszon színt</string>
+    <string name="edit_track">Útvonal szerkesztése</string>
     <string name="uri_open_location_failed">Nincs telepített alkalmazás, amely meg tudja nyitni a helyet</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Automatikus navigáció</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Cím/blokk</string>
@@ -844,7 +862,7 @@
     <string name="type.amenity.bar">Bár</string>
     <string name="type.amenity.bbq">Kerti sütögető</string>
     <string name="type.amenity.bench">Pad</string>
-    <string name="type.amenity.bicycle_parking">Kerékpárparkoló</string>
+    <string name="type.amenity.bicycle_parking">Kerékpártároló</string>
     <string name="type.amenity.bicycle_rental">Kerékpárkölcsönző</string>
     <string name="type.amenity.bicycle_repair_station">Kerékpárjavító állomás</string>
     <string name="type.amenity.biergarten">Sörkert</string>
@@ -941,6 +959,7 @@
     <string name="type.amenity.police">Rendőrség</string>
     <string name="type.amenity.post_box">Levelesláda</string>
     <string name="type.amenity.post_office">Posta</string>
+    <string name="type.amenity.prison">Börtön</string>
     <string name="type.amenity.pub">Kocsma</string>
     <string name="type.amenity.public_bookcase">Nyilvános könyvespolc</string>
 
@@ -982,6 +1001,7 @@
     <string name="type.amenity.waste_basket">Szemetes</string>
     <string name="type.amenity.waste_disposal">Szemét</string>
     <string name="type.amenity.water_point">Vízvételi pont</string>
+    <string name="type.amenity.water_point.drinking_water_no">Vízvételi pont</string>
     <string name="type.barrier.block">Blokk</string>
     <string name="type.barrier.bollard">Oszlop</string>
     <string name="type.barrier.border_control">Határállomás</string>
@@ -1012,7 +1032,7 @@
     <string name="type.building.has_parts">Épület</string>
     <string name="type.building_part">Épület</string>
     <string name="type.building.garage">Garázs</string>
-    <string name="type.building.train_station">Vasútállomás</string>
+    <string name="type.building.train_station">Állomásépület</string>
     <string name="type.cemetery.grave">Sír</string>
     <string name="type.craft">Kézművesség</string>
     <string name="type.craft.beekeeper">Méhész</string>
@@ -1392,8 +1412,10 @@
     <string name="type.man_made.tower">Torony</string>
     <string name="type.man_made.tower.communication">Kommunikációs torony</string>
     <string name="type.man_made.water_tap">Vízcsap</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Vízcsap</string>
     <string name="type.man_made.water_tower">Víztorony</string>
     <string name="type.man_made.water_well">Ivókút</string>
+    <string name="type.man_made.water_well.drinking_water_no">Ivókút</string>
     <string name="type.man_made.windmill">Szélmalom</string>
     <string name="type.natural">Természet</string>
     <!-- A rocky land cover. -->
@@ -1432,6 +1454,7 @@
     <string name="type.natural.rock">Szikla</string>
     <string name="type.natural.scrub">Cserjés</string>
     <string name="type.natural.spring">Természetes forrás</string>
+    <string name="type.natural.spring.drinking_water_no">Természetes forrás</string>
     <string name="type.natural.strait">Szoros</string>
     <string name="type.natural.tree_row">Fasor</string>
     <string name="type.natural.vineyard">Szőlőskert</string>
@@ -1525,6 +1548,7 @@
     <string name="type.railway.station">Vasútállomás</string>
     <string name="type.railway.station.funicular">Sikló</string>
     <string name="type.railway.station.light_rail">Vasútállomás</string>
+    <string name="type.railway.station.light_rail.berlin">Vasútállomás</string>
     <string name="type.railway.station.light_rail.london">Vasútállomás</string>
     <string name="type.railway.station.light_rail.porto">Vasútállomás</string>
     <string name="type.railway.station.monorail">Vasútállomás</string>
@@ -1567,6 +1591,7 @@
     <string name="type.railway.station.subway.hamburg">Metrómegálló</string>
     <string name="type.railway.station.subway.helsinki">Metrómegálló</string>
     <string name="type.railway.station.subway.hiroshima">Metrómegálló</string>
+    <string name="type.railway.station.subway.hongkong">Metrómegálló</string>
     <string name="type.railway.station.subway.isfahan">Metrómegálló</string>
     <string name="type.railway.station.subway.istanbul">Metrómegálló</string>
     <string name="type.railway.station.subway.izmir">Metrómegálló</string>
@@ -1620,6 +1645,7 @@
     <string name="type.railway.station.subway.sendai">Metrómegálló</string>
     <string name="type.railway.station.subway.sf">Metrómegálló</string>
     <string name="type.railway.station.subway.shanghai">Metrómegálló</string>
+    <string name="type.railway.station.subway.shenzhen">Metrómegálló</string>
     <string name="type.railway.station.subway.shiraz">Metrómegálló</string>
     <string name="type.railway.station.subway.singapore">Metrómegálló</string>
     <string name="type.railway.station.subway.sofia">Metrómegálló</string>
@@ -1679,6 +1705,7 @@
     <string name="type.railway.subway_entrance.hamburg">Metróbejárat</string>
     <string name="type.railway.subway_entrance.helsinki">Metróbejárat</string>
     <string name="type.railway.subway_entrance.hiroshima">Metróbejárat</string>
+    <string name="type.railway.subway_entrance.hongkong">Metróbejárat</string>
     <string name="type.railway.subway_entrance.isfahan">Metróbejárat</string>
     <string name="type.railway.subway_entrance.istanbul">Metróbejárat</string>
     <string name="type.railway.subway_entrance.izmir">Metróbejárat</string>
@@ -1732,6 +1759,7 @@
     <string name="type.railway.subway_entrance.sendai">Metróbejárat</string>
     <string name="type.railway.subway_entrance.sf">Metróbejárat</string>
     <string name="type.railway.subway_entrance.shanghai">Metróbejárat</string>
+    <string name="type.railway.subway_entrance.shenzhen">Metróbejárat</string>
     <string name="type.railway.subway_entrance.shiraz">Metróbejárat</string>
     <string name="type.railway.subway_entrance.singapore">Metróbejárat</string>
     <string name="type.railway.subway_entrance.sofia">Metróbejárat</string>
@@ -1818,6 +1846,7 @@
     <string name="type.shop.optician">Optika</string>
     <string name="type.shop.outdoor">Túrafelszerelés</string>
     <string name="type.shop.outpost">Felvevő pont</string>
+    <string name="type.shop.pasta">Tészta bolt</string>
     <string name="type.shop.pastry">Cukrászda</string>
     <string name="type.shop.pawnbroker">Zálogház</string>
     <string name="type.shop.pet">Házikedvenc-üzlet</string>
@@ -1912,7 +1941,13 @@
     <string name="type.tourism.artwork.sculpture">Szobor</string>
     <string name="type.tourism.artwork.statue">Szobor</string>
     <string name="type.tourism.attraction">Látnivaló</string>
+    <string name="type.attraction.amusement_ride">Vidámpark</string>
     <string name="type.attraction.animal">Állatok tartása</string>
+    <string name="type.attraction.carousel">Körhinta</string>
+    <string name="type.attraction.historic">Történelmi látványosság</string>
+    <string name="type.attraction.maze">Labirintus</string>
+    <string name="type.attraction.roller_coaster">Hullámvasút</string>
+    <string name="type.attraction.water_slide">Vízicsúszda</string>
     <string name="type.tourism.attraction.specified">Látnivaló</string>
     <string name="type.tourism.camp_site">Kemping</string>
     <string name="type.tourism.caravan_site">Karaván pihenő</string>

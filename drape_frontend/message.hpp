@@ -56,6 +56,7 @@ public:
     Invalidate,
     Allow3dMode,
     Allow3dBuildings,
+    SetMapLangIndex,
     EnablePerspective,
     FlushCirclesPack,
     CacheCirclesPack,

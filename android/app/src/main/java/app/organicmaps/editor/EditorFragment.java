@@ -406,7 +406,6 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
   private void initViews(View view)
   {
     final View categoryBlock = view.findViewById(R.id.category);
-    categoryBlock.setOnClickListener(this);
     // TODO show icon and fill it when core will implement that
     UiUtils.hide(categoryBlock.findViewById(R.id.icon));
     mCategory = categoryBlock.findViewById(R.id.name);
@@ -536,8 +535,6 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
       mParent.editStreet();
     else if (id == R.id.block_cuisine)
       mParent.editCuisine();
-    else if (id == R.id.category)
-      mParent.editCategory();
     else if (id == R.id.more_names || id == R.id.show_additional_names)
     {
       if (!mNamesAdapter.areAdditionalLanguagesShown() || validateNames())

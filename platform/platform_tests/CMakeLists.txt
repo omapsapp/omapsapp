@@ -4,6 +4,7 @@ set(SRC
   apk_test.cpp
   country_file_tests.cpp
   distance_tests.cpp
+  duration_tests.cpp
   downloader_tests/downloader_test.cpp
   downloader_utils_tests.cpp
   get_text_by_id_tests.cpp
@@ -13,6 +14,8 @@ set(SRC
   location_test.cpp
   measurement_tests.cpp
   platform_test.cpp
+  meta_config_tests.cpp
+  products_tests.cpp
   utm_mgrs_utils_tests.cpp
 )
 

@@ -1,23 +1,20 @@
 #include "testing/testing.hpp"
 
 #include "geometry/bounding_box.hpp"
-#include "geometry/point2d.hpp"
 
-using namespace m2;
-
-namespace
+namespace bounding_box_tests
 {
 UNIT_TEST(BoundingBox_Smoke)
 {
   {
-    BoundingBox bbox;
+    m2::BoundingBox bbox;
 
     TEST(!bbox.HasPoint(0, 0), ());
     TEST(!bbox.HasPoint(-1, 1), ());
   }
 
   {
-    BoundingBox bbox;
+    m2::BoundingBox bbox;
 
     bbox.Add(0, 0);
     TEST(bbox.HasPoint(0, 0), ());
@@ -33,4 +30,4 @@ UNIT_TEST(BoundingBox_Smoke)
     TEST(bbox.HasPoint(0.5, 0.5), ());
   }
 }
-}  // namespace
+}  // namespace bounding_box_tests

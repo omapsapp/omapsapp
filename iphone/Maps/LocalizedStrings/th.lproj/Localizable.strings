@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "บริจาคเพื่อสร้างแผนที่ที่ดีที่สุดด้วยกัน!";
 
+"already_donated" = "บริจาคแล้ว";
+
+"remind_me_later" = "เตือนภายหลัง";
+
+"support_organic_maps" = "สนับสนุน Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "ลิขสิทธิ์";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "ข้อมูล OpenStreetMap ที่สร้างโดยชุมชน ณ %@ เรียนรู้เพิ่มเติมเกี่ยวกับวิธีแก้ไขและอัปเดตแผนที่ได้ที่ OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "ล็อกอินเพื่อให้ผู้ใช้คนอื่นสามารถเห็นการเปลี่ยนแปลงของคุณได้";
+"login_to_make_edits_visible" = "สร้างบัญชี OpenStreetMap หรือเข้าสู่ระบบเพื่อเผยแพร่การแก้ไขแผนที่ของคุณไปทั่วโลก";
 
 /* Error dialog no space */
 "migration_no_space_message" = "ในการดาวน์โหลด คุณต้องมีพื้นที่มากขึ้น กรุณาลบเนื้อหาที่ไม่จำเป็นออกไป";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "ข้อมูลเพิ่มเติมเกี่ยวกับ OpenStreetMap";
 
-"editor_operator" = "เจ้าของ";
+"editor_operator" = "ตัวดำเนินการ";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "เจ้าของ: %@";
+"operator" = "ตัวดำเนินการ: %@";
+
+"editor_category_unsuitable_title" = "ไม่พบหมวดหมู่ที่เหมาะสมใช่ไหม?";
+
+"editor_category_unsuitable_text" = "แผนที่ทั่วไปอนุญาตให้เพิ่มหมวดหมู่จุดธรรมดาเท่านั้น ซึ่งหมายความว่าไม่มีเมือง ถนน ทะเลสาบ โครงร่างอาคาร ฯลฯ โปรดเพิ่มหมวดหมู่ดังกล่าวลงใน <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. ดู<a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">คำแนะนำ</a> ของเราเพื่อดูคำแนะนำโดยละเอียดทีละขั้นตอน";
 
 "downloader_no_downloaded_maps_title" = "คุณยังไม่ได้ดาวน์โหลดแผนที่";
 
@@ -795,6 +805,8 @@
 
 "minute" = "น.";
 
+"day" = "วัน";
+
 "placepage_more_button" = "เพิ่มเติม";
 
 "book_button" = "จอง";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "รายละเอียดบน Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "ปดการใชงาน Kayak";
 
 "placepage_call_button" = "โทร";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "วางแผน";
 
-"placepage_remove_stop" = "เอาออก";
+"placepage_remove_stop" = "ลบจุดแวะพัก";
 
 "planning_route_remove_title" = "ลากมาที่นี่เพื่อเอาออก";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "การลง";
 
-"elevation_profile_minaltitude" = "ระดับความสูงต่ำสุด";
+"elevation_profile_min_elevation" = "ต่ำสุด";
 
-"elevation_profile_maxaltitude" = "ระดับความสูงสูงสุด";
+"elevation_profile_max_elevation" = "สูงสุด";
 
 "elevation_profile_difficulty" = "ลำบาก";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "คุณแน่ใจหรือไม่ว่าต้องการลบแทร็กนี้";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "หากคุณรู้จักนักพัฒนาซอฟต์แวร์ คุณสามารถขอให้เขาหรือเธอใช้คุณลักษณะที่คุณต้องการได้";
 
 /* App tip #04 */
-"app_tip_04" = "คุณรู้ไหมว่าคุณสามารถแตะสถานที่ใดก็ได้บนแผนที่ค้างไว้เพื่อเลือกได้";
+"app_tip_04" = "แตะที่ใดก็ได้บนแผนที่เพื่อเลือกอะไรก็ได้ แตะยาวเพื่อซ่อนและแสดงอินเทอร์เฟซ";
 
 /* App tip #05 */
 "app_tip_05" = "คุณรู้หรือไม่ว่าคุณสามารถเลือกตำแหน่งปัจจุบันของคุณบนแผนที่ได้?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "เส้นทางว่างเปล่า - ไม่มีอะไรจะบันทึก";
+
+"edit_track" = "แก้ไขเส้นทาง";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "ที่ทำการไปรษณีย์";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "คุก";
 
 "type.amenity.pub" = "ผับ";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "จุดเติมน้ำ";
 
+"type.amenity.water_point.drinking_water_no" = "จุดเติมน้ำ";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "บล็อก";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "อาคารจอดรถ";
 
-"type.building.train_station" = "สถานีรถไฟ";
+"type.building.train_station" = "อาคารสถานี";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "ก๊อกน้ำ";
 
+"type.man_made.water_tap.drinking_water_no" = "ก๊อกน้ำ";
+
 "type.man_made.water_tower" = "อ่างเก็บน้ำ";
 
 "type.man_made.water_well" = "บ่อน้ำ";
+
+"type.man_made.water_well.drinking_water_no" = "บ่อน้ำ";
 
 "type.man_made.windmill" = "กังหันลม";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "ป่าละเมาะ";
 
 "type.natural.spring" = "ฤดูใบไม้ผลิ";
+
+"type.natural.spring.drinking_water_no" = "ฤดูใบไม้ผลิ";
 
 "type.natural.strait" = "ช่องแคบ";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "สถานีรถไฟ";
 
+"type.railway.station.light_rail.berlin" = "สถานีรถไฟ";
+
 "type.railway.station.light_rail.london" = "สถานีรถไฟ";
 
 "type.railway.station.light_rail.porto" = "สถานีรถไฟ";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "รถไฟ";
 
 "type.railway.station.subway.hiroshima" = "รถไฟ";
+
+"type.railway.station.subway.hongkong" = "รถไฟ";
 
 "type.railway.station.subway.isfahan" = "รถไฟ";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "รถไฟ";
 
 "type.railway.station.subway.shanghai" = "รถไฟ";
+
+"type.railway.station.subway.shenzhen" = "รถไฟ";
 
 "type.railway.station.subway.shiraz" = "รถไฟ";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "ทางเข้ารถไฟใต้ดิน";
 
+"type.railway.subway_entrance.hongkong" = "ทางเข้ารถไฟใต้ดิน";
+
 "type.railway.subway_entrance.isfahan" = "ทางเข้ารถไฟใต้ดิน";
 
 "type.railway.subway_entrance.istanbul" = "ทางเข้ารถไฟใต้ดิน";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "ทางเข้ารถไฟใต้ดิน";
 
 "type.railway.subway_entrance.shanghai" = "ทางเข้ารถไฟใต้ดิน";
+
+"type.railway.subway_entrance.shenzhen" = "ทางเข้ารถไฟใต้ดิน";
 
 "type.railway.subway_entrance.shiraz" = "ทางเข้ารถไฟใต้ดิน";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "อุปกรณ์กลางแจ้ง";
 
 "type.shop.outpost" = "จุดรับของ";
+
+"type.shop.pasta" = "ร้านพาสต้า";
 
 "type.shop.pastry" = "ขนมอบ";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "การท่องเที่ยว";
 
+"type.attraction.amusement_ride" = "ขี่สนุก";
+
 "type.attraction.animal" = "สิ่งที่แนบมากับสัตว์";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "ม้าหมุน";
+
+"type.attraction.historic" = "แหล่งท่องเที่ยวทางประวัติศาสตร์";
+
+"type.attraction.maze" = "เขาวงกต";
+
+"type.attraction.roller_coaster" = "รถไฟเหาะ";
+
+"type.attraction.water_slide" = "สไลเดอร์น้ำ";
 
 "type.tourism.attraction.specified" = "การท่องเที่ยว";
 

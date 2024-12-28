@@ -51,10 +51,12 @@ public final class SharedPropertiesUtils
    */
   public static void emulateBadExternalStorage(@NonNull Context context) throws IOException
   {
-    SharedPreferences prefs = PreferenceManager
-        .getDefaultSharedPreferences(MwmApplication.from(context));
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MwmApplication.from(context));
     String key = MwmApplication.from(context).getString(R.string.pref_emulate_bad_external_storage);
-    if (prefs.getBoolean(key, false)) {
+    if (prefs.getBoolean(key, false))
+    {
+      // Emulate one time only -> reset setting to run normally next time.
+      prefs.edit().putBoolean(key, false).apply();
       throw new IOException("Bad external storage error injection");
     }
   }

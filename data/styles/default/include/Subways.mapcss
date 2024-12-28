@@ -12,10 +12,12 @@ the bbox to MatchCity() in generator/osm2type.cpp
 /* reset style for generic station because railway-station inherited from icons.mapcss */
 node|z0-[railway=station][transport=subway],
 node|z0-[railway=station][station=light_rail],
+node|z0-[railway=station][station=monorail],
 {icon-image: none; text: none;}
 
 node|z0-[railway=station][transport=subway]::int_name,
 node|z0-[railway=station][station=light_rail]::int_name,
+node|z0-[railway=station][station=monorail]::int_name,
 {icon-image: none; text: none;}
 /*TODO: for some reason, int_name rules and normal rules have to be
 separate, otherwise generating drules fails with a priority error */
@@ -28,32 +30,44 @@ node|z13-[railway=station][station=light_rail],
 {icon-image: train-s.svg;}
 node|z15-[railway=station][station=light_rail],
 {icon-image: train-m.svg;}
+node|z13-[railway=station][station=monorail],
+{icon-image: monorail-s.svg;}
+node|z15-[railway=station][station=monorail],
+{icon-image: monorail-m.svg;}
 
 node|z14-[railway=station][transport=subway],
 node|z14-[railway=station][station=light_rail],
+node|z14-[railway=station][station=monorail],
 {text: name;text-offset: 1;font-size: 11;text-color: @label_dark;text-halo-radius: 1;text-halo-color: @label_halo_light;text-halo-opacity: 0.8;}
 node|z14-[railway=station][transport=subway]::int_name,
 node|z14-[railway=station][station=light_rail]::int_name,
+node|z14-[railway=station][station=monorail]::int_name,
 {text: int_name;text-offset: 1;font-size: 9;text-color: @label_dark;text-halo-radius: 1;text-halo-color: @label_halo_light;text-halo-opacity: 0.8;}
 
 node|z15-[railway=station][transport=subway],
 node|z15-[railway=station][station=light_rail],
+node|z15-[railway=station][station=monorail],
 {font-size: 12;}
 node|z16-[railway=station][transport=subway],
 node|z16-[railway=station][station=light_rail],
+node|z16-[railway=station][station=monorail],
 {font-size: 13;}
 node|z17-[railway=station][transport=subway],
 node|z17-[railway=station][station=light_rail],
+node|z17-[railway=station][station=monorail],
 {text-halo-opacity: 0.9;}
 
 node|z15-[railway=station][transport=subway]::int_name,
 node|z15-[railway=station][station=light_rail]::int_name,
+node|z15-[railway=station][station=monorail]::int_name,
 {font-size: 10;}
 node|z16-[railway=station][transport=subway]::int_name,
 node|z16-[railway=station][station=light_rail]::int_name
+node|z16-[railway=station][station=monorail]::int_name
 {font-size: 11}
 node|z17-[railway=station][transport=subway]::int_name,
 node|z17-[railway=station][station=light_rail]::int_name,
+node|z17-[railway=station][station=monorail]::int_name,
 {text-halo-opacity: 0.9;}
 
 node|z16-[railway=subway_entrance],
@@ -298,6 +312,11 @@ node|z13-[railway=station][transport=subway][city=hiroshima] {icon-image: subway
 node|z15-[railway=station][transport=subway][city=hiroshima] {icon-image: subway-hirosima-m.svg;}
 node|z16-[railway=subway_entrance][city=hiroshima] {icon-image: subway-hirosima-s.svg;}
 node|z18-[railway=subway_entrance][city=hiroshima] {icon-image: subway-hirosima-m.svg;}
+
+/* Hong Kong Subway Station */
+node|z13-[railway=station][transport=subway][city=hongkong] {icon-image: subway-hongkong-s.svg;}
+node|z15-[railway=station][transport=subway][city=hongkong] {icon-image: subway-hongkong-m.svg;}
+node|z16-[railway=subway_entrance][city=hongkong] {icon-image: subway-hongkong-s.svg;}
 
 /* Isfahan Subway Station */
 node|z13-[railway=station][transport=subway][city=isfahan] {icon-image: subway-isfahan-s.svg;}
@@ -644,6 +663,11 @@ node|z12-[railway=station][transport=subway][city=shanghai] {icon-image: subway-
 node|z15-[railway=station][transport=subway][city=shanghai] {icon-image: subway-shanghai-m.svg;}
 node|z16-[railway=subway_entrance][city=shanghai] {icon-image: subway-shanghai-s.svg;}
 
+/* Shenzhen Subway Station */
+node|z13-[railway=station][transport=subway][city=shenzhen] {icon-image: subway-shenzhen-s.svg;}
+node|z15-[railway=station][transport=subway][city=shenzhen] {icon-image: subway-shenzhen-m.svg;}
+node|z16-[railway=subway_entrance][city=shenzhen] {icon-image: subway-shenzhen-s.svg;}
+
 /* Shiraz Subway Station */
 node|z13-[railway=station][transport=subway][city=shiraz] {icon-image: subway-shiraz-s.svg;}
 node|z15-[railway=station][transport=subway][city=shiraz] {icon-image: subway-shiraz-m.svg;}
@@ -804,3 +828,7 @@ node|z15-[railway=station][station=light_rail][city=london] {icon-image: light_r
 /* Porto Light Rail Station */
 node|z13-[railway=station][station=light_rail][city=porto] {icon-image: light_rail-porto-s.svg;}
 node|z15-[railway=station][station=light_rail][city=porto] {icon-image: light_rail-porto-m.svg;}
+
+/* Berlin Light Rail Station (S-Bahn Berlin) */
+node|z13-[railway=station][station=light_rail][city=berlin] {icon-image: lightrail-berlin-s.svg;}
+node|z15-[railway=station][station=light_rail][city=berlin] {icon-image: lightrail-berlin-m.svg;}

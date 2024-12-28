@@ -86,11 +86,13 @@
       </LinearLayout>
     </LinearLayout>
   </FrameLayout>
+
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_weight="1"
       android:padding="@dimen/margin_base">
+
     <TextView
         android:id="@+id/osm_history"
         android:layout_width="match_parent"
@@ -100,10 +102,25 @@
         android:gravity="center"
         android:paddingTop="@dimen/margin_half"
         android:paddingBottom="@dimen/margin_half"
-        android:text="@string/history"
+        android:text="@string/editor_osm_history"
         android:textAppearance="@style/MwmTextAppearance.Body2"
         android:textColor="?colorAccent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/osm_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?clickableBackground"
+        android:gravity="center"
+        android:paddingTop="@dimen/margin_half"
+        android:paddingBottom="@dimen/margin_half"
+        android:text="@string/editor_osm_notes"
+        android:textAppearance="@style/MwmTextAppearance.Body2"
+        android:textColor="?colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/osm_history" />
+
     <TextView
         android:id="@+id/about_osm"
         android:layout_width="match_parent"

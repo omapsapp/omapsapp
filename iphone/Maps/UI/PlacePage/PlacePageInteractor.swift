@@ -1,9 +1,10 @@
 protocol PlacePageInteractorProtocol: AnyObject {
+  func viewWillAppear()
   func updateTopBound(_ bound: CGFloat, duration: TimeInterval)
 }
 
 class PlacePageInteractor: NSObject {
-  weak var presenter: PlacePagePresenterProtocol?
+  var presenter: PlacePagePresenterProtocol?
   weak var viewController: UIViewController?
   weak var mapViewController: MapViewController?
   private let bookmarksManager = BookmarksManager.shared()
@@ -22,9 +23,10 @@ class PlacePageInteractor: NSObject {
     removeFromBookmarksManagerObserverList()
   }
 
-  private func updateBookmarkIfNeeded() {
-    guard let bookmarkId = placePageData.bookmarkData?.bookmarkId else { return }
-    guard bookmarksManager.hasBookmark(bookmarkId) else {
+  private func updatePlacePageIfNeeded() {
+    let isBookmark = placePageData.bookmarkData != nil && bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId)
+    let isTrack = placePageData.trackData != nil && bookmarksManager.hasTrack(placePageData.trackData!.trackId)
+    guard isBookmark || isTrack else {
       presenter?.closeAnimated()
       return
     }
@@ -42,6 +44,15 @@ class PlacePageInteractor: NSObject {
 }
 
 extension PlacePageInteractor: PlacePageInteractorProtocol {
+  func viewWillAppear() {
+    // Skip data reloading on the first appearance, to avoid unnecessary updates.
+    guard viewWillAppearIsCalledForTheFirstTime else {
+      viewWillAppearIsCalledForTheFirstTime = true
+      return
+    }
+    updatePlacePageIfNeeded()
+  }
+
   func updateTopBound(_ bound: CGFloat, duration: TimeInterval) {
     mapViewController?.setPlacePageTopBound(bound, duration: duration)
   }
@@ -53,14 +64,7 @@ extension PlacePageInteractor: PlacePageInfoViewControllerDelegate {
   var shouldShowOpenInApp: Bool {
     !OpenInApplication.availableApps.isEmpty
   }
-  
-  func viewWillAppear() {
-    // Skip data reloading on the first appearance, to avoid unnecessary updates.
-    guard viewWillAppearIsCalledForTheFirstTime else { return }
-    viewWillAppearIsCalledForTheFirstTime = true
-    updateBookmarkIfNeeded()
-  }
-  
+
   func didPressCall() {
     MWMPlacePageManagerHelper.call(placePageData)
   }
@@ -171,11 +175,16 @@ extension PlacePageInteractor: PlacePageButtonsViewControllerDelegate {
   }
 }
 
-// MARK: - PlacePageBookmarkViewControllerDelegate
+// MARK: - PlacePageEditBookmarkOrTrackViewControllerDelegate
 
-extension PlacePageInteractor: PlacePageBookmarkViewControllerDelegate {
-  func bookmarkDidPressEdit() {
-    MWMPlacePageManagerHelper.editBookmark(placePageData)
+extension PlacePageInteractor: PlacePageEditBookmarkOrTrackViewControllerDelegate {
+  func didPressEdit(_ data: PlacePageEditData) {
+    switch data {
+    case .bookmark(let placePageBookmarkData):
+      MWMPlacePageManagerHelper.editBookmark(placePageData)
+    case .track(let placePageTrackData):
+      MWMPlacePageManagerHelper.editTrack(placePageData)
+    }
   }
 }
 
@@ -228,9 +237,35 @@ extension PlacePageInteractor: ActionBarViewControllerDelegate {
       MWMPlacePageManagerHelper.avoidFerry()
     case .more:
       fatalError("More button should've been handled in ActionBarViewContoller")
+    case .track:
+      guard placePageData.trackData != nil else { return }
+      // TODO: This is temporary solution. Remove the dialog and use the MWMPlacePageManagerHelper.removeTrack
+      // directly here when the track recovery mechanism will be implemented.
+      showTrackDeletionConfirmationDialog()
     @unknown default:
       fatalError()
     }
+  }
+
+  private func showTrackDeletionConfirmationDialog() {
+    let alert = UIAlertController(title: nil, message: L("placepage_delete_track_confirmation_alert_message"), preferredStyle: .actionSheet)
+    let deleteAction = UIAlertAction(title: L("delete"), style: .destructive) { [weak self] _ in
+      guard let self = self else { return }
+      guard self.placePageData.trackData != nil else {
+        fatalError("The track data should not be nil during the track deletion")
+      }
+      MWMPlacePageManagerHelper.removeTrack(self.placePageData)
+      self.presenter?.closeAnimated()
+    }
+    let cancelAction = UIAlertAction(title: L("cancel"), style: .cancel)
+    alert.addAction(deleteAction)
+    alert.addAction(cancelAction)
+    guard let viewController else { return }
+    iPadSpecific {
+      alert.popoverPresentationController?.sourceView = viewController.view
+      alert.popoverPresentationController?.sourceRect = viewController.view.frame
+    }
+    viewController.present(alert, animated: true)
   }
 }
 
@@ -241,8 +276,9 @@ extension PlacePageInteractor: ElevationProfileViewControllerDelegate {
     MWMPlacePageManagerHelper.openElevationDifficultPopup(placePageData)
   }
 
-  func updateMapPoint(_ distance: Double) {
-    BookmarksManager.shared().setElevationActivePoint(distance, trackId: placePageData.elevationProfileData!.trackId)
+  func updateMapPoint(_ point: CLLocationCoordinate2D, distance: Double) {
+    guard let trackId = placePageData.trackData?.trackId else { return }
+    BookmarksManager.shared().setElevationActivePoint(point, distance: distance, trackId: trackId)
   }
 }
 
@@ -267,7 +303,7 @@ extension PlacePageInteractor: PlacePageHeaderViewControllerDelegate {
 // MARK: - BookmarksObserver
 extension PlacePageInteractor: BookmarksObserver {
   func onBookmarksLoadFinished() {
-    updateBookmarkIfNeeded()
+    updatePlacePageIfNeeded()
   }
 
   func onBookmarksCategoryDeleted(_ groupId: MWMMarkGroupID) {

@@ -167,6 +167,24 @@ node|z15-[natural=hot_spring],
 area|z15-[natural=hot_spring],
 {icon-image: drinking-water-m.svg; font-size: 11;}
 
+node|z12-[natural=spring][drinking_water=not],
+{icon-image: drinking-water-no-s.svg;}
+node|z15-[natural=spring][drinking_water=not],
+{icon-image: drinking-water-no-m.svg; font-size: 11;}
+
+node|z12-[man_made=water_tap][drinking_water=not],
+node|z12-[man_made=water_well][drinking_water=not],
+node|z12-[amenity=water_point][drinking_water=not],
+{icon-image: none;}
+node|z14-[man_made=water_tap][drinking_water=not],
+node|z14-[man_made=water_well][drinking_water=not],
+node|z14-[amenity=water_point][drinking_water=not],
+{icon-image: drinking-water-no-s.svg;}
+node|z15-[man_made=water_tap][drinking_water=not],
+node|z15-[man_made=water_well][drinking_water=not],
+node|z15-[amenity=water_point][drinking_water=not],
+{icon-image: drinking-water-no-m.svg;}
+
 /* 4.TOURISM */
 
 /* 4.2 Apartament */
@@ -357,5 +375,14 @@ node|z14-[man_made=flagpole],
 node|z14-[man_made=mast],
 {icon-image: mast-m.svg;}
 
+node|z14-[man_made=tower],
+node|z14-[man_made=tower][tower:type=communication],
+{icon-image: mast-m.svg; font-size: 11;}
+
 node|z18-[man_made=cairn],
 {icon-image: cairn-m.svg;text: name;text-color: @poi_label;font-size: 12;text-offset: 1;}
+
+node|z14-[man_made=silo],
+node|z14-[man_made=storage_tank],
+node|z14-[man_made=water_tower],
+{icon-image: storage-tank.svg;font-size: 11;}

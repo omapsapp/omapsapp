@@ -11,8 +11,6 @@ namespace routing
 class RoutingOptions
 {
 public:
-  static std::string const kAvoidRoutingOptionSettingsForCar;
-
   enum Road : uint8_t
   {
     Usual    = 1u << 0,

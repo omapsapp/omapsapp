@@ -90,7 +90,9 @@ public:
 
   using Languages = buffer_vector<Lang, kMaxSupportedLanguages>;
 
-  static Languages const & GetSupportedLanguages();
+  static Languages const & GetSupportedLanguages(bool includeServiceLangs = true);
+
+  static bool IsServiceLang(std::string_view lang);
 
   // These names require separate search/street processing.
   static bool IsAltOrOldName(int8_t langCode)

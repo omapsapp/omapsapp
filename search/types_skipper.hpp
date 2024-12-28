@@ -8,18 +8,20 @@
 
 namespace search
 {
-// Skips some feature's types when feature name is empty.
+// Helper functions to determine if a feature should be indexed for search.
 class TypesSkipper
 {
 public:
   TypesSkipper();
 
+  // Removes types which shouldn't be searchable in case there is no feature name.
   void SkipEmptyNameTypes(feature::TypesHolder & types) const;
 
   // Always skip feature for search index even it has name and other useful types.
   // Useful for mixed features, sponsored objects.
   bool SkipAlways(feature::TypesHolder const & types) const;
 
+  // Skip "entrance" only features if they have no name or a number ref only.
   bool SkipSpecialNames(feature::TypesHolder const & types, std::string_view defName) const;
 
 private:

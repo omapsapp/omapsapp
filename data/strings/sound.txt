@@ -4,6 +4,7 @@
     en = Keep right.
     ar = الزم اليمين.
     be = Трымайцеся правей.
+    bg = Дръжте се вдясно.
     ca = Manteniu-vos a la dreta.
     cs = Držte se vpravo.
     da = Hold til højre.
@@ -30,7 +31,7 @@
     ro = Păstrați la dreapta.
     ru = Держитесь правее.
     sk = Držte sa vpravo.
-    sr = Држите се десно.
+    sr = Скрените благо десно.
     sv = Håll höger.
     sw = Kaa kuria.
     th = ชิดขวาไว้
@@ -54,6 +55,7 @@
     en = Turn right.
     ar = انعطف يميناً.
     be = Павярніце направа.
+    bg = Завийте надясно.
     ca = Gireu a la dreta.
     cs = Odbočte vpravo.
     da = Drej til højre.
@@ -100,6 +102,7 @@
     en = Sharp right.
     ar = إلى أقصى اليمين.
     be = Рэзка павярніце направа.
+    bg = Завийте рязко надясно.
     ca = Gireu fortament a la dreta.
     cs = Ostře doprava.
     da = Skarpt til højre.
@@ -126,7 +129,7 @@
     ro = Virați strâns la dreapta.
     ru = Резко поверните направо.
     sk = Ostro doprava.
-    sr = Оштро десно.
+    sr = Скрените оштро десно.
     sv = Skarpt höger.
     sw = Fanya kulia mkali.
     th = หักมุมขวา
@@ -145,6 +148,7 @@
     en = Enter the roundabout.
     ar = ادخل الدوار.
     be = Павярніце на круг.
+    bg = Влезте в кръговото движение.
     ca = Entreu a la rotonda.
     cs = Vjeďte na kruhový objezd.
     da = Kør ind i rundkørslen.
@@ -199,6 +203,7 @@
     en = Exit the roundabout.
     ar = اخرج من الدوار.
     be = Збочце з круга.
+    bg = Излезте от кръговото движение.
     ca = Sortiu de la rotonda.
     cs = Opusťte kruhový objezd.
     da = Forlad rundkørslen.
@@ -253,6 +258,7 @@
     en = Keep left.
     ar = الزم اليسار.
     be = Трымайцеся лявей.
+    bg = Дръжте се вляво.
     ca = Manteniu-vos a l'esquerra.
     cs = Držte se vlevo.
     da = Hold til venstre.
@@ -279,7 +285,7 @@
     ro = Păstrați la stânga.
     ru = Держитесь левее.
     sk = Držte sa vľavo.
-    sr = Држите се лево.
+    sr = Скрените благо лево.
     sv = Håll vänster.
     sw = Kaa kushoto.
     th = ชิดซ้ายไว้
@@ -303,6 +309,7 @@
     en = Turn left.
     ar = انعطف يساراً.
     be = Павярніце налева.
+    bg = Завийте наляво.
     ca = Gireu a l'esquerra.
     cs = Odbočte vlevo.
     da = Drej til venstre.
@@ -349,6 +356,7 @@
     en = Sharp left.
     ar = إلى أقصى اليسار.
     be = Рэзка павярніце налева.
+    bg = Завийте рязко наляво.
     ca = Gireu fortament a l'esquerra.
     cs = Ostře doleva.
     da = Skarpt til venstre.
@@ -375,7 +383,7 @@
     ro = Virați strâns la stânga.
     ru = Резко поверните налево.
     sk = Ostro doľava.
-    sr = Оштро лево.
+    sr = Скрените оштро лево.
     sv = Skarpt vänster.
     sw = Fanya kushoto mkali.
     th = หักมุมซ้าย
@@ -394,6 +402,7 @@
     en = Make a u-turn.
     ar = إستدر للعودة.
     be = Развярніцеся.
+    bg = Направете обратен завой.
     ca = Feu un canvi de sentit.
     cs = Otočte se do protisměru.
     da = Vend om.
@@ -421,7 +430,7 @@
     ro = Întoarceți-vă o sută optzeci de grade.
     ru = Развернитесь.
     sk = Otočte sa o stoosemdesiat stupňov.
-    sr = Урадите полукружно окретање, када буде могуће.
+    sr = Урадите полукружно окретање.
     sv = Gör en U-sväng.
     sw = Geuka urudi ulikotoka.
     th = กลับรถ
@@ -445,6 +454,7 @@
     en = Go straight.
     ar = إستمر إلى الأمام.
     be = Рухайцеся прама.
+    bg = Продължете направо.
     ca = Seguiu tot recte.
     cs = Jeďte rovně.
     da = Fortsæt lige ud.
@@ -485,6 +495,7 @@
     en = Exit.
     ar = خروج.
     be = З'езд.
+    bg = Изход.
     ca = Sortida.
     cs = výstup.
     da = Afkørsel.
@@ -512,7 +523,7 @@
     ro = Ieșire.
     ru = Съезд.
     sk = Použite výjazd.
-    sr = Излаз.
+    sr = Искључите се.
     sv = Utgång.
     sw = Kuondoka.
     th = ทางออก.
@@ -527,6 +538,7 @@
     en = onto
     ar = إلى
     be = на
+    bg = към
     cs = na
     da = ad
     de = auf
@@ -541,7 +553,7 @@
     hr = na
     hu = a
     id = ke
-    it = sulla
+    it = in
     ja = NULL
     ko = NULL
     mr = वर
@@ -553,6 +565,7 @@
     ro = pe
     ru = на
     sk = na
+    sr = у улицу
     sv = in på
     sw = kwenye
     th = เข้าสู่
@@ -567,6 +580,7 @@
     en = Take exit
     ar = خروج إلى
     be = З'езд на
+    bg = Вземете изхода
     ca = Agafeu la sortida
     cs = výstup na
     da = Afkørsel ad
@@ -594,6 +608,7 @@
     ro = Ieșire pe
     ru = Съезд на
     sk = Výjazd na
+    sr = Изађите на излаз
     sv = Utgång in på
     sw = Kuondoka kwenye
     th = ทางออก เข้าสู่
@@ -612,6 +627,7 @@
     en = You’ll arrive.
     ar = سوف تصل.
     be = Вы прыбудзеце ў пункт прызначэння.
+    bg = Ще стигнете местоназначението си.
     ca = Arribareu a la destinació.
     cs = Přijedete do cíle.
     da = Ankommer du.
@@ -653,6 +669,7 @@
     en = You have arrived.
     ar = لقد وصلت.
     be = Вы прыбылі ў пункт прызначэння.
+    bg = Пристигнахте в местоназначението си.
     ca = Heu arribat.
     cs = Jste v cíli.
     da = Du er ankommet.
@@ -694,6 +711,7 @@
     en = In fifty meters
     ar = بعد خمسين متراً
     be = Праз пяцьдзесят метраў
+    bg = След петдесет метра
     ca = A cinquanta metres
     cs = Za padesát metrů
     da = Om halvtreds meter
@@ -735,6 +753,7 @@
     en = In one hundred meters
     ar = بعد مئة متر
     be = Праз сто метраў
+    bg = След сто метра
     ca = A cent metres
     cs = Za sto metrů
     da = Om et hundrede meter
@@ -776,6 +795,7 @@
     en = In two hundred meters
     ar = بعد مئتين متر
     be = Праз дзвесце метраў
+    bg = След двеста метра
     ca = A dos-cents metres
     cs = Za dvě stě metrů
     da = Om to hundrede meter
@@ -817,6 +837,7 @@
     en = In two hundred and fifty meters
     ar = بعد مئتين وخمسين متراً
     be = Праз дзвесце пяцьдзесят метраў
+    bg = След двеста и петдесет метра
     ca = A dos-cents cinquanta metres
     cs = Za dvě stě padesát metrů
     da = Om to hundrede og halvtreds meter
@@ -858,6 +879,7 @@
     en = In three hundred meters
     ar = بعد ثلاثمئة متر
     be = Праз трыста метраў
+    bg = След триста метра
     ca = A tres-cents metres
     cs = Za tři sta metrů
     da = Om tre hundrede meter
@@ -899,6 +921,7 @@
     en = In four hundred meters
     ar = بعد أربعمئة متر
     be = Праз чатырыста метраў
+    bg = След четиристотин метра
     ca = A quatre-cents metres
     cs = Za čtyři sta metrů
     da = Om fire hundrede meter
@@ -940,6 +963,7 @@
     en = In five hundred meters
     ar = بعد خمسمئة متر
     be = Праз пяцьсот метраў
+    bg = След петстотин метра
     ca = A cinc-cents metres
     cs = Za pět set metrů
     da = Om fem hundrede meter
@@ -981,6 +1005,7 @@
     en = In six hundred meters
     ar = بعد ستمئة متر
     be = Праз шэсцьсот метраў
+    bg = След шестстотин метра
     ca = A sis-cents metres
     cs = Za šest set metrů
     da = Om seks hundrede meter
@@ -1022,6 +1047,7 @@
     en = In seven hundred meters
     ar = بعد سبعمئة متر
     be = Праз сямсот метраў
+    bg = След седемстотин метра
     ca = A set-cents metres
     cs = Za sedm set metrů
     da = Om syv hundrede meter
@@ -1063,6 +1089,7 @@
     en = In seven hundred and fifty meters
     ar = بعد سبعمئة وخمسين مترًا
     be = Праз сямсот пяцьдзясят метраў
+    bg = След седемстотин и петдесет метра
     ca = A set-cents cinquanta metres
     cs = Za sedm set padesát metrů
     da = Om syv hundrede og halvtreds meter
@@ -1104,6 +1131,7 @@
     en = In eight hundred meters
     ar = بعد ثمانمئة متر
     be = Праз васямсот метраў
+    bg = След осемстотин метра
     ca = A vuit-cents
     cs = Za osm set metrů
     da = Om otte hundrede meter
@@ -1145,6 +1173,7 @@
     en = In nine hundred meters
     ar = بعد تسعمئة متر
     be = Праз дзевяцьсот метраў
+    bg = След деветстотин метра
     ca = A nou-cents metres
     cs = Za devět se metrů
     da = Om ni hundrede meter
@@ -1186,6 +1215,7 @@
     en = In one kilometer
     ar = بعد كيلومتر واحد
     be = Праз кіламетр
+    bg = След един километър
     ca = A un quilòmetre
     cs = Za jeden kilometr
     da = Om en kilometer
@@ -1227,6 +1257,7 @@
     en = In one and a half kilometers
     ar = بعد كيلومتر ونصف
     be = Праз паўтара кіламетра
+    bg = След километър и половина
     ca = A un quilòmetre i mig
     cs = Za jeden a půl kilometru
     da = Om halvanden kilometer
@@ -1268,6 +1299,7 @@
     en = In two kilometers
     ar = بعد كيلومترين
     be = Праз два кіламетры
+    bg = След два километра
     ca = A dos quilòmetres
     cs = Za dva kilometry
     da = Om to kilometer
@@ -1309,6 +1341,7 @@
     en = In two and a half kilometers
     ar = بعد كيلومترين ونصف
     be = Праз два з паловай кіламетры
+    bg = След два километра и половина
     ca = A dos quilòmetres i mig
     cs = Za dva a půl kilometru
     da = Om en kilometer
@@ -1336,7 +1369,7 @@
     ro = După doi kilometri și jumătate
     ru = Через два с половиной километра
     sk = Po dva a pol kilometri
-    sr = За два а по километра
+    sr = За два и по километра
     sv = Om två och en halv kilometer
     sw = Kabla ya kilomita mbili na nusu
     th = อีกสองกิโลเมตรครึ่ง
@@ -1350,6 +1383,7 @@
     en = In three kilometers
     ar = بعد ثلاثة كيلومترات
     be = Праз тры кіламетры
+    bg = След три километра
     ca = A tres quilòmetres
     cs = Za tři kilometry
     da = Om tre kilometer
@@ -1391,6 +1425,7 @@
     en = Then
     ar = ثم
     be = Потым
+    bg = След
     ca = Després
     cs = Poté
     da = Derefter
@@ -1442,6 +1477,7 @@
     en = Take the first exit.
     ar = اسلك المخرج الأول.
     be = Збочце на першы з'езд.
+    bg = Вземете първия изход.
     ca = Agafeu la primera sortida.
     cs = Vyjeďte prvním výjezdem.
     da = Tag den første afkørsel.
@@ -1495,6 +1531,7 @@
     en = Take the second exit.
     ar = اسلك المخرج الثاني.
     be = Збочце на другі з'езд.
+    bg = Вземете втория изход.
     ca = Agafeu la segona sortida.
     cs = Vyjeďte druhým výjezdem.
     da = Tag den anden afkørsel.
@@ -1548,6 +1585,7 @@
     en = Take the third exit.
     ar = اسلك المخرج الثالث.
     be = Збочце на трэці з'езд.
+    bg = Вземете третия изход.
     ca = Agafeu la tercera sortida.
     cs = Vyjeďte třetím výjezdem.
     da = Tag den tredje afkørsel.
@@ -1601,6 +1639,7 @@
     en = Take the fourth exit.
     ar = اسلك المخرج الرابع.
     be = Збочце на чацвёрты з'езд.
+    bg = Вземете четвъртия изход.
     ca = Agafeu la quarta sortida.
     cs = Vyjeďte čtvrtým výjezdem.
     da = Tag den fjerde afkørsel.
@@ -1654,6 +1693,7 @@
     en = Take the fifth exit.
     ar = اسلك المخرج الخامس.
     be = Збочце на пяты з'езд.
+    bg = Вземете петия изход.
     ca = Agafeu la cinquena sortida.
     cs = Vyjeďte pátým výjezdem.
     da = Tag den femte afkørsel.
@@ -1707,6 +1747,7 @@
     en = Take the sixth exit.
     ar = اسلك المخرج السادس.
     be = Збочце на шосты з'езд.
+    bg = Вземете шестия изход.
     ca = Agafeu la sisena sortida.
     cs = Vyjeďte šestým výjezdem.
     da = Tag den sjette afkørsel.
@@ -1760,6 +1801,7 @@
     en = Take the seventh exit.
     ar = اسلك المخرج السابع.
     be = Збочце на сёмы з'езд.
+    bg = Вземете седмия изход.
     ca = Agafeu la setena sortida.
     cs = Vyjeďte sedmým výjezdem.
     da = Tag den syvende afkørsel.
@@ -1813,6 +1855,7 @@
     en = Take the eighth exit.
     ar = اسلك المخرج الثامن.
     be = Збочце на восьмы з'езд.
+    bg = Вземете осмия изход.
     ca = Agafeu la vuitena sortida.
     cs = Vyjeďte osmým výjezdem.
     da = Tag den ottende afkørsel.
@@ -1866,6 +1909,7 @@
     en = Take the ninth exit.
     ar = اسلك المخرج التاسع.
     be = Збочце на дзявяты з'езд.
+    bg = Вземете деветия изход.
     ca = Agafeu la novena sortida.
     cs = Vyjeďte devátým výjezdem.
     da = Tag den niende afkørsel.
@@ -1919,6 +1963,7 @@
     en = Take the tenth exit.
     ar = اسلك المخرج العاشر.
     be = Збочце на дзясяты з'езд.
+    bg = Вземете десетия изход.
     ca = Agafeu la desena sortida.
     cs = Vyjeďte desátým výjezdem.
     da = Tag den tiende afkørsel.
@@ -1972,6 +2017,7 @@
     en = Take the eleventh exit.
     ar = اسلك المَخْرَج الحادي عشر.
     be = Збочце на адзінаццаты з'езд.
+    bg = Вземете единадесетия изход.
     ca = Agafeu la onzena sortida.
     cs = Vyjeďte jedenáctým výjezdem.
     da = Tag den ellevte afkørsel.
@@ -2025,6 +2071,7 @@
     en = In fifty feet
     ar = بعد خمسين قدمًا
     be = Праз пяцьдзесят футаў
+    bg = След петдесет фута
     ca = A cinquanta peus
     cs = Za padesát stop
     da = Om halvtreds fod
@@ -2066,6 +2113,7 @@
     en = In one hundred feet
     ar = بعد مئة قدم
     be = Праз сто футаў
+    bg = След сто фута
     ca = A cent peus
     cs = Za sto stop
     da = Om et hundrede fod
@@ -2107,6 +2155,7 @@
     en = In two hundred feet
     ar = بعد مئتين قدم
     be = Праз дзвесце футаў
+    bg = След двеста фута
     ca = A dos-cents peus
     cs = Za dvě stě stop
     da = Om to hundrede fod
@@ -2148,6 +2197,7 @@
     en = In three hundred feet
     ar = بعد ثلاثمئة قدم
     be = Праз трыста футаў
+    bg = След триста фута
     ca = A tres-cents peus
     cs = Za tři sta stop
     da = Om tre hundrede fod
@@ -2189,6 +2239,7 @@
     en = In four hundred feet
     ar = بعد أربعمئة قدم
     be = Праз чатырыста футаў
+    bg = След четиристотин фута
     ca = A quatre-cents peus
     cs = Za čtyři sta stop
     da = Om fire hundrede fod
@@ -2230,6 +2281,7 @@
     en = In five hundred feet
     ar = بعد خمسمئة قدم
     be = Праз пяцьсот футаў
+    bg = След петстотин фута
     ca = A cinc-cents peus
     cs = Za pět set stop
     da = Om femte hundrede fod
@@ -2271,6 +2323,7 @@
     en = In six hundred feet
     ar = بعد ستمئة قدم
     be = Праз шэсцьсот футаў
+    bg = След шестстотин фута
     ca = A sis-cents peus
     cs = Za šest set stop
     da = Om sjette hundrede fod
@@ -2312,6 +2365,7 @@
     en = In seven hundred feet
     ar = بعد سبعمئة قدم
     be = Праз сямсот футаў
+    bg = След седемстотин фута
     ca = A set-cents peus
     cs = Za sedm set stop
     da = Om syv hundrede fod
@@ -2353,6 +2407,7 @@
     en = In eight hundred feet
     ar = بعد ثمانمئة قدم
     be = Праз васямсот футаў
+    bg = След осемстотин фута
     ca = A vuit-cents peus
     cs = Za osm set stop
     da = Om otte hundrede fod
@@ -2394,6 +2449,7 @@
     en = In nine hundred feet
     ar = بعد تسعمئة قدم
     be = Праз дзевяцьсот футаў
+    bg = След деветстотин фута
     ca = A nou-cents peus
     cs = Za devět set stop
     da = Om ni hundrede fod
@@ -2435,6 +2491,7 @@
     en = In one thousand feet
     ar = بعد ألف قدم
     be = Праз тысячу футаў
+    bg = След хиляда фута
     ca = A mil peus
     cs = Za tisíc stop
     da = Om et tusind fod
@@ -2476,6 +2533,7 @@
     en = In fifteen hundred feet
     ar = بعد ألف وخمسمئة قدم
     be = Праз тысячу пяцьсот футаў
+    bg = След хиляда и петстотин фута
     ca = A mil cinc-cents peus
     cs = Za tisíc pět set stop
     da = Om et tusind fem hundrede fod
@@ -2517,6 +2575,7 @@
     en = In two thousand feet
     ar = بعد ألفي قدم
     be = Праз дзве тысячы футаў
+    bg = След две хиляди фута
     ca = A dos mil peus
     cs = Za dva tisíce stop
     da = Om to tusind fod
@@ -2558,6 +2617,7 @@
     en = In twenty five hundred feet
     ar = بعد ألفين وخمسمئة قدم
     be = Праз дзве тысячы пяцьсот футаў
+    bg = След две хиляди и петстотин фута
     ca = A dos mil cinc-cents peus
     cs = Za dva tisíce pět set stop
     da = Om to tusinde fem hundrede fod
@@ -2599,6 +2659,7 @@
     en = In three thousand feet
     ar = بعد ثلاثة آلاف قدم
     be = Праз тры тысячы футаў
+    bg = След три хиляди фута
     ca = A tres mil peus
     cs = Za tři tisíce stop
     da = Om tre tusind fod
@@ -2640,6 +2701,7 @@
     en = In thirty five hundred feet
     ar = بعد ثلاثة آلاف وخمسمئة قدم
     be = Праз тры тысячы пяцьсот футаў
+    bg = След три хиляди и петстотин фута
     ca = A tres mil cinc-cents peus
     cs = Za tři tisíce pět set stop
     da = Om tre tusind fem hundrede fod
@@ -2681,6 +2743,7 @@
     en = In four thousand feet
     ar = بعد أربعة آلاف قدم
     be = Праз чатыры тысячы футаў
+    bg = След четири хиляди фута
     ca = A quatre mil peus
     cs = Za čtyři tisíce stop
     da = Om fire tusind fod
@@ -2722,6 +2785,7 @@
     en = In forty five hundred feet
     ar = بعد أربعة آلاف وخمسمئة قدم
     be = Праз чатыры тысячы пяцьсот футаў
+    bg = След четири хиляди и петстотин фута
     ca = A quatre mil cinc-cents peus
     cs = Za čtyři tisíce pět set stop
     da = Om fire tusind fem hundrede fod
@@ -2763,6 +2827,7 @@
     en = In five thousand feet
     ar = بعد خمسة آلاف قدم
     be = Праз пяць тысяч футаў
+    bg = След пет хиляди фута
     ca = A cinc mil peus
     cs = Za pět tisíc stop
     da = Om fem tusind fod
@@ -2804,6 +2869,7 @@
     en = In one mile
     ar = بعد ميل واحد
     be = Праз адну мілю
+    bg = След една миля
     ca = A un milla
     cs = Za jednu míli
     da = Om en mil
@@ -2845,6 +2911,7 @@
     en = In one and a half miles
     ar = بعد ميل ونصف
     be = Праз паўтары мілі
+    bg = След една миля и половина
     ca = A una milla i mitja
     cs = Za jednu a půl míle
     da = Om halvanden mil
@@ -2886,6 +2953,7 @@
     en = In two miles
     ar = بعد ميلين
     be = Праз дзве мілі
+    bg = След две мили
     ca = A dues milles
     cs = Za dvě míle
     da = Om to mil
@@ -2927,6 +2995,7 @@
     en = Camera ahead
     ar = الكاميرا أمامك
     be = Наперадзе камера
+    bg = Камера отпред
     ca = Càmera al davant
     cs = Radar vpředu
     da = Kamera foran dig
@@ -2954,7 +3023,7 @@
     ro = Cameră frontală
     ru = Впереди камера
     sk = Pozor, radar!
-    sr = Пажња, радар!
+    sr = Пажња, прекршајна камера!
     sv = Kamera framför
     sw = Kamera Mbele
     th = มีกล้องอยู่ข้างหน้า

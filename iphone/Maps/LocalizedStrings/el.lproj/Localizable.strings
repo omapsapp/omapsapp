@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Κάντε δωρεά για να φτιάξουμε μαζί τους καλύτερους χάρτες!";
 
+"already_donated" = "Ήδη δωρεά";
+
+"remind_me_later" = "Υπενθύμισε αργότερα";
+
+"support_organic_maps" = "Υποστήριξε το Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Πνευματικά δικαιώματα";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Δεδομένα OpenStreetMap που δημιουργήθηκαν από την κοινότητα στις %@. Μάθετε περισσότερα για τον τρόπο επεξεργασίας και ενημέρωσης του χάρτη στο OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Συνδεθείτε ώστε άλλοι χρήστες να μπορούν να δουν τις αλλαγές που έχετε κάνει";
+"login_to_make_edits_visible" = "Δημιουργήστε έναν λογαριασμό OpenStreetMap ή συνδεθείτε για να δημοσιεύσετε τις επεξεργασίες του χάρτη σας στον κόσμο.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Για να το κατεβάσετε, χρειάζεστε περισσότερο χώρο. Διαγράψτε μη απαραίτητα δεδομένα.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Περισσότερα σχετικά με το OpenStreetMap";
 
-"editor_operator" = "Ιδιοκτήτης";
+"editor_operator" = "Χειριστής";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Ιδιοκτήτης: %@";
+"operator" = "Χειριστής: %@";
+
+"editor_category_unsuitable_title" = "Δεν μπορείτε να βρείτε την κατάλληλη κατηγορία;";
+
+"editor_category_unsuitable_text" = "Οι Οργανικοί Χάρτες επιτρέπουν την προσθήκη απλών κατηγοριών σημείων μόνο, δηλαδή όχι πόλεων, δρόμων, λιμνών, περιγραμμάτων κτιρίων κ.λπ. Παρακαλούμε προσθέστε τέτοιες κατηγορίες απευθείας στο <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Ελέγξτε τον <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">οδηγό μας</a> για λεπτομερείς οδηγίες βήμα προς βήμα.";
 
 "downloader_no_downloaded_maps_title" = "Δεν έχετε κατεβάσει χάρτες";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "Περισσότερα";
 
 "book_button" = "Κράτηση";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Λεπτομέρειες στο Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Απενεργοποίηση του Kayak";
 
 "placepage_call_button" = "Κλήση";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Σχεδιασμός";
 
-"placepage_remove_stop" = "Αφαίρεση";
+"placepage_remove_stop" = "Αφαίρεση στάσης";
 
 "planning_route_remove_title" = "Σύρετε εδώ για αφαίρεση";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Κατάβαση";
 
-"elevation_profile_minaltitude" = "Ελάχ. υψόμετρο";
+"elevation_profile_min_elevation" = "Ελάχ. υψόμετρο";
 
-"elevation_profile_maxaltitude" = "Μέγ. υψόμετρο";
+"elevation_profile_max_elevation" = "Μέγ. υψόμετρο";
 
 "elevation_profile_difficulty" = "Δυσκολία";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Διαγραφή διαδρομής";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το κομμάτι;";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Όνομα διαδρομής";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Εάν γνωρίζετε έναν προγραμματιστή λογισμικού, μπορείτε να του ζητήσετε να υλοποιήσει μια λειτουργία που χρειάζεστε.";
 
 /* App tip #04 */
-"app_tip_04" = "Γνωρίζετε ότι μπορείτε να πατήσετε παρατεταμένα οποιοδήποτε μέρος στο χάρτη για να το επιλέξετε;";
+"app_tip_04" = "Πατήστε οπουδήποτε στο χάρτη για να επιλέξετε οτιδήποτε. Πατήστε παρατεταμένα για να αποκρύψετε και να εμφανίσετε ξανά το περιβάλλον εργασίας.";
 
 /* App tip #05 */
 "app_tip_05" = "Γνωρίζετε ότι μπορείτε να επιλέξετε την τρέχουσα τοποθεσία σας στο χάρτη;";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Η διαδρομή είναι άδεια - δεν υπάρχει τίποτα να αποθηκεύσετε";
+
+"edit_track" = "Επεξεργασία διαδρομής";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Ταχυδρομείο";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "φυλακή";
 
 "type.amenity.pub" = "Παμπ";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Παροχή νερού";
 
+"type.amenity.water_point.drinking_water_no" = "Παροχή νερού";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Εμπόδιο";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Γκαράζ";
 
-"type.building.train_station" = "Σιδηροδρομικός σταθμός";
+"type.building.train_station" = "Κτίριο σταθμού";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Βρύση νερού";
 
+"type.man_made.water_tap.drinking_water_no" = "Βρύση νερού";
+
 "type.man_made.water_tower" = "Υδατόπυργος";
 
 "type.man_made.water_well" = "Πηγάδι νερού";
+
+"type.man_made.water_well.drinking_water_no" = "Πηγάδι νερού";
 
 "type.man_made.windmill" = "Ανεμόμυλος";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Θαμνώδες περιοχή";
 
 "type.natural.spring" = "Πηγή νερού";
+
+"type.natural.spring.drinking_water_no" = "Πηγή νερού";
 
 "type.natural.strait" = "Πορθμός";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Σιδηροδρομικός σταθμός";
 
+"type.railway.station.light_rail.berlin" = "Σιδηροδρομικός σταθμός";
+
 "type.railway.station.light_rail.london" = "Σιδηροδρομικός σταθμός";
 
 "type.railway.station.light_rail.porto" = "Σιδηροδρομικός σταθμός";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Μετρό";
 
 "type.railway.station.subway.hiroshima" = "Μετρό";
+
+"type.railway.station.subway.hongkong" = "Μετρό";
 
 "type.railway.station.subway.isfahan" = "Μετρό";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Μετρό";
 
 "type.railway.station.subway.shanghai" = "Μετρό";
+
+"type.railway.station.subway.shenzhen" = "Μετρό";
 
 "type.railway.station.subway.shiraz" = "Μετρό";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Είσοδος μετρό";
 
+"type.railway.subway_entrance.hongkong" = "Είσοδος μετρό";
+
 "type.railway.subway_entrance.isfahan" = "Είσοδος μετρό";
 
 "type.railway.subway_entrance.istanbul" = "Είσοδος μετρό";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Είσοδος μετρό";
 
 "type.railway.subway_entrance.shanghai" = "Είσοδος μετρό";
+
+"type.railway.subway_entrance.shenzhen" = "Είσοδος μετρό";
 
 "type.railway.subway_entrance.shiraz" = "Είσοδος μετρό";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Εξοπλισμός υπαίθρου";
 
 "type.shop.outpost" = "Σημείο παραλαβής";
+
+"type.shop.pasta" = "Κατάστημα ζυμαρικών";
 
 "type.shop.pastry" = "Ζύμη";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Αξιοθέατα";
 
+"type.attraction.amusement_ride" = "Βόλτα ψυχαγωγίας";
+
 "type.attraction.animal" = "Περίφραξη ζώων";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Στροβιλοδρόμιο";
+
+"type.attraction.historic" = "Ιστορικό αξιοθέατο";
+
+"type.attraction.maze" = "Λαβύρινθος";
+
+"type.attraction.roller_coaster" = "Τρενάκι του λούνα παρκ";
+
+"type.attraction.water_slide" = "Διαφάνεια νερού";
 
 "type.tourism.attraction.specified" = "Αξιοθέατα";
 

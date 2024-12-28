@@ -67,7 +67,7 @@ jobs:
               libqt6positioning6-plugins \
               libqt6positioning6
 
-      - name: Configure
+      - name: Configure repository
         shell: bash
         run: ./configure.sh
 
@@ -134,7 +134,7 @@ jobs:
               libqt6positioning6-plugins \
               libqt6positioning6
 
-      - name: Configure
+      - name: Configure repository
         shell: bash
         run: ./configure.sh
 

@@ -13,7 +13,6 @@ import androidx.core.os.ParcelCompat;
 import app.organicmaps.Framework;
 import app.organicmaps.routing.RoutePointInfo;
 import app.organicmaps.search.Popularity;
-import app.organicmaps.util.Config;
 import app.organicmaps.util.Utils;
 import app.organicmaps.widget.placepage.PlacePageData;
 
@@ -292,8 +291,7 @@ public class MapObject implements PlacePageData
     final Instant firstDay = Instant.now();
     final long firstDaySec = firstDay.getEpochSecond();
     final long lastDaySec = firstDay.plus(1, ChronoUnit.DAYS).getEpochSecond();
-    final boolean isReferral = Config.isKayakReferralAllowed();
-    final String res = Framework.nativeGetKayakHotelLink(Utils.getCountryCode(), uri, firstDaySec, lastDaySec, isReferral);
+    final String res = Framework.nativeGetKayakHotelLink(Utils.getCountryCode(), uri, firstDaySec, lastDaySec);
     return res == null ? "" : res;
   }
 

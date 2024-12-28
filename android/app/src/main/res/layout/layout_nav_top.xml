@@ -94,7 +94,7 @@
       android:layout_alignEnd="@id/nav_next_turn_frame"
       android:background="?navNextNextTurnFrame"
       android:elevation="@dimen/nav_elevation"
-      android:visibility="gone"
+      android:visibility="invisible"
       tools:visibility="visible">
       <ImageView
         android:id="@id/turn"
@@ -123,4 +123,15 @@
       app:cornerRadius="@dimen/margin_quarter"
       app:editModeLanesCount="5"
       tools:visibility="visible" />
+
+  <app.organicmaps.widget.SpeedLimitView
+    android:id="@+id/nav_speed_limit"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_margin="@dimen/margin_half"
+    app:editModeCurrentSpeed="90"
+    app:editModeSpeedLimit="120"
+    app:layout_constraintEnd_toEndOf="@id/nav_next_turn_container"
+    app:layout_constraintStart_toStartOf="@id/nav_next_turn_container"
+    app:layout_constraintTop_toBottomOf="@id/nav_next_turn_container" />
 </androidx.constraintlayout.widget.ConstraintLayout>

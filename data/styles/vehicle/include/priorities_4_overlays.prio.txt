@@ -174,9 +174,6 @@ amenity-charging_station-motorcar                   # icon z14- (also has captio
 amenity-fuel                                        # icon z12- (also has caption(optional) z12-)
 === 3200
 
-highway-traffic_signals                             # icon z19-
-=== 3165
-
 amenity-charging_station                            # icon z16- (also has caption(optional) z16-)
 amenity-vending_machine-fuel                        # icon z17- (also has caption(optional) z17-)
 === 3150
@@ -199,9 +196,10 @@ natural-water-reservoir                             # caption z10- (also has are
 
 railway-station-funicular                           # icon z12- (also has caption(optional) z13-)
 railway-station-light_rail                          # icon z13- (also has caption(optional) z15-)
+railway-station-light_rail-berlin                   # icon z13- (also has caption(optional) z15-)
 railway-station-light_rail-london                   # icon z13- (also has caption(optional) z15-)
 railway-station-light_rail-porto                    # icon z13- (also has caption(optional) z15-)
-railway-station-monorail                            # icon z12- (also has caption(optional) z13-)
+railway-station-monorail                            # icon z13- (also has caption(optional) z14-)
 === 2900
 
 barrier-toll_booth                                  # icon z12- (also has caption(optional) z14-)
@@ -353,6 +351,7 @@ railway-station-subway-guangzhou                    # icon z13- (also has captio
 railway-station-subway-hamburg                      # icon z13- (also has caption(optional) z15-)
 railway-station-subway-helsinki                     # icon z13- (also has caption(optional) z15-)
 railway-station-subway-hiroshima                    # icon z13- (also has caption(optional) z15-)
+railway-station-subway-hongkong                     # icon z13- (also has caption(optional) z15-)
 railway-station-subway-isfahan                      # icon z13- (also has caption(optional) z15-)
 railway-station-subway-istanbul                     # icon z12- (also has caption(optional) z15-)
 railway-station-subway-izmir                        # icon z13- (also has caption(optional) z15-)
@@ -405,6 +404,7 @@ railway-station-subway-sapporo                      # icon z13- (also has captio
 railway-station-subway-sendai                       # icon z13- (also has caption(optional) z15-)
 railway-station-subway-sf                           # icon z12- (also has caption(optional) z15-)
 railway-station-subway-shanghai                     # icon z12- (also has caption(optional) z15-)
+railway-station-subway-shenzhen                     # icon z13- (also has caption(optional) z15-)
 railway-station-subway-shiraz                       # icon z13- (also has caption(optional) z15-)
 railway-station-subway-singapore                    # icon z13- (also has caption(optional) z15-)
 railway-station-subway-sofia                        # icon z13- (also has caption(optional) z15-)
@@ -554,6 +554,7 @@ amenity-conference_centre                           # icon z16-
 amenity-events_venue                                # icon z16-
 amenity-exhibition_centre                           # icon z16-
 amenity-water_point                                 # icon z16-
+amenity-water_point-drinking_water_no               # icon z18-
 building-train_station                              # caption z18- (also has area z15-)
 railway-subway_entrance                             # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-adana                       # icon z16- (also has caption(optional) z17-)
@@ -595,6 +596,7 @@ railway-subway_entrance-guangzhou                   # icon z16- (also has captio
 railway-subway_entrance-hamburg                     # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-helsinki                    # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-hiroshima                   # icon z16- (also has caption(optional) z17-)
+railway-subway_entrance-hongkong                    # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-isfahan                     # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-istanbul                    # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-izmir                       # icon z16- (also has caption(optional) z17-)
@@ -648,6 +650,7 @@ railway-subway_entrance-sapporo                     # icon z16- (also has captio
 railway-subway_entrance-sendai                      # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-sf                          # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-shanghai                    # icon z16- (also has caption(optional) z17-)
+railway-subway_entrance-shenzhen                    # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-shiraz                      # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-singapore                   # icon z16- (also has caption(optional) z17-)
 railway-subway_entrance-sofia                       # icon z16- (also has caption(optional) z17-)
@@ -712,6 +715,9 @@ amenity-toilets                                     # icon z17- (also has captio
 shop-motorcycle                                     # icon z17-
 === 200
 
+highway-traffic_signals                             # icon z15-
+=== 175
+
 building-address                                    # caption z18-
 landuse-landfill                                    # caption z15- (also has area z15-)
 landuse-quarry                                      # caption z15- (also has area z15-)
@@ -766,9 +772,10 @@ entrance-main                                       # icon z18- (also has captio
 
 # railway-station-funicular                         # caption(optional) z13- (also has icon z12-)
 # railway-station-light_rail                        # caption(optional) z15- (also has icon z13-)
+# railway-station-light_rail-berlin                 # caption(optional) z15- (also has icon z13-)
 # railway-station-light_rail-london                 # caption(optional) z15- (also has icon z13-)
 # railway-station-light_rail-porto                  # caption(optional) z15- (also has icon z13-)
-# railway-station-monorail                          # caption(optional) z13- (also has icon z12-)
+# railway-station-monorail                          # caption(optional) z14- (also has icon z13-)
 # === -7100
 
 # barrier-toll_booth                                # caption(optional) z14- (also has icon z12-)
@@ -874,6 +881,7 @@ entrance-main                                       # icon z18- (also has captio
 # railway-station-subway-hamburg                    # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-helsinki                   # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-hiroshima                  # caption(optional) z15- (also has icon z13-)
+# railway-station-subway-hongkong                   # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-isfahan                    # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-istanbul                   # caption(optional) z15- (also has icon z12-)
 # railway-station-subway-izmir                      # caption(optional) z15- (also has icon z13-)
@@ -926,6 +934,7 @@ entrance-main                                       # icon z18- (also has captio
 # railway-station-subway-sendai                     # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-sf                         # caption(optional) z15- (also has icon z12-)
 # railway-station-subway-shanghai                   # caption(optional) z15- (also has icon z12-)
+# railway-station-subway-shenzhen                   # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-shiraz                     # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-singapore                  # caption(optional) z15- (also has icon z13-)
 # railway-station-subway-sofia                      # caption(optional) z15- (also has icon z13-)
@@ -1071,6 +1080,7 @@ entrance-main                                       # icon z18- (also has captio
 # railway-subway_entrance-hamburg                   # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-helsinki                  # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-hiroshima                 # caption(optional) z17- (also has icon z16-)
+# railway-subway_entrance-hongkong                  # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-isfahan                   # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-istanbul                  # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-izmir                     # caption(optional) z17- (also has icon z16-)
@@ -1124,6 +1134,7 @@ entrance-main                                       # icon z18- (also has captio
 # railway-subway_entrance-sendai                    # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-sf                        # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-shanghai                  # caption(optional) z17- (also has icon z16-)
+# railway-subway_entrance-shenzhen                  # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-shiraz                    # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-singapore                 # caption(optional) z17- (also has icon z16-)
 # railway-subway_entrance-sofia                     # caption(optional) z17- (also has icon z16-)

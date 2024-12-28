@@ -895,6 +895,22 @@ private:
   bool const m_allow3dBuildings;
 };
 
+class SetMapLangIndexMessage : public Message
+{
+public:
+  explicit SetMapLangIndexMessage(int8_t mapLangIndex)
+    : m_mapLangIndex(mapLangIndex)
+  {}
+
+  Type GetType() const override { return Type::SetMapLangIndex; }
+
+  int8_t MapLangIndex() const { return m_mapLangIndex; }
+
+private:
+  int8_t const m_mapLangIndex;
+};
+
+
 class EnablePerspectiveMessage : public Message
 {
 public:

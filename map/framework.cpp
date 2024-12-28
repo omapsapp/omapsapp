@@ -88,23 +88,32 @@ Framework::FixedPosition::FixedPosition()
 
 namespace
 {
-char const kMapStyleKey[] = "MapStyleKeyV1";
-char const kAllow3dKey[] = "Allow3d";
-char const kAllow3dBuildingsKey[] = "Buildings3d";
-char const kAllowAutoZoom[] = "AutoZoom";
-char const kTrafficEnabledKey[] = "TrafficEnabled";
-char const kTransitSchemeEnabledKey[] = "TransitSchemeEnabled";
-char const kIsolinesEnabledKey[] = "IsolinesEnabled";
-char const kOutdoorsEnabledKey[] = "OutdoorsEnabled";
-char const kTrafficSimplifiedColorsKey[] = "TrafficSimplifiedColors";
-char const kLargeFontsSize[] = "LargeFontsSize";
-char const kTranslitMode[] = "TransliterationMode";
-char const kPreferredGraphicsAPI[] = "PreferredGraphicsAPI";
-char const kShowDebugInfo[] = "DebugInfo";
+std::string_view constexpr kMapStyleKey = "MapStyleKeyV1";
+std::string_view constexpr kAllow3dKey = "Allow3d";
+std::string_view constexpr kAllow3dBuildingsKey = "Buildings3d";
+std::string_view constexpr kAllowAutoZoom = "AutoZoom";
+std::string_view constexpr kTrafficEnabledKey = "TrafficEnabled";
+std::string_view constexpr kTransitSchemeEnabledKey = "TransitSchemeEnabled";
+std::string_view constexpr kIsolinesEnabledKey = "IsolinesEnabled";
+std::string_view constexpr kOutdoorsEnabledKey = "OutdoorsEnabled";
+std::string_view constexpr kTrafficSimplifiedColorsKey = "TrafficSimplifiedColors";
+std::string_view constexpr kLargeFontsSize = "LargeFontsSize";
+std::string_view constexpr kTranslitMode = "TransliterationMode";
+std::string_view constexpr kPreferredGraphicsAPI = "PreferredGraphicsAPI";
+std::string_view constexpr kShowDebugInfo = "DebugInfo";
+std::string_view constexpr kScreenViewport = "ScreenClipRect";
+std::string_view constexpr kPlacePageProductsPopupCloseTime = "PlacePageProductsPopupCloseTime";
+std::string_view constexpr kPlacePageProductsPopupCloseReason = "PlacePageProductsPopupCloseReason";
+std::string_view constexpr kPlacePageSelectedProduct = "PlacePageSelectedProduct";
+
+std::string_view constexpr kProductsPopupCloseReasonCloseStr = "close";
+std::string_view constexpr kProductsPopupCloseReasonRemindLaterStr = "remind_later";
+std::string_view constexpr kProductsPopupCloseReasonAlreadyDonatedStr =  "already_donated";
+std::string_view constexpr kProductsPopupCloseReasonSelectProductStr = "select_product";
 
 auto constexpr kLargeFontsScaleFactor = 1.6;
 size_t constexpr kMaxTrafficCacheSizeBytes = 64 /* Mb */ * 1024 * 1024;
-auto constexpr kBuildingCentroidThreshold = 10.0;
+
 
 // TODO!
 // To adjust GpsTrackFilter was added secret command "?gpstrackaccuracy:xxx;"
@@ -648,7 +657,9 @@ void Framework::FillTrackInfo(Track const & track, m2::PointD const & trackPoint
 {
   info.SetTrackId(track.GetId());
   info.SetBookmarkCategoryId(track.GetGroupId());
+  info.SetBookmarkCategoryName(GetBookmarkManager().GetCategoryName(track.GetGroupId()));
   info.SetMercator(trackPoint);
+  info.SetTitlesForTrack(track);
 }
 
 search::ReverseGeocoder::Address Framework::GetAddressAtPoint(m2::PointD const & pt) const
@@ -876,20 +887,25 @@ void Framework::ShowTrack(kml::TrackId trackId)
 {
   auto & bm = GetBookmarkManager();
   auto const track = bm.GetTrack(trackId);
-  if (track == nullptr)
-    return;
+
+  StopLocationFollow();
 
   auto rect = track->GetLimitRect();
   ExpandRectForPreview(rect);
 
-  StopLocationFollow();
-  ShowRect(rect);
+  place_page::BuildInfo info;
+  info.m_trackId = trackId;
+  info.m_mercator = rect.Center();
 
-  auto es = GetBookmarkManager().GetEditSession();
+  m_currentPlacePageInfo = BuildPlacePageInfo(info);
+
+  auto es = bm.GetEditSession();
   es.SetIsVisible(track->GetGroupId(), true /* visible */);
 
-  if (track->IsInteractive())
-    bm.SetDefaultTrackSelection(trackId, true /* showInfoSign */);
+  if (m_drapeEngine)
+    m_drapeEngine->SetModelViewCenter(rect.Center(), scales::GetScaleLevel(rect), true /* isAnim */, true /* trackVisibleViewport */);
+
+  ActivateMapSelection();
 }
 
 void Framework::ShowBookmarkCategory(kml::MarkGroupId categoryId, bool animation)
@@ -906,15 +922,6 @@ void Framework::ShowBookmarkCategory(kml::MarkGroupId categoryId, bool animation
 
   auto es = bm.GetEditSession();
   es.SetIsVisible(categoryId, true /* visible */);
-
-  auto const & trackIds = bm.GetTrackIds(categoryId);
-  for (auto trackId : trackIds)
-  {
-    if (!bm.GetTrack(trackId)->IsInteractive())
-      continue;
-    bm.SetDefaultTrackSelection(trackId, true /* showInfoSign */);
-    break;
-  }
 }
 
 void Framework::ShowFeature(FeatureID const & featureId)
@@ -958,13 +965,13 @@ void Framework::SaveViewport()
   {
     rect = m_currentModelView.GlobalRect();
   }
-  settings::Set("ScreenClipRect", rect);
+  settings::Set(kScreenViewport, rect);
 }
 
 void Framework::LoadViewport()
 {
   m2::AnyRectD rect;
-  if (settings::Get("ScreenClipRect", rect) && df::GetWorldRect().IsRectInside(rect.GetGlobalRect()))
+  if (settings::Get(kScreenViewport, rect) && df::GetWorldRect().IsRectInside(rect.GetGlobalRect()))
   {
     if (m_drapeEngine != nullptr)
       m_drapeEngine->SetModelViewAnyRect(rect, false /* isAnim */, false /* useVisibleViewport */);
@@ -1575,10 +1582,12 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
 
   Allow3dMode(allow3d, allow3dBuildings);
 
+  ApplyMapLanguageCode(GetMapLanguageCode());
+
   LoadViewport();
 
   if (m_connectToGpsTrack)
-    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2));
+    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2, _3));
 
   GetBookmarkManager().SetDrapeEngine(make_ref(m_drapeEngine));
   m_drapeApi.SetDrapeEngine(make_ref(m_drapeEngine));
@@ -1690,7 +1699,7 @@ void Framework::ConnectToGpsTracker()
   if (m_drapeEngine)
   {
     m_drapeEngine->ClearGpsTrackPoints();
-    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2));
+    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2, _3));
   }
 }
 
@@ -1711,8 +1720,15 @@ void Framework::StartTrackRecording()
   if (m_drapeEngine)
   {
     m_drapeEngine->ClearGpsTrackPoints();
-    tracker.Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2));
+    tracker.Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2, _3));
   }
+}
+
+void Framework::SetTrackRecordingUpdateHandler(TrackRecordingUpdateHandler && trackRecordingDidUpdate)
+{
+  m_trackRecordingUpdateHandler = std::move(trackRecordingDidUpdate);
+  if (m_trackRecordingUpdateHandler)
+    m_trackRecordingUpdateHandler(GpsTracker::Instance().GetTrackInfo());
 }
 
 void Framework::StopTrackRecording()
@@ -1743,7 +1759,8 @@ bool Framework::IsTrackRecordingEnabled() const
 }
 
 void Framework::OnUpdateGpsTrackPointsCallback(vector<pair<size_t, location::GpsInfo>> && toAdd,
-                                               pair<size_t, size_t> const & toRemove)
+                                               pair<size_t, size_t> const & toRemove,
+                                               GpsTrackInfo const & trackInfo)
 {
   ASSERT(m_drapeEngine.get() != nullptr, ());
 
@@ -1770,6 +1787,9 @@ void Framework::OnUpdateGpsTrackPointsCallback(vector<pair<size_t, location::Gps
   }
 
   m_drapeEngine->UpdateGpsTrackPoints(std::move(pointsAdd), std::move(indicesRemove));
+
+  if (m_trackRecordingUpdateHandler)
+    m_trackRecordingUpdateHandler(trackInfo);
 }
 
 void Framework::MarkMapStyle(MapStyle mapStyle)
@@ -2218,11 +2238,26 @@ place_page::Info Framework::BuildPlacePageInfo(place_page::BuildInfo const & bui
   FeatureID selectedFeature = buildInfo.m_featureId;
   auto const isFeatureMatchingEnabled = buildInfo.IsFeatureMatchingEnabled();
 
+  // @TODO: (KK) Enable track selection.
+  // The isTrackSelectionEnabled should be removed to enable the track selection when the UI will be implemented.
+  #if defined(TARGET_OS_IPHONE)
+    bool constexpr isTrackSelectionEnabled = true;
+  #else
+    bool constexpr isTrackSelectionEnabled = false;
+  #endif
+
   // Using VisualParams inside FindTrackInTapPosition/GetDefaultTapRect requires drapeEngine.
-  if (m_drapeEngine != nullptr && buildInfo.IsTrackMatchingEnabled() &&
+  if (isTrackSelectionEnabled && m_drapeEngine != nullptr && buildInfo.IsTrackMatchingEnabled() &&
       !(isFeatureMatchingEnabled && selectedFeature.IsValid()))
   {
-    auto const trackSelectionInfo = FindTrackInTapPosition(buildInfo);
+    Track::TrackSelectionInfo trackSelectionInfo;
+    if (buildInfo.m_trackId != kml::kInvalidTrackId)
+    {
+      auto const & track = *GetBookmarkManager().GetTrack(buildInfo.m_trackId);
+      track.UpdateSelectionInfo(track.GetLimitRect(), trackSelectionInfo);
+    }
+    else
+      trackSelectionInfo = FindTrackInTapPosition(buildInfo);
     if (trackSelectionInfo.m_trackId != kml::kInvalidTrackId)
     {
       BuildTrackPlacePage(trackSelectionInfo, outInfo);
@@ -2374,6 +2409,7 @@ string Framework::GenerateApiBackUrl(ApiMarkPoint const & point) const
   return res;
 }
 
+/*
 bool Framework::IsDataVersionUpdated()
 {
   int64_t storedVersion;
@@ -2389,6 +2425,7 @@ void Framework::UpdateSavedDataVersion()
 {
   settings::Set("DataVersion", m_storage.GetCurrentDataVersion());
 }
+*/
 
 int64_t Framework::GetCurrentDataVersion() const { return m_storage.GetCurrentDataVersion(); }
 
@@ -2424,6 +2461,31 @@ void Framework::SaveTransliteration(bool allowTranslit)
 {
   settings::Set(kTranslitMode, allowTranslit ? Transliteration::Mode::Enabled
                                              : Transliteration::Mode::Disabled);
+}
+
+std::string Framework::GetMapLanguageCode()
+{
+  return languages::GetCurrentMapLanguage();
+}
+
+void Framework::SetMapLanguageCode(std::string const & langCode)
+{
+  settings::Set(settings::kMapLanguageCode, langCode);
+  if (m_drapeEngine)
+    ApplyMapLanguageCode(langCode);
+
+  if (m_searchAPI)
+    m_searchAPI->SetLocale(langCode);
+}
+
+void Framework::ApplyMapLanguageCode(std::string const & langCode)
+{
+  int8_t langIndex = StringUtf8Multilang::GetLangIndex(langCode);
+  ASSERT(langIndex != StringUtf8Multilang::kUnsupportedLanguageCode, ());
+  if (langIndex == StringUtf8Multilang::kUnsupportedLanguageCode)
+    langIndex = StringUtf8Multilang::kDefaultCode;
+
+  m_drapeEngine->SetMapLangIndex(langIndex);
 }
 
 void Framework::Allow3dMode(bool allow3d, bool allow3dBuildings)
@@ -3243,7 +3305,7 @@ void Framework::FillDescription(FeatureType & ft, place_page::Info & info) const
   if (!ft.GetID().m_mwmId.IsAlive())
     return;
   auto const & regionData = ft.GetID().m_mwmId.GetInfo()->GetRegionData();
-  auto const deviceLang = StringUtf8Multilang::GetLangIndex(languages::GetCurrentNorm());
+  auto const deviceLang = StringUtf8Multilang::GetLangIndex(languages::GetCurrentMapLanguage());
   auto const langPriority = feature::GetDescriptionLangPriority(regionData, deviceLang);
 
   std::string wikiDescription = m_descriptionsLoader->GetWikiDescription(ft.GetID(), langPriority);
@@ -3285,4 +3347,98 @@ void Framework::OnPowerSchemeChanged(power_management::Scheme const actualScheme
 {
   if (actualScheme == power_management::Scheme::EconomyMaximum && GetTrafficManager().IsEnabled())
     GetTrafficManager().SetEnabled(false);
+}
+
+bool Framework::ShouldShowProducts() const
+{
+  auto const connectionStatus = Platform::ConnectionStatus();
+  if (connectionStatus == Platform::EConnectionType::CONNECTION_NONE)
+    return false;
+
+  std::string donateUrl;
+  if (!settings::Get(settings::kDonateUrl, donateUrl)) // donation is disabled
+    return false;
+
+  if (!m_usageStats.IsLoyalUser())
+    return false;
+
+  if (!storage::IsPointCoveredByDownloadedMaps(GetCurrentPlacePageInfo().GetMercator(), m_storage, *m_infoGetter))
+    return false;
+
+  uint64_t popupCloseTime;
+  std::string productCloseReason;
+  if (!settings::Get(kPlacePageProductsPopupCloseTime, popupCloseTime) ||
+      !settings::Get(kPlacePageProductsPopupCloseReason, productCloseReason))
+    return true; // The popup was never closed.
+
+  auto const now = base::SecondsSinceEpoch();
+  auto const timeout = GetTimeoutForReason(FromString(productCloseReason));
+  bool const timeoutExpired = popupCloseTime + timeout < now;
+  if (timeoutExpired)
+    return true;
+
+  return false;
+}
+
+std::optional<products::ProductsConfig> Framework::GetProductsConfiguration() const
+{
+  if (!ShouldShowProducts())
+    return nullopt;
+  return products::GetProductsConfiguration();
+}
+
+void Framework::DidCloseProductsPopup(ProductsPopupCloseReason reason) const
+{
+  settings::Set(kPlacePageProductsPopupCloseTime, base::SecondsSinceEpoch());
+  settings::Set(kPlacePageProductsPopupCloseReason, std::string(ToString(reason)));
+}
+
+void Framework::DidSelectProduct(products::ProductsConfig::Product const & product) const
+{
+  settings::Set(kPlacePageSelectedProduct, product.GetTitle());
+}
+
+uint32_t Framework::GetTimeoutForReason(ProductsPopupCloseReason reason) const
+{
+  #ifdef DEBUG
+  uint32_t constexpr kPopupCloseTimeout = 10;
+  uint32_t constexpr kProductSelectTimeout = 20;
+  uint32_t constexpr kRemindMeLaterTimeout = 5;
+  #else
+  uint32_t constexpr kPopupCloseTimeout = 60 * 60 * 24  * 30; // 30 days
+  uint32_t constexpr kProductSelectTimeout = 60 * 60 * 24 * 180; // 180 days
+  uint32_t constexpr kRemindMeLaterTimeout = 60 * 60 * 24 * 3; // 3 days
+  #endif
+  switch (reason)
+  {
+    case ProductsPopupCloseReason::Close: return kPopupCloseTimeout;
+    case ProductsPopupCloseReason::RemindLater: return kRemindMeLaterTimeout;
+    case ProductsPopupCloseReason::AlreadyDonated: return kProductSelectTimeout;
+    case ProductsPopupCloseReason::SelectProduct: return kProductSelectTimeout;
+  }
+  ASSERT(false, ("Unknown reason"));
+  return kPopupCloseTimeout;
+}
+
+std::string_view Framework::ToString(ProductsPopupCloseReason reason) const
+{
+  switch (reason)
+  {
+    case ProductsPopupCloseReason::Close: return kProductsPopupCloseReasonCloseStr;
+    case ProductsPopupCloseReason::RemindLater: return kProductsPopupCloseReasonRemindLaterStr;
+    case ProductsPopupCloseReason::AlreadyDonated: return kProductsPopupCloseReasonAlreadyDonatedStr;
+    case ProductsPopupCloseReason::SelectProduct: return kProductsPopupCloseReasonSelectProductStr;
+  }
+  ASSERT(false, ("Unknown reason"));
+  return kProductsPopupCloseReasonCloseStr;
+}
+
+Framework::ProductsPopupCloseReason Framework::FromString(std::string const & str) const
+{
+  if (str == kProductsPopupCloseReasonCloseStr) return ProductsPopupCloseReason::Close;
+  if (str == kProductsPopupCloseReasonRemindLaterStr) return ProductsPopupCloseReason::RemindLater;
+  if (str == kProductsPopupCloseReasonAlreadyDonatedStr) return ProductsPopupCloseReason::AlreadyDonated;
+  if (str == kProductsPopupCloseReasonSelectProductStr) return ProductsPopupCloseReason::SelectProduct;
+  ASSERT(false, ("Incorrect reason string:", str));
+  return ProductsPopupCloseReason::Close;
 }

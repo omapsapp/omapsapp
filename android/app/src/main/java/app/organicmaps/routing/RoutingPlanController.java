@@ -12,6 +12,7 @@ import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import app.organicmaps.Framework;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
@@ -108,7 +109,11 @@ public class RoutingPlanController extends ToolbarController
                                 .getResources().getInteger(R.integer.anim_default);
 
     final View menuFrame = activity.findViewById(R.id.menu_frame);
-    ViewCompat.setOnApplyWindowInsetsListener(menuFrame, PaddingInsetsListener.excludeTop());
+    final PaddingInsetsListener insetsListener = new PaddingInsetsListener.Builder()
+        .setInsetsTypeMask(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout())
+        .setExcludeTop()
+        .build();
+    ViewCompat.setOnApplyWindowInsetsListener(menuFrame, insetsListener);
   }
 
   @NonNull

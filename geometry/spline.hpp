@@ -22,7 +22,6 @@ public:
     void Attach(Spline const & spl);
     void Advance(double step);
     bool BeginAgain() const;
-    double GetLength() const;
     double GetFullLength() const;
 
     size_t GetIndex() const;

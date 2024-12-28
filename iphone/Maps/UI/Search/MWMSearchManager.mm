@@ -54,7 +54,6 @@ const CGFloat kWidthForiPad = 320;
 @property(nonatomic) MWMNoMapsViewController *noMapsController;
 
 @property(nonatomic) Observers *observers;
-@property(nonatomic) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -70,8 +69,6 @@ const CGFloat kWidthForiPad = 320;
     self.state = MWMSearchManagerStateHidden;
     [MWMSearch addObserver:self];
     _observers = [Observers weakObjectsHashTable];
-    _dateFormatter = [[NSDateFormatter alloc] init];
-    _dateFormatter.dateFormat = @"yyyy-MM-dd";
   }
   return self;
 }

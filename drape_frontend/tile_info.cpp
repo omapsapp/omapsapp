@@ -9,6 +9,7 @@
 #include "indexer/scales.hpp"
 
 #include "platform/preferred_languages.hpp"
+#include "platform/settings.hpp"
 
 #include "base/scope_guard.hpp"
 #include "base/logging.hpp"
@@ -71,9 +72,9 @@ void TileInfo::ReadFeatures(MapDataProvider const & model)
   if (!m_featureInfo.empty())
   {
     std::sort(m_featureInfo.begin(), m_featureInfo.end());
-    auto const deviceLang = StringUtf8Multilang::GetLangIndex(languages::GetCurrentNorm());
+
     RuleDrawer drawer(std::bind(&TileInfo::IsCancelled, this), model.m_isCountryLoadedByName,
-                      make_ref(m_context), deviceLang);
+                      make_ref(m_context), m_context->GetMapLangIndex());
     model.ReadFeatures(std::bind<void>(std::ref(drawer), _1), m_featureInfo);
 #ifdef DRAW_TILE_NET
     drawer.DrawTileNet();

@@ -12,13 +12,13 @@ class UbiquitousDirectoryMonitorDelegateMock: CloudDirectoryMonitorDelegate {
 
   var contents = CloudContents()
 
-  func didFinishGathering(contents: CloudContents) {
+  func didFinishGathering(_ contents: CloudContents) {
     didFinishGatheringCalled = true
     didFinishGatheringExpectation?.fulfill()
     self.contents = contents
   }
 
-  func didUpdate(contents: CloudContents) {
+  func didUpdate(_ contents: CloudContents, _ update: CloudContentsUpdate) {
     didUpdateCalled = true
     didUpdateExpectation?.fulfill()
     self.contents = contents

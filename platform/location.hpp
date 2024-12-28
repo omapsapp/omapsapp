@@ -1,6 +1,7 @@
 #pragma once
 
 #include "geometry/point2d.hpp"
+#include "geometry/latlon.hpp"
 
 #include "base/base.hpp"
 
@@ -60,6 +61,7 @@ namespace location
     bool HasBearing() const { return m_bearing >= 0.0; }
     bool HasSpeed() const { return m_speed >= 0.0; }
     bool HasVerticalAccuracy() const { return m_verticalAccuracy >= 0.0; }
+    ms::LatLon GetLatLon() const { return {m_latitude, m_longitude}; }
   };
 
   class CompassInfo

@@ -1,6 +1,7 @@
-# Organic Maps
-
-<a name="install"/>
+<div align="center">
+  <img src="/qt/res/logo.png" height="100"/>
+</div>
+<h1 align="center"">Organic Maps</h1>
 
 [Organic Maps](https://organicmaps.app) is a free Android & iOS offline maps app for travellers, tourists, drivers, hikers, and cyclists.
 It uses crowd-sourced [OpenStreetMap](https://www.openstreetmap.org) data and is developed with love by the creators of **MapsWithMe** (later renamed to **Maps.Me**) and by our community.

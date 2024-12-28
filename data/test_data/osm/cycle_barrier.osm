@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='432645001' timestamp='2021-06-12T10:45:14Z' uid='3172019' user='nurdafur' visible='true' version='3' changeset='106248484' lat='47.5209454' lon='8.7894416' />
+  <node id='432645019' timestamp='2021-06-12T10:45:14Z' uid='3172019' user='nurdafur' visible='true' version='3' changeset='106248484' lat='47.520785' lon='8.7872475' />
+  <node id='1834135234' timestamp='2021-06-12T10:45:14Z' uid='3172019' user='nurdafur' visible='true' version='3' changeset='106248484' lat='47.5208595' lon='8.7883072' />
+  <node id='3866183416' timestamp='2015-11-29T00:10:55Z' uid='178186' user='mdk' visible='true' version='1' changeset='35638552' lat='47.5208027' lon='8.7876514' />
+  <node id='3866183425' timestamp='2021-06-12T10:45:14Z' uid='3172019' user='nurdafur' visible='true' version='2' changeset='106248484' lat='47.5209057' lon='8.7888206' />
+  <node id='8827179695' timestamp='2021-06-12T10:45:14Z' uid='3172019' user='nurdafur' visible='true' version='1' changeset='106248484' lat='47.5207872' lon='8.7873177'>
+    <tag k='barrier' v='cycle_barrier' />
+    <tag k='bicycle' v='no' />
+  </node>
+  <way id='953707247' timestamp='2021-06-12T10:45:14Z' uid='3172019' user='nurdafur' visible='true' version='1' changeset='106248484'>
+    <nd ref='432645019' />
+    <nd ref='8827179695' />
+    <nd ref='3866183416' />
+    <nd ref='1834135234' />
+    <nd ref='3866183425' />
+    <nd ref='432645001' />
+    <tag k='highway' v='service' />
+    <tag k='surface' v='asphalt' />
+  </way>
+</osm>

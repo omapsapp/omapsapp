@@ -6,10 +6,9 @@
 
 #include <iterator>
 
-using namespace m2::robust;
-
-namespace
+namespace robust_test
 {
+using namespace m2::robust;
 using P = m2::PointD;
 
 template <typename TIt>
@@ -29,7 +28,6 @@ bool InsideTriangle(P const & p, P const ps[])
 {
   return IsPointInsideTriangle(p, ps[0], ps[1], ps[2]);
 }
-}  // namespace
 
 UNIT_TEST(OrientedS_Smoke)
 {
@@ -170,3 +168,4 @@ UNIT_TEST(PolygonSelfIntersections_TangentSmoke)
     CheckSelfIntersections(&arr[0], arr + ARRAY_SIZE(arr), false);
   }
 }
+}  // namespace robust_test

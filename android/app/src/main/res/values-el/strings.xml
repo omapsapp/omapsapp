@@ -315,6 +315,10 @@
     <string name="google_play_services">Υπηρεσίες τοποθεσίας Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Προσδιορίστε γρήγορα την κατά προσέγγιση τοποθεσία σας μέσω Bluetooth, WiFi ή δικτύου κινητής τηλεφωνίας</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Σύνδεσμοι ξενοδοχείων</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Οι φωτογραφίες, οι κριτικές και οι σύνδεσμοι κρατήσεων εμφανίζονται για τα ξενοδοχεία που έχουν καταχωρηθεί στο Kayak.com. Το μπόνους παραπομπής που λαμβάνεται για κάθε κράτηση μέσω αυτών των συνδέσμων πηγαίνει στην ανάπτυξη του Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Κατέβασμα όλων των χαρτών για ολόκληρο το μήκος της διαδρομής σας</string>
     <!-- Text for routing error dialog -->
@@ -500,7 +504,10 @@
     <string name="message_invalid_feature_position">Δε μπορεί να τοποθετηθεί αντικείμενο εδώ</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Δεδομένα OpenStreetMap που δημιουργήθηκαν από την κοινότητα στις %s. Μάθετε περισσότερα για τον τρόπο επεξεργασίας και ενημέρωσης του χάρτη στο OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Συνδεθείτε ώστε άλλοι χρήστες να μπορούν να δουν τις αλλαγές που έχετε κάνει</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">Το OpenStreetMap.org (OSM) είναι ένα κοινοτικό έργο για τη δημιουργία ενός ελεύθερου και ανοικτού χάρτη. Είναι η κύρια πηγή δεδομένων χάρτη στους Οργανικούς Χάρτες και λειτουργεί παρόμοια με τη Wikipedia. Μπορείτε να προσθέσετε ή να επεξεργαστείτε τοποθεσίες και αυτές γίνονται διαθέσιμες σε εκατομμύρια χρήστες σε όλο τον κόσμο.
+\nΕνταχθείτε στην κοινότητα και βοηθήστε να φτιάξουμε έναν καλύτερο χάρτη για όλους!</string>
+    <string name="login_to_make_edits_visible">Δημιουργήστε έναν λογαριασμό OpenStreetMap ή συνδεθείτε για να δημοσιεύσετε τις επεξεργασίες του χάρτη σας στον κόσμο.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Να γίνει λήψη μέσω δικτύου κινητής τηλεφωνίας;</string>
@@ -520,9 +527,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Οι επεξεργασίες σας μεταφορτώνονται στη δημόσια βάση δεδομένων <a href="https://wiki.openstreetmap.org/wiki/El:About_OpenStreetMap">OpenStreetMap</a>. Παρακαλούμε μην προσθέτετε προσωπικές πληροφορίες ή πληροφορίες που προστατεύονται από πνευματικά δικαιώματα.</string>
     <string name="editor_more_about_osm">Περισσότερα σχετικά με το OpenStreetMap</string>
-    <string name="editor_operator">Ιδιοκτήτης</string>
+    <string name="editor_osm_history">Το ιστορικό επεξεργασίας σας</string>
+    <string name="editor_osm_notes">Σημειώσεις δεδομένων του χάρτη σας</string>
+    <string name="editor_operator">Χειριστής</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Ιδιοκτήτης: %s</string>
+    <string name="operator">Χειριστής: %s</string>
     <string name="editor_category_unsuitable_title">Δεν μπορείτε να βρείτε την κατάλληλη κατηγορία;</string>
     <string name="editor_category_unsuitable_text">Οι Οργανικοί Χάρτες επιτρέπουν την προσθήκη απλών κατηγοριών σημείων μόνο, δηλαδή όχι πόλεων, δρόμων, λιμνών, περιγραμμάτων κτιρίων κ.λπ. Παρακαλούμε προσθέστε τέτοιες κατηγορίες απευθείας στο <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Ελέγξτε τον <a href="https://organicmaps.app/faq/editing/advanced-map-editing">οδηγό μας</a> για λεπτομερείς οδηγίες βήμα προς βήμα.</string>
     <string name="downloader_no_downloaded_maps_title">Δεν έχετε κατεβάσει χάρτες</string>
@@ -543,6 +552,8 @@
     <string name="dialog_kayak_disclaimer">Το μπόνους παραπομπής που λαμβάνετε για κάθε κράτηση μέσω αυτού του συνδέσμου πηγαίνει στην ανάπτυξη του Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Λεπτομέρειες στο Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Απενεργοποίηση του Kayak</string>
     <string name="placepage_edit_bookmark_button">Επεξεργασία αγαπημένου</string>
     <string name="editor_comment_hint">Σχόλιο…</string>
     <string name="editor_reset_edits_message">Απόρριψη όλων των τοπικών αλλαγών;</string>
@@ -604,7 +615,7 @@
     <string name="routing_add_start_point">Χρησιμοποιήστε την αναζήτηση ή πατήστε στο χάρτη για να προσθέσετε ένα σημείο εκκίνησης της διαδρομής</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Χρησιμοποιήστε την αναζήτηση ή πατήστε στο χάρτη για να προσθέσετε ένα σημείο προορισμού</string>
-    <string name="placepage_remove_stop">Αφαίρεση</string>
+    <string name="placepage_remove_stop">Αφαίρεση στάσης</string>
     <string name="placepage_add_stop">Προσθήκη στάσης</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Παρακαλούμε συνδεθείτε στο OpenStreetMap για να ανεβάσετε αυτόματα όλες τις επεξεργασίες του χάρτη σας. Μάθετε περισσότερα <a href="https://github.com/organicmaps/organicmaps/issues/6144">εδώ</a>.</string>
@@ -755,8 +766,8 @@
     <string name="isolines_location_error_dialog">Οι υψομετρικές γραμμές δεν είναι ακόμα διαθέσιμες σε αυτή την περιοχή</string>
     <string name="elevation_profile_ascent">Ανάβαση</string>
     <string name="elevation_profile_descent">Κατάβαση</string>
-    <string name="elevation_profile_minaltitude">Ελάχ. υψόμετρο</string>
-    <string name="elevation_profile_maxaltitude">Μέγ. υψόμετρο</string>
+    <string name="elevation_profile_min_elevation">Ελάχ. υψόμετρο</string>
+    <string name="elevation_profile_max_elevation">Μέγ. υψόμετρο</string>
     <string name="elevation_profile_difficulty">Δυσκολία</string>
     <string name="elevation_profile_distance">Απόστ.:</string>
     <string name="elevation_profile_time">Διάρκ:</string>
@@ -778,6 +789,8 @@
     <string name="enable_show_on_lock_screen">Εμφάνιση στην Οθόνη Κλειδώματος</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Αν ενεργοποιηθεί, η εφαρμογή θα λειτουργεί και στην Οθόνη Κλειδώματος ακόμα και αν η συσκευή είναι κλειδωμένη.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Γλώσσα χάρτη</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Δεδομένα χάρτη από το OpenStreetMap</string>
     <!-- Link to OSM wiki for Editor, Profile and About pages -->
@@ -791,7 +804,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Εάν γνωρίζετε έναν προγραμματιστή λογισμικού, μπορείτε να του ζητήσετε να υλοποιήσει μια λειτουργία που χρειάζεστε.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Γνωρίζετε ότι μπορείτε να πατήσετε παρατεταμένα οποιοδήποτε μέρος στο χάρτη για να το επιλέξετε;</string>
+    <string name="app_tip_04">Πατήστε οπουδήποτε στο χάρτη για να επιλέξετε οτιδήποτε. Πατήστε παρατεταμένα για να αποκρύψετε και να εμφανίσετε ξανά το περιβάλλον εργασίας.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Γνωρίζετε ότι μπορείτε να επιλέξετε την τρέχουσα τοποθεσία σας στο χάρτη;</string>
     <!-- App tip #06 -->
@@ -861,7 +874,11 @@
     <string name="track_recording_toast_nothing_to_save">Η διαδρομή είναι άδεια - δεν υπάρχει τίποτα να αποθηκεύσετε</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Δεν είναι δυνατή η εμφάνιση του διαλόγου επιλογής φακέλου επειδή δεν είναι εγκατεστημένη η κατάλληλη εφαρμογή στη συσκευή σας. Εγκαταστήστε μια εφαρμογή διαχείρισης αρχείων και δοκιμάστε ξανά</string>
+    <string name="choose_color">Επιλέξτε χρώμα</string>
+    <string name="edit_track">Επεξεργασία διαδρομής</string>
     <string name="uri_open_location_failed">Δεν υπάρχει εγκατεστημένη εφαρμογή που να μπορεί να ανοίξει την τοποθεσία</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Αυτόματη πλοήγηση</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Διεύθυνση/Μπλοκ</string>
@@ -979,6 +996,7 @@
     <string name="type.amenity.police">Αστυνομία</string>
     <string name="type.amenity.post_box">Ταχυδρομική θυρίδα</string>
     <string name="type.amenity.post_office">Ταχυδρομείο</string>
+    <string name="type.amenity.prison">φυλακή</string>
     <string name="type.amenity.pub">Παμπ</string>
     <string name="type.amenity.public_bookcase">Ανταλλαγή βιβλίων</string>
 
@@ -1021,6 +1039,7 @@
     <string name="type.amenity.waste_basket">Κάδος απορριμμάτων</string>
     <string name="type.amenity.waste_disposal">Διαχείριση απορριμμάτων</string>
     <string name="type.amenity.water_point">Παροχή νερού</string>
+    <string name="type.amenity.water_point.drinking_water_no">Παροχή νερού</string>
     <string name="type.barrier.block">Εμπόδιο</string>
     <string name="type.barrier.bollard">Πυλώνας</string>
     <string name="type.barrier.border_control">Έλεγχος συνόρων</string>
@@ -1051,7 +1070,7 @@
     <string name="type.building.has_parts">Κτίριο</string>
     <string name="type.building_part">Κτίριο</string>
     <string name="type.building.garage">Γκαράζ</string>
-    <string name="type.building.train_station">Σιδηροδρομικός σταθμός</string>
+    <string name="type.building.train_station">Κτίριο σταθμού</string>
     <string name="type.cemetery.grave">Τάφος</string>
     <string name="type.craft">Τεχνική</string>
     <string name="type.craft.beekeeper">Μελισσοκόμος</string>
@@ -1433,8 +1452,10 @@
     <string name="type.man_made.tower">Πύργος</string>
     <string name="type.man_made.tower.communication">Πύργος Επικοινωνιών</string>
     <string name="type.man_made.water_tap">Βρύση νερού</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Βρύση νερού</string>
     <string name="type.man_made.water_tower">Υδατόπυργος</string>
     <string name="type.man_made.water_well">Πηγάδι νερού</string>
+    <string name="type.man_made.water_well.drinking_water_no">Πηγάδι νερού</string>
     <string name="type.man_made.windmill">Ανεμόμυλος</string>
     <string name="type.military.bunker">Στρατιωτική αποθήκη</string>
     <string name="type.natural">Φύση</string>
@@ -1474,6 +1495,7 @@
     <string name="type.natural.rock">Πέτρωμα</string>
     <string name="type.natural.scrub">Θαμνώδες περιοχή</string>
     <string name="type.natural.spring">Πηγή νερού</string>
+    <string name="type.natural.spring.drinking_water_no">Πηγή νερού</string>
     <string name="type.natural.strait">Πορθμός</string>
     <string name="type.natural.tree_row">Σειρά δέντρων</string>
     <string name="type.natural.vineyard">Αμπελώνας</string>
@@ -1567,6 +1589,7 @@
     <string name="type.railway.station">Σιδηροδρομικός σταθμός</string>
     <string name="type.railway.station.funicular">Μονωτικό τρενάκι</string>
     <string name="type.railway.station.light_rail">Σιδηροδρομικός σταθμός</string>
+    <string name="type.railway.station.light_rail.berlin">Σιδηροδρομικός σταθμός</string>
     <string name="type.railway.station.light_rail.london">Σιδηροδρομικός σταθμός</string>
     <string name="type.railway.station.light_rail.porto">Σιδηροδρομικός σταθμός</string>
     <string name="type.railway.station.monorail">Σιδηροδρομικός σταθμός</string>
@@ -1609,6 +1632,7 @@
     <string name="type.railway.station.subway.hamburg">Μετρό</string>
     <string name="type.railway.station.subway.helsinki">Μετρό</string>
     <string name="type.railway.station.subway.hiroshima">Μετρό</string>
+    <string name="type.railway.station.subway.hongkong">Μετρό</string>
     <string name="type.railway.station.subway.isfahan">Μετρό</string>
     <string name="type.railway.station.subway.istanbul">Μετρό</string>
     <string name="type.railway.station.subway.izmir">Μετρό</string>
@@ -1662,6 +1686,7 @@
     <string name="type.railway.station.subway.sendai">Μετρό</string>
     <string name="type.railway.station.subway.sf">Μετρό</string>
     <string name="type.railway.station.subway.shanghai">Μετρό</string>
+    <string name="type.railway.station.subway.shenzhen">Μετρό</string>
     <string name="type.railway.station.subway.shiraz">Μετρό</string>
     <string name="type.railway.station.subway.singapore">Μετρό</string>
     <string name="type.railway.station.subway.sofia">Μετρό</string>
@@ -1721,6 +1746,7 @@
     <string name="type.railway.subway_entrance.hamburg">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.helsinki">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.hiroshima">Είσοδος μετρό</string>
+    <string name="type.railway.subway_entrance.hongkong">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.isfahan">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.istanbul">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.izmir">Είσοδος μετρό</string>
@@ -1774,6 +1800,7 @@
     <string name="type.railway.subway_entrance.sendai">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.sf">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.shanghai">Είσοδος μετρό</string>
+    <string name="type.railway.subway_entrance.shenzhen">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.shiraz">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.singapore">Είσοδος μετρό</string>
     <string name="type.railway.subway_entrance.sofia">Είσοδος μετρό</string>
@@ -1860,6 +1887,7 @@
     <string name="type.shop.optician">Κατάστημα οπτικών</string>
     <string name="type.shop.outdoor">Εξοπλισμός υπαίθρου</string>
     <string name="type.shop.outpost">Σημείο παραλαβής</string>
+    <string name="type.shop.pasta">Κατάστημα ζυμαρικών</string>
     <string name="type.shop.pastry">Ζύμη</string>
     <string name="type.shop.pawnbroker">Ενεχυροδανειστήριο</string>
     <string name="type.shop.pet">Κατάστημα για κατοικίδια</string>
@@ -1953,7 +1981,13 @@
     <string name="type.tourism.artwork.sculpture">Έργα τέχνης</string>
     <string name="type.tourism.artwork.statue">Έργα τέχνης</string>
     <string name="type.tourism.attraction">Αξιοθέατα</string>
+    <string name="type.attraction.amusement_ride">Βόλτα ψυχαγωγίας</string>
     <string name="type.attraction.animal">Περίφραξη ζώων</string>
+    <string name="type.attraction.carousel">Στροβιλοδρόμιο</string>
+    <string name="type.attraction.historic">Ιστορικό αξιοθέατο</string>
+    <string name="type.attraction.maze">Λαβύρινθος</string>
+    <string name="type.attraction.roller_coaster">Τρενάκι του λούνα παρκ</string>
+    <string name="type.attraction.water_slide">Διαφάνεια νερού</string>
     <string name="type.tourism.attraction.specified">Αξιοθέατα</string>
     <string name="type.tourism.camp_site">Κάμπινγκ</string>
     <string name="type.tourism.caravan_site">Χώρος για τροχόσπιτα</string>

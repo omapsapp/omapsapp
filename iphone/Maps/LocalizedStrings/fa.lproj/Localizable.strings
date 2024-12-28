@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "کمک مالی کنید تا بهترین نقشه ها را با هم بسازید!";
 
+"already_donated" = "قبلاً اهدا شده";
+
+"remind_me_later" = "بعداً یادآوری کن";
+
+"support_organic_maps" = "پشتیبانی از Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "حق نشر و کپی رایت";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "داده های OpenStreetMap ایجاد شده توسط انجمن از %@. درباره نحوه ویرایش و به روز رسانی نقشه در OpenStreetMap.org بیشتر بیاموزید";
 
-"login_to_make_edits_visible" = "وارد شوید تا دیگر کاربران نیز بتوانند تغییرات ایجاد شده توسط شما را ببینند";
+"login_to_make_edits_visible" = "یک حساب OpenStreetMap ایجاد کنید یا وارد شوید تا ویرایش های نقشه خود را در جهان منتشر کنید.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "برای دانلود، شما نیازمند فضای ذخیره سازی بیشتری هستید.لطفا داده‌های غیر ضروری خود را حذف کنید.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "در مورد OpenStreetMap بیشتر بدانید";
 
-"editor_operator" = "مالک";
+"editor_operator" = "اپراتور";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "مالک: %@";
+"operator" = "اپراتور: %@";
+
+"editor_category_unsuitable_title" = "آیا نمی توانید یک دسته بندی مناسب پیدا کنید؟";
+
+"editor_category_unsuitable_text" = "Organic Maps اجازه میu200cدهد فقط دستهu200cهای نقطهu200cای ساده را اضافه کند، یعنی هیچ شهر، جاده، دریاچه، طرح کلی ساختمان و غیره وجود ندارد. لطفاً این دستهu200cها را مستقیماً به <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a> اضافه کنید. برای دستورالعملu200cهای گام به گام، <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">راهنمای</a> ما را بررسی کنید.";
 
 "downloader_no_downloaded_maps_title" = "شما هیچ نقشه دانلود شده ای ندارید";
 
@@ -795,6 +805,8 @@
 
 "minute" = "دقیقه";
 
+"day" = "روز";
+
 "placepage_more_button" = "بیشتر";
 
 "book_button" = "رزرو";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "جزئیات در Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Kayak را غیرفعال کنید";
 
 "placepage_call_button" = "تماس";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "برنامه";
 
-"placepage_remove_stop" = "حذف";
+"placepage_remove_stop" = "توقف را حذف کنید";
 
 "planning_route_remove_title" = "برای حذف اینجا بکشید";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "پایین آمدن";
 
-"elevation_profile_minaltitude" = "کمینه ارتفاع";
+"elevation_profile_min_elevation" = "کم ارتفاع";
 
-"elevation_profile_maxaltitude" = "بیشینه ارتفاع";
+"elevation_profile_max_elevation" = "بیش ارتفاع";
 
 "elevation_profile_difficulty" = "دشواری";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "آیا مطمئن هستید که می خواهید این آهنگ را حذف کنید؟";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "اگر یک توسعه‌دهنده نرم‌افزار را می‌شناسید، می‌توانید از او بخواهید ویژگی مورد نیاز خود را پیاده‌سازی کند.";
 
 /* App tip #04 */
-"app_tip_04" = "آیا می‌دانید که می‌توانید روی هر مکانی روی نقشه ضربه طولانی بزنید تا آن را انتخاب کنید؟";
+"app_tip_04" = "برای انتخاب هر چیزی روی هر نقطه از نقشه ضربه بزنید. برای مخفی کردن و نشان دادن رابط، ضربه طولانی بزنید.";
 
 /* App tip #05 */
 "app_tip_05" = "آیا می دانید که می توانید مکان فعلی خود را روی نقشه انتخاب کنید؟";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "مسیر خالی است - چیزی برای ذخیره کردن وجود ندارد";
+
+"edit_track" = "ویرایش مسیر";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "دفتر پست";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "زندا   ن";
 
 "type.amenity.pub" = "میکده";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "شیر آب قابل شرب";
 
+"type.amenity.water_point.drinking_water_no" = "شیر آب قابل شرب";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "بلوک";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "گاراژ";
 
-"type.building.train_station" = "ایستگاه قطار";
+"type.building.train_station" = "ساختمان ایستگاه";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "شیراب";
 
+"type.man_made.water_tap.drinking_water_no" = "شیراب";
+
 "type.man_made.water_tower" = "منبع اب";
 
 "type.man_made.water_well" = "چاه اب";
+
+"type.man_made.water_well.drinking_water_no" = "چاه اب";
 
 "type.man_made.windmill" = "توربین بادی";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "بوته زار";
 
 "type.natural.spring" = "چشمه";
+
+"type.natural.spring.drinking_water_no" = "چشمه";
 
 "type.natural.strait" = "تنگه";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "ایستگاه قطار";
 
+"type.railway.station.light_rail.berlin" = "ایستگاه قطار";
+
 "type.railway.station.light_rail.london" = "ایستگاه قطار";
 
 "type.railway.station.light_rail.porto" = "ایستگاه قطار";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "حمل و نقل";
 
 "type.railway.station.subway.hiroshima" = "حمل و نقل";
+
+"type.railway.station.subway.hongkong" = "حمل و نقل";
 
 "type.railway.station.subway.isfahan" = "حمل و نقل";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "حمل و نقل";
 
 "type.railway.station.subway.shanghai" = "حمل و نقل";
+
+"type.railway.station.subway.shenzhen" = "حمل و نقل";
 
 "type.railway.station.subway.shiraz" = "حمل و نقل";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "ورودی مترو";
 
+"type.railway.subway_entrance.hongkong" = "ورودی مترو";
+
 "type.railway.subway_entrance.isfahan" = "ورودی مترو";
 
 "type.railway.subway_entrance.istanbul" = "ورودی مترو";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "ورودی مترو";
 
 "type.railway.subway_entrance.shanghai" = "ورودی مترو";
+
+"type.railway.subway_entrance.shenzhen" = "ورودی مترو";
 
 "type.railway.subway_entrance.shiraz" = "ورودی مترو";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "فروشگاه";
 
 "type.shop.outpost" = "نقطه وانت";
+
+"type.shop.pasta" = "فروشگاه ماکارونی";
 
 "type.shop.pastry" = "ﯽﻨﯾﺮﯿﺷ";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "گردشگری";
 
+"type.attraction.amusement_ride" = "سواری تفریحی";
+
 "type.attraction.animal" = "محوطه حیوانات";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "چرخ فلک";
+
+"type.attraction.historic" = "جاذبه تاریخی";
+
+"type.attraction.maze" = "ماز";
+
+"type.attraction.roller_coaster" = "ترن هوایی";
+
+"type.attraction.water_slide" = "سرسره آبی";
 
 "type.tourism.attraction.specified" = "گردشگری";
 

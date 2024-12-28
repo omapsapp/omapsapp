@@ -15,10 +15,10 @@
 #include <functional>
 #include <string>
 
-#include <QGesture>
 #include <QOpenGLShaderProgram>
 #include <QOpenGLBuffer>
 #include <QOpenGLVertexArrayObject>
+#include <QTouchEvent>
 
 #include <QtGui/QMouseEvent>
 #include <QtGui/QOpenGLFunctions>
@@ -50,6 +50,7 @@ MapWidget::MapWidget(Framework & framework, bool isScreenshotMode, QWidget * par
   VERIFY(connect(m_updateTimer.get(), SIGNAL(timeout()), this, SLOT(update())), ());
   m_updateTimer->setSingleShot(false);
   m_updateTimer->start(1000 / 60);
+  setAttribute(Qt::WA_AcceptTouchEvents);
 }
 
 MapWidget::~MapWidget()
@@ -184,7 +185,7 @@ m2::PointD MapWidget::GetDevicePoint(QMouseEvent * e) const
   return m2::PointD(L2D(e->position().x()), L2D(e->position().y()));
 }
 
-df::Touch MapWidget::GetTouch(QMouseEvent * e) const
+df::Touch MapWidget::GetDfTouchFromQMouseEvent(QMouseEvent * e) const
 {
   df::Touch touch;
   touch.m_id = 0;
@@ -192,11 +193,11 @@ df::Touch MapWidget::GetTouch(QMouseEvent * e) const
   return touch;
 }
 
-df::TouchEvent MapWidget::GetTouchEvent(QMouseEvent * e, df::TouchEvent::ETouchType type) const
+df::TouchEvent MapWidget::GetDfTouchEventFromQMouseEvent(QMouseEvent * e, df::TouchEvent::ETouchType type) const
 {
   df::TouchEvent event;
   event.SetTouchType(type);
-  event.SetFirstTouch(GetTouch(e));
+  event.SetFirstTouch(GetDfTouchFromQMouseEvent(e));
   if (IsCommandModifier(e))
     event.SetSecondTouch(GetSymmetrical(event.GetFirstTouch()));
 
@@ -266,6 +267,11 @@ void MapWidget::Build()
                            QVector4D(-1.0, -1.0, 0.0, 0.0),
                            QVector4D(1.0, -1.0, 1.0, 0.0)};
   m_vbo->allocate(static_cast<void*>(vertices), sizeof(vertices));
+  QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
+  // 0-index of the buffer is linked to "a_position" attribute in vertex shader.
+  // Introduced in https://github.com/organicmaps/organicmaps/pull/9814
+  f->glEnableVertexAttribArray(0);
+  f->glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(QVector4D), nullptr);
 
   m_program->release();
   m_vao->release();
@@ -419,9 +425,6 @@ void MapWidget::paintGL()
     int const samplerSizeLocation = m_program->uniformLocation("u_samplerSize");
     m_program->setUniformValue(samplerSizeLocation, samplerSize);
 
-    m_program->enableAttributeArray("a_position");
-    m_program->setAttributeBuffer("a_position", GL_FLOAT, 0, 4, 0);
-
     funcs->glClearColor(0.0, 0.0, 0.0, 1.0);
     funcs->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -468,7 +471,7 @@ void MapWidget::mousePressEvent(QMouseEvent * e)
 
   QOpenGLWidget::mousePressEvent(e);
   if (IsLeftButton(e))
-    m_framework.TouchEvent(GetTouchEvent(e, df::TouchEvent::TOUCH_DOWN));
+    m_framework.TouchEvent(GetDfTouchEventFromQMouseEvent(e, df::TouchEvent::TOUCH_DOWN));
 }
 
 void MapWidget::mouseMoveEvent(QMouseEvent * e)
@@ -478,7 +481,7 @@ void MapWidget::mouseMoveEvent(QMouseEvent * e)
 
   QOpenGLWidget::mouseMoveEvent(e);
   if (IsLeftButton(e))
-    m_framework.TouchEvent(GetTouchEvent(e, df::TouchEvent::TOUCH_MOVE));
+    m_framework.TouchEvent(GetDfTouchEventFromQMouseEvent(e, df::TouchEvent::TOUCH_MOVE));
 }
 
 void MapWidget::mouseReleaseEvent(QMouseEvent * e)
@@ -491,7 +494,7 @@ void MapWidget::mouseReleaseEvent(QMouseEvent * e)
 
   QOpenGLWidget::mouseReleaseEvent(e);
   if (IsLeftButton(e))
-    m_framework.TouchEvent(GetTouchEvent(e, df::TouchEvent::TOUCH_UP));
+    m_framework.TouchEvent(GetDfTouchEventFromQMouseEvent(e, df::TouchEvent::TOUCH_UP));
 }
 
 void MapWidget::wheelEvent(QWheelEvent * e)
@@ -508,35 +511,4 @@ void MapWidget::wheelEvent(QWheelEvent * e)
   /// @todo Here you can tune the speed of zooming.
   m_framework.Scale(exp(factor), m2::PointD(L2D(pos.x()), L2D(pos.y())), false);
 }
-
-void MapWidget::grabGestures(QList<Qt::GestureType> const & gestures)
-{
-  for (Qt::GestureType gesture : gestures)
-    grabGesture(gesture);
-}
-
-bool MapWidget::event(QEvent * event)
-{
-  if (event->type() == QEvent::Gesture)
-    return gestureEvent(dynamic_cast<QGestureEvent const *>(event));
-  return QOpenGLWidget::event(event);
-}
-
-bool MapWidget::gestureEvent(QGestureEvent const * event)
-{
-  if (QGesture const * pinch = event->gesture(Qt::PinchGesture))
-    pinchTriggered(dynamic_cast<QPinchGesture const *>(pinch));
-  return true;
-}
-
-void MapWidget::pinchTriggered(QPinchGesture const * gesture)
-{
-  if (gesture->changeFlags() & QPinchGesture::ScaleFactorChanged)
-  {
-    auto const factor = gesture->totalScaleFactor();
-    if (factor != 1.0)
-      m_framework.Scale(factor > 1.0 ? Framework::SCALE_MAG : Framework::SCALE_MIN, true);
-  }
-}
-
 } // namespace qt::common

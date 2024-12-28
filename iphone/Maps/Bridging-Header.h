@@ -8,7 +8,7 @@
 
 #import "private.h"
 
-#import <CoreApi/CoreApi-swift.h>
+#import <CoreApi/CoreApi.h>
 
 #import "DeepLinkRouteStrategyAdapter.h"
 #import "EAGLView.h"

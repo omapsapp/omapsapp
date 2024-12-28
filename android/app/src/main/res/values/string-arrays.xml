@@ -28,6 +28,7 @@
     <item>@string/off</item>
     <item>@string/on</item>
     <item>@string/auto</item>
+    <item>@string/nav_auto</item>
   </string-array>
 
   <string-array name="map_style_values"
@@ -35,6 +36,7 @@
     <item>@string/theme_default</item>
     <item>@string/theme_night</item>
     <item>@string/theme_auto</item>
+    <item>@string/theme_nav_auto</item>
   </string-array>
 
   <string-array name="speed_cameras">

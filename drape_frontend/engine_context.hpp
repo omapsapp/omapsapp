@@ -31,12 +31,14 @@ public:
                 CustomFeaturesContextWeakPtr customFeaturesContext,
                 bool is3dBuildingsEnabled,
                 bool isTrafficEnabled,
-                bool isolinesEnabled);
+                bool isolinesEnabled,
+                int8_t mapLangIndex);
 
   TileKey const & GetTileKey() const { return m_tileKey; }
   bool Is3dBuildingsEnabled() const { return m_3dBuildingsEnabled; }
   bool IsTrafficEnabled() const { return m_trafficEnabled; }
   bool IsolinesEnabled() const { return m_isolinesEnabled; }
+  int8_t GetMapLangIndex() const { return m_mapLangIndex; }
   CustomFeaturesContextWeakPtr GetCustomFeaturesContext() const { return m_customFeaturesContext; }
   ref_ptr<dp::TextureManager> GetTextureManager() const;
   ref_ptr<MetalineManager> GetMetalineManager() const;
@@ -58,5 +60,6 @@ private:
   bool m_3dBuildingsEnabled;
   bool m_trafficEnabled;
   bool m_isolinesEnabled;
+  int8_t m_mapLangIndex;
 };
 }  // namespace df

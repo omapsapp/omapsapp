@@ -202,7 +202,8 @@ double MpsToUnits(double metersPerSecond, Units units)
 std::string FormatSpeedNumeric(double metersPerSecond, Units units)
 {
   double const unitsPerHour = MpsToUnits(metersPerSecond, units);
-  return ToStringPrecision(unitsPerHour, unitsPerHour >= 10.0 ? 0 : 1);
+  double roundedValue = std::round(unitsPerHour);
+  return std::to_string(static_cast<int>(roundedValue));
 }
 
 std::string FormatOsmLink(double lat, double lon, int zoom)

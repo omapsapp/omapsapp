@@ -1,4 +1,5 @@
-- Track Recorder: Record and save your routes while hiking, biking, running, or navigating.
-- OpenStreetMap: Switched to browser-based authentication to comply with Google Play.
-- New Map Data: Updated with data as of September 7, including isolines for Egypt and Algeria.
-- Translations: Enhanced Chinese, Hebrew, and Italian, and added translations for trail difficulty.
+• Nuevos datos de OpenStreetMap del 22 de noviembre
+• Resaltado de la parte coincidente de la dirección en los resultados de búsqueda
+• Ordenar el historial de búsquedas por la última vez de uso
+• Solucionados los bloqueos al inicio en algunos dispositivos antiguos con GPU Mali-T
+• Otras mejoras en la búsqueda, actualizaciones de traducción y correcciones de errores

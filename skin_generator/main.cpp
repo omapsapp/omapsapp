@@ -19,7 +19,7 @@ DEFINE_string(skinName, "../../data/basic", "prefix for the skin and skinImage f
 DEFINE_string(skinSuffix, "mdpi", "suffix for skinName<suffix>.skn and symbols<suffix>.png");
 DEFINE_int32(searchIconWidth, 24, "width of the search category icon");
 DEFINE_int32(searchIconHeight, 24, "height of the search category icon");
-DEFINE_int32(maxSize, 2048, "max width/height of output textures");
+DEFINE_int32(maxSize, 4096, "max width/height of output textures");
 
 int main(int argc, char *argv[])
 {

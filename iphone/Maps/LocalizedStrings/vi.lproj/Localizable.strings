@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Hãy quyên góp để cùng nhau xây dựng những bản đồ tốt nhất!";
 
+"already_donated" = "Đã quyên góp";
+
+"remind_me_later" = "Nhắc sau";
+
+"support_organic_maps" = "Hỗ trợ Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Bản quyền";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Dữ liệu OpenStreetMap do cộng đồng tạo ra kể từ %@. Tìm hiểu thêm về cách chỉnh sửa và cập nhật bản đồ tại OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Đăng nhập để người dùng khác có thể nhìn thấy những thay đổi bạn đã thực hiện.";
+"login_to_make_edits_visible" = "Tạo tài khoản OpenStreetMap hoặc đăng nhập để xuất bản các chỉnh sửa bản đồ của bạn với thế giới.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Để tải xuống, bạn cần thêm dung lượng. Xin xóa mọi dữ liệu không cần thiết.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Thông tin bổ sung về OpenStreetMap";
 
-"editor_operator" = "Đơn vị điều hành";
+"editor_operator" = "Toán tử";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Đơn vị điều hành: %@";
+"operator" = "Toán tử: %@";
+
+"editor_category_unsuitable_title" = "Không thể tìm thấy một danh mục phù hợp?";
+
+"editor_category_unsuitable_text" = "Bản đồ không phải trả tiền chỉ cho phép thêm các danh mục điểm đơn giản, nghĩa là không có thị trấn, đường, hồ, đường viền tòa nhà, v.v. Vui lòng thêm các danh mục đó trực tiếp vào <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Hãy xem <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">hướng dẫn</a> của chúng tôi để biết hướng dẫn chi tiết từng bước.";
 
 "downloader_no_downloaded_maps_title" = "Bạn chưa tải về bất kỳ bản đồ nào";
 
@@ -795,6 +805,8 @@
 
 "minute" = "phút";
 
+"day" = "ngày";
+
 "placepage_more_button" = "Bổ sung";
 
 "book_button" = "Đặt trước";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Chi tiết trên Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Vô hiệu hóa Kayak";
 
 "placepage_call_button" = "Gọi";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Kế hoạch";
 
-"placepage_remove_stop" = "Xóa";
+"placepage_remove_stop" = "Xóa điểm dừng";
 
 "planning_route_remove_title" = "Kéo vào đây để xóa";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Đi xuống";
 
-"elevation_profile_minaltitude" = "Độ cao tối thiểu";
+"elevation_profile_min_elevation" = "Min. độ cao";
 
-"elevation_profile_maxaltitude" = "Độ cao tối đa";
+"elevation_profile_max_elevation" = "Max. độ cao";
 
 "elevation_profile_difficulty" = "Độ khó";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Bạn có chắc chắn muốn xóa bản nhạc này không?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Nếu bạn biết một nhà phát triển phần mềm, bạn có thể yêu cầu họ triển khai một tính năng mà bạn cần.";
 
 /* App tip #04 */
-"app_tip_04" = "Bạn có biết rằng bạn có thể nhấn và giữ bất kỳ địa điểm nào trên bản đồ để chọn địa điểm đó không?";
+"app_tip_04" = "Nhấn vào bất cứ nơi nào trên bản đồ để chọn bất cứ thứ gì. Nhấn và giữ để ẩn và hiển thị lại giao diện.";
 
 /* App tip #05 */
 "app_tip_05" = "Bạn có biết rằng bạn có thể chọn vị trí hiện tại của mình trên bản đồ không?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Tuyến đường trống - không có gì để lưu";
+
+"edit_track" = "Chỉnh sửa tuyến đường";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Bưu cục";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "Nhà tù";
 
 "type.amenity.pub" = "Quán rượu";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Điểm cấp nước";
 
+"type.amenity.water_point.drinking_water_no" = "Điểm cấp nước";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Khối";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Gara";
 
-"type.building.train_station" = "Đường tàu hỏa";
+"type.building.train_station" = "Tòa nhà ga";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Vòi nước";
 
+"type.man_made.water_tap.drinking_water_no" = "Vòi nước";
+
 "type.man_made.water_tower" = "Tháp Nước";
 
 "type.man_made.water_well" = "Giếng Nước";
+
+"type.man_made.water_well.drinking_water_no" = "Giếng Nước";
 
 "type.man_made.windmill" = "Cối xay gió";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Bụi rậm";
 
 "type.natural.spring" = "Suối";
+
+"type.natural.spring.drinking_water_no" = "Suối";
 
 "type.natural.strait" = "Eo biển";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Đường tàu hỏa";
 
+"type.railway.station.light_rail.berlin" = "Đường tàu hỏa";
+
 "type.railway.station.light_rail.london" = "Đường tàu hỏa";
 
 "type.railway.station.light_rail.porto" = "Đường tàu hỏa";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Ngầm";
 
 "type.railway.station.subway.hiroshima" = "Ngầm";
+
+"type.railway.station.subway.hongkong" = "Ngầm";
 
 "type.railway.station.subway.isfahan" = "Ngầm";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Ngầm";
 
 "type.railway.station.subway.shanghai" = "Ngầm";
+
+"type.railway.station.subway.shenzhen" = "Ngầm";
 
 "type.railway.station.subway.shiraz" = "Ngầm";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Lỗi vào Metro";
 
+"type.railway.subway_entrance.hongkong" = "Lỗi vào Metro";
+
 "type.railway.subway_entrance.isfahan" = "Lỗi vào Metro";
 
 "type.railway.subway_entrance.istanbul" = "Lỗi vào Metro";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Lỗi vào Metro";
 
 "type.railway.subway_entrance.shanghai" = "Lỗi vào Metro";
+
+"type.railway.subway_entrance.shenzhen" = "Lỗi vào Metro";
 
 "type.railway.subway_entrance.shiraz" = "Lỗi vào Metro";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Thiết bị Ngoài trời";
 
 "type.shop.outpost" = "Điểm đón";
+
+"type.shop.pasta" = "Cửa hàng mì ống";
 
 "type.shop.pastry" = "Bánh ngọt";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Hấp dẫn";
 
+"type.attraction.amusement_ride" = "Đi xe giải trí";
+
 "type.attraction.animal" = "Bao vây động vật";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "băng chuyền";
+
+"type.attraction.historic" = "Điểm tham quan lịch sử";
+
+"type.attraction.maze" = "mê cung";
+
+"type.attraction.roller_coaster" = "Tàu lượn siêu tốc";
+
+"type.attraction.water_slide" = "Trượt nước";
 
 "type.tourism.attraction.specified" = "Hấp dẫn";
 

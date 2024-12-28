@@ -17,6 +17,7 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
     case MWMActionBarButtonTypeCall:
       return L(@"placepage_call_button");
     case MWMActionBarButtonTypeBookmark:
+    case MWMActionBarButtonTypeTrack:
       return L(isSelected ? @"delete" : @"save");
     case MWMActionBarButtonTypeRouteFrom:
       return L(@"p2p_from_here");
@@ -102,6 +103,10 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
       break;
     case MWMActionBarButtonTypeBookmark:
       [self setupBookmarkButton:isSelected];
+      break;
+    case MWMActionBarButtonTypeTrack:
+      [self.button setImage:[[UIImage imageNamed:@"ic_route_manager_trash"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+      self.button.coloring = MWMButtonColoringRed;
       break;
     case MWMActionBarButtonTypeRouteFrom:
       [self.button setImage:[UIImage imageNamed:@"ic_route_from"] forState:UIControlStateNormal];

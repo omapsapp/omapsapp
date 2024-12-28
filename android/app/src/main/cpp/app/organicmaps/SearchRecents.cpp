@@ -16,17 +16,12 @@ extern "C"
     if (items.empty())
       return;
 
-    auto const & pairBuilder = jni::PairBuilder::Instance(env);
     auto const listAddMethod = jni::ListBuilder::Instance(env).m_add;
 
     for (SearchRequest const & item : items)
     {
-      using SLR = jni::TScopedLocalRef;
-      SLR pair(env, pairBuilder.Create(env, SLR(env, jni::ToJavaString(env, item.first)),
-                                            SLR(env, jni::ToJavaString(env, item.second))));
-      ASSERT(pair.get(), (jni::DescribeException()));
-
-      env->CallBooleanMethod(result, listAddMethod, pair.get());
+      jni::TScopedLocalRef str(env, jni::ToJavaString(env, item.second));
+      env->CallBooleanMethod(result, listAddMethod, str.get());
     }
   }
 

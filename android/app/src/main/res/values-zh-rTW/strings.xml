@@ -321,6 +321,10 @@
     <string name="google_play_services">Google Play 定位服務</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">使用藍牙、WiFi 或行動數據快速確定您的大致位置</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com 飯店鏈接</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">顯示在 Kayak.com 上列出的飯店的照片、評論和預訂連結。透過這些連結進行的每次預訂收到的推薦獎金將用於 Organic Maps 的開發。</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">下載路線上的所有地圖</string>
     <!-- Text for routing error dialog -->
@@ -510,7 +514,9 @@
     <string name="message_invalid_feature_position">地點無法放置在這裡</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">截至 %s 的社群創建的 OpenStreetMap 資料。請訪問 OpenStreetMap.org 以了解有關如何編輯和更新地圖的更多資訊。</string>
-    <string name="login_to_make_edits_visible">登入，讓其他使用者能看到您所作出的修改。</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) 是一個建立免費開放地圖的社群專案。它是有機地圖中地圖數據的主要來源，其工作方式類似於維基百科。您可以新增或編輯地點，全世界數百萬用戶都可以使用它們。</string>
+    <string name="login_to_make_edits_visible">建立 OpenStreetMap 帳戶或登入以向全世界發布您的地圖編輯。</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d / %2$d</string>
     <string name="download_over_mobile_header">用行動數據連線下載嗎？</string>
@@ -530,9 +536,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">您的編輯內容將上傳至公用 <a href="https://wiki.openstreetmap.org/wiki/Zh-hant:關於OpenStreetMap">OpenStreetMap</a> 資料庫。請不要添加個人或版權資訊。</string>
     <string name="editor_more_about_osm">關於 OpenStreetMap 的更多資訊</string>
-    <string name="editor_operator">經營者</string>
+    <string name="editor_osm_history">您的編輯歷史記錄</string>
+    <string name="editor_osm_notes">您的地圖資料註釋</string>
+    <string name="editor_operator">操作員</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">營運者: %s</string>
+    <string name="operator">操作員: %s</string>
     <string name="editor_category_unsuitable_title">找不到合適的類別？</string>
     <string name="editor_category_unsuitable_text">Organic Maps 只允許添加簡單的點類別，即無法添加城鎮、道路、湖泊、建築輪廓等類別。請直接向 <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> 新增此類類別。請查看我們的<a href="https://organicmaps.app/faq/editing/advanced-map-editing">指南</a>，以了解詳細的步驟說明。</string>
     <string name="downloader_no_downloaded_maps_title">您尚未下載任何地圖</string>
@@ -551,6 +559,7 @@
     <string name="miles_per_hour">英哩每小時</string>
     <string name="hour">小時</string>
     <string name="minute">分鐘</string>
+    <string name="day">天</string>
     <string name="placepage_more_button">更多</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">照片、評論、預訂</string>
@@ -558,6 +567,8 @@
     <string name="dialog_kayak_disclaimer">每次通過此鏈接預定所獲得的推薦獎金將用於 Organic Maps 的開發。</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Kayak 上的詳細資訊</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">禁用 Kayak</string>
     <string name="placepage_edit_bookmark_button">編輯書籤</string>
     <string name="editor_comment_hint">備註…</string>
     <string name="editor_reset_edits_message">重設所有本機變更？</string>
@@ -619,7 +630,7 @@
     <string name="routing_add_start_point">請搜尋地點或點擊地圖以新增路線起點</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">請搜尋地點或點擊地圖以新增目的地</string>
-    <string name="placepage_remove_stop">移除</string>
+    <string name="placepage_remove_stop">刪除停止</string>
     <string name="placepage_add_stop">新增中途點</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">請登入 OpenStreetMap 以自動上傳您的所有地圖編輯。若要了解更多資訊請點擊<a href="https://github.com/organicmaps/organicmaps/issues/6144">這裡</a>。</string>
@@ -767,8 +778,8 @@
     <string name="isolines_location_error_dialog">暫時無法獲取該地區的等高線</string>
     <string name="elevation_profile_ascent">上坡</string>
     <string name="elevation_profile_descent">下坡</string>
-    <string name="elevation_profile_minaltitude">最小高度</string>
-    <string name="elevation_profile_maxaltitude">最大高度</string>
+    <string name="elevation_profile_min_elevation">最低高度</string>
+    <string name="elevation_profile_max_elevation">最高高度</string>
     <string name="elevation_profile_difficulty">難度</string>
     <string name="elevation_profile_distance">距離：</string>
     <string name="elevation_profile_time">時間：</string>
@@ -790,6 +801,8 @@
     <string name="enable_show_on_lock_screen">在鎖定螢幕上顯示</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">啟用後，即使裝置已鎖定，應用程式仍會在鎖定螢幕上運作。</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">地圖語言</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">地圖數據來自 OpenStreetMap</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -805,7 +818,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">如果您認識軟體開發人員，您可以要求他實現您需要的功能。</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">您知道您可以長按地圖上的任何位置來選擇它嗎？</string>
+    <string name="app_tip_04">點擊地圖上的任何位置即可選擇任何內容。長按可隱藏和顯示介面。</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">您知道您可以在地圖上選擇您目前的位置嗎？</string>
     <!-- App tip #06 -->
@@ -875,7 +888,11 @@
     <string name="track_recording_toast_nothing_to_save">軌跡為空 - 沒有可保存的內容</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">無法顯示資料夾選擇對話框，因為您的裝置上沒有安裝合適的應用程式。請安裝檔案總管應用程式並重試</string>
+    <string name="choose_color">選擇顏色</string>
+    <string name="edit_track">編輯軌跡</string>
     <string name="uri_open_location_failed">沒有安裝可以打開該位置的應用程式</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">自動導航</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">地址/區塊</string>
@@ -1058,6 +1075,7 @@
     <string name="type.amenity.waste_disposal">垃圾</string>
     <string name="type.amenity.waste_transfer_station">垃圾轉運站</string>
     <string name="type.amenity.water_point">飲水站</string>
+    <string name="type.amenity.water_point.drinking_water_no">飲水站</string>
     <string name="type.barrier">障礙物</string>
     <string name="type.barrier.block">街區</string>
     <string name="type.barrier.bollard">柱</string>
@@ -1102,7 +1120,7 @@
     <string name="type.building.has_parts">建築物</string>
     <string name="type.building_part">建築物</string>
     <string name="type.building.garage">車庫</string>
-    <string name="type.building.train_station">鐵道</string>
+    <string name="type.building.train_station">車站大樓</string>
     <string name="type.building.warehouse">倉庫</string>
     <string name="type.cemetery.grave">墓穴</string>
     <string name="type.craft">工藝作坊</string>
@@ -1527,8 +1545,10 @@
     <string name="type.man_made.tower">塔</string>
     <string name="type.man_made.tower.communication">通訊塔</string>
     <string name="type.man_made.water_tap">水龍頭</string>
+    <string name="type.man_made.water_tap.drinking_water_no">水龍頭</string>
     <string name="type.man_made.water_tower">水塔</string>
     <string name="type.man_made.water_well">水井</string>
+    <string name="type.man_made.water_well.drinking_water_no">水井</string>
     <string name="type.man_made.windmill">風車</string>
     <string name="type.military.bunker">地堡</string>
     <string name="type.natural">自然</string>
@@ -1567,6 +1587,7 @@
     <string name="type.natural.rock">岩石</string>
     <string name="type.natural.scrub">叢林</string>
     <string name="type.natural.spring">泉水</string>
+    <string name="type.natural.spring.drinking_water_no">泉水</string>
     <string name="type.natural.strait">海峽</string>
     <string name="type.natural.tree_row">樹列</string>
     <string name="type.natural.vineyard">葡萄園</string>
@@ -1662,6 +1683,7 @@
     <string name="type.railway.station">火車站</string>
     <string name="type.railway.station.funicular">纜車</string>
     <string name="type.railway.station.light_rail">輕軌車站</string>
+    <string name="type.railway.station.light_rail.berlin">輕軌車站</string>
     <string name="type.railway.station.light_rail.london">輕軌車站</string>
     <string name="type.railway.station.light_rail.porto">輕軌車站</string>
     <string name="type.railway.station.monorail">單軌車站</string>
@@ -1704,6 +1726,7 @@
     <string name="type.railway.station.subway.hamburg">捷運站</string>
     <string name="type.railway.station.subway.helsinki">捷運站</string>
     <string name="type.railway.station.subway.hiroshima">捷運站</string>
+    <string name="type.railway.station.subway.hongkong">捷運站</string>
     <string name="type.railway.station.subway.isfahan">捷運站</string>
     <string name="type.railway.station.subway.istanbul">捷運站</string>
     <string name="type.railway.station.subway.izmir">捷運站</string>
@@ -1757,6 +1780,7 @@
     <string name="type.railway.station.subway.sendai">捷運站</string>
     <string name="type.railway.station.subway.sf">捷運站</string>
     <string name="type.railway.station.subway.shanghai">捷運站</string>
+    <string name="type.railway.station.subway.shenzhen">捷運站</string>
     <string name="type.railway.station.subway.shiraz">捷運站</string>
     <string name="type.railway.station.subway.singapore">捷運站</string>
     <string name="type.railway.station.subway.sofia">捷運站</string>
@@ -1816,6 +1840,7 @@
     <string name="type.railway.subway_entrance.hamburg">地鐵入口</string>
     <string name="type.railway.subway_entrance.helsinki">地鐵入口</string>
     <string name="type.railway.subway_entrance.hiroshima">地鐵入口</string>
+    <string name="type.railway.subway_entrance.hongkong">地鐵入口</string>
     <string name="type.railway.subway_entrance.isfahan">地鐵入口</string>
     <string name="type.railway.subway_entrance.istanbul">地鐵入口</string>
     <string name="type.railway.subway_entrance.izmir">地鐵入口</string>
@@ -1869,6 +1894,7 @@
     <string name="type.railway.subway_entrance.sendai">地鐵入口</string>
     <string name="type.railway.subway_entrance.sf">地鐵入口</string>
     <string name="type.railway.subway_entrance.shanghai">地鐵入口</string>
+    <string name="type.railway.subway_entrance.shenzhen">地鐵入口</string>
     <string name="type.railway.subway_entrance.shiraz">地鐵入口</string>
     <string name="type.railway.subway_entrance.singapore">地鐵入口</string>
     <string name="type.railway.subway_entrance.sofia">地鐵入口</string>
@@ -1959,6 +1985,7 @@
     <string name="type.shop.optician">眼鏡店</string>
     <string name="type.shop.outdoor">室外設備</string>
     <string name="type.shop.outpost">接送的地點</string>
+    <string name="type.shop.pasta">義大利麵店</string>
     <string name="type.shop.pastry">糕點</string>
     <string name="type.shop.pawnbroker">當舖</string>
     <string name="type.shop.pet">寵物店</string>
@@ -2054,7 +2081,13 @@
     <string name="type.tourism.artwork.sculpture">藝術品</string>
     <string name="type.tourism.artwork.statue">藝術品</string>
     <string name="type.tourism.attraction">景點</string>
+    <string name="type.attraction.amusement_ride">遊樂設施</string>
     <string name="type.attraction.animal">動物圍欄</string>
+    <string name="type.attraction.carousel">輪播</string>
+    <string name="type.attraction.historic">歷史景點</string>
+    <string name="type.attraction.maze">迷宮</string>
+    <string name="type.attraction.roller_coaster">雲霄飛車</string>
+    <string name="type.attraction.water_slide">水滑梯</string>
     <string name="type.tourism.attraction.specified">景點</string>
     <string name="type.tourism.camp_site">露營</string>
     <string name="type.tourism.caravan_site">營區</string>

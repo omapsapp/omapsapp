@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import app.organicmaps.display.DisplayType;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.util.Config;
+import app.organicmaps.util.ROMUtils;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.concurrency.UiThread;
 import app.organicmaps.util.log.Logger;
@@ -170,7 +171,8 @@ public final class Map
     final LocationHelper locationHelper = LocationHelper.from(context);
 
     final boolean firstStart = locationHelper.isInFirstRun();
-    if (!nativeCreateEngine(surface, surfaceDpi, firstStart, mLaunchByDeepLink, BuildConfig.VERSION_CODE))
+    if (!nativeCreateEngine(surface, surfaceDpi, firstStart, mLaunchByDeepLink,
+                            BuildConfig.VERSION_CODE, ROMUtils.isCustomROM()))
     {
       if (mCallbackUnsupported != null)
         mCallbackUnsupported.report();
@@ -368,7 +370,8 @@ public final class Map
   private static native boolean nativeCreateEngine(Surface surface, int density,
                                                    boolean firstLaunch,
                                                    boolean isLaunchByDeepLink,
-                                                   int appVersionCode);
+                                                   int appVersionCode,
+                                                   boolean isCustomROM);
 
   private static native boolean nativeIsEngineCreated();
 

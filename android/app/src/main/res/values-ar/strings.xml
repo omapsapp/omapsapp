@@ -327,6 +327,10 @@
     <string name="google_play_services">خدمات الموقع في جوجل بلاي</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">حدد موقعك التقريبي بسرعة باستخدام Bluetooth أو WiFi أو شبكة الهاتف المحمول</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">روابط فنادق كيك دوت كوم</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">يتم عرض الصور والمراجعات وروابط الحجز للفنادق التي لديها قائمة على موقع Kayak.com. تذهب مكافأة الإحالة المستلمة عن كل حجز من خلال هذه الروابط إلى تطوير Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">تنزيل الخرائط على طول طريقك</string>
     <!-- Text for routing error dialog -->
@@ -512,7 +516,9 @@
     <string name="message_invalid_feature_position">لا يمكن تحديد موقع الكائن هنا</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">بيانات OpenStreetMap التي أنشأها المجتمع اعتبارًا من %s. تعرف على المزيد حول كيفية تعديل الخريطة وتحديثها على OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">قم بتسجيل الدخول حتى يتمكن باقي المستخدمين من رؤية التغييرات التي قمت بها.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) هو مشروع مجتمعي لبناء خريطة مجانية ومفتوحة. إنه المصدر الرئيسي لبيانات الخرائط في الخرائط العضوية ويعمل على غرار ويكيبيديا. يمكنك إضافة الأماكن أو تعديلها وتصبح متاحة لملايين المستخدمين في جميع أنحاء العالم. \انضم إلى المجتمع وساعد في إنشاء خريطة أفضل للجميع!</string>
+    <string name="login_to_make_edits_visible">أنشئ حساباً على OpenStreetMap أو سجّل الدخول لنشر تعديلاتك على الخريطة للعالم.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d من%2$d</string>
     <string name="download_over_mobile_header">تنزيل باستخدام بيانات الجوال؟</string>
@@ -532,9 +538,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">يتم تحميل تعديلاتك على قاعدة البيانات العامة <a href="https://wiki.openstreetmap.org/wiki/Ar:About_OpenStreetMap">OpenStreetMap</a>. يرجى عدم إضافة معلومات شخصية أو محمية بحقوق الطبع والنشر.</string>
     <string name="editor_more_about_osm">المزيد عن خريطة الشارع المفتوحة</string>
-    <string name="editor_operator">المالك</string>
+    <string name="editor_osm_history">سجل التحرير الخاص بك</string>
+    <string name="editor_osm_notes">ملاحظات بيانات الخريطة الخاصة بك</string>
+    <string name="editor_operator">المشغل</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">المالك: %s</string>
+    <string name="operator">المشغل: %s</string>
     <string name="editor_category_unsuitable_title">لا يمكن العثور على فئة مناسبة؟</string>
     <string name="editor_category_unsuitable_text">تسمح الخرائط العضوية بإضافة فئات نقاط بسيطة فقط، وهذا يعني عدم وجود بلدات وطرق وبحيرات ومخططات للمباني وما إلى ذلك. يرجى إضافة هذه الفئات مباشرة إلى <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. راجع موقعنا <a href="https://organicmaps.app/faq/editing/advanced-map-editing">دليل</a> للحصول على تعليمات مفصلة خطوة بخطوة.</string>
     <string name="downloader_no_downloaded_maps_title">لم تقم بتنزيل أية خرائط</string>
@@ -553,6 +561,7 @@
     <string name="miles_per_hour">ميل/ساعة</string>
     <string name="hour">س</string>
     <string name="minute">د</string>
+    <string name="day">يوم</string>
     <string name="placepage_more_button">المزيد</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">الصور والتعليقات والحجز</string>
@@ -560,6 +569,8 @@
     <string name="dialog_kayak_disclaimer">تذهب مكافأة الإحالة التي يتم تلقيها لكل حجز من خلال هذا الرابط إلى تطوير Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">التفاصيل على Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">تعطيل Kayak</string>
     <string name="placepage_edit_bookmark_button">تحرير العلامة المرجعية</string>
     <string name="editor_comment_hint">تعليق…</string>
     <string name="editor_reset_edits_message">هل تريد مسح كافة التغييرات المحلية؟</string>
@@ -621,7 +632,7 @@
     <string name="routing_add_start_point">استخدام البحث أو النقر على الخريطة لإضافة نقطة بداية الطريق</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">استخدام البحث أو النقر على الخريطة لإضافة نقطة وجهة</string>
-    <string name="placepage_remove_stop">إزالة</string>
+    <string name="placepage_remove_stop">إزالة نقطة توقف</string>
     <string name="placepage_add_stop">إضافة نقطة توقف</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">برجاء تسجيل الدخول إلى OpenStreetMap لتحميل جميع تعديلات الخريطة تلقائيًا. تعرف على المزيد <a href="https://github.com/organicmaps/organicmaps/issues/6144">هنا</a>.</string>
@@ -769,8 +780,8 @@
     <string name="isolines_location_error_dialog">الطبقة الطبوغرافية ليست متاحة بعد في هذه المنطقة</string>
     <string name="elevation_profile_ascent">تصاعدي</string>
     <string name="elevation_profile_descent">تنازلي</string>
-    <string name="elevation_profile_minaltitude">الحد الأدنى للارتفاع</string>
-    <string name="elevation_profile_maxaltitude">الحد الأقصى للارتفاع</string>
+    <string name="elevation_profile_min_elevation">أقل ارتفاع</string>
+    <string name="elevation_profile_max_elevation">أعلى ارتفاع</string>
     <string name="elevation_profile_difficulty">درجة الصعوبة</string>
     <string name="elevation_profile_distance">المسافة:</string>
     <string name="elevation_profile_time">المدة:</string>
@@ -792,6 +803,8 @@
     <string name="enable_show_on_lock_screen">إظهار  التطبيق فوق شاشة القفل</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">عند التفعيل، لن تحتاج لفتح قفل جهازك كل مرة أثناء تشغيل التطبيق</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">لغة الخريطة</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">بيانات الخريطة من خريطة الشارع المفتوحة</string>
     <!-- Link to OSM wiki for Editor, Profile and About pages -->
@@ -805,7 +818,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">إذا كنت تعرف أحد مطوري البرامج، فيمكنك أن تطلب منه تنفيذ الميزة التي تحتاجها.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">هل تعلم أنه يمكنك النقر لفترة طويلة على أي مكان على الخريطة لتحديده؟</string>
+    <string name="app_tip_04">اضغط على أي مكان على الخريطة لتحديد أي شيء. اضغط لفترة طويلة لإخفاء الواجهة وإظهارها مرة أخرى.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">هل تعلم أنه يمكنك تحديد موقعك الحالي على الخريطة؟</string>
     <!-- App tip #06 -->
@@ -875,7 +888,11 @@
     <string name="track_recording_toast_nothing_to_save">المسار فارغ - لا يوجد شيء للحفظ</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">غير قادر على عرض مربع حوار تحديد المجلد لأنه لا يوجد تطبيق مناسب مثبت على جهازك. يرجى تثبيت تطبيق مدير الملفات والمحاولة مرة أخرى.</string>
+    <string name="choose_color">اختر اللون</string>
+    <string name="edit_track">تعديل المسار</string>
     <string name="uri_open_location_failed">لم يتم تثبيت أي تطبيق يمكنه فتح الموقع</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">تلقائي في التنقل</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">العنوان / البلوك</string>
@@ -1060,6 +1077,7 @@
     <string name="type.amenity.waste_disposal">حاوية قمامة</string>
     <string name="type.amenity.waste_transfer_station">محطة نقل النفايات</string>
     <string name="type.amenity.water_point">نقطة إعادة تعبة قنينة المياه</string>
+    <string name="type.amenity.water_point.drinking_water_no">نقطة إعادة تعبة قنينة المياه</string>
     <string name="type.barrier">حاجز</string>
     <string name="type.barrier.block">حاجز</string>
     <string name="type.barrier.bollard">حاجز سيارات</string>
@@ -1105,7 +1123,7 @@
     <string name="type.building.has_parts">مبنى</string>
     <string name="type.building_part">مبنى</string>
     <string name="type.building.garage">مرآب</string>
-    <string name="type.building.train_station">محطة قطار</string>
+    <string name="type.building.train_station">مبنى المحطة</string>
     <string name="type.building.warehouse">مستودع</string>
     <string name="type.cemetery.grave">قبر</string>
     <string name="type.craft">حرفة</string>
@@ -1529,8 +1547,10 @@
     <string name="type.man_made.tower">برج</string>
     <string name="type.man_made.tower.communication">برج اتصالات</string>
     <string name="type.man_made.water_tap">حنفية مياه</string>
+    <string name="type.man_made.water_tap.drinking_water_no">حنفية مياه</string>
     <string name="type.man_made.water_tower">برج مياه</string>
     <string name="type.man_made.water_well">بئر ماء</string>
+    <string name="type.man_made.water_well.drinking_water_no">بئر ماء</string>
     <string name="type.man_made.windmill">طاحونة هواء</string>
     <string name="type.military">عسكري</string>
     <string name="type.military.bunker">ملجأ</string>
@@ -1571,6 +1591,7 @@
     <string name="type.natural.rock">صخر</string>
     <string name="type.natural.scrub">أَيْكَة</string>
     <string name="type.natural.spring">ينبوع</string>
+    <string name="type.natural.spring.drinking_water_no">ينبوع</string>
     <string name="type.natural.strait">مضيق</string>
     <string name="type.natural.tree_row">صف شجر</string>
     <string name="type.natural.vineyard">حقل عنب</string>
@@ -1664,6 +1685,7 @@
     <string name="type.railway.station">محطة قطار</string>
     <string name="type.railway.station.funicular">حبلي</string>
     <string name="type.railway.station.light_rail">محطة قطار</string>
+    <string name="type.railway.station.light_rail.berlin">محطة قطار</string>
     <string name="type.railway.station.light_rail.london">محطة قطار</string>
     <string name="type.railway.station.light_rail.porto">محطة قطار</string>
     <string name="type.railway.station.monorail">محطة قطار</string>
@@ -1706,6 +1728,7 @@
     <string name="type.railway.station.subway.hamburg">محطة مترو</string>
     <string name="type.railway.station.subway.helsinki">محطة مترو</string>
     <string name="type.railway.station.subway.hiroshima">محطة مترو</string>
+    <string name="type.railway.station.subway.hongkong">محطة مترو</string>
     <string name="type.railway.station.subway.isfahan">محطة مترو</string>
     <string name="type.railway.station.subway.istanbul">محطة مترو</string>
     <string name="type.railway.station.subway.izmir">محطة مترو</string>
@@ -1759,6 +1782,7 @@
     <string name="type.railway.station.subway.sendai">محطة مترو</string>
     <string name="type.railway.station.subway.sf">محطة مترو</string>
     <string name="type.railway.station.subway.shanghai">محطة مترو</string>
+    <string name="type.railway.station.subway.shenzhen">محطة مترو</string>
     <string name="type.railway.station.subway.shiraz">محطة مترو</string>
     <string name="type.railway.station.subway.singapore">محطة مترو</string>
     <string name="type.railway.station.subway.sofia">محطة مترو</string>
@@ -1818,6 +1842,7 @@
     <string name="type.railway.subway_entrance.hamburg">مدخل المترو</string>
     <string name="type.railway.subway_entrance.helsinki">مدخل المترو</string>
     <string name="type.railway.subway_entrance.hiroshima">مدخل المترو</string>
+    <string name="type.railway.subway_entrance.hongkong">مدخل المترو</string>
     <string name="type.railway.subway_entrance.isfahan">مدخل المترو</string>
     <string name="type.railway.subway_entrance.istanbul">مدخل المترو</string>
     <string name="type.railway.subway_entrance.izmir">مدخل المترو</string>
@@ -1871,6 +1896,7 @@
     <string name="type.railway.subway_entrance.sendai">مدخل المترو</string>
     <string name="type.railway.subway_entrance.sf">مدخل المترو</string>
     <string name="type.railway.subway_entrance.shanghai">مدخل المترو</string>
+    <string name="type.railway.subway_entrance.shenzhen">مدخل المترو</string>
     <string name="type.railway.subway_entrance.shiraz">مدخل المترو</string>
     <string name="type.railway.subway_entrance.singapore">مدخل المترو</string>
     <string name="type.railway.subway_entrance.sofia">مدخل المترو</string>
@@ -1958,6 +1984,7 @@
     <string name="type.shop.optician">مركز بصريات</string>
     <string name="type.shop.outdoor">متجر معداة خارجية</string>
     <string name="type.shop.outpost">نقطة الالتقاط</string>
+    <string name="type.shop.pasta">متجر المكرونة</string>
     <string name="type.shop.pastry">متجر معجنات</string>
     <string name="type.shop.pawnbroker">مُرتهِن</string>
     <string name="type.shop.pet">متجر للحيوانات الأليفة</string>
@@ -2053,7 +2080,13 @@
     <string name="type.tourism.artwork.sculpture">منحوتة</string>
     <string name="type.tourism.artwork.statue">تمثال</string>
     <string name="type.tourism.attraction">مكان جذاب</string>
+    <string name="type.attraction.amusement_ride">جولة ترفيهية</string>
     <string name="type.attraction.animal">الضميمة الحيوانية</string>
+    <string name="type.attraction.carousel">كاروسيل</string>
+    <string name="type.attraction.historic">جاذبية تاريخية</string>
+    <string name="type.attraction.maze">المتاهة</string>
+    <string name="type.attraction.roller_coaster">قطار الملاهي الدوارة</string>
+    <string name="type.attraction.water_slide">منزلق مائي</string>
     <string name="type.tourism.attraction.specified">مكان جذاب</string>
     <string name="type.tourism.camp_site">مخيّم</string>
     <string name="type.tourism.caravan_site">موقع لمراكب ترفيه</string>

@@ -305,6 +305,10 @@
     <string name="google_play_services">Google Play asukohateenused</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Määrake kiiresti oma ligikaudne asukoht Bluetoothi, WiFi või mobiilivõrgu kaudu</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Hotellilinkid</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotod, arvustused ja broneerimislingid kuvatakse hotellide kohta, mis on Kayak.com-is loetletud. Iga nende linkide kaudu tehtud broneeringu eest saadav viitamispreemia läheb Organic Maps\'i arendamiseks.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Lae alla kõik kaardid oma marsruudil</string>
     <!-- Text for routing error dialog -->
@@ -490,7 +494,10 @@
     <string name="message_invalid_feature_position">Ükski objekt ei saa siin asuda</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Ühenduse loodud OpenStreetMapi andmed alates %s. Lisateave selle kohta, kuidas kaarti redigeerida ja uuendada, on aadressil OpenStreetMap.org.</string>
-    <string name="login_to_make_edits_visible">Logi sisse OpenStreetMap.org keskkonda, et teised kasutajad näeksid Sinu tehtud muudatusi.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) on kogukonna projekt, mille eesmärk on luua tasuta ja avatud kaart. See on Organic Maps\'i peamine kaardiandmete allikas ja toimib sarnaselt Vikipeediaga. Saate lisada või muuta kohti ja need muutuvad kättesaadavaks miljonitele kasutajatele üle kogu maailma.
+\nSeotudge kogukonnaga ja aidake teha kõigile paremat kaarti!</string>
+    <string name="login_to_make_edits_visible">Looge OpenStreetMapi konto või logige sisse, et avaldada oma kaardimuudatusi kogu maailmale.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Lae mobiilivõrgu kaudu?</string>
@@ -510,9 +517,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Teie muudatused laaditakse üles avalikku <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> andmebaasi. Palun ärge lisage isiklikku või autoriõigusega kaitstud teavet.</string>
     <string name="editor_more_about_osm">Rohkem OpenStreetMap kohta</string>
-    <string name="editor_operator">Omanik</string>
+    <string name="editor_osm_history">Teie toimetamise ajalugu</string>
+    <string name="editor_osm_notes">Teie kaardiandmete märkmed</string>
+    <string name="editor_operator">Operaator</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Omanik: %s</string>
+    <string name="operator">Operaator: %s</string>
     <string name="editor_category_unsuitable_title">Ei leia sobivat kategooriat?</string>
     <string name="editor_category_unsuitable_text">Organic Maps võimaldab lisada ainult lihtsaid punktikategooriaid, see tähendab, et ei mingeid linnu, teid, järvi, hoonete piirjooni jne. Palun lisage sellised kategooriad otse <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Vaadake meie <a href="https://organicmaps.app/faq/editing/advanced-map-editing">juhendit</a> üksikasjalike samm-sammuliste juhiste saamiseks.</string>
     <string name="downloader_no_downloaded_maps_title">Sa ei ole kaarte alla laadinud</string>
@@ -531,6 +540,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">p</string>
     <string name="placepage_more_button">Veel</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotod, arvustused, broneerimine</string>
@@ -538,6 +548,8 @@
     <string name="dialog_kayak_disclaimer">Iga selle lingi kaudu tehtud broneeringu eest saadav boonus läheb Organic Maps\'i arendamiseks.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Üksikasjad Kayaki kohta</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Kayak välja lülitada</string>
     <string name="placepage_edit_bookmark_button">Muuda järjehoidjat</string>
     <string name="editor_comment_hint">Kommenteeri…</string>
     <string name="editor_reset_edits_message">Loobu kõigist kohalikest muudatustest?</string>
@@ -599,7 +611,7 @@
     <string name="routing_add_start_point">Marsruudi alguspunkti lisamiseks kasutage otsingut või puudutage kaarti</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Kasutage otsingut või koputage kaardil sihtkoha lisamiseks</string>
-    <string name="placepage_remove_stop">Eemalda</string>
+    <string name="placepage_remove_stop">Eemalda peatus</string>
     <string name="placepage_add_stop">Lisa peatus</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Palun logige sisse OpenStreetMap\'i, et laadida automaatselt üles kõik oma kaarditööd. Lisateave <a href="https://github.com/organicmaps/organicmaps/issues/6144">kuskil</a>.</string>
@@ -749,8 +761,8 @@
     <string name="isolines_location_error_dialog">Topograafiline kiht ei ole selles piirkonnas veel saadaval</string>
     <string name="elevation_profile_ascent">Tõus</string>
     <string name="elevation_profile_descent">Langus</string>
-    <string name="elevation_profile_minaltitude">Min. kõrgus</string>
-    <string name="elevation_profile_maxaltitude">Maks. kõrgus</string>
+    <string name="elevation_profile_min_elevation">Min. kõrgus</string>
+    <string name="elevation_profile_max_elevation">Maks. kõrgus</string>
     <string name="elevation_profile_difficulty">Raskusaste</string>
     <string name="elevation_profile_distance">Kaugus:</string>
     <string name="elevation_profile_time">Aeg:</string>
@@ -772,6 +784,8 @@
     <string name="enable_show_on_lock_screen">Kuva lukustusekraanil</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Kui lubatud, ei pea te seadet iga kord avama, kui rakendus töötab.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Kaardikeel</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">OpenStreetMap kaardiandmed</string>
     <!-- App Tip #00 -->
@@ -783,7 +797,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Kui teate mõnda tarkvaraarendajat, võite paluda tal rakendada teile vajalik funktsioon.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Kas teate, et saate selle valimiseks pikalt puudutada mis tahes kohta kaardil?</string>
+    <string name="app_tip_04">Koputage kaardil ükskõik kuhu, et valida midagi. Pikalt koputage, et peita ja kuvada tagasi kasutajaliides.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Kas tead, et saad kaardil valida oma praeguse asukoha?</string>
     <!-- App tip #06 -->
@@ -853,7 +867,11 @@
     <string name="track_recording_toast_nothing_to_save">Rada on tühi - ei ole midagi salvestada</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kaustavaliku dialoogi ei ole võimalik kuvada, sest teie seadmesse ei ole paigaldatud sobivat rakendust. Palun installige failihaldurirakendus ja proovige uuesti.</string>
+    <string name="choose_color">Vali värv</string>
+    <string name="edit_track">Muuda rada</string>
     <string name="uri_open_location_failed">Ei ole paigaldatud rakendust, mis saaks asukoha avada</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Automaatne navigeerimine</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Aadress/plokk</string>
@@ -1039,6 +1057,7 @@
     <string name="type.amenity.waste_disposal">Prügikast</string>
     <string name="type.amenity.waste_transfer_station">Jäätmete üleandmise jaam</string>
     <string name="type.amenity.water_point">Haagiselamu veepunkt</string>
+    <string name="type.amenity.water_point.drinking_water_no">Haagiselamu veepunkt</string>
     <string name="type.barrier">Barjäär</string>
     <string name="type.barrier.block">Takistus</string>
     <string name="type.barrier.bollard">Post</string>
@@ -1084,7 +1103,7 @@
     <string name="type.building.has_parts">Hoone</string>
     <string name="type.building_part">Hoone</string>
     <string name="type.building.garage">Garaaž</string>
-    <string name="type.building.train_station">Rongijaam</string>
+    <string name="type.building.train_station">Jaamahoone</string>
     <string name="type.building.warehouse">Ladu</string>
     <string name="type.cemetery.grave">Haud</string>
     <string name="type.craft">Käsitöö</string>
@@ -1524,8 +1543,10 @@
     <string name="type.man_made.tower.communication">Sidetorn</string>
     <string name="type.man_made.wastewater_plant">Reoveepuhasti</string>
     <string name="type.man_made.water_tap">Veekraan</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Veekraan</string>
     <string name="type.man_made.water_tower">Veetorn</string>
     <string name="type.man_made.water_well">Vesiveski</string>
+    <string name="type.man_made.water_well.drinking_water_no">Vesiveski</string>
     <string name="type.man_made.windmill">Tuuleveski</string>
     <string name="type.man_made.works">Vabrik</string>
     <string name="type.military">Militaarobjekt</string>
@@ -1568,6 +1589,7 @@
     <string name="type.natural.rock">Kivi</string>
     <string name="type.natural.scrub">Võsa</string>
     <string name="type.natural.spring">Allikas</string>
+    <string name="type.natural.spring.drinking_water_no">Allikas</string>
     <string name="type.natural.strait">Väin</string>
     <string name="type.natural.tree_row">Puude rida</string>
     <string name="type.natural.vineyard">Viinamarjaistandus</string>
@@ -1694,6 +1716,7 @@
     <string name="type.railway.station">Raudtee jaam</string>
     <string name="type.railway.station.funicular">Funicular</string>
     <string name="type.railway.station.light_rail">Raudtee jaam</string>
+    <string name="type.railway.station.light_rail.berlin">Raudtee jaam</string>
     <string name="type.railway.station.light_rail.london">Raudtee jaam</string>
     <string name="type.railway.station.light_rail.porto">Raudtee jaam</string>
     <string name="type.railway.station.monorail">Raudtee jaam</string>
@@ -1736,6 +1759,7 @@
     <string name="type.railway.station.subway.hamburg">Metroo</string>
     <string name="type.railway.station.subway.helsinki">Metroo</string>
     <string name="type.railway.station.subway.hiroshima">Metroo</string>
+    <string name="type.railway.station.subway.hongkong">Metroo</string>
     <string name="type.railway.station.subway.isfahan">Metroo</string>
     <string name="type.railway.station.subway.istanbul">Metroo</string>
     <string name="type.railway.station.subway.izmir">Metroo</string>
@@ -1789,6 +1813,7 @@
     <string name="type.railway.station.subway.sendai">Metroo</string>
     <string name="type.railway.station.subway.sf">Metroo</string>
     <string name="type.railway.station.subway.shanghai">Metroo</string>
+    <string name="type.railway.station.subway.shenzhen">Metroo</string>
     <string name="type.railway.station.subway.shiraz">Metroo</string>
     <string name="type.railway.station.subway.singapore">Metroo</string>
     <string name="type.railway.station.subway.sofia">Metroo</string>
@@ -1851,6 +1876,7 @@
     <string name="type.railway.subway_entrance.hamburg">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.helsinki">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.hiroshima">Metroo sissepääs</string>
+    <string name="type.railway.subway_entrance.hongkong">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.isfahan">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.istanbul">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.izmir">Metroo sissepääs</string>
@@ -1904,6 +1930,7 @@
     <string name="type.railway.subway_entrance.sendai">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.sf">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.shanghai">Metroo sissepääs</string>
+    <string name="type.railway.subway_entrance.shenzhen">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.shiraz">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.singapore">Metroo sissepääs</string>
     <string name="type.railway.subway_entrance.sofia">Metroo sissepääs</string>
@@ -1996,6 +2023,7 @@
     <string name="type.shop.optician">Optik</string>
     <string name="type.shop.outdoor">Välisvarustus</string>
     <string name="type.shop.outpost">Vastuvõtupunkt</string>
+    <string name="type.shop.pasta">Pasta pood</string>
     <string name="type.shop.pastry">Pagar</string>
     <string name="type.shop.pawnbroker">Pandimaja</string>
     <string name="type.shop.pet">Lemmikloomapood</string>
@@ -2092,7 +2120,13 @@
     <string name="type.tourism.artwork.sculpture">Kunstiteos - skulptuur</string>
     <string name="type.tourism.artwork.statue">Kunstiteos - kuju</string>
     <string name="type.tourism.attraction">Turismiatraktsioon</string>
+    <string name="type.attraction.amusement_ride">Lõbustus Ride</string>
     <string name="type.attraction.animal">Loomade aedik</string>
+    <string name="type.attraction.carousel">Karussell</string>
+    <string name="type.attraction.historic">Ajalooline vaatamisväärsus</string>
+    <string name="type.attraction.maze">Labürint</string>
+    <string name="type.attraction.roller_coaster">Vuoristorata</string>
+    <string name="type.attraction.water_slide">Vesiliug</string>
     <string name="type.tourism.attraction.specified">Turismiatraktsioon</string>
     <string name="type.tourism.camp_site">Telkimine</string>
     <string name="type.tourism.caravan_site">Haagiselamute park</string>

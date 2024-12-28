@@ -17,22 +17,17 @@
 - (void)refresh
 {
   [super refresh];
-  NSLocale * locale = NSLocale.currentLocale;
   NSCalendar * calendar = NSCalendar.currentCalendar;
-  calendar.locale = locale;
-
-  NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-  dateFormatter.locale = locale;
-  dateFormatter.timeStyle = NSDateFormatterShortStyle;
-  dateFormatter.dateStyle = NSDateFormatterNoStyle;
 
   MWMOpeningHoursSection * section = self.section;
   NSUInteger const row = self.row;
   NSDate * openDate = [calendar dateFromComponents:[section timeForRow:row isStart:YES]];
   NSDate * closeDate = [calendar dateFromComponents:[section timeForRow:row isStart:NO]];
 
-  self.openTimeLabel.text = [dateFormatter stringFromDate:openDate];
-  self.closeTimeLabel.text = [dateFormatter stringFromDate:closeDate];
+  NSDateFormatterStyle timeStyle = NSDateFormatterShortStyle;
+  NSDateFormatterStyle dateStyle = NSDateFormatterNoStyle;
+  self.openTimeLabel.text = [DateTimeFormatter dateStringFrom:openDate dateStyle:dateStyle timeStyle:timeStyle];
+  self.closeTimeLabel.text = [DateTimeFormatter dateStringFrom:closeDate dateStyle:dateStyle timeStyle:timeStyle];
 
   UIColor * clr = [section isRowSelected:row] ? [UIColor linkBlue] : [UIColor blackSecondaryText];
   self.openTimeLabel.textColor = clr;

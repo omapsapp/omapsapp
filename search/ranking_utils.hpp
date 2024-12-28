@@ -165,7 +165,7 @@ struct NameScores
       m_errorsMade = ErrorsMade::Min(m_errorsMade, rhs.m_errorsMade);
   }
 
-  bool operator==(NameScores const & rhs)
+  bool operator==(NameScores const & rhs) const
   {
     return m_nameScore == rhs.m_nameScore && m_errorsMade == rhs.m_errorsMade &&
            m_isAltOrOldName == rhs.m_isAltOrOldName && m_matchedLength == rhs.m_matchedLength;

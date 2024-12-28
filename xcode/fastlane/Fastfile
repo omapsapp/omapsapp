@@ -35,6 +35,16 @@ platform :ios do
         keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
         keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD']
       )
+      import_certificate(
+        certificate_path: 'keys/Apple/AppleWWDRCAG7.cer',
+        keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
+        keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD']
+      )
+      import_certificate(
+        certificate_path: 'keys/Apple/AppleWWDRCAG8.cer',
+        keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
+        keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD']
+      )
       # Organic Maps certificates.
       import_certificate(
         certificate_path: 'keys/CertificatesDev.p12',
@@ -68,6 +78,26 @@ platform :ios do
         skip_install: false,
         filename: 'keys/CarPlay_AppStore.mobileprovision'
       )
+      get_provisioning_profile(
+        api_key_path: 'keys/appstore.json',
+        app_identifier: 'app.organicmaps.widgetextension',
+        provisioning_name: 'WidgetExtension Release',
+        ignore_profiles_with_different_name: true,
+        readonly: true,
+        development: true,
+        skip_install: false,
+        filename: 'keys/WidgetExtension_Release.mobileprovision'
+      )
+      get_provisioning_profile(
+        api_key_path: 'keys/appstore.json',
+        app_identifier: 'app.organicmaps.widgetextension',
+        provisioning_name: 'WidgetExtension AppStore',
+        ignore_profiles_with_different_name: true,
+        adhoc: false,
+        readonly: true,
+        skip_install: false,
+        filename: 'keys/WidgetExtension_AppStore.mobileprovision'
+      )
     end
   end
 
@@ -96,7 +126,8 @@ platform :ios do
       export_method: 'app-store',
       export_options: {
         provisioningProfiles: {
-          'app.organicmaps' => 'CarPlay AppStore'
+          'app.organicmaps' => 'CarPlay AppStore',
+          'app.organicmaps.widgetextension' => 'WidgetExtension AppStore',
         }
       },
       skip_profile_detection: false,

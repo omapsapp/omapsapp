@@ -32,6 +32,8 @@ constexpr string_view kInstagramCom{"instagram.com"};
 constexpr string_view kDotInstagramCom{".instagram.com"};
 constexpr string_view kTwitterCom{"twitter.com"};
 constexpr string_view kDotTwitterCom{".twitter.com"};
+constexpr string_view kXCom{"x.com"};
+constexpr string_view kDotXCom{".x.com"};
 constexpr string_view kVkCom{"vk.com"};
 constexpr string_view kVkontakteRu{"vkontakte.ru"};
 constexpr string_view kDotVkCom{".vk.com"};
@@ -183,8 +185,8 @@ string ValidateAndFormat_twitter(string const & twitterPage)
 
   url::Url const url = url::Url::FromString(twitterPage);
   string const domain = strings::MakeLowerCase(url.GetHost());
-  // Check Twitter domain name: "twitter.com" or "*.twitter.com".
-  if (domain == kTwitterCom || domain.ends_with(kDotTwitterCom))
+  // Check X domain name: "x.com", "*.x.com", "twitter.com" or "*.twitter.com".
+  if (domain == kXCom || domain.ends_with(kDotXCom) || domain == kTwitterCom || domain.ends_with(kDotTwitterCom))
   {
     auto webPath = url.GetPath();
 
@@ -387,7 +389,7 @@ bool ValidateTwitterPage(string const & page)
     return regex_match(page, s_twitterRegex); // Rules are defined here: https://stackoverflow.com/q/11361044
 
   string const domain = strings::MakeLowerCase(url::Url::FromString(page).GetHost());
-  return domain == kTwitterCom || domain.ends_with(kDotTwitterCom);
+  return domain == kXCom || domain.ends_with(kDotXCom) || domain == kTwitterCom || domain.ends_with(kDotTwitterCom);
 }
 
 bool ValidateVkPage(string const & page)

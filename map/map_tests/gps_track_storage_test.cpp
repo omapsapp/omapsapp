@@ -37,7 +37,7 @@ inline string GetGpsTrackFilePath()
   return base::JoinPath(GetPlatform().WritableDir(), "gpstrack_test.bin");
 }
 
-UNIT_TEST(GpsTrackStorage_WriteReadWithoutTrunc)
+UNIT_TEST(GpsTrackStorage_WriteRead)
 {
   time_t const t = system_clock::to_time_t(system_clock::now());
   double const timestamp = t;
@@ -47,16 +47,16 @@ UNIT_TEST(GpsTrackStorage_WriteReadWithoutTrunc)
   SCOPE_GUARD(gpsTestFileDeleter, bind(FileWriter::DeleteFileX, filePath));
   FileWriter::DeleteFileX(filePath);
 
-  size_t const fileMaxItemCount = 100000;
+  size_t const itemCount = 100000;
 
   vector<location::GpsInfo> points;
-  points.reserve(fileMaxItemCount);
-  for (size_t i = 0; i < fileMaxItemCount; ++i)
+  points.reserve(itemCount);
+  for (size_t i = 0; i < itemCount; ++i)
     points.emplace_back(Make(timestamp + i, ms::LatLon(-90 + i, -180 + i), 60 + i));
 
   // Open storage, write data and check written data
   {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
+    GpsTrackStorage stg(filePath);
 
     stg.Append(points);
 
@@ -70,12 +70,12 @@ UNIT_TEST(GpsTrackStorage_WriteReadWithoutTrunc)
       ++i;
       return true;
     });
-    TEST_EQUAL(i, fileMaxItemCount, ());
+    TEST_EQUAL(i, itemCount, ());
   }
 
   // Open storage and check previously written data
   {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
+    GpsTrackStorage stg(filePath);
 
     size_t i = 0;
     stg.ForEach([&](location::GpsInfo const & point)->bool
@@ -87,7 +87,7 @@ UNIT_TEST(GpsTrackStorage_WriteReadWithoutTrunc)
       ++i;
       return true;
     });
-    TEST_EQUAL(i, fileMaxItemCount, ());
+    TEST_EQUAL(i, itemCount, ());
 
     // Clear data
     stg.Clear();
@@ -95,91 +95,7 @@ UNIT_TEST(GpsTrackStorage_WriteReadWithoutTrunc)
 
   // Open storage and check there is no data
   {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
-
-    size_t i = 0;
-    stg.ForEach([&](location::GpsInfo const & point)->bool{ ++i; return true; });
-    TEST_EQUAL(i, 0, ());
-  }
-}
-
-UNIT_TEST(GpsTrackStorage_WriteReadWithTrunc)
-{
-  time_t const t = system_clock::to_time_t(system_clock::now());
-  double const timestamp = t;
-  LOG(LINFO, ("Timestamp", ctime(&t), timestamp));
-
-  string const filePath = GetGpsTrackFilePath();
-  SCOPE_GUARD(gpsTestFileDeleter, bind(FileWriter::DeleteFileX, filePath));
-  FileWriter::DeleteFileX(filePath);
-
-  size_t const fileMaxItemCount = 100000;
-
-  vector<location::GpsInfo> points1, points2;
-  points1.reserve(fileMaxItemCount);
-  points2.reserve(fileMaxItemCount);
-  for (size_t i = 0; i < fileMaxItemCount; ++i)
-  {
-    points1.emplace_back(Make(timestamp + i, ms::LatLon(-90 + i, -180 + i), 60 + i));
-    points2.emplace_back(Make(timestamp + i + fileMaxItemCount, ms::LatLon(-45 + i, -30 + i), 15 + i));
-  }
-
-  vector<location::GpsInfo> points3;
-  points3.reserve(fileMaxItemCount/2);
-  for (size_t i = 0; i < fileMaxItemCount/2; ++i)
-    points3.emplace_back(Make(timestamp + i, ms::LatLon(-30 + i, -60 + i), 90 + i));
-
-  // Open storage and write blob 1
-  {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
-    stg.Append(points1);
-  }
-
-  // Open storage and write blob 2
-  {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
-    stg.Append(points2);
-  }
-
-  // Open storage and write blob 3
-  {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
-    stg.Append(points3);
-  }
-
-  // Check storage must contain second half of points2 and points3
-  {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
-
-    size_t i = 0;
-    stg.ForEach([&](location::GpsInfo const & point)->bool
-    {
-      if (i < fileMaxItemCount/2)
-      {
-        TEST_EQUAL(point.m_latitude, points2[fileMaxItemCount/2 + i].m_latitude, ());
-        TEST_EQUAL(point.m_longitude, points2[fileMaxItemCount/2 + i].m_longitude, ());
-        TEST_EQUAL(point.m_timestamp, points2[fileMaxItemCount/2 + i].m_timestamp, ());
-        TEST_EQUAL(point.m_speed, points2[fileMaxItemCount/2 + i].m_speed, ());
-      }
-      else
-      {
-        TEST_EQUAL(point.m_latitude, points3[i - fileMaxItemCount/2].m_latitude, ());
-        TEST_EQUAL(point.m_longitude, points3[i - fileMaxItemCount/2].m_longitude, ());
-        TEST_EQUAL(point.m_timestamp, points3[i - fileMaxItemCount/2].m_timestamp, ());
-        TEST_EQUAL(point.m_speed, points3[i - fileMaxItemCount/2].m_speed, ());
-      }
-      ++i;
-      return true;
-    });
-    TEST_EQUAL(i, fileMaxItemCount, ());
-
-    // Clear data
-    stg.Clear();
-  }
-
-  // Check no data in storage
-  {
-    GpsTrackStorage stg(filePath, fileMaxItemCount);
+    GpsTrackStorage stg(filePath);
 
     size_t i = 0;
     stg.ForEach([&](location::GpsInfo const & point)->bool{ ++i; return true; });

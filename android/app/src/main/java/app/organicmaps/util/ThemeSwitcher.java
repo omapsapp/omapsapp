@@ -32,18 +32,18 @@ public enum ThemeSwitcher
       String nightTheme = MwmApplication.from(mContext).getString(R.string.theme_night);
       String defaultTheme = MwmApplication.from(mContext).getString(R.string.theme_default);
       String theme = defaultTheme;
+      Location last = LocationHelper.from(mContext).getSavedLocation();
 
-      if (RoutingController.get().isNavigating())
+      boolean navAuto = RoutingController.get().isNavigating() && ThemeUtils.isNavAutoTheme(mContext);
+
+      if (navAuto || ThemeUtils.isAutoTheme(mContext))
       {
-        Location last = LocationHelper.from(mContext).getSavedLocation();
         if (last == null)
-        {
           theme = Config.getCurrentUiTheme(mContext);
-        }
         else
         {
-          boolean day = Framework.nativeIsDayTime(System.currentTimeMillis() / 1000,
-                                                  last.getLatitude(), last.getLongitude());
+          long currentTime = System.currentTimeMillis() / 1000;
+          boolean day = Framework.nativeIsDayTime(currentTime, last.getLatitude(), last.getLongitude());
           theme = (day ? defaultTheme : nightTheme);
         }
       }
@@ -51,7 +51,7 @@ public enum ThemeSwitcher
       setThemeAndMapStyle(theme);
       UiThread.cancelDelayedTasks(mAutoThemeChecker);
 
-      if (ThemeUtils.isAutoTheme(mContext))
+      if (navAuto || ThemeUtils.isAutoTheme(mContext))
         UiThread.runLater(mAutoThemeChecker, CHECK_INTERVAL_MS);
     }
   };
@@ -79,7 +79,7 @@ public enum ThemeSwitcher
   {
     mRendererActive = isRendererActive;
     String theme = Config.getUiThemeSettings(mContext);
-    if (ThemeUtils.isAutoTheme(mContext, theme))
+    if (ThemeUtils.isAutoTheme(mContext, theme) || ThemeUtils.isNavAutoTheme(mContext, theme))
     {
       mAutoThemeChecker.run();
       return;

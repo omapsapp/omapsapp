@@ -35,10 +35,13 @@ StringStorageBase::StringStorageBase(std::string const & path) : m_path(path)
       if (delimPos == std::string::npos)
         continue;
 
-      std::string const key = line.substr(0, delimPos);
-      std::string const value = line.substr(delimPos + 1);
+      std::string key = line.substr(0, delimPos);
+      std::string value = line.substr(delimPos + 1);
       if (!key.empty() && !value.empty())
-        m_values[key] = value;
+      {
+        LOG(LINFO, (key, ":", value));
+        VERIFY(m_values.emplace(std::move(key), std::move(value)).second, ());
+      }
     }
   }
   catch (RootException const & ex)
@@ -75,7 +78,7 @@ void StringStorageBase::Clear()
   Save();
 }
 
-bool StringStorageBase::GetValue(std::string const & key, std::string & outValue) const
+bool StringStorageBase::GetValue(std::string_view key, std::string & outValue) const
 {
   std::lock_guard guard(m_mutex);
 
@@ -87,11 +90,12 @@ bool StringStorageBase::GetValue(std::string const & key, std::string & outValue
   return true;
 }
 
-void StringStorageBase::SetValue(std::string const & key, std::string && value)
+void StringStorageBase::SetValue(std::string_view key, std::string && value)
 {
   std::lock_guard guard(m_mutex);
 
-  m_values[key] = std::move(value);
+  base::EmplaceOrAssign(m_values, key, std::move(value));
+
   Save();
 }
 
@@ -110,7 +114,7 @@ void StringStorageBase::Update(std::map<std::string, std::string> const & values
   Save();
 }
 
-void StringStorageBase::DeleteKeyAndValue(std::string const & key)
+void StringStorageBase::DeleteKeyAndValue(std::string_view key)
 {
   std::lock_guard guard(m_mutex);
 

@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Пожертвуйте, щоб разом створювати найкращі мапи!";
 
+"already_donated" = "Вже пожертвувано";
+
+"remind_me_later" = "Нагадати пізніше";
+
+"support_organic_maps" = "Підтримати Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Копірайт";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Дані OpenStreetMap, створені спільнотою, станом на %@. Дізнайтеся більше про те, як редагувати та оновлювати мапу на OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Увійдіть у OpenStreetMap.org, щоб ваші зміни побачили інші користувачі.";
+"login_to_make_edits_visible" = "Створіть обліковий запис OpenStreetMap або увійдіть до нього, щоб опублікувати свої редагування мапи для всього світу.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Для завантаження потрібно більше вільного місця. Будь ласка, видаліть непотрібні дані.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Більше про OpenStreetMap";
 
-"editor_operator" = "Власник";
+"editor_operator" = "Оператор";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Власник: %@";
+"operator" = "Оператор: %@";
+
+"editor_category_unsuitable_title" = "Не можете знайти відповідну категорію?";
+
+"editor_category_unsuitable_text" = "Organic Maps дозволяють додавати до мапи лише прості типи об'єктів, тобто без міст, доріг, озер та контурів будівель. Будь ласка, додайте такі категорії на сайті <a href=\"https://www.openstreetmap.org/\">OpenStreetMap.org</a>. Ми також рекомендуємо ознайомитися із <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing/\">детальними інструкціями та іншими додатками для редагування карти</a>.";
 
 "downloader_no_downloaded_maps_title" = "Ви не маєте завантажених мап";
 
@@ -795,6 +805,8 @@
 
 "minute" = "хв";
 
+"day" = "д";
+
 "placepage_more_button" = "Ще";
 
 "book_button" = "Забронювати";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Докладніше на Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Вимкнути Kayak";
 
 "placepage_call_button" = "Подзвонити";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Прокласти маршрут";
 
-"placepage_remove_stop" = "Видалити";
+"placepage_remove_stop" = "Видалити зупинку";
 
 "planning_route_remove_title" = "Перетягніть сюди, щоб видалити";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Спуск";
 
-"elevation_profile_minaltitude" = "Мін. висота";
+"elevation_profile_min_elevation" = "Мін. висота";
 
-"elevation_profile_maxaltitude" = "Макс. висота";
+"elevation_profile_max_elevation" = "Макс. висота";
 
 "elevation_profile_difficulty" = "Складність";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Видалити трек";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Ви дійсно бажаєте видалити цей маршрут?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Назва треку";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Якщо у вас є знайомий розробник програмного забезпечення, ви можете попросити його реалізувати потрібну вам функцію.";
 
 /* App tip #04 */
-"app_tip_04" = "Чи знаєте ви, що можна вибрати будь-яке місце на карті, довго тримаючи палець на точці?";
+"app_tip_04" = "Торкніться будь-якого місця на карті, щоб вибрати щось. Тривале натискання приховує та відображає інтерфейс.";
 
 /* App tip #05 */
 "app_tip_05" = "А ви знали, що своє місцезнаходження на карті можна вибрати?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Маршрут порожній - нічого зберігати";
+
+"edit_track" = "Редагувати маршрут";
 
 
 /********** Types **********/
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Вода для автобудинків";
 
+"type.amenity.water_point.drinking_water_no" = "Вода для автобудинків";
+
 "type.barrier" = "Перешкода";
 
 "type.barrier.block" = "Блок";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Гараж";
 
-"type.building.train_station" = "Залізничний вокзал";
+"type.building.train_station" = "Будівля вокзалу";
 
 "type.building.warehouse" = "Склад";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Водопровідний кран";
 
+"type.man_made.water_tap.drinking_water_no" = "Водопровідний кран";
+
 "type.man_made.water_tower" = "Водонапірна вежа";
 
 "type.man_made.water_well" = "Криниця";
+
+"type.man_made.water_well.drinking_water_no" = "Криниця";
 
 "type.man_made.windmill" = "Вітряний млин";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Зарості";
 
 "type.natural.spring" = "Джерело";
+
+"type.natural.spring.drinking_water_no" = "Джерело";
 
 "type.natural.strait" = "Протока";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Залізничний вокзал";
 
+"type.railway.station.light_rail.berlin" = "Залізничний вокзал";
+
 "type.railway.station.light_rail.london" = "Залізничний вокзал";
 
 "type.railway.station.light_rail.porto" = "Залізничний вокзал";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Метро";
 
 "type.railway.station.subway.hiroshima" = "Метро";
+
+"type.railway.station.subway.hongkong" = "Метро";
 
 "type.railway.station.subway.isfahan" = "Метро";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Метро";
 
 "type.railway.station.subway.shanghai" = "Метро";
+
+"type.railway.station.subway.shenzhen" = "Метро";
 
 "type.railway.station.subway.shiraz" = "Метро";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Вхід до метро";
 
+"type.railway.subway_entrance.hongkong" = "Вхід до метро";
+
 "type.railway.subway_entrance.isfahan" = "Вхід до метро";
 
 "type.railway.subway_entrance.istanbul" = "Вхід до метро";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Вхід до метро";
 
 "type.railway.subway_entrance.shanghai" = "Вхід до метро";
+
+"type.railway.subway_entrance.shenzhen" = "Вхід до метро";
 
 "type.railway.subway_entrance.shiraz" = "Вхід до метро";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Спорядження";
 
 "type.shop.outpost" = "Пункт самовивозу";
+
+"type.shop.pasta" = "Магазин макаронних виробів";
 
 "type.shop.pastry" = "Тістечка";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Пам’ятне місце";
 
+"type.attraction.amusement_ride" = "Атракціон";
+
 "type.attraction.animal" = "Вольєр для тварин";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Карусель";
+
+"type.attraction.historic" = "Історична пам'ятка";
+
+"type.attraction.maze" = "Лабіринт";
+
+"type.attraction.roller_coaster" = "Американські гірки";
+
+"type.attraction.water_slide" = "Водна гірка";
 
 "type.tourism.attraction.specified" = "Пам’ятне місце";
 
@@ -3931,13 +3987,13 @@
 
 "type.waterway.river.tunnel" = "Річка";
 
-"type.waterway.stream" = "Річка";
+"type.waterway.stream" = "Струмок";
 
-"type.waterway.stream.ephemeral" = "Річка";
+"type.waterway.stream.ephemeral" = "Струмок";
 
-"type.waterway.stream.intermittent" = "Річка";
+"type.waterway.stream.intermittent" = "Струмок";
 
-"type.waterway.stream.tunnel" = "Річка";
+"type.waterway.stream.tunnel" = "Струмок";
 
 "type.waterway.waterfall" = "Водоспад";
 

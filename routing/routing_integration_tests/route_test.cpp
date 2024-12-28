@@ -856,8 +856,8 @@ UNIT_TEST(Germany_Netherlands_AvoidLoops)
 
   TEST(routeResult.first, ());
   Route const & route = *routeResult.first;
-  TestRouteLength(route, 405159);
-  TestRouteTime(route, 13946);
+  TestRouteLength(route, 405058);
+  TestRouteTime(route, 14158);
 }
 
 UNIT_TEST(Germany_Cologne_Croatia_Zagreb)
@@ -914,14 +914,18 @@ UNIT_TEST(Russia_Yekaterinburg_NChelny)
     RoutingOptionSetter optionsGuard(RoutingOptions::Dirty | RoutingOptions::Ferry);
     // forward
     CalculateRouteAndTestRouteLength(*components,
-                                     start, {0., 0.}, finish, 789014);
+                                     start, {0., 0.}, finish, 767702);
     // backward
     CalculateRouteAndTestRouteLength(*components,
-                                     finish, {0., 0.}, start, 787208);
+                                     finish, {0., 0.}, start, 766226);
   }
 
-  // GraphHopper agrees here, OSRM makes a route like above.
+  // OSRM, GraphHopper uses gravel, Valhalla makes a route like above.
 
+  /// @todo Should use tertiary + gravel + villages (46km) here and below instead of primary (86km)?
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Car),
+                                   FromLatLon(55.9315, 58.202), {0., 0.},
+                                   FromLatLon(55.7555, 57.8348), 45788);
   // forward
   CalculateRouteAndTestRouteLength(*components,
                                    start, {0., 0.}, finish, 757109);

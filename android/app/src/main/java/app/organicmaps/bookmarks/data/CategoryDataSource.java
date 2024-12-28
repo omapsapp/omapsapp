@@ -34,4 +34,10 @@ public class CategoryDataSource extends RecyclerView.AdapterDataObserver impleme
     if (index >= 0)
       mCategory = categories.get(index);
   }
+
+  @Override
+  public void invalidate()
+  {
+    onChanged();
+  }
 }

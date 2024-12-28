@@ -84,7 +84,7 @@ data/[0-9][0-9][0-9][0-9][0-9][0-9]
 data/gps_track.dat
 # temporary files for downloader
 data/settings.ini
-data/world_feed_integration_tests_data
+data/test_data/world_feed_integration_tests_data
 
 # benchmark results
 data/benchmarks/*.trace

@@ -21,6 +21,7 @@ public final class Config
   private static final String KEY_PREF_USE_GS = "UseGoogleServices";
 
   private static final String KEY_MISC_DISCLAIMER_ACCEPTED = "IsDisclaimerApproved";
+  private static final String KEY_PREF_KAYAK_DISPLAY = "DisplayKayak";
   private static final String KEY_MISC_KAYAK_ACCEPTED = "IsKayakApproved";
   private static final String KEY_MISC_LOCATION_REQUESTED = "LocationRequested";
   private static final String KEY_MISC_UI_THEME = "UiTheme";
@@ -34,7 +35,6 @@ public final class Config
   private static final String KEY_MISC_AGPS_TIMESTAMP = "AGPSTimestamp";
   private static final String KEY_DONATE_URL = "DonateUrl";
   private static final String KEY_PREF_SEARCH_HISTORY = "SearchHistoryEnabled";
-  private static final String KEY_PREF_LONG_TAP_TOAST_SHOWN = "LongTapToastShown";
 
   /**
    * The total number of app launches.
@@ -58,6 +58,12 @@ public final class Config
   private static final String KEY_MISC_FIRST_START_DIALOG_SEEN = "FirstStartDialogSeen";
 
   private Config() {}
+
+  @SuppressWarnings("ConstantConditions") // BuildConfig
+  private static boolean isFdroid()
+  {
+    return BuildConfig.FLAVOR.equals("fdroid");
+  }
 
   private static int getInt(String key, int def)
   {
@@ -188,7 +194,14 @@ public final class Config
 
   public static boolean useGoogleServices()
   {
-    return getBool(KEY_PREF_USE_GS, true);
+    // F-droid users expect non-free networks to be disabled by default
+    // https://t.me/organicmaps/47334
+    // Additionally, in the µG play-services-location library which is used for
+    // F-droid builds, GMS api availability is stubbed and always returns true.
+    // https://github.com/microg/GmsCore/issues/2309
+    // For more details, see the discussion in
+    // https://github.com/organicmaps/organicmaps/pull/9575
+    return getBool(KEY_PREF_USE_GS, !isFdroid());
   }
 
   public static void setUseGoogleService(boolean use)
@@ -206,6 +219,18 @@ public final class Config
     setBool(KEY_MISC_DISCLAIMER_ACCEPTED);
   }
 
+  public static boolean isKayakDisplayEnabled()
+  {
+    // Kayak is disabled by default in F-Droid build,
+    // unless a user has already accepted its disclaimer before.
+    return getBool(KEY_PREF_KAYAK_DISPLAY, !isFdroid() || isKayakDisclaimerAccepted());
+  }
+
+  public static void setKayakDisplay(boolean enabled)
+  {
+    setBool(KEY_PREF_KAYAK_DISPLAY, enabled);
+  }
+
   public static boolean isKayakDisclaimerAccepted()
   {
     return getBool(KEY_MISC_KAYAK_ACCEPTED);
@@ -214,12 +239,6 @@ public final class Config
   public static void acceptKayakDisclaimer()
   {
     setBool(KEY_MISC_KAYAK_ACCEPTED);
-  }
-
-  @SuppressWarnings("ConstantConditions") // BuildConfig
-  public static boolean isKayakReferralAllowed()
-  {
-    return !BuildConfig.FLAVOR.equals("fdroid");
   }
 
   public static boolean isLocationRequested()
@@ -257,7 +276,7 @@ public final class Config
   {
     String autoTheme = MwmApplication.from(context).getString(R.string.theme_auto);
     String res = getString(KEY_MISC_UI_THEME_SETTINGS, autoTheme);
-    if (ThemeUtils.isValidTheme(context, res) || ThemeUtils.isAutoTheme(context, res))
+    if (ThemeUtils.isValidTheme(context, res) || ThemeUtils.isAutoTheme(context, res) || ThemeUtils.isNavAutoTheme(context, res))
       return res;
 
     return autoTheme;
@@ -395,18 +414,6 @@ public final class Config
         .edit()
         .putBoolean(KEY_MISC_FIRST_START_DIALOG_SEEN, true)
         .apply();
-  }
-
-  public static boolean wasLongTapToastShown(@NonNull Context context)
-  {
-    return MwmApplication.prefs(context).getBoolean(KEY_PREF_LONG_TAP_TOAST_SHOWN, false);
-  }
-
-  public static void setLongTapToastShown(@NonNull Context context, Boolean newValue)
-  {
-    MwmApplication.prefs(context).edit()
-         .putBoolean(KEY_PREF_LONG_TAP_TOAST_SHOWN, newValue)
-         .apply();
   }
 
   public static boolean isSearchHistoryEnabled()

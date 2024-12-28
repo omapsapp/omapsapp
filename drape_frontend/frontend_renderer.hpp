@@ -332,6 +332,8 @@ private:
   bool m_choosePositionMode;
   bool m_screenshotMode;
 
+  int8_t m_mapLangIndex;
+
   dp::Viewport m_viewport;
   UserEventStream m_userEventStream;
   ModelViewChangedHandler m_modelViewChangedHandler;

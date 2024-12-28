@@ -28,7 +28,9 @@
 + (void)openCatalogMoreItems:(PlacePageData *)data;
 + (void)addBookmark:(PlacePageData *)data;
 + (void)removeBookmark:(PlacePageData *)data;
++ (void)removeTrack:(PlacePageData *)data;
 + (void)editBookmark:(PlacePageData *)data;
++ (void)editTrack:(PlacePageData *)data;
 + (void)searchBookingHotels:(PlacePageData *)data;
 + (void)book:(PlacePageData *)data;
 + (void)routeFrom:(PlacePageData *)data;

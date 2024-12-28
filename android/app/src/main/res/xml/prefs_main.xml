@@ -99,6 +99,12 @@
       android:summary="@string/enable_show_on_lock_screen_description"
       android:defaultValue="true"
       android:order="17"/>
+    <Preference
+        android:key="@string/pref_map_locale"
+        android:title="@string/change_map_locale"
+        app:singleLineTitle="false"
+        android:persistent="false"
+        android:order="18"/>
   </androidx.preference.PreferenceCategory>
 
   <androidx.preference.PreferenceCategory
@@ -157,6 +163,13 @@
       app:singleLineTitle="false"
       android:defaultValue="true"
       android:order="2"/>
+    <SwitchPreferenceCompat
+      android:key="@string/pref_display_kayak"
+      android:title="@string/pref_display_kayak_title"
+      app:singleLineTitle="false"
+      android:summary="@string/pref_display_kayak_text"
+      android:defaultValue="true"
+      android:order="3"/>
   </androidx.preference.PreferenceCategory>
   <androidx.preference.PreferenceCategory
     android:key="@string/pref_information"

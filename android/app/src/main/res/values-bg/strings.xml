@@ -296,6 +296,10 @@
     <string name="google_play_services">Услуги за местоположение в Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Бързо определяне на приблизителното ви местоположение чрез Bluetooth, WiFi или мобилна мрежа</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Връзки с хотели</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Снимки, отзиви и връзки за резервация се показват за хотелите, които имат обява в Kayak.com. Полученият бонус за всяка резервация чрез тези връзки отива за развитието на Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Изтегляне на всички карти по вашия маршрут</string>
     <!-- Text for routing error dialog -->
@@ -460,7 +464,10 @@
     <string name="message_invalid_feature_position">Тук не може да бъде намерен обект</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Създадени от общността данни от OpenStreetMap към %s. Научете повече за това как да редактирате и актуализирате картата в OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Влезте в системата, за да могат другите потребители да видят направените от вас промени</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) е общностен проект за създаване на безплатна и отворена карта. Той е основният източник на картографски данни в Organic Maps и работи подобно на Wikipedia. Можете да добавяте или редактирате места и те стават достъпни за милиони потребители по целия свят.
+\nПрисъединете се към общността и помогнете за създаването на по-добра карта за всички!</string>
+    <string name="login_to_make_edits_visible">Създайте акаунт в OpenStreetMap или влезте в него, за да публикувате своите редакции на картата в света.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d от %2$d</string>
     <string name="download_over_mobile_header">Изтегляне чрез мобилни данни?</string>
@@ -480,9 +487,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Вашите редакции се качват в публичната база данни <a href="https://wiki.openstreetmap.org/wiki/Bg:About">OpenStreetMap</a>. Моля, не добавяйте лична информация или информация, защитена с авторски права.</string>
     <string name="editor_more_about_osm">Повече за OpenStreetMap</string>
-    <string name="editor_operator">Собственик</string>
+    <string name="editor_osm_history">Вашата история на редактиране</string>
+    <string name="editor_osm_notes">Бележки за данните на вашата карта</string>
+    <string name="editor_operator">Оператор</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Собственик: %s</string>
+    <string name="operator">Оператор: %s</string>
     <string name="editor_category_unsuitable_title">Не можете да намерите подходяща категория?</string>
     <string name="editor_category_unsuitable_text">Organic Maps позволява да се добавят само прости категории точки, т.е. без градове, пътища, езера, очертания на сгради и т.н. Моля, добавяйте такива категории директно в <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Вижте нашето <a href="https://organicmaps.app/faq/editing/advanced-map-editing">ръководство</a> за подробни инструкции стъпка по стъпка.</string>
     <string name="downloader_no_downloaded_maps_title">Не сте изтеглили никакви карти</string>
@@ -498,6 +507,7 @@
     <string name="ft">фут</string>
     <string name="hour">ч</string>
     <string name="minute">мин</string>
+    <string name="day">д</string>
     <string name="placepage_more_button">Още</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Снимки, отзиви, резервация</string>
@@ -505,6 +515,8 @@
     <string name="dialog_kayak_disclaimer">Полученият бонус за всяка резервация чрез тази връзка отива за развитието на Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Подробности в Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Деактивиране на Kayak</string>
     <string name="placepage_edit_bookmark_button">Редакция на отметка</string>
     <string name="editor_comment_hint">Коментиране…</string>
     <string name="editor_reset_edits_message">Отхвърляне на всички локални промени?</string>
@@ -558,7 +570,7 @@
     <string name="routing_add_start_point">Използвайте търсене или докоснете картата, за да добавите начална точка на маршрута</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Използвайте търсене или докоснете картата, за да добавите точка на дестинация</string>
-    <string name="placepage_remove_stop">Премахване</string>
+    <string name="placepage_remove_stop">Премахване на спирка</string>
     <string name="placepage_add_stop">Добавяне на спирка</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Моля, влезте в OpenStreetMap, за да качвате автоматично всичките си редакции на картата. Научете повече <a href="https://github.com/organicmaps/organicmaps/issues/6144">тук</a>.</string>
@@ -679,8 +691,8 @@
     <string name="isolines_location_error_dialog">Топографският слой все още не е наличен в тази област</string>
     <string name="elevation_profile_ascent">Изкачване</string>
     <string name="elevation_profile_descent">Спускане</string>
-    <string name="elevation_profile_minaltitude">Мин. надморска височина</string>
-    <string name="elevation_profile_maxaltitude">Макс. надморска височина</string>
+    <string name="elevation_profile_min_elevation">Мин. височина</string>
+    <string name="elevation_profile_max_elevation">Макс. височина</string>
     <string name="elevation_profile_difficulty">Трудност</string>
     <string name="elevation_profile_distance">Разст.:</string>
     <string name="elevation_profile_time">Време:</string>
@@ -706,7 +718,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Ако познавате разработчик на софтуер, можете да го помолите да внедри функция, от която се нуждаете.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Знаете ли, че можете да докоснете продължително всяко място на картата, за да го изберете?</string>
+    <string name="app_tip_04">Докоснете навсякъде в картата, за да изберете нещо. Докоснете дълго, за да скриете и покажете интерфейса.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Знаете ли, че можете да изберете текущото си местоположение на картата?</string>
     <!-- App tip #06 -->
@@ -776,7 +788,11 @@
     <string name="track_recording_toast_nothing_to_save">Маршрутът е празен - няма какво да запазвате</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Не може да се покаже диалогов прозорец за избор на папка, тъй като на вашето устройство не е инсталирано подходящо приложение. Моля, инсталирайте приложение за управление на файлове и опитайте отново</string>
+    <string name="choose_color">Изберете цвят</string>
+    <string name="edit_track">Редактиране на маршрут</string>
     <string name="uri_open_location_failed">Не е инсталирано приложение, което може да отвори местоположението</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Автоматично в навигацията</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Адрес/Блок</string>
@@ -819,6 +835,7 @@
     <string name="type.amenity.parking_space.disabled">Паркомясто за инвалиди</string>
     <string name="type.amenity.place_of_worship.christian.mormon">Църквата на Исус Христос на светиите от последните дни</string>
     <string name="type.amenity.place_of_worship.christian.jehovahs_witness">Зала на царството на Свидетелите на Йехова</string>
+    <string name="type.amenity.prison">Затвор</string>
 
     <!-- SECTION: Types: Recycling -->
     <string name="type.recycling.batteries">Батерии</string>
@@ -848,6 +865,7 @@
     <string name="type.boundary.protected_area.6">Защитена местност</string>
     <!-- Duplicates [address] in strings.txt -->
     <string name="type.building.address">Адрес</string>
+    <string name="type.building.train_station">Сграда на гарата</string>
     <string name="type.cemetery.grave">Гроб</string>
     <string name="type.craft">Занаяти</string>
     <string name="type.craft.beekeeper">Пчелар</string>
@@ -1092,6 +1110,7 @@
     <string name="type.natural.rock">Камък</string>
     <string name="type.natural.scrub">Гъсталаци</string>
     <string name="type.natural.spring">Извор</string>
+    <string name="type.natural.spring.drinking_water_no">Извор</string>
     <string name="type.natural.strait">Проток</string>
     <string name="type.natural.tree_row">Ред дървета</string>
     <string name="type.natural.vineyard">Лозе</string>
@@ -1188,6 +1207,7 @@
     <string name="type.shop.kitchen">Магазин за кухня</string>
     <string name="type.shop.motorcycle_repair">Ремонт на мотоциклети</string>
     <string name="type.shop.outpost">Точка на вземане</string>
+    <string name="type.shop.pasta">Магазин за паста</string>
     <string name="type.shop.pastry">Тестени изделия</string>
     <string name="type.shop.pet_grooming">Грижа за домашни любимци</string>
     <string name="type.shop.rental">Магазин под наем</string>
@@ -1245,7 +1265,13 @@
     <!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
     <string name="type.tourism.alpine_hut">Планинска хижа</string>
     <string name="type.tourism.apartment">Ваканционен апартамент</string>
+    <string name="type.attraction.amusement_ride">Развлекателна атракция</string>
     <string name="type.attraction.animal">Заграждение за животни</string>
+    <string name="type.attraction.carousel">Въртележка</string>
+    <string name="type.attraction.historic">Историческа атракция</string>
+    <string name="type.attraction.maze">Лабиринт</string>
+    <string name="type.attraction.roller_coaster">Въртележка</string>
+    <string name="type.attraction.water_slide">Водна пързалка</string>
     <!-- A rentable countryside vacation house. -->
     <string name="type.tourism.chalet">Ваканционна вила</string>
     <string name="type.tourism.information">Туринформация</string>

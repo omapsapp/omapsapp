@@ -67,10 +67,10 @@ UNIT_TEST(FormatOsmLink)
 UNIT_TEST(FormatSpeedNumeric)
 {
   TEST_EQUAL(FormatSpeedNumeric(10, Units::Metric), "36", ());
-  TEST_EQUAL(FormatSpeedNumeric(1, Units::Metric), "3.6", ());
+  TEST_EQUAL(FormatSpeedNumeric(1, Units::Metric), "4", ());
 
   TEST_EQUAL(FormatSpeedNumeric(10, Units::Imperial), "22", ());
-  TEST_EQUAL(FormatSpeedNumeric(1, Units::Imperial), "2.2", ());
+  TEST_EQUAL(FormatSpeedNumeric(1, Units::Imperial), "2", ());
 }
 
 UNIT_TEST(OSMDistanceToMetersString)

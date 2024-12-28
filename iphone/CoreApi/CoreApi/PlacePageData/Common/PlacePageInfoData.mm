@@ -103,7 +103,7 @@ NSString * GetLocalizedMetadataValueString(MapObject::MetadataID metaID, std::st
 
     _atm = rawData.HasAtm() ? NSLocalizedString(@"type.amenity.atm", nil) : nil;
 
-    _address = rawData.GetAddress().empty() ? nil : @(rawData.GetAddress().c_str());
+    _address = rawData.GetSecondarySubtitle().empty() ? nil : @(rawData.GetSecondarySubtitle().c_str());
     _coordFormats = @[@(rawData.GetFormattedCoordinate(place_page::CoordinatesFormat::LatLonDMS).c_str()),
                       @(rawData.GetFormattedCoordinate(place_page::CoordinatesFormat::LatLonDecimal).c_str()),
                       @(rawData.GetFormattedCoordinate(place_page::CoordinatesFormat::OLCFull).c_str()),

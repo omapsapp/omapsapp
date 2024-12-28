@@ -18,6 +18,7 @@ import app.organicmaps.MwmActivity;
 import app.organicmaps.R;
 import app.organicmaps.bookmarks.data.MapObject;
 import app.organicmaps.bookmarks.data.Metadata;
+import app.organicmaps.util.Config;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
 import app.organicmaps.widget.placepage.PlacePageUtils;
@@ -201,8 +202,6 @@ public class PlacePageLinksFragment extends Fragment implements Observer<MapObje
 
   private void refreshLinks()
   {
-    UiUtils.showIf(!TextUtils.isEmpty(mMapObject.getKayakUrl()), mKayak);
-
     refreshMetadataOrHide(mMapObject.getWebsiteUrl(true /* strip */, Metadata.MetadataType.FMD_WEBSITE), mWebsite, mTvWebsite);
     refreshMetadataOrHide(mMapObject.getWebsiteUrl(true /* strip */, Metadata.MetadataType.FMD_WEBSITE_MENU), mWebsiteMenu, mTvWebsiteMenuSubsite);
 
@@ -226,7 +225,7 @@ public class PlacePageLinksFragment extends Fragment implements Observer<MapObje
     final String line = mMapObject.getMetadata(Metadata.MetadataType.FMD_CONTACT_LINE);
     refreshMetadataOrHide(line, mLinePage, mTvLinePage);
 
-    final String kayak = mMapObject.getKayakUrl();
+    final String kayak = Config.isKayakDisplayEnabled() ? mMapObject.getKayakUrl() : null;
     UiUtils.showIf(!TextUtils.isEmpty(kayak), mKayak);
   }
 

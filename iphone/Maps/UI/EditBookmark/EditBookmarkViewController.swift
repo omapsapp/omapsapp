@@ -222,9 +222,6 @@ extension EditBookmarkViewController: MWMNoteCellDelegate {
     UIView.setAnimationsEnabled(false)
     tableView.refresh()
     UIView.setAnimationsEnabled(true)
-    tableView.scrollToRow(at: IndexPath(item: 0, section: Sections.description.rawValue),
-                          at: .bottom,
-                          animated: true)
   }
 
   func cell(_ cell: MWMNoteCell, didFinishEditingWithText text: String) {

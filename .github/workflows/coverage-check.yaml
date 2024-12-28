@@ -94,7 +94,7 @@ jobs:
               llvm \
               gcovr
 
-      - name: Configure
+      - name: Configure repository
         shell: bash
         run: ./configure.sh
 

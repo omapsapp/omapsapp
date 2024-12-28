@@ -26,11 +26,6 @@
 - (void)refresh
 {
   [super refresh];
-  NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-  dateFormatter.locale = NSLocale.currentLocale;
-  dateFormatter.timeStyle = NSDateFormatterShortStyle;
-  dateFormatter.dateStyle = NSDateFormatterNoStyle;
-
   MWMOpeningHoursSection * section = self.section;
   NSUInteger const row = section.selectedRow.unsignedIntegerValue;
   NSDate * openDate = [self.calendar dateFromComponents:[section timeForRow:row isStart:YES]];

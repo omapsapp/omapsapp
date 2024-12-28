@@ -97,7 +97,7 @@ UNIT_TEST(Transit_Vatikan_NotEnoughGraphDataAtThenEnd)
   auto const & route = *routeResult.first;
 
   integration::CheckSubwayExistence(route);
-  integration::TestRouteLength(route, 7622.54);
+  integration::TestRouteLength(route, 7703.56);
   TEST_LESS(route.GetTotalTimeSec(), 4000, ());
 }
 

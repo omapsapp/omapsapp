@@ -32,7 +32,7 @@ static inline BOOL isIOSVersionLessThan(NSUInteger version)
   return isIOSVersionLessThanString([NSString stringWithFormat:@"%@", @(version)]);
 }
 
-static inline BOOL isInterfaceRightToLeft(void)
+static inline BOOL isInterfaceRightToLeft(void) NS_EXTENSION_UNAVAILABLE_IOS("Not available in extensions")
 {
   return UIApplication.sharedApplication.userInterfaceLayoutDirection ==
          UIUserInterfaceLayoutDirectionRightToLeft;
@@ -50,7 +50,7 @@ static inline BOOL equalScreenDimensions(CGFloat left, CGFloat right)
   return fabs(left - right) < 0.5;
 }
 
-static inline CGFloat statusBarHeight(void)
+static inline CGFloat statusBarHeight(void) NS_EXTENSION_UNAVAILABLE_IOS("Not available in extensions")
 {
   CGSize const statusBarSize = UIApplication.sharedApplication.statusBarFrame.size;
   return MIN(statusBarSize.height, statusBarSize.width);

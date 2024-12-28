@@ -94,8 +94,7 @@ jobject g_placePageActivationListener = nullptr;
 
 android::AndroidVulkanContextFactory * CastFactory(drape_ptr<dp::GraphicsContextFactory> const & f)
 {
-  ASSERT(dynamic_cast<android::AndroidVulkanContextFactory *>(f.get()) != nullptr, ());
-  return static_cast<android::AndroidVulkanContextFactory *>(f.get());
+  return dynamic_cast<android::AndroidVulkanContextFactory *>(f.get());
 }
 }  // namespace
 
@@ -176,7 +175,7 @@ bool Framework::DestroySurfaceOnDetach()
 }
 
 bool Framework::CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi, bool firstLaunch,
-                                  bool launchByDeepLink, uint32_t appVersionCode)
+                                  bool launchByDeepLink, uint32_t appVersionCode, bool isCustomROM)
 {
   // Vulkan is supported only since Android 8.0, because some Android devices with Android 7.x
   // have fatal driver issue, which can lead to process termination and whole OS destabilization.
@@ -188,57 +187,51 @@ bool Framework::CreateDrapeEngine(JNIEnv * env, jobject jSurface, int densityDpi
   if (vulkanForbidden)
     LOG(LWARNING, ("Vulkan API is forbidden on this device."));
 
+  m_vulkanContextFactory.reset();
+  m_oglContextFactory.reset();
+  ::Framework::DrapeCreationParams p;
+
   if (m_work.LoadPreferredGraphicsAPI() == dp::ApiVersion::Vulkan && !vulkanForbidden)
   {
-    m_vulkanContextFactory =
-        make_unique_dp<AndroidVulkanContextFactory>(appVersionCode, sdkVersion);
-    if (!CastFactory(m_vulkanContextFactory)->IsVulkanSupported())
+    auto vkFactory = make_unique_dp<AndroidVulkanContextFactory>(appVersionCode, sdkVersion, isCustomROM);
+    if (!vkFactory->IsVulkanSupported())
     {
       LOG(LWARNING, ("Vulkan API is not supported."));
-      m_vulkanContextFactory.reset();
     }
-
-    if (m_vulkanContextFactory)
+    else
     {
-      auto f = CastFactory(m_vulkanContextFactory);
-      f->SetSurface(env, jSurface);
-      if (!f->IsValid())
+      vkFactory->SetSurface(env, jSurface);
+      if (!vkFactory->IsValid())
       {
         LOG(LWARNING, ("Invalid Vulkan API context."));
-        m_vulkanContextFactory.reset();
+      }
+      else
+      {
+        p.m_apiVersion = dp::ApiVersion::Vulkan;
+        p.m_surfaceWidth = vkFactory->GetWidth();
+        p.m_surfaceHeight = vkFactory->GetHeight();
+
+        m_vulkanContextFactory = std::move(vkFactory);
       }
     }
   }
 
-  AndroidOGLContextFactory * oglFactory = nullptr;
   if (!m_vulkanContextFactory)
   {
-    m_oglContextFactory = make_unique_dp<dp::ThreadSafeFactory>(
-      new AndroidOGLContextFactory(env, jSurface));
-    oglFactory = m_oglContextFactory->CastFactory<AndroidOGLContextFactory>();
+    auto oglFactory = make_unique_dp<AndroidOGLContextFactory>(env, jSurface);
     if (!oglFactory->IsValid())
     {
       LOG(LWARNING, ("Invalid GL context."));
       return false;
     }
-  }
-
-  ::Framework::DrapeCreationParams p;
-  if (m_vulkanContextFactory)
-  {
-    auto f = CastFactory(m_vulkanContextFactory);
-    p.m_apiVersion = dp::ApiVersion::Vulkan;
-    p.m_surfaceWidth = f->GetWidth();
-    p.m_surfaceHeight = f->GetHeight();
-  }
-  else
-  {
-    CHECK(oglFactory != nullptr, ());
     p.m_apiVersion = oglFactory->IsSupportedOpenGLES3() ? dp::ApiVersion::OpenGLES3 :
                                                           dp::ApiVersion::OpenGLES2;
     p.m_surfaceWidth = oglFactory->GetWidth();
     p.m_surfaceHeight = oglFactory->GetHeight();
+
+    m_oglContextFactory = make_unique_dp<dp::ThreadSafeFactory>(oglFactory.release());
   }
+
   p.m_visualScale = static_cast<float>(dp::VisualScale(densityDpi));
   // Drape doesn't care about Editor vs Api mode differences.
   p.m_isChoosePositionMode = m_isChoosePositionMode != ChoosePositionMode::None;
@@ -448,6 +441,16 @@ void Framework::Set3dMode(bool allow3d, bool allow3dBuildings)
 void Framework::Get3dMode(bool & allow3d, bool & allow3dBuildings)
 {
   m_work.Load3dMode(allow3d, allow3dBuildings);
+}
+
+void Framework::SetMapLanguageCode(std::string const & languageCode)
+{
+  m_work.SetMapLanguageCode(languageCode);
+}
+
+std::string Framework::GetMapLanguageCode()
+{
+  return m_work.GetMapLanguageCode();
 }
 
 void Framework::SetChoosePositionMode(ChoosePositionMode mode, bool isBusiness, m2::PointD const * optionalPosition)
@@ -928,13 +931,15 @@ Java_app_organicmaps_Framework_nativePlacePageActivationListener(JNIEnv *env, jc
     jni::TScopedLocalRef placePageDataRef(env, nullptr);
     if (info.IsTrack())
     {
-      auto const elevationInfo = frm()->GetBookmarkManager().MakeElevationInfo(info.GetTrackId());
-      placePageDataRef.reset(usermark_helper::CreateElevationInfo(env, elevationInfo));
+      // todo: (KK) implement elevation info handling for the proper track selection
+      auto const & track = frm()->GetBookmarkManager().GetTrack(info.GetTrackId());
+      auto const & elevationInfo = track->GetElevationInfo();
+      if (elevationInfo.has_value())
+        placePageDataRef.reset(usermark_helper::CreateElevationInfo(env, elevationInfo.value()));
     }
-    else
-    {
+    if (!placePageDataRef)
       placePageDataRef.reset(usermark_helper::CreateMapObject(env, info));
-    }
+
     env->CallVoidMethod(g_placePageActivationListener, activatedId, placePageDataRef.get());
   };
   auto const closePlacePage = [deactivateId]()
@@ -1979,13 +1984,12 @@ Java_app_organicmaps_Framework_nativeMemoryWarning(JNIEnv *, jclass)
 
 JNIEXPORT jstring JNICALL
 Java_app_organicmaps_Framework_nativeGetKayakHotelLink(JNIEnv * env, jclass, jstring countryIsoCode, jstring uri,
-                                                        jlong firstDaySec, jlong lastDaySec, jboolean isReferral)
+                                                        jlong firstDaySec, jlong lastDaySec)
 {
   string const url = osm::GetKayakHotelURLFromURI(jni::ToNativeString(env, countryIsoCode),
                                                   jni::ToNativeString(env, uri),
                                                   static_cast<time_t>(firstDaySec),
-                                                  static_cast<time_t>(lastDaySec),
-                                                  isReferral);
+                                                  static_cast<time_t>(lastDaySec));
   return url.empty() ? nullptr : jni::ToJavaString(env, url);
 }
 

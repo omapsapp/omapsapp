@@ -9,9 +9,11 @@
 namespace settings
 {
 /// Metric or Imperial.
-extern char const * kMeasurementUnits;
-
-extern char const * kDeveloperMode;
+extern std::string_view kMeasurementUnits;
+extern std::string_view kDeveloperMode;
+extern std::string_view kMapLanguageCode;
+extern std::string_view kDonateUrl;
+extern std::string_view kNightMode;
 
 template <class T>
 bool FromString(std::string const & str, T & outValue);
@@ -31,22 +33,22 @@ private:
 /// Retrieve setting
 /// @return false if setting is absent
 template <class Value>
-[[nodiscard]] bool Get(std::string const & key, Value & outValue)
+[[nodiscard]] bool Get(std::string_view key, Value & outValue)
 {
   std::string strVal;
   return StringStorage::Instance().GetValue(key, strVal) && FromString(strVal, outValue);
 }
 
 template <class Value>
-void TryGet(std::string const & key, Value & outValue)
+void TryGet(std::string_view key, Value & outValue)
 {
-    bool unused = Get(key, outValue);
-    UNUSED_VALUE(unused);
+  bool unused = Get(key, outValue);
+  UNUSED_VALUE(unused);
 }
 
 /// Automatically saves setting to external file
 template <class Value>
-void Set(std::string const & key, Value const & value)
+void Set(std::string_view key, Value const & value)
 {
   StringStorage::Instance().SetValue(key, ToString(value));
 }
@@ -57,7 +59,7 @@ inline void Update(std::map<std::string, std::string> const & settings)
   StringStorage::Instance().Update(settings);
 }
 
-inline void Delete(std::string const & key) { StringStorage::Instance().DeleteKeyAndValue(key); }
+inline void Delete(std::string_view key) { StringStorage::Instance().DeleteKeyAndValue(key); }
 inline void Clear() { StringStorage::Instance().Clear(); }
 
 class UsageStats
@@ -67,7 +69,7 @@ class UsageStats
   uint64_t m_totalForegroundTime = 0;
   uint64_t m_sessionsCount = 0;
 
-  std::string m_firstLaunch, m_lastBackground, m_totalForeground, m_sessions;
+  std::string_view m_firstLaunch, m_lastBackground, m_totalForeground, m_sessions;
 
   StringStorage & m_ss;
 
@@ -76,32 +78,8 @@ public:
 
   void EnterForeground();
   void EnterBackground();
+
+  bool IsLoyalUser() const;
 };
 
 } // namespace settings
-
-/*
-namespace marketing
-{
-class Settings : public platform::StringStorageBase
-{
-public:
-  template <class Value>
-  static void Set(std::string const & key, Value const & value)
-  {
-    Instance().SetValue(key, settings::ToString(value));
-  }
-
-  template <class Value>
-  [[nodiscard]] static bool Get(std::string const & key, Value & outValue)
-  {
-    std::string strVal;
-    return Instance().GetValue(key, strVal) && settings::FromString(strVal, outValue);
-  }
-
-private:
-  static Settings & Instance();
-  Settings();
-};
-}  // namespace marketing
-*/

@@ -2,7 +2,6 @@
 
 #include "geometry/point3d.hpp"
 
-#include <optional>
 #include <string>
 
 namespace df
@@ -13,11 +12,11 @@ struct Arrow3dCustomDecl
   // Path to arrow mesh .OBJ file.
   std::string m_arrowMeshPath;
   // Path to arrow mesh texture .PNG file.
-  // If it's not set, default arrow color is used.
-  std::optional<std::string> m_arrowMeshTexturePath;
+  // If it's empty, default arrow color is used.
+  std::string m_arrowMeshTexturePath;
   // Path to shadow mesh .OBJ file.
-  // If it's not set, no shadow or outline will be rendered.
-  std::optional<std::string> m_shadowMeshPath;
+  // If it's empty, no shadow or outline will be rendered.
+  std::string m_shadowMeshPath;
 
   // Allows to load files from bundled resources.
   // You must use string identifiers of resources instead of file names.

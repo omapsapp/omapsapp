@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Doner for å bygge de beste kartene sammen!";
 
+"already_donated" = "Allerede donert";
+
+"remind_me_later" = "Påminn senere";
+
+"support_organic_maps" = "Støtte Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Opphavsrett";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Fellesskapsopprettede OpenStreetMap-data fra %@. Les mer om hvordan du redigerer og oppdaterer kartet på OpenStreetMap.org.";
 
-"login_to_make_edits_visible" = "Logg inn slik at andre brukere kan se endringene du har utført.";
+"login_to_make_edits_visible" = "Opprett en OpenStreetMap-konto eller logg inn for å publisere kartredigeringene dine til hele verden.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Du må frigjøre mer lagringsplass for å laste ned. Slett unødvendig data.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "Mer om OpenStreetMap";
 
-"editor_operator" = "Eier";
+"editor_operator" = "Operatør";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Eier: %@";
+"operator" = "Operatør: %@";
+
+"editor_category_unsuitable_title" = "Finner du ikke en passende kategori?";
+
+"editor_category_unsuitable_text" = "Organic Maps tillater kun å legge til enkle punktkategorier, det vil si ingen byer, veier, innsjøer, bygningsomriss osv. Vennligst legg til slike kategorier direkte til <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Sjekk vår <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">guide</a> for detaljerte trinnvise instruksjoner.";
 
 "downloader_no_downloaded_maps_title" = "Du har ikke lastet ned noen kart";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "Mer";
 
 "book_button" = "Bestill";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Mer informasjon om Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Deaktiver Kayak";
 
 "placepage_call_button" = "Ring";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Planlegge";
 
-"placepage_remove_stop" = "Fjern";
+"placepage_remove_stop" = "Fjern stopp";
 
 "planning_route_remove_title" = "Dra hit for å fjerne";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Nedstigning";
 
-"elevation_profile_minaltitude" = "Min. høyde";
+"elevation_profile_min_elevation" = "Min. høyde";
 
-"elevation_profile_maxaltitude" = "Maks. høyde";
+"elevation_profile_max_elevation" = "Maks. høyde";
 
 "elevation_profile_difficulty" = "Vanskelighet";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Slett rute";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Er du sikker på at du vil slette dette sporet?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Rutenavn";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Hvis du kjenner en programvareutvikler, kan du be ham eller henne implementere en funksjon du trenger.";
 
 /* App tip #04 */
-"app_tip_04" = "Vet du at du kan trykke lenge på et hvilket som helst sted på kartet for å velge det?";
+"app_tip_04" = "Trykk hvor som helst på kartet for å velge noe. Trykk lenge for å skjule og vise grensesnittet igjen.";
 
 /* App tip #05 */
 "app_tip_05" = "Vet du at du kan velge din nåværende posisjon på kartet?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Ruten er tom - ingenting å lagre";
+
+"edit_track" = "Rediger ruten";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Postkontor";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "Fengsel";
 
 "type.amenity.pub" = "Pub";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Vannpunkt";
 
+"type.amenity.water_point.drinking_water_no" = "Vannpunkt";
+
 "type.barrier" = "Barriere";
 
 "type.barrier.block" = "Blokk";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garasje";
 
-"type.building.train_station" = "Togstasjon";
+"type.building.train_station" = "Stasjonsbygningen";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Vannkran";
 
+"type.man_made.water_tap.drinking_water_no" = "Vannkran";
+
 "type.man_made.water_tower" = "Vanntårn";
 
 "type.man_made.water_well" = "Brønn";
+
+"type.man_made.water_well.drinking_water_no" = "Brønn";
 
 "type.man_made.windmill" = "Vindmølle";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Kratt";
 
 "type.natural.spring" = "Kilde";
+
+"type.natural.spring.drinking_water_no" = "Kilde";
 
 "type.natural.strait" = "Sund";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Togstasjon";
 
+"type.railway.station.light_rail.berlin" = "Togstasjon";
+
 "type.railway.station.light_rail.london" = "Togstasjon";
 
 "type.railway.station.light_rail.porto" = "Togstasjon";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "T-bane";
 
 "type.railway.station.subway.hiroshima" = "T-bane";
+
+"type.railway.station.subway.hongkong" = "T-bane";
 
 "type.railway.station.subway.isfahan" = "T-bane";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "T-bane";
 
 "type.railway.station.subway.shanghai" = "T-bane";
+
+"type.railway.station.subway.shenzhen" = "T-bane";
 
 "type.railway.station.subway.shiraz" = "T-bane";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "T-bane inngang";
 
+"type.railway.subway_entrance.hongkong" = "T-bane inngang";
+
 "type.railway.subway_entrance.isfahan" = "T-bane inngang";
 
 "type.railway.subway_entrance.istanbul" = "T-bane inngang";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "T-bane inngang";
 
 "type.railway.subway_entrance.shanghai" = "T-bane inngang";
+
+"type.railway.subway_entrance.shenzhen" = "T-bane inngang";
 
 "type.railway.subway_entrance.shiraz" = "T-bane inngang";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Fritidsutstyr";
 
 "type.shop.outpost" = "Hentested";
+
+"type.shop.pasta" = "Pastabutikk";
 
 "type.shop.pastry" = "Bakverk";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Attraksjon";
 
+"type.attraction.amusement_ride" = "Forlystelsesattraksjon";
+
 "type.attraction.animal" = "Innhegning for dyr";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Karusell";
+
+"type.attraction.historic" = "Historisk attraksjon";
+
+"type.attraction.maze" = "Labyrint";
+
+"type.attraction.roller_coaster" = "Berg- og dalbane";
+
+"type.attraction.water_slide" = "Vannrutsjebane";
 
 "type.tourism.attraction.specified" = "Attraksjon";
 

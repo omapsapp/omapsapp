@@ -95,7 +95,7 @@ NamesDataSource EditableMapObject::GetNamesDataSource()
   vector<int8_t> mwmLanguages;
   mwmInfo->GetRegionData().GetLanguages(mwmLanguages);
 
-  auto const userLangCode = StringUtf8Multilang::GetLangIndex(languages::GetCurrentNorm());
+  auto const userLangCode = StringUtf8Multilang::GetLangIndex(languages::GetCurrentMapLanguage());
 
   return GetNamesDataSource(m_name, mwmLanguages, userLangCode);
 }

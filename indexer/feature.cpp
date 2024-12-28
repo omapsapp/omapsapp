@@ -782,7 +782,7 @@ void FeatureType::GetPreferredNames(bool allowTranslit, int8_t deviceLang, featu
 string_view FeatureType::GetReadableName()
 {
   feature::NameParamsOut out;
-  GetReadableName(false /* allowTranslit */, StringUtf8Multilang::GetLangIndex(languages::GetCurrentNorm()), out);
+  GetReadableName(false /* allowTranslit */, StringUtf8Multilang::GetLangIndex(languages::GetCurrentMapLanguage()), out);
   return out.primary;
 }
 

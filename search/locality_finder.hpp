@@ -51,7 +51,7 @@ struct LocalityItem
       return false;
 
     feature::NameParamsOut out;
-    feature::GetReadableName({ m_names, mwmInfo->GetRegionData(), languages::GetCurrentNorm(),
+    feature::GetReadableName({ m_names, mwmInfo->GetRegionData(), languages::GetCurrentMapLanguage(),
                                false /* allowTranslit */ }, out);
 
     name = out.primary;

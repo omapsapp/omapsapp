@@ -1,17 +1,17 @@
 #include "testing/testing.hpp"
 
-#include "base/macros.hpp"
 #include "base/stl_helpers.hpp"
 
 #include <algorithm>
 #include <deque>
-#include <utility>
+#include <map>
 #include <vector>
 
+
+namespace stl_helpers_tests
+{
 using namespace base;
 
-namespace stl_helpers_test
-{
 class Int
 {
 public:
@@ -326,4 +326,48 @@ UNIT_TEST(AccumulateIntervals)
     CheckAccumulateIntervals(idTest, arr1, arr2, res);
   }
 }
+
+UNIT_TEST(Map_EmplaceOrAssign)
+{
+  {
+    std::map<std::string, std::string, std::less<>> theMap;
+
+    std::string_view key = "key";
+    std::string_view val1 = "value";
+    TEST(EmplaceOrAssign(theMap, key, val1).second, ());
+    TEST_EQUAL(theMap.find(key)->second, val1, ());
+
+    std::string_view val2 = "some_long_value";
+    TEST(!EmplaceOrAssign(theMap, key, val2).second, ());
+    TEST_EQUAL(theMap.find(key)->second, val2, ());
+
+    std::string_view val3 = "some_other_long_value";
+    TEST(!EmplaceOrAssign(theMap, key, std::string(val3)).second, ());
+    TEST_EQUAL(theMap.find(key)->second, val3, ());
+  }
+
+  {
+    class Obj
+    {
+      int m_v;
+
+      Obj(Obj const &) = delete;
+      Obj & operator=(Obj const &) = delete;
+    public:
+      Obj(int v) : m_v(v) {}
+      Obj(Obj &&) = default;
+      Obj & operator=(Obj &&) = default;
+
+      bool operator==(Obj const & o) const { return m_v == o.m_v; }
+      bool operator<(Obj const & o) const { return m_v < o.m_v; }
+    };
+
+    std::map<Obj, Obj> theMap;
+
+    TEST(EmplaceOrAssign(theMap, Obj(1), Obj(2)).second, ());
+    TEST(!EmplaceOrAssign(theMap, Obj(1), Obj(3)).second, ());
+    TEST(theMap.find(Obj(1))->second == Obj(3), ());
+  }
+}
+
 }  // namespace stl_helpers_test

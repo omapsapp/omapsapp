@@ -109,6 +109,10 @@ public:
   {
     return m_baseUrl + "/user/" + user + "/history";
   }
+  std::string GetNotesURL(std::string const & user) const
+  {
+    return m_baseUrl + "/user/" + user + "/notes";
+  }
   std::string BuildOAuth2Url() const;
   //@}
 

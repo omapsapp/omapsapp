@@ -8,8 +8,7 @@ final class BookmarksListBuilder {
     let presenter = BookmarksListPresenter(view: viewController,
                                            router: router,
                                            delegate: delegate,
-                                           interactor: interactor,
-                                           imperialUnits: Settings.measurementUnits() == .imperial)
+                                           interactor: interactor)
     viewController.presenter = presenter
     return viewController
   }

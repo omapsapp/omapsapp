@@ -298,6 +298,10 @@
     <string name="google_play_services">Servicii de localizare Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Determinați rapid locația dvs. aproximativă prin Bluetooth, WiFi sau rețea mobilă</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Linkuri către hoteluri</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotografiile, recenziile, linkurile de rezervare sunt afișate pentru hotelurile care au o listă pe Kayak.com. Bonusul de recomandare primit pentru fiecare rezervare prin intermediul acestor linkuri este destinat dezvoltării Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Descarcă hărțile de pe traseu</string>
     <!-- Text for routing error dialog -->
@@ -483,7 +487,10 @@
     <string name="message_invalid_feature_position">Niciun obiect nu poate fi poziționat aici</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Date OpenStreetMap create de comunitate la data de %s. Aflați mai multe despre cum să editați și să actualizați harta la OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Autentifică-te pentru ca modificările pe care le-ai făcut să poată fi văzute și de alți utilizatori.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) este un proiect comunitar pentru construirea unei hărți libere și deschise. Este principala sursă de date cartografice în Organic Maps și funcționează similar cu Wikipedia. Puteți adăuga sau edita locuri, iar acestea devin disponibile pentru milioane de utilizatori din întreaga lume.
+\nAlăturați-vă comunității și ajutați la crearea unei hărți mai bune pentru toată lumea!</string>
+    <string name="login_to_make_edits_visible">Creați un cont OpenStreetMap sau conectați-vă pentru a vă publica edițiile de hartă în întreaga lume.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d din %2$d</string>
     <string name="download_over_mobile_header">Vrei să descarci prin rețeaua de telefonie mobilă?</string>
@@ -503,9 +510,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Edițiile dvs. sunt încărcate în baza de date publică <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a>. Vă rugăm să nu adăugați informații personale sau protejate prin drepturi de autor.</string>
     <string name="editor_more_about_osm">Mai multe despre OpenStreetMap</string>
-    <string name="editor_operator">Proprietar</string>
+    <string name="editor_osm_history">Istoricul dvs. de editare</string>
+    <string name="editor_osm_notes">Note privind datele hărții dvs.</string>
+    <string name="editor_operator">Operator</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Proprietar: %s</string>
+    <string name="operator">Operator: %s</string>
     <string name="editor_category_unsuitable_title">Nu găsiți o categorie potrivită?</string>
     <string name="editor_category_unsuitable_text">Organic Maps permite adăugarea doar a unor categorii de puncte simple, ceea ce înseamnă că nu există orașe, drumuri, lacuri, contururi de clădiri, etc. Vă rugăm să adăugați astfel de categorii direct la <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Consultați <a href="https://organicmaps.app/faq/editing/advanced-map-editing">ghidul nostru</a> pentru instrucțiuni detaliate pas cu pas.</string>
     <string name="downloader_no_downloaded_maps_title">Nu ai descărcat nicio hartă</string>
@@ -522,6 +531,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">z</string>
     <string name="placepage_more_button">Mai mult</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotografii, comentarii, rezervări</string>
@@ -529,6 +539,8 @@
     <string name="dialog_kayak_disclaimer">Bonusul de recomandare primit pentru fiecare rezervare prin acest link este destinat dezvoltării Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Detalii pe Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Dezactivați Kayak</string>
     <string name="placepage_edit_bookmark_button">Modifică locul preferat</string>
     <string name="editor_comment_hint">Comentariu…</string>
     <string name="editor_reset_edits_message">Ștergi toate modificările locale?</string>
@@ -590,7 +602,7 @@
     <string name="routing_add_start_point">Utilizați funcția de căutare sau atingeți ușor pe hartă pentru a adăuga un punct de plecare</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Utilizați funcția de căutare sau atingeți ușor pe hartă pentru a adăuga un punct de destinație</string>
-    <string name="placepage_remove_stop">Elimină</string>
+    <string name="placepage_remove_stop">Scoateți opritorul</string>
     <string name="placepage_add_stop">Adaugă oprire</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Vă rugăm să vă conectați la OpenStreetMap pentru a încărca automat toate modificările aduse hărții. Aflați mai multe <a href="https://github.com/organicmaps/organicmaps/issues/6144">aici</a>.</string>
@@ -741,8 +753,8 @@
     <string name="isolines_location_error_dialog">Stratul topografic nu este încă disponibil în această zonă</string>
     <string name="elevation_profile_ascent">Urcare</string>
     <string name="elevation_profile_descent">Coborâre</string>
-    <string name="elevation_profile_minaltitude">Înălțime minimă</string>
-    <string name="elevation_profile_maxaltitude">Înălțime maximă</string>
+    <string name="elevation_profile_min_elevation">Min. altitudine</string>
+    <string name="elevation_profile_max_elevation">Max. altitudine</string>
     <string name="elevation_profile_difficulty">Dificultate</string>
     <string name="elevation_profile_distance">Dist.:</string>
     <string name="elevation_profile_time">Timp:</string>
@@ -760,6 +772,8 @@
     <string name="enable_show_on_lock_screen">Arată pe ecranul de blocare</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Când este activată, nu trebuie să deblochezi telefonul de fiecare dată când aplicația este în funcțiune.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Limbă hartă</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Date cartografice din OpenStreetMap</string>
     <!-- App Tip #00 -->
@@ -771,7 +785,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Dacă cunoașteți un dezvoltator de software, îi puteți cere să implementeze o caracteristică de care aveți nevoie.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Știți că puteți atinge lung orice loc de pe hartă pentru a-l selecta?</string>
+    <string name="app_tip_04">Atingeți oriunde pe hartă pentru a selecta orice. Atingeți lung pentru a ascunde și a reda interfața.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Știți că vă puteți selecta locația curentă pe hartă?</string>
     <!-- App tip #06 -->
@@ -841,7 +855,11 @@
     <string name="track_recording_toast_nothing_to_save">Traseul este gol - nu este nimic de salvat</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nu se poate afișa dialogul de selectare a dosarelor deoarece pe dispozitivul dvs. nu este instalată nicio aplicație adecvată. Vă rugăm să instalați o aplicație de gestionare a fișierelor și să încercați din nou</string>
+    <string name="choose_color">Alegeți culoarea</string>
+    <string name="edit_track">Editează traseul</string>
     <string name="uri_open_location_failed">Nu există nicio aplicație instalată care să poată deschide locația</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Auto în navigație</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresă/Bloc</string>
@@ -948,6 +966,7 @@
     <string name="type.amenity.police">Poliție</string>
     <string name="type.amenity.post_box">Cutie poștală</string>
     <string name="type.amenity.post_office">Oficiu poștal</string>
+    <string name="type.amenity.prison">Închisoare</string>
     <string name="type.amenity.public_bookcase">Bibliotecă</string>
 
     <!-- SECTION: Types: Recycling -->
@@ -987,6 +1006,7 @@
     <string name="type.amenity.waste_basket">Pubelă</string>
     <string name="type.amenity.waste_disposal">Gunoi</string>
     <string name="type.amenity.water_point">Punct de alimentare cu apă</string>
+    <string name="type.amenity.water_point.drinking_water_no">Punct de alimentare cu apă</string>
     <string name="type.barrier.block">Bloc</string>
     <string name="type.barrier.bollard">Stâlp</string>
     <string name="type.barrier.border_control">Control vamal</string>
@@ -1017,7 +1037,7 @@
     <string name="type.building.has_parts">Clădire</string>
     <string name="type.building_part">Clădire</string>
     <string name="type.building.garage">Garaj</string>
-    <string name="type.building.train_station">Feroviar</string>
+    <string name="type.building.train_station">Clădirea gării</string>
     <string name="type.cemetery.grave">Mormânt</string>
     <string name="type.craft">Meșteșuguri</string>
     <string name="type.craft.beekeeper">Apicultor</string>
@@ -1398,8 +1418,10 @@
     <string name="type.man_made.tower">Turn</string>
     <string name="type.man_made.tower.communication">Turnul de comunicații</string>
     <string name="type.man_made.water_tap">Robinet cu apă</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Robinet cu apă</string>
     <string name="type.man_made.water_tower">Turn de apă</string>
     <string name="type.man_made.water_well">Puț de apă</string>
+    <string name="type.man_made.water_well.drinking_water_no">Puț de apă</string>
     <string name="type.man_made.windmill">Moară de vânt</string>
     <string name="type.military.bunker">Buncăr</string>
     <string name="type.natural">Natură</string>
@@ -1438,6 +1460,7 @@
     <string name="type.natural.rock">Rocă</string>
     <string name="type.natural.scrub">Boschet</string>
     <string name="type.natural.spring">Izvor</string>
+    <string name="type.natural.spring.drinking_water_no">Izvor</string>
     <string name="type.natural.strait">Strâmtoare</string>
     <string name="type.natural.tree_row">Rândul de copaci</string>
     <string name="type.natural.vineyard">Vie</string>
@@ -1498,7 +1521,7 @@
     <string name="type.power.substation">Stație subterană</string>
     <string name="type.power.tower">Stâlp de electricitate</string>
     <string name="type.railway.funicular">Funicular</string>
-    <string name="type.railway.halt">Feroviar</string>
+    <string name="type.railway.halt">Gară</string>
     <string name="type.railway.level_crossing">Trecere feroviară</string>
     <string name="type.railway.monorail">Cale ferată monoșină</string>
     <string name="type.railway.rail">Cale ferată</string>
@@ -1528,12 +1551,13 @@
     <string name="type.railway.rail.utility.tunnel">Tunel de cale ferată</string>
     <string name="type.railway.rail.spur.tunnel">Tunel de cale ferată</string>
     <string name="type.railway.rail.service.tunnel">Tunel de cale ferată</string>
-    <string name="type.railway.station">Feroviar</string>
+    <string name="type.railway.station">Gară</string>
     <string name="type.railway.station.funicular">Funicular</string>
-    <string name="type.railway.station.light_rail">Feroviar</string>
-    <string name="type.railway.station.light_rail.london">Feroviar</string>
-    <string name="type.railway.station.light_rail.porto">Feroviar</string>
-    <string name="type.railway.station.monorail">Feroviar</string>
+    <string name="type.railway.station.light_rail">Gară</string>
+    <string name="type.railway.station.light_rail.berlin">Gară</string>
+    <string name="type.railway.station.light_rail.london">Gară</string>
+    <string name="type.railway.station.light_rail.porto">Gară</string>
+    <string name="type.railway.station.monorail">Gară</string>
     <string name="type.railway.station.subway">Metrou</string>
     <string name="type.railway.station.subway.adana">Metrou</string>
     <string name="type.railway.station.subway.algiers">Metrou</string>
@@ -1573,6 +1597,7 @@
     <string name="type.railway.station.subway.hamburg">Metrou</string>
     <string name="type.railway.station.subway.helsinki">Metrou</string>
     <string name="type.railway.station.subway.hiroshima">Metrou</string>
+    <string name="type.railway.station.subway.hongkong">Metrou</string>
     <string name="type.railway.station.subway.isfahan">Metrou</string>
     <string name="type.railway.station.subway.istanbul">Metrou</string>
     <string name="type.railway.station.subway.izmir">Metrou</string>
@@ -1626,6 +1651,7 @@
     <string name="type.railway.station.subway.sendai">Metrou</string>
     <string name="type.railway.station.subway.sf">Metrou</string>
     <string name="type.railway.station.subway.shanghai">Metrou</string>
+    <string name="type.railway.station.subway.shenzhen">Metrou</string>
     <string name="type.railway.station.subway.shiraz">Metrou</string>
     <string name="type.railway.station.subway.singapore">Metrou</string>
     <string name="type.railway.station.subway.sofia">Metrou</string>
@@ -1685,6 +1711,7 @@
     <string name="type.railway.subway_entrance.hamburg">Intrare în metro</string>
     <string name="type.railway.subway_entrance.helsinki">Intrare în metro</string>
     <string name="type.railway.subway_entrance.hiroshima">Intrare în metro</string>
+    <string name="type.railway.subway_entrance.hongkong">Intrare în metro</string>
     <string name="type.railway.subway_entrance.isfahan">Intrare în metro</string>
     <string name="type.railway.subway_entrance.istanbul">Intrare în metro</string>
     <string name="type.railway.subway_entrance.izmir">Intrare în metro</string>
@@ -1738,6 +1765,7 @@
     <string name="type.railway.subway_entrance.sendai">Intrare în metro</string>
     <string name="type.railway.subway_entrance.sf">Intrare în metro</string>
     <string name="type.railway.subway_entrance.shanghai">Intrare în metro</string>
+    <string name="type.railway.subway_entrance.shenzhen">Intrare în metro</string>
     <string name="type.railway.subway_entrance.shiraz">Intrare în metro</string>
     <string name="type.railway.subway_entrance.singapore">Intrare în metro</string>
     <string name="type.railway.subway_entrance.sofia">Intrare în metro</string>
@@ -1824,6 +1852,7 @@
     <string name="type.shop.optician">Optică</string>
     <string name="type.shop.outdoor">Echipament de exterior</string>
     <string name="type.shop.outpost">Punct de ridicare</string>
+    <string name="type.shop.pasta">Magazin de paste</string>
     <string name="type.shop.pastry">Patiserie</string>
     <string name="type.shop.pawnbroker">Amanet</string>
     <string name="type.shop.pet">Pet shop</string>
@@ -1916,7 +1945,13 @@
     <string name="type.tourism.artwork.sculpture">Turism</string>
     <string name="type.tourism.artwork.statue">Turism</string>
     <string name="type.tourism.attraction">Punct de atracție</string>
+    <string name="type.attraction.amusement_ride">Călătorie de distracție</string>
     <string name="type.attraction.animal">Incintă pentru animale</string>
+    <string name="type.attraction.carousel">Carusel</string>
+    <string name="type.attraction.historic">Atracție istorică</string>
+    <string name="type.attraction.maze">Labirint</string>
+    <string name="type.attraction.roller_coaster">Rollercoaster</string>
+    <string name="type.attraction.water_slide">Tobogan de apă</string>
     <string name="type.tourism.attraction.specified">Punct de atracție</string>
     <string name="type.tourism.caravan_site">Teren pentru campare</string>
     <!-- A rentable countryside vacation house. -->
@@ -1945,10 +1980,10 @@
     <string name="type.waterway.lock_gate">Ecluză</string>
     <string name="type.waterway.river">Râu</string>
     <string name="type.waterway.river.tunnel">Râu</string>
-    <string name="type.waterway.stream">Râu</string>
-    <string name="type.waterway.stream.ephemeral">Râu</string>
-    <string name="type.waterway.stream.intermittent">Râu</string>
-    <string name="type.waterway.stream.tunnel">Râu</string>
+    <string name="type.waterway.stream">Pârâu</string>
+    <string name="type.waterway.stream.ephemeral">Pârâu</string>
+    <string name="type.waterway.stream.intermittent">Pârâu</string>
+    <string name="type.waterway.stream.tunnel">Pârâu</string>
     <string name="type.waterway.waterfall">Cascadă</string>
     <string name="type.wheelchair.limited">Parțial utilat pentru invalizi</string>
     <string name="type.wheelchair.no">Nu este utilat pentru invalizi</string>

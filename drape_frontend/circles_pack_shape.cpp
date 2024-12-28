@@ -130,7 +130,7 @@ void CirclesPackHandle::SetPoint(size_t index, m2::PointD const & position, floa
 
 void CirclesPackHandle::Clear()
 {
-  memset(m_buffer.data(), 0, m_buffer.size() * sizeof(CirclesPackDynamicVertex));
+  fill(begin(m_buffer), end(m_buffer), CirclesPackDynamicVertex(glsl::vec3(0.0f), glsl::vec4(0.0f)));
   m_needUpdate = true;
 }
 

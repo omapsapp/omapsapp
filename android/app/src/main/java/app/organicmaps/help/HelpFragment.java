@@ -23,7 +23,6 @@ import app.organicmaps.util.DateUtils;
 import app.organicmaps.util.Graphics;
 import app.organicmaps.util.SharingUtils;
 import app.organicmaps.util.Utils;
-import app.organicmaps.util.WindowInsetUtils;
 import app.organicmaps.util.WindowInsetUtils.ScrollableContentInsetsListener;
 
 public class HelpFragment extends BaseMwmFragment implements View.OnClickListener

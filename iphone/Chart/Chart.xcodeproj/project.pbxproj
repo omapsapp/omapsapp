@@ -20,6 +20,8 @@
 		47375E522420E97100FFCC49 /* ChartYAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47375E472420E96F00FFCC49 /* ChartYAxisView.swift */; };
 		47375E542420E97100FFCC49 /* ChartPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47375E492420E97100FFCC49 /* ChartPreviewView.swift */; };
 		47D48BD324302FE200FEFB1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D48BD524302FE200FEFB1F /* Localizable.strings */; };
+		ED46DE1E2D09B8A6007CACD6 /* ChartPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46DE1C2D09B8A6007CACD6 /* ChartPathBuilder.swift */; };
+		ED46DE1F2D09B8A6007CACD6 /* ChartPresentationLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46DE1D2D09B8A6007CACD6 /* ChartPresentationLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		47D48BF12430333900FEFB1F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D48BF22430334B00FEFB1F /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D48BF32430335F00FEFB1F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED46DE1C2D09B8A6007CACD6 /* ChartPathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPathBuilder.swift; sourceTree = "<group>"; };
+		ED46DE1D2D09B8A6007CACD6 /* ChartPresentationLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresentationLine.swift; sourceTree = "<group>"; };
 		FA4C8E53263B1FA80048FA99 /* common-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "common-release.xcconfig"; path = "../../xcode/common-release.xcconfig"; sourceTree = "<group>"; };
 		FA4C8E54263B1FA80048FA99 /* common-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "common-debug.xcconfig"; path = "../../xcode/common-debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,8 @@
 		47375DC22420D60200FFCC49 /* ChartData */ = {
 			isa = PBXGroup;
 			children = (
+				ED46DE1C2D09B8A6007CACD6 /* ChartPathBuilder.swift */,
+				ED46DE1D2D09B8A6007CACD6 /* ChartPresentationLine.swift */,
 				47375E3B2420E94E00FFCC49 /* ChartData.swift */,
 				47375E392420E94C00FFCC49 /* ChartPresentationData.swift */,
 			);
@@ -256,6 +262,8 @@
 				47375E512420E97100FFCC49 /* ChartMyPositionView.swift in Sources */,
 				47375E3E2420E94E00FFCC49 /* ChartData.swift in Sources */,
 				47375E4C2420E97100FFCC49 /* ChartLineView.swift in Sources */,
+				ED46DE1E2D09B8A6007CACD6 /* ChartPathBuilder.swift in Sources */,
+				ED46DE1F2D09B8A6007CACD6 /* ChartPresentationLine.swift in Sources */,
 				47375E502420E97100FFCC49 /* ChartPointIntersectionView.swift in Sources */,
 				47375E522420E97100FFCC49 /* ChartYAxisView.swift in Sources */,
 				47375E4B2420E97100FFCC49 /* ChartXAxisView.swift in Sources */,

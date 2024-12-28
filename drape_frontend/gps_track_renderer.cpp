@@ -114,7 +114,7 @@ void GpsTrackRenderer::UpdatePoints(std::vector<GpsTrackPoint> const & toAdd,
       m_pointsSpline.AddPoint(m_points[i].m_point);
   }
 
-  m_needUpdate = true;
+  m_needUpdate = wasChanged;
 }
 
 size_t GpsTrackRenderer::GetAvailablePointsCount() const
@@ -204,6 +204,7 @@ void GpsTrackRenderer::RenderTrack(ref_ptr<dp::GraphicsContext> context, ref_ptr
     double const currentScaleGtoP = 1.0 / screen.GetScale();
     double const radiusMercator = m_radius / currentScaleGtoP;
     double const diameterMercator = 2.0 * radiusMercator;
+    double const step = diameterMercator + kDistanceScalar * diameterMercator;
 
     // Update points' positions and colors.
     ASSERT(!m_renderData.empty(), ());
@@ -231,6 +232,8 @@ void GpsTrackRenderer::RenderTrack(ref_ptr<dp::GraphicsContext> context, ref_ptr
     {
       m2::Spline::iterator it;
       it.Attach(m_pointsSpline);
+      auto const fullLength = it.GetFullLength();
+      double lengthFromStart = 0.0;
       while (!it.BeginAgain())
       {
         m2::PointD const pt = it.m_pos;
@@ -238,8 +241,7 @@ void GpsTrackRenderer::RenderTrack(ref_ptr<dp::GraphicsContext> context, ref_ptr
                             pt.x + radiusMercator, pt.y + radiusMercator);
         if (screen.ClipRect().IsIntersect(pointRect))
         {
-          dp::Color const color = CalculatePointColor(it.GetIndex(), pt,
-                                                      it.GetLength(), it.GetFullLength());
+          dp::Color const color = CalculatePointColor(it.GetIndex(), pt, lengthFromStart, fullLength);
           m2::PointD const convertedPt = MapShape::ConvertToLocal(pt, m_pivot, kShapeCoordScalar);
           m_handlesCache[cacheIndex].first->SetPoint(m_handlesCache[cacheIndex].second,
                                                      convertedPt, m_radius, color);
@@ -254,7 +256,8 @@ void GpsTrackRenderer::RenderTrack(ref_ptr<dp::GraphicsContext> context, ref_ptr
             return;
           }
         }
-        it.Advance(diameterMercator + kDistanceScalar * diameterMercator);
+        lengthFromStart += step;
+        it.Advance(step);
       }
 
 #ifdef GPS_TRACK_SHOW_RAW_POINTS

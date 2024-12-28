@@ -6,7 +6,7 @@
 
 namespace routing
 {
-std::string const SpeedCameraManager::kSpeedCamModeKey = "speed_cam_mode";
+std::string_view constexpr kSpeedCamModeKey = "speed_cam_mode";
 
 SpeedCameraManager::SpeedCameraManager(turns::sound::NotificationManager & notificationManager)
   : m_notificationManager(notificationManager)

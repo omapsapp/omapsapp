@@ -57,8 +57,6 @@ public class OsmLoginFragment extends BaseMwmToolbarFragment
     registerButton.setOnClickListener((v) -> Utils.openUrl(requireActivity(), Constants.Url.OSM_REGISTER));
     mProgress = view.findViewById(R.id.osm_login_progress);
     final String dataVersion = DateUtils.getShortDateFormatter().format(Framework.getDataVersion());
-    ((TextView) view.findViewById(R.id.osm_presentation))
-        .setText(getString(R.string.osm_presentation, dataVersion));
 
     if (BuildConfig.FLAVOR.equals("google"))
     {

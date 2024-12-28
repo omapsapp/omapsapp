@@ -1,5 +1,7 @@
 #import "ElevationProfileData+Core.h"
 
+#include "geometry/mercator.hpp"
+
 static ElevationDifficulty convertDifficulty(uint8_t difficulty) {
   switch (difficulty) {
     case ElevationInfo::Difficulty::Easy:
@@ -20,23 +22,24 @@ static ElevationDifficulty convertDifficulty(uint8_t difficulty) {
 
 @implementation ElevationProfileData (Core)
 
-- (instancetype)initWithElevationInfo:(ElevationInfo const &)elevationInfo
-                          activePoint:(double)activePoint
-                           myPosition:(double)myPosition {
+- (instancetype)initWithTrackId:(MWMTrackID)trackId
+                  elevationInfo:(ElevationInfo const &)elevationInfo
+                    activePoint:(double)activePoint
+                     myPosition:(double)myPosition {
   self = [super init];
   if (self) {
-    _trackId = elevationInfo.GetId();
-    _ascent = elevationInfo.GetAscent();
-    _descent = elevationInfo.GetDescent();
-    _maxAttitude = elevationInfo.GetMaxAltitude();
-    _minAttitude = elevationInfo.GetMinAltitude();
+    _trackId = trackId;
     _difficulty = convertDifficulty(elevationInfo.GetDifficulty());
-    _trackTime = elevationInfo.GetDuration();
-    NSMutableArray *pointsArray = [NSMutableArray array];
-    for (auto const &p : elevationInfo.GetPoints()) {
-      ElevationHeightPoint *point = [[ElevationHeightPoint alloc] initWithDistance:p.m_distance
-                                                                       andAltitude:p.m_altitude];
-      [pointsArray addObject:point];
+
+    auto const & points = elevationInfo.GetPoints();
+    NSMutableArray * pointsArray = [[NSMutableArray alloc] initWithCapacity:points.size()];
+    for (auto const & point : points) {
+      auto pointLatLon = mercator::ToLatLon(point.m_point.GetPoint());
+      CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(pointLatLon.m_lat, pointLatLon.m_lon);
+      ElevationHeightPoint * elevationPoint = [[ElevationHeightPoint alloc] initWithCoordinates:coordinates
+                                                                                       distance:point.m_distance
+                                                                                    andAltitude:point.m_point.GetAltitude()];
+      [pointsArray addObject:elevationPoint];
     }
     _points = [pointsArray copy];
     _activePoint = activePoint;

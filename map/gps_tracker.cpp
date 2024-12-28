@@ -15,10 +15,6 @@ namespace
 {
 
 char const kEnabledKey[] = "GpsTrackingEnabled";
-char const kDurationHours[] = "GpsTrackingDuration";
-uint32_t constexpr kDefaultDurationHours = 24;
-
-size_t constexpr kMaxItemCount = 100000; // > 24h with 1point/s
 
 inline std::string GetFilePath()
 {
@@ -38,20 +34,6 @@ inline void SetSettingsIsEnabled(bool enabled)
   settings::Set(kEnabledKey, enabled);
 }
 
-inline hours GetSettingsDuration()
-{
-  uint32_t duration;
-  if (!settings::Get(kDurationHours, duration))
-    duration = kDefaultDurationHours;
-  return hours(duration);
-}
-
-inline void SetSettingsDuration(hours duration)
-{
-  uint32_t const hours = static_cast<uint32_t>(duration.count());
-  settings::Set(kDurationHours, hours);
-}
-
 } // namespace
 
 GpsTracker & GpsTracker::Instance()
@@ -62,7 +44,7 @@ GpsTracker & GpsTracker::Instance()
 
 GpsTracker::GpsTracker()
   : m_enabled(GetSettingsIsEnabled())
-  , m_track(GetFilePath(), kMaxItemCount, GetSettingsDuration(), std::make_unique<GpsTrackFilter>())
+  , m_track(GetFilePath(), std::make_unique<GpsTrackFilter>())
 {
 }
 
@@ -81,17 +63,6 @@ void GpsTracker::SetEnabled(bool enabled)
 bool GpsTracker::IsEnabled() const
 {
   return m_enabled;
-}
-
-void GpsTracker::SetDuration(hours duration)
-{
-  SetSettingsDuration(duration);
-  m_track.SetDuration(duration);
-}
-
-hours GpsTracker::GetDuration() const
-{
-  return m_track.GetDuration();
 }
 
 bool GpsTracker::IsEmpty() const

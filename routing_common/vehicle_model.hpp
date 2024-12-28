@@ -105,8 +105,9 @@ struct SpeedKMpH
 
   bool IsValid() const { return m_weight > 0 && m_eta > 0; }
 
-  double m_weight = 0.0;  // KMpH
-  double m_eta = 0.0;     // KMpH
+  double m_weight = 0.0;  // KMpH - speed in km/h adjusted for desirability
+                          // cycling on very large road may be fast but speed used for route finding will be treated as much lower
+  double m_eta = 0.0;     // KMpH - actual expected speed in km/h, used to display expected arrival time
 };
 
 /// \brief Factors which modify weight and ETA speed on feature in case of bad pavement (reduce)

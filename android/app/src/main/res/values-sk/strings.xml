@@ -312,6 +312,10 @@
     <string name="google_play_services">Lokalizačné služby Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Rýchle určenie približnej polohy cez Bluetooth, WiFi alebo mobilnú sieť</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Hotel Odkazy</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Fotografie, recenzie a rezervačné odkazy sa zobrazujú pre hotely, ktoré majú svoju ponuku na Kayak.com. Bonus získaný za každú rezerváciu prostredníctvom týchto odkazov ide na rozvoj Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Stiahnite si mapy pozdĺž trasy</string>
     <!-- Text for routing error dialog -->
@@ -497,7 +501,10 @@
     <string name="message_invalid_feature_position">Objekt sa tu nedá umiestniť</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Údaje OpenStreetMap vytvorené komunitou od %s. Viac informácií o tom, ako upravovať a aktualizovať mapu, nájdete na stránke OpenStreetMap.org</string>
-    <string name="login_to_make_edits_visible">Prihláste sa, aby mohli ostatní užívatelia vidieť Vami vykonané zmeny.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) je komunitný projekt na vytvorenie bezplatnej a otvorenej mapy. Je hlavným zdrojom mapových údajov v službe Organic Maps a funguje podobne ako Wikipédia. Môžete pridávať alebo upravovať miesta a tie sa stanú dostupnými pre milióny používateľov na celom svete.
+\nPridajte sa ku komunite a pomôžte vytvoriť lepšiu mapu pre všetkých!</string>
+    <string name="login_to_make_edits_visible">Vytvorte si účet OpenStreetMap alebo sa prihláste a zverejnite svoje úpravy mapy na celom svete.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d z %2$d</string>
     <string name="download_over_mobile_header">Sťahovať prostredníctvom pripojenia na mobilnú sieť?</string>
@@ -517,6 +524,8 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Vaše úpravy sa nahrajú do verejnej databázy <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a>. Prosím, nepridávajte osobné informácie alebo informácie chránené autorskými právami.</string>
     <string name="editor_more_about_osm">Viac o OpenStreetMap</string>
+    <string name="editor_osm_history">Vaša história úprav</string>
+    <string name="editor_osm_notes">Vaše poznámky k mapovým údajom</string>
     <string name="editor_operator">Prevádzkovateľ</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Prevádzkovateľ: %s</string>
@@ -538,6 +547,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">hod</string>
     <string name="minute">min</string>
+    <string name="day">d</string>
     <string name="placepage_more_button">Viac</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Fotografie, recenzie, rezervácie</string>
@@ -545,6 +555,8 @@
     <string name="dialog_kayak_disclaimer">Bonus získaný za každú rezerváciu prostredníctvom tohto odkazu ide na rozvoj služby Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Podrobnosti na Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Zakázať Kayak</string>
     <string name="placepage_edit_bookmark_button">Upraviť záložku</string>
     <string name="editor_comment_hint">Poznámka…</string>
     <string name="editor_reset_edits_message">Resetovať všetky miestne časy?</string>
@@ -603,7 +615,7 @@
     <string name="routing_add_start_point">Pomocou vyhľadávania alebo ťuknutím na mapu môžete pridať východiskový bod trasy</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Pomocou vyhľadávania alebo ťuknutím na mapu môžete pridať cieľový bod</string>
-    <string name="placepage_remove_stop">Odstrániť</string>
+    <string name="placepage_remove_stop">Odstrániť zastávku</string>
     <string name="placepage_add_stop">Pridať zastávku</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Prihláste sa do OpenStreetMap, aby ste mohli automaticky nahrať všetky svoje úpravy mapy. Viac informácií sa dozviete <a href="https://github.com/organicmaps/organicmaps/issues/6144">tade</a>.</string>
@@ -753,8 +765,8 @@
     <string name="isolines_location_error_dialog">Topografická vrstva ešte nie je v tejto oblasti k dispozícii</string>
     <string name="elevation_profile_ascent">Stúpanie</string>
     <string name="elevation_profile_descent">Klesanie</string>
-    <string name="elevation_profile_minaltitude">Min. nadmorská výška</string>
-    <string name="elevation_profile_maxaltitude">Max. nadmorská výška</string>
+    <string name="elevation_profile_min_elevation">Min. výška</string>
+    <string name="elevation_profile_max_elevation">Max. výška</string>
     <string name="elevation_profile_difficulty">Obtiažnosť</string>
     <string name="elevation_profile_distance">Vzdial.:</string>
     <string name="elevation_profile_time">Čas:</string>
@@ -774,6 +786,8 @@
     <string name="enable_show_on_lock_screen">Zobraziť na uzamknutej obrazovke</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Ak je táto funkcia zapnutá, aplikácia bude aktívna aj keď je zariadenie uzamknuté</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Jazyk mapy</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Mapové údaje z OpenStreetMap</string>
     <!-- App Tip #00 -->
@@ -785,7 +799,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Ak poznáte vývojára softvéru, môžete ho požiadať, aby implementoval funkciu, ktorú potrebujete.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Viete, že na ľubovoľné miesto na mape ho môžete vybrať dlhým klepnutím?</string>
+    <string name="app_tip_04">Ťuknutím na ľubovoľné miesto na mape vyberte čokoľvek. Dlhým ťuknutím skryjete a zobrazíte späť rozhranie.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Viete, že si môžete vybrať svoju aktuálnu polohu na mape?</string>
     <!-- App tip #06 -->
@@ -855,7 +869,11 @@
     <string name="track_recording_toast_nothing_to_save">Trasa je prázdna - nie je čo ukladať</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nie je možné zobraziť dialógové okno výberu priečinka, pretože v zariadení nie je nainštalovaná žiadna vhodná aplikácia. Nainštalujte si aplikáciu správcu súborov a skúste to znova</string>
+    <string name="choose_color">Vyberte farbu</string>
+    <string name="edit_track">Upraviť trasu</string>
     <string name="uri_open_location_failed">Nie je nainštalovaná žiadna aplikácia, ktorá by mohla otvoriť umiestnenie</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Automaticky v navigácii</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Adresa/blok</string>
@@ -1033,6 +1051,7 @@
     <string name="type.amenity.waste_disposal">Odpadky</string>
     <string name="type.amenity.waste_transfer_station">Prekládková stanica odpadu</string>
     <string name="type.amenity.water_point">Voda</string>
+    <string name="type.amenity.water_point.drinking_water_no">Voda</string>
     <string name="type.barrier">Zábrana</string>
     <string name="type.barrier.block">Blok</string>
     <string name="type.barrier.bollard">Pilier</string>
@@ -1078,7 +1097,7 @@
     <string name="type.building.has_parts">Budova</string>
     <string name="type.building_part">Budova</string>
     <string name="type.building.garage">Garáž</string>
-    <string name="type.building.train_station">Železničná stanica</string>
+    <string name="type.building.train_station">Budova stanice</string>
     <string name="type.building.warehouse">Sklad</string>
     <string name="type.cemetery.grave">Hrob</string>
     <string name="type.craft">Remeselník</string>
@@ -1510,8 +1529,10 @@
     <string name="type.man_made.tower.communication">Komunikačná veža</string>
     <string name="type.man_made.wastewater_plant">Čistička odpadových vôd</string>
     <string name="type.man_made.water_tap">Vodovodný kohútik</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Vodovodný kohútik</string>
     <string name="type.man_made.water_tower">Vodojem</string>
     <string name="type.man_made.water_well">Studňa</string>
+    <string name="type.man_made.water_well.drinking_water_no">Studňa</string>
     <string name="type.man_made.windmill">Veterný mlyn</string>
     <string name="type.man_made.works">Továreň</string>
     <string name="type.military.bunker">Bunker</string>
@@ -1553,6 +1574,7 @@
     <string name="type.natural.rock">Kameň</string>
     <string name="type.natural.scrub">Krovie</string>
     <string name="type.natural.spring">Prameň</string>
+    <string name="type.natural.spring.drinking_water_no">Prameň</string>
     <string name="type.natural.strait">Prieliv</string>
     <string name="type.natural.tree_row">Stromoradie</string>
     <string name="type.natural.vineyard">Vinohrad</string>
@@ -1660,6 +1682,7 @@
     <string name="type.railway.station">Železničná stanica</string>
     <string name="type.railway.station.funicular">Lanovka</string>
     <string name="type.railway.station.light_rail">Železničná stanica</string>
+    <string name="type.railway.station.light_rail.berlin">Železničná stanica</string>
     <string name="type.railway.station.light_rail.london">Železničná stanica</string>
     <string name="type.railway.station.light_rail.porto">Železničná stanica</string>
     <string name="type.railway.station.monorail">Železničná stanica</string>
@@ -1702,6 +1725,7 @@
     <string name="type.railway.station.subway.hamburg">Metro</string>
     <string name="type.railway.station.subway.helsinki">Metro</string>
     <string name="type.railway.station.subway.hiroshima">Metro</string>
+    <string name="type.railway.station.subway.hongkong">Metro</string>
     <string name="type.railway.station.subway.isfahan">Metro</string>
     <string name="type.railway.station.subway.istanbul">Metro</string>
     <string name="type.railway.station.subway.izmir">Metro</string>
@@ -1755,6 +1779,7 @@
     <string name="type.railway.station.subway.sendai">Metro</string>
     <string name="type.railway.station.subway.sf">Metro</string>
     <string name="type.railway.station.subway.shanghai">Metro</string>
+    <string name="type.railway.station.subway.shenzhen">Metro</string>
     <string name="type.railway.station.subway.shiraz">Metro</string>
     <string name="type.railway.station.subway.singapore">Metro</string>
     <string name="type.railway.station.subway.sofia">Metro</string>
@@ -1817,6 +1842,7 @@
     <string name="type.railway.subway_entrance.hamburg">Vstup do metra</string>
     <string name="type.railway.subway_entrance.helsinki">Vstup do metra</string>
     <string name="type.railway.subway_entrance.hiroshima">Vstup do metra</string>
+    <string name="type.railway.subway_entrance.hongkong">Vstup do metra</string>
     <string name="type.railway.subway_entrance.isfahan">Vstup do metra</string>
     <string name="type.railway.subway_entrance.istanbul">Vstup do metra</string>
     <string name="type.railway.subway_entrance.izmir">Vstup do metra</string>
@@ -1870,6 +1896,7 @@
     <string name="type.railway.subway_entrance.sendai">Vstup do metra</string>
     <string name="type.railway.subway_entrance.sf">Vstup do metra</string>
     <string name="type.railway.subway_entrance.shanghai">Vstup do metra</string>
+    <string name="type.railway.subway_entrance.shenzhen">Vstup do metra</string>
     <string name="type.railway.subway_entrance.shiraz">Vstup do metra</string>
     <string name="type.railway.subway_entrance.singapore">Vstup do metra</string>
     <string name="type.railway.subway_entrance.sofia">Vstup do metra</string>
@@ -1961,6 +1988,7 @@
     <string name="type.shop.optician">Optika</string>
     <string name="type.shop.outdoor">Outdoorové vybavenie</string>
     <string name="type.shop.outpost">Miesto odberu</string>
+    <string name="type.shop.pasta">Obchod s cestovinami</string>
     <string name="type.shop.pastry">Pečivo</string>
     <string name="type.shop.pawnbroker">Záložňa</string>
     <string name="type.shop.pet">Chovateľské potreby</string>
@@ -2055,7 +2083,13 @@
     <string name="type.tourism.artwork.sculpture">Plastika</string>
     <string name="type.tourism.artwork.statue">Socha</string>
     <string name="type.tourism.attraction">Atrakcia</string>
+    <string name="type.attraction.amusement_ride">Zábavná jazda</string>
     <string name="type.attraction.animal">Zvieracia ohrada</string>
+    <string name="type.attraction.carousel">Kolotoč</string>
+    <string name="type.attraction.historic">Historická atrakcia</string>
+    <string name="type.attraction.maze">Bludisko</string>
+    <string name="type.attraction.roller_coaster">Horská dráha</string>
+    <string name="type.attraction.water_slide">Vodná šmýkačka</string>
     <string name="type.tourism.attraction.specified">Atrakcia</string>
     <string name="type.tourism.camp_site">Kemp</string>
     <string name="type.tourism.caravan_site">Kemp pre karavany</string>

@@ -311,6 +311,10 @@
     <string name="google_play_services">Google Play Sijaintipalvelut</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Määritä nopeasti likimääräinen sijaintisi Bluetoothin, WiFin tai matkapuhelinverkon kautta</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com Hotel Linkit</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Kuvat, arvostelut ja varauslinkit näytetään hotelleista, jotka on listattu Kayak.comiin. Jokaisesta näiden linkkien kautta tehdystä varauksesta saatu suosittelupalkkio käytetään Organic Mapsin kehittämiseen.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Lataa karttoja matkalla</string>
     <!-- Text for routing error dialog -->
@@ -496,7 +500,10 @@
     <string name="message_invalid_feature_position">Kohdetta ei voida asettaa tänne</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Yhteisön luomat OpenStreetMap-tiedot %s:sta alkaen. Lisätietoja kartan muokkaamisesta ja päivittämisestä osoitteessa OpenStreetMap.org.</string>
-    <string name="login_to_make_edits_visible">Kirjaudu sisään jotta muut käyttäjät voivat nähdä tekemäsi muokkaukset.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) on yhteisöprojekti, jonka tarkoituksena on rakentaa ilmainen ja avoin kartta. Se on Organic Mapsin tärkein karttatietojen lähde ja toimii samalla tavalla kuin Wikipedia. Voit lisätä tai muokata paikkoja, ja ne tulevat miljoonien käyttäjien saataville kaikkialla maailmassa.
+\nLiity yhteisöön ja auta tekemään parempi kartta kaikille!</string>
+    <string name="login_to_make_edits_visible">Luo OpenStreetMap-tili tai kirjaudu sisään, jotta voit julkaista karttamuokkauksesi maailmalle.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Lataa käyttämällä puhelinverkkoyhteyttä?</string>
@@ -516,6 +523,8 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Muokkauksesi ladataan julkiseen <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a>-tietokantaan. Älä lisää henkilökohtaisia tai tekijänoikeudella suojattuja tietoja.</string>
     <string name="editor_more_about_osm">Lisätietoja OpenStreetMap:sta</string>
+    <string name="editor_osm_history">Muokkaushistoriasi</string>
+    <string name="editor_osm_notes">Karttatietosi muistiinpanot</string>
     <string name="editor_operator">Operaattori</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Operaattori: %s</string>
@@ -537,6 +546,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">t</string>
     <string name="minute">min</string>
+    <string name="day">pv</string>
     <string name="placepage_more_button">Lisää</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Kuvat, arvostelut, varaus</string>
@@ -544,6 +554,8 @@
     <string name="dialog_kayak_disclaimer">Jokaisesta tämän linkin kautta tehdystä varauksesta saatu suosittelubonus käytetään Organic Mapsin kehittämiseen.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Lisätietoa osoitteessa Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Poista Kayak käytöstä</string>
     <string name="placepage_edit_bookmark_button">Muokkaa kirjanmerkkiä</string>
     <string name="editor_comment_hint">Kommentti…</string>
     <string name="editor_reset_edits_message">Nollataanko kaikki paikalliset muutokset?</string>
@@ -603,7 +615,7 @@
     <string name="routing_add_start_point">Käytä hakua tai napauta karttaa lisätäksesi reitin lähtöpisteen</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Käytä hakua tai napauta karttaa lisätäksesi kohdepisteen.</string>
-    <string name="placepage_remove_stop">Poista</string>
+    <string name="placepage_remove_stop">Poista pysähdys</string>
     <string name="placepage_add_stop">Lisää pysähdys</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Kirjaudu sisään OpenStreetMapiin, jotta voit ladata kaikki karttamuutoksesi automaattisesti. Lisätietoja <a href="https://github.com/organicmaps/organicmaps/issues/6144">täältä</a>.</string>
@@ -754,8 +766,8 @@
     <string name="isolines_location_error_dialog">Korkeuskäyrät eivät ole vielä saatavilla tällä alueella</string>
     <string name="elevation_profile_ascent">Nousua</string>
     <string name="elevation_profile_descent">Laskua</string>
-    <string name="elevation_profile_minaltitude">Min. korkeus</string>
-    <string name="elevation_profile_maxaltitude">Maks. korkeus</string>
+    <string name="elevation_profile_min_elevation">Min. korkeus</string>
+    <string name="elevation_profile_max_elevation">Max. korkeus</string>
     <string name="elevation_profile_difficulty">Vaikeus</string>
     <string name="elevation_profile_distance">Etäisyys:</string>
     <string name="elevation_profile_time">Aika:</string>
@@ -777,6 +789,8 @@
     <string name="enable_show_on_lock_screen">Näytä lukitusnäytöllä</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Kun käytössä, sovellus toimii lukitusnäytöllä vaikka laite olisi lukittuna.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Karttakieli</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">OpenStreetMapin karttatiedot</string>
     <!-- App Tip #00 -->
@@ -788,7 +802,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Jos tunnet ohjelmistokehittäjän, voit pyytää häntä ottamaan käyttöön tarvitsemasi ominaisuuden.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Tiesitkö, että voit valita mitä tahansa paikkaa kartalla pitkään napauttamalla sen?</string>
+    <string name="app_tip_04">Voit valita mitä tahansa napauttamalla mitä tahansa kohtaa kartalla. Piilota ja näytä käyttöliittymä takaisin pitkällä napautuksella.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Tiesitkö, että voit valita nykyisen sijaintisi kartalta?</string>
     <!-- App tip #06 -->
@@ -858,7 +872,11 @@
     <string name="track_recording_toast_nothing_to_save">Reitti on tyhjä - ei mitään tallennettavaa</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kansiovalintaikkunaa ei voida näyttää, koska laitteeseen ei ole asennettu sopivaa sovellusta. Asenna tiedostonhallintasovellus ja yritä uudelleen</string>
+    <string name="choose_color">Valitse väri</string>
+    <string name="edit_track">Muokkaa reittiä</string>
     <string name="uri_open_location_failed">Ei asennettua sovellusta, joka voi avata sijainnin</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Automaattinen navigointi</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Osoite/lohko</string>
@@ -874,7 +892,7 @@
     <string name="type.aeroway.aerodrome">Lentokenttä</string>
     <string name="type.aeroway.aerodrome.international">Kansainvälinen lentokenttä</string>
     <string name="type.aeroway.gate">Portti</string>
-    <string name="type.aeroway.helipad">Helikopterialusta</string>
+    <string name="type.aeroway.helipad">Helikopterikenttä</string>
     <string name="type.aeroway.runway">Kiitorata</string>
     <string name="type.aeroway.taxiway">Rullaustie</string>
     <string name="type.aeroway.terminal">Terminaali</string>
@@ -922,8 +940,9 @@
     <string name="type.amenity.language_school">Kielikoulu</string>
     <string name="type.office.diplomatic">Suurlähetystö</string>
     <string name="type.amenity.fast_food">Pikaruokala</string>
-    <string name="type.amenity.ferry_terminal">Lautta</string>
+    <string name="type.amenity.ferry_terminal">Lauttaterminaali</string>
     <string name="type.amenity.fire_station">Paloasema</string>
+    <string name="type.amenity.food_court">Ravintola-alue</string>
     <string name="type.amenity.fountain">Suihkulähde</string>
     <string name="type.amenity.fuel">Huoltoasema</string>
     <!-- In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. -->
@@ -931,7 +950,7 @@
     <!-- In most (European) countries, сemeteries are usually independent of places of worship (e.g. military cemeteries), while grave yards are usually the yard of a place of worship. -->
     <string name="type.amenity.grave_yard.christian">Kristillinen hautausmaa</string>
     <string name="type.amenity.hospital">Sairaala</string>
-    <string name="type.amenity.hunting_stand">Metsästyspaikka</string>
+    <string name="type.amenity.hunting_stand">Jahtitorni</string>
     <string name="type.amenity.ice_cream">Jäätelökioski</string>
     <string name="type.amenity.internet_cafe">Internetkahvila</string>
     <string name="type.amenity.kindergarten">Päiväkoti</string>
@@ -943,8 +962,8 @@
     <string name="type.amenity.nursing_home">Hoitokoti</string>
     <string name="type.amenity.parking">Parkkipaikka</string>
     <string name="type.amenity.parking.fee">Parkkipaikka</string>
-    <string name="type.amenity.parking.multi.storey">Monikerroksinen pysäköinti</string>
-    <string name="type.amenity.parking.multi.storey.fee">Monikerroksinen pysäköinti</string>
+    <string name="type.amenity.parking.multi.storey">Parkkitalo</string>
+    <string name="type.amenity.parking.multi.storey.fee">Parkkitalo</string>
     <string name="type.amenity.parking.no.access">Yksityinen pysäköinti</string>
     <string name="type.amenity.parking.permissive">Yksityinen pysäköinti</string>
     <string name="type.amenity.parking.private">Yksityinen pysäköinti</string>
@@ -952,19 +971,19 @@
     <string name="type.amenity.parking.underground">Maanalainen pysäköinti</string>
     <string name="type.amenity.parking.underground.fee">Maanalainen pysäköinti</string>
     <string name="type.amenity.parking.underground.private">Yksityinen maanalainen pysäköintialue</string>
-    <string name="type.amenity.parking.street_side">Kadun puolella pysäköinti</string>
-    <string name="type.amenity.parking.street_side.fee">Kadun puolella pysäköinti</string>
-    <string name="type.amenity.parking.street_side.private">Yksityinen katu puolella pysäköinti</string>
-    <string name="type.amenity.parking.lane">Kaistapysäköinti</string>
-    <string name="type.amenity.parking.lane.fee">Kaistapysäköinti</string>
-    <string name="type.amenity.parking.lane.private">Yksityinen kaista pysäköinti</string>
+    <string name="type.amenity.parking.street_side">Kadunvarsipysäköinti</string>
+    <string name="type.amenity.parking.street_side.fee">Kadunvarsipysäköinti</string>
+    <string name="type.amenity.parking.street_side.private">Yksityinen kadunvarsipysäköinti</string>
+    <string name="type.amenity.parking.lane">Pysäköintikaista</string>
+    <string name="type.amenity.parking.lane.fee">Pysäköintikaista</string>
+    <string name="type.amenity.parking.lane.private">Yksityinen pysäköintikaista</string>
     <string name="type.amenity.parking_entrance">Pysäköinnin sisäänkäynti</string>
-    <string name="type.amenity.parking_entrance.private">Yksityinen pysäköintialue sisäänkäynti</string>
+    <string name="type.amenity.parking_entrance.private">Yksityisen pysäköintialueen sisäänkäynti</string>
     <string name="type.amenity.parking_entrance.permissive">Pysäköinnin sisäänkäynti</string>
-    <string name="type.amenity.parking_space">Parkkipaikka</string>
-    <string name="type.amenity.parking_space.permissive">Parkkipaikka</string>
-    <string name="type.amenity.parking_space.private">Parkkipaikka</string>
-    <string name="type.amenity.parking_space.underground">Parkkipaikka</string>
+    <string name="type.amenity.parking_space">Pysäköintiruutu</string>
+    <string name="type.amenity.parking_space.permissive">Pysäköintiruutu</string>
+    <string name="type.amenity.parking_space.private">Pysäköintiruutu</string>
+    <string name="type.amenity.parking_space.underground">Pysäköintiruutu</string>
     <string name="type.amenity.parking_space.disabled">Vammaispysäköinti</string>
     <string name="type.amenity.payment_terminal">Maksupääte</string>
     <string name="type.amenity.pharmacy">Apteekki</string>
@@ -1010,10 +1029,12 @@
     <!-- A weather shelter by the public transport stop. -->
     <string name="type.amenity.shelter.public_transport">Katos</string>
     <!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
-    <string name="type.amenity.shelter.basic_hut">Bivouac-mökki</string>
+    <string name="type.amenity.shelter.basic_hut">Kota</string>
+    <!-- A traditional 3-walled shelter (one side open), suitable for overnight camping. -->
+    <string name="type.amenity.shelter.lean_to">Laavu</string>
     <string name="type.amenity.public_bath">Julkinen kylpylä</string>
     <string name="type.amenity.shower">Suihku</string>
-    <string name="type.amenity.stripclub">Stripclub</string>
+    <string name="type.amenity.stripclub">Strippiklubi</string>
     <string name="type.amenity.taxi">Taksi</string>
     <string name="type.amenity.telephone">Puhelin</string>
     <string name="type.amenity.theatre">Teatteri</string>
@@ -1039,6 +1060,7 @@
     <string name="type.amenity.waste_disposal">Roska</string>
     <string name="type.amenity.waste_transfer_station">Jätteiden vastaanottoasema</string>
     <string name="type.amenity.water_point">Vesipiste</string>
+    <string name="type.amenity.water_point.drinking_water_no">Vesipiste</string>
     <string name="type.barrier">Este</string>
     <string name="type.barrier.block">Este</string>
     <string name="type.barrier.bollard">Tolppa</string>
@@ -1080,7 +1102,7 @@
     <string name="type.building.has_parts">Rakennus</string>
     <string name="type.building_part">Rakennus</string>
     <string name="type.building.garage">Autotalli</string>
-    <string name="type.building.train_station">Rautatieasema</string>
+    <string name="type.building.train_station">Asemarakennus</string>
     <string name="type.building.warehouse">Varasto</string>
     <string name="type.cemetery.grave">Hauta</string>
     <string name="type.craft">Käsityö</string>
@@ -1266,8 +1288,8 @@
     <string name="type.highway.path.difficult">Vaikea tai huonosti näkyvä reitti</string>
     <!-- Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. -->
     <string name="type.highway.path.expert">Erittäin vaikea tai erottamaton jälki</string>
-    <string name="type.highway.path.bicycle">Pyörä- ja jalkatie</string>
-    <string name="type.highway.footway.bicycle">Pyörä- ja jalkatie</string>
+    <string name="type.highway.path.bicycle">Kevyen liikenteen väylä</string>
+    <string name="type.highway.footway.bicycle">Kevyen liikenteen väylä</string>
     <!-- These translations are used for all type.highway.*.bridge. -->
     <string name="type.highway.path.bridge">Silta</string>
     <string name="type.highway.path.horse">Ratsastuspolku</string>
@@ -1390,7 +1412,7 @@
     <string name="type.historic.cannon">Tykki</string>
     <string name="type.historic.castle">Linna</string>
     <string name="type.historic.castle.castrum">Roomalaisleiri</string>
-    <string name="type.historic.castle.defensive">Linnake</string>
+    <string name="type.historic.castle.defensive">Linnoitus</string>
     <string name="type.historic.castle.fortified_church">Linnoitettu kirkko</string>
     <string name="type.historic.castle.fortress">Linnoitus</string>
     <string name="type.historic.castle.hillfort">Linnavuori</string>
@@ -1470,6 +1492,7 @@
     <string name="type.leisure.golf_course">Golf-rata</string>
     <string name="type.leisure.miniature_golf">Minigolf</string>
     <string name="type.leisure.hackerspace">Hacklab</string>
+    <string name="type.leisure.ice_rink">Luistinrata</string>
     <string name="type.leisure.marina">Venesatama</string>
     <string name="type.leisure.nature_reserve">Luonnonsuojelualue</string>
     <string name="type.leisure.outdoor_seating">Ulkona istuminen</string>
@@ -1481,6 +1504,7 @@
     <string name="type.leisure.pitch">Urheilukenttä</string>
     <string name="type.leisure.playground">Leikkikenttä</string>
     <string name="type.leisure.sauna">Sauna</string>
+    <string name="type.leisure.slipway">Veneluiska</string>
     <string name="type.leisure.sports_centre">Urheilukeskus</string>
     <string name="type.sport.climbing">Kiipeilykeskus</string>
     <string name="type.sport.yoga">Joogastudio</string>
@@ -1491,24 +1515,29 @@
     <string name="type.man_made.chimney">Tehtaan piippu</string>
     <string name="type.man_made.flagpole">Lipputanko</string>
     <string name="type.man_made.lighthouse">Majakka</string>
+    <string name="type.man_made.mast">Masto</string>
+    <string name="type.man_made.pier">Laituri</string>
+    <string name="type.man_made.silo">Siilo</string>
     <string name="type.man_made.surveillance">Valvontakamera</string>
     <string name="type.man_made.tower">Torni</string>
     <string name="type.man_made.tower.communication">Viestintätorni</string>
     <string name="type.man_made.water_tap">Vesihana</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Vesihana</string>
     <string name="type.man_made.water_tower">Vesitorni</string>
     <string name="type.man_made.water_well">Kaivo</string>
+    <string name="type.man_made.water_well.drinking_water_no">Kaivo</string>
     <string name="type.man_made.windmill">Tuulimylly</string>
     <string name="type.military.bunker">Bunkkeri</string>
     <string name="type.natural">Luonto</string>
     <!-- A rocky land cover. -->
-    <string name="type.natural.bare_rock">Paljas kallio</string>
+    <string name="type.natural.bare_rock">Avokallio</string>
     <!-- A land cover consisting of rounded rock fragments (pebbles) on a beach or riverbed. -->
     <string name="type.natural.shingle">Pebbles</string>
     <!-- A loose surface consisting of angular, sharp stones. Usually on a mountain slope and prone to landslides. -->
     <string name="type.natural.scree">Kivinen rapakivi</string>
     <string name="type.natural.bay">Lahti</string>
     <string name="type.natural.beach">Ranta</string>
-    <string name="type.natural.beach.sand">Hiekkainen ranta</string>
+    <string name="type.natural.beach.sand">Hiekkaranta</string>
     <string name="type.natural.beach.gravel">Soraranta</string>
     <string name="type.natural.cape">Niemeke</string>
     <string name="type.natural.cave_entrance">Luola</string>
@@ -1536,18 +1565,19 @@
     <string name="type.natural.rock">Kivi</string>
     <string name="type.natural.scrub">Tiheiköt</string>
     <string name="type.natural.spring">Lähde</string>
+    <string name="type.natural.spring.drinking_water_no">Lähde</string>
     <string name="type.natural.strait">Salmi</string>
     <string name="type.natural.tree_row">Puurivi</string>
     <string name="type.natural.vineyard">Viinitila</string>
     <string name="type.natural.volcano">Tulivuori</string>
-    <string name="type.natural.water">Vesimuodostuma</string>
-    <string name="type.natural.wetland">Suoperäinen seutu</string>
+    <string name="type.natural.water">Vettä</string>
+    <string name="type.natural.wetland">Soistuva maa</string>
     <string name="type.natural.wetland.bog">Suo</string>
     <string name="type.natural.wetland.marsh">Marsh</string>
     <string name="type.office">Toimisto</string>
     <string name="type.office.company">Yhtiön toimisto</string>
     <string name="type.office.estate_agent">Kiinteistönvälittäjä</string>
-    <string name="type.office.government">Viranomaistoimito</string>
+    <string name="type.office.government">Viranomaisen toimisto</string>
     <string name="type.office.insurance">Vakuutuslaitos</string>
     <string name="type.office.lawyer">Lakitoimisto</string>
     <string name="type.office.ngo">Valtioista riippumattoman järjestön toimisto</string>
@@ -1629,6 +1659,7 @@
     <string name="type.railway.station">Rautatieasema</string>
     <string name="type.railway.station.funicular">Köysirata</string>
     <string name="type.railway.station.light_rail">Rautatieasema</string>
+    <string name="type.railway.station.light_rail.berlin">Rautatieasema</string>
     <string name="type.railway.station.light_rail.london">Rautatieasema</string>
     <string name="type.railway.station.light_rail.porto">Rautatieasema</string>
     <string name="type.railway.station.monorail">Rautatieasema</string>
@@ -1671,6 +1702,7 @@
     <string name="type.railway.station.subway.hamburg">Metro</string>
     <string name="type.railway.station.subway.helsinki">Metro</string>
     <string name="type.railway.station.subway.hiroshima">Metro</string>
+    <string name="type.railway.station.subway.hongkong">Metro</string>
     <string name="type.railway.station.subway.isfahan">Metro</string>
     <string name="type.railway.station.subway.istanbul">Metro</string>
     <string name="type.railway.station.subway.izmir">Metro</string>
@@ -1724,6 +1756,7 @@
     <string name="type.railway.station.subway.sendai">Metro</string>
     <string name="type.railway.station.subway.sf">Metro</string>
     <string name="type.railway.station.subway.shanghai">Metro</string>
+    <string name="type.railway.station.subway.shenzhen">Metro</string>
     <string name="type.railway.station.subway.shiraz">Metro</string>
     <string name="type.railway.station.subway.singapore">Metro</string>
     <string name="type.railway.station.subway.sofia">Metro</string>
@@ -1783,6 +1816,7 @@
     <string name="type.railway.subway_entrance.hamburg">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.helsinki">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.hiroshima">Metron sisäänkäynti</string>
+    <string name="type.railway.subway_entrance.hongkong">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.isfahan">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.istanbul">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.izmir">Metron sisäänkäynti</string>
@@ -1836,6 +1870,7 @@
     <string name="type.railway.subway_entrance.sendai">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.sf">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.shanghai">Metron sisäänkäynti</string>
+    <string name="type.railway.subway_entrance.shenzhen">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.shiraz">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.singapore">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.sofia">Metron sisäänkäynti</string>
@@ -1857,6 +1892,7 @@
     <string name="type.railway.subway_entrance.yerevan">Metron sisäänkäynti</string>
     <string name="type.railway.subway_entrance.yokohama">Metron sisäänkäynti</string>
     <string name="type.railway.tram_stop">Raitiovaunupysäkki</string>
+    <string name="type.route.ferry">Lauttareitti</string>
     <string name="type.shop">Kauppa</string>
     <string name="type.shop.alcohol">Alkoholikauppa</string>
     <string name="type.shop.bakery">Leipomo</string>
@@ -1893,7 +1929,7 @@
     <string name="type.shop.fabric">Kangaskauppa</string>
     <string name="type.shop.farm">Maatilaruokakauppa</string>
     <string name="type.shop.fashion_accessories">Muoti tarvikkeet</string>
-    <string name="type.shop.florist">Floristi</string>
+    <string name="type.shop.florist">Kukkakauppa</string>
     <string name="type.shop.funeral_directors">Hautaustoimisto</string>
     <string name="type.shop.furniture">Huonekalukauppa</string>
     <string name="type.shop.garden_centre">Taimitarha</string>
@@ -1923,6 +1959,7 @@
     <string name="type.shop.optician">Optikko</string>
     <string name="type.shop.outdoor">Ulkoiluvarusteet</string>
     <string name="type.shop.outpost">Noutopiste</string>
+    <string name="type.shop.pasta">Pastakauppa</string>
     <string name="type.shop.pastry">Leivonnainen</string>
     <string name="type.shop.pawnbroker">Panttilainaamo</string>
     <string name="type.shop.pet">Eläinkauppa</string>
@@ -2019,20 +2056,26 @@
     <string name="type.tourism.artwork.sculpture">Taideteos</string>
     <string name="type.tourism.artwork.statue">Taideteos</string>
     <string name="type.tourism.attraction">Nähtävyys</string>
+    <string name="type.attraction.amusement_ride">Huvipuistolaite</string>
     <string name="type.attraction.animal">Eläinsuoja</string>
+    <string name="type.attraction.carousel">Karuselli</string>
+    <string name="type.attraction.historic">Historiallinen nähtävyys</string>
+    <string name="type.attraction.maze">Sokkelo</string>
+    <string name="type.attraction.roller_coaster">Vuoristorata</string>
+    <string name="type.attraction.water_slide">Vesiliukumäki</string>
     <string name="type.tourism.attraction.specified">Nähtävyys</string>
     <string name="type.tourism.camp_site">Retkeily</string>
     <string name="type.tourism.caravan_site">Asuntovaunupaikka</string>
     <!-- A rentable countryside vacation house. -->
     <string name="type.tourism.chalet">Lomamökki</string>
-    <string name="type.tourism.gallery">Nähtävyydet</string>
+    <string name="type.tourism.gallery">Taidegalleria</string>
     <string name="type.tourism.guest_house">Majatalo</string>
     <string name="type.tourism.hostel">Hostelli</string>
     <string name="type.tourism.hotel">Hotelli</string>
     <string name="type.tourism.information">Turisti-informaatio</string>
-    <string name="type.tourism.information.board">Informaatio</string>
+    <string name="type.tourism.information.board">Opastaulu</string>
     <string name="type.tourism.information.guidepost">Tienviitta</string>
-    <string name="type.tourism.information.map">Turistikartta</string>
+    <string name="type.tourism.information.map">Opaskartta</string>
     <string name="type.tourism.information.office">Turistitoimisto</string>
     <string name="type.tourism.information.visitor_centre">Vierailijakeskus</string>
     <string name="type.tourism.motel">Motelli</string>
@@ -2040,7 +2083,7 @@
     <string name="type.tourism.picnic_site">Piknikpaikat</string>
     <string name="type.leisure.resort">Lomakohteet</string>
     <string name="type.tourism.theme_park">Huvipuisto</string>
-    <string name="type.tourism.viewpoint">Näköalatasanne</string>
+    <string name="type.tourism.viewpoint">Näköalapaikka</string>
     <!-- Typically more basic, not staffed and free (compared to alpine_hut). -->
     <string name="type.tourism.wilderness_hut">Autiotupa</string>
     <string name="type.tourism.zoo">Eläintarha</string>
@@ -2091,7 +2134,7 @@
     <string name="type.piste_type.hike">Lumi vaellusreitti</string>
     <string name="type.piste_type.connection">Pisteen yhteys</string>
     <string name="type.piste_type.skitour">Skitour Trail</string>
-    <string name="type.amenity.events_venue">Tapahtumapaikka</string>
+    <string name="type.amenity.events_venue">Tapahtumakeskus</string>
     <string name="type.shop.auction">Huutokauppa</string>
     <string name="type.shop.collector">Keräilyesineet</string>
     <string name="type.self_service.yes">Itsepalvelu saatavilla</string>

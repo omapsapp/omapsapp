@@ -9,15 +9,12 @@
 #include "drape/support_manager.hpp"
 #include "drape/texture_of_colors.hpp"
 #include "drape/tm_read_resources.hpp"
-#include "drape/utils/glyph_usage_tracker.hpp"
 
-#include "base/file_name_utils.hpp"
 #include "base/math.hpp"
 
 #include <algorithm>
 #include <cstdint>
 #include <limits>
-#include <sstream>
 #include <string>
 #include <utility>
 #include <vector>
@@ -81,15 +78,14 @@ m2::PointU ColorTextureSize(size_t colorsCount, uint32_t maxTextureSize)
 
 drape_ptr<Texture> CreateArrowTexture(ref_ptr<dp::GraphicsContext> context,
                                       ref_ptr<HWTextureAllocator> textureAllocator,
-                                      std::optional<std::string> const & texturePath,
+                                      std::string const & texturePath,
                                       bool useDefaultResourceFolder)
 {
-  if (texturePath.has_value())
+  if (!texturePath.empty())
   {
     return make_unique_dp<StaticTexture>(
-        context, texturePath.value(),
-        useDefaultResourceFolder ? std::make_optional(StaticTexture::kDefaultResource)
-                                 : std::nullopt /* skinPathName */,
+        context, texturePath,
+        useDefaultResourceFolder ? StaticTexture::kDefaultResource : std::string(),
         dp::TextureFormat::RGBA8, textureAllocator, true /* allowOptional */);
   }
   return make_unique_dp<StaticTexture>(context, "arrow-texture.png",
@@ -426,7 +422,7 @@ void TextureManager::OnSwitchMapStyle(ref_ptr<dp::GraphicsContext> context)
 
 void TextureManager::InvalidateArrowTexture(
     ref_ptr<dp::GraphicsContext> context,
-    std::optional<std::string> const & texturePath /* = std::nullopt */,
+    std::string const & texturePath /* = {} */,
     bool useDefaultResourceFolder /* = false */)
 {
   CHECK(m_isInitialized, ());

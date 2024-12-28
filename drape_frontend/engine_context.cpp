@@ -14,7 +14,8 @@ EngineContext::EngineContext(TileKey tileKey,
                              CustomFeaturesContextWeakPtr customFeaturesContext,
                              bool is3dBuildingsEnabled,
                              bool isTrafficEnabled,
-                             bool isolinesEnabled)
+                             bool isolinesEnabled,
+                             int8_t mapLangIndex)
   : m_tileKey(tileKey)
   , m_commutator(commutator)
   , m_texMng(texMng)
@@ -23,6 +24,7 @@ EngineContext::EngineContext(TileKey tileKey,
   , m_3dBuildingsEnabled(is3dBuildingsEnabled)
   , m_trafficEnabled(isTrafficEnabled)
   , m_isolinesEnabled(isolinesEnabled)
+  , m_mapLangIndex(mapLangIndex)
 {}
 
 ref_ptr<dp::TextureManager> EngineContext::GetTextureManager() const

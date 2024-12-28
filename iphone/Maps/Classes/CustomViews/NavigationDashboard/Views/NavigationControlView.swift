@@ -136,7 +136,7 @@ final class NavigationControlView: SolidTouchView, MWMTextToSpeechObserver, MapO
       ]
 
     if timePageControl.currentPage == 0 {
-      timeLabel.text = DateComponentsFormatter.etaString(from: TimeInterval(info.timeToTarget))
+      timeLabel.text = DurationFormatter.durationString(from: TimeInterval(info.timeToTarget))
     } else {
       timeLabel.text = info.arrival
     }
@@ -267,5 +267,9 @@ final class NavigationControlView: SolidTouchView, MWMTextToSpeechObserver, MapO
 
   override var widgetsAreaAffectDirections: MWMAvailableAreaAffectDirections {
     return alternative(iPhone: .bottom, iPad: [])
+  }
+
+  override var trackRecordingButtonAreaAffectDirections: MWMAvailableAreaAffectDirections {
+    return .bottom
   }
 }

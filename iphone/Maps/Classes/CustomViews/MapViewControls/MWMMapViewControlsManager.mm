@@ -8,6 +8,7 @@
 #import "MWMSearchManager.h"
 #import "MWMSideButtons.h"
 #import "MWMTrafficButtonViewController.h"
+#import "MWMMapWidgetsHelper.h"
 #import "MapViewController.h"
 #import "MapsAppDelegate.h"
 #import "SwiftBridge.h"
@@ -63,7 +64,14 @@ NSString *const kMapToCategorySelectorSegue = @"MapToCategorySelectorSegue";
   self.menuState = MWMBottomMenuStateInactive;
   self.menuRestoreState = MWMBottomMenuStateInactive;
   self.isAddingPlace = NO;
+  [TrackRecordingManager.shared addObserver:self recordingIsActiveDidChangeHandler:^(TrackRecordingState state, TrackInfo * trackInfo) {
+    [self setTrackRecordingButtonHidden:state == TrackRecordingStateInactive];
+  }];
   return self;
+}
+
+- (void)dealloc {
+  [TrackRecordingManager.shared removeObserver:self];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -91,6 +99,7 @@ NSString *const kMapToCategorySelectorSegue = @"MapToCategorySelectorSegue";
 - (void)viewWillTransitionToSize:(CGSize)size
        withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
   [self.trafficButton viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+  [self.trackRecordingButton viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
   [self.tabBarController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
   [self.searchManager viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
@@ -309,6 +318,19 @@ NSString *const kMapToCategorySelectorSegue = @"MapToCategorySelectorSegue";
   BOOL const isNavigation = self.navigationManager.state == MWMNavigationDashboardStateNavigation;
   _trafficButtonHidden = isNavigation || trafficButtonHidden;
   self.trafficButton.hidden = self.hidden || _trafficButtonHidden;
+}
+
+- (void)setTrackRecordingButtonHidden:(BOOL)trackRecordingButtonHidden {
+  if (trackRecordingButtonHidden && _trackRecordingButton) {
+    [self.trackRecordingButton closeWithCompletion:^{
+      [MWMMapWidgetsHelper updateLayoutForAvailableArea];
+    }];
+    _trackRecordingButton = nil;
+  }
+  else if (!trackRecordingButtonHidden && !_trackRecordingButton) {
+    _trackRecordingButton = [[TrackRecordingViewController alloc] init];
+    [MWMMapWidgetsHelper updateLayoutForAvailableArea];
+  }
 }
 
 - (void)setMenuState:(MWMBottomMenuState)menuState {

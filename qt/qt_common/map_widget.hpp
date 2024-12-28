@@ -13,8 +13,6 @@
 #include <memory>
 
 class Framework;
-class QGestureEvent;
-class QPinchGesture;
 class QMouseEvent;
 class QWidget;
 class ScreenBase;
@@ -76,8 +74,8 @@ protected:
 
   int L2D(int px) const { return px * m_ratio; }
   m2::PointD GetDevicePoint(QMouseEvent * e) const;
-  df::Touch GetTouch(QMouseEvent * e) const;
-  df::TouchEvent GetTouchEvent(QMouseEvent * e, df::TouchEvent::ETouchType type) const;
+  df::Touch GetDfTouchFromQMouseEvent(QMouseEvent * e) const;
+  df::TouchEvent GetDfTouchEventFromQMouseEvent(QMouseEvent * e, df::TouchEvent::ETouchType type) const;
   df::Touch GetSymmetrical(df::Touch const & touch) const;
 
   void UpdateScaleControl();
@@ -91,9 +89,6 @@ protected:
   void paintGL() override;
   void resizeGL(int width, int height) override;
 
-  bool event(QEvent * event) override;
-  bool gestureEvent(QGestureEvent const * event);
-  void pinchTriggered(QPinchGesture const * gesture);
 
   void mouseDoubleClickEvent(QMouseEvent * e) override;
   void mousePressEvent(QMouseEvent * e) override;

@@ -153,6 +153,13 @@ area|z16-[leisure=park],
 area|z16-[leisure=garden]
 {fill-color: @forest;}
 
+area|z12-[leisure=garden][garden:type=residential],
+{fill-color: @green0;}
+area|z16-[leisure=garden][garden:type=residential],
+{fill-color: @green1;}
+area|z17-[leisure=garden][garden:type=residential],
+{fill-color: @green2;}
+
 area|z12-[natural=bare_rock],
 {fill-color: @barerock;}
 

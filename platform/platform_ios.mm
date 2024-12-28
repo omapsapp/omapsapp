@@ -162,6 +162,7 @@ std::string Platform::DeviceModel() const
 
 std::string Platform::Version() const
 {
+  /// @note Do not change version format, it is parsed on server side.
   NSBundle * mainBundle = [NSBundle mainBundle];
   NSString * version = [mainBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
   NSString * build = [mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];

@@ -200,8 +200,8 @@
     <string name="isolines_location_error_dialog">La altitud de relieve no está aún disponible en esta región</string>
     <string name="elevation_profile_ascent">Ascenso</string>
     <string name="elevation_profile_descent">Descenso</string>
-    <string name="elevation_profile_minaltitude">Altura mínima</string>
-    <string name="elevation_profile_maxaltitude">Altura máxima</string>
+    <string name="elevation_profile_min_elevation">Elevación mín.</string>
+    <string name="elevation_profile_max_elevation">Elevación máx.</string>
     <string name="elevation_profile_difficulty">Dificultad</string>
     <string name="elevation_profile_distance">Distancia:</string>
     <string name="elevation_profile_time">Lapso:</string>
@@ -399,6 +399,7 @@
     <string name="type.railway.rail.spur">Espuela ferroviaria</string>
     <string name="type.railway.station">Estación de tren</string>
     <string name="type.railway.station.light_rail">Estación de tren</string>
+    <string name="type.railway.station.light_rail.berlin">Estación de tren</string>
     <string name="type.railway.station.light_rail.london">Estación de tren</string>
     <string name="type.railway.station.light_rail.porto">Estación de tren</string>
     <string name="type.railway.station.monorail">Estación de tren</string>
@@ -441,6 +442,7 @@
     <string name="type.railway.subway_entrance.hamburg">Entrada de metro</string>
     <string name="type.railway.subway_entrance.helsinki">Entrada de metro</string>
     <string name="type.railway.subway_entrance.hiroshima">Entrada de metro</string>
+    <string name="type.railway.subway_entrance.hongkong">Entrada de metro</string>
     <string name="type.railway.subway_entrance.isfahan">Entrada de metro</string>
     <string name="type.railway.subway_entrance.istanbul">Entrada de metro</string>
     <string name="type.railway.subway_entrance.izmir">Entrada de metro</string>
@@ -494,6 +496,7 @@
     <string name="type.railway.subway_entrance.sendai">Entrada de metro</string>
     <string name="type.railway.subway_entrance.sf">Entrada de metro</string>
     <string name="type.railway.subway_entrance.shanghai">Entrada de metro</string>
+    <string name="type.railway.subway_entrance.shenzhen">Entrada de metro</string>
     <string name="type.railway.subway_entrance.shiraz">Entrada de metro</string>
     <string name="type.railway.subway_entrance.singapore">Entrada de metro</string>
     <string name="type.railway.subway_entrance.sofia">Entrada de metro</string>

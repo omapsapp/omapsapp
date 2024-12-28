@@ -192,5 +192,5 @@ private:
 #endif
 };
 
-void FillDetails(FeatureType & ft, Result::Details & meta);
+void FillDetails(FeatureType & ft, std::string const & name, Result::Details & details);
 }  // namespace search

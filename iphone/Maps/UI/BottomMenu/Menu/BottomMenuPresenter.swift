@@ -87,6 +87,9 @@ extension BottomMenuPresenter {
     case .layers:
       let cell = tableView.dequeueReusableCell(cell: BottomMenuLayersCell.self)!
       cell.onClose = { [weak self] in self?.onClosePressed() }
+      if sections.count > 1 {
+        cell.addSeparator(.bottom)
+      }
       return cell
     case .items:
       let cell = tableView.dequeueReusableCell(cell: BottomMenuItemCell.self)!
@@ -98,7 +101,7 @@ extension BottomMenuPresenter {
                        enabled: enabled)
       case .recordTrack:
         switch trackRecorder.recordingState {
-        case .inactive, .error:
+        case .inactive:
           cell.configure(imageName: "track_recorder_inactive", title: L("start_track_recording"))
         case .active:
           cell.configure(imageName: "track_recorder_active", title: L("stop_track_recording"))

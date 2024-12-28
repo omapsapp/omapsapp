@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Přispějte, abychom společně vytvořili ty nejlepší mapy!";
 
+"already_donated" = "Již darováno";
+
+"remind_me_later" = "Připomeň později";
+
+"support_organic_maps" = "Podpořit Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Autorská práva";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Data OpenStreetMap vytvořená komunitou ke dni %@. Další informace o tom, jak upravovat a aktualizovat mapu, najdete na stránkách OpenStreetMap.org.";
 
-"login_to_make_edits_visible" = "Přihlaste se, aby ostatní uživatelé mohli vidět změny, které jste provedli.";
+"login_to_make_edits_visible" = "Vytvořte si účet OpenStreetMap nebo se přihlaste a zveřejněte své úpravy mapy ve světě.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "Ke stažení potřebujete více volného místa. Odstraňte prosím nepotřebná data.";
@@ -746,6 +752,10 @@
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
 "operator" = "Operátor: %@";
+
+"editor_category_unsuitable_title" = "Nemůžete najít vhodnou kategorii?";
+
+"editor_category_unsuitable_text" = "Organické mapy umožňují přidávat pouze jednoduché kategorie bodů, tedy žádná města, silnice, jezera, obrysy budov atd. Takové kategorie prosím přidávejte přímo na <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Podrobné pokyny krok za krokem najdete v našem <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">průvodci</a>.";
 
 "downloader_no_downloaded_maps_title" = "Nemáte stažené žádné mapy";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "Více";
 
 "book_button" = "Rezervace";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Podrobnosti na Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Zakázat Kayak";
 
 "placepage_call_button" = "Volat";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Naplánovat";
 
-"placepage_remove_stop" = "Odstranit";
+"placepage_remove_stop" = "Odstranit zastávku";
 
 "planning_route_remove_title" = "Pro odebrání přetáhněte sem";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Klesání";
 
-"elevation_profile_minaltitude" = "Min. nadmořská výška";
+"elevation_profile_min_elevation" = "Min. výška";
 
-"elevation_profile_maxaltitude" = "Max. nadmořská výška";
+"elevation_profile_max_elevation" = "Max. výška";
 
 "elevation_profile_difficulty" = "Obtížnost";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Opravdu chcete tuto stopu odstranit?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Pokud znáte vývojáře softwaru, můžete ho požádat, aby implementoval funkci, kterou potřebujete.";
 
 /* App tip #04 */
-"app_tip_04" = "Víte, že libovolné místo na mapě můžete vybrat dlouhým klepnutím?";
+"app_tip_04" = "Klepnutím na libovolné místo na mapě můžete cokoli vybrat. Dlouhým klepnutím skryjete a znovu zobrazíte rozhraní.";
 
 /* App tip #05 */
 "app_tip_05" = "Víte, že si na mapě můžete vybrat svou aktuální polohu?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Trasa je prázdná - není co ukládat";
+
+"edit_track" = "Upravit trasu";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Pošta";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "Vězení";
 
 "type.amenity.pub" = "Hospoda";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Vodní zdroj";
 
+"type.amenity.water_point.drinking_water_no" = "Vodní zdroj";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Blok";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garáž";
 
-"type.building.train_station" = "Železniční stanice";
+"type.building.train_station" = "Staniční budova";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Vodovodní kohoutek";
 
+"type.man_made.water_tap.drinking_water_no" = "Vodovodní kohoutek";
+
 "type.man_made.water_tower" = "Vodárna";
 
 "type.man_made.water_well" = "Studna";
+
+"type.man_made.water_well.drinking_water_no" = "Studna";
 
 "type.man_made.windmill" = "Větrný mlýn";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Křoviny";
 
 "type.natural.spring" = "Pramen";
+
+"type.natural.spring.drinking_water_no" = "Pramen";
 
 "type.natural.strait" = "Průliv";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Železniční stanice";
 
+"type.railway.station.light_rail.berlin" = "Železniční stanice";
+
 "type.railway.station.light_rail.london" = "Železniční stanice";
 
 "type.railway.station.light_rail.porto" = "Železniční stanice";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Metro";
 
 "type.railway.station.subway.hiroshima" = "Metro";
+
+"type.railway.station.subway.hongkong" = "Metro";
 
 "type.railway.station.subway.isfahan" = "Metro";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Metro";
 
 "type.railway.station.subway.shanghai" = "Metro";
+
+"type.railway.station.subway.shenzhen" = "Metro";
 
 "type.railway.station.subway.shiraz" = "Metro";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Vchod do podchodu";
 
+"type.railway.subway_entrance.hongkong" = "Vchod do podchodu";
+
 "type.railway.subway_entrance.isfahan" = "Vchod do podchodu";
 
 "type.railway.subway_entrance.istanbul" = "Vchod do podchodu";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Vchod do podchodu";
 
 "type.railway.subway_entrance.shanghai" = "Vchod do podchodu";
+
+"type.railway.subway_entrance.shenzhen" = "Vchod do podchodu";
 
 "type.railway.subway_entrance.shiraz" = "Vchod do podchodu";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Venkovní vybavení";
 
 "type.shop.outpost" = "Místo vyzvednutí";
+
+"type.shop.pasta" = "Obchod s těstovinami";
 
 "type.shop.pastry" = "Pečivo";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Atrakce";
 
+"type.attraction.amusement_ride" = "Zábavní jízda";
+
 "type.attraction.animal" = "Ohrada pro zvířata";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Kolotoč";
+
+"type.attraction.historic" = "Historická atrakce";
+
+"type.attraction.maze" = "Bludiště";
+
+"type.attraction.roller_coaster" = "Horská dráha";
+
+"type.attraction.water_slide" = "Vodní skluzavka";
 
 "type.tourism.attraction.specified" = "Atrakce";
 

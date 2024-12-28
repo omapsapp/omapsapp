@@ -22,7 +22,6 @@ if (NOT WITH_SYSTEM_PROVIDED_3PARTY)
   set(EXPAT_DTD OFF)
   set(EXPAT_NS ON)
   add_subdirectory(expat/expat)
-  add_library(expat::expat ALIAS expat)
 
   # Configure Jansson library.
   set(JANSSON_BUILD_DOCS OFF)

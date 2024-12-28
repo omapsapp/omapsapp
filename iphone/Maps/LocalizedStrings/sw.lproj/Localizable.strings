@@ -300,6 +300,12 @@
 /* Tex label above the Donate button */
 "donate_description" = "Changia ili kuunda ramani bora pamoja!";
 
+"already_donated" = "Tayari kutoa";
+
+"remind_me_later" = "Kumbusha baadaye";
+
+"support_organic_maps" = "Kuunga mkono Organic Maps";
+
 /* Button in the main Help dialog */
 "copyright" = "Copyright";
 
@@ -705,7 +711,7 @@
 /* Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. */
 "osm_presentation" = "Data ya OpenStreetMap iliyoundwa na jumuiya kufikia %@. Pata maelezo zaidi kuhusu jinsi ya kuhariri na kusasisha ramani katika OpenStreetMap.org";
 
-"login_to_make_edits_visible" = "Log in to openstreetmap.org to publish your changes to the world.";
+"login_to_make_edits_visible" = "Fungua akaunti ya OpenStreetMap au ingia ili kuchapisha mabadiliko yako ya ramani kwa ulimwengu.";
 
 /* Error dialog no space */
 "migration_no_space_message" = "To download, you need more space. Please delete any unnecessary data.";
@@ -742,10 +748,14 @@
 
 "editor_more_about_osm" = "More about OpenStreetMap";
 
-"editor_operator" = "Owner";
+"editor_operator" = "Mwendeshaji";
 
 /* To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... */
-"operator" = "Owner: %@";
+"operator" = "Mwendeshaji: %@";
+
+"editor_category_unsuitable_title" = "Je, huwezi kupata aina inayofaa?";
+
+"editor_category_unsuitable_text" = "Ramani za Kikaboni huruhusu kuongeza kategoria rahisi pekee, hiyo inamaanisha hakuna miji, barabara, maziwa, muhtasari wa majengo, n.k. Tafadhali ongeza kategoria kama hizo moja kwa moja kwenye <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>. Angalia <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">mwongozo wetu</a> kwa maagizo ya kina ya hatua kwa hatua.";
 
 "downloader_no_downloaded_maps_title" = "You haven't downloaded any maps";
 
@@ -795,6 +805,8 @@
 
 "minute" = "min";
 
+"day" = "d";
+
 "placepage_more_button" = "More";
 
 "book_button" = "Book";
@@ -807,6 +819,9 @@
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Maelezo kuhusu Kayak";
+
+/* A disable button text in the explanation dialog that opens hotel details page on Kayak website. */
+"dialog_kayak_disable_button" = "Lemaza Kayak";
 
 "placepage_call_button" = "Call";
 
@@ -922,7 +937,7 @@
 
 "button_plan" = "Panga";
 
-"placepage_remove_stop" = "Ondoa";
+"placepage_remove_stop" = "Ondoa eneo la kusimama";
 
 "planning_route_remove_title" = "Vuta hapa ili kuondoa";
 
@@ -1213,9 +1228,9 @@
 
 "elevation_profile_descent" = "Ushukaji";
 
-"elevation_profile_minaltitude" = "Mwinuko wa chini kabisa";
+"elevation_profile_min_elevation" = "Min. mwinuko";
 
-"elevation_profile_maxaltitude" = "Mwinuko wa juu kabisa";
+"elevation_profile_max_elevation" = "Max. mwinuko";
 
 "elevation_profile_difficulty" = "Ugumu";
 
@@ -1241,6 +1256,9 @@
 
 /* Delete track button on track edit screen */
 "placepage_delete_track_button" = "Delete Track";
+
+/* The track deletion confirmaion alert message. */
+"placepage_delete_track_confirmation_alert_message" = "Je, una uhakika unataka kufuta wimbo huu?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Track Name";
@@ -1276,7 +1294,7 @@
 "app_tip_03" = "Ikiwa unajua msanidi programu, unaweza kumwomba kutekeleza kipengele unachohitaji.";
 
 /* App tip #04 */
-"app_tip_04" = "Je, unajua kwamba unaweza kugonga kwa muda mrefu sehemu yoyote kwenye ramani ili kuichagua?";
+"app_tip_04" = "Gusa popote kwenye ramani ili kuchagua chochote. Gusa kwa muda mrefu ili kuficha na kuonyesha kiolesura.";
 
 /* App tip #05 */
 "app_tip_05" = "Je, unajua kwamba unaweza kuchagua eneo lako la sasa kwenye ramani?";
@@ -1393,6 +1411,8 @@
 
 /* Message for the toast when saving the track recording is finished but nothing to save. */
 "track_recording_toast_nothing_to_save" = "Njia ni tupu - hakuna cha kuhifadhi";
+
+"edit_track" = "Hariri Njia";
 
 
 /********** Types **********/
@@ -1643,7 +1663,7 @@
 
 "type.amenity.post_office" = "Ofisi ya posta";
 
-"type.amenity.prison" = "Prison";
+"type.amenity.prison" = "Jela";
 
 "type.amenity.pub" = "Pub";
 
@@ -1760,6 +1780,8 @@
 
 "type.amenity.water_point" = "Water Tank Refill Point";
 
+"type.amenity.water_point.drinking_water_no" = "Water Tank Refill Point";
+
 "type.barrier" = "Barrier";
 
 "type.barrier.block" = "Block";
@@ -1846,7 +1868,7 @@
 
 "type.building.garage" = "Garage";
 
-"type.building.train_station" = "Train Station";
+"type.building.train_station" = "Jengo la Kituo";
 
 "type.building.warehouse" = "Warehouse";
 
@@ -2704,9 +2726,13 @@
 
 "type.man_made.water_tap" = "Water Tap";
 
+"type.man_made.water_tap.drinking_water_no" = "Water Tap";
+
 "type.man_made.water_tower" = "Water Tower";
 
 "type.man_made.water_well" = "Water Well";
+
+"type.man_made.water_well.drinking_water_no" = "Water Well";
 
 "type.man_made.windmill" = "Windmill";
 
@@ -2792,6 +2818,8 @@
 "type.natural.scrub" = "Eneo la Vichaka";
 
 "type.natural.spring" = "Chemchemi";
+
+"type.natural.spring.drinking_water_no" = "Chemchemi";
 
 "type.natural.strait" = "Mlango Bahari";
 
@@ -3050,6 +3078,8 @@
 
 "type.railway.station.light_rail" = "Train Station";
 
+"type.railway.station.light_rail.berlin" = "Train Station";
+
 "type.railway.station.light_rail.london" = "Train Station";
 
 "type.railway.station.light_rail.porto" = "Train Station";
@@ -3133,6 +3163,8 @@
 "type.railway.station.subway.helsinki" = "Subway Station";
 
 "type.railway.station.subway.hiroshima" = "Subway Station";
+
+"type.railway.station.subway.hongkong" = "Subway Station";
 
 "type.railway.station.subway.isfahan" = "Subway Station";
 
@@ -3239,6 +3271,8 @@
 "type.railway.station.subway.sf" = "Subway Station";
 
 "type.railway.station.subway.shanghai" = "Subway Station";
+
+"type.railway.station.subway.shenzhen" = "Subway Station";
 
 "type.railway.station.subway.shiraz" = "Subway Station";
 
@@ -3364,6 +3398,8 @@
 
 "type.railway.subway_entrance.hiroshima" = "Lango la kuingilia stesheni ya reli";
 
+"type.railway.subway_entrance.hongkong" = "Lango la kuingilia stesheni ya reli";
+
 "type.railway.subway_entrance.isfahan" = "Lango la kuingilia stesheni ya reli";
 
 "type.railway.subway_entrance.istanbul" = "Lango la kuingilia stesheni ya reli";
@@ -3469,6 +3505,8 @@
 "type.railway.subway_entrance.sf" = "Lango la kuingilia stesheni ya reli";
 
 "type.railway.subway_entrance.shanghai" = "Lango la kuingilia stesheni ya reli";
+
+"type.railway.subway_entrance.shenzhen" = "Lango la kuingilia stesheni ya reli";
 
 "type.railway.subway_entrance.shiraz" = "Lango la kuingilia stesheni ya reli";
 
@@ -3655,6 +3693,8 @@
 "type.shop.outdoor" = "Outdoor Equipment Shop";
 
 "type.shop.outpost" = "Sehemu ya kuchukua";
+
+"type.shop.pasta" = "Duka la Pasta";
 
 "type.shop.pastry" = "Keki";
 
@@ -3845,7 +3885,23 @@
 
 "type.tourism.attraction" = "Attraction";
 
+"type.attraction.amusement_ride" = "Safari ya Burudani";
+
 "type.attraction.animal" = "Hifadhi ya Wanyama";
+
+"type.attraction.bumper_car" = "Bumper Car";
+
+"type.attraction.big_wheel" = "Big Wheel";
+
+"type.attraction.carousel" = "Jukwaa";
+
+"type.attraction.historic" = "Kivutio cha kihistoria";
+
+"type.attraction.maze" = "Maze";
+
+"type.attraction.roller_coaster" = "Roller Coaster";
+
+"type.attraction.water_slide" = "Slaidi ya Maji";
 
 "type.tourism.attraction.specified" = "Attraction";
 

@@ -87,7 +87,8 @@ NEED_BUILD_WORLD_ROADS: false
 # Set to 1 to update the entire OSM planet file (as taken from "planet.openstreetmap.org")
 # via an osmupdate tool before the generation. Not for use with partial planet extracts.
 NEED_PLANET_UPDATE: 0
-# If you want to calculate diffs you need to specify where the old maps are.
+# If you want to calculate diffs you need to specify where the old maps are,
+# e.g. ${Main:MAIN_OUT_PATH}/2021_03_16__09_00_00/
 DATA_ARCHIVE_DIR: ${Generator tool:USER_RESOURCE_PATH}
 # How many versions in the archive to use for diff calculation:
 DIFF_VERSION_DEPTH: 2

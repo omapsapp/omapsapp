@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
 # Use ruby from brew on Mac OS X, because system ruby is outdated/broken/will be removed in future releases.
 case $OSTYPE in
@@ -42,15 +42,6 @@ if [ ! -f "$TWINE_PATH/$TWINE_GEM" ]; then
   )
 fi
 
-# Validate and format/sort strings files.
-STRINGS_UTILS="$OMIM_PATH/tools/python/strings_utils.py"
-"$STRINGS_UTILS" --validate --output
-"$STRINGS_UTILS" --types-strings --validate --output
-
-# Check for unused strings.
-CLEAN_STRINGS="$OMIM_PATH/tools/python/clean_strings_txt.py"
-"$CLEAN_STRINGS" --validate
-
 # Generate android/iphone/jquery localization files from strings files.
 TWINE="$(gem contents --show-install-dir twine)/bin/twine"
 if [[ $TWINE == *".om/bin/twine" ]]; then
@@ -60,7 +51,20 @@ else
   exit 1
 fi
 
-STRINGS_PATH="$OMIM_PATH/data/strings"
+OMIM_DATA="$OMIM_PATH/data"
+STRINGS_PATH="$OMIM_DATA/strings"
+
+# Validate and format/sort strings files.
+STRINGS_UTILS="$OMIM_PATH/tools/python/strings_utils.py"
+"$STRINGS_UTILS" --validate --output
+"$STRINGS_UTILS" --types-strings --validate --output
+"$STRINGS_UTILS" "$STRINGS_PATH/sound.txt" --validate --output
+"$STRINGS_UTILS" "$OMIM_DATA/countries_names.txt" --validate --output
+"$STRINGS_UTILS" "$OMIM_PATH/iphone/plist.txt" --validate --output
+
+# Check for unused strings.
+CLEAN_STRINGS="$OMIM_PATH/tools/python/clean_strings_txt.py"
+"$CLEAN_STRINGS" --validate
 
 MERGED_FILE="$(mktemp)"
 cat "$STRINGS_PATH"/{strings,types_strings}.txt> "$MERGED_FILE"
@@ -70,13 +74,13 @@ cat "$STRINGS_PATH"/{strings,types_strings}.txt> "$MERGED_FILE"
 "$TWINE" generate-all-localization-files --format apple --untagged --tags ios "$MERGED_FILE" "$OMIM_PATH/iphone/Maps/LocalizedStrings/"
 "$TWINE" generate-all-localization-files --format apple-plural --untagged --tags ios "$MERGED_FILE" "$OMIM_PATH/iphone/Maps/LocalizedStrings/"
 "$TWINE" generate-all-localization-files --format apple --file-name InfoPlist.strings "$OMIM_PATH/iphone/plist.txt" "$OMIM_PATH/iphone/Maps/LocalizedStrings/"
-"$TWINE" generate-all-localization-files --format jquery "$OMIM_PATH/data/countries_names.txt" "$OMIM_PATH/data/countries-strings/"
-"$TWINE" generate-all-localization-files --format jquery "$OMIM_PATH/data/strings/sound.txt" "$OMIM_PATH/data/sound-strings/"
+"$TWINE" generate-all-localization-files --format jquery "$OMIM_DATA/countries_names.txt" "$OMIM_DATA/countries-strings/"
+"$TWINE" generate-all-localization-files --format jquery "$STRINGS_PATH/sound.txt" "$OMIM_DATA/sound-strings/"
 
 rm "$MERGED_FILE"
 
 # Generate list of languages and add list in gradle.properties to be used in build.gradle in resConfig
-SUPPORTED_LOCALIZATIONS="supportedLocalizations="$(sed -nEe "s/ +([a-zA-Z]{2}(-[a-zA-Z]{2,})?) = .*$/\1/p" "data/strings/strings.txt" | sort -u | tr '\n' ',' | sed -e 's/-/_/g' -e 's/,$//')
+SUPPORTED_LOCALIZATIONS="supportedLocalizations="$(sed -nEe "s/ +([a-zA-Z]{2}(-[a-zA-Z]{2,})?) = .*$/\1/p" "$STRINGS_PATH/strings.txt" | sort -u | tr '\n' ',' | sed -e 's/-/_/g' -e 's/,$//')
 # Chinese locales should correspond to Android codes.
 SUPPORTED_LOCALIZATIONS=${SUPPORTED_LOCALIZATIONS/zh_Hans/zh}
 SUPPORTED_LOCALIZATIONS=${SUPPORTED_LOCALIZATIONS/zh_Hant/zh_HK,zh_MO,zh_TW}

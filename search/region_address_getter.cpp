@@ -11,7 +11,7 @@ RegionAddressGetter::RegionAddressGetter(DataSource const & dataSource,
   : m_reverseGeocoder(dataSource), m_cityFinder(dataSource), m_infoGetter(infoGetter)
 {
   m_nameGetter.LoadCountriesTree();
-  m_nameGetter.SetLocale(languages::GetCurrentNorm());
+  m_nameGetter.SetLocale(languages::GetCurrentMapLanguage());
 }
 
 ReverseGeocoder::RegionAddress RegionAddressGetter::GetNearbyRegionAddress(

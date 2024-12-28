@@ -122,7 +122,6 @@ TagMapping const kBicycleTagMapping = {
 };
 
 TagMapping const kBicycleBarriersTagMapping = {
-    {OsmElement::Tag("barrier", "cycle_barrier"), RoadAccess::Type::No},
     {OsmElement::Tag("barrier", "gate"), RoadAccess::Type::Private},
     // TODO (@gmoryes) The types below should be added.
     //  {OsmElement::Tag("barrier", "kissing_gate"), RoadAccess::Type::Private},

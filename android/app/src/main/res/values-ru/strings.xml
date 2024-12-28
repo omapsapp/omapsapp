@@ -317,6 +317,10 @@
     <string name="google_play_services">Службы определения местоположения в Google Play</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Быстрое определение приблизительного местоположения с помощью Bluetooth, WiFi или мобильной сети</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Ссылки в гостиницах на Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Ссылки \"Фотографии, отзывы, бронирование\" отображаются для отелей, подключенных к Kayak.com. Реферальный бонус, полученный за каждое бронирование по этим ссылкам, идет на развитие Organic Maps.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Загрузите все карты по пути следования</string>
     <!-- Text for routing error dialog -->
@@ -504,7 +508,10 @@
     <string name="message_invalid_feature_position">Объект не может находиться в этом месте</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Созданные сообществом данные OpenStreetMap по состоянию на %s. Узнайте больше о том, как редактировать и обновлять карту, на сайте OpenStreetMap.org.</string>
-    <string name="login_to_make_edits_visible">Авторизуйтесь в OpenStreetMap.org, чтобы ваши изменения увидели другие пользователи.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) - это открытый проект сообщества по созданию бесплатной карты. Он является основным источником картографических данных в Organic Maps и работает как Википедия. Кто угодно может добавлять или редактировать места, которые позже увидят миллионы пользователей по всему миру.
+\nПрисоединяйтесь к сообществу и помогите сделать лучшую карту для всех!</string>
+    <string name="login_to_make_edits_visible">Создайте учетную запись OpenStreetMap или войдите в нее, чтобы опубликовать свои правки на карте для всего мира.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d из %2$d</string>
     <string name="download_over_mobile_header">Загрузить через сотовую связь?</string>
@@ -524,9 +531,11 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Ваши правки будут загружены в общедоступную базу данных <a href="https://wiki.openstreetmap.org/wiki/RU:О_проекте">OpenStreetMap</a>. Пожалуйста, не добавляйте личную информацию или информацию, защищенную авторским правом.</string>
     <string name="editor_more_about_osm">Подробнее об OpenStreetMap</string>
-    <string name="editor_operator">Владелец</string>
+    <string name="editor_osm_history">Ваша история редактирования</string>
+    <string name="editor_osm_notes">Ваши заметки о данных карты</string>
+    <string name="editor_operator">Оператор</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Владелец: %s</string>
+    <string name="operator">Оператор: %s</string>
     <string name="editor_category_unsuitable_title">Нет подходящей категории?</string>
     <string name="editor_category_unsuitable_text">Organic Maps позволяет добавлять на карту только простые типы объектов, то есть никаких городов, дорог, озер, контуров зданий. Пожалуйста, добавляйте такие категории на сайте <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Также рекомендуем ознакомиться с нашими <a href="https://organicmaps.app/faq/editing/advanced-map-editing">подробными пошаговыми инструкциями и другими приложениями для редактирования карты</a>.</string>
     <string name="downloader_no_downloaded_maps_title">У вас нет загруженных карт</string>
@@ -545,6 +554,7 @@
     <string name="miles_per_hour">ми/ч</string>
     <string name="hour">ч</string>
     <string name="minute">мин</string>
+    <string name="day">д</string>
     <string name="placepage_more_button">Ещё</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Фотографии, отзывы, бронирование</string>
@@ -552,6 +562,8 @@
     <string name="dialog_kayak_disclaimer">Реферальный бонус, полученный за каждое бронирование по этой ссылке, идёт на разработку Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Подробнее на Kayak</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Отключить Kayak</string>
     <string name="placepage_edit_bookmark_button">Редактировать метку</string>
     <string name="editor_comment_hint">Коментарий…</string>
     <string name="editor_reset_edits_message">Сбросить все локальные правки?</string>
@@ -613,8 +625,8 @@
     <string name="routing_add_start_point">Используйте поиск или коснитесь карты, чтобы добавить начальную точку маршрута</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Используйте поиск или коснитесь карты, чтобы добавить точку назначения</string>
-    <string name="placepage_remove_stop">Удалить</string>
-    <string name="placepage_add_stop">Заехать</string>
+    <string name="placepage_remove_stop">Удалить остановку</string>
+    <string name="placepage_add_stop">Добавить остановку</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Пожалуйста войдите в аккаунт OpenStreetMap.org, чтобы публиковать ваши изменения карты. Подробности по <a href="https://github.com/organicmaps/organicmaps/issues/6144">ссылке</a>.</string>
     <string name="dialog_error_storage_title">Проблема с доступом к хранилищу</string>
@@ -767,8 +779,8 @@
     <string name="isolines_location_error_dialog">Линии высот пока не доступны в этом регионе</string>
     <string name="elevation_profile_ascent">Подъём</string>
     <string name="elevation_profile_descent">Спуск</string>
-    <string name="elevation_profile_minaltitude">Мин. высота</string>
-    <string name="elevation_profile_maxaltitude">Макс. высота</string>
+    <string name="elevation_profile_min_elevation">Мин. высота</string>
+    <string name="elevation_profile_max_elevation">Макс. высота</string>
     <string name="elevation_profile_difficulty">Сложность</string>
     <string name="elevation_profile_distance">Расст.:</string>
     <string name="elevation_profile_time">В пути:</string>
@@ -790,6 +802,8 @@
     <string name="enable_show_on_lock_screen">Показывать на экране блокировки</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Если эта функция включена, вам не нужно каждый раз разблокировать устройство во время работы приложения.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Язык карты</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">Картографические данные из OpenStreetMap</string>
     <!-- Telegram group url for the "?" About page -->
@@ -809,7 +823,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Если вы знаете толкового разработчика программного обеспечения, попросите его реализовать нужную вам функцию для приложения.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Знаете ли вы, что любое место на карте можно выбрать, подержав там палец в течение секунды?</string>
+    <string name="app_tip_04">Коснитесь любого места на карте, чтобы выбрать что-либо. Длительное нажатие скрывает и возвращает интерфейс.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">А вы знали, что своё местоположение на карте можно выбрать?</string>
     <!-- App tip #06 -->
@@ -879,7 +893,11 @@
     <string name="track_recording_toast_nothing_to_save">Трек пуст - нечего сохранять</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Невозможно отобразить диалог выбора папки, потому что на вашем устройстве не установлено подходящее приложение. Пожалуйста, установите менеджер файлов и повторите попытку</string>
+    <string name="choose_color">Выберите цвет</string>
+    <string name="edit_track">Редактировать трек</string>
     <string name="uri_open_location_failed">Не установлено приложение, которое может открыть местоположение</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Авто в навигации</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Адрес/Блок</string>
@@ -1067,6 +1085,7 @@
     <string name="type.amenity.waste_disposal">Мусорный контейнер</string>
     <string name="type.amenity.waste_transfer_station">Станция перевалки отходов</string>
     <string name="type.amenity.water_point">Вода для автодомов</string>
+    <string name="type.amenity.water_point.drinking_water_no">Вода для автодомов</string>
     <string name="type.barrier">Преграда</string>
     <string name="type.barrier.block">Блок</string>
     <string name="type.barrier.bollard">Столбик</string>
@@ -1112,7 +1131,7 @@
     <string name="type.building.has_parts">Здание</string>
     <string name="type.building_part">Здание</string>
     <string name="type.building.garage">Гараж</string>
-    <string name="type.building.train_station">Ж/д вокзал</string>
+    <string name="type.building.train_station">Здание ж/д станции</string>
     <string name="type.building.warehouse">Склад</string>
     <string name="type.cemetery.grave">Могила</string>
     <string name="type.craft">Мастерская</string>
@@ -1553,8 +1572,10 @@
     <string name="type.man_made.tower.communication">Вышка связи</string>
     <string name="type.man_made.wastewater_plant">Очистные сооружения</string>
     <string name="type.man_made.water_tap">Водопроводный кран</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Водопроводный кран</string>
     <string name="type.man_made.water_tower">Водонапорная башня</string>
     <string name="type.man_made.water_well">Колодец</string>
+    <string name="type.man_made.water_well.drinking_water_no">Колодец</string>
     <string name="type.man_made.windmill">Ветряная мельница</string>
     <string name="type.man_made.works">Промышленное производство</string>
     <string name="type.military">Военные объекты</string>
@@ -1597,6 +1618,7 @@
     <string name="type.natural.rock">Камень</string>
     <string name="type.natural.scrub">Заросли</string>
     <string name="type.natural.spring">Родник</string>
+    <string name="type.natural.spring.drinking_water_no">Родник</string>
     <string name="type.natural.strait">Пролив</string>
     <string name="type.natural.tree_row">Ряд деревьев</string>
     <string name="type.natural.vineyard">Виноградник</string>
@@ -1727,6 +1749,7 @@
     <string name="type.railway.station">Ж/д станция</string>
     <string name="type.railway.station.funicular">Фуникулер</string>
     <string name="type.railway.station.light_rail">Ж/д станция</string>
+    <string name="type.railway.station.light_rail.berlin">Ж/д станция</string>
     <string name="type.railway.station.light_rail.london">Ж/д станция</string>
     <string name="type.railway.station.light_rail.porto">Ж/д станция</string>
     <string name="type.railway.station.monorail">Ж/д станция</string>
@@ -1769,6 +1792,7 @@
     <string name="type.railway.station.subway.hamburg">Метро</string>
     <string name="type.railway.station.subway.helsinki">Метро</string>
     <string name="type.railway.station.subway.hiroshima">Метро</string>
+    <string name="type.railway.station.subway.hongkong">Метро</string>
     <string name="type.railway.station.subway.isfahan">Метро</string>
     <string name="type.railway.station.subway.istanbul">Метро</string>
     <string name="type.railway.station.subway.izmir">Метро</string>
@@ -1822,6 +1846,7 @@
     <string name="type.railway.station.subway.sendai">Метро</string>
     <string name="type.railway.station.subway.sf">Метро</string>
     <string name="type.railway.station.subway.shanghai">Метро</string>
+    <string name="type.railway.station.subway.shenzhen">Метро</string>
     <string name="type.railway.station.subway.shiraz">Метро</string>
     <string name="type.railway.station.subway.singapore">Метро</string>
     <string name="type.railway.station.subway.sofia">Метро</string>
@@ -1884,6 +1909,7 @@
     <string name="type.railway.subway_entrance.hamburg">Вход в метро</string>
     <string name="type.railway.subway_entrance.helsinki">Вход в метро</string>
     <string name="type.railway.subway_entrance.hiroshima">Вход в метро</string>
+    <string name="type.railway.subway_entrance.hongkong">Вход в метро</string>
     <string name="type.railway.subway_entrance.isfahan">Вход в метро</string>
     <string name="type.railway.subway_entrance.istanbul">Вход в метро</string>
     <string name="type.railway.subway_entrance.izmir">Вход в метро</string>
@@ -1937,6 +1963,7 @@
     <string name="type.railway.subway_entrance.sendai">Вход в метро</string>
     <string name="type.railway.subway_entrance.sf">Вход в метро</string>
     <string name="type.railway.subway_entrance.shanghai">Вход в метро</string>
+    <string name="type.railway.subway_entrance.shenzhen">Вход в метро</string>
     <string name="type.railway.subway_entrance.shiraz">Вход в метро</string>
     <string name="type.railway.subway_entrance.singapore">Вход в метро</string>
     <string name="type.railway.subway_entrance.sofia">Вход в метро</string>
@@ -2029,6 +2056,7 @@
     <string name="type.shop.optician">Оптика</string>
     <string name="type.shop.outdoor">Магазин снаряжения</string>
     <string name="type.shop.outpost">Пункт выдачи заказов</string>
+    <string name="type.shop.pasta">Магазин макаронных изделий</string>
     <string name="type.shop.pastry">Выпечка</string>
     <string name="type.shop.pawnbroker">Ломбард</string>
     <string name="type.shop.pet">Зоотовары</string>
@@ -2125,7 +2153,15 @@
     <string name="type.tourism.artwork.sculpture">Произведение искусства</string>
     <string name="type.tourism.artwork.statue">Произведение искусства</string>
     <string name="type.tourism.attraction">Достопримечательность</string>
+    <string name="type.attraction.amusement_ride">Аттракцион</string>
     <string name="type.attraction.animal">Вольер для животных</string>
+    <string name="type.attraction.bumper_car">Автодром</string>
+    <string name="type.attraction.big_wheel">Колесо обозрения</string>
+    <string name="type.attraction.carousel">Карусель</string>
+    <string name="type.attraction.historic">Исторический аттракцион</string>
+    <string name="type.attraction.maze">Лабиринт</string>
+    <string name="type.attraction.roller_coaster">Американские горки</string>
+    <string name="type.attraction.water_slide">Водная горка</string>
     <string name="type.tourism.attraction.specified">Достопримечательность</string>
     <string name="type.tourism.camp_site">Кемпинг</string>
     <string name="type.tourism.caravan_site">Кемпинг для автодомов</string>
@@ -2169,10 +2205,10 @@
     <string name="type.waterway.lock_gate">Шлюз</string>
     <string name="type.waterway.river">Река</string>
     <string name="type.waterway.river.tunnel">Река</string>
-    <string name="type.waterway.stream">Река</string>
-    <string name="type.waterway.stream.ephemeral">Река</string>
-    <string name="type.waterway.stream.intermittent">Река</string>
-    <string name="type.waterway.stream.tunnel">Река</string>
+    <string name="type.waterway.stream">Ручей</string>
+    <string name="type.waterway.stream.ephemeral">Ручей</string>
+    <string name="type.waterway.stream.intermittent">Ручей</string>
+    <string name="type.waterway.stream.tunnel">Ручей</string>
     <string name="type.waterway.waterfall">Водопад</string>
     <string name="type.waterway.weir">Плотина</string>
     <string name="type.wheelchair">Инвалидная коляска</string>

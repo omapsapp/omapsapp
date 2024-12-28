@@ -8,12 +8,12 @@ class LocalDirectoryMonitorDelegateMock: LocalDirectoryMonitorDelegate {
   var didUpdateExpectation: XCTestExpectation?
   var didReceiveErrorExpectation: XCTestExpectation?
 
-  func didFinishGathering(contents: LocalContents) {
+  func didFinishGathering(_ contents: LocalContents) {
     self.contents = contents
     didFinishGatheringExpectation?.fulfill()
   }
 
-  func didUpdate(contents: LocalContents) {
+  func didUpdate(_ contents: LocalContents, _ update: LocalContentsUpdate) {
     self.contents = contents
     didUpdateExpectation?.fulfill()
   }

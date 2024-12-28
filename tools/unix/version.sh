@@ -31,7 +31,9 @@ function ios_version {
 }
 
 function ios_build {
-  echo "$COUNT"
+  MINOR=$((16#${GIT_HASH:0:4}))
+  PATCH=$((16#${GIT_HASH:4:4}))
+  echo "$COUNT.$MINOR.$PATCH"
 }
 
 function  android_name {
@@ -80,10 +82,11 @@ Where format is one of the following arguments (shows current values):
 EOF
 }
 
+init
+
 if [ -z ${1:-} ] || [[ ! $(type -t "$1") == function ]]; then
   usage
   exit 1
 else
-  init
   "$1"
 fi

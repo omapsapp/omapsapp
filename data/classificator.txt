@@ -182,7 +182,9 @@ world  +
         waste_basket  -
         waste_disposal  -
         waste_transfer_station  -
-        water_point  -
+        water_point  +
+            drinking_water_no  -
+            {}
         {}
     area:highway  +
         cycleway  -
@@ -202,7 +204,15 @@ world  +
         unclassified  -
         {}
     attraction  +
+        amusement_ride  -
         animal  -
+        big_wheel  -
+        bumper_car  -
+        carousel  -
+        historic  -
+        maze  -
+        roller_coaster  -
+        water_slide  -
         {}
     barrier  +
         block  -
@@ -703,9 +713,13 @@ world  +
             communication  -
             {}
         wastewater_plant  -
-        water_tap  -
+        water_tap  +
+            drinking_water_no  -
+            {}
         water_tower  -
-        water_well  -
+        water_well  +
+            drinking_water_no  -
+            {}
         windmill  -
         works  -
         {}
@@ -741,7 +755,9 @@ world  +
         scree  -
         scrub  -
         shingle  -
-        spring  -
+        spring  +
+            drinking_water_no  -
+            {}
         strait  -
         tree_row  -
         volcano  -
@@ -938,6 +954,7 @@ world  +
         station  +
             funicular  -
             light_rail  +
+                berlin  -
                 london  -
                 porto  -
                 {}
@@ -982,6 +999,7 @@ world  +
                 hamburg  -
                 helsinki  -
                 hiroshima  -
+                hongkong  -
                 isfahan  -
                 istanbul  -
                 izmir  -
@@ -1035,6 +1053,7 @@ world  +
                 sendai  -
                 sf  -
                 shanghai  -
+                shenzhen  -
                 shiraz  -
                 singapore  -
                 sofia  -
@@ -1101,6 +1120,7 @@ world  +
             hamburg  -
             helsinki  -
             hiroshima  -
+            hongkong  -
             isfahan  -
             istanbul  -
             izmir  -
@@ -1154,6 +1174,7 @@ world  +
             sendai  -
             sf  -
             shanghai  -
+            shenzhen  -
             shiraz  -
             singapore  -
             sofia  -
@@ -1289,6 +1310,7 @@ world  +
         outdoor  -
         outpost  -
         paint  -
+        pasta  -
         pastry  -
         pawnbroker  -
         perfumery  -

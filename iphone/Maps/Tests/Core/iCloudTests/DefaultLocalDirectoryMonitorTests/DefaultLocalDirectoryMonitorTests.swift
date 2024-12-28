@@ -5,13 +5,13 @@ final class DefaultLocalDirectoryMonitorTests: XCTestCase {
 
   let fileManager = FileManager.default
   let tempDirectory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
-  var directoryMonitor: DefaultLocalDirectoryMonitor!
+  var directoryMonitor: FileSystemDispatchSourceMonitor!
   var mockDelegate: LocalDirectoryMonitorDelegateMock!
 
   override func setUpWithError() throws {
     try super.setUpWithError()
     // Setup with a temporary directory and a mock delegate
-    directoryMonitor = try DefaultLocalDirectoryMonitor(fileManager: fileManager, directory: tempDirectory)
+    directoryMonitor = try FileSystemDispatchSourceMonitor(fileManager: fileManager, directory: tempDirectory)
     mockDelegate = LocalDirectoryMonitorDelegateMock()
     directoryMonitor.delegate = mockDelegate
   }

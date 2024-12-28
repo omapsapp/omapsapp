@@ -4,16 +4,26 @@
 #import "MWMTypes.h"
 
 @class MWMMapSearchResult;
+@class TrackInfo;
 
 typedef NS_ENUM(NSUInteger, MWMZoomMode) { MWMZoomModeIn = 0, MWMZoomModeOut };
+
+typedef NS_ENUM(NSInteger, ProductsPopupCloseReason) {
+  ProductsPopupCloseReasonClose,
+  ProductsPopupCloseReasonSelectProduct,
+  ProductsPopupCloseReasonAlreadyDonated,
+  ProductsPopupCloseReasonRemindLater
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^SearchInDownloaderCompletions)(NSArray<MWMMapSearchResult *> *results, BOOL finished);
+typedef void (^TrackRecordingUpdatedHandler)(TrackInfo * _Nonnull trackInfo);
 
 @protocol TrackRecorder <NSObject>
 
 + (void)startTrackRecording;
++ (void)setTrackRecordingUpdateHandler:(TrackRecordingUpdatedHandler _Nullable)trackRecordingDidUpdate;
 + (void)stopTrackRecording;
 + (void)saveTrackRecordingWithName:(nullable NSString *)name;
 + (BOOL)isTrackRecordingEnabled;
@@ -21,8 +31,19 @@ typedef void (^SearchInDownloaderCompletions)(NSArray<MWMMapSearchResult *> *res
 
 @end
 
+@class ProductsConfiguration;
+@class Product;
+
+@protocol ProductsManager <NSObject>
+
++ (nullable ProductsConfiguration *)getProductsConfiguration;
++ (void)didCloseProductsPopupWithReason:(ProductsPopupCloseReason)reason;
++ (void)didSelectProduct:(Product *)product;
+
+@end
+
 NS_SWIFT_NAME(FrameworkHelper)
-@interface MWMFrameworkHelper : NSObject<TrackRecorder>
+@interface MWMFrameworkHelper : NSObject<TrackRecorder, ProductsManager>
 
 + (void)processFirstLaunch:(BOOL)hasLocation;
 + (void)setVisibleViewport:(CGRect)rect scaleFactor:(CGFloat)scale;

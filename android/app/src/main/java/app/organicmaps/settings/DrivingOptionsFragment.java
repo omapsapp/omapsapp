@@ -13,6 +13,7 @@ import androidx.appcompat.widget.SwitchCompat;
 
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmToolbarFragment;
+import app.organicmaps.routing.RoutingController;
 import app.organicmaps.routing.RoutingOptions;
 
 import java.util.ArrayList;
@@ -74,8 +75,16 @@ public class DrivingOptionsFragment extends BaseMwmToolbarFragment
   @Override
   public boolean onBackPressed()
   {
-    requireActivity().setResult(areSettingsNotChanged() ? Activity.RESULT_CANCELED
-                                                        : Activity.RESULT_OK);
+    if (areSettingsNotChanged())
+    {
+      requireActivity().setResult(Activity.RESULT_CANCELED);
+    }
+    else
+    {
+      requireActivity().setResult(Activity.RESULT_OK);
+      RoutingController.get().rebuildLastRoute();
+    }
+
     return super.onBackPressed();
   }
 

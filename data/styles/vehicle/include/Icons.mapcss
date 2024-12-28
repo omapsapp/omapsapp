@@ -2,7 +2,7 @@
 2.NATURAL
 3.TRANSPORT
   3.1 Train Station
-  3.2 Subway Station (Moved to /default/include/Subways.mapcss)
+  3.2 Road Icons
   3.3 Tram Station
   3.4 Bus Station
   3.5 Ferry terminal
@@ -124,11 +124,6 @@ node|z14-[aeroway=aerodrome]::int_name,
 
 /*check offset int_name*/
 
-/* 3.2 Road Icons */
-node|z19-[highway=traffic_signals],
-{icon-image: traffic_signals.svg}
-
-
 node|z12[railway=station][!transport],
 {icon-image: train-s.svg;text-offset: 1;font-size: 11;}
 node|z13[railway=station],
@@ -160,8 +155,12 @@ node|z17-[railway=station]::int_name,
 node|z17-[railway=halt]::int_name,
 {text-offset: 1;font-size: 12;text-halo-opacity: 0.9;}
 
-/* 3.3 Tram Station */
+/* 3.2 Road Icons */
 
+node|z15-[highway=traffic_signals],
+{icon-image: traffic_signals.svg}
+
+/* 3.3 Tram Station */
 
 node|z17[railway=tram_stop],
 area|z17[railway=tram_stop]
@@ -906,8 +905,11 @@ area|z18-[amenity=compressed_air],
 {icon-image: compressed_air-m.svg;}
 
 node|z16-[amenity=water_point],
-area|z16-[amenity=water_point],
 {icon-image: drinking-water-m.svg; icon-min-distance: 20;}
+node|z16-[amenity=water_point][drinking_water=not],
+{icon-image: none;}
+node|z18-[amenity=water_point][drinking_water=not],
+{icon-image: drinking-water-no-m.svg; icon-min-distance: 20;}
 
 /* 7.1 Parking */
 

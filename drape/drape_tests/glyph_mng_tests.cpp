@@ -272,6 +272,9 @@ UNIT_TEST(GlyphLoadingTest)
 
   constexpr int fontSize = 27;
 
+  renderer.SetString("Muḩāfaz̧at", fontSize, "en");
+  RunTestLoop("Latin Extended", std::bind(&GlyphRenderer::RenderGlyphs, &renderer, _1));
+
   renderer.SetString("Строка", fontSize, "ru");
   RunTestLoop("ru", std::bind(&GlyphRenderer::RenderGlyphs, &renderer, _1));
 

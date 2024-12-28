@@ -17,6 +17,7 @@
 #include "map/track.hpp"
 #include "map/traffic_manager.hpp"
 #include "map/transit/transit_reader.hpp"
+#include "map/gps_track_collection.hpp"
 
 #include "drape_frontend/gui/skin.hpp"
 #include "drape_frontend/drape_api.hpp"
@@ -47,6 +48,7 @@
 #include "platform/location.hpp"
 #include "platform/platform.hpp"
 #include "platform/distance.hpp"
+#include "platform/products.hpp"
 
 #include "routing/router.hpp"
 
@@ -434,7 +436,9 @@ public:
   void ConnectToGpsTracker();
   void DisconnectFromGpsTracker();
 
+  using TrackRecordingUpdateHandler = platform::SafeCallback<void(GpsTrackInfo const & trackInfo)>;
   void StartTrackRecording();
+  void SetTrackRecordingUpdateHandler(TrackRecordingUpdateHandler && trackRecordingDidUpdate);
   void StopTrackRecording();
   void SaveTrackRecordingWithName(std::string const & name);
   bool IsTrackRecordingEmpty() const;
@@ -462,15 +466,16 @@ private:
   TCurrentCountryChanged m_currentCountryChanged;
 
   void OnUpdateGpsTrackPointsCallback(std::vector<std::pair<size_t, location::GpsInfo>> && toAdd,
-                                      std::pair<size_t, size_t> const & toRemove);
+                                      std::pair<size_t, size_t> const & toRemove,
+                                      GpsTrackInfo const & trackInfo);
+
+  TrackRecordingUpdateHandler m_trackRecordingUpdateHandler;
 
   CachingRankTableLoader m_popularityLoader;
 
   std::unique_ptr<descriptions::Loader> m_descriptionsLoader;
 
 public:
-  using SearchRequest = search::QuerySaver::SearchRequest;
-
   // Moves viewport to the search result and taps on it.
   void SelectSearchResult(search::Result const & res, bool animation);
 
@@ -673,8 +678,8 @@ private:
 
 public:
   /// @name Data versions
-  bool IsDataVersionUpdated();
-  void UpdateSavedDataVersion();
+  // bool IsDataVersionUpdated();
+  // void UpdateSavedDataVersion();
   int64_t GetCurrentDataVersion() const;
 
 public:
@@ -685,6 +690,12 @@ public:
   void Allow3dMode(bool allow3d, bool allow3dBuildings);
   void Save3dMode(bool allow3d, bool allow3dBuildings);
   void Load3dMode(bool & allow3d, bool & allow3dBuildings);
+
+private:
+  void ApplyMapLanguageCode(std::string const & langCode);
+public:
+  static std::string GetMapLanguageCode();
+  void SetMapLanguageCode(std::string const & langCode);
 
   void SetLargeFontsSize(bool isLargeSize);
   bool LoadLargeFontsSize();
@@ -751,4 +762,24 @@ public:
   // PowerManager::Subscriber override.
   void OnPowerFacilityChanged(power_management::Facility const facility, bool enabled) override;
   void OnPowerSchemeChanged(power_management::Scheme const actualScheme) override;
+
+public:
+  std::optional<products::ProductsConfig> GetProductsConfiguration() const;
+
+  enum class ProductsPopupCloseReason
+  {
+    Close,
+    SelectProduct,
+    AlreadyDonated,
+    RemindLater
+  };
+
+  void DidCloseProductsPopup(ProductsPopupCloseReason reason) const;
+  void DidSelectProduct(products::ProductsConfig::Product const & product) const;
+
+private:
+  bool ShouldShowProducts() const;
+  uint32_t GetTimeoutForReason(ProductsPopupCloseReason reason) const;
+  std::string_view ToString(ProductsPopupCloseReason reason) const;
+  ProductsPopupCloseReason FromString(std::string const & str) const;
 };

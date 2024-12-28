@@ -2,13 +2,13 @@ import Chart
 
 protocol ElevationProfileViewProtocol: AnyObject {
   var presenter: ElevationProfilePresenterProtocol?  { get set }
-  
+
+  var isChartViewHidden: Bool { get set }
   var isExtendedDifficultyLabelHidden: Bool { get set }
   var isDifficultyHidden: Bool { get set }
-  var isTimeHidden: Bool { get set }
   var isBottomPanelHidden: Bool { get set }
+
   func setExtendedDifficultyGrade(_ value: String)
-  func setTrackTime(_ value: String?)
   func setDifficulty(_ value: ElevationDifficulty)
   func setChartData(_ data: ChartPresentationData)
   func setActivePoint(_ distance: Double)
@@ -16,23 +16,27 @@ protocol ElevationProfileViewProtocol: AnyObject {
 }
 
 class ElevationProfileViewController: UIViewController {
+
+  private enum Constants {
+    static let chartViewVisibleHeight: CGFloat = 176
+    static let chartViewHiddenHeight: CGFloat = 20
+    static let difficultyVisibleHeight: CGFloat = 60
+    static let difficultyHiddenHeight: CGFloat = 20
+  }
+
   var presenter: ElevationProfilePresenterProtocol?
   
-  @IBOutlet private var chartView: ChartView!
-  @IBOutlet private var graphViewContainer: UIView!
-  @IBOutlet private var descriptionCollectionView: UICollectionView!
-  @IBOutlet private var difficultyView: DifficultyView!
-  @IBOutlet private var difficultyTitle: UILabel!
-  @IBOutlet private var extendedDifficultyGradeLabel: UILabel!
-  @IBOutlet private var trackTimeLabel: UILabel!
-  @IBOutlet private var trackTimeTitle: UILabel!
-  @IBOutlet private var extendedGradeButton: UIButton!
-  @IBOutlet private var diffucultyConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var chartView: ChartView!
+  @IBOutlet private weak var graphViewContainer: UIView!
+  @IBOutlet private weak var descriptionCollectionView: UICollectionView!
+  @IBOutlet private weak var difficultyView: DifficultyView!
+  @IBOutlet private weak var difficultyTitle: UILabel!
+  @IBOutlet private weak var extendedDifficultyGradeLabel: UILabel!
+  @IBOutlet private weak var extendedGradeButton: UIButton!
+  @IBOutlet private weak var chartHeightConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var difficultyConstraint: NSLayoutConstraint!
 
-  private let diffucultiVisibleConstraint: CGFloat = 60
-  private let diffucultyHiddenConstraint: CGFloat = 10
   private var difficultyHidden: Bool = false
-  private var timeHidden: Bool = false
   private var bottomPanelHidden: Bool = false
 
   override func viewDidLoad() {
@@ -60,6 +64,15 @@ class ElevationProfileViewController: UIViewController {
 }
 
 extension ElevationProfileViewController: ElevationProfileViewProtocol {
+  var isChartViewHidden: Bool {
+    get { return chartView.isHidden }
+    set {
+      chartView.isHidden = newValue
+      graphViewContainer.isHidden = newValue
+      chartHeightConstraint.constant = newValue ? Constants.chartViewHiddenHeight : Constants.chartViewVisibleHeight
+    }
+  }
+
   var isExtendedDifficultyLabelHidden: Bool {
     get { return extendedDifficultyGradeLabel.isHidden }
     set {
@@ -77,34 +90,20 @@ extension ElevationProfileViewController: ElevationProfileViewProtocol {
     }
   }
 
-  var isTimeHidden: Bool {
-    get { timeHidden }
-    set {
-      timeHidden = newValue
-      trackTimeLabel.isHidden = newValue
-      trackTimeTitle.isHidden = newValue
-    }
-  }
-
   var isBottomPanelHidden: Bool {
     get { bottomPanelHidden }
     set {
       bottomPanelHidden = newValue
       if newValue == true {
-        isTimeHidden = true
         isExtendedDifficultyLabelHidden = true
         isDifficultyHidden = true
       }
-      diffucultyConstraint.constant = newValue ? diffucultyHiddenConstraint : diffucultiVisibleConstraint
+      difficultyConstraint.constant = newValue ? Constants.difficultyHiddenHeight : Constants.difficultyVisibleHeight
     }
   }
   
   func setExtendedDifficultyGrade(_ value: String) {
     extendedDifficultyGradeLabel.text = value
-  }
-
-  func setTrackTime(_ value: String?) {
-    trackTimeLabel.text = value
   }
 
   func setDifficulty(_ value: ElevationDifficulty) {

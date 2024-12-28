@@ -133,7 +133,7 @@ public:
   std::string const & GetSecondaryTitle() const { return m_uiSecondaryTitle; };
   /// Convenient wrapper for type, cuisines, elevation, stars, wifi etc.
   std::string const & GetSubtitle() const { return m_uiSubtitle; };
-  std::string const & GetAddress() const { return m_uiAddress; }
+  std::string const & GetSecondarySubtitle() const { return !m_uiTrackStatistics.empty() ? m_uiTrackStatistics : m_uiAddress; };
   std::string const & GetWikiDescription() const { return m_description; }
   /// @returns coordinate in DMS format if isDMS is true
   std::string GetFormattedCoordinate(CoordinatesFormat format) const;
@@ -141,6 +141,7 @@ public:
   /// UI setters
   void SetCustomName(std::string const & name);
   void SetTitlesForBookmark();
+  void SetTitlesForTrack(Track const & track);
   void SetCustomNames(std::string const & title, std::string const & subtitle);
   void SetCustomNameWithCoordinates(m2::PointD const & mercator, std::string const & name);
   void SetAddress(std::string && address) { m_address = std::move(address); }
@@ -227,6 +228,7 @@ private:
   std::string m_uiSubtitle;
   std::string m_uiSecondaryTitle;
   std::string m_uiAddress;
+  std::string m_uiTrackStatistics;
   std::string m_description;
   /// Booking rating string
   std::string m_localizedRatingString;

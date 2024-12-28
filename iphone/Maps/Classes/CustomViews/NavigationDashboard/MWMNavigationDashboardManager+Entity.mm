@@ -7,6 +7,7 @@
 
 #import <AudioToolbox/AudioServices.h>
 #import <CoreApi/Framework.h>
+#import <CoreApi/DurationFormatter.h>
 
 #include "routing/following_info.hpp"
 #include "routing/turns.hpp"
@@ -121,9 +122,9 @@ NSArray<MWMRouterTransitStepInfo *> *buildRouteTransitSteps(NSArray<MWMRoutePoin
 - (NSString *)arrival
 {
   auto arrivalDate = [[NSDate date] dateByAddingTimeInterval:self.timeToTarget];
-  return [NSDateFormatter localizedStringFromDate:arrivalDate
-                                        dateStyle:NSDateFormatterNoStyle
-                                        timeStyle:NSDateFormatterShortStyle];
+  return [DateTimeFormatter dateStringFrom:arrivalDate
+                                 dateStyle:NSDateFormatterNoStyle
+                                 timeStyle:NSDateFormatterShortStyle];
 }
 
 + (NSAttributedString *)estimateDot
@@ -141,7 +142,7 @@ NSArray<MWMRouterTransitStepInfo *> *buildRouteTransitSteps(NSArray<MWMRoutePoin
 
   auto result = [[NSMutableAttributedString alloc] initWithString:@""];
   if (self.showEta) {
-    NSString * eta = [NSDateComponentsFormatter etaStringFrom:self.timeToTarget];
+    NSString * eta = [DurationFormatter durationStringFromTimeInterval:self.timeToTarget];
     [result appendAttributedString:[[NSMutableAttributedString alloc] initWithString:eta attributes:primaryAttributes]];
     [result appendAttributedString:MWMNavigationDashboardEntity.estimateDot];
   }

@@ -11,7 +11,6 @@
 #include "drape/texture_manager.hpp"
 
 #include "indexer/map_style_reader.hpp"
-#include "indexer/scales.hpp"
 
 #include "platform/platform.hpp"
 
@@ -48,8 +47,8 @@ df::ColorConstant const kArrow3DObsoleteColor = "Arrow3DObsolete";
 df::ColorConstant const kArrow3DColor = "Arrow3D";
 df::ColorConstant const kArrow3DOutlineColor = "Arrow3DOutline";
 
-std::string_view const kDefaultArrowMesh = "arrow.obj";
-std::string_view const kDefaultArrowShadowMesh = "arrow_shadow.obj";
+std::string const kDefaultArrowMesh = "arrow.obj";
+std::string const kDefaultArrowShadowMesh = "arrow_shadow.obj";
 
 std::string_view const kMainFileId = "main_obj_file_id";
 
@@ -130,7 +129,7 @@ bool LoadMesh(std::string const & pathToMesh, bool isDefaultResource,
     ReaderPtr<Reader> reader = isDefaultResource
                                  ? GetStyleReader().GetDefaultResourceReader(pathToMesh)
                                  : GetPlatform().GetReader(pathToMesh);
-    ReaderSource<ReaderPtr<Reader>> source(reader);
+    ReaderSource source(reader);
 
     // Read OBJ file.
     fastObjCallbacks callbacks;
@@ -197,12 +196,10 @@ Arrow3d::PreloadedData Arrow3d::PreloadMesh(std::optional<Arrow3dCustomDecl> con
 {
   Arrow3d::PreloadedData data;
 
-  bool const useDefaultResource =
-      !customDecl.has_value() || customDecl->m_loadFromDefaultResourceFolder;
+  bool const useDefaultResource = !customDecl || customDecl->m_loadFromDefaultResourceFolder;
 
   // Load arrow mesh.
-  auto const meshPath =
-      customDecl.has_value() ? customDecl->m_arrowMeshPath : std::string(kDefaultArrowMesh);
+  auto const & meshPath = customDecl ? customDecl->m_arrowMeshPath : kDefaultArrowMesh;
   data.m_meshData = PreloadedMeshData{};
   if (!LoadMesh(
           meshPath, useDefaultResource,
@@ -247,13 +244,12 @@ Arrow3d::PreloadedData Arrow3d::PreloadMesh(std::optional<Arrow3dCustomDecl> con
   }
 
   // Load shadow arrow mesh.
-  auto const shadowMeshPath =
-      customDecl.has_value() ? customDecl->m_shadowMeshPath : std::string(kDefaultArrowShadowMesh);
-  if (shadowMeshPath.has_value())
+  auto const & shadowMeshPath = customDecl ? customDecl->m_shadowMeshPath : kDefaultArrowShadowMesh;
+  if (!shadowMeshPath.empty())
   {
     data.m_shadowMeshData = PreloadedMeshData{};
     LoadMesh(
-        shadowMeshPath.value(), useDefaultResource,
+        shadowMeshPath, useDefaultResource,
         [&](std::vector<float> positions, std::vector<float> /* normals */,
             std::vector<float> texCoords)
         {
@@ -501,10 +497,7 @@ std::pair<glsl::mat4, glsl::mat4> Arrow3d::CalculateTransform(ScreenBase const &
 
   if (screen.isPerspective())
   {
-    glm::mat4 pTo3dView;
-    auto const m = math::Matrix<float, 4, 4>(screen.Pto3dMatrix());
-    static_assert(sizeof(m) == sizeof(pTo3dView));
-    memcpy(&pTo3dView, &m, sizeof(pTo3dView));
+    glm::mat4 pTo3dView = glm::make_mat4x4(screen.Pto3dMatrix().m_data);
     auto postProjectionPerspective = pTo3dView * modelTransform;
     return std::make_pair(postProjectionPerspective, normalMatrix);
   }

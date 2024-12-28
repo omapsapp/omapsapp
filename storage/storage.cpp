@@ -1267,12 +1267,9 @@ bool Storage::IsNodeDownloaded(CountryId const & countryId) const
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
 
-  for (auto const & localeMap : m_localFiles)
-  {
-    if (countryId == localeMap.first)
-      return true;
-  }
-  return false;
+  auto const it = m_localFiles.find(countryId);
+  /// @todo IDK what is the logic here, but other functions also check on empty list.
+  return (it != m_localFiles.end() && !it->second.empty());
 }
 
 bool Storage::HasLatestVersion(CountryId const & countryId) const
@@ -1283,7 +1280,7 @@ bool Storage::HasLatestVersion(CountryId const & countryId) const
 bool Storage::IsAllowedToEditVersion(CountryId const & countryId) const
 {
   auto const status = CountryStatusEx(countryId);
-  switch (status) 
+  switch (status)
   {
     case Status::OnDisk: return true;
     case Status::OnDiskOutOfDate:
@@ -1292,7 +1289,7 @@ bool Storage::IsAllowedToEditVersion(CountryId const & countryId) const
       ASSERT(localFile, ("Local file shouldn't be nullptr."));
       auto const currentVersionTime = base::YYMMDDToSecondsSinceEpoch(static_cast<uint32_t>(m_currentVersion));
       auto const localVersionTime = base::YYMMDDToSecondsSinceEpoch(static_cast<uint32_t>(localFile->GetVersion()));
-      return currentVersionTime - localVersionTime < kMaxSecondsTillLastVersionUpdate && 
+      return currentVersionTime - localVersionTime < kMaxSecondsTillLastVersionUpdate &&
              base::SecondsSinceEpoch() - localVersionTime < kMaxSecondsTillNoEdits;
     }
     default: return false;
@@ -1350,10 +1347,11 @@ void Storage::DeleteNode(CountryId const & countryId)
   if (!node)
     return;
 
-  auto deleteAction = [this](CountryTree::Node const & descendantNode) {
-    bool onDisk = m_localFiles.find(descendantNode.Value().Name()) != m_localFiles.end();
+  auto const deleteAction = [this](CountryTree::Node const & descendantNode)
+  {
+    bool const onDisk = m_localFiles.find(descendantNode.Value().Name()) != m_localFiles.end();
     if (descendantNode.ChildrenCount() == 0 && onDisk)
-      this->DeleteCountry(descendantNode.Value().Name(), MapFileType::Map);
+      DeleteCountry(descendantNode.Value().Name(), MapFileType::Map);
   };
   node->ForEachInSubtree(deleteAction);
 }
@@ -1784,7 +1782,8 @@ Progress Storage::CalculateProgress(CountriesVec const & descendants) const
 
 void Storage::UpdateNode(CountryId const & countryId)
 {
-  ForEachInSubtree(countryId, [this](CountryId const & descendantId, bool groupNode) {
+  ForEachInSubtree(countryId, [this](CountryId const & descendantId, bool groupNode)
+  {
     if (!groupNode && m_localFiles.find(descendantId) != m_localFiles.end())
       DownloadNode(descendantId, true /* isUpdate */);
   });

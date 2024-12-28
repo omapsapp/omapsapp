@@ -22,6 +22,7 @@ import androidx.core.content.ContextCompat;
 import app.organicmaps.BuildConfig;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
+import app.organicmaps.util.ROMUtils;
 import app.organicmaps.util.StringUtils;
 
 import net.jcip.annotations.ThreadSafe;
@@ -245,6 +246,7 @@ public final class LogsManager
     if (!StringUtils.toLowerCase(Build.MODEL).startsWith(StringUtils.toLowerCase(Build.MANUFACTURER)))
       sb.append(Build.MANUFACTURER).append(' ');
     sb.append(Build.MODEL).append(" (").append(Build.DEVICE).append(')');
+    sb.append("\nIs custom ROM: ").append(ROMUtils.isCustomROM());
     sb.append("\nSupported ABIs:");
     for (String abi : Build.SUPPORTED_ABIS)
       sb.append(' ').append(abi);

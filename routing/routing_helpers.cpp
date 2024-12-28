@@ -72,7 +72,7 @@ void ReconstructRoute(DirectionsEngine & engine, IndexRoadGraph const & graph,
 
   route.SetGeometry(routeGeometry.begin(), routeGeometry.end());
 
-  LOG(LINFO, (route.DebugPrintTurns()));
+  LOG(LDEBUG, (route.DebugPrintTurns()));
 }
 
 Segment ConvertEdgeToSegment(NumMwmIds const & numMwmIds, Edge const & edge)

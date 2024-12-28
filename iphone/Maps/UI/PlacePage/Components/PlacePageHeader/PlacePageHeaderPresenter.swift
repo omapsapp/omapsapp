@@ -44,6 +44,8 @@ extension PlacePageHeaderPresenter: PlacePageHeaderPresenterProtocol {
       view?.isExpandViewHidden = true
       view?.isShadowViewHidden = false
     }
+    // TODO: (KK) Enable share button for the tracks to share the whole track gpx/kml
+    view?.isShareButtonHidden = placePagePreviewData.coordinates == nil
   }
 
   func onClosePress() {

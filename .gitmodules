@@ -4,9 +4,6 @@
 [submodule "tools/kothic"]
   path = tools/kothic
   url = https://github.com/organicmaps/kothic.git
-[submodule "tools/macdeployqtfix"]
-  path = tools/macdeployqtfix
-  url = https://github.com/aurelien-rainone/macdeployqtfix.git
 [submodule "3party/protobuf/protobuf"]
   path = 3party/protobuf/protobuf
   url = https://github.com/organicmaps/protobuf.git

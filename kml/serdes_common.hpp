@@ -26,6 +26,7 @@ std::string PointToLineString(geometry::PointWithAltitude const & pt);
 std::string PointToGxString(geometry::PointWithAltitude const & pt);
 
 void SaveStringWithCDATA(Writer & writer, std::string s);
+std::string const * GetDefaultLanguage(LocalizableString const & lstr);
 
 std::string_view constexpr kIndent0 {};
 std::string_view constexpr kIndent2 {"  "};

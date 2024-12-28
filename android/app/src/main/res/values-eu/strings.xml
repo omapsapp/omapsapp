@@ -313,6 +313,10 @@
     <string name="google_play_services">Google Play Kokapen Zerbitzuak</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Zehaztu azkar zure gutxi gorabeherako kokapena Bluetooth, WiFi edo sare mugikorra erabiliz</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Kayak.com hotelen estekak</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Kayak.com-en zerrenda bat duten hoteletarako \"argazkiak, iritziak, erreserba\" estekak bistaratuko dira. Esteka horien bidez egindako erreserbek lortzen dituzten hobariak Organic Maps garatzeko erabiliko dira.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Deskargatu zure arrastoaren mapa guztiak</string>
     <!-- Text for routing error dialog -->
@@ -496,7 +500,10 @@
     <string name="message_invalid_feature_position">Hemen ezin da objekturik jarri</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Komunitateak sortutako OpenStreetMap datuak %s-tik aurrera. Lortu informazio gehiago mapa editatu eta eguneratzeari buruz OpenStreetMap.org helbidean</string>
-    <string name="login_to_make_edits_visible">Hasi saioa OpenStreetMapen beste erabiltzaileek zuk egindako aldaketak ikus ditzaten.</string>
+    <!-- OSM explanation on Android login screen -->
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) mapa libre eta irekia eraikitzeko komunitateko proiektu bat da. Organic Maps-en mapen datuen iturri nagusia da eta Wikipediaren antzera funtzionatzen du. Tokiak gehitu edo edita ditzakezu eta mundu osoko milioika erabiltzailerentzat eskuragarri egongo dira.
+\nSartu komunitatean eta lagundu mapa hobea egiten guztiontzat!</string>
+    <string name="login_to_make_edits_visible">Sortu OpenStreetMap kontu bat edo hasi saioa zure maparen aldaketak munduan argitaratzeko.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d/%2$d</string>
     <string name="download_over_mobile_header">Deskargatu sare mugikorreko konexioarekin?</string>
@@ -516,9 +523,9 @@
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Zure aldaketak <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> datu-base publikora kargatzen dira. Mesedez, ez gehitu informazio pertsonalik edo copyrightdun informaziorik.</string>
     <string name="editor_more_about_osm">OpenStreetMap-i buruzko informazio gehiago</string>
-    <string name="editor_operator">Eragilea</string>
+    <string name="editor_operator">Operadorea</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
-    <string name="operator">Eragilea: %s</string>
+    <string name="operator">Operadorea: %s</string>
     <string name="editor_category_unsuitable_title">Ezin duzu kategoria egokirik aurkitu?</string>
     <string name="editor_category_unsuitable_text">Organic Maps-ek puntu kategoria soilak gehitzeko aukera ematen du, hau da, ez da herririk, errepiderik, lakurik, eraikinen eskemarik, etab. Gehitu kategoria horiek zuzenean <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Begiratu gure <a href="https://organicmaps.app/faq/editing/advanced-map-editing">gida</a> urratsez urrats argibide zehatzak lortzeko.</string>
     <string name="downloader_no_downloaded_maps_title">Ez duzu maparik deskargatu</string>
@@ -537,6 +544,7 @@
     <string name="miles_per_hour">mph</string>
     <string name="hour">h</string>
     <string name="minute">min</string>
+    <string name="day">e</string>
     <string name="placepage_more_button">Gehiago</string>
     <!-- A referral link on the place page for some hotels -->
     <string name="more_on_kayak">Argazkiak, iritziak, erreserba</string>
@@ -544,6 +552,8 @@
     <string name="dialog_kayak_disclaimer">Esteka honen bidez erreserba bakoitzeko jasotzen den erreferentzia-bonua Organic Maps garatzera doa.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
     <string name="dialog_kayak_button">Xehetasunak Kayak-en</string>
+    <!-- A disable button text in the explanation dialog that opens hotel details page on Kayak website. -->
+    <string name="dialog_kayak_disable_button">Desgaitu Kayak</string>
     <string name="placepage_edit_bookmark_button">Editatu markagailua</string>
     <string name="editor_comment_hint">Iruzkina…</string>
     <string name="editor_reset_edits_message">Tokiko aldaketa guztiak berrezarri nahi dituzu?</string>
@@ -603,8 +613,8 @@
     <string name="routing_add_start_point">Erabili bilaketa edo sakatu mapan ibilbidearen abiapuntua gehitzeko</string>
     <!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
     <string name="routing_add_finish_point">Erabili bilaketa edo sakatu mapan helmuga puntu bat gehitzeko</string>
-    <string name="placepage_remove_stop">Kendu</string>
-    <string name="placepage_add_stop">Gehitu geldiunea</string>
+    <string name="placepage_remove_stop">Kendu geltokia</string>
+    <string name="placepage_add_stop">Gehitu geltokia</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
     <string name="alert_reauth_message">Hasi saioa OpenStreetMap-en zure mapen aldaketa guztiak automatikoki kargatzeko. Lortu informazio gehiago <a href="https://github.com/organicmaps/organicmaps/issues/6144">hemen</a>.</string>
     <string name="dialog_error_storage_title">Biltegiratze sarbidearen arazoa</string>
@@ -753,8 +763,8 @@
     <string name="isolines_location_error_dialog">Erliebearen altitudea oraindik ez dago eskuragarri eskualde honetan</string>
     <string name="elevation_profile_ascent">Maldan gora</string>
     <string name="elevation_profile_descent">Maldan behera</string>
-    <string name="elevation_profile_minaltitude">Gutxieneko altuera</string>
-    <string name="elevation_profile_maxaltitude">Gehieneko altuera</string>
+    <string name="elevation_profile_min_elevation">Goragune min.</string>
+    <string name="elevation_profile_max_elevation">Goragune max.</string>
     <string name="elevation_profile_difficulty">Zailtasuna</string>
     <string name="elevation_profile_distance">Distantzia:</string>
     <string name="elevation_profile_time">Denbora:</string>
@@ -776,6 +786,8 @@
     <string name="enable_show_on_lock_screen">Erakutsi pantaila blokeatuan</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Gaituta dagoenean, ez duzu gailua desblokeatu beharrik aplikazioa abian dagoen bitartean.</string>
+    <!-- Current language of the map! -->
+    <string name="change_map_locale">Maparen hizkuntza</string>
     <!-- OpenStreetMap text on splash screen -->
     <string name="splash_subtitle">OpenStreetMap-eko mapa-datuak</string>
     <!-- Translated Organic Maps site, add new translations here: https://github.com/organicmaps/organicmaps.github.io/tree/master/content -->
@@ -789,7 +801,7 @@
     <!-- App tip #03 -->
     <string name="app_tip_03">Software garatzaile bat ezagutzen baduzu, behar duzun funtzio bat ezartzeko eska diezaiokezu.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Ba al dakizu mapako edozein toki luze sakatu dezakezula hura hautatzeko?</string>
+    <string name="app_tip_04">Sakatu mapako edozein tokitan edozer hautatzeko. Luze sakatu interfazea ezkutatzeko eta berriro erakusteko.</string>
     <!-- App tip #05 -->
     <string name="app_tip_05">Ba al dakizu zure uneko kokapena mapan hauta dezakezula?</string>
     <!-- App tip #06 -->
@@ -850,7 +862,7 @@
     <!-- Prompt for stopping a track recording. -->
     <string name="stop_track_recording">Gelditu ibilbidearen grabaketa</string>
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Gelditu gordetzeko gabe</string>
+    <string name="stop_without_saving">Gelditu gorde gabe</string>
     <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
     <string name="continue_recording">Jarraitu grabatzen</string>
     <!-- Title for the alert when saving a track recording. -->
@@ -859,7 +871,11 @@
     <string name="track_recording_toast_nothing_to_save">Ibilbidea hutsik dago; ez dago ezer gordetzeko</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Ezin da karpeta hautatzeko elkarrizketa-koadroa erakutsi zure gailuan ez dagoelako aplikazio egokirik instalatuta. Instalatu fitxategi-kudeatzaile aplikazio bat eta saiatu berriro</string>
+    <string name="choose_color">Aukeratu kolorea</string>
+    <string name="edit_track">Editatu arrastoa</string>
     <string name="uri_open_location_failed">Ez dago kokapena ireki dezakeen aplikaziorik instalatu</string>
+    <!-- preference string for using auto theme only in navigation mode -->
+    <string name="nav_auto">Nabigazioan automatikoa</string>
 
     <!-- SECTION: Types -->
     <string name="type.addr_interpolation">Helbidea/Blokea</string>
@@ -1040,6 +1056,7 @@
     <string name="type.amenity.waste_basket">Paper-ontzia</string>
     <string name="type.amenity.waste_disposal">Zaborrontzia</string>
     <string name="type.amenity.water_point">Ur iturria</string>
+    <string name="type.amenity.water_point.drinking_water_no">Ur iturria</string>
     <string name="type.barrier">Hesia</string>
     <string name="type.barrier.block">Blokea</string>
     <string name="type.barrier.bollard">Bolardoa</string>
@@ -1085,7 +1102,7 @@
     <string name="type.building.has_parts">Eraikin</string>
     <string name="type.building_part">Eraikin</string>
     <string name="type.building.garage">Garajea</string>
-    <string name="type.building.train_station">Tren geltokian</string>
+    <string name="type.building.train_station">Geltokiaren eraikina</string>
     <string name="type.building.warehouse">Biltegia</string>
     <string name="type.cemetery.grave">Hilobia</string>
     <string name="type.craft">Artisautza</string>
@@ -1473,8 +1490,10 @@
     <string name="type.man_made.tower">Dorrea</string>
     <string name="type.man_made.tower.communication">Komunikazio Dorrea</string>
     <string name="type.man_made.water_tap">Ura hartzea</string>
+    <string name="type.man_made.water_tap.drinking_water_no">Ura hartzea</string>
     <string name="type.man_made.water_tower">Ur depositua</string>
     <string name="type.man_made.water_well">Ur putzua</string>
+    <string name="type.man_made.water_well.drinking_water_no">Ur putzua</string>
     <string name="type.man_made.windmill">Haize-errota</string>
     <string name="type.military.bunker">Bunkerra</string>
     <string name="type.natural">Natura</string>
@@ -1514,6 +1533,7 @@
     <string name="type.natural.rock">Arroka</string>
     <string name="type.natural.scrub">Sastrakak</string>
     <string name="type.natural.spring">Udaberria</string>
+    <string name="type.natural.spring.drinking_water_no">Udaberria</string>
     <string name="type.natural.strait">Estua</string>
     <string name="type.natural.tree_row">Zuhaitz ilara</string>
     <string name="type.natural.vineyard">Mahasti</string>
@@ -1610,6 +1630,7 @@
     <string name="type.railway.station">Tren geltokian</string>
     <string name="type.railway.station.funicular">Funikularra</string>
     <string name="type.railway.station.light_rail">Tren geltokian</string>
+    <string name="type.railway.station.light_rail.berlin">Tren geltokian</string>
     <string name="type.railway.station.light_rail.london">Tren geltokian</string>
     <string name="type.railway.station.light_rail.porto">Tren geltokian</string>
     <string name="type.railway.station.monorail">Tren geltokian</string>
@@ -1652,6 +1673,7 @@
     <string name="type.railway.station.subway.hamburg">Metroa</string>
     <string name="type.railway.station.subway.helsinki">Metroa</string>
     <string name="type.railway.station.subway.hiroshima">Metroa</string>
+    <string name="type.railway.station.subway.hongkong">Metroa</string>
     <string name="type.railway.station.subway.isfahan">Metroa</string>
     <string name="type.railway.station.subway.istanbul">Metroa</string>
     <string name="type.railway.station.subway.izmir">Metroa</string>
@@ -1705,6 +1727,7 @@
     <string name="type.railway.station.subway.sendai">Metroa</string>
     <string name="type.railway.station.subway.sf">Metroa</string>
     <string name="type.railway.station.subway.shanghai">Metroa</string>
+    <string name="type.railway.station.subway.shenzhen">Metroa</string>
     <string name="type.railway.station.subway.shiraz">Metroa</string>
     <string name="type.railway.station.subway.singapore">Metroa</string>
     <string name="type.railway.station.subway.sofia">Metroa</string>
@@ -1764,6 +1787,7 @@
     <string name="type.railway.subway_entrance.hamburg">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.helsinki">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.hiroshima">Metroko sarrera</string>
+    <string name="type.railway.subway_entrance.hongkong">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.isfahan">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.istanbul">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.izmir">Metroko sarrera</string>
@@ -1817,6 +1841,7 @@
     <string name="type.railway.subway_entrance.sendai">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.sf">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.shanghai">Metroko sarrera</string>
+    <string name="type.railway.subway_entrance.shenzhen">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.shiraz">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.singapore">Metroko sarrera</string>
     <string name="type.railway.subway_entrance.sofia">Metroko sarrera</string>
@@ -1903,6 +1928,7 @@
     <string name="type.shop.optician">Optika</string>
     <string name="type.shop.outdoor">Ekipamendua</string>
     <string name="type.shop.outpost">Jasotzeko puntua</string>
+    <string name="type.shop.pasta">Pasta Denda</string>
     <string name="type.shop.pastry">Gozogintza</string>
     <string name="type.shop.pawnbroker">Peoia</string>
     <string name="type.shop.pet">Animali denda</string>
@@ -1998,7 +2024,15 @@
     <string name="type.tourism.artwork.sculpture">Artelanak</string>
     <string name="type.tourism.artwork.statue">Artelanak</string>
     <string name="type.tourism.attraction">Erakarpen turistikoa</string>
+    <string name="type.attraction.amusement_ride">Jolas Ibilaldia</string>
     <string name="type.attraction.animal">Animalien itxitura</string>
+    <string name="type.attraction.bumper_car">Autotxokeak</string>
+    <string name="type.attraction.big_wheel">Gurpil Handia</string>
+    <string name="type.attraction.carousel">Zaldiko-maldiko</string>
+    <string name="type.attraction.historic">Atrakzio historikoa</string>
+    <string name="type.attraction.maze">Labirintoa</string>
+    <string name="type.attraction.roller_coaster">Errusiar mendia</string>
+    <string name="type.attraction.water_slide">Ur Txirrista</string>
     <string name="type.tourism.attraction.specified">Erakarpen turistikoa</string>
     <string name="type.tourism.camp_site">Kanpalekua</string>
     <string name="type.tourism.caravan_site">Karabana gunea</string>

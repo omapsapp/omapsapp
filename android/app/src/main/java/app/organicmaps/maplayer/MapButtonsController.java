@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.OptIn;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
@@ -31,7 +32,6 @@ import app.organicmaps.util.Config;
 import app.organicmaps.util.ThemeUtils;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.WindowInsetUtils;
-import app.organicmaps.util.WindowInsetUtils.PaddingInsetsListener;
 import app.organicmaps.widget.menu.MyPositionButton;
 import app.organicmaps.widget.placepage.PlacePageViewModel;
 import com.google.android.material.badge.BadgeDrawable;
@@ -157,8 +157,6 @@ public class MapButtonsController extends Fragment
       mButtonsMap.put(MapButtons.menu, menuButton);
     if (helpButton != null)
       mButtonsMap.put(MapButtons.help, helpButton);
-
-    ViewCompat.setOnApplyWindowInsetsListener(mFrame, PaddingInsetsListener.allSides());
     return mFrame;
   }
 
@@ -362,6 +360,18 @@ public class MapButtonsController extends Fragment
     mSearchWheel.onResume();
     updateMenuBadge();
     updateLayerButton();
+    final WindowInsetUtils.PaddingInsetsListener insetsListener = new WindowInsetUtils.PaddingInsetsListener.Builder()
+        .setInsetsTypeMask(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout())
+        .setAllSides()
+        .build();
+    ViewCompat.setOnApplyWindowInsetsListener(mFrame, insetsListener);
+  }
+
+  @Override
+  public void onPause()
+  {
+    ViewCompat.setOnApplyWindowInsetsListener(mFrame, null);
+    super.onPause();
   }
 
   @Override

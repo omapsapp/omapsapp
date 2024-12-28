@@ -1,6 +1,7 @@
 import Foundation
 
-class OpeinigHoursLocalization: IOpeningHoursLocalization {
+@objcMembers
+class OpeinigHoursLocalization: NSObject, IOpeningHoursLocalization {
   var closedString: String {
     L("closed")
   }

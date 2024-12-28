@@ -290,9 +290,7 @@ public class EditBookmarkFragment extends BaseMwmDialogFragment implements View.
       case TYPE_BOOKMARK ->
         dialogFragment.setOnColorSetListener(colorPos -> {
           final Icon newIcon = BookmarkManager.ICONS.get(colorPos);
-          final String from = mIcon.getName();
-          final String to = newIcon.getName();
-          if (TextUtils.equals(from, to))
+          if (mIcon.getColor() == newIcon.getColor())
             return;
 
           mIcon = newIcon;

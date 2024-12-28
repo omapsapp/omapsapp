@@ -49,6 +49,8 @@ public:
   bool CheckTileKey(TileKey const & tileKey) const;
   void Allow3dBuildings(bool allow3dBuildings);
 
+  void SetMapLangIndex(int8_t mapLangIndex);
+
   void SetTrafficEnabled(bool trafficEnabled);
   void SetIsolinesEnabled(bool isolinesEnabled);
 
@@ -82,6 +84,7 @@ private:
   bool m_trafficEnabled;
   bool m_isolinesEnabled;
   bool m_modeChanged;
+  int8_t m_mapLangIndex;
 
   struct LessByTileInfo
   {

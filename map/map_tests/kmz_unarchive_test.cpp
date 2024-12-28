@@ -9,7 +9,7 @@
 
 UNIT_TEST(KMZ_UnzipTest)
 {
-  std::string const kmzFile = GetPlatform().TestsDataPathForFile("kml_test_data/test.kmz");
+  std::string const kmzFile = GetPlatform().TestsDataPathForFile("test_data/kml/test.kmz");
   auto const filePaths = GetKMLOrGPXFilesPathsToLoad(kmzFile);
   TEST_EQUAL(1, filePaths.size(), ());
   std::string const filePath = filePaths[0];
@@ -43,7 +43,7 @@ UNIT_TEST(KMZ_UnzipTest)
 
 UNIT_TEST(Multi_KML_KMZ_UnzipTest)
 {
-  std::string const kmzFile = GetPlatform().TestsDataPathForFile("kml_test_data/BACRNKMZ.kmz");
+  std::string const kmzFile = GetPlatform().TestsDataPathForFile("test_data/kml/BACRNKMZ.kmz");
   auto const filePaths = GetKMLOrGPXFilesPathsToLoad(kmzFile);
   std::vector<std::string> expectedFileNames =
   {

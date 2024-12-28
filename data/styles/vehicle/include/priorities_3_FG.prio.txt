@@ -290,6 +290,7 @@ highway-trunk-bridge::bridgewhite                   # line::bridgewhite z13- (al
 highway-trunk_link-bridge::bridgewhite              # line::bridgewhite z14- (also has line z10-, line::bridgeblack z14-, line(casing) z14-, pathtext z10-, shield::shield z10-)
 highway-unclassified-bridge::bridgewhite            # line::bridgewhite z14- (also has line z11-, line::bridgeblack z14-, pathtext z14-)
 railway-abandoned-bridge::bridgewhite               # line::bridgewhite z16- (also has line z16-, line::bridgeblack z16-)
+railway-light_rail-bridge::bridgewhite              # line::bridgewhite z14- (also has line z13-, line::bridgeblack z16-, line::dash z16-)
 railway-preserved-bridge::bridgewhite               # line::bridgewhite z16- (also has line z16-, line::bridgeblack z16-)
 railway-rail-branch-bridge::bridgewhite             # line::bridgewhite z14- (also has line z11-, line::bridgeblack z16-, line::dash z16-)
 railway-rail-bridge::bridgewhite                    # line::bridgewhite z14- (also has line z11-, line::bridgeblack z16-, line::dash z16-)
@@ -315,6 +316,7 @@ highway-trunk-bridge::bridgeblack                   # line::bridgeblack z13- (al
 highway-trunk_link-bridge::bridgeblack              # line::bridgeblack z14- (also has line z10-, line::bridgewhite z14-, line(casing) z14-, pathtext z10-, shield::shield z10-)
 highway-unclassified-bridge::bridgeblack            # line::bridgeblack z14- (also has line z11-, line::bridgewhite z14-, pathtext z14-)
 railway-abandoned-bridge::bridgeblack               # line::bridgeblack z16- (also has line z16-, line::bridgewhite z16-)
+railway-light_rail-bridge::bridgeblack              # line::bridgeblack z16- (also has line z13-, line::bridgewhite z14-, line::dash z16-)
 railway-preserved-bridge::bridgeblack               # line::bridgeblack z16- (also has line z16-, line::bridgewhite z16-)
 railway-rail-branch-bridge::bridgeblack             # line::bridgeblack z16- (also has line z11-, line::bridgewhite z14-, line::dash z16-)
 railway-rail-bridge::bridgeblack                    # line::bridgeblack z16- (also has line z11-, line::bridgewhite z14-, line::dash z16-)
@@ -351,12 +353,6 @@ building-garage                                     # area z15- (also has captio
 building-has_parts                                  # area z15- (also has caption z18-)
 building-train_station                              # area z15- (also has caption z18-)
 === 50
-
-railway-light_rail-bridge::bridgewhite              # line::bridgewhite z14- (also has line z13-, line::bridgeblack z16-, line::dash z16-)
-=== 40
-
-railway-light_rail-bridge::bridgeblack              # line::bridgeblack z16- (also has line z13-, line::bridgewhite z14-, line::dash z16-)
-=== 30
 
 man_made-breakwater                                 # line z15- and area z13-
 man_made-pier                                       # line z15- and area z13-

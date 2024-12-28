@@ -108,6 +108,7 @@
     <string name="type.railway.station.subway.hamburg">Metro Station</string>
     <string name="type.railway.station.subway.helsinki">Metro Station</string>
     <string name="type.railway.station.subway.hiroshima">Metro Station</string>
+    <string name="type.railway.station.subway.hongkong">Metro Station</string>
     <string name="type.railway.station.subway.isfahan">Metro Station</string>
     <string name="type.railway.station.subway.istanbul">Metro Station</string>
     <string name="type.railway.station.subway.izmir">Metro Station</string>
@@ -161,6 +162,7 @@
     <string name="type.railway.station.subway.sendai">Metro Station</string>
     <string name="type.railway.station.subway.sf">Metro Station</string>
     <string name="type.railway.station.subway.shanghai">Metro Station</string>
+    <string name="type.railway.station.subway.shenzhen">Metro Station</string>
     <string name="type.railway.station.subway.shiraz">Metro Station</string>
     <string name="type.railway.station.subway.singapore">Metro Station</string>
     <string name="type.railway.station.subway.sofia">Metro Station</string>
@@ -223,6 +225,7 @@
     <string name="type.railway.subway_entrance.hamburg">Metro Entrance</string>
     <string name="type.railway.subway_entrance.helsinki">Metro Entrance</string>
     <string name="type.railway.subway_entrance.hiroshima">Metro Entrance</string>
+    <string name="type.railway.subway_entrance.hongkong">Metro Entrance</string>
     <string name="type.railway.subway_entrance.isfahan">Metro Entrance</string>
     <string name="type.railway.subway_entrance.istanbul">Metro Entrance</string>
     <string name="type.railway.subway_entrance.izmir">Metro Entrance</string>
@@ -276,6 +279,7 @@
     <string name="type.railway.subway_entrance.sendai">Metro Entrance</string>
     <string name="type.railway.subway_entrance.sf">Metro Entrance</string>
     <string name="type.railway.subway_entrance.shanghai">Metro Entrance</string>
+    <string name="type.railway.subway_entrance.shenzhen">Metro Entrance</string>
     <string name="type.railway.subway_entrance.shiraz">Metro Entrance</string>
     <string name="type.railway.subway_entrance.singapore">Metro Entrance</string>
     <string name="type.railway.subway_entrance.sofia">Metro Entrance</string>

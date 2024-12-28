@@ -1,21 +1,18 @@
 #include "testing/testing.hpp"
 
 #include "geometry/diamond_box.hpp"
-#include "geometry/point2d.hpp"
 
-using namespace m2;
-
-namespace
+namespace diamond_box_tests
 {
 UNIT_TEST(DiamondBox_Smoke)
 {
   {
-    DiamondBox dbox;
+    m2::DiamondBox dbox;
     TEST(!dbox.HasPoint(0, 0), ());
   }
 
   {
-    DiamondBox dbox;
+    m2::DiamondBox dbox;
     dbox.Add(0, 0);
     TEST(dbox.HasPoint(0, 0), ());
     TEST(!dbox.HasPoint(0, 1), ());
@@ -32,7 +29,7 @@ UNIT_TEST(DiamondBox_Smoke)
   }
 
   {
-    DiamondBox dbox;
+    m2::DiamondBox dbox;
 
     dbox.Add(0, 1);
     dbox.Add(0, -1);
@@ -50,4 +47,4 @@ UNIT_TEST(DiamondBox_Smoke)
     TEST(!dbox.HasPoint(-0.51, -0.51), ());
   }
 }
-}  // namespace
+}  // namespace diamond_box_tests

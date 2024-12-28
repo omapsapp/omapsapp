@@ -25,5 +25,6 @@ public class FeatureCategoryActivity extends BaseMwmFragmentActivity implements 
     intent.putExtra(EXTRA_FEATURE_CATEGORY, category);
     intent.putExtra(EditorActivity.EXTRA_NEW_OBJECT, true);
     startActivity(intent);
+    finish();
   }
 }
