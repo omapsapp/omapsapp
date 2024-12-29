@@ -283,6 +283,9 @@ public class PlacePageController extends Fragment implements
    */
   private void animatePeekHeight(int peekHeight)
   {
+    if (mCurrentWindowInsets == null) {
+      return;
+    }
     final int bottomInsets = mCurrentWindowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
     // Make sure to start from the current height of the place page
     final int parentHeight = ((View) mPlacePage.getParent()).getHeight();
