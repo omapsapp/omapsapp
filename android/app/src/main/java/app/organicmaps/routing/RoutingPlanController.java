@@ -1,12 +1,14 @@
 package app.organicmaps.routing;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
@@ -78,6 +80,7 @@ public class RoutingPlanController extends ToolbarController
   }
 
   RoutingPlanController(View root, Activity activity,
+                        ActivityResultLauncher<Intent> startDrivingOptionsForResult,
                         @NonNull RoutingPlanInplaceController.RoutingPlanListener routingPlanListener,
                         @Nullable RoutingBottomMenuListener listener)
   {
@@ -103,7 +106,7 @@ public class RoutingPlanController extends ToolbarController
     View btn = mDrivingOptionsBtnContainer.findViewById(R.id.driving_options_btn);
     mDrivingOptionsImage = mFrame.findViewById(R.id.driving_options_btn_img);
 
-    btn.setOnClickListener(v -> DrivingOptionsActivity.start(requireActivity()));
+    btn.setOnClickListener(v -> DrivingOptionsActivity.start(requireActivity(), startDrivingOptionsForResult));
     mDriverOptionsLayoutListener = new SelfTerminatedDrivingOptionsLayoutListener();
     mAnimToggle = MwmApplication.from(activity.getApplicationContext())
                                 .getResources().getInteger(R.integer.anim_default);

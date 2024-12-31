@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 
+import androidx.activity.result.ActivityResult;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -22,7 +23,6 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class SearchToolbarController extends ToolbarController implements View.OnClickListener
 {
-  private static final int REQUEST_VOICE_RECOGNITION = 0xCA11;
   @Nullable
   private final View mToolbarContainer;
   @NonNull
@@ -107,7 +107,7 @@ public class SearchToolbarController extends ToolbarController implements View.O
     clear();
   }
 
-  protected void startVoiceRecognition(Intent intent, int code)
+  protected void startVoiceRecognition(Intent intent)
   {
     throw new RuntimeException("To be used startVoiceRecognition() must be implemented by descendant class");
   }
@@ -130,7 +130,7 @@ public class SearchToolbarController extends ToolbarController implements View.O
     try
     {
       startVoiceRecognition(InputUtils.createIntentForVoiceRecognition(
-          requireActivity().getString(getVoiceInputPrompt())), REQUEST_VOICE_RECOGNITION);
+          requireActivity().getString(getVoiceInputPrompt())));
     }
     catch (ActivityNotFoundException e)
     {
@@ -210,14 +210,18 @@ public class SearchToolbarController extends ToolbarController implements View.O
     UiUtils.showIf(show, mSearchContainer);
   }
 
-  public void onActivityResult(int requestCode, int resultCode, Intent data)
+  public void onVoiceRecognitionResult(ActivityResult activityResult)
   {
-    if (requestCode == REQUEST_VOICE_RECOGNITION && resultCode == Activity.RESULT_OK)
-    {
-      String result = InputUtils.getBestRecognitionResult(data);
-      if (!TextUtils.isEmpty(result))
-        setQuery(result);
-    }
+      if(activityResult.getResultCode() == Activity.RESULT_OK)
+      {
+        if (activityResult.getData() == null)
+        {
+          return;
+        }
+        String recognitionResult = InputUtils.getBestRecognitionResult(activityResult.getData());
+        if (!TextUtils.isEmpty(recognitionResult))
+          setQuery(recognitionResult);
+      }
   }
 
   public void setHint(@StringRes int hint)

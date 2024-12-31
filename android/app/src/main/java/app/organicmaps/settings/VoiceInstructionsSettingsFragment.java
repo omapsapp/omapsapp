@@ -1,5 +1,6 @@
 package app.organicmaps.settings;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -11,6 +12,8 @@ import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -35,7 +38,6 @@ import java.util.Map;
 
 public class VoiceInstructionsSettingsFragment extends BaseXmlSettingsFragment
 {
-  private static final int REQUEST_INSTALL_DATA = 1;
 
   @NonNull
   @SuppressWarnings("NotNullFieldNotInitialized")
@@ -66,6 +68,14 @@ public class VoiceInstructionsSettingsFragment extends BaseXmlSettingsFragment
   private final Map<String, LanguageData> mLanguages = new HashMap<>();
   private LanguageData mCurrentLanguage;
   private String mSelectedLanguage;
+
+  private final ActivityResultLauncher<Intent> startInstallDataIntentForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResult -> {
+
+    if(activityResult.getResultCode() == Activity.RESULT_OK)
+      {
+        onInstallDataResult();
+      }
+  });
 
   private final Preference.OnPreferenceChangeListener mEnabledListener = (preference, newValue) -> {
     final boolean set = (Boolean) newValue;
@@ -107,8 +117,7 @@ public class VoiceInstructionsSettingsFragment extends BaseXmlSettingsFragment
     if (lang.downloaded)
       setLanguage(lang);
     else
-      UiUtils.startActivityForResult(VoiceInstructionsSettingsFragment.this,
-          new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA), REQUEST_INSTALL_DATA);
+      UiUtils.startActivityForResult(startInstallDataIntentForResult, new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA));
 
     return false;
   };
@@ -181,21 +190,13 @@ public class VoiceInstructionsSettingsFragment extends BaseXmlSettingsFragment
     updateTts();
   }
 
-  @Override
-  @SuppressWarnings("deprecation") // https://github.com/organicmaps/organicmaps/issues/3630
-  public void onActivityResult(int requestCode, int resultCode, Intent data)
+  private void onInstallDataResult()
   {
-    // Do not check resultCode here as it is always RESULT_CANCELED
-    super.onActivityResult(requestCode, resultCode, data);
+    updateTts();
 
-    if (requestCode == REQUEST_INSTALL_DATA)
-    {
-      updateTts();
-
-      LanguageData lang = mLanguages.get(mSelectedLanguage);
-      if (lang != null && lang.downloaded)
-        setLanguage(lang);
-    }
+    LanguageData lang = mLanguages.get(mSelectedLanguage);
+    if (lang != null && lang.downloaded)
+      setLanguage(lang);
   }
 
   private void enableListeners(boolean enable)

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.CallSuper;
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
@@ -38,6 +40,8 @@ public class DownloaderFragment extends BaseMwmRecyclerFragment<DownloaderAdapte
   private boolean mSearchRunning;
 
   private int mSubscriberSlot;
+
+  final ActivityResultLauncher<Intent> startVoiceRecognitionForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResult -> mToolbarController.onVoiceRecognitionResult(activityResult));
 
   private final RecyclerView.OnScrollListener mScrollListener = new RecyclerView.OnScrollListener() {
     @Override
@@ -210,13 +214,6 @@ public class DownloaderFragment extends BaseMwmRecyclerFragment<DownloaderAdapte
     return mAdapter;
   }
 
-  @Override
-  @SuppressWarnings("deprecation") // https://github.com/organicmaps/organicmaps/issues/3630
-  public void onActivityResult(int requestCode, int resultCode, Intent data)
-  {
-    super.onActivityResult(requestCode, resultCode, data);
-    mToolbarController.onActivityResult(requestCode, resultCode, data);
-  }
 
   @NonNull
   @Override

@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
 
 import app.organicmaps.Framework;
+import app.organicmaps.MwmActivity;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmFragment;
 
@@ -21,15 +21,9 @@ public class RoutingPlanFragment extends BaseMwmFragment
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
   {
-    final FragmentActivity activity = requireActivity();
+    final MwmActivity activity = (MwmActivity) requireActivity();
     View res = inflater.inflate(R.layout.fragment_routing, container, false);
-    RoutingBottomMenuListener listener = null;
-    if (activity instanceof RoutingBottomMenuListener)
-      listener = (RoutingBottomMenuListener) activity;
-
-    RoutingPlanInplaceController.RoutingPlanListener planListener =
-        (RoutingPlanInplaceController.RoutingPlanListener) activity;
-    mPlanController = new RoutingPlanController(res, activity, planListener, listener);
+    mPlanController = new RoutingPlanController(res, activity, activity.startDrivingOptionsForResult, activity, activity);
     return res;
   }
 
