@@ -70,6 +70,7 @@ target_link_libraries(${PROJECT_NAME}
   qt_common
   map
   gflags::gflags
+  location_service
 )
 
 if (BUILD_DESIGNER)
