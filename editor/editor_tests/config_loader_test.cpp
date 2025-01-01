@@ -5,8 +5,6 @@
 
 #include "platform/platform_tests_support/scoped_file.hpp"
 
-#include "base/atomic_shared_ptr.hpp"
-
 #include <pugixml.hpp>
 
 namespace
@@ -24,10 +22,10 @@ void CheckGeneralTags(pugi::xml_document const & doc)
 
 UNIT_TEST(ConfigLoader_Base)
 {
-  base::AtomicSharedPtr<EditorConfig> config;
+  std::atomic<std::shared_ptr<EditorConfig>> config;
   ConfigLoader loader(config);
 
-  TEST(!config.Get()->GetTypesThatCanBeAdded().empty(), ());
+  TEST(!config.load()->GetTypesThatCanBeAdded().empty(), ());
 }
 
 // This functionality is not used and corresponding server is not working.

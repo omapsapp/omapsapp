@@ -14,7 +14,6 @@
 
 #include "geometry/rect2d.hpp"
 
-#include "base/atomic_shared_ptr.hpp"
 #include "base/thread_checker.hpp"
 #include "base/timer.hpp"
 
@@ -236,7 +235,7 @@ private:
   static bool IsFeatureUploadedImpl(FeaturesContainer const & features, MwmId const & mwmId, uint32_t index);
 
   /// Deleted, edited and created features.
-  base::AtomicSharedPtr<FeaturesContainer> m_features;
+  std::atomic<std::shared_ptr<FeaturesContainer>> m_features;
 
   std::unique_ptr<Delegate> m_delegate;
 
@@ -244,7 +243,7 @@ private:
   InvalidateFn m_invalidateFn;
 
   /// Contains information about what and how can be edited.
-  base::AtomicSharedPtr<editor::EditorConfig> m_config;
+  std::atomic<std::shared_ptr<editor::EditorConfig>> m_config;
   editor::ConfigLoader m_configLoader;
 
   /// Notes to be sent to osm.
