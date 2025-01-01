@@ -27,6 +27,7 @@
 "onto":"เข้าสู่",
 "take_exit_number":"ทางออก เข้าสู่",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"การคำนวณเส้นทางใหม่",
 "destination":"คุณจะถึง",
 "you_have_reached_the_destination":"คุณมาถึงแล้ว",
 "in_50_meters":"อีกห้าสิบเมตร",

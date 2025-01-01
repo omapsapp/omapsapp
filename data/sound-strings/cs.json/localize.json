@@ -27,6 +27,7 @@
 "onto":"na",
 "take_exit_number":"výstup na",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Přepočítání trasy",
 "destination":"Přijedete do cíle.",
 "you_have_reached_the_destination":"Jste v cíli.",
 "in_50_meters":"Za padesát metrů",

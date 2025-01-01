@@ -250,6 +250,11 @@ std::string GetTtsText::GetTurnNotification(Notification const & notification) c
   return out;
 }
 
+std::string GetTtsText::GetRecalculatingNotification() const
+{
+  return GetTextById("route_recalculating");
+}
+
 std::string GetTtsText::GetSpeedCameraNotification() const
 {
   return GetTextById("unknown_camera");

@@ -27,6 +27,7 @@
 "onto":"на",
 "take_exit_number":"З'езд на",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Пераразлік маршруту",
 "destination":"Вы прыбудзеце ў пункт прызначэння.",
 "you_have_reached_the_destination":"Вы прыбылі ў пункт прызначэння.",
 "in_50_meters":"Праз пяцьдзесят метраў",

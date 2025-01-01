@@ -27,6 +27,7 @@
 "onto":"yönünde",
 "take_exit_number":"çıkın yönünde",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Rotanın yeniden hesaplanması",
 "destination":"Varacaksınız.",
 "you_have_reached_the_destination":"Hedef noktasına vardınız.",
 "in_50_meters":"Elli metre sonra",

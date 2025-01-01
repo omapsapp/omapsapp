@@ -27,6 +27,7 @@
 "onto":"inn på",
 "take_exit_number":"Ta avkjøringen inn på",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Beregner ruten på nytt",
 "destination":"Ankommer du.",
 "you_have_reached_the_destination":"Du har ankommet.",
 "in_50_meters":"Om femti meter",

@@ -27,6 +27,7 @@
 "onto":"ke",
 "take_exit_number":"Keluar ke",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Menghitung ulang rute",
 "destination":"Anda akan tiba.",
 "you_have_reached_the_destination":"Anda sudah sampai.",
 "in_50_meters":"Setelah lima puluh meter",

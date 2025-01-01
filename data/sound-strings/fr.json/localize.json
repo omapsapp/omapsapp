@@ -27,6 +27,7 @@
 "onto":"sur",
 "take_exit_number":"Sortie sur",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Recalcul de l'itinéraire",
 "destination":"Vous arriverez.",
 "you_have_reached_the_destination":"Vous êtes arrivé.",
 "in_50_meters":"Dans cinquante mètres",

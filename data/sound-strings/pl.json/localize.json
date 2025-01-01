@@ -27,6 +27,7 @@
 "onto":"na",
 "take_exit_number":"Wybierz zjazd",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Ponowne obliczanie trasy",
 "destination":"Dojedziesz do celu.",
 "you_have_reached_the_destination":"Dotarłeś do celu.",
 "in_50_meters":"Za pięćdziesiąt metrów",

@@ -623,6 +623,50 @@
     en = NULL
     nl = Neem
 
+  [route_recalculating]
+    en = Recalculating the route
+    af = Herbereken die roete
+    ar = إعادة حساب المسار
+    az = Marşrutun yenidən hesablanması
+    be = Пераразлік маршруту
+    bg = Преизчисляване на маршрута
+    ca = Recalcular el recorregut
+    cs = Přepočítání trasy
+    da = Genberegning af ruten
+    de = Neuberechnung der Route
+    el = Επαναϋπολογισμός της διαδρομής
+    es = Recalcular la ruta
+    et = Marsruudi ümberarvutamine
+    eu = Ibilbidea berriro kalkulatzea
+    fa = محاسبه مجدد مسیر
+    fi = Reitin uudelleenlaskenta
+    fr = Recalcul de l'itinéraire
+    he = חישוב מחדש של המסלול
+    hi = मार्ग की पुनर्गणना
+    hu = Az útvonal újraszámítása
+    id = Menghitung ulang rute
+    it = Ricalcolo del percorso
+    ja = ルートの再計算
+    ko = 경로 다시 계산하기
+    lt = Maršruto perskaičiavimas
+    mr = मार्गाची पुनर्गणना करत आहे
+    nb = Beregner ruten på nytt
+    nl = De route herberekenen
+    pl = Ponowne obliczanie trasy
+    pt = Recalcular o itinerário
+    pt-BR = Recalcular a rota
+    ro = Recalcularea traseului
+    ru = Перерасчет маршрута
+    sk = Prepočítanie trasy
+    sv = Omberäkning av rutten
+    sw = Kuhesabu upya njia
+    th = การคำนวณเส้นทางใหม่
+    tr = Rotanın yeniden hesaplanması
+    uk = Перерахунок маршруту
+    vi = Tính toán lại lộ trình
+    zh-Hans = 重新计算路线
+    zh-Hant = 重新計算路
+
   [destination]
     en = You’ll arrive.
     ar = سوف تصل.

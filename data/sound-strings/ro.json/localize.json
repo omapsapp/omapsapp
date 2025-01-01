@@ -27,6 +27,7 @@
 "onto":"pe",
 "take_exit_number":"Ieșire pe",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Recalcularea traseului",
 "destination":"Veți sosi.",
 "you_have_reached_the_destination":"Ați ajuns.",
 "in_50_meters":"După cincizeci de metri",

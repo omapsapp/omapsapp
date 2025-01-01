@@ -27,6 +27,7 @@
 "onto":"NULL",
 "take_exit_number":"출구",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"경로 다시 계산하기",
 "destination":"도착할 예정입니다.",
 "you_have_reached_the_destination":"도착했습니다.",
 "in_50_meters":"오십 미터 앞",

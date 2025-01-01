@@ -27,6 +27,7 @@
 "onto":"a",
 "take_exit_number":"Hajtson ki a",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Az útvonal újraszámítása",
 "destination":"Megérkezik.",
 "you_have_reached_the_destination":"Megérkezett.",
 "in_50_meters":"Ötven méter után",

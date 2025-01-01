@@ -27,6 +27,7 @@
 "onto":"NULL",
 "take_exit_number":"出口を出る",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"ルートの再計算",
 "destination":"到着します。",
 "you_have_reached_the_destination":"目的地に到着しました。",
 "in_50_meters":"五十メートル先",

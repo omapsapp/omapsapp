@@ -27,6 +27,7 @@
 "onto":"駛入到",
 "take_exit_number":"出口 上",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"重新計算路",
 "destination":"即將到達目的地。",
 "you_have_reached_the_destination":"你已到達目的地。",
 "in_50_meters":"在五十公尺後",

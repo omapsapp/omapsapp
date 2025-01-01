@@ -27,6 +27,7 @@
 "onto":"на",
 "take_exit_number":"Съезд на",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Перерасчет маршрута",
 "destination":"Вы прибудете в пункт назначения.",
 "you_have_reached_the_destination":"Вы прибыли в пункт назначения.",
 "in_50_meters":"Через пятьдесят метров",

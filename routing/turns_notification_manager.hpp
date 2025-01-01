@@ -49,6 +49,9 @@ public:
   measurement_utils::Units GetLengthUnits() const { return m_settings.GetLengthUnits(); }
   void SetLocaleWithJsonForTesting(std::string const & json, std::string const & locale);
 
+  /// \brief Generate text of route rebuild notification.
+  std::string GenerateRecalculatingText() const;
+
   /// \brief Generate text of speed camera notification.
   std::string GenerateSpeedCameraText() const;
 

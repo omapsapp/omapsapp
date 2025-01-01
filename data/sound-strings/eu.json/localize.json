@@ -27,6 +27,7 @@
 "onto":"NULL",
 "take_exit_number":"Irten",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Ibilbidea berriro kalkulatzea",
 "destination":"Zure helmugara iritsiko zara.",
 "you_have_reached_the_destination":"Helmugara iritsi zara.",
 "in_50_meters":"Berrogeita hamar metrora",

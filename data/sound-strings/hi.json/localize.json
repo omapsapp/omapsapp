@@ -27,6 +27,7 @@
 "onto":"पर",
 "take_exit_number":"बाहर जाएं पर",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"मार्ग की पुनर्गणना",
 "destination":"गंतव्य स्थान",
 "you_have_reached_the_destination":"आप पहुंच गए हैं।",
 "in_50_meters":"पचास मीटर में।",

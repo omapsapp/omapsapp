@@ -27,6 +27,7 @@
 "onto":"onto",
 "take_exit_number":"Agafeu la sortida",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Recalcular el recorregut",
 "destination":"Arribareu a la destinació.",
 "you_have_reached_the_destination":"Heu arribat.",
 "in_50_meters":"A cinquanta metres",

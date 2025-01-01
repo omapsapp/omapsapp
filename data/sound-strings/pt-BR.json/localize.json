@@ -27,6 +27,7 @@
 "onto":"para",
 "take_exit_number":"Pegue a saída",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Recalcular a rota",
 "destination":"Você chegará ao seu destino.",
 "you_have_reached_the_destination":"Você chegou ao seu destino.",
 "in_50_meters":"Em cinquenta metros",

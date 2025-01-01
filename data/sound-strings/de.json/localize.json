@@ -27,6 +27,7 @@
 "onto":"auf",
 "take_exit_number":"Nehmen Sie die Ausfahrt auf",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Neuberechnung der Route",
 "destination":"Werden Sie ankommen.",
 "you_have_reached_the_destination":"Sie sind angekommen.",
 "in_50_meters":"In fünfzig Metern",

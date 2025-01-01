@@ -27,6 +27,7 @@
 "onto":"onto",
 "take_exit_number":"Take exit",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Recalculating the route",
 "destination":"You’ll arrive.",
 "you_have_reached_the_destination":"You have arrived.",
 "in_50_meters":"In fifty meters",

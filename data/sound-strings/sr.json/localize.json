@@ -27,6 +27,7 @@
 "onto":"у улицу",
 "take_exit_number":"Изађите на излаз",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Recalculating the route",
 "destination":"Стижете на одредиште.",
 "you_have_reached_the_destination":"Стигли сте.",
 "in_50_meters":"За педесет метара",

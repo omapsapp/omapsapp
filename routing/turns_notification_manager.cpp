@@ -84,6 +84,11 @@ std::string NotificationManager::GenerateTurnText(uint32_t distanceUnits, uint8_
   return m_getTtsText.GetTurnNotification({distanceUnits, exitNum, useThenInsteadOfDistance, turn.m_pedestrianTurn, lengthUnits, nextStreetInfo});
 }
 
+std::string NotificationManager::GenerateRecalculatingText() const
+{
+  return m_getTtsText.GetRecalculatingNotification();
+}
+
 std::string NotificationManager::GenerateSpeedCameraText() const
 {
   return m_getTtsText.GetSpeedCameraNotification();

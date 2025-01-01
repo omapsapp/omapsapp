@@ -27,6 +27,7 @@
 "onto":"στην",
 "take_exit_number":"Εξοδος στην",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Επαναϋπολογισμός της διαδρομής",
 "destination":"Θα φτάσετε.",
 "you_have_reached_the_destination":"Έχετε φτάσει.",
 "in_50_meters":"Σε πενήντα μέτρα",

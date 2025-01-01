@@ -27,6 +27,7 @@
 "onto":"in",
 "take_exit_number":"Uscita sulla",
 "take_exit_number_street_verb":"NULL",
+"route_recalculating":"Ricalcolo del percorso",
 "destination":"Arriverai.",
 "you_have_reached_the_destination":"Sei arrivato.",
 "in_50_meters":"Tra cinquanta metri",
