@@ -1632,7 +1632,7 @@ void FrontendRenderer::RenderTransitSchemeLayer(ScreenBase const & modelView)
   {
     DEBUG_LABEL(m_context, "Transit Scheme");
     m_context->Clear(dp::ClearBits::DepthBit, dp::kClearBitsStoreAll);
-    RenderTransitBackground();
+    //RenderTransitBackground();
     m_transitSchemeRenderer->RenderTransit(m_context, make_ref(m_gpuProgramManager), modelView,
                                            make_ref(m_postprocessRenderer), m_frameValues,
                                            make_ref(m_debugRectRenderer));

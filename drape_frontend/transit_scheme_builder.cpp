@@ -38,6 +38,7 @@ std::array<float, 20> constexpr kTransitLinesWidthInPixel =
 
 namespace
 {
+float constexpr kCasingLineDepth = -1.0f;
 float constexpr kBaseLineDepth = 0.0f;
 float constexpr kDepthPerLine = 1.0f;
 float constexpr kBaseMarkerDepth = 300.0f;
@@ -429,7 +430,7 @@ void TransitSchemeBuilder::GenerateLinesSubway(MwmSchemeData const & scheme, dp:
         shape.second.m_forwardLines.size() + shape.second.m_backwardLines.size();
     float shapeOffset =
         -static_cast<float>(linesCount / 2) * 2.0f - static_cast<float>(linesCount % 2) + 1.0f;
-    size_t constexpr shapeOffsetIncrement = 2.0f;
+    float constexpr shapeOffsetIncrement = 2.0f;
 
     std::vector<std::pair<dp::Color, routing::transit::LineId>> coloredLines;
 
@@ -450,6 +451,7 @@ void TransitSchemeBuilder::GenerateLinesSubway(MwmSchemeData const & scheme, dp:
       coloredLines.emplace_back(color, *it);
     }
 
+    auto const casingColor = dp::Color(255, 255, 255, 160);
     for (auto const & coloredLine : coloredLines)
     {
       auto const & colorConst = coloredLine.first;
@@ -458,6 +460,8 @@ void TransitSchemeBuilder::GenerateLinesSubway(MwmSchemeData const & scheme, dp:
 
       GenerateLine(context, shape.second.m_polyline, scheme.m_pivot, colorConst, shapeOffset,
                    kTransitLineHalfWidth, depth, batcher);
+      GenerateLine(context, shape.second.m_polyline, scheme.m_pivot, casingColor, shapeOffset,
+                   kTransitLineHalfWidth + 0.5f, kCasingLineDepth, batcher);
 
       shapeOffset += shapeOffsetIncrement;
     }
@@ -1127,8 +1131,7 @@ void TransitSchemeBuilder::GenerateLine(ref_ptr<dp::GraphicsContext> context,
   using TV = TransitStaticVertex;
 
   TGeometryBuffer geometry;
-  auto const color = glsl::vec4(colorConst.GetRedF(), colorConst.GetGreenF(), colorConst.GetBlueF(),
-                                1.0f /* alpha */);
+  auto const color = glsl::vec4(colorConst.GetRedF(), colorConst.GetGreenF(), colorConst.GetBlueF(), colorConst.GetAlphaF());
   size_t const kAverageSize = path.size() * 6;
   size_t const kAverageCapSize = 12;
   geometry.reserve(kAverageSize + kAverageCapSize * 2);
