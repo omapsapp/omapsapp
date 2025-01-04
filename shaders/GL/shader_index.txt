@@ -27,6 +27,7 @@ Transit transit.vsh.glsl transit.fsh.glsl
 TransitMarker transit_marker.vsh.glsl transit_marker.fsh.glsl
 Route route.vsh.glsl route.fsh.glsl
 RouteDash route.vsh.glsl route_dash.fsh.glsl
+RouteDifficulty route.vsh.glsl route_difficulty.fsh.glsl
 RouteArrow route_arrow.vsh.glsl route_arrow.fsh.glsl
 RouteMarker route_marker.vsh.glsl route_marker.fsh.glsl
 CirclePoint circle_point.vsh.glsl circle_point.fsh.glsl

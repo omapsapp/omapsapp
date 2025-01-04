@@ -118,6 +118,25 @@ fragment float4 fsRouteDash(const RouteFragment_T in [[stage_in]],
   return color;
 }
 
+fragment float4 fsRouteDifficulty(const RouteFragment_T in [[stage_in]],
+                                  constant Uniforms_T & uniforms [[buffer(1)]])
+{
+  if (in.lengthParams.x < in.lengthParams.z)
+    discard_fragment();
+  
+  constexpr float kAntialiasingThreshold = 0.92;
+  
+  float2 fb = uniforms.u_fakeBorders;
+  float2 coefs = step(in.lengthParams.xx, fb);
+  coefs.y = 1.0 - coefs.y;
+  float4 mainColor = mix(uniforms.u_color, uniforms.u_fakeColor, coefs.x);
+  mainColor = mix(mainColor, uniforms.u_fakeColor, coefs.y);
+  
+  float a = (1.0 - smoothstep(kAntialiasingThreshold, 1.0, abs(v_length.y))) * 0.8;
+  float4 color = float4(mix(mainColor.rgb, in.color.rgb, in.color.a), a);
+  return color;
+}
+
 // RouteArrow
 
 typedef struct

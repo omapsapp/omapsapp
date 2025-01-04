@@ -39,6 +39,7 @@ enum class Program
   TransitMarker,
   Route,
   RouteDash,
+  RouteDifficulty,
   RouteArrow,
   RouteMarker,
   CirclePoint,
@@ -102,6 +103,7 @@ inline std::string DebugPrint(Program p)
   case Program::TransitMarker: return "TransitMarker";
   case Program::Route: return "Route";
   case Program::RouteDash: return "RouteDash";
+  case Program::RouteDifficulty: return "RouteDifficulty";
   case Program::RouteArrow: return "RouteArrow";
   case Program::RouteMarker: return "RouteMarker";
   case Program::CirclePoint: return "CirclePoint";

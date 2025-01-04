@@ -81,7 +81,8 @@ UNIT_TEST(NormalizeChartData_SmokeTest)
   geometry::Altitudes const altitudeDataM = {0, 0, 0};
 
   vector<double> uniformAltitudeDataM;
-  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 2 /* resultPointCount */, uniformAltitudeDataM),
+  vector<double> uniformSlopeDataM;
+  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 2 /* resultPointCount */, uniformAltitudeDataM, uniformSlopeDataM),
        ());
 
   vector<double> const expectedUniformAltitudeDataM = {0.0, 0.0};
@@ -94,7 +95,8 @@ UNIT_TEST(NormalizeChartData_NoResultPointTest)
   geometry::Altitudes const altitudeDataM = {0, 0, 0};
 
   vector<double> uniformAltitudeDataM;
-  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 0 /* resultPointCount */, uniformAltitudeDataM),
+  vector<double> uniformSlopeDataM;
+  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 0 /* resultPointCount */, uniformAltitudeDataM, uniformSlopeDataM),
        ());
 
   TEST(uniformAltitudeDataM.empty(), ());
@@ -106,7 +108,8 @@ UNIT_TEST(NormalizeChartData_NoPointTest)
   geometry::Altitudes const altitudeDataM = {};
 
   vector<double> uniformAltitudeDataM;
-  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 2 /* resultPointCount */, uniformAltitudeDataM),
+  vector<double> uniformSlopeDataM;
+  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 2 /* resultPointCount */, uniformAltitudeDataM, uniformSlopeDataM),
        ());
 
   TEST(uniformAltitudeDataM.empty(), ());
@@ -118,7 +121,8 @@ UNIT_TEST(NormalizeChartData_Test)
   geometry::Altitudes const altitudeDataM = {-9, 0, 9, 18};
 
   vector<double> uniformAltitudeDataM;
-  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 10 /* resultPointCount */, uniformAltitudeDataM),
+  vector<double> uniformSlopeDataM;
+  TEST(maps::NormalizeChartData(distanceDataM, altitudeDataM, 10 /* resultPointCount */, uniformAltitudeDataM, uniformSlopeDataM),
        ());
 
   vector<double> const expectedUniformAltitudeDataM = {-9.0, -6.0, -3.0, 0.0,  3.0,
@@ -158,11 +162,12 @@ UNIT_TEST(GenerateYAxisChartData_Test)
 UNIT_TEST(GenerateChartByPoints_NoGeometryTest)
 {
   vector<m2::PointD> const geometry = {};
+  vector<double> const slopes = {};
   size_t constexpr width = 100;
   size_t constexpr height = 40;
   vector<uint8_t> frameBuffer;
 
-  TEST(maps::GenerateChartByPoints(width, height, geometry, MapStyleDefaultLight /* mapStyle */, frameBuffer), ());
+  TEST(maps::GenerateChartByPoints(width, height, geometry, slopes, MapStyleDefaultLight /* mapStyle */, frameBuffer), ());
   TestAngleColors(width, height, frameBuffer, 255 /* expectedR */, 255 /* expectedG */,
                   255 /* expectedB */, 0 /* expectedA */);
 }
@@ -170,11 +175,12 @@ UNIT_TEST(GenerateChartByPoints_NoGeometryTest)
 UNIT_TEST(GenerateChartByPoints_OnePointTest)
 {
   vector<m2::PointD> const geometry = {{20.0, 20.0}};
+  vector<double> const slopes = {0.0};
   size_t constexpr width = 40;
   size_t constexpr height = 40;
   vector<uint8_t> frameBuffer;
 
-  TEST(maps::GenerateChartByPoints(width, height, geometry, MapStyleDefaultLight /* mapStyle */, frameBuffer), ());
+  TEST(maps::GenerateChartByPoints(width, height, geometry, slopes, MapStyleDefaultLight /* mapStyle */, frameBuffer), ());
   TestAngleColors(width, height, frameBuffer, 255 /* expectedR */, 255 /* expectedG */,
                   255 /* expectedB */, 0 /* expectedA */);
 }
@@ -182,12 +188,13 @@ UNIT_TEST(GenerateChartByPoints_OnePointTest)
 UNIT_TEST(GenerateChartByPoints_Test)
 {
   vector<m2::PointD> const geometry = {{0.0, 0.0}, {10.0, 10.0}};
+  vector<double> const slopes = {1.0, 0.0};
 
   size_t constexpr width = 40;
   size_t constexpr height = 40;
   vector<uint8_t> frameBuffer;
 
-  TEST(maps::GenerateChartByPoints(width, height, geometry, MapStyleDefaultLight /* mapStyle */, frameBuffer), ());
+  TEST(maps::GenerateChartByPoints(width, height, geometry, slopes, MapStyleDefaultLight /* mapStyle */, frameBuffer), ());
 
   TEST_EQUAL(frameBuffer.size(), width * height * kAltitudeChartBPP, ());
   TEST(IsColor(frameBuffer, 0 /* startColorIdx */, 30 /* expectedR */, 150 /* expectedG */,

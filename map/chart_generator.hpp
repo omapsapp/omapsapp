@@ -21,7 +21,8 @@ void ReflectChartData(std::vector<double> & chartData);
 /// This method is used to generalize and evenly distribute points of the chart.
 bool NormalizeChartData(std::vector<double> const & distanceDataM,
                         geometry::Altitudes const & altitudeDataM, size_t resultPointCount,
-                        std::vector<double> & uniformAltitudeDataM);
+                        std::vector<double> & uniformAltitudeDataM, 
+                        std::vector<double> & uniformSlopeDataM);
 
 /// \brief fills |yAxisDataPxl|. |yAxisDataPxl| is formed to pevent displaying
 /// big waves on the chart in case of small deviation in absolute values in |yAxisData|.
@@ -42,7 +43,9 @@ bool GenerateYAxisChartData(uint32_t height, double minMetersPerPxl,
 /// \param frameBuffer is a vector for a result image. It's resized in this method.
 /// It's filled with RGBA(8888) image date.
 bool GenerateChartByPoints(uint32_t width, uint32_t height,
-                           std::vector<m2::PointD> const & geometry, MapStyle mapStyle,
+                           std::vector<m2::PointD> const & geometry, 
+                           std::vector<double> const & slopes,
+                           MapStyle mapStyle,
                            std::vector<uint8_t> & frameBuffer);
 
 bool GenerateChart(uint32_t width, uint32_t height, std::vector<double> const & distanceDataM,

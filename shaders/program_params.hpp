@@ -111,6 +111,7 @@ struct ALIGNMENT RouteProgramParams
   BIND_PROGRAMS(RouteProgramParams,
     Program::Route,
     Program::RouteDash,
+    Program::RouteDifficulty,
     Program::RouteArrow,
     Program::RouteMarker)
 };

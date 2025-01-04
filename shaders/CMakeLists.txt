@@ -39,6 +39,7 @@ set(shader_files
     GL/route_arrow.fsh.glsl
     GL/route_arrow.vsh.glsl
     GL/route_dash.fsh.glsl
+    GL/route_difficulty.fsh.glsl
     GL/route_marker.fsh.glsl
     GL/route_marker.vsh.glsl
     GL/ruler.vsh.glsl

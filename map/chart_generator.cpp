@@ -112,7 +112,8 @@ void ReflectChartData(vector<double> & chartData)
 
 bool NormalizeChartData(vector<double> const & distanceDataM,
                         geometry::Altitudes const & altitudeDataM, size_t resultPointCount,
-                        vector<double> & uniformAltitudeDataM)
+                        vector<double> & uniformAltitudeDataM, 
+                        vector<double> & uniformSlopeDataM)
 {
   double constexpr kEpsilon = 1e-6;
 
@@ -134,11 +135,13 @@ bool NormalizeChartData(vector<double> const & distanceDataM,
     return true;
   }
 
-  auto const calculateAltitude = [&](double distFormStartM) {
+  using TAltitudeSlope = pair<double, double>;
+
+  auto const calculateAltitudeSlope = [&](double distFormStartM) {
     if (distFormStartM <= distanceDataM.front())
-      return static_cast<double>(altitudeDataM.front());
+      return TAltitudeSlope(static_cast<double>(altitudeDataM.front()), 0);
     if (distFormStartM >= distanceDataM.back())
-      return static_cast<double>(altitudeDataM.back());
+      return TAltitudeSlope(static_cast<double>(altitudeDataM.back()), 0);
 
     auto const lowerIt = lower_bound(distanceDataM.cbegin(), distanceDataM.cend(), distFormStartM);
     size_t const nextPointIdx = distance(distanceDataM.cbegin(), lowerIt);
@@ -146,20 +149,24 @@ bool NormalizeChartData(vector<double> const & distanceDataM,
     size_t const prevPointIdx = nextPointIdx - 1;
 
     if (base::AlmostEqualAbs(distanceDataM[prevPointIdx], distanceDataM[nextPointIdx], kEpsilon))
-      return static_cast<double>(altitudeDataM[prevPointIdx]);
+      return TAltitudeSlope(static_cast<double>(altitudeDataM[prevPointIdx]), 0);
 
     double const k = (altitudeDataM[nextPointIdx] - altitudeDataM[prevPointIdx]) /
                      (distanceDataM[nextPointIdx] - distanceDataM[prevPointIdx]);
-    return static_cast<double>(altitudeDataM[prevPointIdx]) +
-           k * (distFormStartM - distanceDataM[prevPointIdx]);
+    return TAltitudeSlope(static_cast<double>(altitudeDataM[prevPointIdx]) +
+           k * (distFormStartM - distanceDataM[prevPointIdx]), k);
   };
 
   double const routeLenM = distanceDataM.back();
   uniformAltitudeDataM.resize(resultPointCount);
+  uniformSlopeDataM.resize(resultPointCount);
   double const stepLenM = resultPointCount <= 1 ? 0.0 : routeLenM / (resultPointCount - 1);
 
-  for (size_t i = 0; i < resultPointCount; ++i)
-    uniformAltitudeDataM[i] = calculateAltitude(static_cast<double>(i) * stepLenM);
+  for (size_t i = 0; i < resultPointCount; ++i) {
+    auto altitudeSlope = calculateAltitudeSlope(static_cast<double>(i) * stepLenM);
+    uniformAltitudeDataM[i] = altitudeSlope.first;
+    uniformSlopeDataM[i] = altitudeSlope.second;
+  }
 
   return true;
 }
@@ -212,6 +219,7 @@ bool GenerateYAxisChartData(uint32_t height, double minMetersPerPxl,
 }
 
 bool GenerateChartByPoints(uint32_t width, uint32_t height, vector<m2::PointD> const & geometry,
+                           vector<double> const & slopes,
                            MapStyle mapStyle, vector<uint8_t> & frameBuffer)
 {
   frameBuffer.clear();
@@ -221,7 +229,7 @@ bool GenerateChartByPoints(uint32_t width, uint32_t height, vector<m2::PointD> c
   agg::rgba8 const kBackgroundColor = agg::rgba8(255, 255, 255, 0);
   agg::rgba8 const kLineColor = GetLineColor(mapStyle);
   agg::rgba8 const kCurveColor = GetCurveColor(mapStyle);
-  double constexpr kLineWidthPxl = 2.0;
+  double constexpr kLineWidthPxl = 3.0;
 
   using TBlender = BlendAdaptor<agg::rgba8, agg::order_rgba>;
   using TPixelFormat = agg::pixfmt_custom_blend_rgba<TBlender, agg::rendering_buffer>;
@@ -264,14 +272,30 @@ bool GenerateChartByPoints(uint32_t width, uint32_t height, vector<m2::PointD> c
   agg::render_scanlines_aa_solid(rasterizer, scanline, baseRenderer, kCurveColor);
 
   // Chart line.
-  TPath path_adaptor(geometry, false);
-  TStroke stroke(path_adaptor);
-  stroke.width(kLineWidthPxl);
-  stroke.line_cap(agg::round_cap);
-  stroke.line_join(agg::round_join);
+  for (size_t i = 1; i < geometry.size(); ++i) {
+    auto x = geometry[i].x;
+    auto y = geometry[i].y;
+    auto slope = abs(slopes[i]);
 
-  rasterizer.add_path(stroke);
-  agg::render_scanlines_aa_solid(rasterizer, scanline, baseRenderer, kLineColor);
+    agg::path_storage segment;
+    segment.move_to(x, y);
+    segment.line_to(geometry[i-1].x, geometry[i-1].y);
+    agg::conv_stroke<agg::path_storage> strokeSegment(segment);
+    strokeSegment.width(kLineWidthPxl);
+    rasterizer.add_path(strokeSegment);
+
+    agg::rgba8 color;
+    if (slope < 0.1)
+      color = kLineColor;
+    else if (slope < 0.2)
+      color = agg::rgba8(0xDF, 0xE2, 0x00, 0xFF);
+    else if (slope < 0.3)
+      color = agg::rgba8(0xD5, 0x5F, 0x00, 0xFF);
+    else
+      color = agg::rgba8(0xD5, 0x1F, 0x00, 0xFF);
+    agg::render_scanlines_aa_solid(rasterizer, scanline, baseRenderer, color);
+  }
+
   return true;
 }
 
@@ -287,7 +311,8 @@ bool GenerateChart(uint32_t width, uint32_t height, vector<double> const & dista
   }
 
   vector<double> uniformAltitudeDataM;
-  if (!NormalizeChartData(distanceDataM, altitudeDataM, width, uniformAltitudeDataM))
+  vector<double> uniformSlopeDataM;
+  if (!NormalizeChartData(distanceDataM, altitudeDataM, width, uniformAltitudeDataM, uniformSlopeDataM))
     return false;
 
   vector<double> yAxisDataPxl;
@@ -305,6 +330,6 @@ bool GenerateChart(uint32_t width, uint32_t height, vector<double> const & dista
       geometry[i] = m2::PointD(i * oneSegLenPix, yAxisDataPxl[i]);
   }
 
-  return GenerateChartByPoints(width, height, geometry, mapStyle, frameBuffer);
+  return GenerateChartByPoints(width, height, geometry, uniformSlopeDataM, mapStyle, frameBuffer);
 }
 }  // namespace maps

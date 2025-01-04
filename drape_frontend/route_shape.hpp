@@ -142,6 +142,7 @@ struct Subroute
   m2::PolylineD m_polyline;
   std::vector<double> m_turns;
   std::vector<traffic::SpeedGroup> m_traffic;
+  std::vector<float> m_slopes;
   double m_baseDistance = 0.0;
   double m_baseDepthIndex = 0.0;
   float m_maxPixelWidth = -1.0f;

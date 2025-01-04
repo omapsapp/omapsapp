@@ -479,8 +479,10 @@ void RouteRenderer::RenderSubroute(ref_ptr<dp::GraphicsContext> context, ref_ptr
   params.m_fakeColor = glsl::ToVec4(df::GetColorConstant(kRouteFakeColor));
   params.m_fakeOutlineColor = glsl::ToVec4(df::GetColorConstant(kRouteFakeOutlineColor));
 
-  ref_ptr<dp::GpuProgram> prg = mng->GetProgram(style.m_pattern.m_isDashed ?
-                                                gpu::Program::RouteDash : gpu::Program::Route);
+  auto routeType = subrouteData->m_subroute->m_routeType;
+  ref_ptr<dp::GpuProgram> prg = mng->GetProgram(
+    (routeType == df::RouteType::Pedestrian || routeType == df::RouteType::Bicycle)? gpu::Program::RouteDifficulty:
+        style.m_pattern.m_isDashed ? gpu::Program::RouteDash : gpu::Program::Route);
   prg->Bind();
   dp::ApplyState(context, prg, state);
   mng->GetParamsSetter()->Apply(context, prg, params);
