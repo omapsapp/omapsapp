@@ -47,6 +47,7 @@ inline m2::PointD GetPoint(PointWithAltitude const & pwa) { return pwa.GetPoint(
 PointWithAltitude MakePointWithAltitudeForTesting(m2::PointD const & point);
 
 bool AlmostEqualAbs(PointWithAltitude const & lhs, PointWithAltitude const & rhs, double eps);
+double Distance(PointWithAltitude const & p1, PointWithAltitude const & p2);
 }  // namespace geometry
 
 namespace std

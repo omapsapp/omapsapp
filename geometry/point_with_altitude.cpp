@@ -1,4 +1,7 @@
 #include "geometry/point_with_altitude.hpp"
+#include "geometry/mercator.hpp"
+
+#include "base/math.hpp"
 
 #include "std/boost_container_hash.hpp"
 
@@ -45,6 +48,13 @@ PointWithAltitude MakePointWithAltitudeForTesting(m2::PointD const & point)
 bool AlmostEqualAbs(PointWithAltitude const & lhs, PointWithAltitude const & rhs, double eps)
 {
   return AlmostEqualAbs(lhs.GetPoint(), rhs.GetPoint(), eps) && lhs.GetAltitude() == rhs.GetAltitude();
+}
+
+double Distance(PointWithAltitude const & p1, PointWithAltitude const & p2)
+{
+  auto const projection = mercator::DistanceOnEarth(p1.GetPoint(), p2.GetPoint());
+  auto const altitudeDifference = p2.GetAltitude() - p1.GetAltitude();
+  return std::sqrt(base::Pow2(projection) + base::Pow2(altitudeDifference));
 }
 }  // namespace geometry
 

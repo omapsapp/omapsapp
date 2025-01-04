@@ -17,9 +17,9 @@ double GetLengthInMeters(kml::MultiGeometry::LineT const & points, size_t pointI
   double length = 0.0;
   for (size_t i = 1; i <= pointIndex; ++i)
   {
-    auto const & pt1 = points[i - 1].GetPoint();
-    auto const & pt2 = points[i].GetPoint();
-    auto const segmentLength = mercator::DistanceOnEarth(pt1, pt2);
+    auto const & pt1 = points[i - 1];
+    auto const & pt2 = points[i];
+    auto const segmentLength = geometry::Distance(pt1, pt2);
     length += segmentLength;
   }
   return length;
@@ -51,9 +51,9 @@ std::vector<Track::Lengths> Track::GetLengthsImpl() const
     lineLengths.emplace_back(distance);
     for (size_t j = 1; j < line.size(); ++j)
     {
-      auto const & pt1 = line[j - 1].GetPoint();
-      auto const & pt2 = line[j].GetPoint();
-      distance += mercator::DistanceOnEarth(pt1, pt2);
+      auto const & pt1 = line[j - 1];
+      auto const & pt2 = line[j];
+      distance += geometry::Distance(pt1, pt2);
       lineLengths.emplace_back(distance);
     }
     lengths.emplace_back(std::move(lineLengths));
