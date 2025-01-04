@@ -9,9 +9,11 @@
   <CheckBox
     android:id="@+id/checkbox"
     android:layout_width="@dimen/margin_double_plus"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_centerVertical="true"
-    android:layout_marginStart="@dimen/margin_quarter"
+    android:paddingHorizontal="8dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="26dp"
     android:background="@null"
     android:button="@drawable/button_visibility_centre_inset"
     android:buttonTint="?accentColorSelector" />
@@ -48,12 +50,14 @@
   <ImageView
     android:id="@+id/more"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_alignParentEnd="true"
     android:layout_centerVertical="true"
     android:background="?selectableItemBackgroundBorderless"
     android:importantForAccessibility="no"
     android:paddingHorizontal="@dimen/margin_half"
+    android:paddingTop="22dp"
+    android:paddingBottom="24dp"
     app:srcCompat="@drawable/ic_more"
     app:tint="?secondary" />
 </RelativeLayout>
