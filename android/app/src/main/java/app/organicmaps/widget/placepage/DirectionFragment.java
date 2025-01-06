@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import app.organicmaps.Framework;
+import app.organicmaps.MwmActivity;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmDialogFragment;
 import app.organicmaps.bookmarks.data.DistanceAndAzimut;
@@ -46,6 +47,7 @@ public class DirectionFragment extends BaseMwmDialogFragment
   {
     final View root = inflater.inflate(R.layout.fragment_direction, container, false);
     root.setOnTouchListener((v, event) -> {
+      root.performClick();
       dismiss();
       return false;
     });
@@ -99,6 +101,7 @@ public class DirectionFragment extends BaseMwmDialogFragment
     super.onResume();
     LocationHelper.from(requireContext()).addListener(this);
     SensorHelper.from(requireContext()).addListener(this);
+    ((MwmActivity) requireActivity()).hideOrShowUIWithoutClosingPlacePage(true);
     refreshViews();
   }
 
@@ -108,6 +111,13 @@ public class DirectionFragment extends BaseMwmDialogFragment
     super.onPause();
     LocationHelper.from(requireContext()).removeListener(this);
     SensorHelper.from(requireContext()).removeListener(this);
+  }
+
+  @Override
+  public void onStop()
+  {
+    super.onStop();
+    ((MwmActivity) requireActivity()).hideOrShowUIWithoutClosingPlacePage(false);
   }
 
   @Override

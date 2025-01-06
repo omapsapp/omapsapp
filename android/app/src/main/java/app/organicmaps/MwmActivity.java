@@ -691,6 +691,16 @@ public class MwmActivity extends BaseMwmFragmentActivity
     }
   }
 
+  /** Hides/shows UI while keeping state
+   * @param isUiHidden True to hide the UI
+  **/
+  public void hideOrShowUIWithoutClosingPlacePage(boolean isUiHidden)
+  {
+    // Used instead of closeBottomSheet to preserve state and hide instantly
+    UiUtils.showIf(!isUiHidden, findViewById(R.id.place_page_container_fragment));
+    mMapButtonsViewModel.setButtonsHidden(isUiHidden);
+  }
+
   private void showSearchToolbar()
   {
     mSearchController.show();

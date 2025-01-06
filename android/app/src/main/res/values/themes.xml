@@ -134,6 +134,7 @@
     <item name="android:colorPrimaryDark">@android:color/black</item>
     <item name="android:windowBackground">@color/bg_dialog_translucent</item>
     <item name="android:windowIsTranslucent">true</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
   </style>
 
   <style name="MwmMain.DialogFragment.TimePicker" parent="Theme.MaterialComponents.Light.Dialog.Alert">
