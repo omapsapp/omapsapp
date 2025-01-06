@@ -464,6 +464,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Hausnummer</string>
     <string name="details">Einzelheiten</string>
+    <string name="social_media">Social Media</string>
+    <string name="building">Gebäude</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Eine Straße hinzufügen</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->
@@ -550,7 +552,7 @@
     <string name="day">d</string>
     <string name="placepage_more_button">Mehr</string>
     <!-- A referral link on the place page for some hotels -->
-    <string name="more_on_kayak">Fotos, bewertungen, buchung</string>
+    <string name="more_on_kayak">Fotos, Bewertungen, Buchung</string>
     <!-- An explanation dialog shown when clicking on more_on_kayak link. -->
     <string name="dialog_kayak_disclaimer">Der Empfehlungsbonus, den wir für jede Buchung über diesen Link erhalten, fließt in die Entwicklung von Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->

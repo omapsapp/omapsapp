@@ -455,6 +455,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Házszám</string>
     <string name="details">Részletek</string>
+    <string name="social_media">Közösségi média</string>
+    <string name="building">Épület</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Utca hozzáadása</string>
     <string name="choose_language">Nyelv kiválasztása</string>

@@ -469,6 +469,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Αριθμός κτιρίου</string>
     <string name="details">Λεπτομέρειες</string>
+    <string name="social_media">Μέσα κοινωνικής δικτύωσης</string>
+    <string name="building">Κτίριο</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Προσθέστε οδό</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

@@ -442,6 +442,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Nomor rumah</string>
     <string name="details">Detail</string>
+    <string name="social_media">Media Sosial</string>
+    <string name="building">Bangunan</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Tambahkan jalan</string>
     <string name="choose_language">Pilih bahasa</string>

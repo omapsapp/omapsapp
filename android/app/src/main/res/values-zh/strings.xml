@@ -477,6 +477,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">门牌号码</string>
     <string name="details">详细信息</string>
+    <string name="social_media">社交媒体</string>
+    <string name="building">建筑</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">添加街道</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

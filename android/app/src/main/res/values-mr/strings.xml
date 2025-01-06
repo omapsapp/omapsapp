@@ -435,6 +435,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">बिल्डिंग क्रमांक</string>
     <string name="details">तपशील</string>
+    <string name="social_media">सोशल मीडिया</string>
+    <string name="building">इमारत</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">रस्ता जोडा</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

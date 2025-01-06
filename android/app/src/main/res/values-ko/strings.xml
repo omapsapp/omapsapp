@@ -440,6 +440,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">집 번호</string>
     <string name="details">세부 정보</string>
+    <string name="social_media">소셜 미디어</string>
+    <string name="building">빌딩</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">거리 추가</string>
     <string name="choose_language">언어 선택</string>
