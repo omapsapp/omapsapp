@@ -74,7 +74,8 @@ preferably look for icons in [collections OM uses already](../data/copyright.htm
 8. Run `tools/unix/generate_localizations.sh` to validate and distribute translations into iOS and Android
 9. Add new or fix current classifier tests at `/generator/generator_tests/osm_type_tests.cpp` if you can
 10. [Test](#testing-your-changes) your changes
-11. Relax and wait for the next maps update :)
+11. Add OSM type information to `data/taginfo.json` for documentation on https://taginfo.openstreetmap.org/projects/organicmaps
+12. Relax and wait for the next maps update :)
 
 ## Testing your changes
 
