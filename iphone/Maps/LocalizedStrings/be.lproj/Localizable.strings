@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Місце";
 
-"type.place.neighbourhood" = "Мікрараён";
+"type.place.quarter" = "Мікрараён";
+
+"type.place.neighbourhood" = "Наваколле";
 
 "type.place.ocean" = "Акіян";
 

@@ -1632,7 +1632,7 @@
     <string name="type.place.islet">Острвце</string>
     <string name="type.place.isolated_dwelling">Изолована кућа</string>
     <string name="type.place.locality">Локалитет</string>
-    <string name="type.place.neighbourhood">Насеље</string>
+    <string name="type.place.quarter">Насеље</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Регион</string>
     <string name="type.place.sea">Море</string>

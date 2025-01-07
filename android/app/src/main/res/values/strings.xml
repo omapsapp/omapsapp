@@ -1700,6 +1700,7 @@
     <string name="type.place.islet">Islet</string>
     <string name="type.place.isolated_dwelling">Isolated Dwelling</string>
     <string name="type.place.locality">Locality</string>
+    <string name="type.place.quarter">Quarter</string>
     <string name="type.place.neighbourhood">Neighbourhood</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Region</string>

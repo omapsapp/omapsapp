@@ -1634,7 +1634,8 @@
     <string name="type.place.islet">Ada</string>
     <string name="type.place.isolated_dwelling">Konut</string>
     <string name="type.place.locality">Semt</string>
-    <string name="type.place.neighbourhood">Mahalle</string>
+    <string name="type.place.quarter">Mahalle</string>
+    <string name="type.place.neighbourhood">Komşuluk</string>
     <string name="type.place.ocean">Okyanus</string>
     <string name="type.place.region">Bölge</string>
     <string name="type.place.sea">Deniz</string>

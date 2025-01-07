@@ -1525,7 +1525,8 @@
     <string name="type.place.islet">Øy</string>
     <string name="type.place.isolated_dwelling">Isolert bosetting</string>
     <string name="type.place.locality">Sted</string>
-    <string name="type.place.neighbourhood">Strøk</string>
+    <string name="type.place.quarter">Strøk</string>
+    <string name="type.place.neighbourhood">Nabolag</string>
     <string name="type.place.ocean">Hav</string>
     <string name="type.place.region">Region</string>
     <string name="type.place.sea">Sjø</string>

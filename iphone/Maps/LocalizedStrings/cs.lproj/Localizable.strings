@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Lokalita";
 
-"type.place.neighbourhood" = "Čtvrť";
+"type.place.quarter" = "Čtvrť";
+
+"type.place.neighbourhood" = "Sousedství";
 
 "type.place.ocean" = "Oceán";
 

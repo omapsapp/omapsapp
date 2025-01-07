@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Localitate";
 
-"type.place.neighbourhood" = "Cartier";
+"type.place.quarter" = "Cartier";
+
+"type.place.neighbourhood" = "Vecinătate";
 
 "type.place.ocean" = "Ocean";
 

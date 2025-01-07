@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Körzet";
 
-"type.place.neighbourhood" = "Városrész";
+"type.place.quarter" = "Városrész";
+
+"type.place.neighbourhood" = "Szomszédság";
 
 "type.place.ocean" = "Óceán";
 

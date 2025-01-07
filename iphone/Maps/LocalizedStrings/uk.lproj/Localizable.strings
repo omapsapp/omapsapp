@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Місце";
 
-"type.place.neighbourhood" = "Мiкрорайон";
+"type.place.quarter" = "Мiкрорайон";
+
+"type.place.neighbourhood" = "Сусідство";
 
 "type.place.ocean" = "Океан";
 

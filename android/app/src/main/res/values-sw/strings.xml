@@ -753,7 +753,8 @@
     <string name="type.place.islet">Kisiwa</string>
     <string name="type.place.isolated_dwelling">Makao ya Pekee</string>
     <string name="type.place.locality">Eneo</string>
-    <string name="type.place.neighbourhood">Mtaa</string>
+    <string name="type.place.quarter">Mtaa</string>
+    <string name="type.place.neighbourhood">Ujirani</string>
     <string name="type.place.ocean">Bahari kuu</string>
     <string name="type.place.region">Mkoa</string>
     <string name="type.place.sea">Bahari</string>

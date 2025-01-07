@@ -1141,6 +1141,7 @@
     <string name="type.place.islet">Острови</string>
     <string name="type.place.isolated_dwelling">Изолирано жилище</string>
     <string name="type.place.locality">Място</string>
+    <string name="type.place.quarter">Съседство</string>
     <string name="type.place.neighbourhood">Съседство</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Регион</string>

@@ -1468,7 +1468,8 @@
     <string name="type.place.islet">Ö</string>
     <string name="type.place.isolated_dwelling">Isolerade bostäder</string>
     <string name="type.place.locality">Lokalitet</string>
-    <string name="type.place.neighbourhood">Grannskap</string>
+    <string name="type.place.quarter">Grannskap</string>
+    <string name="type.place.neighbourhood">Grannskapet</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Region</string>
     <string name="type.place.sea">Hav</string>

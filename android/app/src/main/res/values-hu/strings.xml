@@ -1492,7 +1492,8 @@
     <string name="type.place.islet">Szigetecske</string>
     <string name="type.place.isolated_dwelling">Elszigetelt lakóépület</string>
     <string name="type.place.locality">Körzet</string>
-    <string name="type.place.neighbourhood">Városrész</string>
+    <string name="type.place.quarter">Városrész</string>
+    <string name="type.place.neighbourhood">Szomszédság</string>
     <string name="type.place.ocean">Óceán</string>
     <string name="type.place.region">Régió</string>
     <string name="type.place.sea">Tenger</string>

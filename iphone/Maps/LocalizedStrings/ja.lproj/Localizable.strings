@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "地域";
 
-"type.place.neighbourhood" = "地域";
+"type.place.quarter" = "地域";
+
+"type.place.neighbourhood" = "近隣";
 
 "type.place.ocean" = "海";
 

@@ -1533,6 +1533,7 @@
     <string name="type.place.islet">Νησί</string>
     <string name="type.place.isolated_dwelling">Απομονωμένη κατοικία</string>
     <string name="type.place.locality">Τοποθεσία</string>
+    <string name="type.place.quarter">Γειτονιά</string>
     <string name="type.place.neighbourhood">Γειτονιά</string>
     <string name="type.place.ocean">Ωκεανός</string>
     <string name="type.place.region">Περιοχή</string>

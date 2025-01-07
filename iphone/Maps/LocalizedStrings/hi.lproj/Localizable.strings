@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Locality";
 
-"type.place.neighbourhood" = "मुहल्ला";
+"type.place.quarter" = "मुहल्ला";
+
+"type.place.neighbourhood" = "अड़ोस-पड़ोस";
 
 "type.place.ocean" = "महासागर";
 

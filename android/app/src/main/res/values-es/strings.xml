@@ -1643,6 +1643,7 @@
     <string name="type.place.islet">Isla</string>
     <string name="type.place.isolated_dwelling">Vivienda aislada</string>
     <string name="type.place.locality">Localidad</string>
+    <string name="type.place.quarter">Vecindario</string>
     <string name="type.place.neighbourhood">Vecindario</string>
     <string name="type.place.ocean">Océano</string>
     <string name="type.place.region">Región</string>

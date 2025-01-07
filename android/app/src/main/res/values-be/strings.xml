@@ -1284,7 +1284,8 @@
     <string name="type.place.islet">Астравок</string>
     <string name="type.place.isolated_dwelling">Хутар</string>
     <string name="type.place.locality">Місце</string>
-    <string name="type.place.neighbourhood">Мікрараён</string>
+    <string name="type.place.quarter">Мікрараён</string>
+    <string name="type.place.neighbourhood">Наваколле</string>
     <string name="type.place.ocean">Акіян</string>
     <string name="type.place.region">Рэгіён</string>
     <string name="type.place.sea">Мора</string>

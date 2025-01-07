@@ -1057,7 +1057,8 @@
     <string name="type.place.hamlet">गांव</string>
     <string name="type.place.island">द्वीप</string>
     <string name="type.place.islet">द्वीपिका</string>
-    <string name="type.place.neighbourhood">मुहल्ला</string>
+    <string name="type.place.quarter">मुहल्ला</string>
+    <string name="type.place.neighbourhood">अड़ोस-पड़ोस</string>
     <string name="type.place.ocean">महासागर</string>
     <string name="type.place.sea">समुद्र</string>
     <string name="type.place.square">चौक</string>

@@ -1639,7 +1639,8 @@
     <string name="type.place.islet">איון</string>
     <string name="type.place.isolated_dwelling">מבנה מבודד</string>
     <string name="type.place.locality">אזור בלתי מיושב</string>
-    <string name="type.place.neighbourhood">שכונה</string>
+    <string name="type.place.quarter">שכונה</string>
+    <string name="type.place.neighbourhood">שְׁכוּנָה</string>
     <string name="type.place.ocean">אוקיינוס</string>
     <string name="type.place.region">חבל ארץ</string>
     <string name="type.place.sea">ים</string>

@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Wilayah";
 
+"type.place.quarter" = "Lingkungan";
+
 "type.place.neighbourhood" = "Lingkungan";
 
 "type.place.ocean" = "Samudra";

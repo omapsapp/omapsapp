@@ -1629,6 +1629,7 @@
     <string name="type.place.islet">Wyspa</string>
     <string name="type.place.isolated_dwelling">Mała osada</string>
     <string name="type.place.locality">Miejscowość niezamieszkana</string>
+    <string name="type.place.quarter">Sąsiedztwo</string>
     <string name="type.place.neighbourhood">Sąsiedztwo</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Region</string>

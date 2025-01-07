@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Localidad";
 
+"type.place.quarter" = "Vecindario";
+
 "type.place.neighbourhood" = "Vecindario";
 
 "type.place.ocean" = "Océano";

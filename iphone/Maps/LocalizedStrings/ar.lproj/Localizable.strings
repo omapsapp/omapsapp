@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "منطقة مجاورة";
 
-"type.place.neighbourhood" = "حي سكني";
+"type.place.quarter" = "حي سكني";
+
+"type.place.neighbourhood" = "الحي";
 
 "type.place.ocean" = "محيط";
 

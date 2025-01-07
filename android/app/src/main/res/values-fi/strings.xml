@@ -1603,6 +1603,7 @@
     <string name="type.place.islet">Saari</string>
     <string name="type.place.isolated_dwelling">Erillinen asunto</string>
     <string name="type.place.locality">Paikkakunta</string>
+    <string name="type.place.quarter">Naapurusto</string>
     <string name="type.place.neighbourhood">Naapurusto</string>
     <string name="type.place.ocean">Valtameri</string>
     <string name="type.place.region">Alue</string>

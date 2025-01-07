@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "장소";
 
-"type.place.neighbourhood" = "동네";
+"type.place.quarter" = "동네";
+
+"type.place.neighbourhood" = "이웃";
 
 "type.place.ocean" = "대양";
 

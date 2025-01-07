@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Paikkond";
 
+"type.place.quarter" = "Naabruskond";
+
 "type.place.neighbourhood" = "Naabruskond";
 
 "type.place.ocean" = "Ookean";

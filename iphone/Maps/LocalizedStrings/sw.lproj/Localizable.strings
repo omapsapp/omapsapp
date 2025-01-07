@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Eneo";
 
-"type.place.neighbourhood" = "Mtaa";
+"type.place.quarter" = "Mtaa";
+
+"type.place.neighbourhood" = "Ujirani";
 
 "type.place.ocean" = "Bahari kuu";
 
