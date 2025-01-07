@@ -904,7 +904,7 @@ mapswithme
 railway|subway|tunnel
 mapswithme
 railway|subway|tunnel
-mapswithme
+*place|neighbourhood
 railway|subway|tunnel
 *shop|rental
 railway|subway|tunnel
@@ -959,7 +959,7 @@ railway|subway|tunnel
 *shop|appliance
 *amenity|casino
 *amenity|brothel
-*place|neighbourhood
+*place|quarter
 *place|isolated_dwelling
 *historic|wayside_cross
 *historic|wayside_shrine
