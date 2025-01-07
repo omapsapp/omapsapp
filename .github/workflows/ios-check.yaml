@@ -42,6 +42,7 @@ jobs:
       LANGUAGE: en_US.UTF-8
       LC_ALL: en_US.UTF-8
       TEST_RESULTS_BUNDLE_NAME: OMaps-Test-Results
+      SIMULATOR_DEVICE: 'iPhone 16 Pro Max'
     strategy:
       fail-fast: false
       matrix:
@@ -73,12 +74,14 @@ jobs:
         if: matrix.buildType == 'Debug'
         shell: bash
         run: |
+          xcrun simctl boot "${{ env.SIMULATOR_DEVICE }}" || true
+          xcrun simctl bootstatus "${{ env.SIMULATOR_DEVICE }}" -b || sleep 15
           xcodebuild test \
             -workspace xcode/omim.xcworkspace \
             -scheme OMaps \
             -configuration Debug \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max,OS=latest' \
+            -destination "platform=iOS Simulator,name=${{ env.SIMULATOR_DEVICE }},OS=latest" \
             -quiet \
             -resultBundlePath ${{ env.TEST_RESULTS_BUNDLE_NAME }}.xcresult \
             CODE_SIGNING_REQUIRED=NO \
