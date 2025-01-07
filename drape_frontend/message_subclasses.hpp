@@ -850,18 +850,21 @@ public:
 class Allow3dModeMessage : public Message
 {
 public:
-  Allow3dModeMessage(bool allowPerspective, bool allow3dBuildings)
-    : m_allowPerspective(allowPerspective)
+  Allow3dModeMessage(bool allowPerspectiveAlways, bool allowPerspectiveInNavigation, bool allow3dBuildings)
+    : m_allowPerspectiveAlways(allowPerspectiveAlways)
+    , m_allowPerspectiveInNavigation(allowPerspectiveInNavigation)
     , m_allow3dBuildings(allow3dBuildings)
   {}
 
   Type GetType() const override { return Type::Allow3dMode; }
 
-  bool AllowPerspective() const { return m_allowPerspective; }
+  bool AllowPerspectiveAlways() const { return m_allowPerspectiveAlways; }
+  bool AllowPerspectiveInNavigation() const { return m_allowPerspectiveInNavigation; }
   bool Allow3dBuildings() const { return m_allow3dBuildings; }
 
 private:
-  bool const m_allowPerspective;
+  bool const m_allowPerspectiveAlways;
+  bool const m_allowPerspectiveInNavigation;
   bool const m_allow3dBuildings;
 };
 

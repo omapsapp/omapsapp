@@ -637,14 +637,15 @@ void DrapeEngine::AllowAutoZoom(bool allowAutoZoom)
                                   MessagePriority::Normal);
 }
 
-void DrapeEngine::Allow3dMode(bool allowPerspectiveInNavigation, bool allow3dBuildings)
+void DrapeEngine::Allow3dMode(bool allowPerspectiveAlways, bool allowPerspectiveInNavigation, bool allow3dBuildings)
 {
   m_threadCommutator->PostMessage(ThreadsCommutator::ResourceUploadThread,
                                   make_unique_dp<Allow3dBuildingsMessage>(allow3dBuildings),
                                   MessagePriority::Normal);
 
   m_threadCommutator->PostMessage(ThreadsCommutator::RenderThread,
-                                  make_unique_dp<Allow3dModeMessage>(allowPerspectiveInNavigation,
+                                  make_unique_dp<Allow3dModeMessage>(allowPerspectiveAlways,
+                                                                     allowPerspectiveInNavigation,
                                                                      allow3dBuildings),
                                   MessagePriority::Normal);
 }

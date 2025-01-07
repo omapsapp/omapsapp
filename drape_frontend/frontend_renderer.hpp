@@ -323,6 +323,7 @@ private:
 
   FrameValues m_frameValues;
 
+  bool m_enablePerspectiveAlways;
   bool m_enablePerspectiveInNavigation;
   bool m_enable3dBuildings;
   bool m_isIsometry;

@@ -99,8 +99,8 @@ static NSString * const kUDDidShowICloudSynchronizationEnablingAlert = @"kUDDidS
 
   [self.zoomButtonsCell configWithDelegate:self title:L(@"pref_zoom_title") isOn:[MWMSettings zoomButtonsEnabled]];
 
-  bool on = true, _ = true;
-  GetFramework().Load3dMode(_, on);
+  bool _a = false, _ = true, on = true;
+  GetFramework().Load3dMode(_a, _, on);
   if (GetFramework().GetPowerManager().GetScheme() == Scheme::EconomyMaximum)
   {
     self.is3dCell.isEnabled = false;
@@ -218,9 +218,9 @@ static NSString * const kUDDidShowICloudSynchronizationEnablingAlert = @"kUDDidS
 }
 
 - (void)configNavigationSection {
-  bool _ = true, on = true;
+  bool _a = false, _ = true, on = true;
   auto &f = GetFramework();
-  f.Load3dMode(on, _);
+  f.Load3dMode(_a, on, _);
   [self.perspectiveViewCell configWithDelegate:self title:L(@"pref_map_3d_title") isOn:on];
 
   [self.autoZoomCell configWithDelegate:self title:L(@"pref_map_auto_zoom") isOn:GetFramework().LoadAutoZoom()];
@@ -300,11 +300,11 @@ static NSString * const kUDDidShowICloudSynchronizationEnablingAlert = @"kUDDidS
     [MWMSettings setZoomButtonsEnabled:value];
   } else if (cell == self.is3dCell) {
     auto &f = GetFramework();
-    bool _ = true, is3dBuildings = true;
-    f.Load3dMode(_, is3dBuildings);
+    bool _a = false, _ = true, is3dBuildings = true;
+    f.Load3dMode(_a, _, is3dBuildings);
     is3dBuildings = static_cast<bool>(value);
-    f.Save3dMode(_, is3dBuildings);
-    f.Allow3dMode(_, is3dBuildings);
+    f.Save3dMode(_a, _, is3dBuildings);
+    f.Allow3dMode(_a, _, is3dBuildings);
   } else if (cell == self.autoDownloadCell) {
     [MWMSettings setAutoDownloadEnabled:value];
   } else if (cell == self.fontScaleCell) {
@@ -315,11 +315,11 @@ static NSString * const kUDDidShowICloudSynchronizationEnablingAlert = @"kUDDidS
     [MWMSettings setCompassCalibrationEnabled:value];
   } else if (cell == self.perspectiveViewCell) {
     auto &f = GetFramework();
-    bool _ = true, is3d = true;
-    f.Load3dMode(is3d, _);
+    bool _a = false, _ = true, is3d = true;
+    f.Load3dMode(_a, is3d, _);
     is3d = static_cast<bool>(value);
-    f.Save3dMode(is3d, _);
-    f.Allow3dMode(is3d, _);
+    f.Save3dMode(_a, is3d, _);
+    f.Allow3dMode(_a, is3d, _);
   } else if (cell == self.autoZoomCell) {
     auto &f = GetFramework();
     f.AllowAutoZoom(value);

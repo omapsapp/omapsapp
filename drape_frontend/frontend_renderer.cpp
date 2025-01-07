@@ -738,14 +738,6 @@ void FrontendRenderer::AcceptMessage(ref_ptr<Message> message)
       ref_ptr<Allow3dModeMessage> const msg = message;
       ScreenBase const & screen = m_userEventStream.GetCurrentScreen();
 
-#ifdef OMIM_OS_DESKTOP
-      if (m_enablePerspectiveInNavigation == msg->AllowPerspective() &&
-          m_enablePerspectiveInNavigation != screen.isPerspective())
-      {
-        AddUserEvent(make_unique_dp<SetAutoPerspectiveEvent>(m_enablePerspectiveInNavigation));
-      }
-#endif
-
       if (m_enable3dBuildings != msg->Allow3dBuildings())
       {
         m_enable3dBuildings = msg->Allow3dBuildings();
@@ -753,9 +745,16 @@ void FrontendRenderer::AcceptMessage(ref_ptr<Message> message)
         m_forceUpdateScene = true;
       }
 
-      if (m_enablePerspectiveInNavigation != msg->AllowPerspective())
+      if (m_enablePerspectiveAlways != msg->AllowPerspectiveAlways()) // &&
+      //    m_enablePerspectiveInNavigation != screen.isPerspective())
       {
-        m_enablePerspectiveInNavigation = msg->AllowPerspective();
+        m_enablePerspectiveAlways = msg->AllowPerspectiveAlways();
+        AddUserEvent(make_unique_dp<SetAutoPerspectiveEvent>(m_enablePerspectiveAlways));
+      }
+
+      if (m_enablePerspectiveInNavigation != msg->AllowPerspectiveInNavigation())
+      {
+        m_enablePerspectiveInNavigation = msg->AllowPerspectiveInNavigation();
         m_myPositionController->EnablePerspectiveInRouting(m_enablePerspectiveInNavigation);
         if (m_myPositionController->IsInRouting())
         {

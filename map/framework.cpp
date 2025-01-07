@@ -89,7 +89,8 @@ Framework::FixedPosition::FixedPosition()
 namespace
 {
 std::string_view constexpr kMapStyleKey = "MapStyleKeyV1";
-std::string_view constexpr kAllow3dKey = "Allow3d";
+std::string_view constexpr kAllow3dAlwaysKey = "Allow3dAlways";
+std::string_view constexpr kAllow3dInNavigationKey = "allow3dInNavigation";
 std::string_view constexpr kAllow3dBuildingsKey = "Buildings3d";
 std::string_view constexpr kAllowAutoZoom = "AutoZoom";
 std::string_view constexpr kTrafficEnabledKey = "TrafficEnabled";
@@ -1534,9 +1535,10 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
   auto isCountryLoadedByNameFn = bind(&Framework::IsCountryLoadedByName, this, _1);
   auto updateCurrentCountryFn = bind(&Framework::OnUpdateCurrentCountry, this, _1, _2);
 
-  bool allow3d;
+  bool allow3dAlways;
+  bool allow3dInNavigation;
   bool allow3dBuildings;
-  Load3dMode(allow3d, allow3dBuildings);
+  Load3dMode(allow3dAlways, allow3dInNavigation, allow3dBuildings);
 
   auto const isAutozoomEnabled = LoadAutoZoom();
 
@@ -1580,7 +1582,7 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
 
   OnSize(params.m_surfaceWidth, params.m_surfaceHeight);
 
-  Allow3dMode(allow3d, allow3dBuildings);
+  Allow3dMode(allow3dAlways, allow3dInNavigation, allow3dBuildings);
 
   ApplyMapLanguageCode(GetMapLanguageCode());
 
@@ -1591,7 +1593,7 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
 
   GetBookmarkManager().SetDrapeEngine(make_ref(m_drapeEngine));
   m_drapeApi.SetDrapeEngine(make_ref(m_drapeEngine));
-  m_routingManager.SetDrapeEngine(make_ref(m_drapeEngine), allow3d);
+  m_routingManager.SetDrapeEngine(make_ref(m_drapeEngine), allow3dInNavigation);
   m_trafficManager.SetDrapeEngine(make_ref(m_drapeEngine));
   m_transitManager.SetDrapeEngine(make_ref(m_drapeEngine));
   m_isolinesManager.SetDrapeEngine(make_ref(m_drapeEngine));
@@ -2488,30 +2490,35 @@ void Framework::ApplyMapLanguageCode(std::string const & langCode)
   m_drapeEngine->SetMapLangIndex(langIndex);
 }
 
-void Framework::Allow3dMode(bool allow3d, bool allow3dBuildings)
+void Framework::Allow3dMode(bool allow3dAlways, bool allow3dInNavigation, bool allow3dBuildings)
 {
   if (m_drapeEngine == nullptr)
     return;
 
   if (!m_powerManager.IsFacilityEnabled(power_management::Facility::PerspectiveView))
-    allow3d = false;
+    allow3dAlways = false, allow3dInNavigation = false;
 
   if (!m_powerManager.IsFacilityEnabled(power_management::Facility::Buildings3d))
     allow3dBuildings = false;
 
-  m_drapeEngine->Allow3dMode(allow3d, allow3dBuildings);
+  m_drapeEngine->Allow3dMode(allow3dAlways, allow3dInNavigation, allow3dBuildings);
+  Save3dMode(allow3dAlways, allow3dInNavigation, allow3dBuildings);
 }
 
-void Framework::Save3dMode(bool allow3d, bool allow3dBuildings)
+void Framework::Save3dMode(bool allow3dAlways, bool allow3dInNavigation, bool allow3dBuildings)
 {
-  settings::Set(kAllow3dKey, allow3d);
+  settings::Set(kAllow3dAlwaysKey, allow3dAlways);
+  settings::Set(kAllow3dInNavigationKey, allow3dInNavigation);
   settings::Set(kAllow3dBuildingsKey, allow3dBuildings);
 }
 
-void Framework::Load3dMode(bool & allow3d, bool & allow3dBuildings)
+void Framework::Load3dMode(bool & allow3dAlways, bool & allow3dInNavigation, bool & allow3dBuildings)
 {
-  if (!settings::Get(kAllow3dKey, allow3d))
-    allow3d = true;
+  if (!settings::Get(kAllow3dAlwaysKey, allow3dAlways))
+    allow3dAlways = true;
+
+  if (!settings::Get(kAllow3dInNavigationKey, allow3dInNavigation))
+    allow3dInNavigation = true;
 
   if (!settings::Get(kAllow3dBuildingsKey, allow3dBuildings))
     allow3dBuildings = true;
@@ -3323,15 +3330,15 @@ void Framework::OnPowerFacilityChanged(power_management::Facility const facility
   if (facility == power_management::Facility::PerspectiveView ||
       facility == power_management::Facility::Buildings3d)
   {
-    bool allow3d = true, allow3dBuildings = true;
-    Load3dMode(allow3d, allow3dBuildings);
+    bool allow3dAlways = true, allow3dInNavigation = true, allow3dBuildings = true;
+    Load3dMode(allow3dAlways, allow3dInNavigation, allow3dBuildings);
 
     if (facility == power_management::Facility::PerspectiveView)
-      allow3d = allow3d && enabled;
+      allow3dAlways = allow3dAlways && enabled, allow3dInNavigation = allow3dInNavigation && enabled;
     else
       allow3dBuildings = allow3dBuildings && enabled;
 
-    Allow3dMode(allow3d, allow3dBuildings);
+    Allow3dMode(allow3dAlways, allow3dInNavigation, allow3dBuildings);
   }
   else if (facility == power_management::Facility::TrafficJams)
   {
