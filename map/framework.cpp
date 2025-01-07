@@ -373,6 +373,7 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
   InitTransliteration();
   LOG(LDEBUG, ("Transliterators initialized"));
 
+  GetPowerManager().Init();
   /// @todo No any real config loading here for now.
   GetPowerManager().Subscribe(this);
   GetPowerManager().Load();

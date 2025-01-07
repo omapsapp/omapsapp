@@ -225,4 +225,13 @@ bool PowerManager::Save()
   Load();
   return false;
 }
+
+void PowerManager::Init()
+{
+  FILE* fp = std::fopen(GetConfigPath().c_str(), "r");
+  if (fp)
+    std::fclose(fp);
+  else
+    Save();
+}
 }  // namespace power_management
