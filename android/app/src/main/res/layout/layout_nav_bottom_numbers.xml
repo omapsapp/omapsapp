@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="65sp"
@@ -13,9 +14,9 @@
     android:layout_height="match_parent"
     android:layout_weight="0.5"/>
 
-  <!-- Speed -->
+  <!-- ETA (Estimated Time of Arrival) -->
   <LinearLayout
-    android:id="@+id/speed_view_container"
+    android:id="@+id/eta_view_container"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -23,25 +24,26 @@
     android:gravity="center"
     android:minWidth="@dimen/nav_numbers_side_min_width">
 
+    <!-- ETA value -->
     <TextView
-      android:id="@+id/speed_value"
+      android:id="@+id/eta_value"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:includeFontPadding="false"
       android:lines="1"
       android:textAppearance="@style/MwmTextAppearance.NavMenu.Number"
-      tools:text="999" />
+      tools:text="99:99"/>
 
-    <!-- Speed -->
+    <!-- ETA AM/PM -->
     <TextView
-      android:id="@+id/speed_dimen"
+      android:id="@+id/eta_am_pm"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:includeFontPadding="false"
       android:lines="1"
       android:textAppearance="@style/MwmTextAppearance.NavMenu.Number.Dimension"
       tools:background="#20FF0000"
-      tools:text="km/h" />
+      tools:text="AM/PM"/>
   </LinearLayout>
 
   <Space
@@ -103,14 +105,13 @@
     </LinearLayout>
 
     <TextView
-      android:id="@+id/time_estimate"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:includeFontPadding="false"
       android:lines="1"
       android:textAlignment="center"
       android:textAppearance="@style/MwmTextAppearance.NavMenu.Number.Dimension"
-      tools:text="99:99 AM" />
+      tools:text="----"/>
   </LinearLayout>
 
   <Space
@@ -150,4 +151,5 @@
     android:layout_width="0dp"
     android:layout_height="match_parent"
     android:layout_weight="0.5"/>
+
 </LinearLayout>

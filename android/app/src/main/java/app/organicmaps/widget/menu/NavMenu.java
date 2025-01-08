@@ -1,7 +1,5 @@
 package app.organicmaps.widget.menu;
 
-import android.location.Location;
-import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,16 +7,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import app.organicmaps.R;
-import app.organicmaps.location.LocationHelper;
 import app.organicmaps.routing.RoutingInfo;
 import app.organicmaps.sound.TtsPlayer;
 import app.organicmaps.util.Graphics;
-import app.organicmaps.util.StringUtils;
-import app.organicmaps.util.ThemeUtils;
 import app.organicmaps.util.UiUtils;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 
@@ -33,14 +27,12 @@ public class NavMenu
   private final View mHeaderFrame;
 
   private final ImageView mTts;
-  private final View mSpeedViewContainer;
-  private final TextView mSpeedValue;
-  private final TextView mSpeedUnits;
+  private final TextView mEtaValue;
+  private final TextView mEtaAmPm;
   private final TextView mTimeHourValue;
   private final TextView mTimeHourUnits;
   private final TextView mTimeMinuteValue;
   private final TextView mTimeMinuteUnits;
-  private final TextView mTimeEstimate;
   private final TextView mDistanceValue;
   private final TextView mDistanceUnits;
   private final LinearProgressIndicator mRouteProgress;
@@ -49,7 +41,6 @@ public class NavMenu
   private final NavMenuListener mNavMenuListener;
 
   private int currentPeekHeight = 0;
-
 
   public interface OnMenuSizeChangedListener
   {
@@ -95,14 +86,12 @@ public class NavMenu
     });
 
     // Bottom frame
-    mSpeedViewContainer = bottomFrame.findViewById(R.id.speed_view_container);
-    mSpeedValue = bottomFrame.findViewById(R.id.speed_value);
-    mSpeedUnits = bottomFrame.findViewById(R.id.speed_dimen);
+    mEtaValue = bottomFrame.findViewById(R.id.eta_value);
+    mEtaAmPm = bottomFrame.findViewById(R.id.eta_am_pm);
     mTimeHourValue = bottomFrame.findViewById(R.id.time_hour_value);
     mTimeHourUnits = bottomFrame.findViewById(R.id.time_hour_dimen);
     mTimeMinuteValue = bottomFrame.findViewById(R.id.time_minute_value);
     mTimeMinuteUnits = bottomFrame.findViewById(R.id.time_minute_dimen);
-    mTimeEstimate = bottomFrame.findViewById(R.id.time_estimate);
     mDistanceValue = bottomFrame.findViewById(R.id.distance_value);
     mDistanceUnits = bottomFrame.findViewById(R.id.distance_dimen);
     mRouteProgress = bottomFrame.findViewById(R.id.navigation_progress);
@@ -174,7 +163,6 @@ public class NavMenu
         : Graphics.tint(mActivity, R.drawable.ic_voice_off));
   }
 
-
   private void updateTime(int seconds)
   {
     updateTimeLeft(seconds);
@@ -200,38 +188,28 @@ public class NavMenu
 
   private void updateTimeEstimate(int seconds)
   {
-    final String format = android.text.format.DateFormat.is24HourFormat(mTimeMinuteValue.getContext())
-            ? "HH:mm" : "h:mm a";
     final LocalTime localTime = LocalTime.now().plusSeconds(seconds);
-    mTimeEstimate.setText(localTime.format(DateTimeFormatter.ofPattern(format)));
-  }
 
-  private void updateSpeedView(@NonNull RoutingInfo info)
-  {
-    final Location last = LocationHelper.from(mActivity).getSavedLocation();
-    if (last == null)
-      return;
+    final String format;
 
-    Pair<String, String> speedAndUnits = StringUtils.nativeFormatSpeedAndUnits(last.getSpeed());
-    mSpeedValue.setText(speedAndUnits.first);
-
-    if (info.speedLimitMps > 0.0 && last.getSpeed() > info.speedLimitMps)
+    if (android.text.format.DateFormat.is24HourFormat(mTimeMinuteValue.getContext()))
     {
-      if (info.isSpeedCamLimitExceeded())
-        mSpeedValue.setTextColor(ContextCompat.getColor(mActivity, R.color.white_primary));
-      else
-        mSpeedValue.setTextColor(ContextCompat.getColor(mActivity, R.color.base_red));
+      // 24 hours time format.
+      format = "HH:mm";
+      mEtaAmPm.setText("");
     }
     else
-      mSpeedValue.setTextColor(ThemeUtils.getColor(mActivity, android.R.attr.textColorPrimary));
+    {
+      // AM/PM time format.
+      format = "h:mm";
+      mEtaAmPm.setText(localTime.format(DateTimeFormatter.ofPattern("a")));
+    }
 
-    mSpeedUnits.setText(speedAndUnits.second);
-    mSpeedViewContainer.setActivated(info.isSpeedCamLimitExceeded());
+    mEtaValue.setText(localTime.format(DateTimeFormatter.ofPattern(format)));
   }
 
   public void update(@NonNull RoutingInfo info)
   {
-    updateSpeedView(info);
     updateTime(info.totalTimeInSeconds);
     mDistanceValue.setText(info.distToTarget.mDistanceStr);
     mDistanceUnits.setText(info.distToTarget.getUnitsStr(mActivity.getApplicationContext()));
