@@ -1570,7 +1570,7 @@
     <string name="type.natural.earth_bank">Żleb</string>
     <string name="type.man_made.embankment">Nasyp</string>
     <string name="type.natural.coastline">Linia brzegowa</string>
-    <string name="type.natural.desert">Pustynia</string>
+    <string name="type.natural.sand">Piasek</string>
     <string name="type.natural.geyser">Gejzer</string>
     <string name="type.natural.glacier">Lodowiec</string>
     <string name="type.natural.grassland">Formacje trawiaste</string>

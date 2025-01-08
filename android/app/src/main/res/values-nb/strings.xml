@@ -1467,7 +1467,7 @@
     <string name="type.natural.earth_bank">Jordbanke</string>
     <string name="type.man_made.embankment">Fylling</string>
     <string name="type.natural.coastline">Kyst</string>
-    <string name="type.natural.desert">Ørken</string>
+    <string name="type.natural.sand">Sand</string>
     <string name="type.natural.geyser">Geysir</string>
     <string name="type.natural.glacier">Isbre</string>
     <string name="type.natural.grassland">Sletteland</string>

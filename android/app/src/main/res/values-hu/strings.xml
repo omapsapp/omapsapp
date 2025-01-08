@@ -1434,7 +1434,7 @@
     <string name="type.natural.earth_bank">Földtöltés</string>
     <string name="type.man_made.embankment">Töltés</string>
     <string name="type.natural.coastline">Tengerpart</string>
-    <string name="type.natural.desert">Sivatag</string>
+    <string name="type.natural.sand">Homok</string>
     <string name="type.natural.geyser">Gejzír</string>
     <string name="type.natural.glacier">Gleccser</string>
     <string name="type.natural.grassland">Füves puszta</string>

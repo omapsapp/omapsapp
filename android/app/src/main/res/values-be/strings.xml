@@ -1231,7 +1231,7 @@
     <string name="type.natural.earth_bank">Абрыў</string>
     <string name="type.man_made.embankment">Насып</string>
     <string name="type.natural.coastline">Узбярэжжа</string>
-    <string name="type.natural.desert">Пустыня</string>
+    <string name="type.natural.sand">Пясок</string>
     <string name="type.natural.geyser">Гейзер</string>
     <string name="type.natural.glacier">Ледавік</string>
     <string name="type.natural.grassland">Луг</string>

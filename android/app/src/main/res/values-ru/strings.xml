@@ -1598,7 +1598,7 @@
     <string name="type.natural.earth_bank">Обрыв</string>
     <string name="type.man_made.embankment">Насыпь</string>
     <string name="type.natural.coastline">Береговая линия</string>
-    <string name="type.natural.desert">Пустыня</string>
+    <string name="type.natural.sand">Песок</string>
     <string name="type.natural.geyser">Гейзер</string>
     <string name="type.natural.glacier">Ледник</string>
     <string name="type.natural.grassland">Луг</string>

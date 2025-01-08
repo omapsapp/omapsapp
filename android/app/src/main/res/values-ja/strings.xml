@@ -1543,7 +1543,7 @@
     <string name="type.natural.earth_bank">崖</string>
     <string name="type.man_made.embankment">盛土</string>
     <string name="type.natural.coastline">海岸線</string>
-    <string name="type.natural.desert">荒野</string>
+    <string name="type.natural.sand">砂</string>
     <string name="type.natural.geyser">間欠泉</string>
     <string name="type.natural.glacier">氷河</string>
     <string name="type.natural.grassland">草原</string>

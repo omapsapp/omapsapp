@@ -741,7 +741,6 @@ world  +
         cave_entrance  -
         cliff  -
         coastline  -
-        desert  -
         earth_bank  -
         geyser  -
         glacier  -
@@ -752,6 +751,7 @@ world  +
         peak  -
         rock  -
         saddle  -
+        sand  -
         scree  -
         scrub  -
         shingle  -

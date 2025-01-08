@@ -1518,7 +1518,7 @@
     <string name="type.natural.earth_bank">Penhasco</string>
     <string name="type.man_made.embankment">Aterro</string>
     <string name="type.natural.coastline">Linha costeira</string>
-    <string name="type.natural.desert">Deserto</string>
+    <string name="type.natural.sand">Areia</string>
     <string name="type.natural.geyser">Géiser</string>
     <string name="type.natural.glacier">Glaciar</string>
     <string name="type.natural.grassland">Campo</string>

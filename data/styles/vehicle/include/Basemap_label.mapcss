@@ -10,7 +10,7 @@
   4.4 Districts & Small localities
 5.VEGETATION, BEACH & GLACIER
   5.1 Vegetation
-  5.2 Beach, Glacier, Desert, etc.
+  5.2 Beach, Glacier, Sand, etc.
 6.WATER
 	6.1 Area water(lake,pond etc.)
 	6.2 Line water(river,canal etc.)
@@ -365,9 +365,9 @@ area|z18-[leisure=park][!name]
 {text: none; icon-image: park-m.svg;}
 
 
-/* 5.2 Beach, Glacier, Desert, etc. */
+/* 5.2 Beach, Glacier, Sand, etc. */
 
-area|z14-[natural=desert],
+area|z14-[natural=sand],
 area|z15-[leisure=beach_resort],
 area|z15-[natural=beach],
 node|z17-[leisure=beach_resort],

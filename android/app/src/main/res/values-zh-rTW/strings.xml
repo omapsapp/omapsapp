@@ -1568,6 +1568,7 @@
     <string name="type.natural.earth_bank">懸崖</string>
     <string name="type.man_made.embankment">路堤</string>
     <string name="type.natural.coastline">海岸線</string>
+    <string name="type.natural.sand">沙</string>
     <string name="type.natural.geyser">間歇泉</string>
     <string name="type.natural.glacier">冰川</string>
     <string name="type.natural.grassland">草原</string>

@@ -58292,198 +58292,6 @@ cont {
   }
 }
 cont {
-  name: "natural-desert"
-  element {
-    scale: 1
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 2
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 3
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 4
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 5
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 6
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 7
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 8
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 9
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 10
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 11
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 12
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 13
-    area {
-      color: 1642503
-      priority: -1970
-    }
-  }
-  element {
-    scale: 14
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-  element {
-    scale: 15
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-  element {
-    scale: 16
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-  element {
-    scale: 17
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-  element {
-    scale: 18
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-  element {
-    scale: 19
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-  element {
-    scale: 20
-    area {
-      color: 1642503
-      priority: -1970
-    }
-    caption {
-      primary {
-        height: 10
-        color: 9211020
-      }
-      priority: 3250
-    }
-  }
-}
-cont {
   name: "natural-earth_bank"
   element {
     scale: 12
@@ -59739,6 +59547,198 @@ cont {
         is_optional: true
       }
       priority: -5500
+    }
+  }
+}
+cont {
+  name: "natural-sand"
+  element {
+    scale: 1
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 2
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 3
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 4
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 5
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 6
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 7
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 8
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 9
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 10
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 11
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 12
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 13
+    area {
+      color: 1642503
+      priority: -1970
+    }
+  }
+  element {
+    scale: 14
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
+    }
+  }
+  element {
+    scale: 15
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
+    }
+  }
+  element {
+    scale: 16
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
+    }
+  }
+  element {
+    scale: 17
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
+    }
+  }
+  element {
+    scale: 18
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
+    }
+  }
+  element {
+    scale: 19
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
+    }
+  }
+  element {
+    scale: 20
+    area {
+      color: 1642503
+      priority: -1970
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+      }
+      priority: 3250
     }
   }
 }

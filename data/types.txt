@@ -1221,7 +1221,7 @@ leisure|sports_centre
 *shop|bed
 *shop|outpost
 *shop|gas
-*natural|desert
+*natural|sand
 *natural|water|tunnel
 *place|square
 *tourism|artwork|architecture

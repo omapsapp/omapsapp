@@ -84,7 +84,7 @@
 @natpark: #C8DBAD;
 @beach: #FCEC7E;
 @barerock: #D9D2BF;
-@desert: #EEE5B2;
+@sand: #EEE5B2;
 
 /*forest-park*/
 @green0: #C6D9AB;

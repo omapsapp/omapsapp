@@ -1576,6 +1576,7 @@
     <string name="type.natural.earth_bank">Uçurum</string>
     <string name="type.man_made.embankment">Set</string>
     <string name="type.natural.coastline">Kıyı Şeridi</string>
+    <string name="type.natural.sand">Kum</string>
     <string name="type.natural.geyser">Gayzer</string>
     <string name="type.natural.glacier">Buzul</string>
     <string name="type.natural.grassland">Campo</string>

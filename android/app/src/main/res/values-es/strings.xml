@@ -1582,7 +1582,7 @@
     <string name="type.natural.earth_bank">Acantilado</string>
     <string name="type.man_made.embankment">Terraplén</string>
     <string name="type.natural.coastline">Costa</string>
-    <string name="type.natural.desert">Desierto</string>
+    <string name="type.natural.sand">Arena</string>
     <string name="type.natural.geyser">Géiser</string>
     <string name="type.natural.glacier">Glaciar</string>
     <string name="type.natural.grassland">Herbazal</string>

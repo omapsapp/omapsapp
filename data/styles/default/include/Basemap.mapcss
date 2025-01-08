@@ -7,7 +7,7 @@
   3.2 Region
   3.3 Military
 4.VEGETATION
-5.BEACH, GLACIER, DESERT, etc.
+5.BEACH, GLACIER, SAND, etc.
 6.WATER
   6.1 Area water(lake,pond etc.)
   6.2 Line water(river,canal etc.)
@@ -205,11 +205,11 @@ area|z12-[natural=shingle],
 area|z12-[natural=bare_rock],
 {fill-color: @barerock;}
 
-/* 5.BEACH, GLACIER, DESERT, etc. */
+/* 5.BEACH, GLACIER, SAND, etc. */
 
 area|z0-[natural=glacier],
 area|z10-[natural=beach],
-area|z0-[natural=desert],
+area|z0-[natural=sand],
 area|z10-[leisure=beach_resort],
 {fill-opacity: 1;}
 
@@ -220,8 +220,8 @@ area|z10-[natural=beach],
 area|z10-[leisure=beach_resort],
 {fill-color: @beach;}
 
-area|z0-[natural=desert],
-{fill-color: @desert;}
+area|z0-[natural=sand],
+{fill-color: @sand;}
 
 /* 6.WATER */
 

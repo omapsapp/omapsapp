@@ -1090,7 +1090,7 @@
     <string name="type.natural.earth_bank">Скала</string>
     <string name="type.man_made.embankment">Насип</string>
     <string name="type.natural.coastline">Крайбрежие</string>
-    <string name="type.natural.desert">Пустинен</string>
+    <string name="type.natural.sand">Пясък</string>
     <string name="type.natural.geyser">Гейзер</string>
     <string name="type.natural.glacier">Ледник</string>
     <string name="type.natural.grassland">Пасища</string>

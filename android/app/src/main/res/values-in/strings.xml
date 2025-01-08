@@ -1410,7 +1410,7 @@
     <string name="type.natural.earth_bank">Jurang</string>
     <string name="type.man_made.embankment">Tanggul</string>
     <string name="type.natural.coastline">Pesisir</string>
-    <string name="type.natural.desert">Gurun</string>
+    <string name="type.natural.sand">Pasir</string>
     <string name="type.natural.geyser">Geiser</string>
     <string name="type.natural.glacier">Gletser</string>
     <string name="type.natural.grassland">Padang rumput</string>

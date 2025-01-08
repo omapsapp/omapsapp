@@ -1571,7 +1571,7 @@
     <string name="type.natural.earth_bank">جروف أرضية</string>
     <string name="type.man_made.embankment">ضفة اصطناعية</string>
     <string name="type.natural.coastline">ساحل</string>
-    <string name="type.natural.desert">صحراء</string>
+    <string name="type.natural.sand">الرمال</string>
     <string name="type.natural.geyser">حَمَّة</string>
     <string name="type.natural.glacier">كتلة جليدية</string>
     <string name="type.natural.grassland">أرض عشبية</string>

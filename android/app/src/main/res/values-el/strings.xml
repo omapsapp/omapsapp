@@ -1475,7 +1475,7 @@
     <string name="type.natural.earth_bank">Γκρεμός</string>
     <string name="type.man_made.embankment">Ανάχωμα</string>
     <string name="type.natural.coastline">Ακτή</string>
-    <string name="type.natural.desert">Ερημος</string>
+    <string name="type.natural.sand">Άμμος</string>
     <string name="type.natural.geyser">Θερμοπίδακας</string>
     <string name="type.natural.glacier">Παγετώνας</string>
     <string name="type.natural.grassland">Βοσκότοποι</string>

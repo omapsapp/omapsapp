@@ -1639,7 +1639,7 @@
     <string name="type.natural.earth_bank">Earth Bank</string>
     <string name="type.man_made.embankment">Embankment</string>
     <string name="type.natural.coastline">Coastline</string>
-    <string name="type.natural.desert">Desert</string>
+    <string name="type.natural.sand">Sand</string>
     <string name="type.natural.geyser">Geyser</string>
     <string name="type.natural.glacier">Glacier</string>
     <string name="type.natural.grassland">Grassland</string>

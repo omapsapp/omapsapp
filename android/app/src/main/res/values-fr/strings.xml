@@ -1553,7 +1553,7 @@
     <string name="type.natural.earth_bank">Falaise</string>
     <string name="type.man_made.embankment">Talus</string>
     <string name="type.natural.coastline">Littoral</string>
-    <string name="type.natural.desert">Désert</string>
+    <string name="type.natural.sand">Sable</string>
     <string name="type.natural.geyser">Geyser</string>
     <string name="type.natural.glacier">Glacier</string>
     <string name="type.natural.grassland">Pelouse</string>

@@ -2779,7 +2779,7 @@
 
 "type.natural.coastline" = "Littoral";
 
-"type.natural.desert" = "Désert";
+"type.natural.sand" = "Sable";
 
 "type.natural.geyser" = "Geyser";
 

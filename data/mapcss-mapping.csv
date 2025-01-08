@@ -1336,7 +1336,7 @@ railway|subway_entrance|warszawa;[railway=subway_entrance][city=warszawa];;name;
 shop|bed;1221;
 shop|outpost;1222;
 shop|gas;1223;
-natural|desert;[natural=desert],[natural=sand][desert=erg];;name;int_name;1224;
+natural|sand;1224;
 natural|water|tunnel;[natural=water][tunnel?];;name;int_name;1225;
 place|square;1226;
 tourism|artwork|architecture;[tourism=artwork][artwork_type=architecture],[tourism=artwork][type=architecture];;name;int_name;1227;

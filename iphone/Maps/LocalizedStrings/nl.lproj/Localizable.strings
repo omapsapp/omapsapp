@@ -2779,7 +2779,7 @@
 
 "type.natural.coastline" = "Kustlijn";
 
-"type.natural.desert" = "Woestijn";
+"type.natural.sand" = "Zand";
 
 "type.natural.geyser" = "Geiser";
 

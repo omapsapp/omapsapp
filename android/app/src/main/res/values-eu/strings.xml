@@ -1515,7 +1515,7 @@
     <string name="type.natural.earth_bank">Labarra</string>
     <string name="type.man_made.embankment">Lubeta</string>
     <string name="type.natural.coastline">Itsasertz</string>
-    <string name="type.natural.desert">Basamortua</string>
+    <string name="type.natural.sand">Harea</string>
     <string name="type.natural.geyser">Geyser</string>
     <string name="type.natural.glacier">Glaziarra</string>
     <string name="type.natural.grassland">Belartza</string>

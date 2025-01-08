@@ -1010,7 +1010,7 @@
     <string name="type.natural.cape">रास</string>
     <string name="type.natural.cave_entrance">गुफ़ा</string>
     <string name="type.natural.coastline">सागरतट</string>
-    <string name="type.natural.desert">मरुस्थल</string>
+    <string name="type.natural.sand">रेत</string>
     <string name="type.natural.geyser">प्राकृतिक गरम पानी का झरना</string>
     <string name="type.natural.glacier">हिमानी</string>
     <string name="type.natural.grassland">घासभूमि</string>

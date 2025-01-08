@@ -1419,7 +1419,7 @@
     <string name="type.natural.earth_bank">낭떠러지</string>
     <string name="type.man_made.embankment">둑</string>
     <string name="type.natural.coastline">연안</string>
-    <string name="type.natural.desert">사막</string>
+    <string name="type.natural.sand">모래</string>
     <string name="type.natural.geyser">간헐천</string>
     <string name="type.natural.glacier">빙하</string>
     <string name="type.natural.grassland">초원</string>

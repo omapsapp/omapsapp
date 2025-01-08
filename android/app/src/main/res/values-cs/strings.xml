@@ -1431,7 +1431,7 @@
     <string name="type.natural.earth_bank">Útes</string>
     <string name="type.man_made.embankment">Násyp</string>
     <string name="type.natural.coastline">Pobřeží</string>
-    <string name="type.natural.desert">Poušť</string>
+    <string name="type.natural.sand">Písek</string>
     <string name="type.natural.geyser">Gejzír</string>
     <string name="type.natural.glacier">Ledovec</string>
     <string name="type.natural.grassland">Louky a pastviny</string>

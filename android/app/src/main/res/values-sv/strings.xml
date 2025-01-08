@@ -1411,6 +1411,7 @@
     <string name="type.natural.earth_bank">Klippa</string>
     <string name="type.man_made.embankment">Vägbank</string>
     <string name="type.natural.coastline">Kust</string>
+    <string name="type.natural.sand">Sand</string>
     <string name="type.natural.geyser">Gejser</string>
     <string name="type.natural.glacier">Glaciär</string>
     <string name="type.natural.grassland">Gräsmarker</string>

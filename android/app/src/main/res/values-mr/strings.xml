@@ -1439,6 +1439,7 @@
     <string name="type.natural.earth_bank">उंच कडा</string>
     <string name="type.man_made.embankment">तटबंदी</string>
     <string name="type.natural.coastline">किनारपट्टी</string>
+    <string name="type.natural.sand">वाळू</string>
     <string name="type.natural.geyser">गिझर</string>
     <string name="type.natural.glacier">हिमनदी</string>
     <string name="type.natural.grassland">गवताळ प्रदेश</string>

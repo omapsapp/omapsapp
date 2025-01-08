@@ -1400,7 +1400,7 @@
     <string name="type.natural.earth_bank">Jordbanken</string>
     <string name="type.man_made.embankment">Dæmning</string>
     <string name="type.natural.coastline">Kyst</string>
-    <string name="type.natural.desert">Ørken</string>
+    <string name="type.natural.sand">Sand</string>
     <string name="type.natural.geyser">Gejser</string>
     <string name="type.natural.glacier">Gletsjer</string>
     <string name="type.natural.grassland">Græsslette</string>

@@ -1554,7 +1554,7 @@
     <string name="type.natural.earth_bank">Násyp</string>
     <string name="type.man_made.embankment">Násyp</string>
     <string name="type.natural.coastline">Pobrežie</string>
-    <string name="type.natural.desert">Púšť</string>
+    <string name="type.natural.sand">Piesok</string>
     <string name="type.natural.geyser">Gejzír</string>
     <string name="type.natural.glacier">Ľadovec</string>
     <string name="type.natural.grassland">Pasienky</string>

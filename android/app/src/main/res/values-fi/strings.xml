@@ -1545,7 +1545,7 @@
     <string name="type.natural.earth_bank">Kallio</string>
     <string name="type.man_made.embankment">Pengerrys</string>
     <string name="type.natural.coastline">Rannikko</string>
-    <string name="type.natural.desert">Aavikko</string>
+    <string name="type.natural.sand">Hiekka</string>
     <string name="type.natural.geyser">Geysir</string>
     <string name="type.natural.glacier">Jäätikkö</string>
     <string name="type.natural.grassland">Nurmi</string>

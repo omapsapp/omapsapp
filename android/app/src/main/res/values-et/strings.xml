@@ -1569,7 +1569,7 @@
     <string name="type.natural.earth_bank">Maa pank</string>
     <string name="type.man_made.embankment">Muldkeha</string>
     <string name="type.natural.coastline">Rannajoon</string>
-    <string name="type.natural.desert">Kõrb</string>
+    <string name="type.natural.sand">Liiv</string>
     <string name="type.natural.geyser">Geiser</string>
     <string name="type.natural.glacier">Liustik</string>
     <string name="type.natural.grassland">Rohumaa</string>

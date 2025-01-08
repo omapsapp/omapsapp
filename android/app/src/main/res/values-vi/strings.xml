@@ -1415,6 +1415,7 @@
     <string name="type.natural.earth_bank">Vách đá</string>
     <string name="type.man_made.embankment">Kè</string>
     <string name="type.natural.coastline">Bờ biển</string>
+    <string name="type.natural.sand">Cát</string>
     <string name="type.natural.geyser">Suối nước nóng</string>
     <string name="type.natural.glacier">Sông băng</string>
     <string name="type.natural.grassland">Đồng cỏ</string>

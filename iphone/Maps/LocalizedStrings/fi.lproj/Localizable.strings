@@ -2779,7 +2779,7 @@
 
 "type.natural.coastline" = "Rannikko";
 
-"type.natural.desert" = "Aavikko";
+"type.natural.sand" = "Hiekka";
 
 "type.natural.geyser" = "Geysir";
 

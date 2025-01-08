@@ -1560,7 +1560,7 @@
     <string name="type.natural.earth_bank">Steilabhang</string>
     <string name="type.man_made.embankment">Damm</string>
     <string name="type.natural.coastline">Küste</string>
-    <string name="type.natural.desert">Wüste</string>
+    <string name="type.natural.sand">Sand</string>
     <string name="type.natural.geyser">Geysir</string>
     <string name="type.natural.glacier">Gletscher</string>
     <string name="type.natural.grassland">Grasland</string>

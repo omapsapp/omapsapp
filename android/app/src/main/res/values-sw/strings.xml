@@ -704,6 +704,7 @@
     <string name="type.natural.earth_bank">Mwamba</string>
     <string name="type.man_made.embankment">Tuta</string>
     <string name="type.natural.coastline">Pwani</string>
+    <string name="type.natural.sand">Mchanga</string>
     <string name="type.natural.geyser">Chemchem ya maji moto</string>
     <string name="type.natural.glacier">Mto barafu</string>
     <string name="type.natural.grassland">Nyasi</string>

@@ -1441,6 +1441,7 @@
     <string name="type.natural.earth_bank">Faleza</string>
     <string name="type.man_made.embankment">Rambleu</string>
     <string name="type.natural.coastline">Relief litoral</string>
+    <string name="type.natural.sand">Nisip</string>
     <string name="type.natural.geyser">Gheizer</string>
     <string name="type.natural.glacier">Ghețar</string>
     <string name="type.natural.grassland">Pajiști</string>

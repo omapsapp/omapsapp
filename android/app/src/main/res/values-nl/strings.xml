@@ -1571,7 +1571,7 @@
     <string name="type.natural.earth_bank">Klif</string>
     <string name="type.man_made.embankment">Baanlichaam</string>
     <string name="type.natural.coastline">Kustlijn</string>
-    <string name="type.natural.desert">Woestijn</string>
+    <string name="type.natural.sand">Zand</string>
     <string name="type.natural.geyser">Geiser</string>
     <string name="type.natural.glacier">Gletsjer</string>
     <string name="type.natural.grassland">Grasland</string>

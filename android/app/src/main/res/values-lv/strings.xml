@@ -860,6 +860,7 @@
     <string name="edit_track">Ceļa labošana</string>
 
     <!-- SECTION: Types: Historic -->
+    <string name="type.natural.sand">Smiltis</string>
     <string name="type.shop.pasta">Makaronu veikals</string>
     <string name="type.attraction.amusement_ride">Atrakciju brauciens</string>
     <string name="type.attraction.carousel">Karuselis</string>

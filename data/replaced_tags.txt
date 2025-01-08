@@ -92,11 +92,6 @@ natural=forest    : natural=wood
 natural=shrubbery : natural=scrub
 cliff=yes         : natural=cliff
 
-desert=sand : desert=erg
-desert=yes : desert=erg
-desert=semi_arid : desert=erg
-desert=dune : desert=erg
-
 office=notary : office=lawyer
 office=administrative : office=government
 

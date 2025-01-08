@@ -561,7 +561,7 @@ natural-beach                                       # caption z14- (also has are
 natural-beach-gravel                                # caption z14- (also has area z10-)
 natural-beach-sand                                  # caption z14- (also has area z10-)
 natural-cape                                        # caption z14-
-natural-desert                                      # caption z14- (also has area z1-)
+natural-sand                                        # caption z14- (also has area z1-)
 === 3250
 
 shop-supermarket                                    # icon z16- (also has caption(optional) z16-)

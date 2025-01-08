@@ -1549,7 +1549,7 @@
     <string name="type.natural.earth_bank">Scogliera</string>
     <string name="type.man_made.embankment">Rilevato</string>
     <string name="type.natural.coastline">Costa</string>
-    <string name="type.natural.desert">Deserto</string>
+    <string name="type.natural.sand">Sabbia</string>
     <string name="type.natural.geyser">Geyser</string>
     <string name="type.natural.glacier">Ghiacciaio</string>
     <string name="type.natural.grassland">Prateria</string>

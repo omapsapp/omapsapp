@@ -102,8 +102,8 @@ leisure-beach_resort                                # area z10- (also has captio
 natural-beach                                       # area z10- (also has caption z15-)
 natural-beach-gravel                                # area z10- (also has caption z15-)
 natural-beach-sand                                  # area z10- (also has caption z15-)
-natural-desert                                      # area z1- (also has caption z14-)
 natural-glacier                                     # area z1-
+natural-sand                                        # area z1- (also has caption z14-)
 === 30
 
 natural-land                                        # area z1-

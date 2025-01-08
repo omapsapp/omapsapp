@@ -1421,6 +1421,7 @@
     <string name="type.natural.earth_bank">หน้าผา</string>
     <string name="type.man_made.embankment">เขื่อน</string>
     <string name="type.natural.coastline">ชายฝั่ง</string>
+    <string name="type.natural.sand">ทราย</string>
     <string name="type.natural.geyser">นำ้พุร้อน</string>
     <string name="type.natural.glacier">ธารน้ำแข็ง</string>
     <string name="type.natural.grassland">ทุ่งหญ้า</string>
