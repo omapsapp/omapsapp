@@ -96,19 +96,19 @@
 
   <launchable type="desktop-id">app.organicmaps.desktop.desktop</launchable>
   <screenshots>
-    <screenshot type="default">
+    <screenshot type="default" environment="plasma">
       <image>https://organicmaps.app/images/screenshots/Desktop_light_routing.png</image>
-      <caption>Routing in dark mode</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://organicmaps.app/images/screenshots/Desktop_dark_routing.png</image>
       <caption>Routing in light mode</caption>
     </screenshot>
-    <screenshot>
+    <screenshot environment="plasma:dark">
+      <image>https://organicmaps.app/images/screenshots/Desktop_dark_routing.png</image>
+      <caption>Routing in dark mode</caption>
+    </screenshot>
+    <screenshot environment="plasma">
       <image>https://organicmaps.app/images/screenshots/Desktop_light_overview.png</image>
       <caption>Map overview in light mode</caption>
     </screenshot>
-    <screenshot>
+    <screenshot environment="plasma:dark">
       <image>https://organicmaps.app/images/screenshots/Desktop_dark_overview.png</image>
       <caption>Map overview in dark mode</caption>
     </screenshot>
