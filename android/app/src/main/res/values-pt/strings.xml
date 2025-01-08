@@ -1579,6 +1579,7 @@
     <string name="type.place.islet">Ilhéu</string>
     <string name="type.place.isolated_dwelling">Habitação isolada</string>
     <string name="type.place.locality">Localidade</string>
+    <string name="type.place.quarter">Bairro</string>
     <string name="type.place.neighbourhood">Bairro</string>
     <string name="type.place.ocean">Oceano</string>
     <string name="type.place.region">Região</string>

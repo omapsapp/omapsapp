@@ -1603,6 +1603,7 @@
     <string name="type.place.islet">Ada</string>
     <string name="type.place.isolated_dwelling">Mənzil</string>
     <string name="type.place.locality">Rayon</string>
+    <string name="type.place.quarter">Qonşuluq</string>
     <string name="type.place.neighbourhood">Qonşuluq</string>
     <string name="type.place.ocean">Okean</string>
     <string name="type.place.region">Ərazi</string>

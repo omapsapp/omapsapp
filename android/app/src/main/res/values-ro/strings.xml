@@ -1498,7 +1498,8 @@
     <string name="type.place.islet">Insult</string>
     <string name="type.place.isolated_dwelling">Locuință izolată</string>
     <string name="type.place.locality">Localitate</string>
-    <string name="type.place.neighbourhood">Cartier</string>
+    <string name="type.place.quarter">Cartier</string>
+    <string name="type.place.neighbourhood">Vecinătate</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Regiune</string>
     <string name="type.place.sea">Mare</string>

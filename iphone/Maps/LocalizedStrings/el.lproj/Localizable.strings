@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Τοποθεσία";
 
+"type.place.quarter" = "Γειτονιά";
+
 "type.place.neighbourhood" = "Γειτονιά";
 
 "type.place.ocean" = "Ωκεανός";

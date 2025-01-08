@@ -341,14 +341,16 @@ node|z13-[place=hamlet]
 
 node|z10-14[place=suburb],
 node|z13-[place=locality],
-node|z13-[place=neighbourhood],
+node|z13-[place=quarter],
+node|z14-[place=neighbourhood],
 node|z14-[place=farm],
 node|z14-[place=isolated_dwelling],
 node|z17-[landuse=residential],
 {text: name;text-color: @district_label;}
 node|z13-14[place=suburb]::int_name,
 node|z13-[place=locality]::int_name,
-node|z13-[place=neighbourhood]::int_name,
+node|z13-[place=quarter]::int_name,
+node|z14-[place=neighbourhood]::int_name,
 node|z14-[place=farm]::int_name,
 node|z14-[place=isolated_dwelling]::int_name,
 node|z17-[landuse=residential]::int_name,
@@ -362,16 +364,33 @@ node|z12[place=suburb]
 {font-size: 11;}
 node|z12[place=suburb]::int_name
 {font-size: 9;}
-node|z13-14[place=suburb]
+node|z13[place=suburb]
 {font-size: 12;}
-node|z13-14[place=suburb]::int_name
+node|z13[place=suburb]::int_name
 {font-size: 10;}
+node|z14[place=suburb]
+{font-size: 14;}
+node|z14[place=suburb]::int_name
+{font-size: 12;}
+
+node|z13[place=quarter],
+{font-size: 10;}
+node|z13[place=quarter]::int_name,
+{font-size: 9;}
+node|z14[place=quarter],
+{font-size: 12;}
+node|z14[place=quarter]::int_name,
+{font-size: 10;}
+node|z15-[place=quarter],
+{font-size: 14;}
+node|z15-[place=quarter]::int_name,
+{font-size: 12;}
 
 node|z13-14[place=locality],
-node|z13-14[place=neighbourhood],
+node|z14[place=neighbourhood],
 {font-size: 10;}
 node|z13-14[place=locality]::int_name,
-node|z13-14[place=neighbourhood]::int_name,
+node|z14[place=neighbourhood]::int_name,
 {font-size: 9;}
 
 node|z15-[place=locality],

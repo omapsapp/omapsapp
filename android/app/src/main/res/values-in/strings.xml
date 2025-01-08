@@ -1468,6 +1468,7 @@
     <string name="type.place.islet">Pulau</string>
     <string name="type.place.isolated_dwelling">Tempat Tinggal Terisolasi</string>
     <string name="type.place.locality">Wilayah</string>
+    <string name="type.place.quarter">Lingkungan</string>
     <string name="type.place.neighbourhood">Lingkungan</string>
     <string name="type.place.ocean">Samudra</string>
     <string name="type.place.region">Wilayah</string>

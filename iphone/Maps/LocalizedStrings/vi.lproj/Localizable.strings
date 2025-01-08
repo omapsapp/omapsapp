@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Thôn";
 
-"type.place.neighbourhood" = "Vùng lân cận";
+"type.place.quarter" = "Vùng lân cận";
+
+"type.place.neighbourhood" = "Hàng xóm";
 
 "type.place.ocean" = "Đại dương";
 

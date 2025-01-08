@@ -1640,7 +1640,8 @@
     <string name="type.place.islet">岛</string>
     <string name="type.place.isolated_dwelling">孤立居所</string>
     <string name="type.place.locality">地方</string>
-    <string name="type.place.neighbourhood">邻里社区</string>
+    <string name="type.place.quarter">邻里社区</string>
+    <string name="type.place.neighbourhood">社区</string>
     <string name="type.place.ocean">海洋</string>
     <string name="type.place.region">区域</string>
     <string name="type.place.sea">海</string>

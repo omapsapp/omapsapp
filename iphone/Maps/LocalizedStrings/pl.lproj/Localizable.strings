@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Miejscowość niezamieszkana";
 
+"type.place.quarter" = "Sąsiedztwo";
+
 "type.place.neighbourhood" = "Sąsiedztwo";
 
 "type.place.ocean" = "Ocean";

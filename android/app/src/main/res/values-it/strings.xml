@@ -1610,6 +1610,7 @@
     <string name="type.place.islet">Isola</string>
     <string name="type.place.isolated_dwelling">Abitazione isolata</string>
     <string name="type.place.locality">Località</string>
+    <string name="type.place.quarter">Quartiere</string>
     <string name="type.place.neighbourhood">Quartiere</string>
     <string name="type.place.ocean">Oceano</string>
     <string name="type.place.region">Regione</string>

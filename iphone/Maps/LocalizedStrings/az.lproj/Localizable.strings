@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Rayon";
 
+"type.place.quarter" = "Qonşuluq";
+
 "type.place.neighbourhood" = "Qonşuluq";
 
 "type.place.ocean" = "Okean";

@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Lieu-dit";
 
-"type.place.neighbourhood" = "Quartier";
+"type.place.quarter" = "Quartier";
+
+"type.place.neighbourhood" = "Voisinage";
 
 "type.place.ocean" = "Océan";
 

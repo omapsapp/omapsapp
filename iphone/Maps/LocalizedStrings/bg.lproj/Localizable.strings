@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Място";
 
+"type.place.quarter" = "Съседство";
+
 "type.place.neighbourhood" = "Съседство";
 
 "type.place.ocean" = "Океан";

@@ -1385,6 +1385,7 @@
     <string name="type.place.islet">جزیره</string>
     <string name="type.place.isolated_dwelling">مسکن منزوی</string>
     <string name="type.place.locality">محله</string>
+    <string name="type.place.quarter">محله</string>
     <string name="type.place.neighbourhood">محله</string>
     <string name="type.place.ocean">اقیانوس</string>
     <string name="type.place.region">منطقه</string>

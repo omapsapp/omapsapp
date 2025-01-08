@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Lokalitet";
 
-"type.place.neighbourhood" = "Kvarter";
+"type.place.quarter" = "Kvarter";
+
+"type.place.neighbourhood" = "Nabolag";
 
 "type.place.ocean" = "Verdenshave";
 

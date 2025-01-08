@@ -1614,7 +1614,8 @@
     <string name="type.place.islet">Île</string>
     <string name="type.place.isolated_dwelling">Lieu-dit</string>
     <string name="type.place.locality">Lieu-dit</string>
-    <string name="type.place.neighbourhood">Quartier</string>
+    <string name="type.place.quarter">Quartier</string>
+    <string name="type.place.neighbourhood">Voisinage</string>
     <string name="type.place.ocean">Océan</string>
     <string name="type.place.region">Région</string>
     <string name="type.place.sea">Mer</string>

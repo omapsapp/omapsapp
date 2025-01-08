@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "परिसर";
 
-"type.place.neighbourhood" = "शेजार";
+"type.place.quarter" = "शेजार";
+
+"type.place.neighbourhood" = "शेजारी";
 
 "type.place.ocean" = "महासागर";
 

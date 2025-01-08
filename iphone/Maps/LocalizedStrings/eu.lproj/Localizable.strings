@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Kokapena";
 
-"type.place.neighbourhood" = "Auzo";
+"type.place.quarter" = "Auzo";
+
+"type.place.neighbourhood" = "Auzoa";
 
 "type.place.ocean" = "Ozeanoa";
 

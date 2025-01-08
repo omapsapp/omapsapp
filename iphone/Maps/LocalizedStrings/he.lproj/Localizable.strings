@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "אזור בלתי מיושב";
 
-"type.place.neighbourhood" = "שכונה";
+"type.place.quarter" = "שכונה";
+
+"type.place.neighbourhood" = "שְׁכוּנָה";
 
 "type.place.ocean" = "אוקיינוס";
 

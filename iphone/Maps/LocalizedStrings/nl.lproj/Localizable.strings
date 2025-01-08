@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Plaats";
 
+"type.place.quarter" = "Buurt";
+
 "type.place.neighbourhood" = "Buurt";
 
 "type.place.ocean" = "Oceaan";

@@ -1409,7 +1409,7 @@
     <string name="type.organic.yes">Orgânico</string>
     <string name="type.place.farm">Fazenda</string>
     <string name="type.place.hamlet">Lugarejo</string>
-    <string name="type.place.neighbourhood">Vizinhança</string>
+    <string name="type.place.quarter">Vizinhança</string>
     <string name="type.place.village">Aldeia</string>
     <string name="type.power">Energia</string>
     <string name="type.power.generator">Gerador de energia</string>

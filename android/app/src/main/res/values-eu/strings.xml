@@ -1575,7 +1575,8 @@
     <string name="type.place.islet">Uhartea</string>
     <string name="type.place.isolated_dwelling">Etxebizitza Isolatua</string>
     <string name="type.place.locality">Kokapena</string>
-    <string name="type.place.neighbourhood">Auzo</string>
+    <string name="type.place.quarter">Auzo</string>
+    <string name="type.place.neighbourhood">Auzoa</string>
     <string name="type.place.ocean">Ozeanoa</string>
     <string name="type.place.region">Eskualdea</string>
     <string name="type.place.sea">Itsasoa</string>

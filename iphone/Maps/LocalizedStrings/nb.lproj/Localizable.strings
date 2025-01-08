@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Sted";
 
-"type.place.neighbourhood" = "Strøk";
+"type.place.quarter" = "Strøk";
+
+"type.place.neighbourhood" = "Nabolag";
 
 "type.place.ocean" = "Hav";
 

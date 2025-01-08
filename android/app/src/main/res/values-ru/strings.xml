@@ -1659,7 +1659,8 @@
     <string name="type.place.islet">Остров</string>
     <string name="type.place.isolated_dwelling">Хутор</string>
     <string name="type.place.locality">Местность</string>
-    <string name="type.place.neighbourhood">Микрорайон</string>
+    <string name="type.place.quarter">Микрорайон</string>
+    <string name="type.place.neighbourhood">Соседство</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Район</string>
     <string name="type.place.sea">Море</string>

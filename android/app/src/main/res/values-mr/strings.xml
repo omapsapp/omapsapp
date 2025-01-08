@@ -1499,7 +1499,8 @@
     <string name="type.place.islet">बेट</string>
     <string name="type.place.isolated_dwelling">निवासस्थान</string>
     <string name="type.place.locality">परिसर</string>
-    <string name="type.place.neighbourhood">शेजार</string>
+    <string name="type.place.quarter">शेजार</string>
+    <string name="type.place.neighbourhood">शेजारी</string>
     <string name="type.place.ocean">महासागर</string>
     <string name="type.place.region">प्रदेश</string>
     <string name="type.place.sea">समुद्र</string>

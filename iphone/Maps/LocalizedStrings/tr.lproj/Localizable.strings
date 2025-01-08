@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Semt";
 
-"type.place.neighbourhood" = "Mahalle";
+"type.place.quarter" = "Mahalle";
+
+"type.place.neighbourhood" = "Komşuluk";
 
 "type.place.ocean" = "Okyanus";
 

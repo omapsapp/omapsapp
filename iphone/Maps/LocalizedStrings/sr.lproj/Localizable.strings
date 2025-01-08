@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Локалитет";
 
-"type.place.neighbourhood" = "Насеље";
+"type.place.quarter" = "Насеље";
+
+"type.place.neighbourhood" = "Neighbourhood";
 
 "type.place.ocean" = "Океан";
 

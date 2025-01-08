@@ -289,12 +289,13 @@ waterway-waterfall                                  # icon z10- (also has captio
 === 5800
 
 place-hamlet                                        # caption z13-
+place-quarter                                       # caption z13-
 === 5750
 
 place-farm                                          # caption z14-
 place-isolated_dwelling                             # caption z14-
 place-locality                                      # caption z13-
-place-neighbourhood                                 # caption z13-
+place-neighbourhood                                 # caption z14-
 === 5700
 
 highway-secondary                                   # pathtext z10- (also has shield::shield z12-, line z10-)

@@ -1630,6 +1630,7 @@
     <string name="type.place.islet">Laid</string>
     <string name="type.place.isolated_dwelling">Isoleeritud eluruum</string>
     <string name="type.place.locality">Paikkond</string>
+    <string name="type.place.quarter">Naabruskond</string>
     <string name="type.place.neighbourhood">Naabruskond</string>
     <string name="type.place.ocean">Ookean</string>
     <string name="type.place.region">Piirkond</string>

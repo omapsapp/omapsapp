@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Locality";
 
-"type.place.neighbourhood" = "Neighbourhood";
+"type.place.quarter" = "Quarter";
+
+"type.place.neighbourhood" = "Barri";
 
 "type.place.ocean" = "Ocean";
 

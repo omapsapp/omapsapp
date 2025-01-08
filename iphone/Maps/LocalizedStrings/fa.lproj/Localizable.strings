@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "محله";
 
+"type.place.quarter" = "محله";
+
 "type.place.neighbourhood" = "محله";
 
 "type.place.ocean" = "اقیانوس";

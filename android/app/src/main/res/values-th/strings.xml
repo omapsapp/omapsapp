@@ -1478,6 +1478,7 @@
     <string name="type.place.islet">เกาะ</string>
     <string name="type.place.isolated_dwelling">ที่อยู่อาศัยโดดเดี่ยว</string>
     <string name="type.place.locality">ท้องถิ่น</string>
+    <string name="type.place.quarter">ละแวกบ้าน</string>
     <string name="type.place.neighbourhood">ละแวกบ้าน</string>
     <string name="type.place.ocean">มหาสมุทร</string>
     <string name="type.place.region">ภูมิภาค</string>

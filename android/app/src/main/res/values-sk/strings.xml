@@ -1613,7 +1613,8 @@
     <string name="type.place.islet">Ostrovček</string>
     <string name="type.place.isolated_dwelling">Samota</string>
     <string name="type.place.locality">Lokalita</string>
-    <string name="type.place.neighbourhood">Štvrť</string>
+    <string name="type.place.quarter">Štvrť</string>
+    <string name="type.place.neighbourhood">Susedstvo</string>
     <string name="type.place.ocean">Oceán</string>
     <string name="type.place.region">Región</string>
     <string name="type.place.sea">More</string>

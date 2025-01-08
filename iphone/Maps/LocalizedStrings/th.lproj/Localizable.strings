@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "ท้องถิ่น";
 
+"type.place.quarter" = "ละแวกบ้าน";
+
 "type.place.neighbourhood" = "ละแวกบ้าน";
 
 "type.place.ocean" = "มหาสมุทร";

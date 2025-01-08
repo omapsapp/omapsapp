@@ -1489,7 +1489,8 @@
     <string name="type.place.islet">Ostrov</string>
     <string name="type.place.isolated_dwelling">Izolované obydlí</string>
     <string name="type.place.locality">Lokalita</string>
-    <string name="type.place.neighbourhood">Čtvrť</string>
+    <string name="type.place.quarter">Čtvrť</string>
+    <string name="type.place.neighbourhood">Sousedství</string>
     <string name="type.place.ocean">Oceán</string>
     <string name="type.place.region">Region</string>
     <string name="type.place.sea">Moře</string>

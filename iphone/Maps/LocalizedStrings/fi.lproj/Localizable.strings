@@ -2901,6 +2901,8 @@
 
 "type.place.locality" = "Paikkakunta";
 
+"type.place.quarter" = "Naapurusto";
+
 "type.place.neighbourhood" = "Naapurusto";
 
 "type.place.ocean" = "Valtameri";

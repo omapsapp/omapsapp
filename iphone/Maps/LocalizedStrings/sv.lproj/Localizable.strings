@@ -2901,7 +2901,9 @@
 
 "type.place.locality" = "Lokalitet";
 
-"type.place.neighbourhood" = "Grannskap";
+"type.place.quarter" = "Grannskap";
+
+"type.place.neighbourhood" = "Grannskapet";
 
 "type.place.ocean" = "Ocean";
 

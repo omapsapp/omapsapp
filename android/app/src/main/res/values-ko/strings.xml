@@ -1477,7 +1477,8 @@
     <string name="type.place.islet">섬</string>
     <string name="type.place.isolated_dwelling">고립된 주거</string>
     <string name="type.place.locality">장소</string>
-    <string name="type.place.neighbourhood">동네</string>
+    <string name="type.place.quarter">동네</string>
+    <string name="type.place.neighbourhood">이웃</string>
     <string name="type.place.ocean">대양</string>
     <string name="type.place.region">지역</string>
     <string name="type.place.sea">바다</string>
