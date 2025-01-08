@@ -521,6 +521,7 @@ constexpr char const * kWired = "wired";
 constexpr char const * kTerminal = "terminal";
 constexpr char const * kYes = "yes";
 constexpr char const * kNo = "no";
+constexpr char const * kOnly = "only";
 
 string DebugPrint(Internet internet)
 {
@@ -557,6 +558,8 @@ YesNoUnknown YesNoUnknownFromString(std::string_view str)
 {
   if (str.empty())
     return Unknown;
+  if (str.find(kOnly) != string::npos)
+    return Yes;
   if (str.find(kYes) != string::npos)
     return Yes;
   if (str.find(kNo) != string::npos)

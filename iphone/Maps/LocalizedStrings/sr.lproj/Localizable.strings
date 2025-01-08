@@ -1376,6 +1376,9 @@
 /* Title for the "Open In Another App" button on the PlacePage. */
 "open_in_app" = "Отвори у другој апликацији";
 
+/* To indicate if the place proposed self service... */
+"self_service" = "Самопослуживање";
+
 /* To indicate if restaurant or other place has outdoor seating */
 "outdoor_seating" = "Башта";
 

@@ -1376,6 +1376,9 @@
 /* Title for the "Open In Another App" button on the PlacePage. */
 "open_in_app" = "दुसऱ्या ॲपमध्ये उघडा";
 
+/* To indicate if the place proposed self service... */
+"self_service" = "स्व: सेवा    nb = Selvbetjening";
+
 /* To indicate if restaurant or other place has outdoor seating */
 "outdoor_seating" = "बाहेरची आसनव्यवस्था    nb = Uteservering";
 
