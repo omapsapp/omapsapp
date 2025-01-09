@@ -1122,7 +1122,7 @@ kml::CompilationType BookmarkManager::GetCompilationType(kml::MarkGroupId id) co
   return compilation->second->GetCategoryData().m_type;
 }
 
-void BookmarkManager::SaveTrackRecording(std::string trackName)
+kml::TrackId BookmarkManager::SaveTrackRecording(std::string trackName)
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
   auto const & tracker = GpsTracker::Instance();
@@ -1164,7 +1164,9 @@ void BookmarkManager::SaveTrackRecording(std::string trackName)
   auto editSession = GetEditSession();
   auto const track = editSession.CreateTrack(std::move(trackData));
   auto const groupId = LastEditedBMCategory();
-  AttachTrack(track->GetId(), groupId);
+  auto const trackId = track->GetId();
+  AttachTrack(trackId, groupId);
+  return trackId;
 }
 
 std::string BookmarkManager::GenerateTrackRecordingName() const
