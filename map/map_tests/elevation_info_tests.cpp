@@ -32,7 +32,7 @@ UNIT_TEST(ElevationInfo_FromMultiGeometry)
     point2,
     point3
   });
-  ElevationInfo ei(geometry);
+  ElevationInfo ei(geometry.m_lines);
 
   TEST_EQUAL(3, ei.GetSize(), ());
   TEST_EQUAL(ei.GetMinAltitude(), 50, ());
@@ -56,7 +56,7 @@ UNIT_TEST(ElevationInfo_NoAltitudePoints)
     PointWithAltitude({1.0, 1.0}),
     PointWithAltitude({2.0, 2.0})
   });
-  ElevationInfo ei(geometry);
+  ElevationInfo ei(geometry.m_lines);
 
   TEST_EQUAL(3, ei.GetSize(), ());
   TEST_EQUAL(ei.GetMinAltitude(), kDefaultAltitudeMeters, ());
@@ -82,7 +82,7 @@ UNIT_TEST(ElevationInfo_MultipleLines)
     PointWithAltitude({4.0, 4.0}, 200),
     PointWithAltitude({5.0, 5.0}, 250)
   });
-  ElevationInfo ei(geometry);
+  ElevationInfo ei(geometry.m_lines);
 
   TEST_EQUAL(8, ei.GetSize(), ());
   TEST_EQUAL(ei.GetMinAltitude(), 50, ());
@@ -107,7 +107,7 @@ UNIT_TEST(ElevationInfo_SegmentDistances)
     geometry::PointWithAltitude({5.0, 0.0})
   });
 
-  ElevationInfo ei(geometry);
+  ElevationInfo ei(geometry.m_lines);
   auto const & segmentDistances = ei.GetSegmentsDistances();
   auto const points = ei.GetPoints();
 
@@ -125,7 +125,7 @@ UNIT_TEST(ElevationInfo_PositiveAndNegativeAltitudes)
     PointWithAltitude({2.0, 2.0}, -5),
     PointWithAltitude({3.0, 3.0}, 15)
   });
-  ElevationInfo ei(geometry);
+  ElevationInfo ei(geometry.m_lines);
 
   TEST_EQUAL(4, ei.GetSize(), ());
   TEST_EQUAL(ei.GetMinAltitude(), -10, ());
