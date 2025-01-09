@@ -242,6 +242,16 @@ extension PlacePageInteractor: ActionBarViewControllerDelegate {
       // TODO: This is temporary solution. Remove the dialog and use the MWMPlacePageManagerHelper.removeTrack
       // directly here when the track recovery mechanism will be implemented.
       showTrackDeletionConfirmationDialog()
+    case .saveTrackRecording:
+      // TODO: (KK) pass name
+      TrackRecordingManager.shared.processAction(.stopAndSave(name: nil)) { [weak self] result in
+        switch result {
+        case .success:
+          break
+        case .error:
+          self?.presenter?.closeAnimated()
+        }
+      }
     @unknown default:
       fatalError()
     }
