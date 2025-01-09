@@ -80,6 +80,16 @@ size_t GpsTracker::GetTrackSize() const
   return m_track.GetSize();
 }
 
+GpsTrackInfo GpsTracker::GetTrackInfo() const
+{
+  return m_track.GetTrackInfo();
+}
+
+const ElevationInfo & GpsTracker::GetElevationInfo() const
+{
+  return m_track.GetElevationInfo();
+}
+
 void GpsTracker::Connect(TGpsTrackDiffCallback const & fn)
 {
   m_track.SetCallback(fn);
