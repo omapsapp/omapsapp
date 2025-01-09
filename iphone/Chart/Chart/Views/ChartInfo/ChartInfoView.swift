@@ -1,7 +1,6 @@
 import UIKit
 
 struct ChartLineInfo {
-  let name: String
   let color: UIColor
   let point: CGPoint
   let formattedValue: String

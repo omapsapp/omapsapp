@@ -6,8 +6,8 @@ public enum ChartType {
 }
 
 public enum ChartLineType: String {
-  case line = "line"
-  case lineArea = "lineArea"
+  case line
+  case lineArea
 }
 
 public protocol ChartFormatter {
@@ -26,7 +26,6 @@ public protocol ChartData {
 
 public protocol ChartLine {
   var values: [ChartValue] { get }
-  var name: String { get }
   var color: UIColor { get }
   var type: ChartLineType { get }
 }
