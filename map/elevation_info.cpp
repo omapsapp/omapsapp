@@ -4,54 +4,71 @@
 
 #include "geometry/mercator.hpp"
 
-ElevationInfo::ElevationInfo(kml::MultiGeometry const & geometry)
-{
-  double distance = 0;
-  // Concatenate all segments.
-  for (size_t lineIndex = 0; lineIndex < geometry.m_lines.size(); ++lineIndex)
-  {
-    auto const & line = geometry.m_lines[lineIndex];
-    if (line.empty())
-    {
-      LOG(LWARNING, ("Empty line in elevation info"));
-      continue;
-    }
+using namespace geometry;
+using namespace mercator;
 
-    if (lineIndex == 0)
-    {
-      m_minAltitude = line.front().GetAltitude();
-      m_maxAltitude = m_minAltitude;
-    }
+ElevationInfo::ElevationInfo(std::vector<GeometryLine> const & lines)
+{
+  // Concatenate all segments.
+  for (size_t lineIndex = 0; lineIndex < lines.size(); ++lineIndex)
+  {
+    auto const & line = lines[lineIndex];
+    if (line.empty())
+      continue;
 
     if (lineIndex > 0)
-      m_segmentsDistances.emplace_back(distance);
+      m_segmentsDistances.emplace_back(m_points.back().m_distance);
 
-    for (size_t pointIndex = 0; pointIndex < line.size(); ++pointIndex)
-    {
-      auto const & currentPoint = line[pointIndex];
-      auto const & currentPointAltitude = currentPoint.GetAltitude();
-      if (currentPointAltitude < m_minAltitude)
-        m_minAltitude = currentPointAltitude;
-      if (currentPointAltitude > m_maxAltitude)
-        m_maxAltitude = currentPointAltitude;
-
-      if (pointIndex == 0)
-      {
-        m_points.emplace_back(currentPoint, distance);
-        continue;
-      }
-
-      auto const & previousPoint = line[pointIndex - 1];
-      distance += mercator::DistanceOnEarth(previousPoint.GetPoint(), currentPoint.GetPoint());
-      m_points.emplace_back(currentPoint, distance);
-
-      auto const deltaAltitude = currentPointAltitude - previousPoint.GetAltitude();
-      if (deltaAltitude > 0)
-        m_ascent += deltaAltitude;
-      else
-        m_descent -= deltaAltitude;
-    }
+    AddPoints(line, true /* new segment */);
   }
   /// @todo(KK) Implement difficulty calculation.
   m_difficulty = Difficulty::Unknown;
+}
+
+void ElevationInfo::AddGpsPoints(GpsPoints const & points)
+{
+  GeometryLine line;
+  line.reserve(points.size());
+  for (auto const & point : points)
+    line.emplace_back(FromLatLon(point.m_latitude, point.m_longitude), point.m_altitude);
+  AddPoints(line);
+}
+
+void ElevationInfo::AddPoints(GeometryLine const & line, bool isNewSegment)
+{
+  if (line.empty())
+    return;
+
+  double distance = m_points.empty() ? 0 : m_points.back().m_distance;
+  for (size_t pointIndex = 0; pointIndex < line.size(); ++pointIndex)
+  {
+    auto const & point = line[pointIndex];
+    auto const & currentPointAltitude = point.GetAltitude();
+
+    if (m_points.empty())
+    {
+      m_minAltitude = currentPointAltitude;
+      m_maxAltitude = currentPointAltitude;
+      m_points.emplace_back(point, distance);
+      continue;
+    }
+
+    m_minAltitude = std::min(m_minAltitude, currentPointAltitude);
+    m_maxAltitude = std::max(m_maxAltitude, currentPointAltitude);
+
+    if (isNewSegment && pointIndex == 0)
+    {
+      m_points.emplace_back(point, distance);
+      continue;
+    }
+
+    auto const & previousPoint = m_points.back().m_point;
+    auto const deltaAltitude = currentPointAltitude - previousPoint.GetAltitude();
+    if (deltaAltitude > 0)
+      m_ascent += deltaAltitude;
+    else
+      m_descent -= deltaAltitude;
+    distance += mercator::DistanceOnEarth(previousPoint.GetPoint(), point.GetPoint());
+    m_points.emplace_back(point, distance);
+  }
 }
