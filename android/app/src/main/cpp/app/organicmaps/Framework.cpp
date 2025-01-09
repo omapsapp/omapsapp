@@ -1608,13 +1608,15 @@ Java_app_organicmaps_Framework_nativeGetRoutePoints(JNIEnv * env, jclass)
   // Java signature : RouteMarkData(String title, String subtitle,
   //                                @RoutePointInfo.RouteMarkType int pointType,
   //                                int intermediateIndex, boolean isVisible, boolean isMyPosition,
-  //                                boolean isPassed, double lat, double lon)
+  //                                boolean isPassed, double lat, double lon, long timeSec,
+  //                                String distanceString)
   static jmethodID const pointConstructor = jni::GetConstructorID(env, pointClazz,
-                                            "(Ljava/lang/String;Ljava/lang/String;IIZZZDD)V");
+                                            "(Ljava/lang/String;Ljava/lang/String;IIZZZDDJLjava/lang/String;)V");
   return jni::ToJavaArray(env, pointClazz, points, [&](JNIEnv * jEnv, RouteMarkData const & data)
   {
     jni::TScopedLocalRef const title(env, jni::ToJavaString(env, data.m_title));
     jni::TScopedLocalRef const subtitle(env, jni::ToJavaString(env, data.m_subTitle));
+    jni::TScopedLocalRef const distance(env, jni::ToJavaString(env, data.m_distance));
     return env->NewObject(pointClazz, pointConstructor,
                           title.get(), subtitle.get(),
                           static_cast<jint>(data.m_pointType),
@@ -1623,7 +1625,9 @@ Java_app_organicmaps_Framework_nativeGetRoutePoints(JNIEnv * env, jclass)
                           static_cast<jboolean>(data.m_isMyPosition),
                           static_cast<jboolean>(data.m_isPassed),
                           mercator::YToLat(data.m_position.y),
-                          mercator::XToLon(data.m_position.x));
+                          mercator::XToLon(data.m_position.x),
+                          static_cast<jlong>(data.m_timeSec),
+                          distance.get());
   });
 }
 

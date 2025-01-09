@@ -353,7 +353,10 @@ public:
   /// \brief estimated time to reach segment.
   double GetCurrentTimeToSegmentSec(size_t segIdx) const;
 
-  /// \brief estimated time to the nearest turn.
+  /// \brief total route time to reach segment.
+  double GetTotalTimeToSegmentSec(size_t segIdx) const;
+
+    /// \brief estimated time to the nearest turn.
   double GetCurrentTimeToNearestTurnSec() const;
 
   FollowedPolyline const & GetFollowedPolyline() const { return m_poly; }
@@ -363,11 +366,13 @@ public:
 
   size_t GetCurrentSubrouteIdx() const { return m_currentSubrouteIdx; }
   std::vector<SubrouteAttrs> const & GetSubroutes() const { return m_subrouteAttrs; }
+  std::pair<long, double> GetSubrouteTotalTimeAndDistance(size_t subrouteIdx) const;
 
   std::vector<double> const & GetSegDistanceMeters() const { return m_poly.GetSegDistanceMeters(); }
   bool IsValid() const { return m_poly.IsValid(); }
 
   double GetTotalDistanceMeters() const;
+  double GetTotalDistanceToSegmentMeters(size_t segIdx) const;
   double GetCurrentDistanceFromBeginMeters() const;
   double GetCurrentDistanceToEndMeters() const;
   double GetMercatorDistanceFromBegin() const;

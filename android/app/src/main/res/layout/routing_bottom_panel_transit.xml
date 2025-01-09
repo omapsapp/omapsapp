@@ -11,15 +11,34 @@
   android:paddingBottom="@dimen/margin_half"
   android:paddingTop="@dimen/margin_half_plus">
   <TextView
-    android:id="@+id/total_time"
+    android:id="@+id/estimated_time_of_arrival"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     style="@style/MwmWidget.TextView.PlanDetail.Number.Time"
+    tools:text="11:59 AM"/>
+  <TextView
+    android:id="@+id/dot1"
+    style="@style/MwmWidget.TextView.PlanDetail.Number.Secondary"
+    android:layout_marginStart="@dimen/margin_quarter_plus"
+    android:layout_marginTop="@dimen/margin_eighth"
+    android:layout_marginEnd="@dimen/margin_quarter_plus"
+    android:text="•"
+    app:layout_constraintStart_toEndOf="@id/estimated_time_of_arrival"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="HardcodedText"/>
+  <TextView
+    android:id="@+id/total_time"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_quarter_plus"
+    app:layout_constraintStart_toEndOf="@id/dot1"
+    app:layout_constraintTop_toTopOf="parent"
+    style="@style/MwmWidget.TextView.PlanDetail.Number.Time"
     tools:text="40 min"/>
   <TextView
-    android:id="@+id/dot"
+    android:id="@+id/dot2"
     style="@style/MwmWidget.TextView.PlanDetail.Number.Secondary"
     android:layout_marginStart="@dimen/margin_quarter_plus"
     android:layout_marginTop="@dimen/margin_eighth"
@@ -35,7 +54,7 @@
     android:layout_marginStart="@dimen/margin_quarter_plus"
     app:srcCompat="@drawable/ic_20px_route_planning_walk"
     app:layout_constraintBottom_toBottomOf="@id/total_time"
-    app:layout_constraintStart_toEndOf="@id/dot"
+    app:layout_constraintStart_toEndOf="@id/dot2"
     app:tint="?iconTint"/>
   <TextView
     android:id="@+id/total_distance"

@@ -65,6 +65,13 @@ double Route::GetTotalDistanceMeters() const
   return m_poly.GetTotalDistanceMeters();
 }
 
+double Route::GetTotalDistanceToSegmentMeters(size_t segIdx) const
+{
+  if (!IsValid())
+    return 0.0;
+  return m_routeSegments[segIdx].GetDistFromBeginningMeters();
+}
+
 double Route::GetCurrentDistanceFromBeginMeters() const
 {
   if (!IsValid())
@@ -158,6 +165,13 @@ double Route::GetCurrentTimeToSegmentSec(size_t segIdx) const
   double const passedTimeSec = GetCurrentTimeFromBeginSec();
 
   return endTimeSec - passedTimeSec;
+}
+
+double Route::GetTotalTimeToSegmentSec(size_t segIdx) const
+{
+  if (!IsValid())
+    return 0.0;
+  return m_routeSegments[segIdx].GetTimeFromBeginningSec();
 }
 
 void Route::GetCurrentSpeedLimit(SpeedInUnits & speedLimit) const
@@ -452,6 +466,14 @@ Route::SubrouteSettings const Route::GetSubrouteSettings(size_t segmentIdx) cons
   return SubrouteSettings(m_routingSettings, m_router, m_subrouteUid);
 }
 
+std::pair<long, double> Route::GetSubrouteTotalTimeAndDistance(size_t subrouteIdx) const
+{
+  size_t endSegmentIdx = m_subrouteAttrs.at(subrouteIdx).GetEndSegmentIdx() - 1;
+  long timeSec = GetTotalTimeToSegmentSec(endSegmentIdx);
+  double distanceMeters = GetTotalDistanceToSegmentMeters(endSegmentIdx);
+  return std::pair<long, double>(timeSec, distanceMeters);
+}
+
 bool Route::IsSubroutePassed(size_t subrouteIdx) const
 {
   size_t const endSegmentIdx = GetSubrouteAttrs(subrouteIdx).GetEndSegmentIdx();
@@ -532,7 +554,7 @@ std::string Route::DebugPrintTurns() const
   {
     auto const & turn = m_routeSegments[i].GetTurn();
 
-    // Always print first elemenst as Start.
+    // Always print first element as Start.
     if (i == 0 || !turn.IsTurnNone())
     {
       res += DebugPrint(mercator::ToLatLon(m_routeSegments[i].GetJunction()));

@@ -22,6 +22,7 @@
 #include "indexer/map_style_reader.hpp"
 
 #include "platform/country_file.hpp"
+#include "platform/distance.hpp"
 #include "platform/platform.hpp"
 #include "platform/socket.hpp"
 
@@ -820,9 +821,42 @@ bool RoutingManager::IsMyPosition(RouteMarkType type, size_t intermediateIndex)
 vector<RouteMarkData> RoutingManager::GetRoutePoints() const
 {
   vector<RouteMarkData> result;
-  RoutePointsLayout routePoints(*m_bmManager);
-  for (auto const & p : routePoints.GetRoutePoints())
-    result.push_back(p->GetMarkData());
+  RoutePointsLayout routePointsLayout(*m_bmManager);
+
+  auto const & routePoints = routePointsLayout.GetRoutePoints();
+
+  size_t subrouteCount = m_routingSession.GetSubrouteCount();
+  //std::vector<routing::Route::SubrouteAttrs> subroutes = m_routingSession.GetSubroutes();
+
+  // Copy subroute time & distance to mark data only if subroute and route point sizes match.
+  bool bCopy = (routePoints.size() == subrouteCount + 1);
+
+  for(int point = 0; point < (int)routePoints.size(); point++)
+  {
+    auto markData = routePoints[point]->GetMarkData();
+
+    if (bCopy)
+    {
+      if (point == 0)
+      {
+        // This is the first starting point. Time & distance are 0.
+        markData.m_timeSec = 0;
+        markData.m_distance = "";
+      }
+      else
+      {
+        // Get subroute time & distance pair.
+        auto timeDistancePair = m_routingSession.GetSubrouteTotalTimeAndDistance(point - 1);
+        markData.m_timeSec = timeDistancePair.first;
+        markData.m_distance = platform::Distance::CreateFormatted(timeDistancePair.second).ToString();
+      }
+
+      LOG(LINFO, ("point", point, "timeSec", markData.m_timeSec, "distance", markData.m_distance));
+    }
+
+    result.push_back(markData);
+  }
+
   return result;
 }
 
