@@ -15,8 +15,7 @@
     case .track:
       layout = PlacePageTrackLayout(interactor: interactor, storyboard: storyboard, data: data)
     case .trackRecording:
-      // TODO: Implement PlacePageTrackRecordingLayout
-      fatalError("PlacePageTrackRecordingLayout is not implemented")
+      layout = PlacePageTrackRecordingLayout(interactor: interactor, storyboard: storyboard, data: data)
     @unknown default:
       fatalError()
     }
@@ -34,14 +33,14 @@
                                          data: data,
                                          mapViewController: MapViewController.shared()!)
     let layout: IPlacePageLayout
+    let storyboard = viewController.storyboard!
     switch data.objectType {
     case .POI, .bookmark:
-      layout = PlacePageCommonLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
+      layout = PlacePageCommonLayout(interactor: interactor, storyboard: storyboard, data: data)
     case .track:
-      layout = PlacePageTrackLayout(interactor: interactor, storyboard: viewController.storyboard!, data: data)
+      layout = PlacePageTrackLayout(interactor: interactor, storyboard: storyboard, data: data)
     case .trackRecording:
-      // TODO: Implement PlacePageTrackRecordingLayout
-      fatalError("PlacePageTrackRecordingLayout is not implemented")
+      layout = PlacePageTrackRecordingLayout(interactor: interactor, storyboard: storyboard, data: data)
     @unknown default:
       fatalError()
     }
