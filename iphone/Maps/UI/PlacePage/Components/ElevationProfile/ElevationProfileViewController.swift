@@ -4,49 +4,54 @@ protocol ElevationProfileViewProtocol: AnyObject {
   var presenter: ElevationProfilePresenterProtocol?  { get set }
 
   var isChartViewHidden: Bool { get set }
-  var isExtendedDifficultyLabelHidden: Bool { get set }
-  var isDifficultyHidden: Bool { get set }
-  var isBottomPanelHidden: Bool { get set }
+  var isChartViewInfoHidden: Bool { get set }
 
-  func setExtendedDifficultyGrade(_ value: String)
-  func setDifficulty(_ value: ElevationDifficulty)
   func setChartData(_ data: ChartPresentationData)
   func setActivePoint(_ distance: Double)
   func setMyPosition(_ distance: Double)
+  func reloadDescription()
 }
 
-class ElevationProfileViewController: UIViewController {
+final class ElevationProfileViewController: UIViewController {
 
   private enum Constants {
+    static let descriptionCollectionViewHeight: CGFloat = 52
+    static let descriptionCollectionViewContentInsets = UIEdgeInsets(top: 20, left: 16, bottom: 4, right: 16)
+    static let graphViewContainerInsets = UIEdgeInsets(top: -4, left: 0, bottom: 0, right: 0)
+    static let chartViewInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: -16)
     static let chartViewVisibleHeight: CGFloat = 176
-    static let chartViewHiddenHeight: CGFloat = 20
-    static let difficultyVisibleHeight: CGFloat = 60
-    static let difficultyHiddenHeight: CGFloat = 20
+    static let chartViewHiddenHeight: CGFloat = .zero
+  }
+  
+  var presenter: ElevationProfilePresenterProtocol?
+
+  init() {
+    super.init(nibName: nil, bundle: nil)
   }
 
-  var presenter: ElevationProfilePresenterProtocol?
+  @available(*, unavailable)
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
-  @IBOutlet private weak var chartView: ChartView!
-  @IBOutlet private weak var graphViewContainer: UIView!
-  @IBOutlet private weak var descriptionCollectionView: UICollectionView!
-  @IBOutlet private weak var difficultyView: DifficultyView!
-  @IBOutlet private weak var difficultyTitle: UILabel!
-  @IBOutlet private weak var extendedDifficultyGradeLabel: UILabel!
-  @IBOutlet private weak var extendedGradeButton: UIButton!
-  @IBOutlet private weak var chartHeightConstraint: NSLayoutConstraint!
-  @IBOutlet private weak var difficultyConstraint: NSLayoutConstraint!
+  private var chartView = ChartView()
+  private var graphViewContainer = UIView()
+  private var descriptionCollectionView: UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
+    layout.minimumInteritemSpacing = 0
+    return UICollectionView(frame: .zero, collectionViewLayout: layout)
+  }()
+  private var chartViewHeightConstraint: NSLayoutConstraint!
 
-  private var difficultyHidden: Bool = false
-  private var bottomPanelHidden: Bool = false
+
+  // MARK: - Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    descriptionCollectionView.dataSource = presenter
-    descriptionCollectionView.delegate = presenter
+    setupViews()
+    layoutViews()
     presenter?.configure()
-    chartView.onSelectedPointChanged = { [weak self] in
-      self?.presenter?.onSelectedPointChanged($0)
-    }
   }
 
   override func viewWillLayoutSubviews() {
@@ -54,60 +59,75 @@ class ElevationProfileViewController: UIViewController {
     descriptionCollectionView.reloadData()
   }
 
-  @IBAction func onExtendedDifficultyButtonPressed(_ sender: Any) {
-    presenter?.onDifficultyButtonPressed()
+// MARK: - Private methods
+
+  private func setupViews() {
+    view.styleName = "Background"
+    setupDescriptionCollectionView()
+    setupChartView()
   }
 
-  func getPreviewHeight() -> CGFloat {
-    return view.height - descriptionCollectionView.frame.minY
+  private func setupChartView() {
+    graphViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    chartView.translatesAutoresizingMaskIntoConstraints = false
+    chartView.onSelectedPointChanged = { [weak self] in
+      self?.presenter?.onSelectedPointChanged($0)
+    }
+  }
+
+  private func setupDescriptionCollectionView() {
+    descriptionCollectionView.backgroundColor = .clear
+    descriptionCollectionView.register(cell: ElevationProfileDescriptionCell.self)
+    descriptionCollectionView.dataSource = presenter
+    descriptionCollectionView.delegate = presenter
+    descriptionCollectionView.isScrollEnabled = false
+    descriptionCollectionView.contentInset = Constants.descriptionCollectionViewContentInsets
+    descriptionCollectionView.translatesAutoresizingMaskIntoConstraints = false
+  }
+
+  private func layoutViews() {
+    view.addSubview(descriptionCollectionView)
+    graphViewContainer.addSubview(chartView)
+    view.addSubview(graphViewContainer)
+
+    chartViewHeightConstraint = chartView.heightAnchor.constraint(equalToConstant: Constants.chartViewVisibleHeight)
+    NSLayoutConstraint.activate([
+      descriptionCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+      descriptionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      descriptionCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      descriptionCollectionView.heightAnchor.constraint(equalToConstant: Constants.descriptionCollectionViewHeight),
+      descriptionCollectionView.bottomAnchor.constraint(equalTo: graphViewContainer.topAnchor, constant: Constants.graphViewContainerInsets.top),
+      graphViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      graphViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      graphViewContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      chartView.topAnchor.constraint(equalTo: graphViewContainer.topAnchor),
+      chartView.leadingAnchor.constraint(equalTo: graphViewContainer.leadingAnchor, constant: Constants.chartViewInsets.left),
+      chartView.trailingAnchor.constraint(equalTo: graphViewContainer.trailingAnchor, constant: Constants.chartViewInsets.right),
+      chartView.bottomAnchor.constraint(equalTo: graphViewContainer.bottomAnchor),
+      chartViewHeightConstraint,
+    ])
+  }
+
+  private func getPreviewHeight() -> CGFloat {
+    view.height - descriptionCollectionView.frame.minY
   }
 }
 
+// MARK: - ElevationProfileViewProtocol
+
 extension ElevationProfileViewController: ElevationProfileViewProtocol {
   var isChartViewHidden: Bool {
-    get { return chartView.isHidden }
+    get { chartView.isHidden }
     set {
       chartView.isHidden = newValue
       graphViewContainer.isHidden = newValue
-      chartHeightConstraint.constant = newValue ? Constants.chartViewHiddenHeight : Constants.chartViewVisibleHeight
+      chartViewHeightConstraint.constant = newValue ? Constants.chartViewHiddenHeight : Constants.chartViewVisibleHeight
     }
   }
 
-  var isExtendedDifficultyLabelHidden: Bool {
-    get { return extendedDifficultyGradeLabel.isHidden }
-    set {
-      extendedDifficultyGradeLabel.isHidden = newValue
-      extendedGradeButton.isHidden = newValue
-    }
-  }
-
-  var isDifficultyHidden: Bool {
-    get { difficultyHidden }
-    set {
-      difficultyHidden = newValue
-      difficultyTitle.isHidden = newValue
-      difficultyView.isHidden = newValue
-    }
-  }
-
-  var isBottomPanelHidden: Bool {
-    get { bottomPanelHidden }
-    set {
-      bottomPanelHidden = newValue
-      if newValue == true {
-        isExtendedDifficultyLabelHidden = true
-        isDifficultyHidden = true
-      }
-      difficultyConstraint.constant = newValue ? Constants.difficultyHiddenHeight : Constants.difficultyVisibleHeight
-    }
-  }
-  
-  func setExtendedDifficultyGrade(_ value: String) {
-    extendedDifficultyGradeLabel.text = value
-  }
-
-  func setDifficulty(_ value: ElevationDifficulty) {
-    difficultyView.difficulty = value
+  var isChartViewInfoHidden: Bool {
+    get { chartView.isChartViewInfoHidden }
+    set { chartView.isChartViewInfoHidden = newValue }
   }
 
   func setChartData(_ data: ChartPresentationData) {
@@ -120,5 +140,9 @@ extension ElevationProfileViewController: ElevationProfileViewProtocol {
 
   func setMyPosition(_ distance: Double) {
     chartView.myPosition = distance
+  }
+
+  func reloadDescription() {
+    descriptionCollectionView.reloadData()
   }
 }
