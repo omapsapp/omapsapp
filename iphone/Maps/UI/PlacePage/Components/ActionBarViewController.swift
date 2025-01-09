@@ -62,18 +62,26 @@ final class ActionBarViewController: UIViewController {
         fatalError()
       }
     }
+
     var buttons: [ActionBarButtonType] = []
-    if isRoutePlanning {
-      buttons.append(.routeFrom)
-    }
-    if placePageData.infoData?.phone != nil, AppInfo.shared().canMakeCalls {
-      buttons.append(.call)
-    }
-    if !isRoutePlanning {
-      buttons.append(.routeFrom)
+    switch placePageData.objectType {
+    case .POI, .bookmark, .track:
+      if isRoutePlanning {
+        buttons.append(.routeFrom)
+      }
+      if placePageData.infoData?.phone != nil, AppInfo.shared().canMakeCalls {
+        buttons.append(.call)
+      }
+      if !isRoutePlanning {
+        buttons.append(.routeFrom)
+      }
+    case .trackRecording:
+      break
+    @unknown default:
+      fatalError()
     }
 
-    assert(buttons.count > 0)
+    guard !buttons.isEmpty else { return }
     visibleButtons.append(buttons[0])
     if buttons.count > 1 {
       additionalButtons.append(contentsOf: buttons.suffix(from: 1))
@@ -91,8 +99,7 @@ final class ActionBarViewController: UIViewController {
     case .track:
       buttons.append(.track)
     case .trackRecording:
-      // TODO: implement for track recording
-      break
+      buttons.append(.saveTrackRecording)
     @unknown default:
       fatalError()
     }
@@ -104,7 +111,14 @@ final class ActionBarViewController: UIViewController {
   }
 
   private func configButton3() {
-    visibleButtons.append(.routeTo)
+    switch placePageData.objectType {
+    case .POI, .bookmark, .track:
+      visibleButtons.append(.routeTo)
+    case .trackRecording:
+      break
+    @unknown default:
+      fatalError()
+    }
   }
 
   private func configButton4() {

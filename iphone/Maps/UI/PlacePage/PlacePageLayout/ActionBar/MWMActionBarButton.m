@@ -19,6 +19,8 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
     case MWMActionBarButtonTypeBookmark:
     case MWMActionBarButtonTypeTrack:
       return L(isSelected ? @"delete" : @"save");
+    case MWMActionBarButtonTypeSaveTrackRecording:
+      return L(@"save");
     case MWMActionBarButtonTypeRouteFrom:
       return L(@"p2p_from_here");
     case MWMActionBarButtonTypeRouteTo:
@@ -55,7 +57,8 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
   self.label.text = titleForButton(self.type, isSelected);
   self.extraBackground.hidden = YES;
   self.button.coloring = MWMButtonColoringBlack;
-  
+  [self.button.imageView setContentMode:UIViewContentModeScaleAspectFit];
+
   switch (self.type) {
     case MWMActionBarButtonTypeDownload: {
       if (self.mapDownloadProgress)
@@ -107,6 +110,9 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
     case MWMActionBarButtonTypeTrack:
       [self.button setImage:[[UIImage imageNamed:@"ic_route_manager_trash"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
       self.button.coloring = MWMButtonColoringRed;
+      break;
+    case MWMActionBarButtonTypeSaveTrackRecording:
+      [self.button setImage:[UIImage imageNamed:@"ic_placepage_save_track_recording"] forState:UIControlStateNormal];
       break;
     case MWMActionBarButtonTypeRouteFrom:
       [self.button setImage:[UIImage imageNamed:@"ic_route_from"] forState:UIControlStateNormal];

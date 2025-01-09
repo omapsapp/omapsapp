@@ -25,7 +25,7 @@ class PlacePageInteractor: NSObject {
 
   private func updatePlacePageIfNeeded() {
     let isBookmark = placePageData.bookmarkData != nil && bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId)
-    let isTrack = placePageData.trackData != nil && bookmarksManager.hasTrack(placePageData.trackData!.trackId)
+    let isTrack = placePageData.trackData != nil/* && bookmarksManager.hasTrack(placePageData.trackData!.trackId)*/
     guard isBookmark || isTrack else {
       presenter?.closeAnimated()
       return
@@ -244,14 +244,7 @@ extension PlacePageInteractor: ActionBarViewControllerDelegate {
       showTrackDeletionConfirmationDialog()
     case .saveTrackRecording:
       // TODO: (KK) pass name
-      TrackRecordingManager.shared.processAction(.stopAndSave(name: nil)) { [weak self] result in
-        switch result {
-        case .success:
-          break
-        case .error:
-          self?.presenter?.closeAnimated()
-        }
-      }
+      TrackRecordingManager.shared.processAction(.stopAndSave(name: nil))
     @unknown default:
       fatalError()
     }
@@ -287,8 +280,8 @@ extension PlacePageInteractor: ElevationProfileViewControllerDelegate {
   }
 
   func updateMapPoint(_ point: CLLocationCoordinate2D, distance: Double) {
-    guard let trackId = placePageData.trackData?.trackId else { return }
-    BookmarksManager.shared().setElevationActivePoint(point, distance: distance, trackId: trackId)
+    guard let trackData = placePageData.trackData, trackData.elevationProfileData?.isTrackRecording == false else { return }
+    BookmarksManager.shared().setElevationActivePoint(point, distance: distance, trackId: trackData.trackId)
   }
 }
 
