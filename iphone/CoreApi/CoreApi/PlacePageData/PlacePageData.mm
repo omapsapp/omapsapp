@@ -5,6 +5,7 @@
 #import "PlacePageInfoData+Core.h"
 #import "PlacePageBookmarkData+Core.h"
 #import "PlacePageTrackData+Core.h"
+#import "ElevationProfileData+Core.h"
 #import "MWMMapNodeAttributes.h"
 
 #include <CoreApi/CoreApi.h>
@@ -82,6 +83,25 @@ static PlacePageRoadType convertRoadType(RoadWarningMarkType roadType) {
     m_rawTypes = rawData().GetRawTypes();
   }
   return self;
+}
+
+- (instancetype)initWithTrackInfo:(TrackInfo * _Nonnull)trackInfo elevationInfo:(ElevationProfileData * _Nullable)elevationInfo {
+  self = [super init];
+  if (self) {
+    _objectType = PlacePageObjectTypeTrackRecording;
+    _roadType = PlacePageRoadTypeNone;
+    _previewData = [[PlacePagePreviewData alloc] initWithTrackInfo:trackInfo];
+    _trackData = [[PlacePageTrackData alloc] initWithTrackInfo:trackInfo elevationInfo:elevationInfo];
+  }
+  return self;
+}
+
+- (void)updateWithTrackInfo:(TrackInfo * _Nonnull)trackInfo elevationInfo:(ElevationProfileData * _Nullable)elevationInfo {
+  _previewData = [[PlacePagePreviewData alloc] initWithTrackInfo:trackInfo];
+  _trackData.trackInfo = trackInfo;
+  _trackData.elevationProfileData = elevationInfo;
+  if (self.onTrackRecordingProgressUpdate != nil)
+    self.onTrackRecordingProgressUpdate();
 }
 
 - (void)dealloc {

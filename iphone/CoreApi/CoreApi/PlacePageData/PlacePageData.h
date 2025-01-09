@@ -10,6 +10,7 @@
 @class PlacePageBookmarkData;
 @class MWMMapNodeAttributes;
 @class TrackInfo;
+@class ElevationProfileData;
 
 typedef NS_ENUM(NSInteger, PlacePageRoadType) {
   PlacePageRoadTypeToll,
@@ -49,12 +50,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) CLLocationCoordinate2D locationCoordinate;
 @property(nonatomic, copy, nullable) MWMVoidBlock onBookmarkStatusUpdate;
 @property(nonatomic, copy, nullable) MWMVoidBlock onMapNodeStatusUpdate;
+@property(nonatomic, copy, nullable) MWMVoidBlock onTrackRecordingProgressUpdate;
 @property(nonatomic, copy, nullable) void (^onMapNodeProgressUpdate)(uint64_t downloadedBytes, uint64_t totalBytes);
 
 - (instancetype)initWithLocalizationProvider:(id<IOpeningHoursLocalization>)localization;
+- (instancetype)initWithTrackInfo:(TrackInfo * _Nonnull)trackInfo elevationInfo:(ElevationProfileData * _Nullable)elevationInfo;
 - (instancetype)init NS_UNAVAILABLE;
 
 - (void)updateBookmarkStatus;
+- (void)updateWithTrackInfo:(TrackInfo * _Nonnull)trackInfo elevationInfo:(ElevationProfileData * _Nullable)elevationInfo;
 
 @end
 

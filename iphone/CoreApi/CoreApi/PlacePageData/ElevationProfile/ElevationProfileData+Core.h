@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
                   elevationInfo:(ElevationInfo const &)elevationInfo
                     activePoint:(double)activePoint
                      myPosition:(double)myPosition;
+- (instancetype)initWithElevationInfo:(ElevationInfo const &)elevationInfo;
 
 @end
 

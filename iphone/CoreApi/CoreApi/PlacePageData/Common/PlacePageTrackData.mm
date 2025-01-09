@@ -4,6 +4,15 @@
 
 @implementation PlacePageTrackData
 
+- (nonnull instancetype)initWithTrackInfo:(TrackInfo *)trackInfo elevationInfo:(ElevationProfileData * _Nullable)elevationInfo {
+  self = [super init];
+  if (self) {
+    _trackInfo = trackInfo;
+    _elevationProfileData = elevationInfo;
+  }
+  return self;
+}
+
 @end
 
 @implementation PlacePageTrackData (Core)

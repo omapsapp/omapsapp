@@ -1,4 +1,8 @@
 #import "PlacePagePreviewData+Core.h"
+#import "DistanceFormatter.h"
+#import "AltitudeFormatter.h"
+#import "DurationFormatter.h"
+#import "TrackInfo.h"
 
 #include "3party/opening_hours/opening_hours.hpp"
 
@@ -45,6 +49,18 @@ static PlacePageDataSchedule convertOpeningHours(std::string_view rawOH)
 }
 
 @implementation PlacePagePreviewData
+
+- (instancetype)initWithTrackInfo:(TrackInfo * _Nonnull)trackInfo {
+  self = [super init];
+  if (self) {
+    // TODO: (KK) Replace separator with a shared static constant.
+    NSString * kSeparator = @" • ";
+    NSString * duration = [DurationFormatter durationStringFromTimeInterval:trackInfo.duration];
+    NSString * distance = [DistanceFormatter distanceStringFromMeters:trackInfo.distance];
+    _title = [@[duration, distance] componentsJoinedByString:kSeparator];
+  }
+  return self;
+}
 
 @end
 
