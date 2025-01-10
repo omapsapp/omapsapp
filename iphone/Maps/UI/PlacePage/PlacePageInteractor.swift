@@ -24,14 +24,29 @@ class PlacePageInteractor: NSObject {
   }
 
   private func updatePlacePageIfNeeded() {
-    let isBookmark = placePageData.bookmarkData != nil && bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId)
-    let isTrack = placePageData.trackData != nil/* && bookmarksManager.hasTrack(placePageData.trackData!.trackId)*/
-    guard isBookmark || isTrack else {
-      presenter?.closeAnimated()
-      return
+    func updatePlacePage() {
+      FrameworkHelper.updatePlacePageData()
+      placePageData.updateBookmarkStatus()
     }
-    FrameworkHelper.updatePlacePageData()
-    placePageData.updateBookmarkStatus()
+
+    switch placePageData.objectType {
+    case .POI, .trackRecording:
+      break
+    case .bookmark:
+      guard bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId) else {
+        presenter?.closeAnimated()
+        return
+      }
+      updatePlacePage()
+    case .track:
+      guard bookmarksManager.hasTrack(placePageData.trackData!.trackId) else {
+        presenter?.closeAnimated()
+        return
+      }
+      updatePlacePage()
+    @unknown default:
+      fatalError("Unknown object type")
+    }
   }
 
   private func addToBookmarksManagerObserverList() {
