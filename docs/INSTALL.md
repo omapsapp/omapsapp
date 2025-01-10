@@ -115,6 +115,10 @@ sudo apt update && sudo apt install -y \
     libqt6positioning6-plugins \
     libqt6positioning6 \
     libsqlite3-dev \
+    libxrandr-dev \
+    libxinerama-dev \
+    libxcursor-dev \
+    libxi-dev \
     zlib1g-dev
 ```
 
