@@ -353,8 +353,11 @@ void Platform::ShutdownThreads()
   m_batteryTracker.UnsubscribeAll();
 
   m_networkThread->ShutdownAndJoin();
+  m_networkThread.reset();
   m_fileThread->ShutdownAndJoin();
+  m_fileThread.reset();
   m_backgroundThread->ShutdownAndJoin();
+  m_backgroundThread.reset();
 }
 
 void Platform::RunThreads()
