@@ -101,5 +101,12 @@ void MetalProgramParamsSetter::Apply(ref_ptr<dp::GraphicsContext> context,
 {
   ApplyBytes(context, program, params);
 }
+
+void MetalProgramParamsSetter::Apply(ref_ptr<dp::GraphicsContext> context, 
+                                     ref_ptr<dp::GpuProgram> program,
+                                     ImGuiProgramParams const & params)
+{
+  ApplyBytes(context, program, params);
+}
 }  // namespace metal
 }  // namespace gpu

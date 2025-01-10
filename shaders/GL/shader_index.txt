@@ -53,3 +53,4 @@ TrafficCircle traffic_circle.vsh.glsl traffic_circle.fsh.glsl
 SmaaEdges smaa_edges.vsh.glsl smaa_edges.fsh.glsl
 SmaaBlendingWeight smaa_blending_weight.vsh.glsl smaa_blending_weight.fsh.glsl
 SmaaFinal smaa_final.vsh.glsl smaa_final.fsh.glsl
+ImGui imgui.vsh.glsl imgui.fsh.glsl
