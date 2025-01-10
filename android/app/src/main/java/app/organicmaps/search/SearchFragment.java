@@ -3,6 +3,7 @@ package app.organicmaps.search;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import app.organicmaps.Framework;
 import app.organicmaps.MwmActivity;
+import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmFragment;
 import app.organicmaps.bookmarks.data.FeatureId;
@@ -299,8 +301,10 @@ public class SearchFragment extends BaseMwmFragment
 
     SearchEngine.INSTANCE.addListener(this);
 
+    SharedPreferences preferences = MwmApplication.prefs(requireContext());
+    int lastSelectedTabPosition = preferences.getInt(requireContext().getString(R.string.last_selected_tab), 0);
     if (SearchRecents.getSize() == 0 && Config.isSearchHistoryEnabled())
-      pager.setCurrentItem(TabAdapter.Tab.CATEGORIES.ordinal());
+      pager.setCurrentItem(lastSelectedTabPosition);
 
     tabAdapter.setTabSelectedListener(tab -> mToolbarController.deactivate());
 

@@ -1,6 +1,7 @@
 package app.organicmaps.search;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.SparseArray;
 import android.view.View;
 
@@ -11,6 +12,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+
+import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
 import app.organicmaps.util.Graphics;
 import app.organicmaps.util.Config;
@@ -91,6 +94,9 @@ class TabAdapter extends FragmentPagerAdapter
     @Override
     public void onTabSelected(TabLayout.Tab tab)
     {
+      SharedPreferences.Editor editor = MwmApplication.prefs(mContext).edit();
+      editor.putInt(mContext.getString(R.string.last_selected_tab), tab.getPosition());
+      editor.apply();
       super.onTabSelected(tab);
       Graphics.tint(mContext, tab.getIcon(), androidx.appcompat.R.attr.colorAccent);
     }
@@ -151,7 +157,9 @@ class TabAdapter extends FragmentPagerAdapter
     ViewPager.OnPageChangeListener listener = new PageChangedListener(tabs);
     mPager.addOnPageChangeListener(listener);
     tabs.setOnTabSelectedListener(new OnTabSelectedListenerForViewPager(mPager));
-    listener.onPageSelected(0);
+    SharedPreferences preferences = MwmApplication.prefs(mPager.getContext());
+    int lastSelectedTabPosition = preferences.getInt(mPager.getContext().getString(R.string.last_selected_tab), 0);
+    listener.onPageSelected(lastSelectedTabPosition);
   }
 
   void setTabSelectedListener(OnTabSelectedListener listener)
