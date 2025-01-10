@@ -1,6 +1,8 @@
 #pragma once
 #include "qt/selection.hpp"
 
+#include "qt/place_panel.hpp"
+
 #include "map/routing_mark.hpp"
 
 #include "storage/storage_defines.hpp"
@@ -32,11 +34,13 @@ class MainWindow : public QMainWindow, location::LocationObserver
 {
   DrawWidget * m_pDrawWidget = nullptr;
   // TODO(mgsergio): Make indexing more informative.
-  std::array<QDockWidget *, 1> m_Docks;
+  std::array<QDockWidget *, 2> m_Docks;
 
   QPushButton * m_downloadButton = nullptr;
   QPushButton * m_retryButton = nullptr;
   QLabel * m_downloadingStatusLabel = nullptr;
+
+  PlacePanel * placePanel = nullptr;
 
   storage::CountryId m_lastCountry;
 
@@ -91,6 +95,7 @@ protected:
                        QKeySequence const & hotkey, char const * slot);
   void CreateNavigationBar();
   void CreateSearchBarAndPanel();
+  void CreatePlaceBarAndPanel();
   void CreateCountryStatusControls();
 
   void SetLayerEnabled(LayerType type, bool enable);
