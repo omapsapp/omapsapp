@@ -59,3 +59,12 @@
 [submodule "3party/utfcpp"]
 	path = 3party/utfcpp
 	url = https://github.com/nemtrif/utfcpp.git
+[submodule "3party/glfw"]
+	path = 3party/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "3party/CMake-MetalShaderSupport"]
+	path = 3party/CMake-MetalShaderSupport
+	url = https://github.com/dpogue/CMake-MetalShaderSupport.git
+[submodule "3party/imgui/imgui"]
+	path = 3party/imgui/imgui
+	url = https://github.com/ocornut/imgui

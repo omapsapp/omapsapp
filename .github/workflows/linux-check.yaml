@@ -61,6 +61,10 @@ jobs:
               libgl1-mesa-dev \
               libglvnd-dev \
               libharfbuzz-dev \
+              libxrandr-dev \
+              libxinerama-dev \
+              libxcursor-dev \
+              libxi-dev \
               qt6-base-dev \
               libqt6svg6-dev \
               qt6-positioning-dev \
@@ -128,6 +132,10 @@ jobs:
               libgl1-mesa-dev \
               libglvnd-dev \
               libharfbuzz-dev \
+              libxrandr-dev \
+              libxinerama-dev \
+              libxcursor-dev \
+              libxi-dev \
               qt6-base-dev \
               libqt6svg6-dev \
               qt6-positioning-dev \
