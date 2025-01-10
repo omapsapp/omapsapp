@@ -18,6 +18,8 @@ public:
 
   static std::string const kDefaultResource;
 
+  StaticTexture();
+
   /// @todo All xxxName can be std::string_view after Platform::GetReader (StyleReader) refactoring.
   StaticTexture(ref_ptr<dp::GraphicsContext> context, std::string const & textureName,
                 std::string const & skinPathName, dp::TextureFormat format,

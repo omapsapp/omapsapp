@@ -61,7 +61,8 @@ public:
            bool isRoutingActive, bool isAutozoomEnabled, bool simplifiedTrafficColors,
            std::optional<Arrow3dCustomDecl> arrow3dCustomDecl,
            OverlaysShowStatsCallback && overlaysShowStatsCallback,
-           OnGraphicsContextInitialized && onGraphicsContextInitialized)
+           OnGraphicsContextInitialized && onGraphicsContextInitialized,
+           dp::RenderInjectionHandler && renderInjectionHandler)
       : m_apiVersion(apiVersion)
       , m_factory(factory)
       , m_viewport(viewport)
@@ -83,6 +84,7 @@ public:
       , m_arrow3dCustomDecl(std::move(arrow3dCustomDecl))
       , m_overlaysShowStatsCallback(std::move(overlaysShowStatsCallback))
       , m_onGraphicsContextInitialized(std::move(onGraphicsContextInitialized))
+      , m_renderInjectionHandler(std::move(renderInjectionHandler))
     {}
 
     dp::ApiVersion m_apiVersion;
@@ -107,6 +109,7 @@ public:
     std::optional<Arrow3dCustomDecl> m_arrow3dCustomDecl;
     OverlaysShowStatsCallback m_overlaysShowStatsCallback;
     OnGraphicsContextInitialized m_onGraphicsContextInitialized;
+    dp::RenderInjectionHandler m_renderInjectionHandler;
   };
 
   DrapeEngine(Params && params);
@@ -124,6 +127,8 @@ public:
   void Move(double factorX, double factorY, bool isAnim);
   void Scroll(double distanceX, double distanceY);
   void Rotate(double azimuth, bool isAnim);
+
+  void MakeFrameActive();
 
   void ScaleAndSetCenter(m2::PointD const & centerPt, double scaleFactor, bool isAnim,
                          bool trackVisibleViewport);

@@ -265,6 +265,22 @@ void MetalBaseContext::SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t 
   [encoder setScissorRect:(MTLScissorRect){ x, y, w, h }];
 }
 
+void MetalBaseContext::SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h)
+{
+  id<MTLRenderCommandEncoder> encoder = GetCommandEncoder();
+  if (m_renderPassDescriptor.colorAttachments[0].texture != nil)
+  {
+    uint32_t const rpWidth = m_renderPassDescriptor.colorAttachments[0].texture.width;
+    uint32_t const rpHeight = m_renderPassDescriptor.colorAttachments[0].texture.height;
+    if (x < 0) x = 0;
+    if (y < 0) y = 0;
+    if (x + w > rpWidth) w = rpWidth - x;
+    if (y + h > rpHeight) h = rpHeight - y;
+
+    [encoder setScissorRect:(MTLScissorRect){ x, y, w, h }];
+  }
+}
+
 void MetalBaseContext::SetDepthTestEnabled(bool enabled)
 {
   m_currentDepthStencilKey.m_depthEnabled = enabled;
@@ -292,6 +308,12 @@ void MetalBaseContext::SetStencilActions(dp::StencilFace face,
 {
   m_currentDepthStencilKey.SetStencilActions(face, stencilFailAction, depthFailAction, passAction);
 }
+
+void MetalBaseContext::SetCullingEnabled(bool enabled)
+{
+  id<MTLRenderCommandEncoder> encoder = GetCommandEncoder();
+  [encoder setCullMode: (enabled ? MTLCullModeBack : MTLCullModeNone)];
+}
   
 id<MTLDevice> MetalBaseContext::GetMetalDevice() const
 {
@@ -302,6 +324,12 @@ id<MTLRenderCommandEncoder> MetalBaseContext::GetCommandEncoder() const
 {
   CHECK(m_currentCommandEncoder != nil, ("Probably encoding commands were called before ApplyFramebuffer."));
   return m_currentCommandEncoder;
+}
+
+id<MTLCommandBuffer> MetalBaseContext::GetCommandBuffer() const
+{
+  CHECK(m_frameCommandBuffer != nil, ("Probably encoding commands were called before ApplyFramebuffer."));
+  return m_frameCommandBuffer;
 }
   
 id<MTLDepthStencilState> MetalBaseContext::GetDepthStencilState()
@@ -414,6 +442,11 @@ void MetalBaseContext::DebugSynchronizeWithCPU()
   m_frameDrawable = nil;
   [m_frameCommandBuffer waitUntilCompleted];
   m_frameCommandBuffer = nil;
+}
+
+MTLRenderPassDescriptor * MetalBaseContext::GetRenderPassDescriptor() const 
+{
+  return m_renderPassDescriptor;
 }
 }  // namespace metal
 

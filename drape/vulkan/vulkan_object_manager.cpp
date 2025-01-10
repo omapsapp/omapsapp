@@ -117,6 +117,11 @@ VulkanObject VulkanObjectManager::CreateBuffer(VulkanMemoryManager::ResourceType
   info.queueFamilyIndexCount = 1;
   info.pQueueFamilyIndices = &m_queueFamilyIndex;
   CHECK_VK_CALL(vkCreateBuffer(m_device, &info, nullptr, &result.m_buffer));
+  
+  SET_DEBUG_NAME_VK(VK_OBJECT_TYPE_BUFFER, result.m_buffer, 
+    ((resourceType == VulkanMemoryManager::ResourceType::Geometry ? "B: Geometry (" :
+    (resourceType == VulkanMemoryManager::ResourceType::Uniform ? "B: Uniform (" : 
+     "B: Staging (")) + std::to_string(sizeInBytes) + " bytes)").c_str());
 
   VkMemoryRequirements memReqs = {};
   vkGetBufferMemoryRequirements(m_device, result.m_buffer, &memReqs);
@@ -387,7 +392,7 @@ void VulkanObjectManager::FlushUnsafe(VulkanObject object, uint32_t offset, uint
   if (size == 0)
     mappedRange.size = object.GetAlignedSize();
   else
-    mappedRange.size = mappedRange.offset + size;
+    mappedRange.size = size;
   CHECK_VK_CALL(vkFlushMappedMemoryRanges(m_device, 1, &mappedRange));
 }
 

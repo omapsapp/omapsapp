@@ -187,6 +187,7 @@ FrontendRenderer::FrontendRenderer(Params && params)
   , m_scenarioManager(new ScenarioManager(this))
 #endif
   , m_notifier(make_unique_dp<DrapeNotifier>(params.m_commutator))
+  , m_renderInjectionHandler(std::move(params.m_renderInjectionHandler))
 {
 #ifdef DEBUG
   m_isTeardowned = false;
@@ -1732,7 +1733,6 @@ void FrontendRenderer::RenderEmptyFrame()
   m_context->Clear(dp::ClearBits::ColorBit, dp::ClearBits::ColorBit /* storeBits */);
   m_context->ApplyFramebuffer("Empty frame");
   m_viewport.Apply(m_context);
-
   m_context->EndRendering();
   m_context->Present();
 }
@@ -1753,8 +1753,8 @@ void FrontendRenderer::RenderFrame()
   auto & scaleFpsHelper = gui::DrapeGui::Instance().GetScaleFpsHelper();
   m_frameData.m_timer.Reset();
 
-  bool modelViewChanged, viewportChanged;
-  ScreenBase const & modelView = ProcessEvents(modelViewChanged, viewportChanged);
+  bool modelViewChanged, viewportChanged, needActiveFrame;
+  ScreenBase const & modelView = ProcessEvents(modelViewChanged, viewportChanged, needActiveFrame);
   if (viewportChanged || m_needRestoreSize)
     OnResize(modelView);
 
@@ -1762,7 +1762,7 @@ void FrontendRenderer::RenderFrame()
     return;
 
   // Check for a frame is active.
-  bool isActiveFrame = modelViewChanged || viewportChanged;
+  bool isActiveFrame = modelViewChanged || viewportChanged || needActiveFrame;
 
   if (isActiveFrame)
     PrepareScene(modelView);
@@ -1787,6 +1787,9 @@ void FrontendRenderer::RenderFrame()
 #endif
 
   RenderScene(modelView, isActiveFrameForScene);
+
+  if (m_renderInjectionHandler)
+    m_renderInjectionHandler(m_context, m_texMng, make_ref(m_gpuProgramManager), false);
 
   m_context->EndRendering();
 
@@ -2304,6 +2307,9 @@ void FrontendRenderer::OnContextDestroy()
 {
   LOG(LINFO, ("On context destroy."));
 
+  if (m_renderInjectionHandler)
+    m_renderInjectionHandler(m_context, m_texMng, make_ref(m_gpuProgramManager), true);
+
   // Clear all graphics.
   for (RenderLayer & layer : m_layers)
   {
@@ -2557,10 +2563,12 @@ void FrontendRenderer::OnEnterBackground()
   m_myPositionController->OnEnterBackground();
 }
 
-ScreenBase const & FrontendRenderer::ProcessEvents(bool & modelViewChanged, bool & viewportChanged)
+ScreenBase const & FrontendRenderer::ProcessEvents(bool & modelViewChanged, bool & viewportChanged, 
+                                                   bool & needActiveFrame)
 {
   TRACE_SECTION("[drape] ProcessEvents");
-  ScreenBase const & modelView = m_userEventStream.ProcessEvents(modelViewChanged, viewportChanged);
+  ScreenBase const & modelView = m_userEventStream.ProcessEvents(modelViewChanged, viewportChanged, 
+                                                                 needActiveFrame);
   gui::DrapeGui::Instance().SetInUserAction(m_userEventStream.IsInUserAction());
 
   // Location- or compass-update could have changed model view on the previous frame.

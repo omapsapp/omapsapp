@@ -1,3 +1,4 @@
+#pragma once
 #import <MetalKit/MetalKit.h>
 
 #include "drape/data_buffer.hpp"

@@ -270,6 +270,7 @@ void VulkanPipeline::ResetCache(VkDevice device, VkRenderPass renderPass)
 
 void VulkanPipeline::Destroy(VkDevice device)
 {
+  vkDeviceWaitIdle(device);
   Dump(device);
   ResetCache(device);
   vkDestroyPipelineCache(device, m_vulkanPipelineCache, nullptr);
@@ -292,7 +293,7 @@ VkPipeline VulkanPipeline::GetPipeline(VkDevice device, PipelineKey const & key)
   VkPipelineRasterizationStateCreateInfo rasterizationStateCreateInfo = {};
   rasterizationStateCreateInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
   rasterizationStateCreateInfo.polygonMode = VK_POLYGON_MODE_FILL;
-  rasterizationStateCreateInfo.cullMode = VK_CULL_MODE_BACK_BIT;
+  rasterizationStateCreateInfo.cullMode = key.m_cullingEnabled ? VK_CULL_MODE_BACK_BIT : VK_CULL_MODE_NONE;
   rasterizationStateCreateInfo.frontFace = VK_FRONT_FACE_CLOCKWISE;
   rasterizationStateCreateInfo.lineWidth = 1.0f;
 
@@ -563,7 +564,10 @@ bool VulkanPipeline::PipelineKey::operator<(PipelineKey const & rhs) const
   if (m_primitiveTopology != rhs.m_primitiveTopology)
     return m_primitiveTopology < rhs.m_primitiveTopology;
 
-  return m_blendingEnabled < rhs.m_blendingEnabled;
+  if (m_blendingEnabled != rhs.m_blendingEnabled)
+    return m_blendingEnabled < rhs.m_blendingEnabled;
+
+  return m_cullingEnabled < rhs.m_cullingEnabled;
 }
 }  // namespace vulkan
 }  // namespace dp
