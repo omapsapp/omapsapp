@@ -44,3 +44,13 @@ fileprivate struct AssociatedKeys {
     applyTheme()
   }
 }
+
+extension UIView {
+  func setStyle(_ style: StyleSheet) {
+    styleName = style.styleName
+  }
+
+  func setStyleAndApply(_ style: StyleSheet) {
+    setStyleNameAndApply(style.styleName)
+  }
+}
