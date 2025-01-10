@@ -764,7 +764,7 @@ private:
   CategoriesCollection m_categories;
   kml::GroupIdCollection m_unsortedBmGroupsIdList;
 
-  std::string m_lastCategoryUrl;
+  std::string m_lastCategoryFile;
   kml::MarkGroupId m_lastEditedGroupId = kml::kInvalidMarkGroupId;
   kml::PredefinedColor m_lastColor = kml::PredefinedColor::Red;
   UserMarkLayers m_userMarkLayers;

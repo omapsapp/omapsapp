@@ -100,6 +100,7 @@ public:
   void SetFileName(std::string const & fileName) { m_file = fileName; }
   std::string GetName() const;
   std::string const & GetFileName() const { return m_file; }
+  std::string GetFileNameWithoutPath() const;
 
   void EnableAutoSave(bool enable) { m_autoSave = enable; }
   bool IsAutoSaveEnabled() const { return m_autoSave; }

@@ -7,32 +7,44 @@
 UNIT_TEST(FileName_Smoke)
 {
   std::string name = "/Users/xxx/Documents/test.test";
+  TEST_EQUAL(base::FileNameFromFullPath(name), "test.test", ());
   TEST_EQUAL(base::GetFileExtension(name), ".test", ());
   base::GetNameFromFullPath(name);
   TEST_EQUAL(name, "test.test", ());
   base::GetNameFromFullPath(name);
   TEST_EQUAL(name, "test.test", ());
+  TEST_EQUAL(base::FileNameFromFullPath(name), "test.test", ());
   base::GetNameWithoutExt(name);
   TEST_EQUAL(name, "test", ());
 
   name = "C:\\My Documents\\test.test";
+  TEST_EQUAL(base::FileNameFromFullPath(name), "test.test", ());
   TEST_EQUAL(base::GetFileExtension(name), ".test", ());
   base::GetNameFromFullPath(name);
   TEST_EQUAL(name, "test.test", ());
   base::GetNameWithoutExt(name);
   TEST_EQUAL(name, "test", ());
 
+  name = "";
+  TEST_EQUAL(base::FileNameFromFullPath(name), "", ());
+  TEST_EQUAL(base::GetFileExtension(name), std::string(), ());
+  base::GetNameFromFullPath(name);
+  TEST(name.empty(), ());
+
   name = "/";
+  TEST_EQUAL(base::FileNameFromFullPath(name), "", ());
   TEST_EQUAL(base::GetFileExtension(name), std::string(), ());
   base::GetNameFromFullPath(name);
   TEST(name.empty(), ());
 
   name = "C:\\";
+  TEST_EQUAL(base::FileNameFromFullPath(name), "", ());
   TEST_EQUAL(base::GetFileExtension(name), std::string(), ());
   base::GetNameFromFullPath(name);
   TEST(name.empty(), ());
 
   name = "../test";
+  TEST_EQUAL(base::FileNameFromFullPath(name), "test", ());
   TEST_EQUAL(base::GetFileExtension(name), std::string(), ());
   base::GetNameFromFullPath(name);
   TEST_EQUAL(name, "test", ());

@@ -1921,13 +1921,17 @@ Track * BookmarkManager::AddTrack(std::unique_ptr<Track> && track)
 
 void BookmarkManager::SaveState() const
 {
-  settings::Set(kLastEditedBookmarkCategory, m_lastCategoryUrl);
+  settings::Set(kLastEditedBookmarkCategory, m_lastCategoryFile);
   settings::Set(kLastEditedBookmarkColor, static_cast<uint32_t>(m_lastColor));
 }
 
 void BookmarkManager::LoadState()
 {
-  settings::TryGet(kLastEditedBookmarkCategory, m_lastCategoryUrl);
+  settings::TryGet(kLastEditedBookmarkCategory, m_lastCategoryFile);
+
+  // Migration to fix a bug with unique full paths for each Testflight installation.
+  if (auto const slashPath = m_lastCategoryFile.find_last_of('/'); slashPath != std::string::npos)
+    m_lastCategoryFile = base::FileNameFromFullPath(m_lastCategoryFile);
 
   uint32_t color;
   if (settings::Get(kLastEditedBookmarkColor, color) &&
@@ -2317,14 +2321,10 @@ kml::MarkGroupId BookmarkManager::LastEditedBMCategory()
   if (HasBmCategory(m_lastEditedGroupId))
     return m_lastEditedGroupId;
 
-  for (auto & cat : m_categories)
-  {
-    if (cat.second->GetFileName() == m_lastCategoryUrl)
-    {
-      m_lastEditedGroupId = cat.first;
-      return m_lastEditedGroupId;
-    }
-  }
+  for (auto const & [groupId, category] : m_categories)
+    if (category->GetFileNameWithoutPath() == m_lastCategoryFile)
+      return m_lastEditedGroupId = groupId;
+
   m_lastEditedGroupId = CheckAndCreateDefaultCategory();
   return m_lastEditedGroupId;
 }
@@ -2337,8 +2337,11 @@ kml::PredefinedColor BookmarkManager::LastEditedBMColor() const
 
 void BookmarkManager::SetLastEditedBmCategory(kml::MarkGroupId groupId)
 {
+  if (m_lastEditedGroupId == groupId)
+    return;
+  
   m_lastEditedGroupId = groupId;
-  m_lastCategoryUrl = GetBmCategory(groupId)->GetFileName();
+  m_lastCategoryFile = GetBmCategory(groupId)->GetFileNameWithoutPath();
   SaveState();
 }
 
