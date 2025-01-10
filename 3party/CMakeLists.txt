@@ -77,6 +77,7 @@ if (PLATFORM_DESKTOP)
   set(CMAKE_OBJC_FLAGS "")
   add_subdirectory(glfw)
   set_target_properties(glfw PROPERTIES UNITY_BUILD OFF)
+  set_target_properties(glfw PROPERTIES XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC NO)
   set(CMAKE_OBJC_FLAGS -fobjc-arc)
 
   add_subdirectory(imgui)
