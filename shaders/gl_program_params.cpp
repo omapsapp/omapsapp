@@ -230,4 +230,14 @@ void GLProgramParamsSetter::Apply(ref_ptr<dp::GraphicsContext> context,
 
   Parameter::CheckApply(guard, "u_framebufferMetrics", params.m_framebufferMetrics);
 }
+
+void GLProgramParamsSetter::Apply(ref_ptr<dp::GraphicsContext> context,
+                                  ref_ptr<dp::GpuProgram> program, 
+                                  ImGuiProgramParams const & params)
+{
+  UNUSED_VALUE(context);
+  UniformsGuard guard(program, params);
+
+  Parameter::CheckApply(guard, "u_projection", params.m_projection);
+}
 }  // namespace gpu
