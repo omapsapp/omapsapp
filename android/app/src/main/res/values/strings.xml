@@ -618,7 +618,7 @@
     <!-- For the first routing -->
     <string name="decline">Decline</string>
     <string name="mobile_data_dialog">Use mobile internet to show detailed information?</string>
-    <string name="mobile_data_option_always">Use Always</string>
+    <string name="mobile_data_option_always">Always Use</string>
     <string name="mobile_data_option_today">Only Today</string>
     <string name="mobile_data_option_not_today">Do not Use Today</string>
     <string name="mobile_data">Mobile Internet</string>
