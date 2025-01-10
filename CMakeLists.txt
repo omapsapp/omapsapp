@@ -90,6 +90,17 @@ else()
   message(FATAL_ERROR "Unsupported platform: ${CMAKE_SYSTEM_NAME}")
 endif()
 
+# Metal language support
+if(${PLATFORM_MAC})
+  list(APPEND CMAKE_MODULE_PATH ${OMIM_ROOT}/3party/CMake-MetalShaderSupport/cmake)
+  include(CheckLanguage)
+  include(MetalShaderSupport)
+  check_language(Metal)
+  if(CMAKE_Metal_COMPILER)
+    enable_language(Metal)
+  endif()
+endif()
+
 # Sanitizer
 if (PLATFORM_DESKTOP)
   # https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation
@@ -394,6 +405,7 @@ if (PLATFORM_DESKTOP)
     add_subdirectory(qt)
     omim_add_tool_subdirectory(skin_generator)
   endif()
+  add_subdirectory(dev_sandbox)
 endif()
 
 omim_add_test_subdirectory(qt_tstfrm)
