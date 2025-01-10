@@ -23,9 +23,8 @@ final class RouteManagerCell: MWMTableViewCell {
   override var snapshot: UIView {
     let skipViews: [UIView] = [typeImage, separator1, separator2]
     skipViews.forEach { $0.isHidden = true }
-    setStyleAndApply("BlackOpaqueBackground")
     let snapshot = super.snapshot
-    setStyleAndApply("Background")
+    setStyle(.global(.background))
     skipViews.forEach { $0.isHidden = false }
     return snapshot
   }

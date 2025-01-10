@@ -71,7 +71,7 @@ final class TrackRecordingViewController: MWMViewController {
     view.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(button)
 
-    button.setStyleAndApply("TrackRecordingWidgetButton")
+    button.setStyle(.global(.trackRecordingWidgetButton))
     button.tintColor = Constants.color.darker
     button.translatesAutoresizingMaskIntoConstraints = false
     button.setImage(UIImage(resource: .icMenuBookmarkTrackRecording), for: .normal)

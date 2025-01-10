@@ -39,7 +39,7 @@ fileprivate struct AssociatedKeys {
     }
   }
 
-  @objc func setStyleAndApply(_ styleName: String) {
+  @objc func setStyleNameAndApply(_ styleName: String) {
     self.styleName = styleName
     applyTheme()
   }

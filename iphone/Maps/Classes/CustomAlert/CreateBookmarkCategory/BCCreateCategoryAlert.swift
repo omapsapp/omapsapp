@@ -103,7 +103,7 @@ final class BCCreateCategoryAlert: MWMAlert {
       rightButton.isEnabled = false
     }
 
-    charactersCountLabel.setStyleAndApply(styleName)
+    charactersCountLabel.setStyleNameAndApply(styleName)
     textFieldContainer.layer.borderColor = charactersCountLabel.textColor.cgColor
   }
 

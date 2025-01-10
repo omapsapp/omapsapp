@@ -64,6 +64,6 @@ class SettingsTableViewSwitchCell: MWMTableViewCell {
 
   private func styleTitle() {
     let style = "regular17:" + (isEnabled ? "blackPrimaryText" : "blackSecondaryText")
-    textLabel?.setStyleAndApply(style)
+    textLabel?.setStyleNameAndApply(style)
   }
 }

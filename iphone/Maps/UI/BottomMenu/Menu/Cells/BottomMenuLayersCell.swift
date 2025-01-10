@@ -37,17 +37,17 @@ class BottomMenuLayersCell: UITableViewCell {
   
   private func updateSubwayButton() {
     let enabled = MapOverlayManager.transitEnabled()
-    subwayButton.setStyleAndApply(enabled ? "MenuButtonEnabled" : "MenuButtonDisabled")
+    subwayButton.setStyleNameAndApply(enabled ? "MenuButtonEnabled" : "MenuButtonDisabled")
   }
   
   private func updateIsoLinesButton() {
     let enabled = MapOverlayManager.isoLinesEnabled()
-    isoLinesButton.setStyleAndApply(enabled ? "MenuButtonEnabled" : "MenuButtonDisabled")
+    isoLinesButton.setStyleNameAndApply(enabled ? "MenuButtonEnabled" : "MenuButtonDisabled")
   }
     
   private func updateOutdoorButton() {
     let enabled = MapOverlayManager.outdoorEnabled()
-    outdoorButton.setStyleAndApply(enabled ? "MenuButtonEnabled" : "MenuButtonDisabled")
+    outdoorButton.setStyleNameAndApply(enabled ? "MenuButtonEnabled" : "MenuButtonDisabled")
   }
   
   @IBAction func onCloseButtonPressed(_ sender: Any) {

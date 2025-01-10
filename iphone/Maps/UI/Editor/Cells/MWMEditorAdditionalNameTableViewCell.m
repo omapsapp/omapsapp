@@ -45,12 +45,12 @@ static CGFloat const kErrorLabelHeight = 16;
   if (self.isValid)
   {
     self.errorLabelHeight.constant = 0;
-    [self.contentView setStyleAndApply: @"Background"];
+    [self.contentView setStyleNameAndApply: @"Background"];
   }
   else
   {
     self.errorLabelHeight.constant = kErrorLabelHeight;
-    [self.contentView setStyleAndApply: @"ErrorBackground"];
+    [self.contentView setStyleNameAndApply: @"ErrorBackground"];
   }
   [self layoutIfNeeded];
 }

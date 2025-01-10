@@ -85,11 +85,6 @@ extension ElevationProfilePresenter: ElevationProfilePresenterProtocol {
     view?.setChartData(ChartPresentationData(chartData, formatter: formatter))
     view?.reloadDescription()
 
-    guard !profileData.isTrackRecording else {
-      view?.isChartViewInfoHidden = true
-      return
-    }
-
     view?.setActivePoint(profileData.activePoint)
     view?.setMyPosition(profileData.myPosition)
     bookmarkManager.setElevationActivePointChanged(profileData.trackId) { [weak self] distance in

@@ -73,7 +73,7 @@ using namespace osmoh;
     if (image.tag == tag)
     {
       image.image = [UIImage imageNamed:selected ? @"radioBtnOn" : @"radioBtnOff"];
-      [image setStyleAndApply: selected ? @"MWMBlue" : @"MWMGray"];
+      [image setStyleNameAndApply: selected ? @"MWMBlue" : @"MWMGray"];
     }
   }
 }

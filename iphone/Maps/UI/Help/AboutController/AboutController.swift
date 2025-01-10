@@ -109,7 +109,7 @@ private extension AboutController {
     }
 
     func setupHeaderTitle() {
-      headerTitleLabel.setStyleAndApply("semibold18:blackPrimaryText")
+      headerTitleLabel.setStyleNameAndApply("semibold18:blackPrimaryText")
       headerTitleLabel.text = L("about_headline")
       headerTitleLabel.textAlignment = .center
       headerTitleLabel.numberOfLines = 1
@@ -140,7 +140,7 @@ private extension AboutController {
     }
 
     func setupInfoTable() {
-      infoTableView.setStyleAndApply("ClearBackground")
+      infoTableView.setStyleNameAndApply("ClearBackground")
       infoTableView.delegate = self
       infoTableView.dataSource = self
       infoTableView.separatorStyle = .none
@@ -151,7 +151,7 @@ private extension AboutController {
     }
 
     func setupSocialMediaCollection() {
-      socialMediaHeaderLabel.setStyleAndApply("regular16:blackPrimaryText")
+      socialMediaHeaderLabel.setStyleNameAndApply("regular16:blackPrimaryText")
       socialMediaHeaderLabel.text = L("follow_us")
       socialMediaHeaderLabel.numberOfLines = 1
       socialMediaHeaderLabel.allowsDefaultTighteningForTruncation = true
@@ -177,7 +177,7 @@ private extension AboutController {
       })
     }
 
-    view.setStyleAndApply("PressBackground")
+    view.setStyleNameAndApply("PressBackground")
     
     setupTitle()
     setupScrollAndStack()
@@ -438,7 +438,7 @@ private extension UIStackView {
   func addArrangedSubviewWithSeparator(_ view: UIView) {
     if !arrangedSubviews.isEmpty {
       let separator = UIView()
-      separator.setStyleAndApply("Divider")
+      separator.setStyleNameAndApply("Divider")
       separator.isUserInteractionEnabled = false
       separator.translatesAutoresizingMaskIntoConstraints = false
       addArrangedSubview(separator)

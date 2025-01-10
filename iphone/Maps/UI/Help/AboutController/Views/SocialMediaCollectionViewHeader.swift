@@ -16,7 +16,7 @@ final class SocialMediaCollectionViewHeader: UICollectionReusableView {
 
   private func setupView() {
     addSubview(titleLabel)
-    titleLabel.setStyleAndApply("regular16:blackPrimaryText")
+    titleLabel.setStyleNameAndApply("regular16:blackPrimaryText")
     titleLabel.numberOfLines = 1
     titleLabel.allowsDefaultTighteningForTruncation = true
     titleLabel.adjustsFontSizeToFitWidth = true
