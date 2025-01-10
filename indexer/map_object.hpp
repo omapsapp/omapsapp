@@ -109,6 +109,9 @@ protected:
   /// @returns "the best" single type to display in UI.
   std::string GetLocalizedType() const;
 
+  /// @returns all readable internal types separated by kFieldsSeparator for debugging.
+  std::string GetAllReadableTypes() const;
+    
   FeatureID m_featureID;
   m2::PointD m_mercator;
 

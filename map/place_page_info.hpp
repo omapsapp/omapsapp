@@ -20,6 +20,8 @@
 
 namespace place_page
 {
+std::string const kDebugAllTypesSetting = "DebugAllTypes";
+
 enum class OpeningMode
 {
   Preview = 0,

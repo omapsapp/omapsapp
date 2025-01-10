@@ -12,6 +12,7 @@
 #include "platform/utm_mgrs_utils.hpp"
 #include "platform/distance.hpp"
 #include "platform/duration.hpp"
+#include "platform/settings.hpp"
 
 #include "geometry/mercator.hpp"
 
@@ -205,6 +206,12 @@ std::string Info::FormatSubtitle(bool withTypes, bool withMainType) const
   auto const fee = GetLocalizedFeeType();
   if (!fee.empty())
     append(fee);
+
+  // Debug types
+  bool debugAllTypesSetting = false;
+  settings::TryGet(kDebugAllTypesSetting, debugAllTypesSetting);
+  if (debugAllTypesSetting)
+    append(GetAllReadableTypes());
 
   return result;
 }
