@@ -37,9 +37,6 @@
          location = "container:agg/agg.xcodeproj">
       </FileRef>
       <FileRef
-         location = "container:bsdiff/bsdiff.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "container:expat/expat.xcodeproj">
       </FileRef>
       <FileRef

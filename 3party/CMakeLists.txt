@@ -55,7 +55,6 @@ if (NOT WITH_SYSTEM_PROVIDED_3PARTY)
 endif()
 
 add_subdirectory(agg)
-add_subdirectory(bsdiff-courgette)
 add_subdirectory(minizip)
 add_subdirectory(open-location-code)
 add_subdirectory(opening_hours)

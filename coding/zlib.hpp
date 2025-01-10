@@ -5,18 +5,15 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <optional>
 #include <string>
+#include <span>
 
 #include "zlib.h"
 
 namespace coding
 {
-// Following classes are wrappers around ZLib routines.
-//
-// *NOTE* All Inflate() and Deflate() methods may return false in case
-// of errors. In this case the output sequence may be already
-// partially formed, so the user needs to implement their own
-// roll-back strategy.
+// ZLib wrapper for compression and decompression.
 class ZLib
 {
 public:
@@ -33,18 +30,17 @@ public:
     explicit Inflate(Format format) noexcept : m_format(format) {}
 
     template <typename OutIt>
-    bool operator()(void const * data, size_t size, OutIt out) const
+    std::optional<void> operator()(std::span<const std::byte> data, OutIt out) const
     {
-      if (data == nullptr)
-        return false;
-      InflateProcessor processor(m_format, data, size);
+      ASSERT(!data.empty(), ());
+      InflateProcessor processor(m_format, data);
       return Process(processor, out);
     }
 
     template <typename OutIt>
-    bool operator()(std::string const & s, OutIt out) const
+    std::optional<void> operator()(std::string const & s, OutIt out) const
     {
-      return (*this)(s.c_str(), s.size(), out);
+      return (*this)(std::as_bytes(std::span{s}), out);
     }
 
   private:
@@ -62,27 +58,26 @@ public:
 
     enum class Level
     {
-      NoCompression,
-      BestSpeed,
-      BestCompression,
-      DefaultCompression
+      NoCompression = Z_NO_COMPRESSION,
+      BestSpeed = Z_BEST_SPEED,
+      BestCompression = Z_BEST_COMPRESSION,
+      DefaultCompression = Z_DEFAULT_COMPRESSION
     };
 
     Deflate(Format format, Level level) noexcept : m_format(format), m_level(level) {}
 
     template <typename OutIt>
-    bool operator()(void const * data, size_t size, OutIt out) const
+    std::optional<void> operator()(std::span<const std::byte> data, OutIt out) const
     {
-      if (data == nullptr)
-        return false;
-      DeflateProcessor processor(m_format, m_level, data, size);
+      ASSERT(!data.empty(), ());
+      DeflateProcessor processor(m_format, m_level, data);
       return Process(processor, out);
     }
 
     template <typename OutIt>
-    bool operator()(std::string const & s, OutIt out) const
+    std::optional<void> operator()(std::string const & s, OutIt out) const
     {
-      return (*this)(s.c_str(), s.size(), out);
+      return (*this)(std::as_bytes(std::span{s}), out);
     }
 
   private:
@@ -94,9 +89,9 @@ private:
   class Processor
   {
   public:
-    static size_t constexpr kBufferSize = 1024;
+    static size_t constexpr kBufferSize = 8192;
 
-    Processor(void const * data, size_t size) noexcept;
+    Processor(std::span<const std::byte> data) noexcept;
     virtual ~Processor() noexcept = default;
 
     inline bool IsInit() const noexcept { return m_init; }
@@ -113,9 +108,11 @@ private:
     }
 
   protected:
-    z_stream m_stream;
+    z_stream m_stream{};
     bool m_init = false;
     unsigned char m_buffer[kBufferSize] = {};
+
+    void InitStream();
 
     DISALLOW_COPY_AND_MOVE(Processor);
   };
@@ -123,8 +120,7 @@ private:
   class DeflateProcessor final : public Processor
   {
   public:
-    DeflateProcessor(Deflate::Format format, Deflate::Level level, void const * data,
-                     size_t size) noexcept;
+    DeflateProcessor(Deflate::Format format, Deflate::Level level, std::span<const std::byte> data) noexcept;
     virtual ~DeflateProcessor() noexcept override;
 
     int Process(int flush);
@@ -135,7 +131,7 @@ private:
   class InflateProcessor final : public Processor
   {
   public:
-    InflateProcessor(Inflate::Format format, void const * data, size_t size) noexcept;
+    InflateProcessor(Inflate::Format format, std::span<const std::byte> data) noexcept;
     virtual ~InflateProcessor() noexcept override;
 
     int Process(int flush);
@@ -144,10 +140,10 @@ private:
   };
 
   template <typename Processor, typename OutIt>
-  static bool Process(Processor & processor, OutIt out)
+  static std::optional<void> Process(Processor & processor, OutIt out)
   {
     if (!processor.IsInit())
-      return false;
+      return std::nullopt;
 
     int ret = Z_OK;
     while (true)
@@ -158,7 +154,7 @@ private:
       {
         ret = processor.Process(flush);
         if (ret != Z_OK && ret != Z_STREAM_END)
-          return false;
+          return std::nullopt;
 
         if (!processor.BufferIsFull())
           break;
@@ -171,7 +167,8 @@ private:
     }
 
     processor.MoveOut(out);
-    return processor.ConsumedAll();
+    return processor.ConsumedAll() ? std::optional<void>{} : std::nullopt;
   }
 };
+
 }  // namespace coding

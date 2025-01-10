@@ -23,7 +23,6 @@ omim_link_libraries(
   mwm_diff
   coding
   base
-  bsdiff
   ICU::i18n
   cppjansson
   opening_hours

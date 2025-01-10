@@ -93,7 +93,6 @@ target_link_libraries(${PROJECT_NAME}
   # indexer
   # platform
   # mwm_diff
-  # bsdiff
   # geometry
   # coding
   # base

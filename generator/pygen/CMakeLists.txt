@@ -32,7 +32,6 @@ omim_link_libraries(
   ICU::i18n
   cppjansson
   protobuf
-  bsdiff
   minizip
   succinct
   pugixml

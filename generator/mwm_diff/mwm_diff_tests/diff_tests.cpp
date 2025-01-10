@@ -39,9 +39,12 @@ UNIT_TEST(IncrementalUpdates_Smoke)
   }
 
   base::Cancellable cancellable;
-  TEST(MakeDiff(oldMwmPath, newMwmPath1, diffPath), ());
-  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Ok,
-             ());
+
+  // Reset cancellable before test.
+  cancellable.Reset();
+  LOG(LINFO, ("Starting first diff application"));
+  TEST(MakeDiff(oldMwmPath, newMwmPath1, diffPath, cancellable), ());
+  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Ok, ());
 
   {
     // Alter the old mwm slightly.
@@ -54,15 +57,17 @@ UNIT_TEST(IncrementalUpdates_Smoke)
     writer.Write(oldMwmContents.data(), oldMwmContents.size());
   }
 
-  TEST(MakeDiff(oldMwmPath, newMwmPath1, diffPath), ());
-  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Ok,
-             ());
+  // Reset cancellable before test.
+  cancellable.Reset();
+  LOG(LINFO, ("Starting second diff application"));
+  TEST(MakeDiff(oldMwmPath, newMwmPath1, diffPath, cancellable), ());
+  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Ok, ());
 
   TEST(base::IsEqualFiles(newMwmPath1, newMwmPath2), ());
 
   cancellable.Cancel();
-  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable),
-             DiffApplicationResult::Cancelled, ());
+  LOG(LINFO, ("Cancelling ApplyDiff"));
+  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Cancelled, ());
   cancellable.Reset();
 
   {
@@ -77,15 +82,19 @@ UNIT_TEST(IncrementalUpdates_Smoke)
     writer.Write(diffContents.data(), diffContents.size());
   }
 
-  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable),
-             DiffApplicationResult::Failed, ());
+  // Reset cancellable before test.
+  cancellable.Reset();
+  LOG(LINFO, ("Starting corrupted diff application"));
+  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Failed, ());
 
   {
     // Reset the diff file contents.
     FileWriter writer(diffPath);
   }
 
-  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable),
-             DiffApplicationResult::Failed, ());
+  // Reset cancellable before test.
+  cancellable.Reset();
+  LOG(LINFO, ("Starting empty diff application"));
+  TEST_EQUAL(ApplyDiff(oldMwmPath, newMwmPath2, diffPath, cancellable), DiffApplicationResult::Failed, ());
 }
 }  // namespace generator::diff_tests
