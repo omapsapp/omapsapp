@@ -68,6 +68,4 @@
   <string name="placepage_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
 
   <string name="car_notification_channel_name" translatable="false">Car</string>
-
-  <string name="android_auto_fgs_explanation_for_special_use" translatable="false">Since Android 14, every Foreground Service must have a type. There is no specific service type for Android Auto.</string>
 </resources>

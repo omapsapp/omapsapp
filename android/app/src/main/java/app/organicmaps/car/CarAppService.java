@@ -1,6 +1,5 @@
 package app.organicmaps.car;
 
-import android.app.Notification;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
@@ -23,7 +22,6 @@ import androidx.lifecycle.LifecycleOwner;
 import app.organicmaps.BuildConfig;
 import app.organicmaps.R;
 import app.organicmaps.api.Const;
-import app.organicmaps.routing.NavigationService;
 
 public final class CarAppService extends androidx.car.app.CarAppService
 {
@@ -53,20 +51,7 @@ public final class CarAppService extends androidx.car.app.CarAppService
   public Session onCreateSession(@Nullable SessionInfo sessionInfo)
   {
     createNotificationChannel();
-    startForeground(NOTIFICATION_ID, getNotification());
-    final CarAppSession carAppSession = new CarAppSession(sessionInfo);
-    carAppSession.getLifecycle().addObserver(new DefaultLifecycleObserver()
-    {
-      @Override
-      public void onDestroy(@NonNull LifecycleOwner owner)
-      {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-          stopForeground(STOP_FOREGROUND_REMOVE);
-        else
-          stopForeground(true);
-      }
-    });
-    return carAppSession;
+    return new CarAppSession(sessionInfo);
   }
 
   @NonNull
@@ -103,14 +88,5 @@ public final class CarAppService extends androidx.car.app.CarAppService
             .setVibrationEnabled(false) // less annoying
             .build();
     notificationManager.createNotificationChannel(notificationChannel);
-  }
-
-  @NonNull
-  private Notification getNotification()
-  {
-    return NavigationService.getNotificationBuilder(this)
-        .setChannelId(ANDROID_AUTO_NOTIFICATION_CHANNEL_ID)
-        .setContentTitle(getString(R.string.aa_connected_to_car_notification_title))
-        .build();
   }
 }
