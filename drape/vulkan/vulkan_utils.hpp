@@ -54,6 +54,18 @@ struct SamplerKey
 
   uint32_t m_sampler = 0;
 };
+
+class DebugName
+{
+public:
+  static void Init(VkInstance instance, VkDevice device);
+  static void Set(VkObjectType type, uint64_t handle, char const * name);
+
+private:
+  static VkDevice m_device;
+  static PFN_vkSetDebugUtilsObjectNameEXT vkSetDebugUtilsObjectNameEXT;
+};
+
 }  // namespace vulkan
 }  // namespace dp
 
@@ -81,3 +93,18 @@ struct SamplerKey
     CHECK(statusCode == VK_SUCCESS, ("Vulkan error:", #method, "finished with code", \
                                      dp::vulkan::GetVulkanResultString(statusCode))); \
   } while (false)
+
+#if defined(OMIM_OS_MAC) || defined(OMIM_OS_LINUX)
+#define INIT_DEBUG_NAME_VK(instance, device) \
+  do { \
+    DebugName::Init(instance, device); \
+  } while (false)
+
+#define SET_DEBUG_NAME_VK(type, handle, name) \
+  do { \
+    DebugName::Set(type, (uint64_t)handle, name); \
+  } while (false)
+#else
+#define INIT_DEBUG_NAME_VK(instance, device)
+#define SET_DEBUG_NAME_VK(type, handle, name)
+#endif

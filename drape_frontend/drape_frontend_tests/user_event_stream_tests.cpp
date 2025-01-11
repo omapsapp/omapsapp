@@ -65,8 +65,8 @@ public:
 
   void RunTest()
   {
-    bool dummy1, dummy2;
-    m_stream.ProcessEvents(dummy1, dummy2);
+    bool dummy1, dummy2, dummy3;
+    m_stream.ProcessEvents(dummy1, dummy2, dummy3);
     TEST_EQUAL(m_expectation.empty(), true, ());
   }
 

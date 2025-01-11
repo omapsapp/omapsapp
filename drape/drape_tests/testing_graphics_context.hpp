@@ -27,6 +27,7 @@ public:
   void Clear(uint32_t clearBits, uint32_t storeBits) override {}
   void Flush() override {}
   void SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override {}
+  void SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override {}
   void SetDepthTestEnabled(bool enabled) override {}
   void SetDepthTestFunction(dp::TestFunction depthFunction) override {}
   void SetStencilTestEnabled(bool enabled) override {}
@@ -34,6 +35,7 @@ public:
   void SetStencilActions(dp::StencilFace face, dp::StencilAction stencilFailAction,
                          dp::StencilAction depthFailAction, dp::StencilAction passAction) override {}
   void SetStencilReferenceValue(uint32_t stencilReferenceValue) override {}
+  void SetCullingEnabled(bool enabled) override {}
 
 private:
   dp::ApiVersion m_apiVersion = dp::ApiVersion::OpenGLES2;

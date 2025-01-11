@@ -22,6 +22,7 @@ public:
   void Clear(uint32_t clearBits, uint32_t storeBits) override;
   void Flush() override;
   void SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
+  void SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
   void SetDepthTestEnabled(bool enabled) override;
   void SetDepthTestFunction(TestFunction depthFunction) override;
   void SetStencilTestEnabled(bool enabled) override;
@@ -31,5 +32,7 @@ public:
   
   // Do not use custom stencil reference value in OpenGL rendering.
   void SetStencilReferenceValue(uint32_t stencilReferenceValue) override {}
+
+  void SetCullingEnabled(bool enabled) override;
 };
 }  // namespace dp

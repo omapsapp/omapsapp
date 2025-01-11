@@ -129,10 +129,9 @@ target_sources(${PROJECT_NAME}
     vulkan_program_pool.hpp
 )
 
-if (PLATFORM_IPHONE)
+if (PLATFORM_IPHONE OR PLATFORM_MAC)
   target_sources(${PROJECT_NAME}
     PRIVATE
-      Metal/debug_rect.metal
       metal_program_params.hpp
       metal_program_params.mm
       metal_program_pool.hpp

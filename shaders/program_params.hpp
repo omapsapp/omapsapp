@@ -222,6 +222,14 @@ struct ALIGNMENT SMAAProgramParams
     Program::SmaaFinal)
 };
 
+struct ALIGNMENT ImGuiProgramParams
+{
+  glsl::mat4 m_projection;
+
+  BIND_PROGRAMS(ImGuiProgramParams,
+    Program::ImGui)
+};
+
 #undef ALIGNMENT
 
 class ProgramParamsSetter
@@ -248,5 +256,7 @@ public:
                      ref_ptr<dp::GpuProgram> program, ScreenQuadProgramParams const & params) = 0;
   virtual void Apply(ref_ptr<dp::GraphicsContext> context,
                      ref_ptr<dp::GpuProgram> program, SMAAProgramParams const & params) = 0;
+  virtual void Apply(ref_ptr<dp::GraphicsContext> context,
+                     ref_ptr<dp::GpuProgram> program, ImGuiProgramParams const & params) = 0;
 };
 }  // namespace gpu

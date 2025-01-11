@@ -66,4 +66,18 @@ add_subdirectory(vulkan_wrapper)
 
 if (PLATFORM_DESKTOP)
   add_subdirectory(libtess2)
+
+  set(GLFW_BUILD_DOCS OFF CACHE BOOL "")
+  set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "")
+  set(GLFW_BUILD_TESTS OFF CACHE BOOL "")
+  set(GLFW_INSTALL OFF CACHE BOOL "")
+  set(GLFW_VULKAN_STATIC OFF CACHE BOOL "")
+  set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "")
+  # Disable ARC for glfw and re-enable after it because it's globally set in the root CMakeLists.txt
+  set(CMAKE_OBJC_FLAGS "")
+  add_subdirectory(glfw)
+  set_target_properties(glfw PROPERTIES UNITY_BUILD OFF)
+  set(CMAKE_OBJC_FLAGS -fobjc-arc)
+
+  add_subdirectory(imgui)
 endif()

@@ -107,9 +107,10 @@ set(DRAPE_TESTABLE_SRC
   viewport.cpp
   viewport.hpp
   visual_scale.hpp
-  # TODO: Why Vulkan is added on all platforms, even on iOS and Mac?
   vulkan/vulkan_base_context.cpp
   vulkan/vulkan_base_context.hpp
+  vulkan/vulkan_context_factory.cpp
+  vulkan/vulkan_context_factory.hpp
   vulkan/vulkan_gpu_buffer_impl.cpp
   vulkan/vulkan_gpu_buffer_impl.hpp
   vulkan/vulkan_gpu_program.hpp
@@ -133,12 +134,8 @@ set(DRAPE_TESTABLE_SRC
   vulkan/vulkan_vertex_array_buffer_impl.cpp
 )
 
-set(SRC ${DRAPE_TESTABLE_SRC} gl_functions.cpp)
-
-if (PLATFORM_IPHONE)
-  append(SRC
-    hw_texture_ios.hpp
-    hw_texture_ios.mm
+if (PLATFORM_IPHONE OR PLATFORM_MAC)
+  append(DRAPE_TESTABLE_SRC
     metal/metal_base_context.hpp
     metal/metal_base_context.mm
     metal/metal_cleaner.hpp
@@ -152,6 +149,15 @@ if (PLATFORM_IPHONE)
     metal/metal_texture.mm
     metal/metal_vertex_array_buffer_impl.mm
     metal/render_state_metal.mm
+  )
+endif()
+
+set(SRC ${DRAPE_TESTABLE_SRC} gl_functions.cpp)
+
+if (PLATFORM_IPHONE)
+  append(SRC
+    hw_texture_ios.hpp
+    hw_texture_ios.mm
   )
 endif()
 
@@ -177,6 +183,7 @@ set(DRAPE_LINK_LIBRARIES
   ICU::i18n
   expat::expat
   $<$<BOOL:${PLATFORM_MAC}>:-framework\ OpenGL>
+  $<$<BOOL:${PLATFORM_MAC}>:-framework\ Metal>
   $<$<BOOL:${PLATFORM_LINUX}>:OpenGL::GL>
 )
 
