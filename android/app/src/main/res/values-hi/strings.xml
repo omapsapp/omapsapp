@@ -371,6 +371,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">भवन का नंबर</string>
     <string name="details">विवरण</string>
+    <string name="social_media">सोशल मीडिया</string>
+    <string name="building">इमारत</string>
     <string name="editor_add_phone">फोन नंबर डालें</string>
     <string name="level">मंजिल</string>
     <string name="downloader_mwm_migration_dialog">मार्ग बनाने के लिए, आपको सभी मानचित्र अपडेट करने होंगे और फिर मार्ग की दोबारा योजना बनानी होगी।</string>

@@ -452,6 +452,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Nº de porta</string>
     <string name="details">Detalhes</string>
+    <string name="social_media">Redes sociais</string>
+    <string name="building">Edifício</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Adicionar uma rua</string>
     <string name="choose_language">Escolher um idioma</string>

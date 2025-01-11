@@ -123,9 +123,6 @@
         <include
           android:id="@+id/block_zipcode"
           layout="@layout/item_editor_input"/>
-        <include
-          android:id="@+id/block_levels"
-          layout="@layout/item_editor_input"/>
       </LinearLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -141,6 +138,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/margin_base"
+          android:paddingBottom="@dimen/margin_half"
           android:fontFamily="@string/robotoMedium"
           android:text="@string/details"
           android:textAppearance="@style/MwmTextAppearance.Body3"
@@ -185,6 +183,14 @@
         </RelativeLayout>
 
         <include
+          android:id="@+id/block_operator"
+          layout="@layout/item_editor_input"/>
+
+        <include
+          android:id="@+id/block_website"
+          layout="@layout/item_editor_input"/>
+
+        <include
             android:id="@+id/block_website_menu"
             layout="@layout/item_editor_input"/>
 
@@ -219,12 +225,10 @@
         </RelativeLayout>
 
         <include
-            android:id="@+id/block_operator"
-            layout="@layout/item_editor_input"/>
-
-        <include
-          android:id="@+id/block_website"
+          android:id="@+id/block_email"
           layout="@layout/item_editor_input"/>
+
+        <!-- ToDo: Level is missing compared with iOS. -->
 
         <RelativeLayout
             android:id="@+id/block_wifi"
@@ -305,12 +309,28 @@
               android:layout_alignParentEnd="true"
               android:layout_centerVertical="true"/>
         </RelativeLayout>
+      </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        <!-- ToDo: Level is missing compared with iOS. -->
+    <androidx.cardview.widget.CardView
+      android:id="@+id/cv__social_media"
+      style="@style/MwmWidget.Editor.CardView">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/margin_base"
+        android:paddingStart="@dimen/margin_base">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_base"
+          android:paddingBottom="@dimen/margin_half"
+          android:fontFamily="@string/robotoMedium"
+          android:text="@string/social_media"
+          android:textAppearance="@style/MwmTextAppearance.Body3"
+          tools:ignore="UnusedAttribute"/>
 
-        <include
-          android:id="@+id/block_email"
-          layout="@layout/item_editor_input"/>
         <include
           android:id="@+id/block_facebook"
           layout="@layout/item_editor_input"/>
@@ -328,6 +348,33 @@
           layout="@layout/item_editor_input"/>
       </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/cv__building"
+      style="@style/MwmWidget.Editor.CardView">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/margin_base"
+        android:paddingStart="@dimen/margin_base">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_base"
+          android:paddingBottom="@dimen/margin_half"
+          android:fontFamily="@string/robotoMedium"
+          android:text="@string/building"
+          android:textAppearance="@style/MwmTextAppearance.Body3"
+          tools:ignore="UnusedAttribute"/>
+
+        <include
+          android:id="@+id/block_levels"
+          layout="@layout/item_editor_input"/>
+
+      </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
       android:id="@+id/cv__more"
       style="@style/MwmWidget.Editor.CardView">

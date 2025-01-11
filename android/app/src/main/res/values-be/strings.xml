@@ -467,6 +467,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Нумар будынка</string>
     <string name="details">Падрабязнасці</string>
+    <string name="social_media">Сацыяльныя сеткі</string>
+    <string name="building">Будынак</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Дадаць вуліцу</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

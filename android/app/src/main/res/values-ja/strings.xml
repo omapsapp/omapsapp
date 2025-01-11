@@ -471,6 +471,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">番地</string>
     <string name="details">詳細</string>
+    <string name="social_media">ソーシャルメディア</string>
+    <string name="building">建物</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">通りを追加</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

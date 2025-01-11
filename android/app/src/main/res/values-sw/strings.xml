@@ -109,6 +109,8 @@
     <!-- Status message indicating that user did not login to OSM profile yet. -->
     <string name="not_signed_in">Hujasajiliwa</string>
     <string name="login_osm">Ingia kwa OpenStreetMap</string>
+    <string name="social_media">Mitandao ya Kijamii</string>
+    <string name="building">Jengo</string>
     <string name="level">Ghorofa</string>
     <!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
     <string name="editor_default_language_hint">Kama ilivyoandikwa katika lugha ya kienyeji</string>

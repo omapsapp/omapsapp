@@ -465,6 +465,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Etxeko zenbakia</string>
     <string name="details">Xehetasunak</string>
+    <string name="social_media">Sare sozialak</string>
+    <string name="building">Eraikina</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Gehitu kale bat</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

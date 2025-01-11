@@ -443,6 +443,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">บ้านเลขที่</string>
     <string name="details">รายละเอียด</string>
+    <string name="social_media">โซเชียลมีเดีย</string>
+    <string name="building">อาคาร</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">เพิ่มถนน</string>
     <string name="choose_language">เลือกภาษา</string>

@@ -439,6 +439,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Husnummer</string>
     <string name="details">Detaljer</string>
+    <string name="social_media">Sociala medier</string>
+    <string name="building">Byggnad</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Lägg till en gata</string>
     <string name="choose_language">Välj ett språk</string>

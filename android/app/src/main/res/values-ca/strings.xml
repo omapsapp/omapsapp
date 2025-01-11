@@ -467,6 +467,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Número de la casa</string>
     <string name="details">Detalls</string>
+    <string name="social_media">Mitjans Socials</string>
+    <string name="building">Edifici</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Afegeix un carrer</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

@@ -466,6 +466,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Číslo domu</string>
     <string name="details">Podrobnosti</string>
+    <string name="social_media">Sociálne médiá</string>
+    <string name="building">Budova</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Pridať ulicu</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->
