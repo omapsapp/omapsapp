@@ -1,0 +1,49 @@
+#
+# Update subways information.
+#
+name: Generator / Subways
+on:
+  push:
+    branches:
+      - generator-subways
+
+jobs:
+  update-subways:
+    name: Update Subways
+    runs-on: [self-hosted, planet]
+    environment: planet
+    concurrency:
+      group: planet
+      cancel-in-progress: false
+    timeout-minutes: 480 # 8 hours
+    steps:
+      - name: Sanity checks
+        run: |
+          [[ -n "${{ vars.PLANET_PBF }}" && -f "${{ vars.PLANET_PBF }}" ]] && \
+          [[ -n "${{ vars.PLANET_SUBWAY_BUILD }}" && "${{ vars.PLANET_SUBWAY_BUILD }}" != *$'\n'* ]] && \
+          [[ -n "${{ vars.PLANET_SUBWAY_HTML }}" && "${{ vars.PLANET_SUBWAY_HTML }}" != *$'\n'* ]] && \
+          [[ -n "${{ vars.PLANET_SUBWAY_DUMP }}" && "${{ vars.PLANET_SUBWAY_DUMP }}" != *$'\n'* ]] && \
+          echo 'GitHub Variables are OK'
+
+      - name: Update apt and install package
+        if: ${{ runner.name != 'planet' }} # pre-installed on planet
+        run: |
+          sudo apt-get update && sudo apt-get install -y osmium-tool
+
+      - name: Checkout subways sources
+        uses: actions/checkout@v4
+        with:
+          repository: 'organicmaps/subways'
+          path: subways
+
+      - name: Generate Subways
+        working-directory: subways
+        env:
+          PLANET: '${{ vars.PLANET_PBF }}'
+          TMPDIR: '${{ vars.PLANET_SUBWAY_BUILD }}'
+          HTML_DIR: '${{ vars.PLANET_SUBWAY_HTML }}'
+          DUMP: '${{ vars.PLANET_SUBWAY_DUMP }}'
+          SKIP_PLANET_UPDATE: 1 # handled by generator-planet.yaml
+        run: |
+          mkdir -p "${{ vars.PLANET_SUBWAY_BUILD }}" "${{ vars.PLANET_SUBWAY_HTML }}" "${{ vars.PLANET_SUBWAY_DUMP }}"
+          ./scripts/process_subways.sh
