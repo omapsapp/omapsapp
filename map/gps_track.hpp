@@ -3,6 +3,7 @@
 #include "map/gps_track_collection.hpp"
 #include "map/gps_track_filter.hpp"
 #include "map/gps_track_storage.hpp"
+#include "map/elevation_info.hpp"
 
 #include "base/thread.hpp"
 
@@ -32,6 +33,7 @@ public:
 
   /// Returns track statistics
   GpsTrackInfo GetTrackInfo() const;
+  const ElevationInfo & GetElevationInfo() const;
 
   /// Clears any previous tracking info
   /// @note Callback is called with 'toRemove' points, if some points were removed.

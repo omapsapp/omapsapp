@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class PlacePageScheduleData;
+@class TrackInfo;
 
 typedef NS_ENUM(NSInteger, PlacePageDataHotelType) {
   PlacePageDataHotelTypeHotel,
@@ -38,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly, nullable) NSString *secondarySubtitle;
 @property(nonatomic, readonly) PlacePageDataSchedule schedule;
 @property(nonatomic, readonly) BOOL isMyPosition;
+
+- (instancetype)initWithTrackInfo:(TrackInfo * _Nonnull)trackInfo;
 
 @end
 

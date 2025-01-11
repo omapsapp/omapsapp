@@ -241,7 +241,7 @@ std::optional<ElevationInfo> Track::GetElevationInfo() const
   if (!HasAltitudes())
     return std::nullopt;
   if (!m_elevationInfo)
-    m_elevationInfo = ElevationInfo(GetData().m_geometry);
+    m_elevationInfo = ElevationInfo(GetData().m_geometry.m_lines);
   return m_elevationInfo;
 }
 

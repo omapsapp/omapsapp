@@ -1731,6 +1731,11 @@ void Framework::SetTrackRecordingUpdateHandler(TrackRecordingUpdateHandler && tr
     m_trackRecordingUpdateHandler(GpsTracker::Instance().GetTrackInfo());
 }
 
+const ElevationInfo & Framework::GetTrackRecordingCurrentElevationInfo()
+{
+  return GpsTracker::Instance().GetElevationInfo();
+}
+
 void Framework::StopTrackRecording()
 {
   m_connectToGpsTrack = false;
@@ -1743,9 +1748,10 @@ void Framework::StopTrackRecording()
 
 void Framework::SaveTrackRecordingWithName(std::string const & name)
 {
-  GetBookmarkManager().SaveTrackRecording(name);
+  auto const trackId = GetBookmarkManager().SaveTrackRecording(name);
   if (m_drapeEngine)
     m_drapeEngine->ClearGpsTrackPoints();
+  ShowTrack(trackId);
 }
 
 bool Framework::IsTrackRecordingEmpty() const

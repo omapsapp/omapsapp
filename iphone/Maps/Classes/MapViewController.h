@@ -32,6 +32,7 @@
 - (void)openFullPlaceDescriptionWithHtml:(NSString *_Nonnull)htmlString;
 - (void)searchText:(NSString *_Nonnull)text;
 - (void)openDrivingOptions;
+- (void)showTrackRecordingPlacePage;
 
 - (void)setPlacePageTopBound:(CGFloat)bound duration:(double)duration;
 
