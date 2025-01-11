@@ -18,6 +18,7 @@ std::map<std::string, std::string> kStyleToColor = {
   {"placemark-deeppurple", "BookmarkDeepPurple"},
   {"placemark-lightblue", "BookmarkLightBlue"},
   {"placemark-cyan", "BookmarkCyan"},
+
   {"placemark-teal", "BookmarkTeal"},
   {"placemark-lime", "BookmarkLime"},
   {"placemark-deeporange", "BookmarkDeepOrange"},
