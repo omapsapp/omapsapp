@@ -13,42 +13,6 @@
     android:layout_height="match_parent"
     android:layout_weight="0.5"/>
 
-  <!-- Speed -->
-  <LinearLayout
-    android:id="@+id/speed_view_container"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/speed_cams_bg"
-    android:gravity="center"
-    android:minWidth="@dimen/nav_numbers_side_min_width">
-
-    <TextView
-      android:id="@+id/speed_value"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:includeFontPadding="false"
-      android:lines="1"
-      android:textAppearance="@style/MwmTextAppearance.NavMenu.Number"
-      tools:text="999" />
-
-    <!-- Speed -->
-    <TextView
-      android:id="@+id/speed_dimen"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:includeFontPadding="false"
-      android:lines="1"
-      android:textAppearance="@style/MwmTextAppearance.NavMenu.Number.Dimension"
-      tools:background="#20FF0000"
-      tools:text="km/h" />
-  </LinearLayout>
-
-  <Space
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:layout_weight="1.25"/>
-
   <!-- Time -->
   <LinearLayout
     android:layout_width="wrap_content"

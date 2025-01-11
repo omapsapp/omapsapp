@@ -249,7 +249,7 @@ public class NavigationController implements TrafficManager.TrafficCallback,
   {
     final Location location = LocationHelper.from(mFrame.getContext()).getSavedLocation();
     if (location == null) {
-      mSpeedLimit.setSpeedLimitMps(0);
+      mSpeedLimit.setSpeedLimitMps(-1);
       return;
     }
     mSpeedLimit.setCurrentSpeed(location.getSpeed());

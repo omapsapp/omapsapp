@@ -2,7 +2,9 @@
 <resources>
   <declare-styleable name="SpeedLimitView">
     <attr name="BackgroundColor" format="color" />
+    <attr name="WidgetBackgroundColor" format="color" />
     <attr name="borderColor" format="color" />
+    <attr name="unlimitedBorderColor" format="color" />
     <attr name="alertColor" format="color" />
     <attr name="textColor" format="color" />
     <attr name="textAlertColor" format="color" />

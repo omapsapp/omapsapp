@@ -33,9 +33,6 @@ public class NavMenu
   private final View mHeaderFrame;
 
   private final ImageView mTts;
-  private final View mSpeedViewContainer;
-  private final TextView mSpeedValue;
-  private final TextView mSpeedUnits;
   private final TextView mTimeHourValue;
   private final TextView mTimeHourUnits;
   private final TextView mTimeMinuteValue;
@@ -94,10 +91,6 @@ public class NavMenu
       }
     });
 
-    // Bottom frame
-    mSpeedViewContainer = bottomFrame.findViewById(R.id.speed_view_container);
-    mSpeedValue = bottomFrame.findViewById(R.id.speed_value);
-    mSpeedUnits = bottomFrame.findViewById(R.id.speed_dimen);
     mTimeHourValue = bottomFrame.findViewById(R.id.time_hour_value);
     mTimeHourUnits = bottomFrame.findViewById(R.id.time_hour_dimen);
     mTimeMinuteValue = bottomFrame.findViewById(R.id.time_minute_value);
@@ -213,20 +206,6 @@ public class NavMenu
       return;
 
     Pair<String, String> speedAndUnits = StringUtils.nativeFormatSpeedAndUnits(last.getSpeed());
-    mSpeedValue.setText(speedAndUnits.first);
-
-    if (info.speedLimitMps > 0.0 && last.getSpeed() > info.speedLimitMps)
-    {
-      if (info.isSpeedCamLimitExceeded())
-        mSpeedValue.setTextColor(ContextCompat.getColor(mActivity, R.color.white_primary));
-      else
-        mSpeedValue.setTextColor(ContextCompat.getColor(mActivity, R.color.base_red));
-    }
-    else
-      mSpeedValue.setTextColor(ThemeUtils.getColor(mActivity, android.R.attr.textColorPrimary));
-
-    mSpeedUnits.setText(speedAndUnits.second);
-    mSpeedViewContainer.setActivated(info.isSpeedCamLimitExceeded());
   }
 
   public void update(@NonNull RoutingInfo info)
