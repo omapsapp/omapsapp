@@ -15,7 +15,7 @@ final class ProductButton: UIButton {
   }
 
   private func setup(title: String, action: @escaping () -> Void) {
-    setStyleAndApply("BlueBackground")
+    setStyleNameAndApply("BlueBackground")
     setTitle(title, for: .normal)
     setTitleColor(.white, for: .normal)
     titleLabel?.font = UIFont.regular14()

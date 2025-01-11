@@ -1,3 +1,3 @@
-protocol IStyleSheet: AnyObject {
+protocol IStyleSheet {
   static func register(theme: Theme, colors: IColors, fonts: IFonts)
 }

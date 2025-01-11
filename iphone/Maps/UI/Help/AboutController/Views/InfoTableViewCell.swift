@@ -15,7 +15,7 @@ final class InfoTableViewCell: UITableViewCell {
 
   private func setupView() {
     backgroundView = UIView() // Set background color to clear
-    setStyleAndApply("ClearBackground")
+    setStyleNameAndApply("ClearBackground")
     contentView.addSubview(infoView)
     infoView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([

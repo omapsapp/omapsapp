@@ -36,7 +36,7 @@ final class RouteManagerDimView: UIView {
     didSet {
       guard isVisible != oldValue else { return }
       let componentsAlpha: CGFloat = 0.5
-      setStyleAndApply("BlackStatusBarBackground")
+      setStyle(.global(.blackStatusBarBackground))
       alpha = isVisible ? 0 : 1
       image.alpha = isVisible ? 0 : componentsAlpha
       label.alpha = isVisible ? 0 : componentsAlpha

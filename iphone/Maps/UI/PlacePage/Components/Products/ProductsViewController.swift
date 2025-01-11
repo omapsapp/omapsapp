@@ -38,7 +38,7 @@ final class ProductsViewController: UIViewController {
   }
 
   private func setupViews() {
-    view.setStyleAndApply("Background")
+    view.setStyleNameAndApply("Background")
     setupTitleLabel()
     setupDescriptionLabel()
     setupCloseButton()
@@ -61,7 +61,7 @@ final class ProductsViewController: UIViewController {
   }
 
   private func setupCloseButton() {
-    closeButton.setStyleAndApply("MWMGray")
+    closeButton.setStyleNameAndApply("MWMGray")
     closeButton.setImage(UIImage(resource: .icSearchClear), for: .normal)
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)

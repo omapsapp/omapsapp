@@ -7,7 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1281,181 +1280,6 @@
             </objects>
             <point key="canvasLocation" x="928.79999999999995" y="-703.44827586206907"/>
         </scene>
-        <!--Elevation Profile View Controller-->
-        <scene sceneID="0yF-nr-ALU">
-            <objects>
-                <viewController storyboardIdentifier="ElevationProfileViewController" id="d1y-Na-lDm" customClass="ElevationProfileViewController" customModule="Organic_Maps" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="7Mx-au-yIa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKi-gT-ZfM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="176"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-0e-Ztd" customClass="ChartView" customModule="Chart">
-                                        <rect key="frame" x="16" y="0.0" width="343" height="176"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="jIS-0e-Ztd" firstAttribute="top" secondItem="jKi-gT-ZfM" secondAttribute="top" id="QeA-Yb-58l"/>
-                                    <constraint firstAttribute="trailing" secondItem="jIS-0e-Ztd" secondAttribute="trailing" constant="16" id="XRb-7G-y3q"/>
-                                    <constraint firstAttribute="bottom" secondItem="jIS-0e-Ztd" secondAttribute="bottom" id="g8g-f5-krt"/>
-                                    <constraint firstItem="jIS-0e-Ztd" firstAttribute="leading" secondItem="jKi-gT-ZfM" secondAttribute="leading" constant="16" id="khr-Sp-8jS"/>
-                                    <constraint firstAttribute="height" constant="176" id="utH-YA-2pe"/>
-                                </constraints>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-ED-V4K">
-                                <rect key="frame" x="16" y="200" width="343" height="68"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="AM4-tj-liE"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gL4-id-6En">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ElevationProfileDescriptionCell" id="ubO-dg-082" customClass="ElevationProfileDescriptionCell" customModule="Organic_Maps" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="68"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CH9-Og-i2q">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="68"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-zI-6aP">
-                                                    <rect key="frame" x="22.5" y="6" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="9eF-wN-2uC"/>
-                                                        <constraint firstAttribute="width" constant="24" id="ct1-1m-XeC"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="MWMBlack"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAR-lR-4BZ">
-                                                    <rect key="frame" x="1" y="33" width="67" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="regular10:blackSecondaryText"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-1Z-YJM">
-                                                    <rect key="frame" x="1" y="45" width="67" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="medium14:blackSecondaryText"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                            <constraints>
-                                                <constraint firstItem="8rf-1Z-YJM" firstAttribute="centerX" secondItem="mAR-lR-4BZ" secondAttribute="centerX" id="2bV-Eg-iTv"/>
-                                                <constraint firstItem="8rf-1Z-YJM" firstAttribute="leading" secondItem="CH9-Og-i2q" secondAttribute="leading" constant="1" id="2zh-El-kBm"/>
-                                                <constraint firstAttribute="trailing" secondItem="mAR-lR-4BZ" secondAttribute="trailing" constant="1" id="Brm-sc-JFK"/>
-                                                <constraint firstAttribute="trailing" secondItem="8rf-1Z-YJM" secondAttribute="trailing" constant="1" id="FJf-4o-P8q"/>
-                                                <constraint firstItem="7Xw-zI-6aP" firstAttribute="top" secondItem="CH9-Og-i2q" secondAttribute="top" constant="6" id="Wpx-pf-pO9"/>
-                                                <constraint firstItem="mAR-lR-4BZ" firstAttribute="top" secondItem="7Xw-zI-6aP" secondAttribute="bottom" constant="3" id="Xq7-6S-AJb"/>
-                                                <constraint firstItem="8rf-1Z-YJM" firstAttribute="top" secondItem="mAR-lR-4BZ" secondAttribute="bottom" id="kyB-4q-1Ms"/>
-                                                <constraint firstItem="mAR-lR-4BZ" firstAttribute="leading" secondItem="CH9-Og-i2q" secondAttribute="leading" constant="1" id="rOY-yv-hrs"/>
-                                                <constraint firstItem="mAR-lR-4BZ" firstAttribute="centerX" secondItem="CH9-Og-i2q" secondAttribute="centerX" id="u1A-tO-NFc"/>
-                                                <constraint firstItem="7Xw-zI-6aP" firstAttribute="centerX" secondItem="CH9-Og-i2q" secondAttribute="centerX" id="yNO-Ee-f6X"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="ElevationProfileDescriptionCell"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="69" height="68"/>
-                                        <connections>
-                                            <outlet property="imageView" destination="7Xw-zI-6aP" id="Mih-v4-OqB"/>
-                                            <outlet property="titleLabel" destination="mAR-lR-4BZ" id="Yd1-qq-FYk"/>
-                                            <outlet property="valueLabel" destination="8rf-1Z-YJM" id="voz-9x-ymv"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIo-No-CbK">
-                                <rect key="frame" x="16" y="280" width="68" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="elevation_profile_difficulty"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="regular14:blackSecondaryText"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-z0-p88" customClass="DifficultyView" customModule="Organic_Maps" customModuleProvider="target">
-                                <rect key="frame" x="91" y="286" width="40" height="10"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="2Tg-JW-8Tr"/>
-                                    <constraint firstAttribute="width" constant="40" id="Sor-5l-zjy"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-fD-0Ug">
-                                <rect key="frame" x="133" y="275.5" width="30" height="30"/>
-                                <connections>
-                                    <action selector="onExtendedDifficultyButtonPressed:" destination="d1y-Na-lDm" eventType="touchUpInside" id="4zH-m2-OSE"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPk-XR-oL1" customClass="InsetsLabel" customModule="Organic_Maps" customModuleProvider="target">
-                                <rect key="frame" x="138.5" y="280" width="19" height="20.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="ElevationProfileExtendedDifficulty"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ezp-sJ-36x"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bc9-z0-p88" firstAttribute="leading" secondItem="FIo-No-CbK" secondAttribute="trailing" constant="7" id="CDd-Zf-CvI"/>
-                            <constraint firstItem="Xc9-ED-V4K" firstAttribute="top" secondItem="jKi-gT-ZfM" secondAttribute="bottom" constant="4" id="Izs-S0-cku"/>
-                            <constraint firstItem="g6D-fD-0Ug" firstAttribute="centerY" secondItem="GPk-XR-oL1" secondAttribute="centerY" id="P9X-9S-8dI"/>
-                            <constraint firstItem="GPk-XR-oL1" firstAttribute="leading" secondItem="bc9-z0-p88" secondAttribute="trailing" constant="7.6666666666666856" id="W9l-Ip-nhH"/>
-                            <constraint firstItem="g6D-fD-0Ug" firstAttribute="centerX" secondItem="GPk-XR-oL1" secondAttribute="centerX" id="YFV-Au-wTO"/>
-                            <constraint firstItem="FIo-No-CbK" firstAttribute="leading" secondItem="ezp-sJ-36x" secondAttribute="leading" constant="16" id="eg2-uX-NgT"/>
-                            <constraint firstItem="jKi-gT-ZfM" firstAttribute="leading" secondItem="ezp-sJ-36x" secondAttribute="leading" id="kKJ-Jg-wRO"/>
-                            <constraint firstItem="ezp-sJ-36x" firstAttribute="trailing" secondItem="Xc9-ED-V4K" secondAttribute="trailing" constant="16" id="mxE-Mk-VH2"/>
-                            <constraint firstItem="bc9-z0-p88" firstAttribute="bottom" secondItem="FIo-No-CbK" secondAttribute="baseline" id="opM-hk-CFP"/>
-                            <constraint firstAttribute="bottom" secondItem="Xc9-ED-V4K" secondAttribute="bottom" constant="60" id="vaG-aV-kw5"/>
-                            <constraint firstItem="Xc9-ED-V4K" firstAttribute="leading" secondItem="ezp-sJ-36x" secondAttribute="leading" constant="16" id="vpI-N0-eIg"/>
-                            <constraint firstItem="jKi-gT-ZfM" firstAttribute="top" secondItem="ezp-sJ-36x" secondAttribute="top" id="ySA-vA-GW9"/>
-                            <constraint firstItem="GPk-XR-oL1" firstAttribute="centerY" secondItem="FIo-No-CbK" secondAttribute="centerY" id="yey-Sw-JqF"/>
-                            <constraint firstItem="FIo-No-CbK" firstAttribute="top" secondItem="Xc9-ED-V4K" secondAttribute="bottom" constant="12" id="zDN-ZF-3Ex"/>
-                            <constraint firstItem="ezp-sJ-36x" firstAttribute="trailing" secondItem="jKi-gT-ZfM" secondAttribute="trailing" id="zN2-OH-sDZ"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="Background"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <size key="freeformSize" width="375" height="319"/>
-                    <connections>
-                        <outlet property="chartHeightConstraint" destination="utH-YA-2pe" id="ee1-mM-L7n"/>
-                        <outlet property="chartView" destination="jIS-0e-Ztd" id="KHY-Bn-Pe6"/>
-                        <outlet property="descriptionCollectionView" destination="Xc9-ED-V4K" id="dHB-dH-HYE"/>
-                        <outlet property="difficultyConstraint" destination="vaG-aV-kw5" id="fkz-u2-wYh"/>
-                        <outlet property="difficultyTitle" destination="FIo-No-CbK" id="Rbh-8b-zK9"/>
-                        <outlet property="difficultyView" destination="bc9-z0-p88" id="p5u-Au-7i2"/>
-                        <outlet property="extendedDifficultyGradeLabel" destination="GPk-XR-oL1" id="SpR-XZ-6ou"/>
-                        <outlet property="extendedGradeButton" destination="g6D-fD-0Ug" id="8br-bF-NqA"/>
-                        <outlet property="graphViewContainer" destination="jKi-gT-ZfM" id="SUq-a3-G5F"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfQ-ai-TWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="925.60000000000002" y="2501.1994002998504"/>
-        </scene>
         <!--Opening Hours Day View Controller-->
         <scene sceneID="4L0-Kt-il9">
             <objects>
@@ -1679,17 +1503,14 @@
         <image name="ic_operator" width="28" height="28"/>
         <image name="ic_placepage_open_hours" width="28" height="28"/>
         <image name="img_direction_light" width="32" height="32"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

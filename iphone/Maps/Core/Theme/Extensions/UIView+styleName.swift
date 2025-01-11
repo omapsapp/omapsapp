@@ -39,8 +39,18 @@ fileprivate struct AssociatedKeys {
     }
   }
 
-  @objc func setStyleAndApply(_ styleName: String) {
+  @objc func setStyleNameAndApply(_ styleName: String) {
     self.styleName = styleName
     applyTheme()
+  }
+}
+
+extension UIView {
+  func setStyle(_ style: StyleSheet) {
+    styleName = style.styleName
+  }
+
+  func setStyleAndApply(_ style: StyleSheet) {
+    setStyleNameAndApply(style.styleName)
   }
 }

@@ -49,7 +49,7 @@ static CGFloat const kErrorLabelDefaultTopSpace = 4.;
 {
   self.delegate = delegate;
   self.icon.image = icon;
-  [self.icon setStyleAndApply: @"MWMBlack"];
+  [self.icon setStyleNameAndApply: @"MWMBlack"];
   self.icon.hidden = (icon == nil);
 
   self.textField.text = text;
@@ -70,13 +70,13 @@ static CGFloat const kErrorLabelDefaultTopSpace = 4.;
   {
     self.labelHeight.priority = UILayoutPriorityDefaultHigh;
     self.errorLabelTopSpace.constant = 0.;
-    [self.contentView setStyleAndApply: @"Background"];
+    [self.contentView setStyleNameAndApply: @"Background"];
   }
   else
   {
     self.labelHeight.priority = UILayoutPriorityDefaultLow;
     self.errorLabelTopSpace.constant = kErrorLabelDefaultTopSpace;
-    [self.contentView setStyleAndApply: @"ErrorBackground"];
+    [self.contentView setStyleNameAndApply: @"ErrorBackground"];
   }
   [self layoutIfNeeded];
 }

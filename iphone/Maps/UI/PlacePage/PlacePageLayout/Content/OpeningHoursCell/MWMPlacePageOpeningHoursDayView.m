@@ -29,11 +29,11 @@
   UILabel * label = self.label;
   label.text = text;
   if (isRed)
-    [label setStyleAndApply:@"redText"];
+    [label setStyleNameAndApply:@"redText"];
   else if (self.currentDay)
-    [label setStyleAndApply:@"blackPrimaryText"];
+    [label setStyleNameAndApply:@"blackPrimaryText"];
   else
-    [label setStyleAndApply:@"blackSecondaryText"];
+    [label setStyleNameAndApply:@"blackSecondaryText"];
 }
 
 - (void)setOpenTimeText:(NSString *)text

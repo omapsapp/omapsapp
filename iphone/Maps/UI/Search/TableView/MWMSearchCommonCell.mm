@@ -95,7 +95,7 @@
     }
   }
 
-  [self setStyleAndApply: @"Background"];
+  [self setStyleNameAndApply: @"Background"];
 }
 
 - (NSDictionary *)selectedTitleAttributes

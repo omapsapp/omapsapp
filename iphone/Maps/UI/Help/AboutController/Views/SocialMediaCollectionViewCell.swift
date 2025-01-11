@@ -19,7 +19,7 @@ final class SocialMediaCollectionViewCell: UICollectionViewCell {
   }
 
   private func setupView() {
-    setStyleAndApply("ClearBackground")
+    setStyleNameAndApply("ClearBackground")
 
     imageView.contentMode = .scaleAspectFit
     imageView.translatesAutoresizingMaskIntoConstraints = false

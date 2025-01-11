@@ -100,7 +100,7 @@ class DownloadAllView: UIView {
     case .error:
       iconImageView.image = UIImage(named: "ic_download_error")
       title.text = errorTitle
-      title.setStyleAndApply("redText")
+      title.setStyleNameAndApply("redText")
       downloadButton.setTitle(errorButtonTitle, for: .normal)
       downloadButton.isHidden = false
       stateWrapper.isHidden = true
@@ -108,7 +108,7 @@ class DownloadAllView: UIView {
       downloadSizeLabel.isHidden = false
     case .ready:
       title.text = readyTitle
-      title.setStyleAndApply("blackPrimaryText")
+      title.setStyleNameAndApply("blackPrimaryText")
       downloadButton.setTitle(readyButtonTitle, for: .normal)
       downloadButton.isHidden = false
       stateWrapper.isHidden = true
@@ -116,7 +116,7 @@ class DownloadAllView: UIView {
       downloadSizeLabel.isHidden = false
     case .dowloading:
       title.text = downloadingTitle
-      title.setStyleAndApply("blackPrimaryText")
+      title.setStyleNameAndApply("blackPrimaryText")
       downloadButton.isHidden = true
       stateWrapper.isHidden = false
       progress.state = .spinner
