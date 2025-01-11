@@ -16,6 +16,7 @@
 @property(nonatomic) BOOL zoomHidden;
 @property(nonatomic) BOOL sideButtonsHidden;
 @property(nonatomic) BOOL trafficButtonHidden;
+@property(nonatomic) BOOL trackRecordingButtonHidden;
 @property(nonatomic) MWMBottomMenuState menuState;
 @property(nonatomic) MWMBottomMenuState menuRestoreState;
 @property(nonatomic) BOOL isDirectionViewHidden;

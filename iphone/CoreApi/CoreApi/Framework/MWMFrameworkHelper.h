@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, ProductsPopupCloseReason) {
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^SearchInDownloaderCompletions)(NSArray<MWMMapSearchResult *> *results, BOOL finished);
-typedef void (^TrackRecordingUpdatedHandler)(TrackInfo * _Nonnull trackInfo);
+typedef void (^TrackRecordingUpdatedHandler)(struct GpsTrackInfo trackInfo);
 
 @protocol TrackRecorder <NSObject>
 

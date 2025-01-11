@@ -64,14 +64,8 @@ NSString *const kMapToCategorySelectorSegue = @"MapToCategorySelectorSegue";
   self.menuState = MWMBottomMenuStateInactive;
   self.menuRestoreState = MWMBottomMenuStateInactive;
   self.isAddingPlace = NO;
-  [TrackRecordingManager.shared addObserver:self recordingIsActiveDidChangeHandler:^(TrackRecordingState state, TrackInfo * trackInfo) {
-    [self setTrackRecordingButtonHidden:state == TrackRecordingStateInactive];
-  }];
+  [self setTrackRecordingButtonHidden:TrackRecordingManager.shared.recordingState == TrackRecordingStateInactive];
   return self;
-}
-
-- (void)dealloc {
-  [TrackRecordingManager.shared removeObserver:self];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -326,9 +320,11 @@ NSString *const kMapToCategorySelectorSegue = @"MapToCategorySelectorSegue";
       [MWMMapWidgetsHelper updateLayoutForAvailableArea];
     }];
     _trackRecordingButton = nil;
+    _trackRecordingButtonHidden = true;
   }
   else if (!trackRecordingButtonHidden && !_trackRecordingButton) {
     _trackRecordingButton = [[TrackRecordingViewController alloc] init];
+    _trackRecordingButtonHidden = false;
     [MWMMapWidgetsHelper updateLayoutForAvailableArea];
   }
 }

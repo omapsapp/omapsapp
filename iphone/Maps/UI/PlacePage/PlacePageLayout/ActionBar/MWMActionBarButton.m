@@ -5,39 +5,6 @@
 
 static NSString * const kUDDidHighlightRouteToButton = @"kUDDidHighlightPoint2PointButton";
 
-NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
-  switch (type) {
-    case MWMActionBarButtonTypeDownload:
-      return L(@"download");
-    case MWMActionBarButtonTypeBooking:
-    case MWMActionBarButtonTypeOpentable:
-      return L(@"book_button");
-    case MWMActionBarButtonTypeBookingSearch:
-      return L(@"booking_search");
-    case MWMActionBarButtonTypeCall:
-      return L(@"placepage_call_button");
-    case MWMActionBarButtonTypeBookmark:
-    case MWMActionBarButtonTypeTrack:
-      return L(isSelected ? @"delete" : @"save");
-    case MWMActionBarButtonTypeRouteFrom:
-      return L(@"p2p_from_here");
-    case MWMActionBarButtonTypeRouteTo:
-      return L(@"p2p_to_here");
-    case MWMActionBarButtonTypeMore:
-      return L(@"placepage_more_button");
-    case MWMActionBarButtonTypeRouteAddStop:
-      return L(@"placepage_add_stop");
-    case MWMActionBarButtonTypeRouteRemoveStop:
-      return L(@"placepage_remove_stop");
-    case MWMActionBarButtonTypeAvoidToll:
-      return L(@"avoid_tolls");
-    case MWMActionBarButtonTypeAvoidDirty:
-      return L(@"avoid_unpaved");
-    case MWMActionBarButtonTypeAvoidFerry:
-      return L(@"avoid_ferry");
-  }
-}
-
 @interface MWMActionBarButton () <MWMCircularProgressProtocol>
 
 @property(nonatomic) MWMActionBarButtonType type;
@@ -52,7 +19,7 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
 @implementation MWMActionBarButton
 
 - (void)configButton:(BOOL)isSelected enabled:(BOOL)isEnabled {
-  self.label.text = titleForButton(self.type, isSelected);
+  self.label.text = [MWMActionBarButton titleForButton:self.type isSelected:isSelected];
   self.extraBackground.hidden = YES;
   self.button.coloring = MWMButtonColoringBlack;
   
@@ -219,6 +186,39 @@ NSString *titleForButton(MWMActionBarButtonType type, BOOL isSelected) {
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
   return [self pointInside:point withEvent:event] ? self.button : nil;
+}
+
++ (NSString *)titleForButton:(MWMActionBarButtonType)type isSelected:(BOOL)isSelected {
+  switch (type) {
+    case MWMActionBarButtonTypeDownload:
+      return L(@"download");
+    case MWMActionBarButtonTypeBooking:
+    case MWMActionBarButtonTypeOpentable:
+      return L(@"book_button");
+    case MWMActionBarButtonTypeBookingSearch:
+      return L(@"booking_search");
+    case MWMActionBarButtonTypeCall:
+      return L(@"placepage_call_button");
+    case MWMActionBarButtonTypeBookmark:
+    case MWMActionBarButtonTypeTrack:
+      return L(isSelected ? @"delete" : @"save");
+    case MWMActionBarButtonTypeRouteFrom:
+      return L(@"p2p_from_here");
+    case MWMActionBarButtonTypeRouteTo:
+      return L(@"p2p_to_here");
+    case MWMActionBarButtonTypeMore:
+      return L(@"placepage_more_button");
+    case MWMActionBarButtonTypeRouteAddStop:
+      return L(@"placepage_add_stop");
+    case MWMActionBarButtonTypeRouteRemoveStop:
+      return L(@"placepage_remove_stop");
+    case MWMActionBarButtonTypeAvoidToll:
+      return L(@"avoid_tolls");
+    case MWMActionBarButtonTypeAvoidDirty:
+      return L(@"avoid_unpaved");
+    case MWMActionBarButtonTypeAvoidFerry:
+      return L(@"avoid_ferry");
+  }
 }
 
 @end

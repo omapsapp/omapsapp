@@ -152,7 +152,7 @@ final class ActionBarViewController: UIViewController {
                                         preferredStyle: .actionSheet)
     for button in additionalButtons {
       let (selected, enabled) = buttonState(button)
-      let action = UIAlertAction(title: titleForButton(button, selected),
+      let action = UIAlertAction(title: ActionBarButton.title(for: button, isSelected: selected),
                                  style: .default,
                                  handler: { [weak self] _ in
                                   guard let self = self else { return }

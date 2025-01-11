@@ -81,6 +81,7 @@ extension BottomMenuInteractor: BottomMenuInteractorProtocol {
   func toggleTrackRecording() {
     trackRecorder.processAction(trackRecorder.recordingState == .active ? .stop : .start) { [weak self] in
       self?.close()
+      MWMMapViewControlsManager.manager().trackRecordingButtonHidden = false
     }
   }
 }

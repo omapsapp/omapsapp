@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+class Track;
+
 namespace place_page
 {
 enum class OpeningMode
