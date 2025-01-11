@@ -82,7 +82,11 @@ public:
   //info.m_verticalAccuracy = location.verticalAccuracy;
   //info.m_altitude = location.altitude;
   //info.m_course = location.course;
-  //info.m_speed = location.speed;
+
+
+
+
+     //info.m_speed = location.speed;
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -91,6 +95,7 @@ public:
   UNUSED_VALUE(manager);
   GpsInfo newInfo;
   [LocationManagerWrapper location:locations.firstObject toGpsInfo:newInfo];
+
   m_service->OnLocationUpdate(newInfo);
 }
 
