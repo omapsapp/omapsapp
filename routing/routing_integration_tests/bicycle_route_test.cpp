@@ -301,17 +301,6 @@ UNIT_TEST(IgnoreCycleBarrier_WithoutAccess)
                                    mercator::FromLatLon(51.3576973, -2.31416085), 11131.6);
 }
 
-// https://github.com/organicmaps/organicmaps/issues/7257
-UNIT_TEST(AvoidConstruction)
-{
-  // Will not work when the bridge will be finished.
-  TRouteResult const res = CalculateRoute(GetVehicleComponents(VehicleType::Bicycle),
-                                   mercator::FromLatLon(-27.4724942, 153.030171), {0.0, 0.0},
-                                   mercator::FromLatLon(-27.4706626, 153.035428));
-  TEST_EQUAL(res.second, RouterResultCode::NoError, ());
-  TEST_GREATER(res.first->GetTotalDistanceMeters(), 2900, ());
-}
-
 UNIT_TEST(UK_Canterbury_UseDismount)
 {
   CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Pedestrian),

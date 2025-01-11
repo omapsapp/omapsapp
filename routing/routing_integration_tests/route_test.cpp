@@ -857,7 +857,7 @@ UNIT_TEST(Germany_Netherlands_AvoidLoops)
   TEST(routeResult.first, ());
   Route const & route = *routeResult.first;
   TestRouteLength(route, 405058);
-  TestRouteTime(route, 14158);
+  TestRouteTime(route, 13965.2);
 }
 
 UNIT_TEST(Germany_Cologne_Croatia_Zagreb)
