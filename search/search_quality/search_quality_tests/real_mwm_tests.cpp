@@ -197,12 +197,13 @@ UNIT_CLASS_TEST(MwmTestsFixture, TopPOIs_Smoke)
     auto const & results = request->Results();
     TEST_GREATER(results.size(), kTopPoiResultsCount, ());
 
-    Range const range(results, 0, 5);
-    EqualClassifType(range, GetClassifTypes({{"shop"}}));
-    TEST_LESS(SortedByDistance(range, center).first, 5000, ());
+    Range const range(results, 0, 6);
+    EqualClassifType(range, GetClassifTypes({{"shop"}, {"highway", "bus_stop"}}));
+    // highway=bus_stop is closer, but has less rank compared to the shop.
+    TEST_LESS(SortedByDistance(Range(results, 0, 3), center).first, 5000, ());
 
     // parking (< 6km) should be on top.
-    EqualClassifType(Range(results, 5, 7), GetClassifTypes({{"leisure", "playground"}, {"amenity", "parking"}}));
+    EqualClassifType(Range(results, 6, 8), GetClassifTypes({{"leisure", "playground"}, {"amenity", "parking"}}));
   }
 
   // https://github.com/organicmaps/organicmaps/issues/2470
@@ -1245,7 +1246,7 @@ UNIT_CLASS_TEST(MwmTestsFixture, Opfikon_Viewport)
     TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"tourism"})), 2, ());
 
     TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"highway", "bus_stop"})), 3, ());
-    TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"leisure"})), 3, ());
+    TEST_EQUAL(CountClassifType(allRange, cl.GetTypeByPath({"leisure"})), 5, ());
 
     TEST_GREATER(CountClassifType(allRange, cl.GetTypeByPath({"highway"})), 8, ());
     TEST_GREATER(CountClassifType(allRange, cl.GetTypeByPath({"amenity"})), 12, ());
