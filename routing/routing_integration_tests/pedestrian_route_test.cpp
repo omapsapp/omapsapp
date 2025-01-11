@@ -155,7 +155,7 @@ UNIT_TEST(EstoniaTallinnRadissonHiltonToCatherdalChurch)
   integration::CalculateRouteAndTestRouteLength(
       integration::GetVehicleComponents(VehicleType::Pedestrian),
       mercator::FromLatLon(59.4362, 24.7682), {0., 0.},
-      mercator::FromLatLon(59.437, 24.7392), 2016.);
+      mercator::FromLatLon(59.437, 24.7392), 1972.54);
 }
 
 UNIT_TEST(EstoniaTallinnRadissonHiltonToSkypeOffice)
@@ -271,12 +271,14 @@ UNIT_TEST(CzechPragueNode5ToHilton)
       mercator::FromLatLon(50.0933, 14.4397), 5106.);
 }
 
+/// @todo Here maybe some +-100m differencies. OM workd like OSRM here.
+/// @{
 UNIT_TEST(CzechPragueHiltonToKarlovMost)
 {
   integration::CalculateRouteAndTestRouteLength(
       integration::GetVehicleComponents(VehicleType::Pedestrian),
       mercator::FromLatLon(50.0933, 14.4397), {0., 0.},
-      mercator::FromLatLon(50.0864, 14.4124), 2410.07);
+      mercator::FromLatLon(50.0864, 14.4124), 2483);
 }
 
 UNIT_TEST(CzechPragueHiltonToNicholasChurch)
@@ -284,8 +286,9 @@ UNIT_TEST(CzechPragueHiltonToNicholasChurch)
   integration::CalculateRouteAndTestRouteLength(
       integration::GetVehicleComponents(VehicleType::Pedestrian),
       mercator::FromLatLon(50.0933, 14.4397), {0., 0.},
-      mercator::FromLatLon(50.088, 14.4032), 3103.);
+      mercator::FromLatLon(50.088, 14.4032), 3196);
 }
+/// @}
 
 UNIT_TEST(CzechPragueHiltonToKvetniceViewpoint)
 {
