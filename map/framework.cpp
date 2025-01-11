@@ -3006,12 +3006,25 @@ bool Framework::GetEditableMapObject(FeatureID const & fid, osm::EditableMapObje
     SetHostingBuildingAddress(FindBuildingAtPoint(feature::GetCenter(*ft)), dataSource, coder, emo);
   }
 
+  auto optJournal = editor.GetEditedFeatureJournal(fid);
+  if (optJournal)
+    emo.SetJournal(std::move(*optJournal));
+
   return true;
 }
 
 osm::Editor::SaveResult Framework::SaveEditedMapObject(osm::EditableMapObject emo)
 {
   auto & editor = osm::Editor::Instance();
+
+  // Update EditJournal
+  osm::EditableMapObject unedited_emo;
+  if (emo.GetEditingLifecycle() == osm::EditingLifecycle::CREATED && emo.GetJournal().GetJournal().size() == 1)
+    unedited_emo = {};
+  else
+    CHECK(GetEditableMapObject(emo.GetID(), unedited_emo), ("Loading unedited EditableMapObject failed."));
+
+  emo.LogDiffInJournal(unedited_emo);
 
   ms::LatLon issueLatLon;
 

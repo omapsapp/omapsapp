@@ -149,7 +149,8 @@ Java_app_organicmaps_editor_Editor_nativeHasWifi(JNIEnv *, jclass)
 JNIEXPORT void JNICALL
 Java_app_organicmaps_editor_Editor_nativeSetHasWifi(JNIEnv *, jclass, jboolean hasWifi)
 {
-  g_editableMapObject.SetInternet(hasWifi ? feature::Internet::Wlan : feature::Internet::Unknown);
+  if (hasWifi != (g_editableMapObject.GetInternet() == feature::Internet::Wlan))
+    g_editableMapObject.SetInternet(hasWifi ? feature::Internet::Wlan : feature::Internet::Unknown);
 }
 
 JNIEXPORT jboolean JNICALL
@@ -362,7 +363,11 @@ Java_app_organicmaps_editor_Editor_nativeStartEdit(JNIEnv *, jclass)
 {
   ::Framework * frm = g_framework->NativeFramework();
   if (!frm->HasPlacePageInfo())
+  {
+    ASSERT(g_editableMapObject.GetEditingLifecycle() == osm::EditingLifecycle::CREATED,
+           ("PlacePageInfo should only be empty for new features."));
     return;
+  }
 
   place_page::Info const & info = g_framework->GetPlacePageInfo();
   CHECK(frm->GetEditableMapObject(info.GetID(), g_editableMapObject), ("Invalid feature in the place page."));

@@ -17,6 +17,10 @@ enum class GeomType : int8_t
 };
 
 std::string DebugPrint(GeomType type);
+
+std::string ToString(GeomType type);
+
+GeomType TypeFromString(std::string type);
 }  // namespace feature
 
 uint32_t constexpr kInvalidFeatureId = std::numeric_limits<uint32_t>::max();

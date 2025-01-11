@@ -5,6 +5,7 @@
 #include "indexer/feature_meta.hpp"
 #include "indexer/feature_utils.hpp"
 #include "indexer/map_object.hpp"
+#include "indexer/edit_journal.hpp"
 
 #include "coding/string_utf8_multilang.hpp"
 
@@ -129,6 +130,16 @@ public:
   static bool ValidateLevel(std::string const & level);
   static bool ValidateName(std::string const & name);
 
+  /// Journal that stores changes to map object
+  EditJournal const & GetJournal() const;
+  void SetJournal(EditJournal && editJournal);
+  EditingLifecycle GetEditingLifecycle() const;
+  void MarkAsCreated(uint32_t type, feature::GeomType geomType, m2::PointD mercator);
+  void ClearJournal();
+  void ApplyEditsFromJournal(EditJournal const & journal);
+  void ApplyJournalEntry(JournalEntry const & entry);
+  void LogDiffInJournal(EditableMapObject const & unedited_emo);
+
   /// Check whether langCode can be used as default name.
   static bool CanUseAsDefaultName(int8_t const langCode, std::vector<int8_t> const & nativeMwmLanguages);
 
@@ -144,5 +155,6 @@ private:
   LocalizedStreet m_street;
   std::vector<LocalizedStreet> m_nearbyStreets;
   EditableProperties m_editableProperties;
+  osm::EditJournal m_journal;
 };
 }  // namespace osm
