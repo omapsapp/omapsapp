@@ -1,4 +1,4 @@
-#include "platform/location_service.hpp"
+#include "platform/location_service/location_service.hpp"
 
 #include "std/target_os.hpp"
 
@@ -77,7 +77,7 @@ public:
 #if defined(OMIM_OS_LINUX)
       m_services.push_back(CreateQtLocationService(*this, "geoclue2"));
 #endif // OMIM_OS_LINUX
-#elif defined(OMIM_OS_MAC) // No QT_LOCATION_SERVICE
+#elif defined(APPLE_LOCATION_SERVICE) // No QT_LOCATION_SERVICE
       m_services.push_back(CreateAppleLocationService(*this));
 #endif // QT_LOCATION_SERVICE
     }

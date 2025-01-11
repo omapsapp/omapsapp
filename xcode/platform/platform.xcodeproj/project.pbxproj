@@ -65,7 +65,6 @@
 		675341261C58C616002CF0D9 /* scoped_file.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 675340F71C58C4B3002CF0D9 /* scoped_file.hpp */; };
 		675341271C58C61D002CF0D9 /* scoped_dir.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 675340F51C58C4B3002CF0D9 /* scoped_dir.hpp */; };
 		675341281C58C61D002CF0D9 /* scoped_mwm.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 675340F91C58C4B3002CF0D9 /* scoped_mwm.hpp */; };
-		675343B11A3F5D5A00A0A8C3 /* apple_location_service.mm in Sources */ = {isa = PBXBuildFile; fileRef = 675343861A3F5D5900A0A8C3 /* apple_location_service.mm */; };
 		675343B31A3F5D5A00A0A8C3 /* chunks_download_strategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 675343881A3F5D5900A0A8C3 /* chunks_download_strategy.cpp */; };
 		675343B41A3F5D5A00A0A8C3 /* chunks_download_strategy.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 675343891A3F5D5900A0A8C3 /* chunks_download_strategy.hpp */; };
 		675343B51A3F5D5A00A0A8C3 /* constants.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6753438A1A3F5D5900A0A8C3 /* constants.hpp */; };
@@ -74,8 +73,6 @@
 		675343B81A3F5D5A00A0A8C3 /* http_thread_apple.h in Headers */ = {isa = PBXBuildFile; fileRef = 6753438D1A3F5D5900A0A8C3 /* http_thread_apple.h */; };
 		675343B91A3F5D5A00A0A8C3 /* http_thread_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6753438E1A3F5D5900A0A8C3 /* http_thread_apple.mm */; };
 		675343BA1A3F5D5A00A0A8C3 /* http_thread_callback.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6753438F1A3F5D5A00A0A8C3 /* http_thread_callback.hpp */; };
-		675343C01A3F5D5A00A0A8C3 /* location_service.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 675343951A3F5D5A00A0A8C3 /* location_service.cpp */; };
-		675343C11A3F5D5A00A0A8C3 /* location_service.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 675343961A3F5D5A00A0A8C3 /* location_service.hpp */; };
 		675343C21A3F5D5A00A0A8C3 /* location.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 675343971A3F5D5A00A0A8C3 /* location.hpp */; };
 		675343C91A3F5D5A00A0A8C3 /* platform_unix_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6753439E1A3F5D5A00A0A8C3 /* platform_unix_impl.cpp */; };
 		675343CA1A3F5D5A00A0A8C3 /* platform_unix_impl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6753439F1A3F5D5A00A0A8C3 /* platform_unix_impl.hpp */; };
@@ -537,7 +534,6 @@
 				FADA4B2726F529BD000FF3CA /* locale.hpp in Headers */,
 				34C624BE1DABCCD100510300 /* socket.hpp in Headers */,
 				D50B2296238591570056820A /* http_payload.hpp in Headers */,
-				675343C11A3F5D5A00A0A8C3 /* location_service.hpp in Headers */,
 				ED965B252CD8F72E0049E39E /* duration.hpp in Headers */,
 				67AB92DD1B7B3D7300AB5194 /* mwm_version.hpp in Headers */,
 				675343CA1A3F5D5A00A0A8C3 /* platform_unix_impl.hpp in Headers */,
@@ -735,9 +731,7 @@
 				675343B61A3F5D5A00A0A8C3 /* http_request.cpp in Sources */,
 				675343CC1A3F5D5A00A0A8C3 /* platform.cpp in Sources */,
 				451E32A01F73A8B000964C9F /* secure_storage_ios.mm in Sources */,
-				675343B11A3F5D5A00A0A8C3 /* apple_location_service.mm in Sources */,
 				675343B31A3F5D5A00A0A8C3 /* chunks_download_strategy.cpp in Sources */,
-				675343C01A3F5D5A00A0A8C3 /* location_service.cpp in Sources */,
 				675343D31A3F5D5A00A0A8C3 /* settings.cpp in Sources */,
 				675343CE1A3F5D5A00A0A8C3 /* preferred_languages.cpp in Sources */,
 				675343B91A3F5D5A00A0A8C3 /* http_thread_apple.mm in Sources */,

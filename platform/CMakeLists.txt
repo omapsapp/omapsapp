@@ -65,19 +65,6 @@ set(SRC
   utm_mgrs_utils.hpp
 )
 
-if (NOT SKIP_QT_GUI AND PLATFORM_DESKTOP AND PLATFORM_LINUX)
-  message("Building with Qt Positioning")
-  find_package(Qt6 REQUIRED COMPONENTS Positioning)
-  set(QT_POSITIONING true)
-  append(SRC
-    qt_location_service.hpp
-    qt_location_service.cpp
-  )
-else()
-  message("Building without Qt Positioning")
-  set(QT_POSITIONING false)
-endif()
-
 if (PLATFORM_IPHONE)
   append(SRC
     background_downloader_ios.h
@@ -127,8 +114,6 @@ else() # neither iPhone nor Android
 
   append(SRC
     localization_dummy.cpp
-    location_service.cpp
-    location_service.hpp
     network_policy_dummy.cpp
     platform_qt.cpp
     "${CMAKE_CURRENT_BINARY_DIR}/platform_qt_version.cpp"
@@ -148,7 +133,6 @@ else() # neither iPhone nor Android
     )
   elseif(${PLATFORM_MAC})
     append(SRC
-      apple_location_service.mm
       gui_thread_apple.mm
       http_client_apple.mm
       http_thread_apple.h
@@ -181,9 +165,6 @@ else() # neither iPhone nor Android
 endif()
 
 omim_add_library(${PROJECT_NAME} ${SRC})
-if (QT_POSITIONING)
-  target_compile_definitions(${PROJECT_NAME} PRIVATE "QT_LOCATION_SERVICE")
-endif()
 
 if (APPLE)
   target_compile_options(${PROJECT_NAME} PRIVATE -fobjc-arc -Wno-nullability-completeness)
@@ -199,11 +180,9 @@ target_link_libraries(${PROJECT_NAME}
   $<$<BOOL:${PLATFORM_DESKTOP}>:Qt6::Core>
   $<$<BOOL:${PLATFORM_LINUX}>:Qt6::Network>
   $<$<BOOL:${PLATFORM_WIN}>:Qt6::Network>
-  $<$<BOOL:${QT_POSITIONING}>:Qt6::Positioning>
   $<$<BOOL:${PLATFORM_MAC}>:
     -framework\ Foundation
     -framework\ SystemConfiguration
-    -framework\ CoreLocation
     -framework\ CFNetwork
     -framework\ Security  # SecPKCS12Import
     >
@@ -211,6 +190,9 @@ target_link_libraries(${PROJECT_NAME}
 
 omim_add_test_subdirectory(platform_tests_support)
 omim_add_test_subdirectory(platform_tests)
+if (NOT SKIP_QT_GUI)
+  add_subdirectory(location_service)
+endif()
 
 # strings::UniChar clashes with Apple's definition.
 set_property(SOURCE preferred_languages.cpp PROPERTY SKIP_UNITY_BUILD_INCLUSION ON)

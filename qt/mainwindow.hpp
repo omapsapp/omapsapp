@@ -6,7 +6,7 @@
 #include "storage/storage_defines.hpp"
 
 #include "platform/location.hpp"
-#include "platform/location_service.hpp"
+#include "platform/location_service/location_service.hpp"
 
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
