@@ -26,18 +26,20 @@
  *    and Platform::ResourcesDir() only once and then reuse it.
  *    Use GetCarComponents() or GetPedestrianComponents() with vector of maps parameter
  *    only if you want to test something on a special map set.
- * 2. Loading maps and calculating routes is a time consumption process.
+ * 2. Loading maps and calculating routes is a time consuming process.
  *    Do this only if you really need it.
  * 3. If you want to check that a turn is absent - use TestTurnCount.
  * 4. The easiest way to gather all the information for writing an integration test is
  *    - to put a break point in CalculateRoute() method;
- *    - to make a route with MapWithMe desktop application;
+ *    - to make a route with the desktop application;
  *    - to get all necessary parameters and result of the route calculation;
  *    - to place them into the test you're writing.
  * 5. The recommended way for naming tests for a route from one place to another one is
  *    <Country><City><Street1><House1><Street2><House2><Test time. TurnTest or RouteTest for the
  * time being>
- * 6. It's a good idea to use short routes for testing turns. The thing is geometry of long routes
+ * 6. Add a comment to describe what this particular test is testing (e.g. "respect the bicycle=no tag").
+ *    And add a ref to a Github issue if applicable.
+ * 7. It's a good idea to use short routes for testing turns. The thing is geometry of long routes
  *    could be changed from one dataset to another. The shorter the route the less is the chance it's changed.
  */
 
