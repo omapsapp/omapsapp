@@ -12,15 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 import app.organicmaps.Framework;
 import app.organicmaps.R;
 import app.organicmaps.location.LocationHelper;
+import app.organicmaps.maplayer.MapButtonsViewModel;
 import app.organicmaps.maplayer.traffic.TrafficManager;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
+import app.organicmaps.util.WindowInsetUtils;
 import app.organicmaps.widget.LanesView;
 import app.organicmaps.widget.SpeedLimitView;
-import app.organicmaps.util.WindowInsetUtils;
 import app.organicmaps.widget.menu.NavMenu;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -44,6 +46,8 @@ public class NavigationController implements TrafficManager.TrafficCallback,
   @NonNull
   private final SpeedLimitView mSpeedLimit;
 
+  private final MapButtonsViewModel mMapButtonsViewModel;
+
   private final NavMenu mNavMenu;
   View.OnClickListener mOnSettingsClickListener;
 
@@ -59,6 +63,8 @@ public class NavigationController implements TrafficManager.TrafficCallback,
   public NavigationController(AppCompatActivity activity, View.OnClickListener onSettingsClickListener,
                               NavMenu.OnMenuSizeChangedListener onMenuSizeChangedListener)
   {
+    mMapButtonsViewModel = new ViewModelProvider(activity).get(MapButtonsViewModel.class);
+
     mFrame = activity.findViewById(R.id.navigation_frame);
     mNavMenu = new NavMenu(activity, this, onMenuSizeChangedListener);
     mOnSettingsClickListener = onSettingsClickListener;
@@ -156,6 +162,10 @@ public class NavigationController implements TrafficManager.TrafficCallback,
     UiUtils.visibleIf(hasStreet, mStreetFrame);
     if (!TextUtils.isEmpty(info.nextStreet))
       mNextStreet.setText(info.nextStreet);
+    int margin = UiUtils.dimen(mFrame.getContext(), R.dimen.nav_frame_padding);
+    if (hasStreet)
+      margin += mStreetFrame.getHeight();
+    mMapButtonsViewModel.setTopButtonsMarginTop(margin);
   }
 
   public void show(boolean show)

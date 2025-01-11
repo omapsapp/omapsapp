@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
@@ -205,6 +206,14 @@ public final class UiUtils
   public static int dimen(@NonNull Context context, @DimenRes int id)
   {
     return context.getResources().getDimensionPixelSize(id);
+  }
+
+  public static int getDisplayTotalHeight(Context context)
+  {
+    DisplayMetrics metrics = new DisplayMetrics();
+    WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    windowManager.getDefaultDisplay().getRealMetrics(metrics);
+    return metrics.heightPixels;
   }
 
   public static void updateRedButton(Button button)

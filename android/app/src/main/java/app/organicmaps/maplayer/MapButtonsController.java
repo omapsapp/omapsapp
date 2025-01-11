@@ -1,6 +1,9 @@
 package app.organicmaps.maplayer;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.TypedValue;
@@ -52,6 +55,8 @@ public class MapButtonsController extends Fragment
   private View mBottomButtonsFrame;
   @Nullable
   private LayersButton mToggleMapLayerButton;
+  @Nullable
+  LayersButton mTrackRecordingStatusButton;
 
   @Nullable
   private MyPositionButton mNavMyPosition;
@@ -68,7 +73,11 @@ public class MapButtonsController extends Fragment
   private final Observer<Boolean> mButtonHiddenObserver = this::setButtonsHidden;
   private final Observer<Integer> mMyPositionModeObserver = this::updateNavMyPositionButton;
   private final Observer<SearchWheel.SearchOption> mSearchOptionObserver = this::onSearchOptionChange;
-  private final Observer<Boolean> mTrackRecorderObserver = this::updateMenuBadge;
+  private final Observer<Boolean> mTrackRecorderObserver = (enable) -> {
+    updateMenuBadge(enable);
+    showButton(enable, MapButtons.trackRecordingStatus);
+  };
+  private final Observer<Integer> mTopButtonMarginObserver = this::updateTopButtonsMargin;
 
   @Nullable
   @Override
@@ -119,6 +128,10 @@ public class MapButtonsController extends Fragment
       mToggleMapLayerButton.setOnClickListener(view -> mMapButtonClickListener.onMapButtonClick(MapButtons.toggleMapLayer));
       mToggleMapLayerButton.setVisibility(View.VISIBLE);
     }
+    mMapButtonsViewModel.setTopButtonsMarginTop(-1);
+    mTrackRecordingStatusButton = mFrame.findViewById(R.id.track_recording_status);
+    if (mTrackRecordingStatusButton != null)
+      mTrackRecordingStatusButton.setOnClickListener(view -> mMapButtonClickListener.onMapButtonClick(MapButtons.trackRecordingStatus));
     final View menuButton = mFrame.findViewById(R.id.menu_button);
     if (menuButton != null)
     {
@@ -157,6 +170,9 @@ public class MapButtonsController extends Fragment
       mButtonsMap.put(MapButtons.menu, menuButton);
     if (helpButton != null)
       mButtonsMap.put(MapButtons.help, helpButton);
+    if (mTrackRecordingStatusButton != null)
+      mButtonsMap.put(MapButtons.trackRecordingStatus, mTrackRecordingStatusButton);
+    showButton(false, MapButtons.trackRecordingStatus);
     return mFrame;
   }
 
@@ -184,12 +200,45 @@ public class MapButtonsController extends Fragment
       case bookmarks:
       case menu:
         UiUtils.showIf(show, buttonView);
+        break;
+      case trackRecordingStatus:
+        UiUtils.showIf(show, buttonView);
+        animateIconBlinking(show, (LayersButton) buttonView);
+    }
+  }
+
+  void animateIconBlinking(boolean show, @NonNull LayersButton temp)
+  {
+    if (show)
+    {
+      Drawable drawable = temp.getDrawable();
+      ObjectAnimator colorAnimator = ObjectAnimator.ofArgb(
+          drawable,
+          "tint",
+          0xFF757575,
+          0xFFFF0000);
+      colorAnimator.setDuration(2500);
+      colorAnimator.setEvaluator(new ArgbEvaluator());
+      colorAnimator.setRepeatCount(ObjectAnimator.INFINITE);
+      colorAnimator.setRepeatMode(ObjectAnimator.REVERSE);
+      colorAnimator.start();
     }
   }
 
   private static int dpToPx(float dp, Context context)
   {
     return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
+  }
+
+  private void updateTopButtonsMargin(int margin)
+  {
+    if (margin == -1)
+      return;
+    if (mTrackRecordingStatusButton == null)
+      return;
+    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mTrackRecordingStatusButton.getLayoutParams();
+    params.topMargin = margin;
+    mTrackRecordingStatusButton.setLayoutParams(params);
   }
 
   @OptIn(markerClass = ExperimentalBadgeUtils.class)
@@ -352,6 +401,7 @@ public class MapButtonsController extends Fragment
     mMapButtonsViewModel.getMyPositionMode().observe(activity, mMyPositionModeObserver);
     mMapButtonsViewModel.getSearchOption().observe(activity, mSearchOptionObserver);
     mMapButtonsViewModel.getTrackRecorderState().observe(activity, mTrackRecorderObserver);
+    mMapButtonsViewModel.getTopButtonsMarginTop().observe(activity, mTopButtonMarginObserver);
   }
 
   public void onResume()
@@ -378,6 +428,7 @@ public class MapButtonsController extends Fragment
   public void onStop()
   {
     super.onStop();
+    mMapButtonsViewModel.getTopButtonsMarginTop().removeObserver(mTopButtonMarginObserver);
     mPlacePageViewModel.getPlacePageDistanceToTop().removeObserver(mPlacePageDistanceToTopObserver);
     mMapButtonsViewModel.getButtonsHidden().removeObserver(mButtonHiddenObserver);
     mMapButtonsViewModel.getMyPositionMode().removeObserver(mMyPositionModeObserver);
@@ -407,7 +458,8 @@ public class MapButtonsController extends Fragment
     search,
     bookmarks,
     menu,
-    help
+    help,
+    trackRecordingStatus
   }
 
   public interface MapButtonClickListener

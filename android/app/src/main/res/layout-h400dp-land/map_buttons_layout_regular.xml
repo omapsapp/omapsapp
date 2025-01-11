@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -9,56 +9,44 @@
   android:clipToPadding="false"
   tools:background="@color/bg_primary">
   <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/map_buttons_inner_left"
+    android:id="@+id/map_buttons_top"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/map_buttons_bottom_margin"
-    android:layout_marginBottom="@dimen/map_buttons_bottom_margin"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:padding="@dimen/nav_frame_padding"
-    app:layout_constraintStart_toStartOf="parent">
+    android:padding="@dimen/nav_frame_padding">
     <include
-      layout="@layout/map_buttons_bookmarks"
+      layout="@layout/map_buttons_layers"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
-    <include
-      layout="@layout/map_buttons_search"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:layout_marginBottom="@dimen/margin_half"
-      app:layout_constraintBottom_toTopOf="@+id/btn_bookmarks"
-      app:layout_constraintStart_toStartOf="parent" />
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
   </androidx.constraintlayout.widget.ConstraintLayout>
   <include
     layout="@layout/map_status_track_recording"
-    android:layout_marginTop="@dimen/track_recorder_status_top_margin"
-    android:layout_marginHorizontal="@dimen/nav_frame_padding"
+    android:layout_margin="@dimen/nav_frame_padding"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true" />
   <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/map_buttons_inner_right"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/map_buttons_bottom_margin"
-    android:layout_marginBottom="@dimen/map_buttons_bottom_margin"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@+id/map_buttons_top"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:padding="@dimen/nav_frame_padding"
-    app:layout_constraintEnd_toEndOf="parent">
+    android:padding="@dimen/nav_frame_padding">
     <include
       layout="@layout/map_buttons_zoom"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:layout_marginBottom="@dimen/zoom_buttons_margin"
       app:layout_constraintBottom_toTopOf="@+id/my_position"
+      android:layout_marginBottom="@dimen/zoom_buttons_margin"
       app:layout_constraintEnd_toEndOf="parent" />
     <include
       layout="@layout/map_buttons_myposition"
@@ -68,4 +56,10 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent" />
   </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+  <include
+    layout="@layout/map_buttons_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentStart="true" />
+</RelativeLayout>

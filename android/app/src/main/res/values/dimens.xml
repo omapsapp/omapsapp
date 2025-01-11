@@ -4,6 +4,7 @@
   <dimen name="track_circle_size">40dp</dimen>
   <dimen name="select_color_circle_size">24dp</dimen>
   <dimen name="bookmark_icon_size">24dp</dimen>
+  <dimen name="dp_400">400dp</dimen>
 
   <!-- margins -->
   <dimen name="margin_eighth">2dp</dimen>
@@ -66,7 +67,7 @@
   <dimen name="margin_direction_around_center">40dp</dimen>
 
   <!-- map widgets -->
-  <dimen name="margin_compass">32dp</dimen>
+  <dimen name="margin_compass">24dp</dimen>
   <dimen name="margin_compass_top">26dp</dimen>
   <dimen name="margin_ruler">10dp</dimen>
   <dimen name="button_small_corner_radius">2dp</dimen>
@@ -90,6 +91,7 @@
   <dimen name="routing_transit_step_corner_radius">4dp</dimen>
   <dimen name="routing_transit_step_min_height">20dp</dimen>
   <dimen name="routing_transit_setp_min_acceptable_with">104dp</dimen>
+  <dimen name="track_recorder_status_top_margin">64dp</dimen>
 
   <!-- Bottom menu -->
   <dimen name="menu_line_height">48dp</dimen>
