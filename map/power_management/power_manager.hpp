@@ -40,6 +40,7 @@ public:
 
   void Subscribe(Subscriber * subscriber);
   void UnsubscribeAll();
+  void Init();
 
 private:
   struct Config
