@@ -1644,13 +1644,17 @@
     <string name="type.place.islet">Острів</string>
     <string name="type.place.isolated_dwelling">Хутір</string>
     <string name="type.place.locality">Місце</string>
-    <string name="type.place.neighbourhood">Мiкрорайон</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Мiкрорайон</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Сусідство</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Район</string>
     <string name="type.place.sea">Море</string>
     <string name="type.place.square">Площа</string>
     <string name="type.place.state">Штат</string>
     <string name="type.place.state.USA">Штат</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Район</string>
     <string name="type.place.town">Місто</string>
     <string name="type.place.village">Село</string>

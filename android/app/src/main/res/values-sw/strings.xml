@@ -753,13 +753,17 @@
     <string name="type.place.islet">Kisiwa</string>
     <string name="type.place.isolated_dwelling">Makao ya Pekee</string>
     <string name="type.place.locality">Eneo</string>
-    <string name="type.place.neighbourhood">Mtaa</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Mtaa</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Ujirani</string>
     <string name="type.place.ocean">Bahari kuu</string>
     <string name="type.place.region">Mkoa</string>
     <string name="type.place.sea">Bahari</string>
     <string name="type.place.square">Nafasi</string>
     <string name="type.place.state">Jimbo la Shirikisho</string>
     <string name="type.place.state.USA">Jimbo</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Pambizo</string>
     <string name="type.place.town">Mji</string>
     <string name="type.place.village">Kijiji</string>

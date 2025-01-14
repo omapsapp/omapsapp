@@ -1634,13 +1634,17 @@
     <string name="type.place.islet">Ada</string>
     <string name="type.place.isolated_dwelling">Konut</string>
     <string name="type.place.locality">Semt</string>
-    <string name="type.place.neighbourhood">Mahalle</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Semt</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Muhit</string>
     <string name="type.place.ocean">Okyanus</string>
     <string name="type.place.region">Bölge</string>
     <string name="type.place.sea">Deniz</string>
     <string name="type.place.square">Meydan</string>
     <string name="type.place.state">Eyalet</string>
     <string name="type.place.state.USA">Eyalet</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Mahalle</string>
     <string name="type.place.town">Kasaba</string>
     <string name="type.place.village">Köy</string>

@@ -1575,13 +1575,17 @@
     <string name="type.place.islet">Uhartea</string>
     <string name="type.place.isolated_dwelling">Etxebizitza Isolatua</string>
     <string name="type.place.locality">Kokapena</string>
-    <string name="type.place.neighbourhood">Auzo</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Auzoa</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Barrutia</string>
     <string name="type.place.ocean">Ozeanoa</string>
     <string name="type.place.region">Eskualdea</string>
     <string name="type.place.sea">Itsasoa</string>
     <string name="type.place.square">Plaza</string>
     <string name="type.place.state">Baldintza</string>
     <string name="type.place.state.USA">Baldintza</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Auzoa</string>
     <string name="type.place.town">Herria</string>
     <string name="type.place.village">Herria</string>

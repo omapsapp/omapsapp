@@ -1632,13 +1632,15 @@
     <string name="type.place.islet">Острвце</string>
     <string name="type.place.isolated_dwelling">Изолована кућа</string>
     <string name="type.place.locality">Локалитет</string>
-    <string name="type.place.neighbourhood">Насеље</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Насеље</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Регион</string>
     <string name="type.place.sea">Море</string>
     <string name="type.place.square">Трг</string>
     <string name="type.place.state">Држава</string>
     <string name="type.place.state.USA">Држава</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Кварт</string>
     <string name="type.place.town">Град</string>
     <string name="type.place.village">Село</string>

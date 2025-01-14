@@ -1385,6 +1385,9 @@
     <string name="type.place.islet">جزیره</string>
     <string name="type.place.isolated_dwelling">مسکن منزوی</string>
     <string name="type.place.locality">محله</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">محله</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">محله</string>
     <string name="type.place.ocean">اقیانوس</string>
     <string name="type.place.region">منطقه</string>
@@ -1392,6 +1395,7 @@
     <string name="type.place.square">میدان</string>
     <string name="type.place.state">ایالت</string>
     <string name="type.place.state.USA">ایالت</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">حومه</string>
     <string name="type.place.town">شهر</string>
     <string name="type.place.village">روستا</string>

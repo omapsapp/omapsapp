@@ -1141,6 +1141,9 @@
     <string name="type.place.islet">Острови</string>
     <string name="type.place.isolated_dwelling">Изолирано жилище</string>
     <string name="type.place.locality">Място</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Съседство</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Съседство</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Регион</string>
@@ -1148,6 +1151,7 @@
     <string name="type.place.square">Площад</string>
     <string name="type.place.state">Федерален щат</string>
     <string name="type.place.state.USA">Държава</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Предградие</string>
     <string name="type.place.town">Касаба</string>
     <string name="type.place.village">Село</string>

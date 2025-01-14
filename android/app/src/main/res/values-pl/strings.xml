@@ -1629,6 +1629,9 @@
     <string name="type.place.islet">Wyspa</string>
     <string name="type.place.isolated_dwelling">Mała osada</string>
     <string name="type.place.locality">Miejscowość niezamieszkana</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Sąsiedztwo</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Sąsiedztwo</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Region</string>
@@ -1636,6 +1639,7 @@
     <string name="type.place.square">Plac</string>
     <string name="type.place.state">Stan</string>
     <string name="type.place.state.USA">Stan</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Przedmieścia</string>
     <string name="type.place.town">Miasteczko</string>
     <string name="type.place.village">Wieś</string>

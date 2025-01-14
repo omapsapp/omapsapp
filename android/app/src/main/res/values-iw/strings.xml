@@ -1639,13 +1639,17 @@
     <string name="type.place.islet">איון</string>
     <string name="type.place.isolated_dwelling">מבנה מבודד</string>
     <string name="type.place.locality">אזור בלתי מיושב</string>
-    <string name="type.place.neighbourhood">שכונה</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">שכונה</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">שְׁכוּנָה</string>
     <string name="type.place.ocean">אוקיינוס</string>
     <string name="type.place.region">חבל ארץ</string>
     <string name="type.place.sea">ים</string>
     <string name="type.place.square">כיכר עירונית</string>
     <string name="type.place.state">מדינה פדרלית</string>
     <string name="type.place.state.USA">מדינה</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">פרוור</string>
     <string name="type.place.town">עיירה</string>
     <string name="type.place.village">כפר</string>

@@ -2901,6 +2901,10 @@
 
 "type.place.locality" = "محله";
 
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "محله";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
 "type.place.neighbourhood" = "محله";
 
 "type.place.ocean" = "اقیانوس";
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "ایالت";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "حومه";
 
 "type.place.town" = "شهر";

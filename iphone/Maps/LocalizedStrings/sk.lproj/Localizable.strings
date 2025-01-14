@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "Lokalita";
 
-"type.place.neighbourhood" = "Štvrť";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Štvrť";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "Susedstvo";
 
 "type.place.ocean" = "Oceán";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Štát";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Predmestie";
 
 "type.place.town" = "Mesto";

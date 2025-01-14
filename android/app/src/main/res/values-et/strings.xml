@@ -1630,6 +1630,9 @@
     <string name="type.place.islet">Laid</string>
     <string name="type.place.isolated_dwelling">Isoleeritud eluruum</string>
     <string name="type.place.locality">Paikkond</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Naabruskond</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Naabruskond</string>
     <string name="type.place.ocean">Ookean</string>
     <string name="type.place.region">Piirkond</string>
@@ -1637,6 +1640,7 @@
     <string name="type.place.square">Väljak</string>
     <string name="type.place.state">Provints</string>
     <string name="type.place.state.USA">Osariik</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Äärelinn</string>
     <string name="type.place.town">Linn</string>
     <string name="type.place.village">Küla</string>

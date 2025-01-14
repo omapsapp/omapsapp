@@ -1498,6 +1498,9 @@
     <string name="type.place.islet">Insult</string>
     <string name="type.place.isolated_dwelling">Locuință izolată</string>
     <string name="type.place.locality">Localitate</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Cartier</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Cartier</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Regiune</string>
@@ -1505,6 +1508,7 @@
     <string name="type.place.square">Spațiu</string>
     <string name="type.place.state">Stat</string>
     <string name="type.place.state.USA">Stat</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Suburbie</string>
     <string name="type.place.town">Oraș</string>
     <string name="type.place.village">Sat</string>

@@ -1659,14 +1659,18 @@
     <string name="type.place.islet">Остров</string>
     <string name="type.place.isolated_dwelling">Хутор</string>
     <string name="type.place.locality">Местность</string>
-    <string name="type.place.neighbourhood">Микрорайон</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Район / Микрорайон</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Микрорайон / ЖК</string>
     <string name="type.place.ocean">Океан</string>
     <string name="type.place.region">Район</string>
     <string name="type.place.sea">Море</string>
     <string name="type.place.square">Площадь</string>
     <string name="type.place.state">Штат</string>
     <string name="type.place.state.USA">Штат</string>
-    <string name="type.place.suburb">Район</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
+    <string name="type.place.suburb">Район / Пригород</string>
     <string name="type.place.town">Город</string>
     <string name="type.place.village">Деревня</string>
     <string name="type.power">Энергетика</string>

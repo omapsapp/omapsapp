@@ -1613,13 +1613,17 @@
     <string name="type.place.islet">Ostrovček</string>
     <string name="type.place.isolated_dwelling">Samota</string>
     <string name="type.place.locality">Lokalita</string>
-    <string name="type.place.neighbourhood">Štvrť</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Štvrť</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Susedstvo</string>
     <string name="type.place.ocean">Oceán</string>
     <string name="type.place.region">Región</string>
     <string name="type.place.sea">More</string>
     <string name="type.place.square">Námestie</string>
     <string name="type.place.state">Štát</string>
     <string name="type.place.state.USA">Štát</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Predmestie</string>
     <string name="type.place.town">Mesto</string>
     <string name="type.place.village">Dedina</string>

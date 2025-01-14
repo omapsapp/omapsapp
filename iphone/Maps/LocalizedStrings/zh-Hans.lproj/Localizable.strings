@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "地方";
 
-"type.place.neighbourhood" = "邻里社区";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "邻里社区";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "社区";
 
 "type.place.ocean" = "海洋";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "州";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "市郊";
 
 "type.place.town" = "镇";

@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "Semt";
 
-"type.place.neighbourhood" = "Mahalle";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Semt";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "Muhit";
 
 "type.place.ocean" = "Okyanus";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Eyalet";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Mahalle";
 
 "type.place.town" = "Kasaba";

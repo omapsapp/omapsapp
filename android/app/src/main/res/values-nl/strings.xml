@@ -1632,6 +1632,9 @@
     <string name="type.place.islet">Eilandje</string>
     <string name="type.place.isolated_dwelling">Geïsoleerde woning</string>
     <string name="type.place.locality">Plaats</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Wijk</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Buurt</string>
     <string name="type.place.ocean">Oceaan</string>
     <string name="type.place.region">Regio</string>
@@ -1639,6 +1642,7 @@
     <string name="type.place.square">Plein</string>
     <string name="type.place.state">Deelstaat</string>
     <string name="type.place.state.USA">Deelstaat</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Buitenwijk</string>
     <string name="type.place.town">Stad</string>
     <string name="type.place.village">Dorp</string>

@@ -1614,13 +1614,17 @@
     <string name="type.place.islet">Île</string>
     <string name="type.place.isolated_dwelling">Lieu-dit</string>
     <string name="type.place.locality">Lieu-dit</string>
-    <string name="type.place.neighbourhood">Quartier</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Quartier</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Voisinage</string>
     <string name="type.place.ocean">Océan</string>
     <string name="type.place.region">Région</string>
     <string name="type.place.sea">Mer</string>
     <string name="type.place.square">Place</string>
     <string name="type.place.state">État</string>
     <string name="type.place.state.USA">État</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Quartier</string>
     <string name="type.place.town">Ville</string>
     <string name="type.place.village">Village</string>

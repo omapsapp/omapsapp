@@ -1625,13 +1625,17 @@
     <string name="type.place.islet">島</string>
     <string name="type.place.isolated_dwelling">孤立居所</string>
     <string name="type.place.locality">當地</string>
-    <string name="type.place.neighbourhood">鄰里社區</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">鄰里社區</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">鄰裡</string>
     <string name="type.place.ocean">海洋</string>
     <string name="type.place.region">地區</string>
     <string name="type.place.sea">海</string>
     <string name="type.place.square">廣場</string>
     <string name="type.place.state">州/省</string>
     <string name="type.place.state.USA">州</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">郊區</string>
     <string name="type.place.town">鎮</string>
     <string name="type.place.village">村莊</string>

@@ -1458,13 +1458,17 @@
     <string name="type.place.islet">Ø</string>
     <string name="type.place.isolated_dwelling">Isoleret bolig</string>
     <string name="type.place.locality">Lokalitet</string>
-    <string name="type.place.neighbourhood">Kvarter</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Kvarter</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Nabolag</string>
     <string name="type.place.ocean">Verdenshave</string>
     <string name="type.place.region">Region</string>
     <string name="type.place.sea">Er</string>
     <string name="type.place.square">Torv</string>
     <string name="type.place.state">Stat</string>
     <string name="type.place.state.USA">Stat</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Forstad</string>
     <string name="type.place.town">By</string>
     <string name="type.place.village">Landsby</string>

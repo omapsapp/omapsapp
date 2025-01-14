@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "परिसर";
 
-"type.place.neighbourhood" = "शेजार";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "शेजार";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "शेजारी";
 
 "type.place.ocean" = "महासागर";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "राज्य";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "उपनगर";
 
 "type.place.town" = "नगर";

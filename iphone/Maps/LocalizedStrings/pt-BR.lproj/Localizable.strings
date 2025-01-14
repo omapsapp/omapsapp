@@ -2901,6 +2901,10 @@
 
 "type.place.locality" = "Localidade";
 
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Sub-bairro";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
 "type.place.neighbourhood" = "Vizinhança";
 
 "type.place.ocean" = "Oceano";
@@ -2915,7 +2919,8 @@
 
 "type.place.state.USA" = "Estado";
 
-"type.place.suburb" = "Subúrbio";
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
+"type.place.suburb" = "Bairro";
 
 "type.place.town" = "Cidade";
 

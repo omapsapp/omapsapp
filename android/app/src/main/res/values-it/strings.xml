@@ -1610,6 +1610,9 @@
     <string name="type.place.islet">Isola</string>
     <string name="type.place.isolated_dwelling">Abitazione isolata</string>
     <string name="type.place.locality">Località</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Quartiere</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Quartiere</string>
     <string name="type.place.ocean">Oceano</string>
     <string name="type.place.region">Regione</string>
@@ -1617,6 +1620,7 @@
     <string name="type.place.square">Piazza</string>
     <string name="type.place.state">Provincia</string>
     <string name="type.place.state.USA">Stato</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Quartiere</string>
     <string name="type.place.town">Città</string>
     <string name="type.place.village">Villaggio</string>

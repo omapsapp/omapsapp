@@ -1477,13 +1477,17 @@
     <string name="type.place.islet">섬</string>
     <string name="type.place.isolated_dwelling">고립된 주거</string>
     <string name="type.place.locality">장소</string>
-    <string name="type.place.neighbourhood">동네</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">동네</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">이웃</string>
     <string name="type.place.ocean">대양</string>
     <string name="type.place.region">지역</string>
     <string name="type.place.sea">바다</string>
     <string name="type.place.square">광장</string>
     <string name="type.place.state">주</string>
     <string name="type.place.state.USA">주</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">교외</string>
     <string name="type.place.town">타운</string>
     <string name="type.place.village">마을</string>

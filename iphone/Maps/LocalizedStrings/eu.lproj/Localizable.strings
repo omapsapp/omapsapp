@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "Kokapena";
 
-"type.place.neighbourhood" = "Auzo";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Auzoa";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "Barrutia";
 
 "type.place.ocean" = "Ozeanoa";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Baldintza";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Auzoa";
 
 "type.place.town" = "Herria";

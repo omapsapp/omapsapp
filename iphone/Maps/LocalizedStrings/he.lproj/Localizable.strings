@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "אזור בלתי מיושב";
 
-"type.place.neighbourhood" = "שכונה";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "שכונה";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "שְׁכוּנָה";
 
 "type.place.ocean" = "אוקיינוס";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "מדינה";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "פרוור";
 
 "type.place.town" = "עיירה";

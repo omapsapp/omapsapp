@@ -2901,6 +2901,10 @@
 
 "type.place.locality" = "Località";
 
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Quartiere";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
 "type.place.neighbourhood" = "Quartiere";
 
 "type.place.ocean" = "Oceano";
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Stato";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Quartiere";
 
 "type.place.town" = "Città";

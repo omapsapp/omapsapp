@@ -1643,6 +1643,9 @@
     <string name="type.place.islet">Isla</string>
     <string name="type.place.isolated_dwelling">Vivienda aislada</string>
     <string name="type.place.locality">Localidad</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Vecindario</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Vecindario</string>
     <string name="type.place.ocean">Océano</string>
     <string name="type.place.region">Región</string>
@@ -1650,6 +1653,7 @@
     <string name="type.place.square">Plaza</string>
     <string name="type.place.state">Estado</string>
     <string name="type.place.state.USA">Estado</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Barrio</string>
     <string name="type.place.town">Pueblo</string>
     <string name="type.place.village">Pueblo</string>

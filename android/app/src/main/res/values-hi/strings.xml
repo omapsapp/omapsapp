@@ -1057,11 +1057,15 @@
     <string name="type.place.hamlet">गांव</string>
     <string name="type.place.island">द्वीप</string>
     <string name="type.place.islet">द्वीपिका</string>
-    <string name="type.place.neighbourhood">मुहल्ला</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">मुहल्ला</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">अड़ोस-पड़ोस</string>
     <string name="type.place.ocean">महासागर</string>
     <string name="type.place.sea">समुद्र</string>
     <string name="type.place.square">चौक</string>
     <string name="type.place.state">राज्य</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">उपनगर</string>
     <string name="type.place.village">गाँव</string>
     <string name="type.power.station">बिजली घर</string>

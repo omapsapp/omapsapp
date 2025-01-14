@@ -812,7 +812,7 @@
 "book_button" = "Buchen";
 
 /* A referral link on the place page for some hotels */
-"more_on_kayak" = "Fotos, bewertungen, buchung";
+"more_on_kayak" = "Fotos, Bewertungen, Buchung";
 
 /* An explanation dialog shown when clicking on more_on_kayak link. */
 "dialog_kayak_disclaimer" = "Der Empfehlungsbonus, den wir für jede Buchung über diesen Link erhalten, fließt in die Entwicklung von Organic Maps.";
@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "Örtlichkeit";
 
-"type.place.neighbourhood" = "Stadtviertel";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Stadtviertel";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "Siedlung";
 
 "type.place.ocean" = "Ozean";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Bundesstaat";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Stadtteil";
 
 "type.place.town" = "Kleinstadt";

@@ -1468,6 +1468,9 @@
     <string name="type.place.islet">Pulau</string>
     <string name="type.place.isolated_dwelling">Tempat Tinggal Terisolasi</string>
     <string name="type.place.locality">Wilayah</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Lingkungan</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Lingkungan</string>
     <string name="type.place.ocean">Samudra</string>
     <string name="type.place.region">Wilayah</string>
@@ -1475,6 +1478,7 @@
     <string name="type.place.square">Lapangan kota</string>
     <string name="type.place.state">Negara bagian</string>
     <string name="type.place.state.USA">Negara bagian</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Pinggiran kota</string>
     <string name="type.place.town">Kota</string>
     <string name="type.place.village">Desa</string>

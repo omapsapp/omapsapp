@@ -1700,6 +1700,9 @@
     <string name="type.place.islet">Islet</string>
     <string name="type.place.isolated_dwelling">Isolated Dwelling</string>
     <string name="type.place.locality">Locality</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Quarter</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Neighbourhood</string>
     <string name="type.place.ocean">Ocean</string>
     <string name="type.place.region">Region</string>
@@ -1707,6 +1710,7 @@
     <string name="type.place.square">Square</string>
     <string name="type.place.state">State</string>
     <string name="type.place.state.USA">State</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Suburb</string>
     <string name="type.place.town">Town</string>
     <string name="type.place.village">Village</string>

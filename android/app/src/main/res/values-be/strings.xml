@@ -1284,13 +1284,17 @@
     <string name="type.place.islet">Астравок</string>
     <string name="type.place.isolated_dwelling">Хутар</string>
     <string name="type.place.locality">Місце</string>
-    <string name="type.place.neighbourhood">Мікрараён</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Мікрараён</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Наваколле</string>
     <string name="type.place.ocean">Акіян</string>
     <string name="type.place.region">Рэгіён</string>
     <string name="type.place.sea">Мора</string>
     <string name="type.place.square">Плошча</string>
     <string name="type.place.state">Штат</string>
     <string name="type.place.state.USA">Штат</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Раён</string>
     <string name="type.place.town">Мястэчка</string>
     <string name="type.place.village">Вёска</string>

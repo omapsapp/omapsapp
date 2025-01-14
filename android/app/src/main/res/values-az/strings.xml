@@ -1603,6 +1603,9 @@
     <string name="type.place.islet">Ada</string>
     <string name="type.place.isolated_dwelling">Mənzil</string>
     <string name="type.place.locality">Rayon</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Qonşuluq</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Qonşuluq</string>
     <string name="type.place.ocean">Okean</string>
     <string name="type.place.region">Ərazi</string>
@@ -1610,6 +1613,7 @@
     <string name="type.place.square">Kvadrat</string>
     <string name="type.place.state">Dövlət</string>
     <string name="type.place.state.USA">Dövlət</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Qonşuluq</string>
     <string name="type.place.town">Şəhər</string>
     <string name="type.place.village">Bay</string>

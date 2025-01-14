@@ -1489,13 +1489,17 @@
     <string name="type.place.islet">Ostrov</string>
     <string name="type.place.isolated_dwelling">Izolované obydlí</string>
     <string name="type.place.locality">Lokalita</string>
-    <string name="type.place.neighbourhood">Čtvrť</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Čtvrť</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">Sousedství</string>
     <string name="type.place.ocean">Oceán</string>
     <string name="type.place.region">Region</string>
     <string name="type.place.sea">Moře</string>
     <string name="type.place.square">Náměstí</string>
     <string name="type.place.state">Země</string>
     <string name="type.place.state.USA">Země</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Předměstí</string>
     <string name="type.place.town">Město</string>
     <string name="type.place.village">Vesnice</string>

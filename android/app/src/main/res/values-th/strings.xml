@@ -1478,6 +1478,9 @@
     <string name="type.place.islet">เกาะ</string>
     <string name="type.place.isolated_dwelling">ที่อยู่อาศัยโดดเดี่ยว</string>
     <string name="type.place.locality">ท้องถิ่น</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">ละแวกบ้าน</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">ละแวกบ้าน</string>
     <string name="type.place.ocean">มหาสมุทร</string>
     <string name="type.place.region">ภูมิภาค</string>
@@ -1485,6 +1488,7 @@
     <string name="type.place.square">ช่องว่าง</string>
     <string name="type.place.state">รัฐ</string>
     <string name="type.place.state.USA">รัฐ</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">ชานเมือง</string>
     <string name="type.place.town">เมือง</string>
     <string name="type.place.village">หมู่บ้าน</string>

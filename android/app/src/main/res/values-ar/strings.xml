@@ -1629,13 +1629,17 @@
     <string name="type.place.islet">جزيرة</string>
     <string name="type.place.isolated_dwelling">مسكن منعزل</string>
     <string name="type.place.locality">منطقة مجاورة</string>
-    <string name="type.place.neighbourhood">حي سكني</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">حي سكني</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
+    <string name="type.place.neighbourhood">الحي</string>
     <string name="type.place.ocean">محيط</string>
     <string name="type.place.region">منطقة</string>
     <string name="type.place.sea">بحر</string>
     <string name="type.place.square">ميدان</string>
     <string name="type.place.state">محافظة</string>
     <string name="type.place.state.USA">ولاية</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">ضاحية</string>
     <string name="type.place.town">بلدة</string>
     <string name="type.place.village">قرية</string>

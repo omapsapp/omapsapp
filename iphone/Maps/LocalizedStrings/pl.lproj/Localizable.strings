@@ -2901,6 +2901,10 @@
 
 "type.place.locality" = "Miejscowość niezamieszkana";
 
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Sąsiedztwo";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
 "type.place.neighbourhood" = "Sąsiedztwo";
 
 "type.place.ocean" = "Ocean";
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Stan";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Przedmieścia";
 
 "type.place.town" = "Miasteczko";

@@ -1409,7 +1409,12 @@
     <string name="type.organic.yes">Orgânico</string>
     <string name="type.place.farm">Fazenda</string>
     <string name="type.place.hamlet">Lugarejo</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Sub-bairro</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Vizinhança</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
+    <string name="type.place.suburb">Bairro</string>
     <string name="type.place.village">Aldeia</string>
     <string name="type.power">Energia</string>
     <string name="type.power.generator">Gerador de energia</string>

@@ -2901,7 +2901,11 @@
 
 "type.place.locality" = "Körzet";
 
-"type.place.neighbourhood" = "Városrész";
+/* Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) */
+"type.place.quarter" = "Városrész";
+
+/* Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) */
+"type.place.neighbourhood" = "Szomszédság";
 
 "type.place.ocean" = "Óceán";
 
@@ -2915,6 +2919,7 @@
 
 "type.place.state.USA" = "Állam";
 
+/* Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) */
 "type.place.suburb" = "Kertváros";
 
 "type.place.town" = "Város";

@@ -1603,6 +1603,9 @@
     <string name="type.place.islet">Saari</string>
     <string name="type.place.isolated_dwelling">Erillinen asunto</string>
     <string name="type.place.locality">Paikkakunta</string>
+    <!-- Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter) -->
+    <string name="type.place.quarter">Naapurusto</string>
+    <!-- Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood) -->
     <string name="type.place.neighbourhood">Naapurusto</string>
     <string name="type.place.ocean">Valtameri</string>
     <string name="type.place.region">Alue</string>
@@ -1610,6 +1613,7 @@
     <string name="type.place.square">Tori</string>
     <string name="type.place.state">Lääni</string>
     <string name="type.place.state.USA">Lääni</string>
+    <!-- Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb) -->
     <string name="type.place.suburb">Esikaupunki</string>
     <string name="type.place.town">Kaupunki</string>
     <string name="type.place.village">Kylä</string>
