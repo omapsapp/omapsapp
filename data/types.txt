@@ -904,7 +904,7 @@ mapswithme
 railway|subway|tunnel
 mapswithme
 railway|subway|tunnel
-mapswithme
+*place|quarter
 railway|subway|tunnel
 *shop|rental
 railway|subway|tunnel

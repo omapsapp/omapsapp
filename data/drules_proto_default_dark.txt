@@ -67800,6 +67800,129 @@ cont {
   }
 }
 cont {
+  name: "place-quarter"
+  element {
+    scale: 13
+    caption {
+      primary {
+        height: 11
+        color: 5592405
+      }
+      secondary {
+        height: 9
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 14
+    caption {
+      primary {
+        height: 12
+        color: 5592405
+      }
+      secondary {
+        height: 10
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 15
+    caption {
+      primary {
+        height: 14
+        color: 5592405
+      }
+      secondary {
+        height: 12
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 16
+    caption {
+      primary {
+        height: 14
+        color: 5592405
+      }
+      secondary {
+        height: 12
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 17
+    caption {
+      primary {
+        height: 14
+        color: 5592405
+      }
+      secondary {
+        height: 12
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 18
+    caption {
+      primary {
+        height: 14
+        color: 5592405
+      }
+      secondary {
+        height: 12
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 19
+    caption {
+      primary {
+        height: 14
+        color: 5592405
+      }
+      secondary {
+        height: 12
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+  element {
+    scale: 20
+    caption {
+      primary {
+        height: 14
+        color: 5592405
+      }
+      secondary {
+        height: 12
+        color: 5592405
+        offset_y: 1
+      }
+      priority: 5750
+    }
+  }
+}
+cont {
   name: "place-sea"
   element {
     scale: 4
@@ -68237,11 +68360,11 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 12
+        height: 14
         color: 5592405
       }
       secondary {
-        height: 10
+        height: 12
         color: 5592405
         offset_y: 1
       }
