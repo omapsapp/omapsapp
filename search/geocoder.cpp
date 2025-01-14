@@ -1269,6 +1269,7 @@ void Geocoder::GreedilyMatchStreetsWithSuburbs(BaseContext & ctx, CentersFilter 
       {
       case ftypes::SuburbType::Residential: radius = kMaxResidentialRadiusM; break;
       case ftypes::SuburbType::Neighbourhood: radius = kMaxNeighbourhoodRadiusM; break;
+      case ftypes::SuburbType::Quarter: radius = kMaxNeighbourhoodRadiusM; break;
       case ftypes::SuburbType::Suburb: radius = kMaxSuburbRadiusM; break;
       default: CHECK(false, ("Bad suburb type:", base::Underlying(suburbType)));
       }

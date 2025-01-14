@@ -21831,8 +21831,9 @@
     zh-Hans = 地方
     zh-Hant = 當地
 
-  [type.place.neighbourhood]
-    en = Neighbourhood
+  [type.place.quarter]
+    comment = Named part of a city or town, bigger than place=neighbourhood and smaller than place=suburb (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dquarter)
+    en = Quarter
     af = Buurt
     ar = حي سكني
     az = Qonşuluq
@@ -21844,7 +21845,7 @@
     el = Γειτονιά
     es = Vecindario
     et = Naabruskond
-    eu = Auzo
+    eu = Auzoa
     fa = محله
     fi = Naapurusto
     fr = Quartier
@@ -21857,22 +21858,68 @@
     ko = 동네
     mr = शेजार
     nb = Strøk
-    nl = Buurt
+    nl = Wijk
     pl = Sąsiedztwo
     pt = Bairro
-    pt-BR = Vizinhança
+    pt-BR = Sub-bairro
     ro = Cartier
-    ru = Микрорайон
+    ru = Район / Микрорайон
     sk = Štvrť
     sr = Насеље
     sv = Grannskap
     sw = Mtaa
     th = ละแวกบ้าน
-    tr = Mahalle
+    tr = Semt
     uk = Мiкрорайон
     vi = Vùng lân cận
     zh-Hans = 邻里社区
     zh-Hant = 鄰里社區
+
+  [type.place.neighbourhood]
+    comment = Named part of a city, town or suburb, smaller than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Neighbourhood)
+    en = Neighbourhood
+    af = Buurt
+    ar = الحي
+    az = Qonşuluq
+    be = Наваколле
+    bg = Съседство
+    ca = Barri
+    cs = Sousedství
+    da = Nabolag
+    de = Siedlung
+    el = Γειτονιά
+    es = Vecindario
+    et = Naabruskond
+    eu = Barrutia
+    fa = محله
+    fi = Naapurusto
+    fr = Voisinage
+    he = שְׁכוּנָה
+    hi = अड़ोस-पड़ोस
+    hu = Szomszédság
+    id = Lingkungan
+    it = Quartiere
+    ja = 近隣
+    ko = 이웃
+    lt = Kaimynystė
+    lv = Kaimiņi
+    mr = शेजारी
+    nb = Nabolag
+    nl = Buurt
+    pl = Sąsiedztwo
+    pt = Bairro
+    pt-BR = Vizinhança
+    ro = Cartier
+    ru = Микрорайон / ЖК
+    sk = Susedstvo
+    sv = Grannskapet
+    sw = Ujirani
+    th = ละแวกบ้าน
+    tr = Muhit
+    uk = Сусідство
+    vi = Hàng xóm
+    zh-Hans = 社区
+    zh-Hant = 鄰裡
 
   [type.place.ocean]
     en = Ocean
@@ -22125,6 +22172,7 @@
     zh-Hant = 州
 
   [type.place.suburb]
+    comment = Named part of a city or town, bigger than place=quarter (Wiki: https://wiki.openstreetmap.org/wiki/Tag:place%3Dsuburb)
     en = Suburb
     af = Voorstad
     ar = ضاحية
@@ -22153,8 +22201,9 @@
     nl = Buitenwijk
     pl = Przedmieścia
     pt = Subúrbio
+    pt-BR = Bairro
     ro = Suburbie
-    ru = Район
+    ru = Район / Пригород
     sk = Predmestie
     sr = Кварт
     sv = Förort

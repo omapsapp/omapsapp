@@ -7804,9 +7804,9 @@ sw:Kisiwa
 fa:جزیره
 mr:बेट
 
-place-suburb|landuse-residential|place-neighbourhood
-en:Suburb|district
-ru:Район|микрорайон|округ|квартал
+place-suburb|place-quarter|place-neighbourhood|landuse-residential
+en:Suburb|district|quarter|neighbourhood|neighborhood
+ru:Район|микрорайон|квартал
 bg:Район|микрорайон|окръг|квартал
 ar:حي سكني|ضاحية
 cs:Předměstí|městská část|městská zóna
@@ -7814,7 +7814,7 @@ da:Forstad|distrikt
 nl:Buitenwijken|voorstad|wijk
 fi:Esikaupunki
 fr:Banlieue|arrondissement|quartier
-de:Stadtteil|Kreis|Wohnbezirk|Wohnviertel
+de:Stadtteil|Stadtviertel|Wohnviertel|Wohnbezirk|Nachbarschaft
 hi:मुहल्ला|उपनगर
 hu:Kerület
 id:Pinggiran kota

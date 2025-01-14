@@ -1018,7 +1018,7 @@ deprecated|deprecated;903;x
 railway|subway|lightblue;[railway=subway][colour=lightblue];x;name;int_name;904;railway|subway|tunnel
 deprecated|deprecated;905;x
 railway|subway|lightgreen;[railway=subway][colour=lightgreen];x;name;int_name;906;railway|subway|tunnel
-deprecated|deprecated;907;x
+place|quarter;[place=quarter];;name;int_name;907;
 railway|subway|violet;[railway=subway][colour=violet];x;name;int_name;908;railway|subway|tunnel
 shop|rental;909;
 railway|subway|grey;[railway=subway][colour=grey];x;name;int_name;910;railway|subway|tunnel
@@ -1073,7 +1073,7 @@ craft|electronics_repair;958;
 shop|appliance;959;
 amenity|casino;960;
 amenity|brothel;961;
-place|neighbourhood;[place=neighbourhood],[place=quarter];;name;int_name;962;
+place|neighbourhood;[place=neighbourhood];;name;int_name;962;
 place|isolated_dwelling;963;
 historic|wayside_cross;964;
 historic|wayside_shrine;965;

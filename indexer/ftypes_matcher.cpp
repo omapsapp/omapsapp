@@ -261,6 +261,7 @@ IsSuburbChecker::IsSuburbChecker()
   Classificator const & c = classif();
   base::StringIL const types[] = {{"landuse", "residential"},
                                   {"place", "neighbourhood"},
+                                  {"place", "quarter"},
                                   {"place", "suburb"}};
   for (auto const & e : types)
     m_types.push_back(c.GetTypeByPath(e));
@@ -268,7 +269,8 @@ IsSuburbChecker::IsSuburbChecker()
   // `types` order should match next indices.
   static_assert(static_cast<size_t>(SuburbType::Residential) == 0, "");
   static_assert(static_cast<size_t>(SuburbType::Neighbourhood) == 1, "");
-  static_assert(static_cast<size_t>(SuburbType::Suburb) == 2, "");
+  static_assert(static_cast<size_t>(SuburbType::Quarter) == 2, "");
+  static_assert(static_cast<size_t>(SuburbType::Suburb) == 3, "");
 }
 
 SuburbType IsSuburbChecker::GetType(uint32_t t) const

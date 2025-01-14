@@ -141,6 +141,7 @@ enum class SuburbType
 {
   Residential = 0,
   Neighbourhood,
+  Quarter,
   Suburb,
   Count
 };
