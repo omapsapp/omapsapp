@@ -5,7 +5,7 @@ final class ElevationProfileFormatter {
 
   private enum Constants {
     static let metricToImperialMultiplier: CGFloat = 0.3048
-    static var metricAltitudeStep: CGFloat = 50
+    static var metricAltitudeStep: CGFloat = 25
     static var imperialAltitudeStep: CGFloat = 100
   }
 

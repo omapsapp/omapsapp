@@ -24,14 +24,29 @@ class PlacePageInteractor: NSObject {
   }
 
   private func updatePlacePageIfNeeded() {
-    let isBookmark = placePageData.bookmarkData != nil && bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId)
-    let isTrack = placePageData.trackData != nil && bookmarksManager.hasTrack(placePageData.trackData!.trackId)
-    guard isBookmark || isTrack else {
-      presenter?.closeAnimated()
-      return
+    func updatePlacePage() {
+      FrameworkHelper.updatePlacePageData()
+      placePageData.updateBookmarkStatus()
     }
-    FrameworkHelper.updatePlacePageData()
-    placePageData.updateBookmarkStatus()
+
+    switch placePageData.objectType {
+    case .POI, .trackRecording:
+      break
+    case .bookmark:
+      guard bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId) else {
+        presenter?.closeAnimated()
+        return
+      }
+      updatePlacePage()
+    case .track:
+      guard bookmarksManager.hasTrack(placePageData.trackData!.trackId) else {
+        presenter?.closeAnimated()
+        return
+      }
+      updatePlacePage()
+    @unknown default:
+      fatalError("Unknown object type")
+    }
   }
 
   private func addToBookmarksManagerObserverList() {
@@ -242,6 +257,9 @@ extension PlacePageInteractor: ActionBarViewControllerDelegate {
       // TODO: This is temporary solution. Remove the dialog and use the MWMPlacePageManagerHelper.removeTrack
       // directly here when the track recovery mechanism will be implemented.
       showTrackDeletionConfirmationDialog()
+    case .saveTrackRecording:
+      // TODO: (KK) pass name
+      TrackRecordingManager.shared.processAction(.stopAndSave(name: nil))
     @unknown default:
       fatalError()
     }
@@ -277,8 +295,8 @@ extension PlacePageInteractor: ElevationProfileViewControllerDelegate {
   }
 
   func updateMapPoint(_ point: CLLocationCoordinate2D, distance: Double) {
-    guard let trackId = placePageData.trackData?.trackId else { return }
-    BookmarksManager.shared().setElevationActivePoint(point, distance: distance, trackId: trackId)
+    guard let trackData = placePageData.trackData, trackData.elevationProfileData?.isTrackRecording == false else { return }
+    BookmarksManager.shared().setElevationActivePoint(point, distance: distance, trackId: trackData.trackId)
   }
 }
 

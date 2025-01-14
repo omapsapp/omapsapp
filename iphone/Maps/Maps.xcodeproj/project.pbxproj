@@ -509,6 +509,7 @@
 		ED7CCC4F2C1362E300E2A737 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7CCC4E2C1362E300E2A737 /* FileType.swift */; };
 		ED808D0F2C38407800D52585 /* CircleImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED808D0E2C38407800D52585 /* CircleImageButton.swift */; };
 		ED8270F02C2071A3005966DA /* SettingsTableViewDetailedSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8270EF2C2071A3005966DA /* SettingsTableViewDetailedSwitchCell.swift */; };
+		ED8C31372D1B12990070EFD3 /* PlacePageTrackRecordingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C31362D1B12990070EFD3 /* PlacePageTrackRecordingLayout.swift */; };
 		ED9857082C4ED02D00694F6C /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9857072C4ED02D00694F6C /* MailComposer.swift */; };
 		ED9966802B94FBC20083CE55 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99667D2B94FBC20083CE55 /* ColorPicker.swift */; };
 		EDA1EAA42CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1EAA32CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift */; };
@@ -1471,6 +1472,7 @@
 		ED7CCC4E2C1362E300E2A737 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		ED808D0E2C38407800D52585 /* CircleImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageButton.swift; sourceTree = "<group>"; };
 		ED8270EF2C2071A3005966DA /* SettingsTableViewDetailedSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDetailedSwitchCell.swift; sourceTree = "<group>"; };
+		ED8C31362D1B12990070EFD3 /* PlacePageTrackRecordingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePageTrackRecordingLayout.swift; sourceTree = "<group>"; };
 		ED9857072C4ED02D00694F6C /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		ED99667D2B94FBC20083CE55 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		EDA1EAA32CC7ECAD00DBDCAA /* ElevationProfileFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationProfileFormatter.swift; sourceTree = "<group>"; };
@@ -3023,6 +3025,7 @@
 				99C6532123F2F506004322F3 /* IPlacePageLayout.swift */,
 				99F3EB0223F4178200C713F8 /* PlacePageCommonLayout.swift */,
 				993DF0B423F6B2EF00AC231A /* PlacePageTrackLayout.swift */,
+				ED8C31362D1B12990070EFD3 /* PlacePageTrackRecordingLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -4844,6 +4847,7 @@
 				EDFDFB4A2B722A310013A44C /* SocialMediaCollectionViewCell.swift in Sources */,
 				6741AA2B1BF340DE002C974C /* CircleView.m in Sources */,
 				4788739220EE326500F6826B /* VerticallyAlignedButton.swift in Sources */,
+				ED8C31372D1B12990070EFD3 /* PlacePageTrackRecordingLayout.swift in Sources */,
 				EDFDFB462B7139490013A44C /* AboutInfo.swift in Sources */,
 				3444DFDE1F18A5AF00E73099 /* SideButtonsArea.swift in Sources */,
 				CDCA278622451F5000167D87 /* RouteInfo.swift in Sources */,

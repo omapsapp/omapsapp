@@ -443,6 +443,7 @@ public:
   void SaveTrackRecordingWithName(std::string const & name);
   bool IsTrackRecordingEmpty() const;
   bool IsTrackRecordingEnabled() const;
+  const ElevationInfo & GetTrackRecordingCurrentElevationInfo();
 
   void SetMapStyle(MapStyle mapStyle);
   void MarkMapStyle(MapStyle mapStyle);

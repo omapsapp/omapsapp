@@ -3,6 +3,7 @@
 #import "ProductsConfiguration+Core.h"
 #import "Product+Core.h"
 #import "TrackInfo+Core.h"
+#import "ElevationProfileData+Core.h"
 
 #include "Framework.h"
 
@@ -244,6 +245,10 @@ static Framework::ProductsPopupCloseReason ConvertProductPopupCloseReasonToCore(
 
 + (BOOL)isTrackRecordingEmpty {
   return GetFramework().IsTrackRecordingEmpty();
+}
+
++ (ElevationProfileData * _Nonnull)trackRecordingElevationInfo {
+  return [[ElevationProfileData alloc] initWithElevationInfo:GetFramework().GetTrackRecordingCurrentElevationInfo()];
 }
 
 // MARK: - ProductsManager

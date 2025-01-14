@@ -5,6 +5,7 @@
 
 @class MWMMapSearchResult;
 @class TrackInfo;
+@class ElevationProfileData;
 
 typedef NS_ENUM(NSUInteger, MWMZoomMode) { MWMZoomModeIn = 0, MWMZoomModeOut };
 
@@ -28,6 +29,9 @@ typedef void (^TrackRecordingUpdatedHandler)(TrackInfo * _Nonnull trackInfo);
 + (void)saveTrackRecordingWithName:(nullable NSString *)name;
 + (BOOL)isTrackRecordingEnabled;
 + (BOOL)isTrackRecordingEmpty;
+/// Returns current track recording elevation info.
+/// If the track recording is not in progress, returns empty ElevationProfileData.
++ (ElevationProfileData * _Nonnull)trackRecordingElevationInfo;
 
 @end
 

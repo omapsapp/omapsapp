@@ -121,6 +121,13 @@ public class ChartView: UIView {
     }
   }
 
+  public var isChartViewInfoHidden: Bool = false {
+    didSet {
+      chartInfoView.isHidden = isChartViewInfoHidden
+      chartInfoView.isUserInteractionEnabled = !isChartViewInfoHidden
+    }
+  }
+
   public typealias OnSelectedPointChangedClosure = (_ px: CGFloat) -> Void
   public var onSelectedPointChanged: OnSelectedPointChangedClosure?
 
@@ -332,11 +339,11 @@ extension ChartView: ChartInfoViewDelegate {
   }
 
   func chartInfoView(_ view: ChartInfoView, infoAtPointX pointX: CGFloat) -> (String, [ChartLineInfo])? {
-    let p = convert(CGPoint(x: pointX, y: 0), from: view)
+    let p = convert(CGPoint(x: pointX, y: .zero), from: view)
     let x = (p.x / bounds.width) * CGFloat(xAxisView.upperBound - xAxisView.lowerBound) + CGFloat(xAxisView.lowerBound)
     let x1 = floor(x)
     let x2 = ceil(x)
-    guard Int(x1) < chartData.labels.count && x >= 0 else { return nil }
+    guard Int(x1) < chartData.labels.count && x >= .zero else { return nil }
     let label = chartData.labelAt(x)
 
     var result: [ChartLineInfo] = []
@@ -352,8 +359,7 @@ extension ChartView: ChartInfoViewDelegate {
         CGFloat(yAxisView.upperBound - yAxisView.lowerBound))
 
       let v = round(dx * CGFloat(y2 - y1)) + CGFloat(y1)
-      result.append(ChartLineInfo(name: line.name,
-                                  color: line.color,
+      result.append(ChartLineInfo(color: line.color,
                                   point: chartsContainerView.convert(CGPoint(x: p.x, y: py), to: view),
                                   formattedValue: chartData.formatter.yAxisString(from: Double(v))))
     }

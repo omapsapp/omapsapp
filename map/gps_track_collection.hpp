@@ -2,6 +2,8 @@
 
 #include "platform/location.hpp"
 
+#include "map/elevation_info.hpp"
+
 #include <deque>
 #include <limits>
 #include <utility>
@@ -11,8 +13,8 @@ struct GpsTrackInfo
 {
   double m_length;
   double m_duration;
-  uint32_t m_ascent;
-  uint32_t m_descent;
+  double m_ascent;
+  double m_descent;
   int16_t m_minElevation;
   int16_t m_maxElevation;
 };
@@ -48,6 +50,9 @@ public:
 
   GpsTrackInfo GetTrackInfo() const { return m_trackInfo; }
 
+  /// Calculates and returns elevation info for the track.
+  const ElevationInfo & GetElevationInfo();
+
   /// Enumerates items in the collection.
   /// @param f - callable object, which is called with params - item and item id,
   /// if f returns false, then enumeration is stopped.
@@ -73,4 +78,5 @@ private:
 
   size_t m_lastId;
   GpsTrackInfo m_trackInfo;
+  ElevationInfo m_elevationInfo;
 };
