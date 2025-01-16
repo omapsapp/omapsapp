@@ -163,7 +163,7 @@ public final class CarAppSession extends Session implements DefaultLifecycleObse
     mInitFailed = false;
     try
     {
-      MwmApplication.from(getCarContext()).init(() -> {
+      MwmApplication.from(getCarContext()).initOrganicMaps(() -> {
         Config.setFirstStartDialogSeen(getCarContext());
         if (DownloaderHelpers.isWorldMapsDownloadNeeded())
           mScreenManager.push(new DownloadMapsScreenBuilder(getCarContext()).setDownloaderType(DownloadMapsScreenBuilder.DownloaderType.FirstLaunch).build());

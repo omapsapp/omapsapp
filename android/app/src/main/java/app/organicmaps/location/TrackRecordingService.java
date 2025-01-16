@@ -135,7 +135,7 @@ public class TrackRecordingService extends Service implements LocationListener
   @Override
   public int onStartCommand(@NonNull Intent intent, int flags, int startId)
   {
-    if (!MwmApplication.from(this).arePlatformAndCoreInitialized())
+    if (!MwmApplication.from(this).getOrganicMaps().arePlatformAndCoreInitialized())
     {
       Logger.w(TAG, "Application is not initialized");
       stopSelf();

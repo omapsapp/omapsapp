@@ -201,7 +201,7 @@ public class NavigationService extends Service implements LocationListener
       return START_NOT_STICKY;
     }
 
-    if (!MwmApplication.from(this).arePlatformAndCoreInitialized())
+    if (!MwmApplication.from(this).getOrganicMaps().arePlatformAndCoreInitialized())
     {
       // The system restarts the service if the app's process has crashed or been stopped. It would be nice to
       // automatically restore the last route and resume navigation. Unfortunately, the current implementation of

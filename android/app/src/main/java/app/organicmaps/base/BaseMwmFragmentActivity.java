@@ -69,7 +69,7 @@ public abstract class BaseMwmFragmentActivity extends AppCompatActivity
     setTheme(getThemeResourceId(mThemeName));
     EdgeToEdge.enable(this, SystemBarStyle.dark(Color.TRANSPARENT));
     RtlUtils.manageRtl(this);
-    if (!MwmApplication.from(this).arePlatformAndCoreInitialized())
+    if (!MwmApplication.from(this).getOrganicMaps().arePlatformAndCoreInitialized())
     {
       final Intent intent = Objects.requireNonNull(getIntent());
       intent.setComponent(new ComponentName(this, SplashActivity.class));

@@ -581,7 +581,7 @@ public class Utils
   public static void detachFragmentIfCoreNotInitialized(@NonNull Context context,
                                                         @NonNull Fragment fragment)
   {
-    if (MwmApplication.from(context).arePlatformAndCoreInitialized())
+    if (MwmApplication.from(context).getOrganicMaps().arePlatformAndCoreInitialized())
       return;
 
     FragmentManager manager = fragment.getFragmentManager();
