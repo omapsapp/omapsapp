@@ -13,6 +13,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
@@ -27,6 +28,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationChannelCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.app.ServiceCompat;
 import androidx.core.content.ContextCompat;
 
 import app.organicmaps.Framework;
@@ -228,7 +230,7 @@ public class NavigationService extends Service implements LocationListener
     {
       try
       {
-        startForeground(NavigationService.NOTIFICATION_ID, getNotificationBuilder(this).build());
+        ServiceCompat.startForeground(this, NavigationService.NOTIFICATION_ID, getNotificationBuilder(this).build(), ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION);
       } catch (ForegroundServiceStartNotAllowedException e)
       {
         Logger.e(TAG, "Oops! ForegroundService is not allowed", e);
