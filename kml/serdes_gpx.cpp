@@ -34,8 +34,14 @@ std::string_view constexpr kCmt = "cmt";
 std::string_view constexpr kTime = "time";
 
 std::string_view constexpr kGpxHeader =
-    "<?xml version=\"1.0\"?>\n"
-    "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" version=\"1.1\">\n";
+  "<?xml version=\"1.0\"?>\n"
+  "<gpx version=\"1.1\" creator=\"Organic Maps\" xmlns=\"http://www.topografix.com/GPX/1/1\"\n"
+  "    xmlns:gpxx=\"http://www.garmin.com/xmlschemas/GpxExtensions/v3\"\n"
+  "    xmlns:gpx_style=\"http://www.topografix.com/GPX/gpx_style/0/2\"\n"
+  "    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+  "    xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd "
+  "http://www.topografix.com/GPX/gpx_style/0/2 https://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd "
+  "http://www.garmin.com/xmlschemas/GpxExtensions/v3 https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd\">\n";
 
 std::string_view constexpr kGpxFooter = "</gpx>";
 
@@ -133,7 +139,12 @@ std::string const & GpxParser::GetTagFromEnd(size_t n) const
 
 void GpxParser::ParseColor(std::string const & value)
 {
-  auto const colorBytes = FromHex(value);
+  std::string_view colorStr = value;
+  if (colorStr.at(0) == '#')
+    colorStr = colorStr.substr(1, colorStr.size() - 1);
+  if (colorStr.length() == 8)
+    colorStr = colorStr.substr(2, colorStr.length() - 1);
+  auto const colorBytes = FromHex(colorStr);
   if (colorBytes.size() != 3)
   {
     LOG(LWARNING, ("Invalid color value", value));
@@ -483,6 +494,66 @@ void SaveColorToRGB(Writer & writer, uint32_t rgba)
          << NumToHex(static_cast<uint8_t>((rgba >> 8) & 0xFF));
 }
 
+void SaveColorToARGB(Writer & writer, uint32_t rgba)
+{
+  writer << NumToHex(static_cast<uint8_t>(rgba & 0xFF))
+         << NumToHex(static_cast<uint8_t>(rgba >> 24 & 0xFF))
+         << NumToHex(static_cast<uint8_t>((rgba >> 16) & 0xFF))
+         << NumToHex(static_cast<uint8_t>((rgba >> 8) & 0xFF));
+}
+
+std::tuple<uint8_t, uint8_t, uint8_t> ExtractRGB(std::uint32_t color) {
+  return {(color >> 24) & 0xFF, (color >> 16) & 0xFF, (color >> 8) & 0xFF};
+}
+
+int ColorDistance(std::uint32_t color1, std::uint32_t color2) {
+  auto [r1, g1, b1] = ExtractRGB(color1);
+  auto [r2, g2, b2] = ExtractRGB(color2);
+  return (r1 - r2) * (r1 - r2) + (g1 - g2) * (g1 - g2) + (b1 - b2) * (b1 - b2);
+}
+
+std::string MapGarminColor(uint32_t rgba)
+{
+  static std::unordered_map<std::uint32_t, std::string> const kHexToGarmin = {
+    {0x000000ff, "Black"},
+    {0x8b0000ff, "DarkRed"},
+    {0x006400ff, "DarkGreen"},
+    {0xb5b820ff, "DarkYellow"},
+    {0x00008bff, "DarkBlue"},
+    {0x8b008bff, "DarkMagenta"},
+    {0x008b8bff, "DarkCyan"},
+    {0xccccccff, "LightGray"},
+    {0x444444ff, "DarkGray"},
+    {0xff0000ff, "Red"},
+    {0x00ff00ff, "Green"},
+    {0xffff00ff, "Yellow"},
+    {0x0000ffff, "Blue"},
+    {0xff00ffff, "Magenta"},
+    {0x00ffffff, "Cyan"},
+    {0xffffffff, "White"},
+    {0xff0000ff, "Transparent"}
+  };
+  auto const it = kHexToGarmin.find(rgba);
+  if (it != kHexToGarmin.end())
+  {
+    return it->second;
+  }
+  const auto & first = kHexToGarmin.begin();
+  u_int32_t min = first->first;
+  std::string color = first->second;
+  for (const auto & [garminColor, garminName] : kHexToGarmin)
+  {
+    int distance = ColorDistance(rgba, garminColor);
+    if (distance < min)
+    {
+      min = distance;
+      color = garminName;
+    }
+  }
+  return color;
+}
+
+
 
 void SaveCategoryData(Writer & writer, CategoryData const & categoryData)
 {
@@ -555,9 +626,17 @@ void SaveTrackData(Writer & writer, TrackData const & trackData)
   }
   if (auto const color = TrackColor(trackData); color != kDefaultTrackColor)
   {
-    writer << kIndent2 << "<extensions>\n" << kIndent4 << "<color>";
+    writer << kIndent2 << "<extensions>\n";
+    writer << kIndent4 << "<gpxx:TrackExtension><gpxx:DisplayColor>";
+    writer << MapGarminColor(color);
+    writer << "</gpxx:DisplayColor></gpxx:TrackExtension>\n";
+    writer << kIndent4 << "<gpx_style:line><gpx_style:color>";
     SaveColorToRGB(writer, color);
-    writer << "</color>\n" << kIndent2 << "</extensions>\n";
+    writer << "</gpx_style:color></gpx_style:line>\n";
+    writer << kIndent4 << "<xsi:gpx><color>#";
+    SaveColorToARGB(writer, color);
+    writer << "</color></xsi:gpx>\n";
+    writer << kIndent2 << "</extensions>\n";
   }
   bool const trackHasAltitude = TrackHasAltitudes(trackData);
   auto const & geom = trackData.m_geometry;

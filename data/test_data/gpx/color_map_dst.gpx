@@ -5,5 +5,24 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/gpx_style/0/2 https://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd">
 <metadata>
+  <name>new</name>
+  <desc>Short description</desc>
 </metadata>
+<trk>
+  <name>new red</name>
+  <desc>description 1</desc>
+  <extensions>
+    <gpxx:TrackExtension><gpxx:DisplayColor>DarkGray</gpxx:DisplayColor></gpxx:TrackExtension>
+    <gpx_style:line><gpx_style:color>443344</gpx_style:color></gpx_style:line>
+    <xsi:gpx><color>#FF443344</color></xsi:gpx>
+  </extensions>
+  <trkseg>
+    <trkpt lat="48.209846" lon="16.376023">
+      <ele>123</ele>
+    </trkpt>
+    <trkpt lat="48.209855" lon="16.376066">
+      <ele>123</ele>
+    </trkpt>
+  </trkseg>
+</trk>
 </gpx>

@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1">
+<gpx version="1.1" creator="Organic Maps" xmlns="http://www.topografix.com/GPX/1/1"
+    xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+    xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/gpx_style/0/2 https://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd">
 <metadata>
   <name>My route</name>
   <desc><![CDATA[You will see this in the document and can use reserved characters like < > & "]]></desc>
@@ -15,7 +19,9 @@
 <trk>
   <name>Some random route</name>
   <extensions>
-    <color>00FF00</color>
+    <gpxx:TrackExtension><gpxx:DisplayColor>Green</gpxx:DisplayColor></gpxx:TrackExtension>
+    <gpx_style:line><gpx_style:color>00FF00</gpx_style:color></gpx_style:line>
+    <xsi:gpx><color>#FF00FF00</color></xsi:gpx>
   </extensions>
   <trkseg>
     <trkpt lat="48.209846" lon="16.376023">

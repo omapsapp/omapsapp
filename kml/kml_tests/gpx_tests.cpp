@@ -40,6 +40,22 @@ void importExportCompare(char const * testFile)
   TEST_EQUAL(resultBuffer, sourceFileText, ());
 }
 
+void importExportCompare(char const * sourceFile, char const * destinationFile)
+{
+  auto const sourceFileName = GetPlatform().TestsDataPathForFile(sourceFile);
+  std::string sourceFileText;
+  FileReader(sourceFileName).ReadAsString(sourceFileText);
+  kml::FileData const dataFromFile = loadGpxFromFile(sourceFile);
+  std::string resultBuffer;
+  MemWriter<decltype(resultBuffer)> sink(resultBuffer);
+  kml::gpx::SerializerGpx ser(dataFromFile);
+  ser.Serialize(sink);
+  auto const destinationFileName = GetPlatform().TestsDataPathForFile(destinationFile);
+  std::string destinationFileText;
+  FileReader(destinationFileName).ReadAsString(destinationFileText);
+  TEST_EQUAL(resultBuffer, destinationFileText, ());
+}
+
 UNIT_TEST(Gpx_ImportExport_Test)
 {
   importExportCompare("test_data/gpx/export_test.gpx");
@@ -48,6 +64,11 @@ UNIT_TEST(Gpx_ImportExport_Test)
 UNIT_TEST(Gpx_ImportExportEmpty_Test)
 {
   importExportCompare("test_data/gpx/export_test_empty.gpx");
+}
+
+UNIT_TEST(Gpx_ColorMapExport_Test)
+{
+  importExportCompare("test_data/gpx/color_map_src.gpx", "test_data/gpx/color_map_dst.gpx");
 }
 
 UNIT_TEST(Gpx_Test_Point_With_Valid_Timestamp)
