@@ -425,7 +425,7 @@
     <string name="editor_hours_closed">Suletud tunnid</string>
     <string name="editor_example_values">Näidisväärtused</string>
     <string name="editor_correct_mistake">Paranda viga</string>
-    <string name="editor_add_select_location">Asukoht</string>
+    <string name="editor_add_select_location">Valige asukoht</string>
     <string name="editor_report_problem_desription_1">Palun kirjelda probleemi üksikasjalikult, et OpenStreetMap kommuun saaks selle parandada.</string>
     <string name="editor_report_problem_desription_2">Või tee seda ise aadressil https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Saada</string>
@@ -481,7 +481,7 @@
     <string name="downloader_no_space_message">Palun kustuta ebavajalikud andmed</string>
     <string name="editor_login_error_dialog">Sisse logimise viga.</string>
     <string name="editor_profile_changes">Kinnitatud muudatused</string>
-    <string name="editor_focus_map_on_location">Objekti õige asukoha valimiseks lohista kaarti.</string>
+    <string name="editor_focus_map_on_location">Lohistage kaarti, et asetada rist koha või ettevõtte asukoha juurde.</string>
     <string name="editor_edit_place_title">Muutmine</string>
     <string name="editor_add_place_title">Lisamine</string>
     <string name="editor_edit_place_name_hint">Koha nimi</string>

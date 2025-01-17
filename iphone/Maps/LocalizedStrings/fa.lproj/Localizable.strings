@@ -571,7 +571,7 @@
 
 "editor_example_values" = "مقادیر پیش فرض";
 
-"editor_add_select_location" = "موقعیت";
+"editor_add_select_location" = "مکان را انتخاب کنید";
 
 "editor_done_dialog_1" = "شما نقشه جهان را تغییر دادید.این افتخار را پیش خود نگه ندارید!به دوستانتان درموردش بگویید و با یکدیگر ویرایش کنید.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "تغییرات تایید شد";
 
-"editor_focus_map_on_location" = "برای انتخاب مکان صحیح شئی نقشه را بکشید.";
+"editor_focus_map_on_location" = "نقشه را بکشید تا صلیب را در محل مکان یا کسب و کار قرار دهید.";
 
 "editor_add_select_category" = "انتخاب دسته بندی";
 

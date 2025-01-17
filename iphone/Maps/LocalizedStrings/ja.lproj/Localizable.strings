@@ -571,7 +571,7 @@
 
 "editor_example_values" = "値の例";
 
-"editor_add_select_location" = "現在位置";
+"editor_add_select_location" = "場所を選択";
 
 "editor_done_dialog_1" = "世界地図を変更しました。この変更を秘密にしないでください! 友達に教えて一緒に編集しましょう。";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "確認された変更";
 
-"editor_focus_map_on_location" = "地図を操作してオブジェクトの正しい場所を選択します。";
+"editor_focus_map_on_location" = "地図をドラッグして、場所や企業の場所に十字を配置します。";
 
 "editor_add_select_category" = "カテゴリを選択";
 

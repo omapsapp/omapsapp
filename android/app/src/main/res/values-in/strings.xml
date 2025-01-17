@@ -410,7 +410,7 @@
     <string name="editor_hours_closed">Jam Tutup</string>
     <string name="editor_example_values">Contoh Nilai</string>
     <string name="editor_correct_mistake">Koreksi kesalahan</string>
-    <string name="editor_add_select_location">Lokasi</string>
+    <string name="editor_add_select_location">Pilih Lokasi</string>
     <string name="editor_report_problem_desription_1">Harap menggambarkan masalah secara rinci sehingga komunitas OpenStreetMap dapat memperbaiki kesalahan.</string>
     <string name="editor_report_problem_desription_2">Atau Anda bisa melakukan sendiri di https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Kirim</string>
@@ -461,7 +461,7 @@
     <string name="downloader_no_space_message">Harap menghapus data yang tidak diperlukan</string>
     <string name="editor_login_error_dialog">Kesalahan masuk.</string>
     <string name="editor_profile_changes">Perubahan Terverifikasi</string>
-    <string name="editor_focus_map_on_location">Tarik peta untuk memilih lokasi yang benar dari obyek.</string>
+    <string name="editor_focus_map_on_location">Seret peta untuk menempatkan tanda silang di lokasi tempat atau bisnis.</string>
     <string name="editor_edit_place_title">Mengedit</string>
     <string name="editor_add_place_title">Menambahkan</string>
     <string name="editor_edit_place_name_hint">Nama tempat</string>

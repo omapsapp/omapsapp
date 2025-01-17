@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Example Values";
 
-"editor_add_select_location" = "Location";
+"editor_add_select_location" = "Chagua Mahali";
 
 "editor_done_dialog_1" = "You’ve changed the world map! Don't keep it to yourself; tell your friends and edit it together.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Verified Changes";
 
-"editor_focus_map_on_location" = "Drag the map to select the correct location of the object.";
+"editor_focus_map_on_location" = "Buruta ramani ili kuweka msalaba katika eneo la mahali au biashara.";
 
 "editor_add_select_category" = "Select category";
 

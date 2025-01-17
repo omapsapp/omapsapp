@@ -571,7 +571,7 @@
 
 "editor_example_values" = "उदाहरण मूल्ये";
 
-"editor_add_select_location" = "स्थान";
+"editor_add_select_location" = "स्थान निवडा";
 
 "editor_done_dialog_1" = "तुम्ही जगाचा नकाशा बदलला आहे. हे स्वतःपुरते ठेऊ नका! मित्रांना पण सांगा आणि एकत्र संपादित करा.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "सत्यापित बदल";
 
-"editor_focus_map_on_location" = "वस्तूचे योग्य स्थान निवडण्यासाठी नकाशा सरकवा.";
+"editor_focus_map_on_location" = "ठिकाण किंवा व्यवसायाच्या ठिकाणी क्रॉस ठेवण्यासाठी नकाशा ड्रॅग करा.";
 
 "editor_add_select_category" = "प्रवर्ग निवडा";
 

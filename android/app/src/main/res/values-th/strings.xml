@@ -411,7 +411,7 @@
     <string name="editor_hours_closed">ปิดเวลา</string>
     <string name="editor_example_values">ตัวอย่างของค่าที่ตั้งไว้</string>
     <string name="editor_correct_mistake">แก้ไขข้อผิดพลาด</string>
-    <string name="editor_add_select_location">ตำแหน่ง</string>
+    <string name="editor_add_select_location">เลือกสถานที่</string>
     <string name="editor_report_problem_desription_1">กรุณาอธิบายปัญหาโดยละเอียดเพื่อที่ชุมชน OpenStreetMap จะสามารถแก้ไขข้อผิดพลาดได้</string>
     <string name="editor_report_problem_desription_2">หรือทำด้วยตัวคุณเองที่ https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">ส่ง</string>
@@ -462,7 +462,7 @@
     <string name="downloader_no_space_message">กรุณาลบข้อมูลที่ไม่จำเป็น</string>
     <string name="editor_login_error_dialog">ข้อผิดพลาดในการล็อกอิน</string>
     <string name="editor_profile_changes">การเปลี่ยนแปลงที่อนุมัติแล้ว</string>
-    <string name="editor_focus_map_on_location">ดึงแผนที่เพื่อเลือกตำแหน่งวัตถุที่ถูกต้อง</string>
+    <string name="editor_focus_map_on_location">ลากแผนที่เพื่อวางกากบาทที่ตำแหน่งของสถานที่หรือธุรกิจ</string>
     <string name="editor_edit_place_title">กำลังแก้ไข</string>
     <string name="editor_add_place_title">กำลังเพิ่ม</string>
     <string name="editor_edit_place_name_hint">ชื่อสถานที่</string>

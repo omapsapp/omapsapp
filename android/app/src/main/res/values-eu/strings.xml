@@ -431,7 +431,7 @@
     <string name="editor_hours_closed">Ixteko orduak</string>
     <string name="editor_example_values">Adibide balioak</string>
     <string name="editor_correct_mistake">Konpondu akatsa</string>
-    <string name="editor_add_select_location">Kokapena</string>
+    <string name="editor_add_select_location">Hautatu Kokapena</string>
     <string name="editor_report_problem_desription_1">Mesedez, deskribatu arazoa xehetasunez, OpenStreetMap komunitateak akatsa konpondu dezan.</string>
     <string name="editor_report_problem_desription_2">Edo zuk zeuk egin hemen https://www.openstreetmap.org/ helbidean</string>
     <string name="editor_report_problem_send_button">Bidali</string>
@@ -487,7 +487,7 @@
     <string name="downloader_no_space_message">Ezabatu beharrezkoak ez diren datuak</string>
     <string name="editor_login_error_dialog">Saioa hasteko errorea.</string>
     <string name="editor_profile_changes">Egiaztatutako aldaketak</string>
-    <string name="editor_focus_map_on_location">Arrastatu mapa objektuaren kokapen zuzena hautatzeko.</string>
+    <string name="editor_focus_map_on_location">Arrastatu mapa gurutzea tokiaren edo negozioaren kokalekuan kokatzeko.</string>
     <string name="editor_edit_place_title">Editatzen</string>
     <string name="editor_add_place_title">Gehitzen</string>
     <string name="editor_edit_place_name_hint">Tokiaren izena</string>

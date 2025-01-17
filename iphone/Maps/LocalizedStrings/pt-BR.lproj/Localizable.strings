@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Valores de exemplo";
 
-"editor_add_select_location" = "Local";
+"editor_add_select_location" = "Selecione o local";
 
 "editor_done_dialog_1" = "Você modificou o mapa-múndi. Não esconda isto! Diga aos seus amigos e edite junto com eles.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Alterações verificadas";
 
-"editor_focus_map_on_location" = "Mova o mapa para selecionar o lugar correto do objeto.";
+"editor_focus_map_on_location" = "Arraste o mapa para colocar a cruz na localização do local ou da empresa.";
 
 "editor_add_select_category" = "Selecionar categoria";
 

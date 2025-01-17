@@ -437,7 +437,7 @@
     <string name="editor_hours_closed">Перерва</string>
     <string name="editor_example_values">Приклади значень</string>
     <string name="editor_correct_mistake">Виправте помилку</string>
-    <string name="editor_add_select_location">Місцезнаходження</string>
+    <string name="editor_add_select_location">Виберіть місце розташування</string>
     <string name="editor_report_problem_desription_1">Будь-ласка, напишіть детально про проблему, щоб суспільство OpenStreetMap виправило помилку.</string>
     <string name="editor_report_problem_desription_2">Або зробіть це самостійно на сайті https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Надіслати</string>
@@ -492,7 +492,7 @@
     <string name="downloader_no_space_message">Видаліть непотрібні дані</string>
     <string name="editor_login_error_dialog">Виникла помилка при авторизації.</string>
     <string name="editor_profile_changes">Виправлення, що ураховані</string>
-    <string name="editor_focus_map_on_location">Потягніть мапу, щоб вибрати правильне місцезнаходження об’єкту.</string>
+    <string name="editor_focus_map_on_location">Перетягніть карту, щоб поставити хрестик на місці розташування місця або бізнесу.</string>
     <string name="editor_edit_place_title">Редагування</string>
     <string name="editor_add_place_title">Додавання</string>
     <string name="editor_edit_place_name_hint">Назва місця</string>

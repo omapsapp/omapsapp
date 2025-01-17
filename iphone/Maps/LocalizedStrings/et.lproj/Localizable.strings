@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Näidisväärtused";
 
-"editor_add_select_location" = "Asukoht";
+"editor_add_select_location" = "Valige asukoht";
 
 "editor_done_dialog_1" = "Oled muutnud maailmakaarti. Ära hoia seda ainult enda teada! Rääki ka oma sõpradele ja muutke seda koos.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Kinnitatud muudatused";
 
-"editor_focus_map_on_location" = "Objekti õige asukoha valimiseks lohista kaarti.";
+"editor_focus_map_on_location" = "Lohistage kaarti, et asetada rist koha või ettevõtte asukoha juurde.";
 
 "editor_add_select_category" = "Vali kategooria";
 

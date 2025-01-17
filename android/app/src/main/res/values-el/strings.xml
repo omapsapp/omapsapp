@@ -435,7 +435,7 @@
     <string name="editor_hours_closed">Μη-εργάσιμες ώρες</string>
     <string name="editor_example_values">Παραδείγματα</string>
     <string name="editor_correct_mistake">Διόρθωση λάθους</string>
-    <string name="editor_add_select_location">Τοποθεσία</string>
+    <string name="editor_add_select_location">Επιλέξτε τοποθεσία</string>
     <string name="editor_report_problem_desription_1">Περιγράψτε το πρόβλημα αναλυτικά ώστε η κοινότητα του OpenStreetMap να το διορθώσει.</string>
     <string name="editor_report_problem_desription_2">Ή κάντε το μόνοι σας στη διεύθυνση https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Αποστολή</string>
@@ -491,7 +491,7 @@
     <string name="downloader_no_space_message">Διαγράψτε μη απαραίτητα δεδομένα</string>
     <string name="editor_login_error_dialog">Σφάλμα σύνδεσης.</string>
     <string name="editor_profile_changes">Επαληθευμένες αλλαγές</string>
-    <string name="editor_focus_map_on_location">Σύρετε τον χάρτη για να επιλέξετε τη σωστή θέση του αντικειμένου.</string>
+    <string name="editor_focus_map_on_location">Σύρετε το χάρτη για να τοποθετήσετε το σταυρό στη θέση του τόπου ή της επιχείρησης.</string>
     <string name="editor_edit_place_title">Επεξεργασία</string>
     <string name="editor_add_place_title">Προσθήκη</string>
     <string name="editor_edit_place_name_hint">Όνομα τοποθεσίας</string>

@@ -571,7 +571,7 @@
 
 "editor_example_values" = "ערכים לדוגמה";
 
-"editor_add_select_location" = "מיקום";
+"editor_add_select_location" = "בחר מיקום";
 
 "editor_done_dialog_1" = "שינית את מפת העולם! זה לא חייב להיות סוד, אפשר לספר לחברים ולערוך אותה ביחד.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "שינויים מאומתים";
 
-"editor_focus_map_on_location" = "גרור את המפה כדי לבחור את המיקום הנכון לפריט.";
+"editor_focus_map_on_location" = "גרור את המפה כדי למקם את הצלב במיקום של המקום או העסק.";
 
 "editor_add_select_category" = "בחר קטגוריה";
 

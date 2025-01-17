@@ -430,7 +430,6 @@
     <string name="editor_hours_closed">Нерадно време</string>
     <string name="editor_example_values">Примери</string>
     <string name="editor_correct_mistake">Исправи грешку</string>
-    <string name="editor_add_select_location">Локација</string>
     <string name="editor_report_problem_desription_1">Молим Вас да детаљно опишете проблем како би OpenStreetMap заједница могла да га поправи.</string>
     <string name="editor_report_problem_desription_2">Или то учините сами на https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Пошаљи</string>
@@ -488,7 +487,6 @@
     <string name="downloader_no_space_message">Молим Вас да обришете непотребне податке</string>
     <string name="editor_login_error_dialog">Грешка приликом пријаве.</string>
     <string name="editor_profile_changes">Верификоване промене</string>
-    <string name="editor_focus_map_on_location">Превуците мапу да бисте изабрали тачну локацију објекта.</string>
     <string name="editor_edit_place_title">Измена</string>
     <string name="editor_add_place_title">Додавање</string>
     <string name="editor_edit_place_name_hint">Назив места</string>

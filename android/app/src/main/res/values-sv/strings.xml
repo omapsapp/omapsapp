@@ -407,7 +407,7 @@
     <string name="editor_hours_closed">Stängda timmar</string>
     <string name="editor_example_values">Exempelvärden</string>
     <string name="editor_correct_mistake">Korrigera fel</string>
-    <string name="editor_add_select_location">Plats</string>
+    <string name="editor_add_select_location">Välj plats</string>
     <string name="editor_report_problem_desription_1">Beskriv problemet i detalj så att OpenStreetMaps community kan lösa det.</string>
     <string name="editor_report_problem_desription_2">Eller gör det själv på https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Skicka</string>
@@ -458,7 +458,7 @@
     <string name="downloader_no_space_message">Ta bort onödig data</string>
     <string name="editor_login_error_dialog">Inloggningsfel.</string>
     <string name="editor_profile_changes">Verifierade ändringar</string>
-    <string name="editor_focus_map_on_location">Dra på kartan för att välja objektets rätta plats.</string>
+    <string name="editor_focus_map_on_location">Dra kartan för att placera korset på platsen för platsen eller företaget.</string>
     <string name="editor_edit_place_title">Redigerar</string>
     <string name="editor_add_place_title">Lägger till</string>
     <string name="editor_edit_place_name_hint">Platsens namn</string>

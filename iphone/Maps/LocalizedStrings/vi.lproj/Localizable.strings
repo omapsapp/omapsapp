@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Giá trị ví dụ";
 
-"editor_add_select_location" = "Vị trí";
+"editor_add_select_location" = "Chọn vị trí";
 
 "editor_done_dialog_1" = "Bạn đã thay đổi bản đồ thế giới. Đừng giấu điều đó! Hãy cho các bạn khác biết và cùng nhau chỉnh sửa.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Các thay đổi đã được xác thực";
 
-"editor_focus_map_on_location" = "Kéo bản đồ để chọn vị trí chính xác của đối tượng";
+"editor_focus_map_on_location" = "Kéo bản đồ để đặt dấu thập vào vị trí của địa điểm hoặc doanh nghiệp.";
 
 "editor_add_select_category" = "Chọn thể loại";
 

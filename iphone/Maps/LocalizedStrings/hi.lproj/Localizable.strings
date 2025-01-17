@@ -571,7 +571,7 @@
 
 "editor_example_values" = "उदाहरण मान";
 
-"editor_add_select_location" = "जगह";
+"editor_add_select_location" = "स्थान चुनें";
 
 "editor_done_dialog_1" = "You’ve changed the world map! Don't keep it to yourself; tell your friends and edit it together.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Verified Changes";
 
-"editor_focus_map_on_location" = "ऑब्जेक्ट का सही स्थान चुनने के लिए मानचित्र को खींचें।";
+"editor_focus_map_on_location" = "स्थान या व्यवसाय के स्थान पर क्रॉस लगाने के लिए मानचित्र को खींचें।";
 
 "editor_add_select_category" = "Select category";
 

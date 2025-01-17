@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Przykładowe wartości";
 
-"editor_add_select_location" = "Lokalizacja";
+"editor_add_select_location" = "Proszę wybrać lokalizację";
 
 "editor_done_dialog_1" = "Dokonałeś zmian na mapie świata. Nie kryj się z tym! Powiadom znajomych i edytujcie mapę razem.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Zmiany zweryfikowane";
 
-"editor_focus_map_on_location" = "Przeciągnij mapę, aby wybrać poprawną lokalizację obiektu.";
+"editor_focus_map_on_location" = "Proszę przeciągnąć mapę, aby umieścić krzyżyk w miejscu lokalizacji miejsca lub firmy.";
 
 "editor_add_select_category" = "Wybierz kategorię";
 

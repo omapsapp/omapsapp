@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Contoh Nilai";
 
-"editor_add_select_location" = "Lokasi";
+"editor_add_select_location" = "Pilih Lokasi";
 
 "editor_done_dialog_1" = "Anda telah mengubah peta dunia. Jangan menyembunyikan ini! Katakan kepada teman-teman Anda, dan edit bersama.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Perubahan Terverifikasi";
 
-"editor_focus_map_on_location" = "Tarik peta untuk memilih lokasi yang benar dari obyek.";
+"editor_focus_map_on_location" = "Seret peta untuk menempatkan tanda silang di lokasi tempat atau bisnis.";
 
 "editor_add_select_category" = "Pilih kategori";
 

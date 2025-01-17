@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Piemēra vērtības";
 
-"editor_add_select_location" = "Vieta";
+"editor_add_select_location" = "Izvēlieties atrašanās vietu";
 
 "editor_done_dialog_1" = "Jūs nomainījāt pasaules karti! Neturiet izmaiņas pie sevis, bet pastāstiet par tām saviem draugiem un rediģējiet kopā!";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Apstiprinātas izmaiņas";
 
-"editor_focus_map_on_location" = "Velciet karti, lai atlasītu pareizu objekta atrašanās vietu.";
+"editor_focus_map_on_location" = "Velciet karti, lai novietotu krustiņu vietas vai uzņēmuma atrašanās vietā.";
 
 "editor_add_select_category" = "Atlasiet kategoriju";
 

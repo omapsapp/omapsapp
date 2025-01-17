@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Примери";
 
-"editor_add_select_location" = "Локација";
+"editor_add_select_location" = "Select Location";
 
 "editor_done_dialog_1" = "Направили сте промену на мапи света! Не чувајте је само за себе; реците својим пријатељима и наставите да је мењате заједно.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Верификоване промене";
 
-"editor_focus_map_on_location" = "Превуците мапу да бисте изабрали тачну локацију објекта.";
+"editor_focus_map_on_location" = "Drag the map to place the cross at the location of the place or business.";
 
 "editor_add_select_category" = "Изаберите категорију";
 

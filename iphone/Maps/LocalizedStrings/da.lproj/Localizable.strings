@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Eksempelværdier";
 
-"editor_add_select_location" = "Sted";
+"editor_add_select_location" = "Vælg placering";
 
 "editor_done_dialog_1" = "Du har ændret verdenskortet. Lad andre det vide! Fortæl dine venner og redigér det sammen.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Bekræftede ændringer";
 
-"editor_focus_map_on_location" = "Træk kortet for at vælge objektets korrekte placering.";
+"editor_focus_map_on_location" = "Træk i kortet for at placere korset på stedet eller virksomheden.";
 
 "editor_add_select_category" = "Vælg kategori";
 

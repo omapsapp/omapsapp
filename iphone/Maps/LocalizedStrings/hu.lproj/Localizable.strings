@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Példa értékek";
 
-"editor_add_select_location" = "Elhelyezkedés";
+"editor_add_select_location" = "Hely kiválasztása";
 
 "editor_done_dialog_1" = "Megváltoztattad a világ térképét. Ne titkold el mások elől! Mondd el a barátaidnak, és szerkesszétek közösen!";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Jóváhagyott változtatások";
 
-"editor_focus_map_on_location" = "Húzd a térképet a megfelelő helyre az objektum helyes helyszínének kiválasztásához.";
+"editor_focus_map_on_location" = "Húzza a térképet, hogy a keresztet a hely vagy vállalkozás helyére helyezze.";
 
 "editor_add_select_category" = "Válassz kategóriát";
 

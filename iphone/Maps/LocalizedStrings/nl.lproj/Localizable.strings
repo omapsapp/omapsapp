@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Voorbeeldwaarden";
 
-"editor_add_select_location" = "Locatie";
+"editor_add_select_location" = "Locatie selecteren";
 
 "editor_done_dialog_1" = "Je hebt de wereldkaart gewijzigd. Verberg dit niet! Vertel het je vrienden en bewerk haar samen.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Gecontroleerde wijzigingen";
 
-"editor_focus_map_on_location" = "Versleep de kaart om de juiste locatie van het object te selecteren.";
+"editor_focus_map_on_location" = "Sleep de kaart om het kruis op de locatie van de plaats of het bedrijf te plaatsen.";
 
 "editor_add_select_category" = "Selecteer categorie";
 

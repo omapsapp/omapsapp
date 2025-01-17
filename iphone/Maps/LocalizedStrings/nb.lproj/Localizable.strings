@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Eksempelverdier";
 
-"editor_add_select_location" = "Plassering";
+"editor_add_select_location" = "Velg sted";
 
 "editor_done_dialog_1" = "Du har endret verdenskartet. Ikke skjul denne! Fortell vennene dine, og rediger det sammen.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Bekreftede endringer";
 
-"editor_focus_map_on_location" = "Dra kartet for å velge riktig beliggenhet for objektet.";
+"editor_focus_map_on_location" = "Dra kartet for å plassere korset der stedet eller virksomheten befinner seg.";
 
 "editor_add_select_category" = "Velg kategori";
 

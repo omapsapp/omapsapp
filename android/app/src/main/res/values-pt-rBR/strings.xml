@@ -396,6 +396,7 @@
     <!-- Text for allday switch. -->
     <string name="editor_time_allday">O dia todo (24 horas)</string>
     <string name="editor_time_add_closed">Inserir horas sem funcionamento</string>
+    <string name="editor_add_select_location">Selecione o local</string>
     <string name="editor_report_problem_desription_1">Por favor, descreva o problema em detalhes para que a comunidade OpenStreetMap possa corrigir o erro.</string>
     <string name="editor_report_problem_desription_2">Ou faça-o você mesmo em https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Enviar</string>
@@ -447,7 +448,6 @@
     <string name="downloader_no_space_message">Por favor, remova os dados desnecessários</string>
     <string name="editor_login_error_dialog">Erro no login.</string>
     <string name="editor_profile_changes">Alterações verificadas</string>
-    <string name="editor_focus_map_on_location">Mova o mapa para selecionar o lugar correto do objeto.</string>
     <string name="editor_edit_place_title">Edição</string>
     <string name="editor_add_place_title">Adicionando</string>
     <string name="editor_edit_place_name_hint">Nome do lugar</string>

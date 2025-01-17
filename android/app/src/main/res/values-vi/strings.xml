@@ -409,7 +409,7 @@
     <string name="editor_hours_closed">Giờ đóng cửa</string>
     <string name="editor_example_values">Giá trị ví dụ</string>
     <string name="editor_correct_mistake">Sửa lỗi</string>
-    <string name="editor_add_select_location">Vị trí</string>
+    <string name="editor_add_select_location">Chọn vị trí</string>
     <string name="editor_report_problem_desription_1">Xin mô tả chi tiết vấn đề để cộng đồng OpenStreetMap có thể sửa lỗi đó.</string>
     <string name="editor_report_problem_desription_2">Hoặc bạn có thể tự sửa tại https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Gửi</string>
@@ -460,7 +460,7 @@
     <string name="downloader_no_space_message">Xin xóa dữ liệu không cần thiết</string>
     <string name="editor_login_error_dialog">Lỗi đăng nhập.</string>
     <string name="editor_profile_changes">Các thay đổi đã được xác thực</string>
-    <string name="editor_focus_map_on_location">Kéo bản đồ để chọn vị trí chính xác của đối tượng</string>
+    <string name="editor_focus_map_on_location">Kéo bản đồ để đặt dấu thập vào vị trí của địa điểm hoặc doanh nghiệp.</string>
     <string name="editor_edit_place_title">Chỉnh sửa</string>
     <string name="editor_add_place_title">Nhập</string>
     <string name="editor_edit_place_name_hint">Tên địa điểm</string>

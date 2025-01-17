@@ -571,7 +571,7 @@
 
 "editor_example_values" = "範例值";
 
-"editor_add_select_location" = "位置";
+"editor_add_select_location" = "選擇位置";
 
 "editor_done_dialog_1" = "您已經改變了世界地圖。請別再藏私了！告訴您的朋友們並一起來編輯地圖。";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "已驗證的變更";
 
-"editor_focus_map_on_location" = "拖動地圖以選擇此物件的正確位置。";
+"editor_focus_map_on_location" = "拖曳地圖以將十字放置在地點或企業的位置。";
 
 "editor_add_select_category" = "選擇類別";
 

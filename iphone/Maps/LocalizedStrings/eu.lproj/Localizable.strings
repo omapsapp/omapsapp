@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Adibide balioak";
 
-"editor_add_select_location" = "Kokapena";
+"editor_add_select_location" = "Hautatu Kokapena";
 
 "editor_done_dialog_1" = "Munduko mapa aldatu duzu. Ez ezazu zeuretzat gorde. Esan zure lagunei eta editatu elkarrekin.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Egiaztatutako aldaketak";
 
-"editor_focus_map_on_location" = "Arrastatu mapa objektuaren kokapen zuzena hautatzeko.";
+"editor_focus_map_on_location" = "Arrastatu mapa gurutzea tokiaren edo negozioaren kokalekuan kokatzeko.";
 
 "editor_add_select_category" = "Hautatu kategoria";
 

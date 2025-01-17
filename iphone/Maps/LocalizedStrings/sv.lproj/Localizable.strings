@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Exempelvärden";
 
-"editor_add_select_location" = "Plats";
+"editor_add_select_location" = "Välj plats";
 
 "editor_done_dialog_1" = "Du har ändrat världskartan. Dela det med dina vänner och redigera den tillsammans.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Verifierade ändringar";
 
-"editor_focus_map_on_location" = "Dra på kartan för att välja objektets rätta plats.";
+"editor_focus_map_on_location" = "Dra kartan för att placera korset på platsen för platsen eller företaget.";
 
 "editor_add_select_category" = "Välj kategori";
 

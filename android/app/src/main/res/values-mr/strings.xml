@@ -404,7 +404,7 @@
     <string name="editor_hours_closed">गैर-व्यवसाय वेळ</string>
     <string name="editor_example_values">उदाहरण मूल्ये</string>
     <string name="editor_correct_mistake">चूक सुधारा</string>
-    <string name="editor_add_select_location">स्थान</string>
+    <string name="editor_add_select_location">स्थान निवडा</string>
     <string name="editor_report_problem_desription_1">OpenStreetMap समुदायाने ही त्रुटी सुधारण्यासाठी कृपया समस्येचे तपशिलात वर्णन करा.</string>
     <string name="editor_report_problem_desription_2">किंवा https://www.openstreetmap.org/ वर ते स्वतः करा</string>
     <string name="editor_report_problem_send_button">पाठवा</string>
@@ -457,7 +457,7 @@
     <string name="downloader_no_space_message">कृपया अनावश्यक डेटा पुसून टाका</string>
     <string name="editor_login_error_dialog">लॉग इन त्रुटी.</string>
     <string name="editor_profile_changes">सत्यापित बदल</string>
-    <string name="editor_focus_map_on_location">वस्तूचे योग्य स्थान निवडण्यासाठी नकाशा सरकवा.</string>
+    <string name="editor_focus_map_on_location">ठिकाण किंवा व्यवसायाच्या ठिकाणी क्रॉस ठेवण्यासाठी नकाशा ड्रॅग करा.</string>
     <string name="editor_edit_place_title">संपादन</string>
     <string name="editor_add_place_title">जोडणे</string>
     <string name="editor_edit_place_name_hint">ठिकाणाचे नाव</string>

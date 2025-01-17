@@ -437,7 +437,7 @@
     <string name="editor_hours_closed">閉店時間</string>
     <string name="editor_example_values">値の例</string>
     <string name="editor_correct_mistake">間違いの訂正</string>
-    <string name="editor_add_select_location">現在位置</string>
+    <string name="editor_add_select_location">場所を選択</string>
     <string name="editor_report_problem_desription_1">OpenStreetMapコミュニティがエラーを修正できるように、問題の詳細を説明してください。</string>
     <string name="editor_report_problem_desription_2">または、このURLでご自身で修正してください https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">送信</string>
@@ -493,7 +493,7 @@
     <string name="downloader_no_space_message">不要データを削除してください</string>
     <string name="editor_login_error_dialog">ログインエラー。</string>
     <string name="editor_profile_changes">確認された変更</string>
-    <string name="editor_focus_map_on_location">地図を操作してオブジェクトの正しい場所を選択します。</string>
+    <string name="editor_focus_map_on_location">地図をドラッグして、場所や企業の場所に十字を配置します。</string>
     <string name="editor_edit_place_title">編集中</string>
     <string name="editor_add_place_title">追加中</string>
     <string name="editor_edit_place_name_hint">場所の名前</string>

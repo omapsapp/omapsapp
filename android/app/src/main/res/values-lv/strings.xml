@@ -434,7 +434,7 @@
     <string name="editor_hours_closed">Laiks, kad slēgts</string>
     <string name="editor_example_values">Piemēra vērtības</string>
     <string name="editor_correct_mistake">Labot kļūdu</string>
-    <string name="editor_add_select_location">Vieta</string>
+    <string name="editor_add_select_location">Izvēlieties atrašanās vietu</string>
     <string name="editor_report_problem_desription_1">Sīkāk aprakstiet problēmu, lai „OpenStreetMap“ kopiena to varētu novērst.</string>
     <string name="editor_report_problem_desription_2">Vai arī to izlabo vietnē https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Sūtīt</string>
@@ -492,7 +492,7 @@
     <string name="downloader_no_space_message">Dzēsiet liekos datus</string>
     <string name="editor_login_error_dialog">Ierakstīšanās kļūda.</string>
     <string name="editor_profile_changes">Apstiprinātas izmaiņas</string>
-    <string name="editor_focus_map_on_location">Velciet karti, lai atlasītu pareizu objekta atrašanās vietu.</string>
+    <string name="editor_focus_map_on_location">Velciet karti, lai novietotu krustiņu vietas vai uzņēmuma atrašanās vietā.</string>
     <string name="editor_edit_place_title">Rediģēšana</string>
     <string name="editor_add_place_title">Pievienošana</string>
     <string name="editor_edit_place_name_hint">Vietas nosaukums</string>

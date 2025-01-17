@@ -430,7 +430,7 @@
     <string name="editor_hours_closed">Sluitingstijden</string>
     <string name="editor_example_values">Voorbeeldwaarden</string>
     <string name="editor_correct_mistake">Corrigeer fout</string>
-    <string name="editor_add_select_location">Locatie</string>
+    <string name="editor_add_select_location">Locatie selecteren</string>
     <string name="editor_report_problem_desription_1">Beschrijf het probleem gedetailleerd, zodat de OpenStreetMap-community de fout kan oplossen.</string>
     <string name="editor_report_problem_desription_2">Of doe het zelf op https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Verzend</string>
@@ -486,7 +486,7 @@
     <string name="downloader_no_space_message">Verwijder overbodige gegevens</string>
     <string name="editor_login_error_dialog">Inlogfout.</string>
     <string name="editor_profile_changes">Gecontroleerde wijzigingen</string>
-    <string name="editor_focus_map_on_location">Versleep de kaart om de juiste locatie van het object te selecteren.</string>
+    <string name="editor_focus_map_on_location">Sleep de kaart om het kruis op de locatie van de plaats of het bedrijf te plaatsen.</string>
     <string name="editor_edit_place_title">Bewerken</string>
     <string name="editor_add_place_title">Toevoegen</string>
     <string name="editor_edit_place_name_hint">Naam van de plaats</string>

@@ -423,7 +423,7 @@
     <string name="editor_hours_closed">Zárvatartási órák</string>
     <string name="editor_example_values">Példa értékek</string>
     <string name="editor_correct_mistake">Hiba javítása</string>
-    <string name="editor_add_select_location">Elhelyezkedés</string>
+    <string name="editor_add_select_location">Hely kiválasztása</string>
     <string name="editor_report_problem_desription_1">Kérjük, írd le részletesen a problémát, hogy az OpenStreetMap csapata kijavíthassa.</string>
     <string name="editor_report_problem_desription_2">Vagy végezd el te magad a javítást itt: https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Küldés</string>
@@ -474,7 +474,7 @@
     <string name="downloader_no_space_message">Kérjük, töröld a szükségtelen adatokat</string>
     <string name="editor_login_error_dialog">Bejelentkezési hiba.</string>
     <string name="editor_profile_changes">Jóváhagyott változtatások</string>
-    <string name="editor_focus_map_on_location">Húzd a térképet a megfelelő helyre az objektum helyes helyszínének kiválasztásához.</string>
+    <string name="editor_focus_map_on_location">Húzza a térképet, hogy a keresztet a hely vagy vállalkozás helyére helyezze.</string>
     <string name="editor_edit_place_title">Szerkesztés</string>
     <string name="editor_add_place_title">Hozzáadás</string>
     <string name="editor_edit_place_name_hint">Hely neve</string>

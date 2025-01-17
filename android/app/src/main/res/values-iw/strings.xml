@@ -428,7 +428,7 @@
     <string name="editor_hours_closed">שעות סגירה</string>
     <string name="editor_example_values">ערכים לדוגמה</string>
     <string name="editor_correct_mistake">תקן טעות</string>
-    <string name="editor_add_select_location">מיקום</string>
+    <string name="editor_add_select_location">בחר מיקום</string>
     <string name="editor_report_problem_desription_1">בבקשה תארו את הבעיה בפירוט כדי שקהילת OpenStreetMap תוכל לתקן אותה.</string>
     <string name="editor_report_problem_desription_2">או תקנו אותה בעצמכם: https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">שלח</string>
@@ -484,7 +484,7 @@
     <string name="downloader_no_space_message">נא לפנות שטח אחסון</string>
     <string name="editor_login_error_dialog">שגיאת התחברות.</string>
     <string name="editor_profile_changes">שינויים מאומתים</string>
-    <string name="editor_focus_map_on_location">גרור את המפה כדי לבחור את המיקום הנכון לפריט.</string>
+    <string name="editor_focus_map_on_location">גרור את המפה כדי למקם את הצלב במיקום של המקום או העסק.</string>
     <string name="editor_edit_place_title">עריכת מקום</string>
     <string name="editor_add_place_title">הוספת מקום</string>
     <string name="editor_edit_place_name_hint">שם המקום</string>

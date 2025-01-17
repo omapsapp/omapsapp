@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Esempi";
 
-"editor_add_select_location" = "Posizione";
+"editor_add_select_location" = "Selezionare la posizione";
 
 "editor_done_dialog_1" = "Hai modificato la mappa del mondo. Non tenerlo per te! Dillo ai tuoi amici e modificatela insieme.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Modifiche approvate";
 
-"editor_focus_map_on_location" = "Sposta la mappa per selezionare l’esatta posizione dell’oggetto.";
+"editor_focus_map_on_location" = "Trascini la mappa per posizionare la croce sulla posizione del luogo o dell'attività commerciale.";
 
 "editor_add_select_category" = "Seleziona categoria";
 

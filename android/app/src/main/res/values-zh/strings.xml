@@ -443,7 +443,7 @@
     <string name="editor_hours_closed">休息时间</string>
     <string name="editor_example_values">示例值</string>
     <string name="editor_correct_mistake">纠正错误</string>
-    <string name="editor_add_select_location">位置</string>
+    <string name="editor_add_select_location">选择地点</string>
     <string name="editor_report_problem_desription_1">请详细描述此问题以便 OpenStreetMap 社区能够修复此错误。</string>
     <string name="editor_report_problem_desription_2">或者在 https://www.openstreetmap.org/ 上亲自修复此错误。</string>
     <string name="editor_report_problem_send_button">发送</string>
@@ -501,7 +501,7 @@
     <string name="downloader_no_space_message">请删除不必要的数据</string>
     <string name="editor_login_error_dialog">无法登录。</string>
     <string name="editor_profile_changes">已验证的更改</string>
-    <string name="editor_focus_map_on_location">拖动地图以选择此对象的正确位置。</string>
+    <string name="editor_focus_map_on_location">拖动地图，将十字架放在地点或企业的位置。</string>
     <string name="editor_edit_place_title">编辑中</string>
     <string name="editor_add_place_title">添加中</string>
     <string name="editor_edit_place_name_hint">该地点的名称</string>
