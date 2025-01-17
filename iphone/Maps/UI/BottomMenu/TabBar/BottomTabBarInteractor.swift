@@ -22,11 +22,21 @@ class BottomTabBarInteractor {
 
 extension BottomTabBarInteractor: BottomTabBarInteractorProtocol {
   func openSearch() {
-    if searchManager?.state == .hidden {
-      searchManager?.state = .default
-    } else {
-      searchManager?.state = .hidden
-    }
+//    if searchManager?.state == .hidden {
+//      searchManager?.state = .default
+//    } else {
+//      searchManager?.state = .hidden
+//    }
+//    let vc = SearchViewController()
+//    vc.modalPresentationStyle = .overCurrentContext
+//    vc.modalTransitionStyle = .coverVertical
+//    MapViewController.shared()?.navigationController?.present(vc, animated: true)
+
+    let vc = SearchViewController()
+    vc.modalPresentationStyle = .custom
+    let trans = SearchCoverVerticalModalTransitioning()
+    vc.transitioningDelegate = trans
+    MapViewController.shared()?.navigationController?.present(vc, animated: true)
   }
   
   func openHelp() {

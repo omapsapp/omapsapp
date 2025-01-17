@@ -14,8 +14,13 @@ final class CoverVerticalPresentationAnimator: NSObject, UIViewControllerAnimate
     toVC.view.frame = originFrame
     toVC.view.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
     UIView.animate(withDuration: transitionDuration(using: transitionContext),
+                   delay: .zero,
+                   options: .curveEaseOut,
                    animations: {
-                    toVC.view.frame = finalFrame
-    }) { transitionContext.completeTransition($0) }
+      toVC.view.frame = finalFrame
+    },
+                   completion: {
+      transitionContext.completeTransition($0)
+    })
   }
 }

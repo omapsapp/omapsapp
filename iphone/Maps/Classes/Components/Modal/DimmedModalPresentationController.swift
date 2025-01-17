@@ -48,3 +48,21 @@ class DimmedModalPresentationController: UIPresentationController {
     if completed { dimView.removeFromSuperview() }
   }
 }
+
+final class SearchCoverVerticalModalTransitioning: NSObject, UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController,
+                           presenting: UIViewController,
+                           source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return CoverVerticalPresentationAnimator()
+  }
+
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return CoverVerticalDismissalAnimator()
+  }
+
+  func presentationController(forPresented presented: UIViewController,
+                              presenting: UIViewController?,
+                              source: UIViewController) -> UIPresentationController? {
+    return SearchModalPresentationController(presentedViewController: presented, presenting: presenting)
+  }
+}
