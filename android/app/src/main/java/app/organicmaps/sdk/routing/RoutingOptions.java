@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import androidx.annotation.NonNull;
 
@@ -7,7 +7,7 @@ import app.organicmaps.settings.RoadType;
 import java.util.HashSet;
 import java.util.Set;
 
-public class RoutingOptions
+public final class RoutingOptions
 {
   public static void addOption(@NonNull RoadType roadType)
   {
@@ -23,10 +23,6 @@ public class RoutingOptions
   {
     return nativeHasOption(roadType.ordinal());
   }
-
-  private static native void nativeAddOption(int option);
-  private static native void nativeRemoveOption(int option);
-  private static native boolean nativeHasOption(int option);
 
   public static boolean hasAnyOptions()
   {
@@ -49,4 +45,10 @@ public class RoutingOptions
     }
     return roadTypes;
   }
+
+  private static native void nativeAddOption(int option);
+
+  private static native void nativeRemoveOption(int option);
+
+  private static native boolean nativeHasOption(int option);
 }

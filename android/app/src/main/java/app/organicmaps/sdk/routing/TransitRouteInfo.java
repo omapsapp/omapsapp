@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
@@ -13,7 +13,7 @@ import java.util.List;
 // Used by JNI.
 @Keep
 @SuppressWarnings("unused")
-public class TransitRouteInfo
+public final class TransitRouteInfo
 {
   @NonNull
   private final String mTotalDistance;
@@ -42,29 +42,29 @@ public class TransitRouteInfo
   }
 
   @NonNull
-  String getTotalPedestrianDistance()
+  public String getTotalPedestrianDistance()
   {
     return mTotalPedestrianDistance;
   }
 
-  int getTotalPedestrianTimeInSec()
+  public int getTotalPedestrianTimeInSec()
   {
     return mTotalPedestrianTimeInSec;
   }
 
   @NonNull
-  String getTotalPedestrianDistanceUnits()
+  public String getTotalPedestrianDistanceUnits()
   {
     return mTotalPedestrianDistanceUnits;
   }
 
-  int getTotalTime()
+  public int getTotalTime()
   {
     return mTotalTimeInSec;
   }
 
   @NonNull
-  List<TransitStepInfo> getTransitSteps()
+  public List<TransitStepInfo> getTransitSteps()
   {
     return new ArrayList<>(Arrays.asList(mSteps));
   }

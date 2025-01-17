@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.core.os.ParcelCompat;
 
 import app.organicmaps.Framework;
-import app.organicmaps.routing.RoutePointInfo;
+import app.organicmaps.sdk.routing.RoutePointInfo;
 import app.organicmaps.search.Popularity;
 import app.organicmaps.util.Constants;
 

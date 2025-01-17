@@ -47,7 +47,7 @@ jobject CreateMapObject(JNIEnv * env, place_page::Info const & info, int mapObje
   static jmethodID const ctorId = jni::GetConstructorID(
       env, g_mapObjectClazz,
       "("
-      "Lapp/organicmaps/bookmarks/data/FeatureId;" // featureId
+      "Lapp/organicmaps/bookmarks/data/FeatureId;"      // featureId
       "I"                                               // mapObjectType
       "Ljava/lang/String;"                              // title
       "Ljava/lang/String;"                              // secondaryTitle
@@ -55,7 +55,7 @@ jobject CreateMapObject(JNIEnv * env, place_page::Info const & info, int mapObje
       "Ljava/lang/String;"                              // address
       "DD"                                              // lat, lon
       "Ljava/lang/String;"                              // appId
-      "Lapp/organicmaps/routing/RoutePointInfo;"   // routePointInfo
+      "Lapp/organicmaps/sdk/routing/RoutePointInfo;"    // routePointInfo
       "I"                                               // openingMode
       "Lapp/organicmaps/search/Popularity;"        // popularity
       "Ljava/lang/String;"                              // description
@@ -104,7 +104,7 @@ jobject CreateBookmark(JNIEnv *env, const place_page::Info &info,
           jni::GetConstructorID(env, g_bookmarkClazz,
                                 "(Lapp/organicmaps/bookmarks/data/FeatureId;JJLjava/lang/String;"
                                 "Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;"
-                                "Lapp/organicmaps/routing/RoutePointInfo;"
+                                "Lapp/organicmaps/sdk/routing/RoutePointInfo;"
                                 "ILapp/organicmaps/search/Popularity;Ljava/lang/String;"
                                 "[Ljava/lang/String;)V");
   static jmethodID const featureCtorId =
@@ -214,7 +214,7 @@ jobject CreateMapObject(JNIEnv * env, place_page::Info const & info)
 
 jobject CreateRoutePointInfo(JNIEnv * env, place_page::Info const & info)
 {
-  static jclass const clazz = jni::GetGlobalClassRef(env, "app/organicmaps/routing/RoutePointInfo");
+  static jclass const clazz = jni::GetGlobalClassRef(env, "app/organicmaps/sdk/routing/RoutePointInfo");
   static jmethodID const ctorId = jni::GetConstructorID(env, clazz, "(II)V");
   int const markType = static_cast<int>(info.GetRouteMarkType());
   return env->NewObject(clazz, ctorId, markType, info.GetIntermediateIndex());

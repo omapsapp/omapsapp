@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 // Called from JNI.
 @Keep
 @SuppressWarnings("unused")
-public class RouteMarkData
+public final class RouteMarkData
 {
   @Nullable
   public final String mTitle;

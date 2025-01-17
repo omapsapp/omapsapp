@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,7 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 // Called from JNI.
 @Keep
 @SuppressWarnings("unused")
-public class RoutePointInfo implements Parcelable
+public final class RoutePointInfo implements Parcelable
 {
   public static final Creator<RoutePointInfo> CREATOR = new Creator<>()
   {

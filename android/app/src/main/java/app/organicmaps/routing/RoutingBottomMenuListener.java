@@ -1,5 +1,7 @@
 package app.organicmaps.routing;
 
+import app.organicmaps.sdk.routing.RoutePointInfo;
+
 public interface RoutingBottomMenuListener
 {
   void onUseMyPositionAsStart();

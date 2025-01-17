@@ -1,11 +1,11 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 
 import app.organicmaps.R;
 
-public class SingleLaneInfo
+public final class SingleLaneInfo
 {
   public LaneWay[] mLane;
   public boolean mIsActive;

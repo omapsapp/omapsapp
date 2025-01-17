@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.Keep;
@@ -14,7 +14,7 @@ import java.lang.annotation.RetentionPolicy;
 // Used by JNI.
 @Keep
 @SuppressWarnings("unused")
-public class TransitStepInfo
+public final class TransitStepInfo
 {
   private static final int TRANSIT_TYPE_INTERMEDIATE_POINT = 0;
   private static final int TRANSIT_TYPE_PEDESTRIAN = 1;

@@ -15,8 +15,8 @@ import androidx.car.app.navigation.model.Trip;
 import androidx.core.graphics.drawable.IconCompat;
 
 import app.organicmaps.bookmarks.data.MapObject;
-import app.organicmaps.routing.RoutingInfo;
-import app.organicmaps.routing.SingleLaneInfo;
+import app.organicmaps.sdk.routing.RoutingInfo;
+import app.organicmaps.sdk.routing.SingleLaneInfo;
 import app.organicmaps.util.Graphics;
 import app.organicmaps.widget.LanesDrawable;
 

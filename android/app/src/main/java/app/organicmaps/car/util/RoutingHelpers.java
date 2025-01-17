@@ -8,8 +8,8 @@ import androidx.car.app.navigation.model.LaneDirection;
 import androidx.car.app.navigation.model.Maneuver;
 import androidx.core.graphics.drawable.IconCompat;
 
-import app.organicmaps.routing.RoutingInfo;
-import app.organicmaps.routing.SingleLaneInfo;
+import app.organicmaps.sdk.routing.RoutingInfo;
+import app.organicmaps.sdk.routing.SingleLaneInfo;
 
 public final class RoutingHelpers
 {

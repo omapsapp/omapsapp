@@ -41,7 +41,7 @@ import app.organicmaps.car.util.UiHelpers;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.routing.ResultCodesHelper;
 import app.organicmaps.routing.RoutingController;
-import app.organicmaps.routing.RoutingInfo;
+import app.organicmaps.sdk.routing.RoutingInfo;
 import app.organicmaps.sdk.Router;
 import app.organicmaps.util.Config;
 

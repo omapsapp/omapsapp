@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import android.widget.ImageView;
 
@@ -12,7 +12,7 @@ import app.organicmaps.util.Distance;
 // Called from JNI.
 @Keep
 @SuppressWarnings("unused")
-public class RoutingInfo
+public final class RoutingInfo
 {
   // Target (end point of route).
   public final Distance distToTarget;
@@ -105,7 +105,7 @@ public class RoutingInfo
     }
   }
 
-  enum PedestrianTurnDirection
+  public enum PedestrianTurnDirection
   {
     NO_TURN(R.drawable.ic_turn_straight, 0),
     GO_STRAIGHT(R.drawable.ic_turn_straight, 0),

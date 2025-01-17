@@ -1281,7 +1281,7 @@ Java_app_organicmaps_Framework_nativeGetRouteFollowingInfo(JNIEnv * env, jclass)
   if (!info.IsValid())
     return nullptr;
 
-  static jclass const klass = jni::GetGlobalClassRef(env, "app/organicmaps/routing/RoutingInfo");
+  static jclass const klass = jni::GetGlobalClassRef(env, "app/organicmaps/sdk/routing/RoutingInfo");
   // Java signature : RoutingInfo(Distance distToTarget, Distance distToTurn,
   //                              String currentStreet, String nextStreet, String nextNextStreet,
   //                              double completionPercent, int vehicleTurnOrdinal, int
@@ -1291,13 +1291,13 @@ Java_app_organicmaps_Framework_nativeGetRouteFollowingInfo(JNIEnv * env, jclass)
       jni::GetConstructorID(env, klass,
                             "(Lapp/organicmaps/util/Distance;Lapp/organicmaps/util/Distance;"
                             "Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DIIIII"
-                            "[Lapp/organicmaps/routing/SingleLaneInfo;DZZ)V");
+                            "[Lapp/organicmaps/sdk/routing/SingleLaneInfo;DZZ)V");
 
   vector<routing::FollowingInfo::SingleLaneInfoClient> const & lanes = info.m_lanes;
   jobjectArray jLanes = nullptr;
   if (!lanes.empty())
   {
-    static jclass const laneClass = jni::GetGlobalClassRef(env, "app/organicmaps/routing/SingleLaneInfo");
+    static jclass const laneClass = jni::GetGlobalClassRef(env, "app/organicmaps/sdk/routing/SingleLaneInfo");
     auto const lanesSize = static_cast<jsize>(lanes.size());
     jLanes = env->NewObjectArray(lanesSize, laneClass, nullptr);
     ASSERT(jLanes, (jni::DescribeException()));
@@ -1342,7 +1342,7 @@ Java_app_organicmaps_Framework_nativeGetRouteJunctionPoints(JNIEnv * env, jclass
     return nullptr;
   }
 
-  static jclass const junctionClazz = jni::GetGlobalClassRef(env, "app/organicmaps/routing/JunctionInfo");
+  static jclass const junctionClazz = jni::GetGlobalClassRef(env, "app/organicmaps/sdk/routing/JunctionInfo");
   // Java signature : JunctionInfo(double lat, double lon)
   static jmethodID const junctionConstructor = jni::GetConstructorID(env, junctionClazz, "(DD)V");
 
@@ -1545,7 +1545,7 @@ Java_app_organicmaps_Framework_nativeGetRoutePoints(JNIEnv * env, jclass)
   auto const points = frm()->GetRoutingManager().GetRoutePoints();
 
   static jclass const pointClazz = jni::GetGlobalClassRef(env,
-                                   "app/organicmaps/routing/RouteMarkData");
+                                   "app/organicmaps/sdk/routing/RouteMarkData");
   // Java signature : RouteMarkData(String title, String subtitle,
   //                                @RoutePointInfo.RouteMarkType int pointType,
   //                                int intermediateIndex, boolean isVisible, boolean isMyPosition,
@@ -1574,7 +1574,7 @@ Java_app_organicmaps_Framework_nativeGetTransitRouteInfo(JNIEnv * env, jclass)
   auto const routeInfo = frm()->GetRoutingManager().GetTransitRouteInfo();
 
   static jclass const transitStepClass = jni::GetGlobalClassRef(env,
-                                         "app/organicmaps/routing/TransitStepInfo");
+                                         "app/organicmaps/sdk/routing/TransitStepInfo");
   // Java signature : TransitStepInfo(@TransitType int type, @Nullable String distance, @Nullable String distanceUnits,
   //                                  int timeInSec, @Nullable String number, int color, int intermediateIndex)
   static jmethodID const transitStepConstructor = jni::GetConstructorID(env, transitStepClass,
@@ -1598,14 +1598,14 @@ Java_app_organicmaps_Framework_nativeGetTransitRouteInfo(JNIEnv * env, jclass)
   }));
 
   static jclass const transitRouteInfoClass = jni::GetGlobalClassRef(env,
-                                                                     "app/organicmaps/routing/TransitRouteInfo");
+                                                                     "app/organicmaps/sdk/routing/TransitRouteInfo");
   // Java signature : TransitRouteInfo(@NonNull String totalDistance, @NonNull String totalDistanceUnits, int totalTimeInSec,
   //                                   @NonNull String totalPedestrianDistance, @NonNull String totalPedestrianDistanceUnits,
   //                                   int totalPedestrianTimeInSec, @NonNull TransitStepInfo[] steps)
   static jmethodID const transitRouteInfoConstructor = jni::GetConstructorID(env, transitRouteInfoClass,
                                                                              "(Ljava/lang/String;Ljava/lang/String;I"
                                                                              "Ljava/lang/String;Ljava/lang/String;I"
-                                                                             "[Lapp/organicmaps/routing/TransitStepInfo;)V");
+                                                                             "[Lapp/organicmaps/sdk/routing/TransitStepInfo;)V");
   jni::TScopedLocalRef const distance(env, jni::ToJavaString(env, routeInfo.m_totalDistanceStr));
   jni::TScopedLocalRef const distanceUnits(env, jni::ToJavaString(env, routeInfo.m_totalDistanceUnitsSuffix));
   jni::TScopedLocalRef const distancePedestrian(env, jni::ToJavaString(env, routeInfo.m_totalPedestrianDistanceStr));

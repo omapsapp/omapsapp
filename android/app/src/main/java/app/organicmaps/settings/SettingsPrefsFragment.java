@@ -24,7 +24,7 @@ import app.organicmaps.editor.data.Language;
 import app.organicmaps.help.HelpActivity;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.location.LocationProviderFactory;
-import app.organicmaps.routing.RoutingOptions;
+import app.organicmaps.sdk.routing.RoutingOptions;
 import app.organicmaps.util.Config;
 import app.organicmaps.util.NetworkPolicy;
 import app.organicmaps.util.PowerManagment;

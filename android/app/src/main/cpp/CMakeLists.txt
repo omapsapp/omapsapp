@@ -23,6 +23,7 @@ set(SRC
 
   # JNI sources
   app/organicmaps/sdk/routing/RouteRecommendationType.hpp
+  app/organicmaps/sdk/routing/RoutingOptions.cpp
   app/organicmaps/sdk/ChoosePositionMode.cpp
   app/organicmaps/sdk/MapStyle.cpp
   app/organicmaps/sdk/OrganicMaps.cpp
@@ -41,7 +42,6 @@ set(SRC
   app/organicmaps/LocationState.cpp
   app/organicmaps/Map.cpp
   app/organicmaps/MapManager.cpp
-  app/organicmaps/routing/RoutingOptions.cpp
   app/organicmaps/SearchEngine.cpp
   app/organicmaps/SearchRecents.cpp
   app/organicmaps/settings/UnitLocale.cpp

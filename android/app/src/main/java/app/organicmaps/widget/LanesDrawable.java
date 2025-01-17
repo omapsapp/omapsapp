@@ -15,7 +15,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 
 import app.organicmaps.R;
-import app.organicmaps.routing.SingleLaneInfo;
+import app.organicmaps.sdk.routing.SingleLaneInfo;
 
 import java.util.Objects;
 
