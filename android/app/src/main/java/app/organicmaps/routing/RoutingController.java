@@ -16,6 +16,11 @@ import app.organicmaps.R;
 import app.organicmaps.bookmarks.data.FeatureId;
 import app.organicmaps.bookmarks.data.MapObject;
 import app.organicmaps.location.LocationHelper;
+import app.organicmaps.sdk.Router;
+import app.organicmaps.sdk.routing.RouteRecommendationType;
+import app.organicmaps.sdk.routing.RoutingListener;
+import app.organicmaps.sdk.routing.RoutingLoadPointsListener;
+import app.organicmaps.sdk.routing.RoutingProgressListener;
 import app.organicmaps.widget.placepage.CoordinatesFormat;
 import app.organicmaps.util.StringUtils;
 import app.organicmaps.util.Utils;
@@ -67,7 +72,7 @@ public class RoutingController
     /**
      * @param progress progress to be displayed.
      * */
-    default void updateBuildProgress(@IntRange(from = 0, to = 100) int progress, @Framework.RouterType int router) {}
+    default void updateBuildProgress(@IntRange(from = 0, to = 100) int progress, Router router) {}
     default void onStartRouteBuilding() {}
   }
 
@@ -82,8 +87,7 @@ public class RoutingController
   //@RoutePointInfo.RouteMarkType
   private int mWaitingPoiPickType = NO_WAITING_POI_PICK;
   private int mLastBuildProgress;
-  @Framework.RouterType
-  private int mLastRouterType;
+  private Router mLastRouterType;
 
   private boolean mHasContainerSavedState;
   private boolean mContainsCachedResult;
@@ -98,7 +102,7 @@ public class RoutingController
   private int mRemovingIntermediatePointsTransactionId;
 
   @SuppressWarnings("FieldCanBeLocal")
-  private final Framework.RoutingListener mRoutingListener = new Framework.RoutingListener()
+  private final RoutingListener mRoutingListener = new RoutingListener()
   {
     @MainThread
     @Override
@@ -124,10 +128,11 @@ public class RoutingController
       processRoutingEvent();
     }
   };
+
   private void onBuiltRoute()
   {
     mCachedRoutingInfo = Framework.nativeGetRouteFollowingInfo();
-    if (mLastRouterType == Framework.ROUTER_TYPE_TRANSIT)
+    if (mLastRouterType == Router.Transit)
       mCachedTransitRouteInfo = Framework.nativeGetTransitRouteInfo();
     setBuildState(BuildState.BUILT);
     mLastBuildProgress = 100;
@@ -135,23 +140,15 @@ public class RoutingController
       mContainer.onBuiltRoute();
   }
 
-  private final Framework.RoutingProgressListener mRoutingProgressListener = new Framework.RoutingProgressListener()
-  {
-    @MainThread
-    @Override
-    public void onRouteBuildingProgress(float progress)
-    {
-      mLastBuildProgress = (int) progress;
-      updateProgress();
-    }
+  private final RoutingProgressListener mRoutingProgressListener = progress -> {
+    mLastBuildProgress = (int) progress;
+    updateProgress();
   };
 
-  @SuppressWarnings("FieldCanBeLocal")
-  private final Framework.RoutingLoadPointsListener mRoutingLoadPointsListener =
-    success -> {
-      if (success)
-        prepare(getStartPoint(), getEndPoint());
-    };
+  private final RoutingLoadPointsListener mRoutingLoadPointsListener = success -> {
+    if (success)
+      prepare(getStartPoint(), getEndPoint());
+  };
 
   public static RoutingController get()
   {
@@ -254,14 +251,14 @@ public class RoutingController
 
   public void initialize(@NonNull Context context)
   {
-    mLastRouterType = Framework.nativeGetLastUsedRouter();
+    mLastRouterType = Router.getLastUsed();
     mInvalidRoutePointsTransactionId = Framework.nativeInvalidRoutePointsTransactionId();
     mRemovingIntermediatePointsTransactionId = mInvalidRoutePointsTransactionId;
 
     Framework.nativeSetRoutingListener(mRoutingListener);
     Framework.nativeSetRouteProgressListener(mRoutingProgressListener);
     Framework.nativeSetRoutingRecommendationListener(recommendation -> UiThread.run(() -> {
-      if (recommendation == Framework.ROUTE_REBUILD_AFTER_POINTS_LOADING)
+      if (recommendation == RouteRecommendationType.RebuildAfterPointsLoading)
         setStartPoint(LocationHelper.from(context).getMyPosition());
     }));
     Framework.nativeSetRoutingLoadPointsListener(mRoutingLoadPointsListener);
@@ -353,13 +350,13 @@ public class RoutingController
   {
     if (shouldForceTransitRoute(fromApi))
     {
-      mLastRouterType = Framework.ROUTER_TYPE_TRANSIT;
+      mLastRouterType = Router.Transit;
       return;
     }
 
     if (startPoint != null && endPoint != null)
-      mLastRouterType = Framework.nativeGetBestRouter(startPoint.getLat(), startPoint.getLon(),
-                                                      endPoint.getLat(), endPoint.getLon());
+      mLastRouterType = Router.getBest(startPoint.getLat(), startPoint.getLon(),
+                                       endPoint.getLat(), endPoint.getLon());
   }
 
   private boolean isSubwayEnabled()
@@ -373,13 +370,13 @@ public class RoutingController
   }
 
   public void prepare(final @Nullable MapObject startPoint, final @Nullable MapObject endPoint,
-                      @Framework.RouterType int routerType)
+                      Router routerType)
   {
     cancel();
     setState(State.PREPARE);
 
     mLastRouterType = routerType;
-    Framework.nativeSetRouter(mLastRouterType);
+    Router.set(mLastRouterType);
 
     if (startPoint != null || endPoint != null)
       setPointsInternal(startPoint, endPoint);
@@ -565,17 +562,17 @@ public class RoutingController
 
   public boolean isTransitType()
   {
-    return mLastRouterType == Framework.ROUTER_TYPE_TRANSIT;
+    return mLastRouterType == Router.Transit;
   }
 
   public boolean isVehicleRouterType()
   {
-    return mLastRouterType == Framework.ROUTER_TYPE_VEHICLE;
+    return mLastRouterType == Router.Vehicle;
   }
 
   boolean isRulerRouterType()
   {
-    return mLastRouterType == Framework.ROUTER_TYPE_RULER;
+    return mLastRouterType == Router.Ruler;
   }
 
   public boolean isNavigating()
@@ -834,7 +831,7 @@ public class RoutingController
       mContainer.updateMenu();
   }
 
-  public void setRouterType(@Framework.RouterType int router)
+  public void setRouterType(Router router)
   {
     Logger.d(TAG, "setRouterType: " + mLastRouterType + " -> " + router);
 
@@ -844,7 +841,7 @@ public class RoutingController
       return;
 
     mLastRouterType = router;
-    Framework.nativeSetRouter(router);
+    Router.set(router);
 
     cancelRemovingIntermediatePointsTransaction();
 
@@ -852,8 +849,7 @@ public class RoutingController
       build();
   }
 
-  @Framework.RouterType
-  public int getLastRouterType()
+  public Router getLastRouterType()
   {
     return mLastRouterType;
   }

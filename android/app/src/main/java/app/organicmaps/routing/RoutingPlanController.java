@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import app.organicmaps.Framework;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
+import app.organicmaps.sdk.Router;
 import app.organicmaps.settings.DrivingOptionsActivity;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.WindowInsetUtils.PaddingInsetsListener;
@@ -140,27 +141,27 @@ public class RoutingPlanController extends ToolbarController
 
   private void onTransitModeSelected(@NonNull View v)
   {
-    RoutingController.get().setRouterType(Framework.ROUTER_TYPE_TRANSIT);
+    RoutingController.get().setRouterType(Router.Transit);
   }
 
   private void onBicycleModeSelected(@NonNull View v)
   {
-    RoutingController.get().setRouterType(Framework.ROUTER_TYPE_BICYCLE);
+    RoutingController.get().setRouterType(Router.Bicycle);
   }
 
   private void onRulerModeSelected(@NonNull View v)
   {
-    RoutingController.get().setRouterType(Framework.ROUTER_TYPE_RULER);
+    RoutingController.get().setRouterType(Router.Ruler);
   }
 
   private void onPedestrianModeSelected(@NonNull View v)
   {
-    RoutingController.get().setRouterType(Framework.ROUTER_TYPE_PEDESTRIAN);
+    RoutingController.get().setRouterType(Router.Pedestrian);
   }
 
   private void onVehicleModeSelected(@NonNull View v)
   {
-    RoutingController.get().setRouterType(Framework.ROUTER_TYPE_VEHICLE);
+    RoutingController.get().setRouterType(Router.Vehicle);
   }
 
   @Override
@@ -215,35 +216,35 @@ public class RoutingPlanController extends ToolbarController
     mRoutingBottomMenuController.showAltitudeChartAndRoutingDetails();
   }
 
-  public void updateBuildProgress(int progress, @Framework.RouterType int router)
+  public void updateBuildProgress(int progress, @NonNull Router router)
   {
     UiUtils.invisible(mProgressVehicle, mProgressPedestrian, mProgressTransit,
                       mProgressBicycle, mProgressRuler);
     WheelProgressView progressView;
     switch (router)
     {
-    case Framework.ROUTER_TYPE_VEHICLE:
+    case Vehicle:
       mRouterTypes.check(R.id.vehicle);
       progressView = mProgressVehicle;
       break;
-    case Framework.ROUTER_TYPE_PEDESTRIAN:
+    case Pedestrian:
       mRouterTypes.check(R.id.pedestrian);
       progressView = mProgressPedestrian;
       break;
-    //case Framework.ROUTER_TYPE_TAXI:
+    //case Taxi:
     //    {
     //      mRouterTypes.check(R.id.taxi);
     //      progressView = mProgressTaxi;
     //    }
-    case Framework.ROUTER_TYPE_TRANSIT:
+    case Transit:
       mRouterTypes.check(R.id.transit);
       progressView = mProgressTransit;
       break;
-    case Framework.ROUTER_TYPE_BICYCLE:
+    case Bicycle:
       mRouterTypes.check(R.id.bicycle);
       progressView = mProgressBicycle;
       break;
-    case Framework.ROUTER_TYPE_RULER:
+    case Ruler:
       mRouterTypes.check(R.id.ruler);
       progressView = mProgressRuler;
       break;

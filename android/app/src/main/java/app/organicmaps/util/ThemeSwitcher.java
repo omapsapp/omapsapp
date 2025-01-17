@@ -15,6 +15,7 @@ import app.organicmaps.display.DisplayManager;
 import app.organicmaps.downloader.DownloaderStatusIcon;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.routing.RoutingController;
+import app.organicmaps.sdk.MapStyle;
 import app.organicmaps.util.concurrency.UiThread;
 
 public enum ThemeSwitcher
@@ -68,7 +69,7 @@ public enum ThemeSwitcher
   /**
    * Changes the UI theme of application and the map style if necessary. If the contract regarding
    * the input parameter is broken, the UI will be frozen during attempting to change the map style
-   * through the synchronous method {@link Framework#nativeSetMapStyle(int)}.
+   * through the synchronous method {@link MapStyle#set(MapStyle)}.
    *
    * @param isRendererActive Indicates whether OpenGL renderer is active or not. Must be
    *                         <code>true</code> only if the map is rendered and visible on the screen
@@ -93,11 +94,8 @@ public enum ThemeSwitcher
   {
     UiModeManager uiModeManager = (UiModeManager) mContext.getSystemService(Context.UI_MODE_SERVICE);
     String oldTheme = Config.getCurrentUiTheme(mContext);
-    @Framework.MapStyle
-    int oldStyle = Framework.nativeGetMapStyle();
 
-    @Framework.MapStyle
-    int style;
+    MapStyle style;
     if (ThemeUtils.isNightTheme(mContext, theme))
     {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
@@ -106,11 +104,11 @@ public enum ThemeSwitcher
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
       if (RoutingController.get().isVehicleNavigation())
-        style = Framework.MAP_STYLE_VEHICLE_DARK;
+        style = MapStyle.VehicleDark;
       else if (Framework.nativeIsOutdoorsLayerEnabled())
-        style = Framework.MAP_STYLE_OUTDOORS_DARK;
+        style = MapStyle.OutdoorsDark;
       else
-        style = Framework.MAP_STYLE_DARK;
+        style = MapStyle.Dark;
     }
     else
     {
@@ -120,11 +118,11 @@ public enum ThemeSwitcher
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
       if (RoutingController.get().isVehicleNavigation())
-        style = Framework.MAP_STYLE_VEHICLE_CLEAR;
+        style = MapStyle.VehicleClear;
       else if (Framework.nativeIsOutdoorsLayerEnabled())
-        style = Framework.MAP_STYLE_OUTDOORS_CLEAR;
+        style = MapStyle.OutdoorsClear;
       else
-        style = Framework.MAP_STYLE_CLEAR;
+        style = MapStyle.Clear;
     }
 
     if (!theme.equals(oldTheme))
@@ -139,14 +137,14 @@ public enum ThemeSwitcher
     else
     {
       // If the UI theme is not changed we just need to change the map style if needed.
-      int currentStyle = Framework.nativeGetMapStyle();
+      final MapStyle currentStyle = MapStyle.get();
       if (currentStyle == style)
         return;
       SetMapStyle(style);
     }
   }
 
-  private void SetMapStyle(@Framework.MapStyle int style)
+  private void SetMapStyle(MapStyle style)
   {
     // Because of the distinct behavior in auto theme, Android Auto employs its own mechanism for theme switching.
     // For the Android Auto theme switcher, please consult the app.organicmaps.car.util.ThemeUtils module.
@@ -155,8 +153,8 @@ public enum ThemeSwitcher
     // If rendering is not active we can mark map style, because all graphics
     // will be recreated after rendering activation.
     if (mRendererActive)
-      Framework.nativeSetMapStyle(style);
+      MapStyle.set(style);
     else
-      Framework.nativeMarkMapStyle(style);
+      MapStyle.mark(style);
   }
 }

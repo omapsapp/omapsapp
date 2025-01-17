@@ -4,6 +4,7 @@
 #include "app/organicmaps/UserMarkHelper.hpp"
 #include "app/organicmaps/opengl/androidoglcontextfactory.hpp"
 #include "app/organicmaps/platform/AndroidPlatform.hpp"
+#include "app/organicmaps/sdk/routing/RouteRecommendationType.hpp"
 #include "app/organicmaps/util/Distance.hpp"
 #include "app/organicmaps/util/FeatureIdBuilder.hpp"
 #include "app/organicmaps/util/NetworkPolicy.hpp"
@@ -804,8 +805,8 @@ void CallRouteRecommendationListener(shared_ptr<jobject> listener,
                                      RoutingManager::Recommendation recommendation)
 {
   JNIEnv * env = jni::GetEnv();
-  jmethodID const methodId = jni::GetMethodID(env, *listener, "onRecommend", "(I)V");
-  env->CallVoidMethod(*listener, methodId, static_cast<int>(recommendation));
+  jmethodID const methodId = jni::GetMethodID(env, *listener, "onRecommend", "(Lapp/organicmaps/sdk/routing/RouteRecommendationType;)V");
+  env->CallVoidMethod(*listener, methodId, GetRouteRecommendationType(env, recommendation));
 }
 
 void CallSetRoutingLoadPointsListener(shared_ptr<jobject> listener, bool success)
@@ -1501,66 +1502,6 @@ Java_app_organicmaps_Framework_nativeDeactivateMapSelectionCircle(JNIEnv * env, 
 }
 
 JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeSetMapStyle(JNIEnv * env, jclass, jint mapStyle)
-{
-  MapStyle const val = static_cast<MapStyle>(mapStyle);
-  if (val != g_framework->GetMapStyle())
-    g_framework->SetMapStyle(val);
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetMapStyle(JNIEnv * env, jclass)
-{
-  return g_framework->GetMapStyle();
-}
-
-JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeMarkMapStyle(JNIEnv * env, jclass, jint mapStyle)
-{
-  MapStyle const val = static_cast<MapStyle>(mapStyle);
-  if (val != g_framework->GetMapStyle())
-    g_framework->MarkMapStyle(val);
-}
-
-JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeSetRouter(JNIEnv * env, jclass, jint routerType)
-{
-  using Type = routing::RouterType;
-  Type type = Type::Vehicle;
-  switch (routerType)
-  {
-    case 0: break;
-    case 1: type = Type::Pedestrian; break;
-    case 2: type = Type::Bicycle; break;
-    case 3: type = Type::Transit; break;
-    case 4: type = Type::Ruler; break;
-    default: assert(false); break;
-  }
-  g_framework->GetRoutingManager().SetRouter(type);
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetRouter(JNIEnv * env, jclass)
-{
-  return static_cast<jint>(g_framework->GetRoutingManager().GetRouter());
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetLastUsedRouter(JNIEnv * env, jclass)
-{
-  return static_cast<jint>(g_framework->GetRoutingManager().GetLastUsedRouter());
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetBestRouter(JNIEnv * env, jclass,
-                                                       jdouble srcLat, jdouble srcLon,
-                                                       jdouble dstLat, jdouble dstLon)
-{
-  return static_cast<jint>(frm()->GetRoutingManager().GetBestRouter(
-      mercator::FromLatLon(srcLat, srcLon), mercator::FromLatLon(dstLat, dstLon)));
-}
-
-JNIEXPORT void JNICALL
 Java_app_organicmaps_Framework_nativeAddRoutePoint(JNIEnv * env, jclass, jstring title,
                                                        jstring subtitle, jint markType,
                                                        jint intermediateIndex,
@@ -1806,25 +1747,6 @@ Java_app_organicmaps_Framework_nativeGetPoiContactUrl(JNIEnv *env, jclass, jint 
   if (osm::isSocialContactTag(metaID))
     return jni::ToJavaString(env, osm::socialContactToURL(metaID, value));
   return jni::ToJavaString(env, value);
-}
-
-JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeSetChoosePositionMode(JNIEnv *, jclass, jint mode, jboolean isBusiness,
-                                                           jboolean applyPosition)
-{
-  // TODO(AB): Move this code into the Framework to share with iOS and other platforms.
-  auto const f = frm();
-  if (applyPosition && f->HasPlacePageInfo())
-    g_framework->SetChoosePositionMode(static_cast<android::ChoosePositionMode>(mode), isBusiness,
-                                       &f->GetCurrentPlacePageInfo().GetMercator());
-  else
-    g_framework->SetChoosePositionMode(static_cast<android::ChoosePositionMode>(mode), isBusiness, nullptr);
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetChoosePositionMode(JNIEnv *, jclass)
-{
-  return static_cast<jint>(g_framework->GetChoosePositionMode());
 }
 
 JNIEXPORT jboolean JNICALL

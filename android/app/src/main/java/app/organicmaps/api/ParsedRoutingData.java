@@ -2,7 +2,7 @@ package app.organicmaps.api;
 
 import androidx.annotation.Keep;
 
-import app.organicmaps.Framework;
+import app.organicmaps.sdk.Router;
 
 /**
  * Represents Framework::ParsedRoutingData from core.
@@ -13,11 +13,10 @@ import app.organicmaps.Framework;
 public class ParsedRoutingData
 {
   public final RoutePoint[] mPoints;
-  @Framework.RouterType
-  public final int mRouterType;
+  public final Router mRouterType;
 
   public ParsedRoutingData(RoutePoint[] points, int routerType) {
     this.mPoints = points;
-    this.mRouterType = routerType;
+    this.mRouterType = Router.valueOf(routerType);
   }
 }

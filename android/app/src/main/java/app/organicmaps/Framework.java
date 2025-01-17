@@ -2,9 +2,7 @@ package app.organicmaps;
 
 import android.graphics.Bitmap;
 
-import androidx.annotation.IntDef;
 import androidx.annotation.Keep;
-import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.Size;
@@ -20,12 +18,14 @@ import app.organicmaps.routing.RouteMarkData;
 import app.organicmaps.routing.RoutePointInfo;
 import app.organicmaps.routing.RoutingInfo;
 import app.organicmaps.routing.TransitRouteInfo;
+import app.organicmaps.sdk.PlacePageActivationListener;
+import app.organicmaps.sdk.routing.RoutingListener;
+import app.organicmaps.sdk.routing.RoutingLoadPointsListener;
+import app.organicmaps.sdk.routing.RoutingProgressListener;
+import app.organicmaps.sdk.routing.RoutingRecommendationListener;
 import app.organicmaps.settings.SettingsPrefsFragment;
-import app.organicmaps.widget.placepage.PlacePageData;
 import app.organicmaps.util.Constants;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,87 +37,6 @@ import java.util.Locale;
  */
 public class Framework
 {
-  @Retention(RetentionPolicy.SOURCE)
-  @IntDef({MAP_STYLE_CLEAR, MAP_STYLE_DARK, MAP_STYLE_VEHICLE_CLEAR, MAP_STYLE_VEHICLE_DARK, MAP_STYLE_OUTDOORS_CLEAR, MAP_STYLE_OUTDOORS_DARK})
-
-  public @interface MapStyle {}
-
-  public static final int MAP_STYLE_CLEAR = 0;
-  public static final int MAP_STYLE_DARK = 1;
-  public static final int MAP_STYLE_VEHICLE_CLEAR = 3;
-  public static final int MAP_STYLE_VEHICLE_DARK = 4;
-  public static final int MAP_STYLE_OUTDOORS_CLEAR = 5;
-  public static final int MAP_STYLE_OUTDOORS_DARK = 6;
-
-  @Retention(RetentionPolicy.SOURCE)
-  @IntDef({ ROUTER_TYPE_VEHICLE, ROUTER_TYPE_PEDESTRIAN, ROUTER_TYPE_BICYCLE, ROUTER_TYPE_TRANSIT, ROUTER_TYPE_RULER })
-
-  public @interface RouterType {}
-
-  public static final int ROUTER_TYPE_VEHICLE = 0;
-  public static final int ROUTER_TYPE_PEDESTRIAN = 1;
-  public static final int ROUTER_TYPE_BICYCLE = 2;
-  public static final int ROUTER_TYPE_TRANSIT = 3;
-  public static final int ROUTER_TYPE_RULER = 4;
-
-  @Retention(RetentionPolicy.SOURCE)
-  @IntDef({ROUTE_REBUILD_AFTER_POINTS_LOADING})
-  public @interface RouteRecommendationType {}
-
-  public static final int ROUTE_REBUILD_AFTER_POINTS_LOADING = 0;
-
-  public interface PlacePageActivationListener
-  {
-    // Called from JNI.
-    @Keep
-    @SuppressWarnings("unused")
-    void onPlacePageActivated(@NonNull PlacePageData data);
-
-    // Called from JNI
-    @Keep
-    @SuppressWarnings("unused")
-    void onPlacePageDeactivated();
-
-    // Called from JNI
-    @Keep
-    @SuppressWarnings("unused")
-    void onSwitchFullScreenMode();
-  }
-
-  public interface RoutingListener
-  {
-    // Called from JNI
-    @Keep
-    @SuppressWarnings("unused")
-    @MainThread
-    void onRoutingEvent(int resultCode, String[] missingMaps);
-  }
-
-  public interface RoutingProgressListener
-  {
-    // Called from JNI.
-    @Keep
-    @SuppressWarnings("unused")
-    @MainThread
-    void onRouteBuildingProgress(float progress);
-  }
-
-  public interface RoutingRecommendationListener
-  {
-    // Called from JNI.
-    @Keep
-    @SuppressWarnings("unused")
-    void onRecommend(@RouteRecommendationType int recommendation);
-  }
-
-  public interface RoutingLoadPointsListener
-  {
-    // Called from JNI.
-    @Keep
-    @SuppressWarnings("unused")
-    void onRoutePointsLoaded(boolean success);
-  }
-
   // Used by JNI.
   @Keep
   @SuppressWarnings("unused")
@@ -299,37 +218,15 @@ public class Framework
 
   private static native void nativeSetSpeedCamManagerMode(int mode);
 
-  public static native void nativeSetRoutingListener(RoutingListener listener);
+  public static native void nativeSetRoutingListener(@NonNull RoutingListener listener);
 
-  public static native void nativeSetRouteProgressListener(RoutingProgressListener listener);
+  public static native void nativeSetRouteProgressListener(@NonNull RoutingProgressListener listener);
 
-  public static native void nativeSetRoutingRecommendationListener(RoutingRecommendationListener listener);
+  public static native void nativeSetRoutingRecommendationListener(@NonNull RoutingRecommendationListener listener);
 
-  public static native void nativeSetRoutingLoadPointsListener(
-      @Nullable RoutingLoadPointsListener listener);
+  public static native void nativeSetRoutingLoadPointsListener(@NonNull RoutingLoadPointsListener listener);
 
   public static native void nativeShowCountry(String countryId, boolean zoomToDownloadButton);
-
-  public static native void nativeSetMapStyle(int mapStyle);
-
-  @MapStyle
-  public static native int nativeGetMapStyle();
-
-  /**
-   * This method allows to set new map style without immediate applying. It can be used before
-   * engine recreation instead of nativeSetMapStyle to avoid huge flow of OpenGL invocations.
-   * @param mapStyle style index
-   */
-  public static native void nativeMarkMapStyle(int mapStyle);
-
-  public static native void nativeSetRouter(@RouterType int routerType);
-  @RouterType
-  public static native int nativeGetRouter();
-  @RouterType
-  public static native int nativeGetLastUsedRouter();
-  @RouterType
-  public static native int nativeGetBestRouter(double srcLat, double srcLon,
-                                               double dstLat, double dstLon);
 
   public static native void nativeAddRoutePoint(String title, String subtitle,
                                                 @RoutePointInfo.RouteMarkType int markType,
@@ -390,23 +287,6 @@ public class Framework
 
   public static native void nativeZoomToPoint(double lat, double lon, int zoom, boolean animate);
 
-  @Retention(RetentionPolicy.SOURCE)
-  @IntDef({ChoosePositionMode.NONE, ChoosePositionMode.EDITOR, ChoosePositionMode.API})
-  public @interface ChoosePositionMode
-  {
-    // Keep in sync with `enum ChoosePositionMode` in Framework.hpp.
-    public static final int NONE = 0;
-    public static final int EDITOR = 1;
-    public static final int API = 2;
-  }
-  /**
-   * @param mode - see ChoosePositionMode values.
-   * @param isBusiness selection area will be bounded by building borders, if its true (eg. true for businesses in buildings).
-   * @param applyPosition if true, map'll be animated to currently selected object.
-   */
-  public static native void nativeSetChoosePositionMode(@ChoosePositionMode int mode, boolean isBusiness,
-                                                        boolean applyPosition);
-  public static native @ChoosePositionMode int nativeGetChoosePositionMode();
   public static native boolean nativeIsDownloadedMapAtScreenCenter();
 
   public static native String nativeGetActiveObjectFormattedCuisine();
@@ -432,7 +312,7 @@ public class Framework
 
   public static native void nativeMakeCrash();
 
-    public static native void nativeSetPowerManagerFacility(int facilityType, boolean state);
+  public static native void nativeSetPowerManagerFacility(int facilityType, boolean state);
   public static native int nativeGetPowerManagerScheme();
   public static native void nativeSetPowerManagerScheme(int schemeType);
   public static native void nativeSetViewportCenter(double lat, double lon, int zoom);
