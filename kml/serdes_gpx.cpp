@@ -33,16 +33,13 @@ std::string_view constexpr kEle = "ele";
 std::string_view constexpr kCmt = "cmt";
 std::string_view constexpr kTime = "time";
 
-std::string_view constexpr kGpxHeader =
-  "<?xml version=\"1.0\"?>\n"
-  "<gpx version=\"1.1\" creator=\"Organic Maps\" xmlns=\"http://www.topografix.com/GPX/1/1\"\n"
-  "    xmlns:gpxx=\"http://www.garmin.com/xmlschemas/GpxExtensions/v3\"\n"
-  "    xmlns:gpx_style=\"http://www.topografix.com/GPX/gpx_style/0/2\"\n"
-  "    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
-  "    xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd "
-  "http://www.topografix.com/GPX/gpx_style/0/2 https://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd "
-  "http://www.garmin.com/xmlschemas/GpxExtensions/v3 https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd\">\n";
-
+std::string_view constexpr kGpxHeader = R"(<?xml version="1.0"?>
+<gpx version="1.1" creator="Organic Maps" xmlns="http://www.topografix.com/GPX/1/1"
+    xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+    xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/gpx_style/0/2 https://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd">
+)";
 std::string_view constexpr kGpxFooter = "</gpx>";
 
 int constexpr kInvalidColor = 0;
@@ -137,13 +134,18 @@ std::string const & GpxParser::GetTagFromEnd(size_t n) const
   return m_tags[m_tags.size() - n - 1];
 }
 
-void GpxParser::ParseColor(std::string const & value)
+void GpxParser::ParseColor(std::string_view value)
 {
   std::string_view colorStr = value;
-  if (colorStr.at(0) == '#')
-    colorStr = colorStr.substr(1, colorStr.size() - 1);
-  if (colorStr.length() == 8)
-    colorStr = colorStr.substr(2, colorStr.length() - 1);
+  if (colorStr.empty())
+  {
+    LOG(LWARNING, ("Invalid color value", value));
+    return;
+  }
+  if (colorStr.front() == '#')
+    colorStr.remove_prefix(1);
+  if (colorStr.size() == 8)
+    colorStr = colorStr.substr(2, colorStr.size() - 1);
   auto const colorBytes = FromHex(colorStr);
   if (colorBytes.size() != 3)
   {
@@ -502,13 +504,15 @@ void SaveColorToARGB(Writer & writer, uint32_t rgba)
          << NumToHex(static_cast<uint8_t>((rgba >> 8) & 0xFF));
 }
 
-std::tuple<uint8_t, uint8_t, uint8_t> ExtractRGB(std::uint32_t color) {
+std::tuple<uint8_t, uint8_t, uint8_t> ExtractRGB(uint32_t color)
+{
   return {(color >> 24) & 0xFF, (color >> 16) & 0xFF, (color >> 8) & 0xFF};
 }
 
-int ColorDistance(std::uint32_t color1, std::uint32_t color2) {
-  auto [r1, g1, b1] = ExtractRGB(color1);
-  auto [r2, g2, b2] = ExtractRGB(color2);
+int ColorDistance(uint32_t color1, uint32_t color2)
+{
+  auto const [r1, g1, b1] = ExtractRGB(color1);
+  auto const [r2, g2, b2] = ExtractRGB(color2);
   return (r1 - r2) * (r1 - r2) + (g1 - g2) * (g1 - g2) + (b1 - b2) * (b1 - b2);
 }
 
@@ -535,11 +539,9 @@ std::string MapGarminColor(uint32_t rgba)
   };
   auto const it = kHexToGarmin.find(rgba);
   if (it != kHexToGarmin.end())
-  {
     return it->second;
-  }
   const auto & first = kHexToGarmin.begin();
-  u_int32_t min = first->first;
+  u_int32_t min = ColorDistance(first->first, rgba);
   std::string color = first->second;
   for (const auto & [garminColor, garminName] : kHexToGarmin)
   {
