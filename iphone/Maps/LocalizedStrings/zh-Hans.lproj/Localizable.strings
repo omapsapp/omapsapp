@@ -1376,6 +1376,9 @@
 /* Title for the "Open In Another App" button on the PlacePage. */
 "open_in_app" = "在另一个应用程序中打开";
 
+/* To indicate if the place proposed self service... */
+"self_service" = "自助服务";
+
 /* To indicate if restaurant or other place has outdoor seating */
 "outdoor_seating" = "室外座位";
 

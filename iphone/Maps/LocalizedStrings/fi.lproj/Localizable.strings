@@ -1376,6 +1376,9 @@
 /* Title for the "Open In Another App" button on the PlacePage. */
 "open_in_app" = "Avaa toisessa sovelluksessa";
 
+/* To indicate if the place proposed self service... */
+"self_service" = "Itsepalvelu";
+
 /* To indicate if restaurant or other place has outdoor seating */
 "outdoor_seating" = "Ulkona istuminen";
 

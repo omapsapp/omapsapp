@@ -32938,7 +32938,7 @@
 
   [self_service]
     comment = To indicate if the place proposed self service...
-    tags = android
+    tags = android,ios
     en = Self-service
     af = Selfdiens
     ar = الخدمة الذاتية
