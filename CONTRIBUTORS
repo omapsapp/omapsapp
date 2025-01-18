@@ -1,63 +1,90 @@
-This file contains a list of people who have contributed to the
-public version of MAPS.ME and Organic Maps.
-
-Original MAPS.ME (MapsWithMe) design and implementation:
-  Yury Melnichek <yury@melnichek.com>
-  Alexander Borsuk <me@alex.bio>
-  Viktor Govako <viktor.govako@gmail.com>
-  Siarhei Rachytski <siarhei.rachytski@gmail.com>
-
 --------------------------------------------------------------------------------
-Organic Maps contributions:
+Organic Maps (formerly OMaps) contributions:
 --------------------------------------------------------------------------------
-  Alexander Borsuk <me@alex.bio>
-  Roman Tsisyk <roman@tsisyk.com>
-  Viktor Govako <viktor.govako@gmail.com>
+
+Code contributions (in alphabetic order):
+  Alexander Borsuk
+  Andrew Shkrob
+  Anton Makouski
+  Arnaud Vergnet
+  Arthur-GYT
   Caspar Nuël <casparnuel@yandex.com>
-  Konstantin Pastbin
-  Nishant Bhandari <nishantbhandari0019@gmail.com>
-  Sebastiao Sousa <sebastiao.sousa@tecnico.ulisboa.pt>
+  cyber-toad
+  David Martinez
+  dbf
+  Dzmitry Yarmolenka
+  Fabian Wüthrich
+  Ferenc Géczi
+  Filip Czaplicki
+  FinixFighter
+  Francesco Gazzetta
+  gallegonovato
+  Gonzalo Pesquero
   Harry Bond <me@hbond.xyz>
+  Jean-BaptisteC
+  Kavi Khalique
+  Kiryl Kaveryn
+  Konstantin Pastbin
+  Lukas Kronberger
+  map-per
+  Markku Huotari
+  Mateusz Konieczny
+  Matheus Gomes
+  MbTy1
+  Meenbeese
+  Metehan Özyürek
+  Michał Brzozowski
+  Nishant Bhandari <nishantbhandari0019@gmail.com>
+  Olga Khlopkova
+  Osyotr
+  renderexpert
+  rokuz
+  Roman Tsisyk <roman@tsisyk.com>
+  Rudo Kemper
+  Sebastiao Sousa <sebastiao.sousa@tecnico.ulisboa.pt>
+  Sergiy Kozyr
+  Veniamin Gvozdikov <g.veniamin@googlemail.com>
 
-Organic Maps translations:
+Translations:
+  Joan Montané
   Karina Kordon
   Konstantin Pastbin
-  Metehan Özyürek
-  Joan Montané
   Luna Rose
-
+  Metehan Özyürek
 
 --------------------------------------------------------------------------------
-MAPS.ME contributions (before Organic Maps was forked in 2020-2021):
+MAPS.ME contributors at Mail.Ru Group prior to the OMaps fork in 2020/2021:
 --------------------------------------------------------------------------------
+
 Code contributions:
-  Dmitry Yunitski
-  Lev Dragunov
-  Sergey Yershov <syershov@gmail.com>
-  Vladimir Byko-Ianko <bykoianko@gmail.com>
-  Yuri Gorshenin
-  Maxim Pimenov <m@maps.me>
-  Roman Kuznetsov
-  Konstantin Shalnev <k.shalnev@gmail.com>
-  Ilja Zverev <zverik@textual.ru>
-  Vlad Mihaylenko
-  Ilya Grechuhin
-  Alexander Marchuk
-  Sergey Magidovich
-  Yury Rakhuba
-  Kirill Zhdanovich
-  Dmitry Kunin
-  Denis Koronchik
-  Darafei Praliaskouski <me@komzpa.net>
-  Igor Khmurets
-  Timur Bernikowich
-  Roman Sorokin
+  Alex Gontmakher <gsasha@gmail.com>
   Alexander Gusak
+  Alexander Marchuk
   Alexei Vitenko
   Artem Polkovnikov <artyom.polkovnikov@gmail.com>
-  Alex Gontmakher <gsasha@gmail.com>
+  Darafei Praliaskouski <me@komzpa.net>
+  Denis Koronchik
   Dima Korolev <dmitry.korolev@gmail.com>
+  Dmitry Kunin
+  Dmitry Yunitski
+  Igor Khmurets
+  Ilja Zverev <zverik@textual.ru>
+  Ilya Grechuhin
+  Kirill Zhdanovich
+  Konstantin Shalnev <k.shalnev@gmail.com>
+  Lev Dragunov
   Max Grigorev <forwidur@gmail.com>
+  Maxim Pimenov <m@maps.me>
+  Roman Kuznetsov
+  Roman Sorokin
+  Sergey Magidovich
+  Sergey Yershov <syershov@gmail.com>
+  Timur Bernikowich
+  Tobias Goergens <tobi.goergens@gmail.com>
+  Vlad Mihaylenko
+  Vladimir Byko-Ianko <bykoianko@gmail.com>
+  Yuri Gorshenin
+  Yury Rakhuba
 
 Porting to Tizen platform:
   Sergey Pisarchik
@@ -67,36 +94,45 @@ Testing and automation:
 
 Design and styles:
   Igor Tomko <igor.n.tomko@gmail.com>
+  Maksim Okala-Kulak <kaenoru@gmail.com>
   Urbica http://urbica.co
   Vasiliy Cherkasov
-  Maksim Okala-Kulak <kaenoru@gmail.com>
 
 Strings and translations:
-  Nataliya Yakavenka
   Daria Terentieva
-  Satoshi Iida
-  Mathias Wittwer
-  R3gi <regiprogi@gmail.com>
   Hidde Wieringa
-  Vasily Korotkevich
-  Mark N. Kuramochi
   Lidia Vasiljeva
+  Mark N. Kuramochi
+  Mathias Wittwer
+  Nataliya Yakavenka
+  R3gi <regiprogi@gmail.com>
+  Satoshi Iida
+  Vasily Korotkevich
 
 Project management:
   Alexander Matveenko
 
 Marketing & support:
-  Sergey Ermilov
-  Anna Mozheiko
-  Alexander Bobko
-  Marat Mukhamedov
   Alena Miranovich
-  Polina Kovalchuk
-  Ekaterina Sazonova
   Alesya Serada
+  Alexander Bobko
+  Anna Mozheiko
+  Ekaterina Sazonova
+  Marat Mukhamedov
+  Polina Kovalchuk
+  Sergey Ermilov
 
 Special thanks to:
+  Anna Yakovleva
+  Dmitry Matveev
   Yauheniya Melnichek
   Yuri Gurski
-  Dmitry Matveev
-  Anna Yakovleva
+
+--------------------------------------------------------------------------------
+Owners of proprietary MAPS.ME (MapsWithMe GmbH) sold to Mail.ru Group in 2014:
+--------------------------------------------------------------------------------
+
+  Alex Zolotarev-Borsuk <me@alex.bio>
+  Siarhei Rachytski <siarhei.rachytski@gmail.com>
+  Viktor Govako <viktor.govako@gmail.com>
+  Yury Melnichek <yury@melnichek.com>
