@@ -350,7 +350,7 @@ public class EditorHostFragment extends BaseMwmToolbarFragment implements View.O
   private void processEditedFeatures()
   {
     Context context = requireContext();
-    if (OsmOAuth.isAuthorized(context) || !ConnectionState.INSTANCE.isConnected())
+    if (OsmOAuth.isAuthorized(context))
     {
       Utils.navigateToParent(requireActivity());
       return;
