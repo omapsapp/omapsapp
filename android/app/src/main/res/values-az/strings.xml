@@ -433,7 +433,7 @@
     <string name="editor_hours_closed">Qeyri-iş saatları</string>
     <string name="editor_example_values">Nümunə Dəyərləri</string>
     <string name="editor_correct_mistake">Səhvi düzəldin</string>
-    <string name="editor_add_select_location">Məkan</string>
+    <string name="editor_add_select_location">Yer seçin</string>
     <string name="editor_report_problem_desription_1">OpenStreetMap icmasının səhvi düzəldə bilməsi üçün problemi ətraflı təsvir edin.</string>
     <string name="editor_report_problem_desription_2">Və ya bunu özünüz edin https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Göndər</string>
@@ -489,7 +489,7 @@
     <string name="downloader_no_space_message">Zəhmət olmasa lazımsız məlumatları silin</string>
     <string name="editor_login_error_dialog">Giriş xətası</string>
     <string name="editor_profile_changes">Təsdiqlənmiş Dəyişikliklər</string>
-    <string name="editor_focus_map_on_location">Obyektin düzgün yerini seçmək üçün xəritəni dartın.</string>
+    <string name="editor_focus_map_on_location">Xaç işarəsini yer və ya biznesin yerinə qoymaq üçün xəritəni dartın.</string>
     <string name="editor_edit_place_title">Redaktə</string>
     <string name="editor_add_place_title">Əlavə</string>
     <string name="editor_edit_place_name_hint">Yerin adı</string>

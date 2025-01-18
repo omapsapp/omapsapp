@@ -430,7 +430,7 @@
     <string name="editor_hours_closed">Stengt</string>
     <string name="editor_example_values">Eksempelverdier</string>
     <string name="editor_correct_mistake">Rett feil</string>
-    <string name="editor_add_select_location">Plassering</string>
+    <string name="editor_add_select_location">Velg sted</string>
     <string name="editor_report_problem_desription_1">Beskriv problemet detaljert slik at OpenStreetMap-samfunnet kan fikse feilen.</string>
     <string name="editor_report_problem_desription_2">Eller gjør det selv på https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Send</string>
@@ -486,7 +486,7 @@
     <string name="downloader_no_space_message">Fjern unødvendig data</string>
     <string name="editor_login_error_dialog">Innloggingsfeil.</string>
     <string name="editor_profile_changes">Bekreftede endringer</string>
-    <string name="editor_focus_map_on_location">Dra kartet for å velge riktig beliggenhet for objektet.</string>
+    <string name="editor_focus_map_on_location">Dra kartet for å plassere korset der stedet eller virksomheten befinner seg.</string>
     <string name="editor_edit_place_title">Redigerer</string>
     <string name="editor_add_place_title">Legger til</string>
     <string name="editor_edit_place_name_hint">Navn på stedet</string>

@@ -447,7 +447,7 @@
     <string name="editor_hours_closed">ساعات الراحة</string>
     <string name="editor_example_values">أمثلة على القيم</string>
     <string name="editor_correct_mistake">تصحيح الخطأ</string>
-    <string name="editor_add_select_location">الموقع</string>
+    <string name="editor_add_select_location">اختر الموقع</string>
     <string name="editor_report_problem_desription_1">يرجى وصف المشكلة بالتفاصيل حتى يتسنى لفريق خريطة الشارع المفتوحة إصلاح الخطأ.</string>
     <string name="editor_report_problem_desription_2">أو افعل ذلك بنفسك من خلال الموقع https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">إرسال</string>
@@ -503,7 +503,7 @@
     <string name="downloader_no_space_message">من فضلك، قم بإزالة البيانات غير الضرورية</string>
     <string name="editor_login_error_dialog">خطأ في تسجيل الدخول.</string>
     <string name="editor_profile_changes">التعديلات التي تم التحقق منها</string>
-    <string name="editor_focus_map_on_location">اسحب الخريطة لتحدد موقع الإضافة.</string>
+    <string name="editor_focus_map_on_location">اسحب الخريطة لوضع الصليب في موقع المكان أو النشاط التجاري.</string>
     <string name="editor_edit_place_title">يتم التعديل</string>
     <string name="editor_add_place_title">يتم الإضافة</string>
     <string name="editor_edit_place_name_hint">اسم المكان</string>

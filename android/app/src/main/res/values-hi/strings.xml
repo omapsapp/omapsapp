@@ -353,7 +353,7 @@
     <string name="editor_time_close">बंद</string>
     <string name="editor_time_title">काम करने के घंटे</string>
     <string name="editor_example_values">उदाहरण मान</string>
-    <string name="editor_add_select_location">जगह</string>
+    <string name="editor_add_select_location">स्थान चुनें</string>
     <string name="autodownload">मानचित्र स्वतः डाउनलोड करें</string>
     <!-- Place Page opening hours text -->
     <string name="daily">दैनिक</string>
@@ -376,7 +376,7 @@
     <string name="downloader_mwm_migration_dialog">मार्ग बनाने के लिए, आपको सभी मानचित्र अपडेट करने होंगे और फिर मार्ग की दोबारा योजना बनानी होगी।</string>
     <string name="downloader_search_field_hint">मानचित्र ढूंढें</string>
     <string name="editor_login_error_dialog">लॉगिन त्रुटि</string>
-    <string name="editor_focus_map_on_location">ऑब्जेक्ट का सही स्थान चुनने के लिए मानचित्र को खींचें।</string>
+    <string name="editor_focus_map_on_location">स्थान या व्यवसाय के स्थान पर क्रॉस लगाने के लिए मानचित्र को खींचें।</string>
     <string name="editor_add_place_title">जोड़ना</string>
     <string name="editor_edit_place_name_hint">स्थान का नाम</string>
     <!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->

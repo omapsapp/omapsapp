@@ -571,7 +571,7 @@
 
 "editor_example_values" = "أمثلة على القيم";
 
-"editor_add_select_location" = "الموقع";
+"editor_add_select_location" = "اختر الموقع";
 
 "editor_done_dialog_1" = "لقد ساهمت بتحسين خريطة العالم. لا تخفي ذلك! أخبر أصدقائك، وحسنوها معاً.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "التعديلات التي تم التحقق منها";
 
-"editor_focus_map_on_location" = "اسحب الخريطة لتحدد موقع الإضافة.";
+"editor_focus_map_on_location" = "اسحب الخريطة لوضع الصليب في موقع المكان أو النشاط التجاري.";
 
 "editor_add_select_category" = "اختر الفئة";
 

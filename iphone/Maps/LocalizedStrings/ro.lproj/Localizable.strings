@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Exemple";
 
-"editor_add_select_location" = "Poziția";
+"editor_add_select_location" = "Selectați locația";
 
 "editor_done_dialog_1" = "Ai modificat harta lumii. Nu ascunde acest lucru! Spune-le prietenilor și modificați-o împreună.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Modificări confirmate";
 
-"editor_focus_map_on_location" = "Trage de hartă pentru a alege poziția corectă a obiectului.";
+"editor_focus_map_on_location" = "Trageți harta pentru a plasa crucea la locația locului sau a întreprinderii.";
 
 "editor_add_select_category" = "Alege categoria";
 

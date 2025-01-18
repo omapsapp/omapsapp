@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Esimerkkiarvot";
 
-"editor_add_select_location" = "Sijainti";
+"editor_add_select_location" = "Valitse sijainti";
 
 "editor_done_dialog_1" = "Olet muuttanut maailmankarttaa. Älä piilota tätä! Kerro ystävillesi ja muokatkaa sitä yhdessä.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Vahvistetut karttamuutokset";
 
-"editor_focus_map_on_location" = "Vedä karttaa valitaksesi kohteelle oikean sijainnin.";
+"editor_focus_map_on_location" = "Aseta risti paikan tai yrityksen sijaintiin vetämällä karttaa.";
 
 "editor_add_select_category" = "Valitse kategoria";
 

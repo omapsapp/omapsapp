@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Прыклады значэнняў";
 
-"editor_add_select_location" = "Месцазнаходжанне";
+"editor_add_select_location" = "Выберыце Размяшчэнне";
 
 "editor_done_dialog_1" = "Вы змянілі мапу свету. Не хавайце гэта! Расскажыце сябрам і рэдагуйце разам.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Правераныя змены";
 
-"editor_focus_map_on_location" = "Перацягніце мапу, каб выбраць правільнае месцазнаходжанне аб'екта.";
+"editor_focus_map_on_location" = "Перацягніце карту, каб паставіць крыж на месцы або кампаніі.";
 
 "editor_add_select_category" = "Выбраць катэгорыю";
 

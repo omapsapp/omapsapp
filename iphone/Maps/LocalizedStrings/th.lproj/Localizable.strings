@@ -571,7 +571,7 @@
 
 "editor_example_values" = "ตัวอย่างของค่าที่ตั้งไว้";
 
-"editor_add_select_location" = "ตำแหน่ง";
+"editor_add_select_location" = "เลือกสถานที่";
 
 "editor_done_dialog_1" = "คุณได้เปลี่ยนแผนที่โลก อย่าซ่อนมันไว้! บอกเพื่อนคุณ แล้วมาแก้ไขมันไปด้วยกัน";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "การเปลี่ยนแปลงที่อนุมัติแล้ว";
 
-"editor_focus_map_on_location" = "ดึงแผนที่เพื่อเลือกตำแหน่งวัตถุที่ถูกต้อง";
+"editor_focus_map_on_location" = "ลากแผนที่เพื่อวางกากบาทที่ตำแหน่งของสถานที่หรือธุรกิจ";
 
 "editor_add_select_category" = "เลือกหมวดหมู่";
 

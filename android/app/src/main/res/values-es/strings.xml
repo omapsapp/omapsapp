@@ -432,7 +432,7 @@
     <string name="editor_hours_closed">Horas de cierre</string>
     <string name="editor_example_values">Valores de ejemplo</string>
     <string name="editor_correct_mistake">Corregir error</string>
-    <string name="editor_add_select_location">Ubicación</string>
+    <string name="editor_add_select_location">Seleccione la ubicación</string>
     <string name="editor_report_problem_desription_1">Por favor, describa el problema en detalle para que la comunidad de OpenStreetMap pueda corregir el error.</string>
     <string name="editor_report_problem_desription_2">O hágalo usted mismo en https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Enviar</string>
@@ -488,7 +488,7 @@
     <string name="downloader_no_space_message">Elimine los datos innecesarios</string>
     <string name="editor_login_error_dialog">Error de inicio de sesión.</string>
     <string name="editor_profile_changes">Cambios verificados</string>
-    <string name="editor_focus_map_on_location">Arrastre el mapa para seleccionar la ubicación correcta del objeto.</string>
+    <string name="editor_focus_map_on_location">Arrastre el mapa para colocar la cruz en la ubicación del lugar o negocio.</string>
     <string name="editor_edit_place_title">Editar</string>
     <string name="editor_add_place_title">Añadir</string>
     <string name="editor_edit_place_name_hint">Nombre del lugar</string>

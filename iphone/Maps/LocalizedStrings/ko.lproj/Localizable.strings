@@ -571,7 +571,7 @@
 
 "editor_example_values" = "예제";
 
-"editor_add_select_location" = "위치";
+"editor_add_select_location" = "위치 선택";
 
 "editor_done_dialog_1" = "세계 지도를 변경했습니다. 이를 숨기지 마십시오! 친구에게 말하고, 이를 함께 편집합니다.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "변경사항 승인";
 
-"editor_focus_map_on_location" = "개체의 정확한 위치를 선택하려면 지도를 당깁니다.";
+"editor_focus_map_on_location" = "지도를 드래그하여 장소 또는 비즈니스의 위치에 십자가를 배치합니다.";
 
 "editor_add_select_category" = "범주 선택";
 

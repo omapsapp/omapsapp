@@ -405,7 +405,7 @@
     <string name="editor_hours_closed">Lukket-timer</string>
     <string name="editor_example_values">Eksempelværdier</string>
     <string name="editor_correct_mistake">Ret fejl</string>
-    <string name="editor_add_select_location">Sted</string>
+    <string name="editor_add_select_location">Vælg placering</string>
     <string name="editor_report_problem_desription_1">Beskriv problemet i detaljer, så OpenStreetMap-fællesskabet kan løse fejlen.</string>
     <string name="editor_report_problem_desription_2">Eller gør det selv på https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Send</string>
@@ -458,7 +458,7 @@
     <string name="downloader_no_space_message">Fjern unødvendig data</string>
     <string name="editor_login_error_dialog">Login-fejl.</string>
     <string name="editor_profile_changes">Bekræftede ændringer</string>
-    <string name="editor_focus_map_on_location">Træk kortet for at vælge objektets korrekte placering.</string>
+    <string name="editor_focus_map_on_location">Træk i kortet for at placere korset på stedet eller virksomheden.</string>
     <string name="editor_edit_place_title">Redigerer</string>
     <string name="editor_add_place_title">Tilføjer</string>
     <string name="editor_edit_place_name_hint">Stedets navn</string>

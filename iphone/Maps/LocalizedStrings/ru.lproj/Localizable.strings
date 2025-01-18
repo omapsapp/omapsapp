@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Примеры значений";
 
-"editor_add_select_location" = "Местоположение";
+"editor_add_select_location" = "Выберите местоположение";
 
 "editor_done_dialog_1" = "Вы изменили карту мира. Не скрывайте это, расскажите друзьям и редактируйте вместе.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Учтённые правки";
 
-"editor_focus_map_on_location" = "Потяните карту, чтобы выбрать правильное местоположение объекта.";
+"editor_focus_map_on_location" = "Перетащите карту, чтобы поместить крестик на место расположения заведения или предприятия.";
 
 "editor_add_select_category" = "Выбрать категорию";
 

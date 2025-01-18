@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Vzorové hodnoty";
 
-"editor_add_select_location" = "Umístění";
+"editor_add_select_location" = "Zvolte umístění";
 
 "editor_done_dialog_1" = "Změnili jste světovou mapu. Neskrývejte to! Řekněte o tom svým kamarádům a upravujte ji společně.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Oveřené změny";
 
-"editor_focus_map_on_location" = "Táhněte mapu, abyste vybrali správné umístění objektu.";
+"editor_focus_map_on_location" = "Přetažením mapy umístěte křížek na místo, kde se nachází místo nebo podnik.";
 
 "editor_add_select_category" = "Vyberte kategorii";
 

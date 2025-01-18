@@ -459,7 +459,7 @@
     <string name="editor_hours_closed">Non-Business Hours</string>
     <string name="editor_example_values">Example Values</string>
     <string name="editor_correct_mistake">Correct mistake</string>
-    <string name="editor_add_select_location">Location</string>
+    <string name="editor_add_select_location">Select Location</string>
     <string name="editor_report_problem_desription_1">Please describe the problem in detail so that the OpenStreetMap community can fix it.</string>
     <string name="editor_report_problem_desription_2">Or do it yourself at https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Send</string>
@@ -517,7 +517,7 @@
     <string name="downloader_no_space_message">Please delete any unnecessary data</string>
     <string name="editor_login_error_dialog">Login error.</string>
     <string name="editor_profile_changes">Verified Changes</string>
-    <string name="editor_focus_map_on_location">Drag the map to select the correct location of the object.</string>
+    <string name="editor_focus_map_on_location">Drag the map to place the cross at the location of the place or business.</string>
     <string name="editor_edit_place_title">Editing</string>
     <string name="editor_add_place_title">Adding</string>
     <string name="editor_edit_place_name_hint">Name of the place</string>

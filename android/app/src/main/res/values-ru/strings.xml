@@ -437,7 +437,7 @@
     <string name="editor_hours_closed">Перерыв</string>
     <string name="editor_example_values">Примеры значений</string>
     <string name="editor_correct_mistake">Исправьте ошибку</string>
-    <string name="editor_add_select_location">Местоположение</string>
+    <string name="editor_add_select_location">Выберите местоположение</string>
     <string name="editor_report_problem_desription_1">Пожалуйста, напишите подробно о проблеме, чтобы сообщество OpenStreetMap исправило ошибку.</string>
     <string name="editor_report_problem_desription_2">Или сделайте это самостоятельно на сайте https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Отправить</string>
@@ -495,7 +495,7 @@
     <string name="downloader_no_space_message">Удалите ненужные данные</string>
     <string name="editor_login_error_dialog">Произошла ошибка при авторизации.</string>
     <string name="editor_profile_changes">Учтённые правки</string>
-    <string name="editor_focus_map_on_location">Потяните карту, чтобы выбрать правильное местоположение объекта.</string>
+    <string name="editor_focus_map_on_location">Перетащите карту, чтобы поместить крестик на место расположения заведения или предприятия.</string>
     <string name="editor_edit_place_title">Редактирование</string>
     <string name="editor_add_place_title">Добавление</string>
     <string name="editor_edit_place_name_hint">Название места</string>

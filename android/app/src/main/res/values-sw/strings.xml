@@ -106,10 +106,12 @@
     <!-- SECTION: Strings for downloading map from search -->
     <!-- The message when user did not find anything in the search. -->
     <string name="search_not_found_query">Pakua eneo ambalo unatafuta au jaribu kuongeza jina la mji/kijiji kilicho karibu.</string>
+    <string name="editor_add_select_location">Chagua Mahali</string>
     <!-- Status message indicating that user did not login to OSM profile yet. -->
     <string name="not_signed_in">Hujasajiliwa</string>
     <string name="login_osm">Ingia kwa OpenStreetMap</string>
     <string name="level">Ghorofa</string>
+    <string name="editor_focus_map_on_location">Buruta ramani ili kuweka msalaba katika eneo la mahali au biashara.</string>
     <!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
     <string name="editor_default_language_hint">Kama ilivyoandikwa katika lugha ya kienyeji</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->

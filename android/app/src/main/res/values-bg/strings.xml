@@ -398,7 +398,7 @@
     <string name="editor_hours_closed">Почивка</string>
     <string name="editor_example_values">Примерни стойности</string>
     <string name="editor_correct_mistake">Поправяне на грешка</string>
-    <string name="editor_add_select_location">Местоположение</string>
+    <string name="editor_add_select_location">Изберете местоположение</string>
     <string name="editor_report_problem_desription_1">Моля, опишете подробно проблема, за да може общността на OpenStreetMap да отстрани грешката.</string>
     <string name="editor_report_problem_desription_2">Или го направете сами на https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Изпращане</string>
@@ -451,7 +451,7 @@
     <string name="downloader_no_space_message">Моля, изтрийте всички ненужни данни.</string>
     <string name="editor_login_error_dialog">Грешка при вход.</string>
     <string name="editor_profile_changes">Потвърдени промени</string>
-    <string name="editor_focus_map_on_location">Плъзнете картата, за да изберете правилното местоположение на обекта.</string>
+    <string name="editor_focus_map_on_location">Плъзнете картата, за да поставите кръстчето на мястото на мястото или бизнеса.</string>
     <string name="editor_edit_place_title">Редактиране</string>
     <string name="editor_add_place_title">Добавяне</string>
     <string name="editor_edit_place_name_hint">Име на мястото</string>

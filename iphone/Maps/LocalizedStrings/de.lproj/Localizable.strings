@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Beispiele";
 
-"editor_add_select_location" = "Standort";
+"editor_add_select_location" = "Standort auswählen";
 
 "editor_done_dialog_1" = "Sie haben die Weltkarte geändert. Behalten Sie das nicht für sich! Erzählen Sie Ihren Freunden davon und bearbeiten Sie sie zusammen.";
 
@@ -613,7 +613,7 @@
 
 "no_osm_account" = "Kein Konto bei OpenStreetMap?";
 
-"register_at_openstreetmap" = "Bei OpenStretMap registrieren";
+"register_at_openstreetmap" = "Bei OpenStreetMap registrieren";
 
 "password_8_chars_min" = "Passwort (mindestens 8 Zeichen)";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Bestätigte Änderungen der Karte";
 
-"editor_focus_map_on_location" = "Ziehen Sie die Karte, um den Standort des Objektes zu korrigieren.";
+"editor_focus_map_on_location" = "Verschiebe die Karte, um das Kreuz an der Stelle zu platzieren, an der sich der Ort oder das Geschäft befindet.";
 
 "editor_add_select_category" = "Kategorie auswählen";
 
@@ -812,7 +812,7 @@
 "book_button" = "Buchen";
 
 /* A referral link on the place page for some hotels */
-"more_on_kayak" = "Fotos, bewertungen, buchung";
+"more_on_kayak" = "Fotos, Bewertungen, Buchung";
 
 /* An explanation dialog shown when clicking on more_on_kayak link. */
 "dialog_kayak_disclaimer" = "Der Empfehlungsbonus, den wir für jede Buchung über diesen Link erhalten, fließt in die Entwicklung von Organic Maps.";

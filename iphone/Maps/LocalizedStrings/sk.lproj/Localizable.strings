@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Príklady hodnôt";
 
-"editor_add_select_location" = "Poloha";
+"editor_add_select_location" = "Vyberte miesto";
 
 "editor_done_dialog_1" = "Zmenili ste mapu sveta. Nemusíte to skrývať! Povedzte o tom svojim priateľom a začnite ju spolu upravovať.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Overené zmeny";
 
-"editor_focus_map_on_location" = "Ak chcete nastaviť správnu polohu objektu, posuňte mapu.";
+"editor_focus_map_on_location" = "Potiahnutím mapy umiestnite krížik na miesto, kde sa nachádza miesto alebo podnik.";
 
 "editor_add_select_category" = "Vybrať kategóriu";
 

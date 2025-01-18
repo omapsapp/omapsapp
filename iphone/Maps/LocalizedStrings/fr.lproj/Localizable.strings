@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Exemple de valeurs";
 
-"editor_add_select_location" = "Emplacement";
+"editor_add_select_location" = "Sélectionnez un lieu";
 
 "editor_done_dialog_1" = "Vous avez modifié la carte du monde ! Ne le cachez pas ! Dites-le à vos amis, et modifiez-la ensemble.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Modifications vérifiées";
 
-"editor_focus_map_on_location" = "Faite glisser la carte pour sélectionner la bonne position de l'objet.";
+"editor_focus_map_on_location" = "Faites glisser la carte pour placer la croix à l'emplacement du lieu ou de l'entreprise.";
 
 "editor_add_select_category" = "Sélectionner une catégorie";
 

@@ -433,7 +433,7 @@
     <string name="editor_hours_closed">Час, калі закрыта</string>
     <string name="editor_example_values">Прыклады значэнняў</string>
     <string name="editor_correct_mistake">Выправіць памылку</string>
-    <string name="editor_add_select_location">Месцазнаходжанне</string>
+    <string name="editor_add_select_location">Выберыце Размяшчэнне</string>
     <string name="editor_report_problem_desription_1">Калі ласка, падрабязна апішыце праблему, каб супольнасць OpenStreetMap магла выправіць памылку.</string>
     <string name="editor_report_problem_desription_2">Або зрабіце гэта самі на https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Адправіць</string>
@@ -488,7 +488,7 @@
     <string name="downloader_no_space_message">Выдаліце непатрэбныя даныя</string>
     <string name="editor_login_error_dialog">Памылка аўтарызацыі.</string>
     <string name="editor_profile_changes">Правераныя змены</string>
-    <string name="editor_focus_map_on_location">Перацягніце мапу, каб выбраць правільнае месцазнаходжанне аб\'екта.</string>
+    <string name="editor_focus_map_on_location">Перацягніце карту, каб паставіць крыж на месцы або кампаніі.</string>
     <string name="editor_edit_place_title">Рэдагаванне</string>
     <string name="editor_add_place_title">Даданне</string>
     <string name="editor_edit_place_name_hint">Назва месца</string>

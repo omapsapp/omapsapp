@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Valors d'exemple";
 
-"editor_add_select_location" = "Ubicació";
+"editor_add_select_location" = "Seleccioneu Ubicació";
 
 "editor_done_dialog_1" = "Heu canviat el mapa mundial. No ho guardeu en secret! Expliqueu-ho als amics, i editeu-lo junts.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Canvis verificats";
 
-"editor_focus_map_on_location" = "Arrossegueu el mapa per a indicar la ubicació correcta de l'objecte.";
+"editor_focus_map_on_location" = "Arrossegueu el mapa per col·locar la creu a la ubicació del lloc o de l'empresa.";
 
 "editor_add_select_category" = "Trieu una categoria";
 

@@ -431,7 +431,7 @@
     <string name="editor_hours_closed">Suljettuna tunnit</string>
     <string name="editor_example_values">Esimerkkiarvot</string>
     <string name="editor_correct_mistake">Korjaa virhe</string>
-    <string name="editor_add_select_location">Sijainti</string>
+    <string name="editor_add_select_location">Valitse sijainti</string>
     <string name="editor_report_problem_desription_1">Kuvaile ongelmaa yksityiskohtaisesti, jotta OpenStreetMap-yhteisö voi korjata vian.</string>
     <string name="editor_report_problem_desription_2">Tai tee se itse osoitteessa https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Lähetä</string>
@@ -487,7 +487,7 @@
     <string name="downloader_no_space_message">Poista tarpeeton data</string>
     <string name="editor_login_error_dialog">Kirjautumisvirhe.</string>
     <string name="editor_profile_changes">Vahvistetut karttamuutokset</string>
-    <string name="editor_focus_map_on_location">Vedä karttaa valitaksesi kohteelle oikean sijainnin.</string>
+    <string name="editor_focus_map_on_location">Aseta risti paikan tai yrityksen sijaintiin vetämällä karttaa.</string>
     <string name="editor_edit_place_title">Muokkaus</string>
     <string name="editor_add_place_title">Lisääminen</string>
     <string name="editor_edit_place_name_hint">Paikan nimi</string>

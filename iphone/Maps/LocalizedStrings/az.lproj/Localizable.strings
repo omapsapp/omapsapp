@@ -571,7 +571,7 @@
 
 "editor_example_values" = "Nümunə Dəyərləri";
 
-"editor_add_select_location" = "Məkan";
+"editor_add_select_location" = "Yer seçin";
 
 "editor_done_dialog_1" = "Siz dünya xəritəsini dəyişdiniz. Gizlətməyin! Dostlarınıza deyin və birlikdə redaktə edin.";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "Təsdiqlənmiş Dəyişikliklər";
 
-"editor_focus_map_on_location" = "Obyektin düzgün yerini seçmək üçün xəritəni dartın.";
+"editor_focus_map_on_location" = "Xaç işarəsini yer və ya biznesin yerinə qoymaq üçün xəritəni dartın.";
 
 "editor_add_select_category" = "Kateqoriya seçin";
 

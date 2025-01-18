@@ -432,7 +432,7 @@
     <string name="editor_hours_closed">Hodiny zatvorenia</string>
     <string name="editor_example_values">Príklady hodnôt</string>
     <string name="editor_correct_mistake">Opraviť chybu</string>
-    <string name="editor_add_select_location">Poloha</string>
+    <string name="editor_add_select_location">Vyberte miesto</string>
     <string name="editor_report_problem_desription_1">Prosím, pridajte detailný popis problému, aby mohla komunita OpenStreetMap opraviť danú chybu.</string>
     <string name="editor_report_problem_desription_2">K oprave môžete prispieť aj vy na stránke https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Odoslať</string>
@@ -488,7 +488,7 @@
     <string name="downloader_no_space_message">Prosím, odstráňte prebytočné dáta</string>
     <string name="editor_login_error_dialog">Pri prihlasovaní sa vyskytla chyba.</string>
     <string name="editor_profile_changes">Overené zmeny</string>
-    <string name="editor_focus_map_on_location">Ak chcete nastaviť správnu polohu objektu, posuňte mapu.</string>
+    <string name="editor_focus_map_on_location">Potiahnutím mapy umiestnite krížik na miesto, kde sa nachádza miesto alebo podnik.</string>
     <string name="editor_edit_place_title">Úprava</string>
     <string name="editor_add_place_title">Nové</string>
     <string name="editor_edit_place_name_hint">Názov miesta</string>

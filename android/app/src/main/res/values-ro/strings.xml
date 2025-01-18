@@ -418,7 +418,7 @@
     <string name="editor_hours_closed">Ore de închidere</string>
     <string name="editor_example_values">Exemple</string>
     <string name="editor_correct_mistake">Corectare greșeală</string>
-    <string name="editor_add_select_location">Poziția</string>
+    <string name="editor_add_select_location">Selectați locația</string>
     <string name="editor_report_problem_desription_1">Descrie problema în detaliu, astfel încât comunitatea OpenStreetMap să poată remedia eroarea.</string>
     <string name="editor_report_problem_desription_2">Sau corecteaz-o tu pe https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Trimite</string>
@@ -474,7 +474,7 @@
     <string name="downloader_no_space_message">Șterge datele care nu sunt necesare</string>
     <string name="editor_login_error_dialog">Eroare de conectare.</string>
     <string name="editor_profile_changes">Modificări confirmate</string>
-    <string name="editor_focus_map_on_location">Trage de hartă pentru a alege poziția corectă a obiectului.</string>
+    <string name="editor_focus_map_on_location">Trageți harta pentru a plasa crucea la locația locului sau a întreprinderii.</string>
     <string name="editor_edit_place_title">Modifică</string>
     <string name="editor_add_place_title">Adaugă</string>
     <string name="editor_edit_place_name_hint">Numele locului</string>

@@ -434,7 +434,7 @@
     <string name="editor_hours_closed">Horari de tancament</string>
     <string name="editor_example_values">Valors d\'exemple</string>
     <string name="editor_correct_mistake">Corregeix un error</string>
-    <string name="editor_add_select_location">Ubicació</string>
+    <string name="editor_add_select_location">Seleccioneu Ubicació</string>
     <string name="editor_report_problem_desription_1">Descriviu el problema detalladament perquè la comunitat d\'OpenStreetMap pugui corregir l\'error.</string>
     <string name="editor_report_problem_desription_2">O feu-ho vós mateix a https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Envia</string>
@@ -489,7 +489,7 @@
     <string name="downloader_no_space_message">Suprimiu les dades no necessàries</string>
     <string name="editor_login_error_dialog">Error en iniciar sessió.</string>
     <string name="editor_profile_changes">Canvis verificats</string>
-    <string name="editor_focus_map_on_location">Arrossegueu el mapa per a indicar la ubicació correcta de l\'objecte.</string>
+    <string name="editor_focus_map_on_location">Arrossegueu el mapa per col·locar la creu a la ubicació del lloc o de l\'empresa.</string>
     <string name="editor_edit_place_title">Edició</string>
     <string name="editor_add_place_title">Addició</string>
     <string name="editor_edit_place_name_hint">Nom del lloc</string>

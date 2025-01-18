@@ -571,7 +571,7 @@
 
 "editor_example_values" = "示例值";
 
-"editor_add_select_location" = "位置";
+"editor_add_select_location" = "选择地点";
 
 "editor_done_dialog_1" = "您已经改变了世界地图。请别再藏着掖着了！告诉您的朋友们并一起来编辑地图。";
 
@@ -683,7 +683,7 @@
 
 "editor_profile_changes" = "已验证的更改";
 
-"editor_focus_map_on_location" = "拖动地图以选择此对象的正确位置。";
+"editor_focus_map_on_location" = "拖动地图，将十字架放在地点或企业的位置。";
 
 "editor_add_select_category" = "选择类别";
 

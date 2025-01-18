@@ -413,7 +413,7 @@
     <string name="editor_hours_closed">Doba, kdy je zavřeno</string>
     <string name="editor_example_values">Vzorové hodnoty</string>
     <string name="editor_correct_mistake">Opravit chybu</string>
-    <string name="editor_add_select_location">Umístění</string>
+    <string name="editor_add_select_location">Zvolte umístění</string>
     <string name="editor_report_problem_desription_1">Popište prosím detailně problém, aby vám komunita OpenStreetMap mohla pomoct opravit chybu.</string>
     <string name="editor_report_problem_desription_2">Nebo to udělejte sami na https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">Odeslat</string>
@@ -466,7 +466,7 @@
     <string name="downloader_no_space_message">Odstraňte prosím nepotřebná data</string>
     <string name="editor_login_error_dialog">Chyba při přihlašování.</string>
     <string name="editor_profile_changes">Oveřené změny</string>
-    <string name="editor_focus_map_on_location">Táhněte mapu, abyste vybrali správné umístění objektu.</string>
+    <string name="editor_focus_map_on_location">Přetažením mapy umístěte křížek na místo, kde se nachází místo nebo podnik.</string>
     <string name="editor_edit_place_title">Probíhají úpravy</string>
     <string name="editor_add_place_title">Probíhá přidávání</string>
     <string name="editor_edit_place_name_hint">Název místa</string>

@@ -400,7 +400,7 @@
     <string name="editor_hours_closed">ساعات غیر کاری</string>
     <string name="editor_example_values">مقادیر پیش فرض</string>
     <string name="editor_correct_mistake">تصحیح خطا</string>
-    <string name="editor_add_select_location">موقعیت</string>
+    <string name="editor_add_select_location">مکان را انتخاب کنید</string>
     <string name="editor_report_problem_desription_1">لطفا مشکلتان را با جزئیات توضیح دهید بطوری که انجمن OSM بتوانند آن را برطرف کنند.</string>
     <string name="editor_report_problem_desription_2">یا خودتان آن را انجام دهید در وبسایت https://www.openstreetmap.org/</string>
     <string name="editor_report_problem_send_button">ارسال</string>
@@ -453,7 +453,7 @@
     <string name="downloader_no_space_message">لطفا داده‌های غیر ضروری را از دستگاه خود حذف کنید</string>
     <string name="editor_login_error_dialog">خطای ورود</string>
     <string name="editor_profile_changes">تغییرات تایید شد</string>
-    <string name="editor_focus_map_on_location">برای انتخاب مکان صحیح شئی نقشه را بکشید.</string>
+    <string name="editor_focus_map_on_location">نقشه را بکشید تا صلیب را در محل مکان یا کسب و کار قرار دهید.</string>
     <string name="editor_edit_place_title">درحال ویرایش</string>
     <string name="editor_add_place_title">درحال افزودن</string>
     <string name="editor_edit_place_name_hint">نام مکان</string>
