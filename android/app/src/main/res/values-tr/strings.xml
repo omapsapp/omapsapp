@@ -317,7 +317,7 @@
     <!-- Preference title -->
     <string name="pref_display_kayak_title">Kayak.com Otel Bağlantıları</string>
     <!-- Preference description -->
-    <string name="pref_display_kayak_text">Kayak.com\'da listesi olan oteller için fotoğraflar, yorumlar, rezervasyon bağlantıları görüntülenir. Bu bağlantılar aracılığıyla yapılan her rezervasyon için alınan yönlendirme bonusu Organic Maps\'in geliştirilmesine harcanmaktadır.</string>
+    <string name="pref_display_kayak_text">Kayak.com\'da mevcut olan oteller için fotoğraf, yorum ve rezervasyon bağlantıları gösterilir. Bu bağlantılar aracılığıyla yapılan rezervasyonlardan kazanılan gelir, Organic Maps\'in geliştirilmesi için kullanılır.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Rota üzerindeki tüm haritaları indir</string>
     <!-- Text for routing error dialog -->
@@ -534,7 +534,7 @@
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Operatör: %s</string>
     <string name="editor_category_unsuitable_title">Uygun bir kategori bulamıyor musunuz?</string>
-    <string name="editor_category_unsuitable_text">Organik Haritalar yalnızca basit nokta kategorileri eklemeye izin verir, yani kasaba, yol, göl, bina ana hatları vb. yoktur. Lütfen bu tür kategorileri doğrudan <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>\'a ekleyin. Adım adım ayrıntılı talimatlar için <a href="https://organicmaps.app/faq/editing/advanced-map-editing">rehberimize</a> göz atın.</string>
+    <string name="editor_category_unsuitable_text">Organic Maps yalnızca basit nokta kategorilerini eklemeye izin verir. Yani kasaba, yol, göl, bina vb. çizgi/alan verisi ekleme desteği yoktur. Lütfen bu tür kategorileri doğrudan <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> üzerinden ekleyin. Adım adım ayrıntılı yönergeler için <a href="https://organicmaps.app/faq/editing/advanced-map-editing">rehberimize</a> göz atabilirsiniz.</string>
     <string name="downloader_no_downloaded_maps_title">Hiç harita indirmediniz</string>
     <string name="downloader_no_downloaded_maps_message">Çevrimdışı olarak adres bulmak ve gezinmek için haritaları indirin.</string>
     <string name="current_location_unknown_error_title">Geçerli konum bilinmiyor.</string>
@@ -698,7 +698,7 @@
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
     <string name="avoid_unpaved">Asfaltsız yollardan kaçın</string>
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
-    <string name="avoid_ferry">Feribot geçişlerinden kaçın</string>
+    <string name="avoid_ferry">Vapurdan kaçın</string>
     <string name="avoid_motorways">Otobandan kaçın</string>
     <string name="unable_to_calc_alert_title">Rota hesaplanamıyor</string>
     <string name="unable_to_calc_alert_subtitle">Maalesef, muhtemelen belirlediğiniz seçeneklerden dolayı bir rota bulamadık. Lütfen seçenekleri değiştirin ve tekrar deneyin</string>
@@ -706,7 +706,7 @@
     <string name="change_driving_options_btn">Sürüş seçenekleri etkinleştirildi</string>
     <string name="toll_road">Paralı yol</string>
     <string name="unpaved_road">Asfaltsız yol</string>
-    <string name="ferry_crossing">Feribot geçişi</string>
+    <string name="ferry_crossing">Vapur geçişi</string>
     <!-- A generic "Yes" button in dialogs -->
     <string name="yes">Evet</string>
     <!-- A generic "No" button in dialogs -->
@@ -1616,7 +1616,9 @@
     <string name="type.office.insurance">Sigorta Acentesi</string>
     <string name="type.office.lawyer">Avukatlık Bürosu</string>
     <string name="type.office.ngo">STK Binası</string>
-    <string name="type.office.telecommunication">Cep Telefonu Operatörü</string>
+    <string name="type.office.telecommunication">GSM Operatörü</string>
+    <string name="type.organic.only">Organik</string>
+    <string name="type.organic.yes">Organik</string>
     <string name="type.place.city">Şehir</string>
     <string name="type.place.city.capital">Başkent</string>
     <string name="type.place.city.capital.10">Şehir</string>
@@ -1637,16 +1639,16 @@
     <string name="type.place.island">Ada</string>
     <string name="type.place.islet">Ada</string>
     <string name="type.place.isolated_dwelling">Konut</string>
-    <string name="type.place.locality">Semt</string>
+    <string name="type.place.locality">Arazi</string>
     <string name="type.place.neighbourhood">Mahalle</string>
     <string name="type.place.ocean">Okyanus</string>
     <string name="type.place.region">Bölge</string>
     <string name="type.place.sea">Deniz</string>
     <string name="type.place.square">Meydan</string>
-    <string name="type.place.state">Eyalet</string>
+    <string name="type.place.state">İl</string>
     <string name="type.place.state.USA">Eyalet</string>
     <string name="type.place.suburb">Mahalle</string>
-    <string name="type.place.town">Kasaba</string>
+    <string name="type.place.town">İlçe</string>
     <string name="type.place.village">Köy</string>
     <string name="type.power">Enerji</string>
     <string name="type.power.generator">Jeneratör</string>

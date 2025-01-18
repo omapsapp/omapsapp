@@ -450,7 +450,7 @@
     <string name="closed">Geschlossen</string>
     <string name="edit_opening_hours">Geschäftszeiten bearbeiten</string>
     <string name="no_osm_account">Kein Konto bei OpenStreetMap?</string>
-    <string name="register_at_openstreetmap">Bei OpenStretMap registrieren</string>
+    <string name="register_at_openstreetmap">Bei OpenStreetMap registrieren</string>
     <string name="login">Bei OpenStreetMap anmelden</string>
     <!-- Status message indicating that user did not login to OSM profile yet. -->
     <string name="not_signed_in">Nicht angemeldet</string>
@@ -550,7 +550,7 @@
     <string name="day">d</string>
     <string name="placepage_more_button">Mehr</string>
     <!-- A referral link on the place page for some hotels -->
-    <string name="more_on_kayak">Fotos, bewertungen, buchung</string>
+    <string name="more_on_kayak">Fotos, Bewertungen, Buchung</string>
     <!-- An explanation dialog shown when clicking on more_on_kayak link. -->
     <string name="dialog_kayak_disclaimer">Der Empfehlungsbonus, den wir für jede Buchung über diesen Link erhalten, fließt in die Entwicklung von Organic Maps.</string>
     <!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->

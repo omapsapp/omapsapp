@@ -755,7 +755,7 @@
 
 "editor_category_unsuitable_title" = "Uygun bir kategori bulamıyor musunuz?";
 
-"editor_category_unsuitable_text" = "Organik Haritalar yalnızca basit nokta kategorileri eklemeye izin verir, yani kasaba, yol, göl, bina ana hatları vb. yoktur. Lütfen bu tür kategorileri doğrudan <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a>'a ekleyin. Adım adım ayrıntılı talimatlar için <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">rehberimize</a> göz atın.";
+"editor_category_unsuitable_text" = "Organic Maps yalnızca basit nokta kategorilerini eklemeye izin verir. Yani kasaba, yol, göl, bina vb. çizgi/alan verisi ekleme desteği yoktur. Lütfen bu tür kategorileri doğrudan <a href=\"https://www.openstreetmap.org\">OpenStreetMap.org</a> üzerinden ekleyin. Adım adım ayrıntılı yönergeler için <a href=\"https://organicmaps.app/faq/editing/advanced-map-editing\">rehberimize</a> göz atabilirsiniz.";
 
 "downloader_no_downloaded_maps_title" = "Hiç harita indirmediniz";
 
@@ -1061,7 +1061,7 @@
 "avoid_unpaved" = "Asfaltsız yollardan kaçın";
 
 /* Recommended length for CarPlay and Android Auto is around 25-27 characters */
-"avoid_ferry" = "Feribot geçişlerinden kaçın";
+"avoid_ferry" = "Vapurdan kaçın";
 
 "avoid_motorways" = "Otobandan kaçın";
 
@@ -1077,7 +1077,7 @@
 
 "unpaved_road" = "Asfaltsız yol";
 
-"ferry_crossing" = "Feribot geçişi";
+"ferry_crossing" = "Vapur geçişi";
 
 "trip_start" = "Hadi gidelim";
 
@@ -1258,7 +1258,7 @@
 "placepage_delete_track_button" = "Kaydı Sil";
 
 /* The track deletion confirmaion alert message. */
-"placepage_delete_track_confirmation_alert_message" = "Bu parçayı silmek istediğinizden emin misiniz?";
+"placepage_delete_track_confirmation_alert_message" = "Bu GPS izi kaydını silmek istediğinizden emin misiniz?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "GPS İzi Kaydı Adı";
@@ -2853,11 +2853,11 @@
 
 "type.office.ngo" = "STK Binası";
 
-"type.office.telecommunication" = "Cep Telefonu Operatörü";
+"type.office.telecommunication" = "GSM Operatörü";
 
-"type.organic.only" = "Organic";
+"type.organic.only" = "Organik";
 
-"type.organic.yes" = "Organic";
+"type.organic.yes" = "Organik";
 
 "type.place.city" = "Şehir";
 
@@ -2899,7 +2899,7 @@
 
 "type.place.isolated_dwelling" = "Konut";
 
-"type.place.locality" = "Semt";
+"type.place.locality" = "Arazi";
 
 "type.place.neighbourhood" = "Mahalle";
 
@@ -2911,13 +2911,13 @@
 
 "type.place.square" = "Meydan";
 
-"type.place.state" = "Eyalet";
+"type.place.state" = "İl";
 
 "type.place.state.USA" = "Eyalet";
 
 "type.place.suburb" = "Mahalle";
 
-"type.place.town" = "Kasaba";
+"type.place.town" = "İlçe";
 
 "type.place.village" = "Köy";
 
