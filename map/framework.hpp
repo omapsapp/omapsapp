@@ -403,6 +403,7 @@ public:
 
     bool m_isChoosePositionMode = false;
     df::Hints m_hints;
+    dp::RenderInjectionHandler m_renderInjectionHandler;
   };
 
   void CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFactory, DrapeCreationParams && params);
@@ -559,6 +560,8 @@ public:
   void Rotate(double azimuth, bool isAnim);
 
   void TouchEvent(df::TouchEvent const & touch);
+
+  void MakeFrameActive();
 
   int GetDrawScale() const;
 

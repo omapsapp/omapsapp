@@ -1135,6 +1135,12 @@ void Framework::TouchEvent(df::TouchEvent const & touch)
     m_drapeEngine->AddTouchEvent(touch);
 }
 
+void Framework::MakeFrameActive()
+{
+  if (m_drapeEngine != nullptr)
+    m_drapeEngine->MakeFrameActive();
+}
+
 int Framework::GetDrawScale() const
 {
   if (m_drapeEngine != nullptr)
@@ -1556,7 +1562,8 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
       params.m_isChoosePositionMode, params.m_isChoosePositionMode, GetSelectedFeatureTriangles(),
       m_routingManager.IsRoutingActive() && m_routingManager.IsRoutingFollowing(),
       isAutozoomEnabled, simplifiedTrafficColors, std::nullopt /* arrow3dCustomDecl */,
-      std::move(overlaysShowStatsFn), std::move(onGraphicsContextInitialized));
+      std::move(overlaysShowStatsFn), std::move(onGraphicsContextInitialized), 
+      std::move(params.m_renderInjectionHandler));
 
   m_drapeEngine = make_unique_dp<df::DrapeEngine>(std::move(p));
   m_drapeEngine->SetModelViewListener([this](ScreenBase const & screen)

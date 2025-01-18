@@ -60,6 +60,7 @@ public:
   void Clear(uint32_t clearBits, uint32_t storeBits) override;
   void Flush() override {}
   void SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
+  void SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
   void SetDepthTestEnabled(bool enabled) override;
   void SetDepthTestFunction(TestFunction depthFunction) override;
   void SetStencilTestEnabled(bool enabled) override;
@@ -67,6 +68,7 @@ public:
   void SetStencilActions(StencilFace face, StencilAction stencilFailAction,
                          StencilAction depthFailAction, StencilAction passAction) override;
   void SetStencilReferenceValue(uint32_t stencilReferenceValue) override;
+  void SetCullingEnabled(bool enabled) override;
 
   void SetPrimitiveTopology(VkPrimitiveTopology topology);
   void SetBindingInfo(BindingInfoArray const & bindingInfo, uint8_t bindingInfoCount);
@@ -82,6 +84,7 @@ public:
 
   VkPhysicalDevice GetPhysicalDevice() const { return m_gpu; }
   VkDevice GetDevice() const { return m_device; }
+  VkQueue GetQueue() const { return m_queue; }
 
   VkPhysicalDeviceProperties const & GetGpuProperties() const { return m_gpuProperties; }
   uint32_t GetRenderingQueueFamilyIndex() { return m_renderingQueueFamilyIndex; }

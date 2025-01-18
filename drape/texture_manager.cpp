@@ -611,4 +611,9 @@ constexpr size_t TextureManager::GetInvalidGlyphGroup()
 {
   return kInvalidGlyphGroup;
 }
+
+ref_ptr<HWTextureAllocator> TextureManager::GetTextureAllocator() const 
+{
+  return make_ref(m_textureAllocator); 
+}
 }  // namespace dp

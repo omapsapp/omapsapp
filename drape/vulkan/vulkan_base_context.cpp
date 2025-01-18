@@ -207,6 +207,14 @@ bool VulkanBaseContext::BeginRendering()
     return false;
   }
 
+  #if defined(OMIM_OS_MAC)
+    // MoltenVK returns VK_SUBOPTIMAL_KHR in our configuration, it means that window is not resized that's expected
+    // in the developer sandbox for macOS
+    // https://github.com/KhronosGroup/MoltenVK/issues/1753
+    if (res == VK_SUBOPTIMAL_KHR)
+      res = VK_SUCCESS;
+  #endif
+
   if (res == VK_ERROR_OUT_OF_DATE_KHR || res == VK_SUBOPTIMAL_KHR)
   {
     RecreateSwapchainAndDependencies();
@@ -357,15 +365,24 @@ void VulkanBaseContext::ApplyFramebuffer(std::string const & framebufferLabel)
       auto const depthStencilRef = framebuffer->GetDepthStencilRef();
       auto const attachmentsCount = (depthStencilRef != nullptr) ? 2 : 1;
       colorFormat = VulkanFormatUnpacker::Unpack(framebuffer->GetTexture()->GetFormat());
+      VkImageLayout initialDepthStencilLayout = VK_IMAGE_LAYOUT_UNDEFINED;
       if (depthStencilRef != nullptr)
+      {
         depthFormat = VulkanFormatUnpacker::Unpack(depthStencilRef->GetTexture()->GetFormat());
+        ASSERT(dynamic_cast<VulkanTexture *>(depthStencilRef->GetTexture()->GetHardwareTexture().get()) != nullptr, ());
+        ref_ptr<VulkanTexture> depthStencilAttachment = depthStencilRef->GetTexture()->GetHardwareTexture();
+        initialDepthStencilLayout = depthStencilAttachment->GetCurrentLayout();
+      }
 
       fbData.m_packedAttachmentOperations = packedAttachmentOperations;
       fbData.m_renderPass = CreateRenderPass(attachmentsCount, attachmentsOp, colorFormat, VK_IMAGE_LAYOUT_UNDEFINED,
                                              VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-                                             depthFormat, VK_IMAGE_LAYOUT_UNDEFINED,
+                                             depthFormat, initialDepthStencilLayout,
                                              VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL);
     }
+
+    SET_DEBUG_NAME_VK(VK_OBJECT_TYPE_RENDER_PASS, fbData.m_renderPass,
+                      ("RP: " + framebufferLabel).c_str());
   }
 
   // Initialize framebuffers.
@@ -395,6 +412,8 @@ void VulkanBaseContext::ApplyFramebuffer(std::string const & framebufferLabel)
         attachmentViews[0] = m_swapchainImageViews[i];
         CHECK_VK_CALL(vkCreateFramebuffer(m_device, &frameBufferCreateInfo, nullptr,
                                           &fbData.m_framebuffers[i]));
+        SET_DEBUG_NAME_VK(VK_OBJECT_TYPE_FRAMEBUFFER, fbData.m_framebuffers[i],
+                         ("FB: " + framebufferLabel + std::to_string(i)).c_str());
       }
     }
     else
@@ -431,6 +450,8 @@ void VulkanBaseContext::ApplyFramebuffer(std::string const & framebufferLabel)
 
       fbData.m_framebuffers.resize(1);
       CHECK_VK_CALL(vkCreateFramebuffer(m_device, &frameBufferCreateInfo, nullptr, &fbData.m_framebuffers[0]));
+      SET_DEBUG_NAME_VK(VK_OBJECT_TYPE_FRAMEBUFFER, fbData.m_framebuffers[0],
+                        ("FB: " + framebufferLabel).c_str());
     }
   }
 
@@ -558,6 +579,7 @@ void VulkanBaseContext::UnregisterHandler(uint32_t id)
 
 void VulkanBaseContext::ResetPipelineCache()
 {
+  vkDeviceWaitIdle(m_device);
   if (m_pipeline)
     m_pipeline->ResetCache(m_device);
 }
@@ -672,6 +694,11 @@ void VulkanBaseContext::SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t
   viewport.maxDepth = 1.0f;
   vkCmdSetViewport(m_renderingCommandBuffers[m_inflightFrameIndex], 0, 1, &viewport);
 
+  SetScissor(x, y, w, h);
+}
+
+void VulkanBaseContext::SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h)
+{
   VkRect2D scissor = {};
   scissor.extent = {w, h};
   scissor.offset.x = x;
@@ -708,6 +735,11 @@ void VulkanBaseContext::SetStencilActions(StencilFace face, StencilAction stenci
 void VulkanBaseContext::SetStencilReferenceValue(uint32_t stencilReferenceValue)
 {
   m_stencilReferenceValue = stencilReferenceValue;
+}
+
+void VulkanBaseContext::SetCullingEnabled(bool enabled)
+{
+  m_pipelineKey.m_cullingEnabled = enabled;
 }
 
 void VulkanBaseContext::SetPrimitiveTopology(VkPrimitiveTopology topology)
@@ -813,8 +845,12 @@ void VulkanBaseContext::RecreateSwapchain()
   swapchainCI.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
   swapchainCI.pNext = nullptr;
   swapchainCI.surface = *m_surface;
-  swapchainCI.minImageCount = std::min(m_surfaceCapabilities.minImageCount + 1,
-                                       m_surfaceCapabilities.maxImageCount);
+  // maxImageCount may be 0, that means there is no limit.
+  // https://registry.khronos.org/vulkan/specs/latest/man/html/VkSurfaceCapabilitiesKHR.html
+  uint32_t minImagesCount = m_surfaceCapabilities.minImageCount + 1;
+  if (m_surfaceCapabilities.maxImageCount != 0)
+    minImagesCount = std::min(minImagesCount, m_surfaceCapabilities.maxImageCount);
+  swapchainCI.minImageCount = minImagesCount;
   swapchainCI.imageFormat = m_surfaceFormat->format;
   swapchainCI.imageColorSpace = m_surfaceFormat->colorSpace;
   swapchainCI.imageExtent = m_surfaceCapabilities.currentExtent;

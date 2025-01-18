@@ -94,6 +94,9 @@ public:
 };
 }  // namespace
 
+StaticTexture::StaticTexture()
+  : m_info(make_unique_dp<StaticResourceInfo>()) {}
+
 StaticTexture::StaticTexture(ref_ptr<dp::GraphicsContext> context,
                              std::string const & textureName, std::string const & skinPathName,
                              dp::TextureFormat format, ref_ptr<HWTextureAllocator> allocator,

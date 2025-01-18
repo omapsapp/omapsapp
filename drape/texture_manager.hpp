@@ -123,6 +123,8 @@ public:
   // Apply must be called on FrontendRenderer.
   void ApplyInvalidatedStaticTextures();
 
+  ref_ptr<HWTextureAllocator> GetTextureAllocator() const;
+
 private:
   struct GlyphGroup
   {

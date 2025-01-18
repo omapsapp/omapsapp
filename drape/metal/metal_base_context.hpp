@@ -49,6 +49,7 @@ public:
   void Clear(uint32_t clearBits, uint32_t storeBits) override;
   void Flush() override {}
   void SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
+  void SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
   void SetDepthTestEnabled(bool enabled) override;
   void SetDepthTestFunction(TestFunction depthFunction) override;
   void SetStencilTestEnabled(bool enabled) override;
@@ -56,8 +57,10 @@ public:
   void SetStencilActions(StencilFace face, StencilAction stencilFailAction,
                          StencilAction depthFailAction, StencilAction passAction) override;
   void SetStencilReferenceValue(uint32_t stencilReferenceValue) override { m_stencilReferenceValue = stencilReferenceValue; }
-  
+  void SetCullingEnabled(bool enabled) override;
+
   id<MTLDevice> GetMetalDevice() const;
+  id<MTLCommandBuffer> GetCommandBuffer() const;
   id<MTLRenderCommandEncoder> GetCommandEncoder() const;
   id<MTLDepthStencilState> GetDepthStencilState();
   id<MTLRenderPipelineState> GetPipelineState(ref_ptr<GpuProgram> program, bool blendingEnabled);
@@ -71,6 +74,8 @@ public:
   void ApplyPipelineState(id<MTLRenderPipelineState> state);
   bool HasAppliedPipelineState() const;
   void ResetPipelineStatesCache();
+
+  MTLRenderPassDescriptor * GetRenderPassDescriptor() const;
   
 protected:
   void RecreateDepthTexture(m2::PointU const & screenSize);

@@ -81,6 +81,7 @@ public:
   virtual void Clear(uint32_t clearBits, uint32_t storeBits) = 0;
   virtual void Flush() = 0;
   virtual void SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h) = 0;
+  virtual void SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h) = 0;
   virtual void SetDepthTestEnabled(bool enabled) = 0;
   virtual void SetDepthTestFunction(TestFunction depthFunction) = 0;
   virtual void SetStencilTestEnabled(bool enabled) = 0;
@@ -88,5 +89,6 @@ public:
   virtual void SetStencilActions(StencilFace face, StencilAction stencilFailAction,
                                  StencilAction depthFailAction, StencilAction passAction) = 0;
   virtual void SetStencilReferenceValue(uint32_t stencilReferenceValue) = 0;
+  virtual void SetCullingEnabled(bool enabled) = 0;
 };
 }  // namespace dp
