@@ -452,6 +452,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Număr</string>
     <string name="details">Detalii</string>
+    <string name="social_media">Social Media</string>
+    <string name="building">Clădire</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Adaugă o stradă</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

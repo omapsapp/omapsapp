@@ -464,6 +464,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Et husnummer</string>
     <string name="details">Detaljer</string>
+    <string name="social_media">Sosiale medier</string>
+    <string name="building">Bygning</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Legg til en gate</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

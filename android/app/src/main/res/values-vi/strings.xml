@@ -441,6 +441,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Số nhà</string>
     <string name="details">Chi tiết</string>
+    <string name="social_media">Truyền thông xã hội</string>
+    <string name="building">Xây dựng</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Thêm con đường</string>
     <string name="choose_language">Đã chọn ngôn ngữ</string>

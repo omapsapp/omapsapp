@@ -471,6 +471,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Numéro de la maison</string>
     <string name="details">Détails</string>
+    <string name="social_media">Médias sociaux</string>
+    <string name="building">Bâtiment</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Ajouter une rue</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

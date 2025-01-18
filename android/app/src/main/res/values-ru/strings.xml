@@ -471,6 +471,8 @@
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Номер дома</string>
     <string name="details">Подробнее</string>
+    <string name="social_media">Социальные медиа</string>
+    <string name="building">Строительство</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
     <string name="add_street">Добавить улицу</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->

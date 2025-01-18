@@ -50,6 +50,8 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
   private View mCardName;
   private View mCardAddress;
   private View mCardDetails;
+  private View mCardSocialMedia;
+  private View mCardBuilding;
 
   private RecyclerView mNamesView;
 
@@ -93,7 +95,6 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
 
   private TextView mStreet;
   private TextInputEditText mHouseNumber;
-  private View mBlockLevels;
   private TextInputEditText mBuildingLevels;
 
   // Define Metadata entries, that have more tricky logic, separately.
@@ -135,6 +136,7 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
   private View mEditOpeningHours;
   private TextInputEditText mDescription;
   private final Map<Metadata.MetadataType, View> mDetailsBlocks = new HashMap<>();
+  private final Map<Metadata.MetadataType, View> mSocialMediaBlocks = new HashMap<>();
   private TextView mReset;
 
   private EditorHostFragment mParent;
@@ -300,29 +302,29 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
   {
     UiUtils.showIf(Editor.nativeIsNameEditable(), mCardName);
     UiUtils.showIf(Editor.nativeIsAddressEditable(), mCardAddress);
-    UiUtils.showIf(Editor.nativeIsBuilding() && !Editor.nativeIsPointType(), mBlockLevels);
+    UiUtils.showIf(Editor.nativeIsBuilding() && !Editor.nativeIsPointType(), mCardBuilding);
 
     final int[] editableDetails = Editor.nativeGetEditableProperties();
-    if (editableDetails.length == 0)
-    {
-      UiUtils.hide(mCardDetails);
-      return;
-    }
 
-    for (var e : mDetailsBlocks.entrySet())
+    setCardVisibility(mCardDetails, mDetailsBlocks, editableDetails);
+    setCardVisibility(mCardSocialMedia, mSocialMediaBlocks, editableDetails);
+  }
+
+  private void setCardVisibility(View card, Map<Metadata. MetadataType, View> blocks, int[] editableDetails) {
+    for (var e : blocks.entrySet())
       UiUtils.hide(e.getValue());
 
-    boolean anyEditableDetails = false;
+    boolean anyBlockElement = false;
     for (int type : editableDetails)
     {
-      final View detailsBlock = mDetailsBlocks.get(Metadata.MetadataType.fromInt(type));
-      if (detailsBlock == null)
+      final View blockElement = blocks.get(Metadata.MetadataType.fromInt(type));
+      if (blockElement == null)
         continue;
 
-      anyEditableDetails = true;
-      UiUtils.show(detailsBlock);
+      anyBlockElement = true;
+      UiUtils.show(blockElement);
     }
-    UiUtils.showIf(anyEditableDetails, mCardDetails);
+    UiUtils.showIf(anyBlockElement, card);
   }
 
   private void refreshOpeningTime()
@@ -412,6 +414,8 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
     mCardName = view.findViewById(R.id.cv__name);
     mCardAddress = view.findViewById(R.id.cv__address);
     mCardDetails = view.findViewById(R.id.cv__details);
+    mCardSocialMedia = view.findViewById(R.id.cv__social_media);
+    mCardBuilding = view.findViewById(R.id.cv__building);
     initNamesView(view);
 
     // Address
@@ -424,7 +428,7 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
     initBlock(view, Metadata.MetadataType.FMD_POSTCODE, R.id.block_zipcode, 0, R.string.editor_zip_code, 0);
 
     // Details
-    mBlockLevels = view.findViewById(R.id.block_levels);
+    View mBlockLevels = view.findViewById(R.id.block_levels);
     mBuildingLevels = findInputAndInitBlock(mBlockLevels, 0,
         getString(R.string.editor_storey_number, Editor.nativeGetMaxEditableBuildingLevels()));
     mBuildingLevels.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -493,12 +497,13 @@ public class EditorFragment extends BaseMwmFragment implements View.OnClickListe
     mDetailsBlocks.put(Metadata.MetadataType.FMD_WEBSITE, websiteBlock);
     mDetailsBlocks.put(Metadata.MetadataType.FMD_WEBSITE_MENU, websiteMenuBlock);
     mDetailsBlocks.put(Metadata.MetadataType.FMD_EMAIL, emailBlock);
-    mDetailsBlocks.put(Metadata.MetadataType.FMD_CONTACT_FACEBOOK, facebookContactBlock);
-    mDetailsBlocks.put(Metadata.MetadataType.FMD_CONTACT_INSTAGRAM, instagramContactBlock);
-    mDetailsBlocks.put(Metadata.MetadataType.FMD_CONTACT_TWITTER, twitterContactBlock);
-    mDetailsBlocks.put(Metadata.MetadataType.FMD_CONTACT_VK, vkContactBlock);
-    mDetailsBlocks.put(Metadata.MetadataType.FMD_CONTACT_LINE, lineContactBlock);
     mDetailsBlocks.put(Metadata.MetadataType.FMD_OPERATOR, operatorBlock);
+
+    mSocialMediaBlocks.put(Metadata.MetadataType.FMD_CONTACT_FACEBOOK, facebookContactBlock);
+    mSocialMediaBlocks.put(Metadata.MetadataType.FMD_CONTACT_INSTAGRAM, instagramContactBlock);
+    mSocialMediaBlocks.put(Metadata.MetadataType.FMD_CONTACT_TWITTER, twitterContactBlock);
+    mSocialMediaBlocks.put(Metadata.MetadataType.FMD_CONTACT_VK, vkContactBlock);
+    mSocialMediaBlocks.put(Metadata.MetadataType.FMD_CONTACT_LINE, lineContactBlock);
   }
 
   private static TextInputEditText findInput(View blockWithInput)
