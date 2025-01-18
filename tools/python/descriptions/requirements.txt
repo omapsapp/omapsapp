@@ -1,4 +1,4 @@
-htmlmin==0.1.12
+htmlmin2==0.1.13
 requests>=2.31.0
 beautifulsoup4==4.9.1
 wikidata==0.6.1
