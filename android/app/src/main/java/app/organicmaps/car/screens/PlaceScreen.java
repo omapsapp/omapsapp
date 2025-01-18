@@ -41,14 +41,15 @@ import app.organicmaps.car.util.UiHelpers;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.routing.ResultCodesHelper;
 import app.organicmaps.routing.RoutingController;
-import app.organicmaps.routing.RoutingInfo;
+import app.organicmaps.sdk.routing.RoutingInfo;
+import app.organicmaps.sdk.Router;
 import app.organicmaps.util.Config;
 
 import java.util.Objects;
 
 public class PlaceScreen extends BaseMapScreen implements OnBackPressedCallback.Callback, RoutingController.Container
 {
-  private static final int ROUTER_TYPE = Framework.ROUTER_TYPE_VEHICLE;
+  private static final Router ROUTER = Router.Vehicle;
 
   @Nullable
   private MapObject mMapObject;
@@ -83,7 +84,7 @@ public class PlaceScreen extends BaseMapScreen implements OnBackPressedCallback.
   public void onCreate(@NonNull LifecycleOwner owner)
   {
     mRoutingController.restore();
-    if (mRoutingController.isNavigating() && mRoutingController.getLastRouterType() == ROUTER_TYPE)
+    if (mRoutingController.isNavigating() && mRoutingController.getLastRouterType() == ROUTER)
     {
       showNavigation(true);
       return;
@@ -95,11 +96,11 @@ public class PlaceScreen extends BaseMapScreen implements OnBackPressedCallback.
     else
     {
       final boolean hasIncorrectEndPoint = mRoutingController.isPlanning() && (!MapObject.same(mMapObject, mRoutingController.getEndPoint()));
-      final boolean hasIncorrectRouterType = mRoutingController.getLastRouterType() != ROUTER_TYPE;
+      final boolean hasIncorrectRouterType = mRoutingController.getLastRouterType() != ROUTER;
       final boolean isNotPlanningMode = !mRoutingController.isPlanning();
       if (hasIncorrectRouterType)
       {
-        mRoutingController.setRouterType(ROUTER_TYPE);
+        mRoutingController.setRouterType(ROUTER);
         mRoutingController.rebuildLastRoute();
       }
       else if (hasIncorrectEndPoint || isNotPlanningMode)

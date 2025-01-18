@@ -40,7 +40,6 @@ import androidx.fragment.app.FragmentFactory;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
-import app.organicmaps.Framework.PlacePageActivationListener;
 import app.organicmaps.api.Const;
 import app.organicmaps.base.BaseMwmFragmentActivity;
 import app.organicmaps.base.OnBackPressListener;
@@ -80,13 +79,17 @@ import app.organicmaps.maplayer.isolines.IsolinesState;
 import app.organicmaps.maplayer.subway.SubwayManager;
 import app.organicmaps.routing.NavigationController;
 import app.organicmaps.routing.NavigationService;
-import app.organicmaps.routing.RoutePointInfo;
+import app.organicmaps.sdk.routing.RouteMarkType;
+import app.organicmaps.sdk.routing.RoutePointInfo;
 import app.organicmaps.routing.RoutingBottomMenuListener;
 import app.organicmaps.routing.RoutingController;
 import app.organicmaps.routing.RoutingErrorDialogFragment;
-import app.organicmaps.routing.RoutingOptions;
+import app.organicmaps.sdk.routing.RoutingOptions;
 import app.organicmaps.routing.RoutingPlanFragment;
 import app.organicmaps.routing.RoutingPlanInplaceController;
+import app.organicmaps.sdk.ChoosePositionMode;
+import app.organicmaps.sdk.PlacePageActivationListener;
+import app.organicmaps.sdk.Router;
 import app.organicmaps.search.FloatingSearchToolbarController;
 import app.organicmaps.search.SearchActivity;
 import app.organicmaps.search.SearchEngine;
@@ -577,7 +580,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
     UiUtils.setLightStatusBar(this, !(
         ThemeUtils.isNightTheme(this)
         || RoutingController.get().isPlanning()
-        || Framework.nativeGetChoosePositionMode() != Framework.ChoosePositionMode.NONE
+        || ChoosePositionMode.get() != ChoosePositionMode.None
     ));
   }
 
@@ -638,9 +641,9 @@ public class MwmActivity extends BaseMwmFragmentActivity
     mPointChooser.findViewById(R.id.done).setOnClickListener(
         v ->
         {
-          switch (Framework.nativeGetChoosePositionMode())
+          switch (ChoosePositionMode.get())
           {
-          case Framework.ChoosePositionMode.API:
+          case Api:
             final Intent apiResult = new Intent();
             final double[] center = Framework.nativeGetScreenRectCenter();
             apiResult.putExtra(Const.EXTRA_POINT_LAT, center[0]);
@@ -649,7 +652,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
             setResult(Activity.RESULT_OK, apiResult);
             finish();
             break;
-          case Framework.ChoosePositionMode.EDITOR:
+          case Editor:
             if (Framework.nativeIsDownloadedMapAtScreenCenter())
               startActivity(new Intent(MwmActivity.this, FeatureCategoryActivity.class));
             else
@@ -662,7 +665,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
                     .show();
             }
             break;
-          case Framework.ChoosePositionMode.NONE:
+          case None:
             throw new IllegalStateException("Unexpected Framework.nativeGetChoosePositionMode()");
           }
           closePositionChooser();
@@ -698,7 +701,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
 
   public void showPositionChooserForAPI(@Nullable String appName)
   {
-    showPositionChooser(Framework.ChoosePositionMode.API, false, false);
+    showPositionChooser(ChoosePositionMode.Api, false, false);
     if (!TextUtils.isEmpty(appName))
     {
       setTitle(appName);
@@ -708,26 +711,26 @@ public class MwmActivity extends BaseMwmFragmentActivity
 
   public void showPositionChooserForEditor(boolean isBusiness, boolean applyPosition)
   {
-    showPositionChooser(Framework.ChoosePositionMode.EDITOR, isBusiness, applyPosition);
+    showPositionChooser(ChoosePositionMode.Editor, isBusiness, applyPosition);
   }
 
-  private void showPositionChooser(@Framework.ChoosePositionMode int mode, boolean isBusiness, boolean applyPosition)
+  private void showPositionChooser(ChoosePositionMode mode, boolean isBusiness, boolean applyPosition)
   {
     closeFloatingToolbarsAndPanels(false);
     UiUtils.show(mPointChooser);
     mMapButtonsViewModel.setButtonsHidden(true);
-    Framework.nativeSetChoosePositionMode(mode, isBusiness, applyPosition);
+    ChoosePositionMode.set(mode, isBusiness, applyPosition);
     refreshLightStatusBar();
   }
 
   private void hidePositionChooser()
   {
     UiUtils.hide(mPointChooser);
-    @Framework.ChoosePositionMode int mode = Framework.nativeGetChoosePositionMode();
-    Framework.nativeSetChoosePositionMode(Framework.ChoosePositionMode.NONE, false, false);
+    ChoosePositionMode mode = ChoosePositionMode.get();
+    ChoosePositionMode.set(ChoosePositionMode.None, false, false);
     mMapButtonsViewModel.setButtonsHidden(false);
     refreshLightStatusBar();
-    if (mode == Framework.ChoosePositionMode.API)
+    if (mode == ChoosePositionMode.Api)
       finish();
   }
 
@@ -1094,7 +1097,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
     ThemeSwitcher.INSTANCE.restart(isMapRendererActive());
     refreshSearchToolbar();
     setFullscreen(isFullscreen());
-    if (Framework.nativeGetChoosePositionMode() != Framework.ChoosePositionMode.NONE)
+    if (ChoosePositionMode.get() != ChoosePositionMode.None)
     {
       UiUtils.show(mPointChooser);
       mMapButtonsViewModel.setButtonsHidden(true);
@@ -1308,7 +1311,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
   {
     // Buttons are hidden in position chooser mode but we are not in fullscreen
     return Boolean.TRUE.equals(mMapButtonsViewModel.getButtonsHidden().getValue()) &&
-        Framework.nativeGetChoosePositionMode() == Framework.ChoosePositionMode.NONE;
+        ChoosePositionMode.get() == ChoosePositionMode.None;
   }
 
   @Override
@@ -1546,7 +1549,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
   }
 
   @Override
-  public void updateBuildProgress(int progress, @Framework.RouterType int router)
+  public void updateBuildProgress(int progress, Router router)
   {
     if (mIsTabletLayout)
     {
@@ -2069,7 +2072,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
   }
 
   @Override
-  public void onSearchRoutePoint(@RoutePointInfo.RouteMarkType int pointType)
+  public void onSearchRoutePoint(@NonNull RouteMarkType pointType)
   {
     RoutingController.get().waitForPoiPick(pointType);
     closeSearchToolbar(true, true);

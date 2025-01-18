@@ -9,9 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 
-import app.organicmaps.Framework;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmFragment;
+import app.organicmaps.sdk.Router;
 
 public class RoutingPlanFragment extends BaseMwmFragment
 {
@@ -33,7 +33,7 @@ public class RoutingPlanFragment extends BaseMwmFragment
     return res;
   }
 
-  public void updateBuildProgress(int progress, @Framework.RouterType int router)
+  public void updateBuildProgress(int progress, Router router)
   {
     mPlanController.updateBuildProgress(progress, router);
   }

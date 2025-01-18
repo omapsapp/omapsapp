@@ -16,6 +16,9 @@ import app.organicmaps.Framework;
 import app.organicmaps.R;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.maplayer.traffic.TrafficManager;
+import app.organicmaps.sdk.Router;
+import app.organicmaps.sdk.routing.CarDirection;
+import app.organicmaps.sdk.routing.RoutingInfo;
 import app.organicmaps.util.UiUtils;
 import app.organicmaps.util.Utils;
 import app.organicmaps.widget.LanesView;
@@ -105,7 +108,7 @@ public class NavigationController implements TrafficManager.TrafficCallback,
     mNextTurnDistance.setText(Utils.formatDistance(mFrame.getContext(), info.distToTurn));
     info.carDirection.setTurnDrawable(mNextTurnImage);
 
-    if (RoutingInfo.CarDirection.isRoundAbout(info.carDirection))
+    if (CarDirection.isRoundAbout(info.carDirection))
       UiUtils.setTextAndShow(mCircleExit, String.valueOf(info.exitNum));
     else
       UiUtils.hide(mCircleExit);
@@ -139,7 +142,7 @@ public class NavigationController implements TrafficManager.TrafficCallback,
     if (info == null)
       return;
 
-    if (Framework.nativeGetRouter() == Framework.ROUTER_TYPE_PEDESTRIAN)
+    if (Router.get() == Router.Pedestrian)
       updatePedestrian(info);
     else
       updateVehicle(info);

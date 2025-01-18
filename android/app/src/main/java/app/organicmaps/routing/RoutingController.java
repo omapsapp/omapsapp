@@ -16,6 +16,17 @@ import app.organicmaps.R;
 import app.organicmaps.bookmarks.data.FeatureId;
 import app.organicmaps.bookmarks.data.MapObject;
 import app.organicmaps.location.LocationHelper;
+import app.organicmaps.sdk.Router;
+import app.organicmaps.sdk.routing.RouteMarkData;
+import app.organicmaps.sdk.routing.RouteMarkType;
+import app.organicmaps.sdk.routing.RoutePointInfo;
+import app.organicmaps.sdk.routing.RouteRecommendationType;
+import app.organicmaps.sdk.routing.RoutingInfo;
+import app.organicmaps.sdk.routing.RoutingListener;
+import app.organicmaps.sdk.routing.RoutingLoadPointsListener;
+import app.organicmaps.sdk.routing.RoutingOptions;
+import app.organicmaps.sdk.routing.RoutingProgressListener;
+import app.organicmaps.sdk.routing.TransitRouteInfo;
 import app.organicmaps.widget.placepage.CoordinatesFormat;
 import app.organicmaps.util.StringUtils;
 import app.organicmaps.util.Utils;
@@ -67,11 +78,10 @@ public class RoutingController
     /**
      * @param progress progress to be displayed.
      * */
-    default void updateBuildProgress(@IntRange(from = 0, to = 100) int progress, @Framework.RouterType int router) {}
+    default void updateBuildProgress(@IntRange(from = 0, to = 100) int progress, Router router) {}
     default void onStartRouteBuilding() {}
   }
 
-  private static final int NO_WAITING_POI_PICK = -1;
   private static final RoutingController sInstance = new RoutingController();
 
   @Nullable
@@ -79,11 +89,10 @@ public class RoutingController
 
   private BuildState mBuildState = BuildState.NONE;
   private State mState = State.NONE;
-  //@RoutePointInfo.RouteMarkType
-  private int mWaitingPoiPickType = NO_WAITING_POI_PICK;
+  @Nullable
+  private RouteMarkType mWaitingPoiPickType = null;
   private int mLastBuildProgress;
-  @Framework.RouterType
-  private int mLastRouterType;
+  private Router mLastRouterType;
 
   private boolean mHasContainerSavedState;
   private boolean mContainsCachedResult;
@@ -98,7 +107,7 @@ public class RoutingController
   private int mRemovingIntermediatePointsTransactionId;
 
   @SuppressWarnings("FieldCanBeLocal")
-  private final Framework.RoutingListener mRoutingListener = new Framework.RoutingListener()
+  private final RoutingListener mRoutingListener = new RoutingListener()
   {
     @MainThread
     @Override
@@ -124,10 +133,11 @@ public class RoutingController
       processRoutingEvent();
     }
   };
+
   private void onBuiltRoute()
   {
     mCachedRoutingInfo = Framework.nativeGetRouteFollowingInfo();
-    if (mLastRouterType == Framework.ROUTER_TYPE_TRANSIT)
+    if (mLastRouterType == Router.Transit)
       mCachedTransitRouteInfo = Framework.nativeGetTransitRouteInfo();
     setBuildState(BuildState.BUILT);
     mLastBuildProgress = 100;
@@ -135,23 +145,15 @@ public class RoutingController
       mContainer.onBuiltRoute();
   }
 
-  private final Framework.RoutingProgressListener mRoutingProgressListener = new Framework.RoutingProgressListener()
-  {
-    @MainThread
-    @Override
-    public void onRouteBuildingProgress(float progress)
-    {
-      mLastBuildProgress = (int) progress;
-      updateProgress();
-    }
+  private final RoutingProgressListener mRoutingProgressListener = progress -> {
+    mLastBuildProgress = (int) progress;
+    updateProgress();
   };
 
-  @SuppressWarnings("FieldCanBeLocal")
-  private final Framework.RoutingLoadPointsListener mRoutingLoadPointsListener =
-    success -> {
-      if (success)
-        prepare(getStartPoint(), getEndPoint());
-    };
+  private final RoutingLoadPointsListener mRoutingLoadPointsListener = success -> {
+    if (success)
+      prepare(getStartPoint(), getEndPoint());
+  };
 
   public static RoutingController get()
   {
@@ -254,14 +256,14 @@ public class RoutingController
 
   public void initialize(@NonNull Context context)
   {
-    mLastRouterType = Framework.nativeGetLastUsedRouter();
+    mLastRouterType = Router.getLastUsed();
     mInvalidRoutePointsTransactionId = Framework.nativeInvalidRoutePointsTransactionId();
     mRemovingIntermediatePointsTransactionId = mInvalidRoutePointsTransactionId;
 
     Framework.nativeSetRoutingListener(mRoutingListener);
     Framework.nativeSetRouteProgressListener(mRoutingProgressListener);
     Framework.nativeSetRoutingRecommendationListener(recommendation -> UiThread.run(() -> {
-      if (recommendation == Framework.ROUTE_REBUILD_AFTER_POINTS_LOADING)
+      if (recommendation == RouteRecommendationType.RebuildAfterPointsLoading)
         setStartPoint(LocationHelper.from(context).getMyPosition());
     }));
     Framework.nativeSetRoutingLoadPointsListener(mRoutingLoadPointsListener);
@@ -353,13 +355,13 @@ public class RoutingController
   {
     if (shouldForceTransitRoute(fromApi))
     {
-      mLastRouterType = Framework.ROUTER_TYPE_TRANSIT;
+      mLastRouterType = Router.Transit;
       return;
     }
 
     if (startPoint != null && endPoint != null)
-      mLastRouterType = Framework.nativeGetBestRouter(startPoint.getLat(), startPoint.getLon(),
-                                                      endPoint.getLat(), endPoint.getLon());
+      mLastRouterType = Router.getBest(startPoint.getLat(), startPoint.getLon(),
+                                       endPoint.getLat(), endPoint.getLon());
   }
 
   private boolean isSubwayEnabled()
@@ -373,13 +375,13 @@ public class RoutingController
   }
 
   public void prepare(final @Nullable MapObject startPoint, final @Nullable MapObject endPoint,
-                      @Framework.RouterType int routerType)
+                      Router routerType)
   {
     cancel();
     setState(State.PREPARE);
 
     mLastRouterType = routerType;
-    Framework.nativeSetRouter(mLastRouterType);
+    Router.set(mLastRouterType);
 
     if (startPoint != null || endPoint != null)
       setPointsInternal(startPoint, endPoint);
@@ -405,7 +407,7 @@ public class RoutingController
 
   public void addStop(@NonNull MapObject mapObject)
   {
-    addRoutePoint(RoutePointInfo.ROUTE_MARK_INTERMEDIATE, mapObject);
+    addRoutePoint(RouteMarkType.Intermediate, mapObject);
     build();
     if (mContainer != null)
       mContainer.onAddedStop();
@@ -473,8 +475,7 @@ public class RoutingController
   {
     Logger.d(TAG, "cancelInternal");
 
-    //noinspection WrongConstant
-    mWaitingPoiPickType = NO_WAITING_POI_PICK;
+    mWaitingPoiPickType = null;
 
     setBuildState(BuildState.NONE);
     setState(State.NONE);
@@ -565,17 +566,17 @@ public class RoutingController
 
   public boolean isTransitType()
   {
-    return mLastRouterType == Framework.ROUTER_TYPE_TRANSIT;
+    return mLastRouterType == Router.Transit;
   }
 
   public boolean isVehicleRouterType()
   {
-    return mLastRouterType == Framework.ROUTER_TYPE_VEHICLE;
+    return mLastRouterType == Router.Vehicle;
   }
 
   boolean isRulerRouterType()
   {
-    return mLastRouterType == Framework.ROUTER_TYPE_RULER;
+    return mLastRouterType == Router.Ruler;
   }
 
   public boolean isNavigating()
@@ -603,13 +604,13 @@ public class RoutingController
     return mBuildState == BuildState.BUILT;
   }
 
-  public void waitForPoiPick(@RoutePointInfo.RouteMarkType int pointType){
+  public void waitForPoiPick(@NonNull RouteMarkType pointType){
     mWaitingPoiPickType = pointType;
   }
 
   public boolean isWaitingPoiPick()
   {
-    return mWaitingPoiPickType != NO_WAITING_POI_PICK;
+    return mWaitingPoiPickType != null;
   }
 
   public BuildState getBuildState()
@@ -620,17 +621,17 @@ public class RoutingController
   @Nullable
   public MapObject getStartPoint()
   {
-    return getStartOrEndPointByType(RoutePointInfo.ROUTE_MARK_START);
+    return getStartOrEndPointByType(RouteMarkType.Start);
   }
 
   @Nullable
   public MapObject getEndPoint()
   {
-    return getStartOrEndPointByType(RoutePointInfo.ROUTE_MARK_FINISH);
+    return getStartOrEndPointByType(RouteMarkType.Finish);
   }
 
   @Nullable
-  private MapObject getStartOrEndPointByType(@RoutePointInfo.RouteMarkType int type)
+  private MapObject getStartOrEndPointByType(@NonNull RouteMarkType type)
   {
     RouteMarkData[] points = Framework.nativeGetRoutePoints();
     int size = points.length;
@@ -644,9 +645,9 @@ public class RoutingController
       return point.mPointType == type ? toMapObject(point) : null;
     }
 
-    if (type == RoutePointInfo.ROUTE_MARK_START)
+    if (type == RouteMarkType.Start)
       return toMapObject(points[0]);
-    if (type == RoutePointInfo.ROUTE_MARK_FINISH)
+    if (type == RouteMarkType.Finish)
       return toMapObject(points[size - 1]);
 
     return null;
@@ -674,10 +675,10 @@ public class RoutingController
       applyRemovingIntermediatePointsTransaction();
 
     if (hasStart)
-      addRoutePoint(RoutePointInfo.ROUTE_MARK_START , startPoint);
+      addRoutePoint(RouteMarkType.Start, startPoint);
 
     if (hasEnd)
-      addRoutePoint(RoutePointInfo.ROUTE_MARK_FINISH , endPoint);
+      addRoutePoint(RouteMarkType.Finish, endPoint);
 
     if (hasOnePointAtLeast && mContainer != null)
       mContainer.updateMenu();
@@ -712,7 +713,7 @@ public class RoutingController
     if (point != null)
     {
       applyRemovingIntermediatePointsTransaction();
-      addRoutePoint(RoutePointInfo.ROUTE_MARK_START, point);
+      addRoutePoint(RouteMarkType.Start, point);
       startPoint = getStartPoint();
     }
 
@@ -761,7 +762,7 @@ public class RoutingController
     {
       applyRemovingIntermediatePointsTransaction();
 
-      addRoutePoint(RoutePointInfo.ROUTE_MARK_FINISH, point);
+      addRoutePoint(RouteMarkType.Finish, point);
       endPoint = getEndPoint();
     }
 
@@ -782,7 +783,7 @@ public class RoutingController
     return true;
   }
 
-  private static void addRoutePoint(@RoutePointInfo.RouteMarkType int type, @NonNull MapObject point)
+  private static void addRoutePoint(@NonNull RouteMarkType type, @NonNull MapObject point)
   {
     Pair<String, String> description = getDescriptionForPoint(point);
     Framework.nativeAddRoutePoint(description.first /* title */, description.second /* subtitle */,
@@ -834,7 +835,7 @@ public class RoutingController
       mContainer.updateMenu();
   }
 
-  public void setRouterType(@Framework.RouterType int router)
+  public void setRouterType(Router router)
   {
     Logger.d(TAG, "setRouterType: " + mLastRouterType + " -> " + router);
 
@@ -844,7 +845,7 @@ public class RoutingController
       return;
 
     mLastRouterType = router;
-    Framework.nativeSetRouter(router);
+    Router.set(router);
 
     cancelRemovingIntermediatePointsTransaction();
 
@@ -852,8 +853,7 @@ public class RoutingController
       build();
   }
 
-  @Framework.RouterType
-  public int getLastRouterType()
+  public Router getLastRouterType()
   {
     return mLastRouterType;
   }
@@ -881,15 +881,12 @@ public class RoutingController
     if (!isWaitingPoiPick())
       return;
 
-    if (mWaitingPoiPickType != RoutePointInfo.ROUTE_MARK_FINISH
-        && mWaitingPoiPickType != RoutePointInfo.ROUTE_MARK_START)
-    {
+    if (mWaitingPoiPickType != RouteMarkType.Start && mWaitingPoiPickType != RouteMarkType.Finish)
       throw new AssertionError("Only start and finish points can be added through search!");
-    }
 
     if (point != null)
     {
-      if (mWaitingPoiPickType == RoutePointInfo.ROUTE_MARK_FINISH)
+      if (mWaitingPoiPickType == RouteMarkType.Finish)
         setEndPoint(point);
       else
         setStartPoint(point);
@@ -901,8 +898,7 @@ public class RoutingController
       showRoutePlan();
     }
 
-    //noinspection WrongConstant
-    mWaitingPoiPickType = NO_WAITING_POI_PICK;
+    mWaitingPoiPickType = null;
   }
   public static CharSequence formatRoutingTime(Context context, int seconds, @DimenRes int unitsSize)
   {

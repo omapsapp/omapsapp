@@ -8,8 +8,8 @@ import androidx.car.app.navigation.model.LaneDirection;
 import androidx.car.app.navigation.model.Maneuver;
 import androidx.core.graphics.drawable.IconCompat;
 
-import app.organicmaps.routing.RoutingInfo;
-import app.organicmaps.routing.SingleLaneInfo;
+import app.organicmaps.sdk.routing.CarDirection;
+import app.organicmaps.sdk.routing.LaneWay;
 
 public final class RoutingHelpers
 {
@@ -30,7 +30,7 @@ public final class RoutingHelpers
   }
 
   @NonNull
-  public static LaneDirection createLaneDirection(@NonNull SingleLaneInfo.LaneWay laneWay, boolean isRecommended)
+  public static LaneDirection createLaneDirection(@NonNull LaneWay laneWay, boolean isRecommended)
   {
     int shape = LaneDirection.SHAPE_UNKNOWN;
     switch (laneWay)
@@ -67,7 +67,7 @@ public final class RoutingHelpers
   }
 
   @NonNull
-  public static Maneuver createManeuver(@NonNull final CarContext context, @NonNull RoutingInfo.CarDirection carDirection, int roundaboutExitNum)
+  public static Maneuver createManeuver(@NonNull final CarContext context, @NonNull CarDirection carDirection, int roundaboutExitNum)
   {
     int maneuverType = switch (carDirection)
     {

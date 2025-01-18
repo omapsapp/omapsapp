@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.organicmaps.R;
+import app.organicmaps.sdk.routing.TransitStepInfo;
 
 import java.util.ArrayList;
 import java.util.List;

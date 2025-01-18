@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StyleableRes;
 
 import app.organicmaps.R;
-import app.organicmaps.routing.SingleLaneInfo;
+import app.organicmaps.sdk.routing.SingleLaneInfo;
 
 public class LanesView extends View
 {

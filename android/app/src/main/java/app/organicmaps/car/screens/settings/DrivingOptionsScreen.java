@@ -18,7 +18,7 @@ import app.organicmaps.car.SurfaceRenderer;
 import app.organicmaps.car.screens.base.BaseMapScreen;
 import app.organicmaps.car.util.Toggle;
 import app.organicmaps.car.util.UiHelpers;
-import app.organicmaps.routing.RoutingOptions;
+import app.organicmaps.sdk.routing.RoutingOptions;
 import app.organicmaps.settings.RoadType;
 
 import java.util.HashMap;

@@ -1,6 +1,5 @@
 package app.organicmaps.settings;
 
-import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -306,9 +305,9 @@ public class StoragePathManager
    * Checks the currently configured storage first, then scans other storages.
    * If no map files found uses getDefaultStorage().
    */
-  public static String findMapsStorage(@NonNull Application application)
+  public static String findMapsStorage(@NonNull Context context)
   {
-    StoragePathManager mgr = new StoragePathManager(application);
+    StoragePathManager mgr = new StoragePathManager(context);
     mgr.scanAvailableStorages();
     String path;
     final List<StorageItem> storages = mgr.mStorages;

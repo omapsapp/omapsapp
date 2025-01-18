@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import app.organicmaps.R;
 import app.organicmaps.location.LocationHelper;
-import app.organicmaps.routing.RoutingInfo;
+import app.organicmaps.sdk.routing.RoutingInfo;
 import app.organicmaps.sound.TtsPlayer;
 import app.organicmaps.util.Graphics;
 import app.organicmaps.util.StringUtils;

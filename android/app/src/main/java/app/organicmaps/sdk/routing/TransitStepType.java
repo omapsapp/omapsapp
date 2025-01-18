@@ -1,4 +1,4 @@
-package app.organicmaps.routing;
+package app.organicmaps.sdk.routing;
 
 import androidx.annotation.DrawableRes;
 

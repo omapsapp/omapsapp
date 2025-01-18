@@ -35,6 +35,7 @@ import app.organicmaps.display.DisplayManager;
 import app.organicmaps.display.DisplayType;
 import app.organicmaps.location.LocationState;
 import app.organicmaps.routing.RoutingController;
+import app.organicmaps.sdk.PlacePageActivationListener;
 import app.organicmaps.util.Config;
 import app.organicmaps.util.LocationUtils;
 import app.organicmaps.util.log.Logger;
@@ -45,7 +46,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class CarAppSession extends Session implements DefaultLifecycleObserver,
-    LocationState.ModeChangeListener, DisplayChangedListener, Framework.PlacePageActivationListener
+    LocationState.ModeChangeListener, DisplayChangedListener, PlacePageActivationListener
 {
   private static final String TAG = CarAppSession.class.getSimpleName();
 
@@ -163,7 +164,7 @@ public final class CarAppSession extends Session implements DefaultLifecycleObse
     mInitFailed = false;
     try
     {
-      MwmApplication.from(getCarContext()).init(() -> {
+      MwmApplication.from(getCarContext()).initOrganicMaps(() -> {
         Config.setFirstStartDialogSeen(getCarContext());
         if (DownloaderHelpers.isWorldMapsDownloadNeeded())
           mScreenManager.push(new DownloadMapsScreenBuilder(getCarContext()).setDownloaderType(DownloadMapsScreenBuilder.DownloaderType.FirstLaunch).build());

@@ -25,7 +25,7 @@ import app.organicmaps.Map;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.bookmarks.data.FeatureId;
 import app.organicmaps.bookmarks.data.MapObject;
-import app.organicmaps.routing.JunctionInfo;
+import app.organicmaps.sdk.routing.JunctionInfo;
 import app.organicmaps.routing.RoutingController;
 import app.organicmaps.util.Config;
 import app.organicmaps.util.LocationUtils;

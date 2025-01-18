@@ -4,6 +4,12 @@
 #include "app/organicmaps/UserMarkHelper.hpp"
 #include "app/organicmaps/opengl/androidoglcontextfactory.hpp"
 #include "app/organicmaps/platform/AndroidPlatform.hpp"
+#include "app/organicmaps/sdk/routing/JunctionInfo.hpp"
+#include "app/organicmaps/sdk/routing/RouteMarkData.hpp"
+#include "app/organicmaps/sdk/routing/RouteMarkType.hpp"
+#include "app/organicmaps/sdk/routing/RouteRecommendationType.hpp"
+#include "app/organicmaps/sdk/routing/RoutingInfo.hpp"
+#include "app/organicmaps/sdk/routing/TransitRouteInfo.hpp"
 #include "app/organicmaps/util/Distance.hpp"
 #include "app/organicmaps/util/FeatureIdBuilder.hpp"
 #include "app/organicmaps/util/NetworkPolicy.hpp"
@@ -804,8 +810,8 @@ void CallRouteRecommendationListener(shared_ptr<jobject> listener,
                                      RoutingManager::Recommendation recommendation)
 {
   JNIEnv * env = jni::GetEnv();
-  jmethodID const methodId = jni::GetMethodID(env, *listener, "onRecommend", "(I)V");
-  env->CallVoidMethod(*listener, methodId, static_cast<int>(recommendation));
+  jmethodID const methodId = jni::GetMethodID(env, *listener, "onRecommend", "(Lapp/organicmaps/sdk/routing/RouteRecommendationType;)V");
+  env->CallVoidMethod(*listener, methodId, GetRouteRecommendationType(env, recommendation));
 }
 
 void CallSetRoutingLoadPointsListener(shared_ptr<jobject> listener, bool success)
@@ -1241,7 +1247,7 @@ Java_app_organicmaps_Framework_nativeDisableFollowing(JNIEnv * env, jclass)
 }
 
 JNIEXPORT jobjectArray JNICALL
-Java_app_organicmaps_Framework_nativeGenerateNotifications(JNIEnv * env, jclass, bool announceStreets)
+Java_app_organicmaps_Framework_nativeGenerateNotifications(JNIEnv * env, jclass, jboolean announceStreets)
 {
   ::Framework * fr = frm();
   if (!fr->GetRoutingManager().IsRoutingActive())
@@ -1271,64 +1277,16 @@ Java_app_organicmaps_Framework_nativeGetSpeedCamManagerMode(JNIEnv * env, jclass
 JNIEXPORT jobject JNICALL
 Java_app_organicmaps_Framework_nativeGetRouteFollowingInfo(JNIEnv * env, jclass)
 {
-  ::Framework * fr = frm();
-  if (!fr->GetRoutingManager().IsRoutingActive())
+  RoutingManager & rm = frm()->GetRoutingManager();
+  if (!rm.IsRoutingActive())
     return nullptr;
 
   routing::FollowingInfo info;
-  fr->GetRoutingManager().GetRouteFollowingInfo(info);
+  rm.GetRouteFollowingInfo(info);
   if (!info.IsValid())
     return nullptr;
 
-  static jclass const klass = jni::GetGlobalClassRef(env, "app/organicmaps/routing/RoutingInfo");
-  // Java signature : RoutingInfo(Distance distToTarget, Distance distToTurn,
-  //                              String currentStreet, String nextStreet, String nextNextStreet,
-  //                              double completionPercent, int vehicleTurnOrdinal, int
-  //                              vehicleNextTurnOrdinal, int pedestrianTurnOrdinal, int exitNum,
-  //                              int totalTime, SingleLaneInfo[] lanes)
-  static jmethodID const ctorRouteInfoID =
-      jni::GetConstructorID(env, klass,
-                            "(Lapp/organicmaps/util/Distance;Lapp/organicmaps/util/Distance;"
-                            "Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DIIIII"
-                            "[Lapp/organicmaps/routing/SingleLaneInfo;DZZ)V");
-
-  vector<routing::FollowingInfo::SingleLaneInfoClient> const & lanes = info.m_lanes;
-  jobjectArray jLanes = nullptr;
-  if (!lanes.empty())
-  {
-    static jclass const laneClass = jni::GetGlobalClassRef(env, "app/organicmaps/routing/SingleLaneInfo");
-    auto const lanesSize = static_cast<jsize>(lanes.size());
-    jLanes = env->NewObjectArray(lanesSize, laneClass, nullptr);
-    ASSERT(jLanes, (jni::DescribeException()));
-    static jmethodID const ctorSingleLaneInfoID = jni::GetConstructorID(env, laneClass, "([BZ)V");
-
-    for (jsize j = 0; j < lanesSize; ++j)
-    {
-      auto const laneSize = static_cast<jsize>(lanes[j].m_lane.size());
-      jni::TScopedLocalByteArrayRef singleLane(env, env->NewByteArray(laneSize));
-      ASSERT(singleLane.get(), (jni::DescribeException()));
-      env->SetByteArrayRegion(singleLane.get(), 0, laneSize, lanes[j].m_lane.data());
-
-      jni::TScopedLocalRef singleLaneInfo(
-          env, env->NewObject(laneClass, ctorSingleLaneInfoID, singleLane.get(),
-                              lanes[j].m_isRecommended));
-      ASSERT(singleLaneInfo.get(), (jni::DescribeException()));
-      env->SetObjectArrayElement(jLanes, j, singleLaneInfo.get());
-    }
-  }
-
-  auto const & rm = frm()->GetRoutingManager();
-  auto const isSpeedCamLimitExceeded = rm.IsRoutingActive() ? rm.IsSpeedCamLimitExceeded() : false;
-  auto const shouldPlaySignal = frm()->GetRoutingManager().GetSpeedCamManager().ShouldPlayBeepSignal();
-  jobject const result = env->NewObject(
-      klass, ctorRouteInfoID, ToJavaDistance(env, info.m_distToTarget),
-      ToJavaDistance(env, info.m_distToTurn), jni::ToJavaString(env, info.m_currentStreetName),
-      jni::ToJavaString(env, info.m_nextStreetName), jni::ToJavaString(env, info.m_nextNextStreetName),
-      info.m_completionPercent, info.m_turn, info.m_nextTurn, info.m_pedestrianTurn, info.m_exitNum,
-      info.m_time, jLanes, info.m_speedLimitMps, static_cast<jboolean>(isSpeedCamLimitExceeded),
-      static_cast<jboolean>(shouldPlaySignal));
-  ASSERT(result, (jni::DescribeException()));
-  return result;
+  return CreateRoutingInfo(env, info, rm);
 }
 
 JNIEXPORT jobjectArray JNICALL
@@ -1341,17 +1299,7 @@ Java_app_organicmaps_Framework_nativeGetRouteJunctionPoints(JNIEnv * env, jclass
     return nullptr;
   }
 
-  static jclass const junctionClazz = jni::GetGlobalClassRef(env, "app/organicmaps/routing/JunctionInfo");
-  // Java signature : JunctionInfo(double lat, double lon)
-  static jmethodID const junctionConstructor = jni::GetConstructorID(env, junctionClazz, "(DD)V");
-
-  return jni::ToJavaArray(env, junctionClazz, junctionPoints,
-    [](JNIEnv * env, m2::PointD const & point)
-    {
-      return env->NewObject(junctionClazz, junctionConstructor,
-                            mercator::YToLat(point.y),
-                            mercator::XToLon(point.x));
-    });
+  return CreateJunctionInfoArray(env, junctionPoints);
 }
 
 JNIEXPORT jintArray JNICALL
@@ -1501,68 +1449,8 @@ Java_app_organicmaps_Framework_nativeDeactivateMapSelectionCircle(JNIEnv * env, 
 }
 
 JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeSetMapStyle(JNIEnv * env, jclass, jint mapStyle)
-{
-  MapStyle const val = static_cast<MapStyle>(mapStyle);
-  if (val != g_framework->GetMapStyle())
-    g_framework->SetMapStyle(val);
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetMapStyle(JNIEnv * env, jclass)
-{
-  return g_framework->GetMapStyle();
-}
-
-JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeMarkMapStyle(JNIEnv * env, jclass, jint mapStyle)
-{
-  MapStyle const val = static_cast<MapStyle>(mapStyle);
-  if (val != g_framework->GetMapStyle())
-    g_framework->MarkMapStyle(val);
-}
-
-JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeSetRouter(JNIEnv * env, jclass, jint routerType)
-{
-  using Type = routing::RouterType;
-  Type type = Type::Vehicle;
-  switch (routerType)
-  {
-    case 0: break;
-    case 1: type = Type::Pedestrian; break;
-    case 2: type = Type::Bicycle; break;
-    case 3: type = Type::Transit; break;
-    case 4: type = Type::Ruler; break;
-    default: assert(false); break;
-  }
-  g_framework->GetRoutingManager().SetRouter(type);
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetRouter(JNIEnv * env, jclass)
-{
-  return static_cast<jint>(g_framework->GetRoutingManager().GetRouter());
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetLastUsedRouter(JNIEnv * env, jclass)
-{
-  return static_cast<jint>(g_framework->GetRoutingManager().GetLastUsedRouter());
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetBestRouter(JNIEnv * env, jclass,
-                                                       jdouble srcLat, jdouble srcLon,
-                                                       jdouble dstLat, jdouble dstLon)
-{
-  return static_cast<jint>(frm()->GetRoutingManager().GetBestRouter(
-      mercator::FromLatLon(srcLat, srcLon), mercator::FromLatLon(dstLat, dstLon)));
-}
-
-JNIEXPORT void JNICALL
 Java_app_organicmaps_Framework_nativeAddRoutePoint(JNIEnv * env, jclass, jstring title,
-                                                       jstring subtitle, jint markType,
+                                                       jstring subtitle, jobject markType,
                                                        jint intermediateIndex,
                                                        jboolean isMyPosition,
                                                        jdouble lat, jdouble lon)
@@ -1570,7 +1458,7 @@ Java_app_organicmaps_Framework_nativeAddRoutePoint(JNIEnv * env, jclass, jstring
   RouteMarkData data;
   data.m_title = jni::ToNativeString(env, title);
   data.m_subTitle = jni::ToNativeString(env, subtitle);
-  data.m_pointType = static_cast<RouteMarkType>(markType);
+  data.m_pointType = GetRouteMarkType(env, markType);
   data.m_intermediateIndex = static_cast<size_t>(intermediateIndex);
   data.m_isMyPosition = static_cast<bool>(isMyPosition);
   data.m_position = m2::PointD(mercator::FromLatLon(lat, lon));
@@ -1579,10 +1467,9 @@ Java_app_organicmaps_Framework_nativeAddRoutePoint(JNIEnv * env, jclass, jstring
 }
 
 JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeRemoveRoutePoint(JNIEnv * env, jclass,
-                                                          jint markType, jint intermediateIndex)
+Java_app_organicmaps_Framework_nativeRemoveRoutePoint(JNIEnv * env, jclass, jobject markType, jint intermediateIndex)
 {
-  frm()->GetRoutingManager().RemoveRoutePoint(static_cast<RouteMarkType>(markType),
+  frm()->GetRoutingManager().RemoveRoutePoint(GetRouteMarkType(env, markType),
                                               static_cast<size_t>(intermediateIndex));
 }
 
@@ -1601,78 +1488,13 @@ Java_app_organicmaps_Framework_nativeCouldAddIntermediatePoint(JNIEnv * env, jcl
 JNIEXPORT jobjectArray JNICALL
 Java_app_organicmaps_Framework_nativeGetRoutePoints(JNIEnv * env, jclass)
 {
-  auto const points = frm()->GetRoutingManager().GetRoutePoints();
-
-  static jclass const pointClazz = jni::GetGlobalClassRef(env,
-                                   "app/organicmaps/routing/RouteMarkData");
-  // Java signature : RouteMarkData(String title, String subtitle,
-  //                                @RoutePointInfo.RouteMarkType int pointType,
-  //                                int intermediateIndex, boolean isVisible, boolean isMyPosition,
-  //                                boolean isPassed, double lat, double lon)
-  static jmethodID const pointConstructor = jni::GetConstructorID(env, pointClazz,
-                                            "(Ljava/lang/String;Ljava/lang/String;IIZZZDD)V");
-  return jni::ToJavaArray(env, pointClazz, points, [&](JNIEnv * jEnv, RouteMarkData const & data)
-  {
-    jni::TScopedLocalRef const title(env, jni::ToJavaString(env, data.m_title));
-    jni::TScopedLocalRef const subtitle(env, jni::ToJavaString(env, data.m_subTitle));
-    return env->NewObject(pointClazz, pointConstructor,
-                          title.get(), subtitle.get(),
-                          static_cast<jint>(data.m_pointType),
-                          static_cast<jint>(data.m_intermediateIndex),
-                          static_cast<jboolean>(data.m_isVisible),
-                          static_cast<jboolean>(data.m_isMyPosition),
-                          static_cast<jboolean>(data.m_isPassed),
-                          mercator::YToLat(data.m_position.y),
-                          mercator::XToLon(data.m_position.x));
-  });
+  return CreateRouteMarkDataArray(env, frm()->GetRoutingManager().GetRoutePoints());
 }
 
 JNIEXPORT jobject JNICALL
 Java_app_organicmaps_Framework_nativeGetTransitRouteInfo(JNIEnv * env, jclass)
 {
-  auto const routeInfo = frm()->GetRoutingManager().GetTransitRouteInfo();
-
-  static jclass const transitStepClass = jni::GetGlobalClassRef(env,
-                                         "app/organicmaps/routing/TransitStepInfo");
-  // Java signature : TransitStepInfo(@TransitType int type, @Nullable String distance, @Nullable String distanceUnits,
-  //                                  int timeInSec, @Nullable String number, int color, int intermediateIndex)
-  static jmethodID const transitStepConstructor = jni::GetConstructorID(env, transitStepClass,
-                                                  "(ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;II)V");
-
-  jni::TScopedLocalRef const steps(env, jni::ToJavaArray(env, transitStepClass,
-                                                         routeInfo.m_steps,
-                                                         [&](JNIEnv * jEnv, TransitStepInfo const & stepInfo)
-  {
-      jni::TScopedLocalRef const distance(env, jni::ToJavaString(env, stepInfo.m_distanceStr));
-      jni::TScopedLocalRef const distanceUnits(env, jni::ToJavaString(env, stepInfo.m_distanceUnitsSuffix));
-      jni::TScopedLocalRef const number(env, jni::ToJavaString(env, stepInfo.m_number));
-      return env->NewObject(transitStepClass, transitStepConstructor,
-                            static_cast<jint>(stepInfo.m_type),
-                            distance.get(),
-                            distanceUnits.get(),
-                            static_cast<jint>(stepInfo.m_timeInSec),
-                            number.get(),
-                            static_cast<jint>(stepInfo.m_colorARGB),
-                            static_cast<jint>(stepInfo.m_intermediateIndex));
-  }));
-
-  static jclass const transitRouteInfoClass = jni::GetGlobalClassRef(env,
-                                                                     "app/organicmaps/routing/TransitRouteInfo");
-  // Java signature : TransitRouteInfo(@NonNull String totalDistance, @NonNull String totalDistanceUnits, int totalTimeInSec,
-  //                                   @NonNull String totalPedestrianDistance, @NonNull String totalPedestrianDistanceUnits,
-  //                                   int totalPedestrianTimeInSec, @NonNull TransitStepInfo[] steps)
-  static jmethodID const transitRouteInfoConstructor = jni::GetConstructorID(env, transitRouteInfoClass,
-                                                                             "(Ljava/lang/String;Ljava/lang/String;I"
-                                                                             "Ljava/lang/String;Ljava/lang/String;I"
-                                                                             "[Lapp/organicmaps/routing/TransitStepInfo;)V");
-  jni::TScopedLocalRef const distance(env, jni::ToJavaString(env, routeInfo.m_totalDistanceStr));
-  jni::TScopedLocalRef const distanceUnits(env, jni::ToJavaString(env, routeInfo.m_totalDistanceUnitsSuffix));
-  jni::TScopedLocalRef const distancePedestrian(env, jni::ToJavaString(env, routeInfo.m_totalPedestrianDistanceStr));
-  jni::TScopedLocalRef const distancePedestrianUnits(env, jni::ToJavaString(env, routeInfo.m_totalPedestrianUnitsSuffix));
-  return env->NewObject(transitRouteInfoClass, transitRouteInfoConstructor,
-                        distance.get(), distanceUnits.get(), static_cast<jint>(routeInfo.m_totalTimeInSec),
-                        distancePedestrian.get(), distancePedestrianUnits.get(), static_cast<jint>(routeInfo.m_totalPedestrianTimeInSec),
-                        steps.get());
+  return CreateTransitRouteInfo(env, frm()->GetRoutingManager().GetTransitRouteInfo());
 }
 
 JNIEXPORT void JNICALL
@@ -1806,25 +1628,6 @@ Java_app_organicmaps_Framework_nativeGetPoiContactUrl(JNIEnv *env, jclass, jint 
   if (osm::isSocialContactTag(metaID))
     return jni::ToJavaString(env, osm::socialContactToURL(metaID, value));
   return jni::ToJavaString(env, value);
-}
-
-JNIEXPORT void JNICALL
-Java_app_organicmaps_Framework_nativeSetChoosePositionMode(JNIEnv *, jclass, jint mode, jboolean isBusiness,
-                                                           jboolean applyPosition)
-{
-  // TODO(AB): Move this code into the Framework to share with iOS and other platforms.
-  auto const f = frm();
-  if (applyPosition && f->HasPlacePageInfo())
-    g_framework->SetChoosePositionMode(static_cast<android::ChoosePositionMode>(mode), isBusiness,
-                                       &f->GetCurrentPlacePageInfo().GetMercator());
-  else
-    g_framework->SetChoosePositionMode(static_cast<android::ChoosePositionMode>(mode), isBusiness, nullptr);
-}
-
-JNIEXPORT jint JNICALL
-Java_app_organicmaps_Framework_nativeGetChoosePositionMode(JNIEnv *, jclass)
-{
-  return static_cast<jint>(g_framework->GetChoosePositionMode());
 }
 
 JNIEXPORT jboolean JNICALL

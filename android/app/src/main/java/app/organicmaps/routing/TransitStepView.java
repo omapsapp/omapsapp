@@ -20,6 +20,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import app.organicmaps.R;
+import app.organicmaps.sdk.routing.TransitStepInfo;
+import app.organicmaps.sdk.routing.TransitStepType;
 import app.organicmaps.widget.recycler.MultilineLayoutManager;
 import app.organicmaps.util.ThemeUtils;
 

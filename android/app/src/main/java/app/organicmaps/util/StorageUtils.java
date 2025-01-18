@@ -1,6 +1,5 @@
 package app.organicmaps.util;
 
-import android.app.Application;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -91,11 +90,11 @@ public class StorageUtils
   }
 
   @NonNull
-  public static String getApkPath(@NonNull Application application)
+  public static String getApkPath(@NonNull Context context)
   {
     try
     {
-      return Utils.getApplicationInfo(application.getPackageManager(), BuildConfig.APPLICATION_ID, 0).sourceDir;
+      return Utils.getApplicationInfo(context.getPackageManager(), BuildConfig.APPLICATION_ID, 0).sourceDir;
     }
     catch (final PackageManager.NameNotFoundException e)
     {
@@ -113,21 +112,21 @@ public class StorageUtils
   }
 
   @NonNull
-  public static String getSettingsPath(@NonNull Application application)
+  public static String getSettingsPath(@NonNull Context context)
   {
-    return addTrailingSeparator(application.getFilesDir().getAbsolutePath());
+    return addTrailingSeparator(context.getFilesDir().getAbsolutePath());
   }
 
   @NonNull
-  public static String getPrivatePath(@NonNull Application application)
+  public static String getPrivatePath(@NonNull Context context)
   {
-    return addTrailingSeparator(application.getFilesDir().getAbsolutePath());
+    return addTrailingSeparator(context.getFilesDir().getAbsolutePath());
   }
 
   @NonNull
-  public static String getTempPath(@NonNull Application application)
+  public static String getTempPath(@NonNull Context context)
   {
-    return addTrailingSeparator(application.getCacheDir().getAbsolutePath());
+    return addTrailingSeparator(context.getCacheDir().getAbsolutePath());
   }
 
   public static boolean createDirectory(@NonNull final String path)

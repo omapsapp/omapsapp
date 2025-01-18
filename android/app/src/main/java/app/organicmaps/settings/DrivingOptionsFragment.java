@@ -14,7 +14,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import app.organicmaps.R;
 import app.organicmaps.base.BaseMwmToolbarFragment;
 import app.organicmaps.routing.RoutingController;
-import app.organicmaps.routing.RoutingOptions;
+import app.organicmaps.sdk.routing.RoutingOptions;
 
 import java.util.ArrayList;
 import java.util.Collections;

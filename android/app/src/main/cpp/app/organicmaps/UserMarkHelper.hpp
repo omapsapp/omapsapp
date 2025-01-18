@@ -40,8 +40,6 @@ jobjectArray ToRatingArray(JNIEnv * env, std::vector<std::string> const & rating
 
 jobject CreateLocalAdInfo(JNIEnv * env, place_page::Info const & info);
 
-jobject CreateRoutePointInfo(JNIEnv * env, place_page::Info const & info);
-
 jobject CreateFeatureId(JNIEnv * env, FeatureID const & fid);
 jobjectArray ToFeatureIdArray(JNIEnv * env, std::vector<FeatureID> const & ids);
 }  // namespace usermark_helper
