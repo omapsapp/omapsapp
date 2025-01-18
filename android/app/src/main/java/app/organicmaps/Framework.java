@@ -15,7 +15,7 @@ import app.organicmaps.bookmarks.data.FeatureId;
 import app.organicmaps.bookmarks.data.MapObject;
 import app.organicmaps.sdk.routing.JunctionInfo;
 import app.organicmaps.sdk.routing.RouteMarkData;
-import app.organicmaps.sdk.routing.RoutePointInfo;
+import app.organicmaps.sdk.routing.RouteMarkType;
 import app.organicmaps.sdk.routing.RoutingInfo;
 import app.organicmaps.sdk.routing.TransitRouteInfo;
 import app.organicmaps.sdk.PlacePageActivationListener;
@@ -228,13 +228,11 @@ public class Framework
 
   public static native void nativeShowCountry(String countryId, boolean zoomToDownloadButton);
 
-  public static native void nativeAddRoutePoint(String title, String subtitle,
-                                                @RoutePointInfo.RouteMarkType int markType,
+  public static native void nativeAddRoutePoint(String title, String subtitle, @NonNull RouteMarkType markType,
                                                 int intermediateIndex, boolean isMyPosition,
                                                 double lat, double lon);
 
-  public static native void nativeRemoveRoutePoint(@RoutePointInfo.RouteMarkType int markType,
-                                                   int intermediateIndex);
+  public static native void nativeRemoveRoutePoint(@NonNull RouteMarkType markType, int intermediateIndex);
 
   public static native void nativeRemoveIntermediateRoutePoints();
 

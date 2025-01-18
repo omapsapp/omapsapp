@@ -3,11 +3,8 @@ package app.organicmaps.sdk.routing;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.IntDef;
 import androidx.annotation.Keep;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import androidx.annotation.NonNull;
 
 // Called from JNI.
 @Keep
@@ -29,44 +26,35 @@ public final class RoutePointInfo implements Parcelable
     }
   };
 
-  public static final int ROUTE_MARK_START = 0;
-  public static final int ROUTE_MARK_INTERMEDIATE = 1;
-  public static final int ROUTE_MARK_FINISH = 2;
-
-  @Retention(RetentionPolicy.SOURCE)
-  @IntDef({ ROUTE_MARK_START, ROUTE_MARK_INTERMEDIATE, ROUTE_MARK_FINISH })
-  public @interface RouteMarkType {}
-
-  @RouteMarkType
-  public final int mMarkType;
+  public final RouteMarkType mMarkType;
 
   public final int mIntermediateIndex;
 
-  public RoutePointInfo(@RouteMarkType int markType, int intermediateIndex)
+  private RoutePointInfo(@NonNull RouteMarkType markType, int intermediateIndex)
   {
     mMarkType = markType;
     mIntermediateIndex = intermediateIndex;
   }
 
-  private RoutePointInfo(Parcel in)
+  private RoutePointInfo(@NonNull Parcel in)
   {
     //noinspection WrongConstant
-    this(in.readInt() /* mMarkType */, in.readInt() /* mIntermediateIndex */);
+    this(RouteMarkType.values()[in.readInt()] /* mMarkType */, in.readInt() /* mIntermediateIndex */);
   }
 
   boolean isIntermediatePoint()
   {
-    return mMarkType == ROUTE_MARK_INTERMEDIATE;
+    return mMarkType == RouteMarkType.Intermediate;
   }
 
   boolean isFinishPoint()
   {
-    return mMarkType == ROUTE_MARK_FINISH;
+    return mMarkType == RouteMarkType.Finish;
   }
 
   boolean isStartPoint()
   {
-    return mMarkType == ROUTE_MARK_START;
+    return mMarkType == RouteMarkType.Start;
   }
 
   @Override
@@ -78,7 +66,7 @@ public final class RoutePointInfo implements Parcelable
   @Override
   public void writeToParcel(Parcel dest, int flags)
   {
-    dest.writeInt(mMarkType);
+    dest.writeInt(mMarkType.ordinal());
     dest.writeInt(mIntermediateIndex);
   }
 }

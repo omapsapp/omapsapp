@@ -1,5 +1,7 @@
 #include "UserMarkHelper.hpp"
 
+#include "app/organicmaps/sdk/routing/RoutePointInfo.hpp"
+
 #include "map/elevation_info.hpp"
 #include "map/place_page_info.hpp"
 
@@ -210,14 +212,6 @@ jobject CreateMapObject(JNIEnv * env, place_page::Info const & info)
   return CreateMapObject(env, info, kPoi, ll.m_lat, ll.m_lon,
                          true /* parseMeta */, false /* parseApi */,
                          routingPointInfo.get(), popularity, jrawTypes.get());
-}
-
-jobject CreateRoutePointInfo(JNIEnv * env, place_page::Info const & info)
-{
-  static jclass const clazz = jni::GetGlobalClassRef(env, "app/organicmaps/sdk/routing/RoutePointInfo");
-  static jmethodID const ctorId = jni::GetConstructorID(env, clazz, "(II)V");
-  int const markType = static_cast<int>(info.GetRouteMarkType());
-  return env->NewObject(clazz, ctorId, markType, info.GetIntermediateIndex());
 }
 
 jobject CreateFeatureId(JNIEnv * env, FeatureID const & fid)

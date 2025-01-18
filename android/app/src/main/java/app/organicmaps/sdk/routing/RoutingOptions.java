@@ -46,6 +46,10 @@ public final class RoutingOptions
     return roadTypes;
   }
 
+  private RoutingOptions() throws IllegalAccessException
+  {
+    throw new IllegalAccessException("RoutingOptions is a utility class and should not be instantiated");
+  }
   private static native void nativeAddOption(int option);
 
   private static native void nativeRemoveOption(int option);

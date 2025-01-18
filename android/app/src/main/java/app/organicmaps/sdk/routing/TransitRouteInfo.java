@@ -28,7 +28,7 @@ public final class TransitRouteInfo
   @NonNull
   private final TransitStepInfo[] mSteps;
 
-  public TransitRouteInfo(@NonNull String totalDistance, @NonNull String totalDistanceUnits, int totalTimeInSec,
+  private TransitRouteInfo(@NonNull String totalDistance, @NonNull String totalDistanceUnits, int totalTimeInSec,
                           @NonNull String totalPedestrianDistance, @NonNull String totalPedestrianDistanceUnits,
                           int totalPedestrianTimeInSec, @NonNull TransitStepInfo[] steps)
   {

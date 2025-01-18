@@ -15,6 +15,7 @@ import androidx.car.app.navigation.model.Trip;
 import androidx.core.graphics.drawable.IconCompat;
 
 import app.organicmaps.bookmarks.data.MapObject;
+import app.organicmaps.sdk.routing.LaneWay;
 import app.organicmaps.sdk.routing.RoutingInfo;
 import app.organicmaps.sdk.routing.SingleLaneInfo;
 import app.organicmaps.util.Graphics;
@@ -71,7 +72,7 @@ public final class RoutingUtils
       for (final SingleLaneInfo laneInfo : info.lanes)
       {
         final Lane.Builder laneBuilder = new Lane.Builder();
-        for (final SingleLaneInfo.LaneWay laneWay : laneInfo.mLane)
+        for (final LaneWay laneWay : laneInfo.mLane)
           laneBuilder.addDirection(RoutingHelpers.createLaneDirection(laneWay, laneInfo.mIsActive));
         builder.addLane(laneBuilder.build());
       }

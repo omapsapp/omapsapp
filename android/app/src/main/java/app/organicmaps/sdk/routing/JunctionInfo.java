@@ -10,7 +10,7 @@ public final class JunctionInfo
   public final double mLat;
   public final double mLon;
 
-  public JunctionInfo(double lat, double lon)
+  private JunctionInfo(double lat, double lon)
   {
     mLat = lat;
     mLon = lon;
