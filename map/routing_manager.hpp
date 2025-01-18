@@ -125,6 +125,7 @@ public:
 
   routing::RoutingSession const & RoutingSession() const { return m_routingSession; }
   routing::RoutingSession & RoutingSession() { return m_routingSession; }
+  //std::vector<routing::Route::SubrouteAttrs> GetSubroutes() { return m_routingSession.GetSubroutes(); }
   void SetRouter(routing::RouterType type);
   routing::RouterType GetRouter() const { return m_currentRouterType; }
   bool IsRoutingActive() const { return m_routingSession.IsActive(); }

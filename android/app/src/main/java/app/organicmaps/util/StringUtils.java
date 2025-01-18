@@ -14,6 +14,8 @@ import java.util.Locale;
 
 public class StringUtils
 {
+  final public static String kNarrowNonBreakingSpace = "\u202F";
+
   public static String formatUsingUsLocale(String pattern, Object... args)
   {
     return String.format(Locale.US, pattern, args);

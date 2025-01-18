@@ -16,6 +16,7 @@ import app.organicmaps.R;
 import app.organicmaps.location.LocationHelper;
 import app.organicmaps.routing.RoutingInfo;
 import app.organicmaps.sound.TtsPlayer;
+import app.organicmaps.util.DateUtils;
 import app.organicmaps.util.Graphics;
 import app.organicmaps.util.StringUtils;
 import app.organicmaps.util.ThemeUtils;
@@ -200,10 +201,8 @@ public class NavMenu
 
   private void updateTimeEstimate(int seconds)
   {
-    final String format = android.text.format.DateFormat.is24HourFormat(mTimeMinuteValue.getContext())
-            ? "HH:mm" : "h:mm a";
-    final LocalTime localTime = LocalTime.now().plusSeconds(seconds);
-    mTimeEstimate.setText(localTime.format(DateTimeFormatter.ofPattern(format)));
+    mTimeEstimate.setText(DateUtils.getEstimateTimeString(mTimeMinuteValue.getContext(),
+                                                          seconds));
   }
 
   private void updateSpeedView(@NonNull RoutingInfo info)

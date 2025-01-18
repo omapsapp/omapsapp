@@ -114,6 +114,21 @@ public final class UiUtils
       v.setVisibility(View.VISIBLE);
   }
 
+  public static void show(View frame, @IdRes int viewId)
+  {
+    View view = frame.findViewById(viewId);
+    if (view == null)
+      return;
+
+    show(view);
+  }
+
+  public static void show(View frame, @IdRes int... viewIds)
+  {
+    for (final int id : viewIds)
+      show(frame, id);
+  }
+
   public static void invisible(View... views)
   {
     for (final View v : views)

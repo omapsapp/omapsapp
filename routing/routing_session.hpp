@@ -174,6 +174,12 @@ public:
 
   double GetCompletionPercent() const;
 
+  size_t GetSubrouteCount() const { return m_route->GetSubrouteCount(); }
+  std::pair<long, double> GetSubrouteTotalTimeAndDistance(size_t subrouteIdx) const
+  {
+    return m_route->GetSubrouteTotalTimeAndDistance(subrouteIdx);
+  }
+
 private:
   struct DoReadyCallback
   {
