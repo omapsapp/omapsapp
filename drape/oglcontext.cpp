@@ -180,6 +180,11 @@ void OGLContext::SetViewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h)
   GLCHECK(GLFunctions::glScissor(x, y, w, h));
 }
 
+void OGLContext::SetScissor(uint32_t x, uint32_t y, uint32_t w, uint32_t h)
+{
+  GLCHECK(GLFunctions::glScissor(x, y, w, h));
+}
+
 void OGLContext::SetDepthTestEnabled(bool enabled)
 {
   if (enabled)
@@ -213,5 +218,13 @@ void OGLContext::SetStencilActions(StencilFace face, StencilAction stencilFailAc
                                    DecodeStencilAction(stencilFailAction),
                                    DecodeStencilAction(depthFailAction),
                                    DecodeStencilAction(passAction));
+}
+
+void OGLContext::SetCullingEnabled(bool enabled)
+{
+  if (enabled)
+    GLFunctions::glEnable(gl_const::GLCullFace);
+  else
+    GLFunctions::glDisable(gl_const::GLCullFace);
 }
 }  // namespace dp

@@ -48,7 +48,7 @@ public:
 
   static void Init()
   {
-    Instance();
+    Instance(true /* reinitialize*/);
   }
 
   static void Shutdown()
@@ -106,10 +106,15 @@ public:
   }
 
 private:
-  static DrapeRoutine & Instance()
+  static DrapeRoutine & Instance(bool reinitialize = false)
   {
-    static DrapeRoutine instance;
-    return instance;
+    static std::unique_ptr<DrapeRoutine> instance;
+    if (!instance || reinitialize) {
+      if (instance)
+        instance->FinishAll();
+      instance = std::unique_ptr<DrapeRoutine>(new DrapeRoutine());
+    }
+    return *instance;
   }
 
   DrapeRoutine() : m_workerThread(4 /* threads count */) {}

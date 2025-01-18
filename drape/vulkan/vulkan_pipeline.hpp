@@ -44,6 +44,7 @@ public:
     uint8_t m_bindingInfoCount = 0;
     VkPrimitiveTopology m_primitiveTopology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
     bool m_blendingEnabled = false;
+    bool m_cullingEnabled = true;
   };
 
   VulkanPipeline(VkDevice device, uint32_t appVersionCode);

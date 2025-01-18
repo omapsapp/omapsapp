@@ -290,12 +290,12 @@ Arrow3d::PreloadedData Arrow3d::PreloadMesh(std::optional<Arrow3dCustomDecl> con
 
 Arrow3d::Arrow3d(ref_ptr<dp::GraphicsContext> context, ref_ptr<dp::TextureManager> texMng,
                  PreloadedData && preloadedData)
-  : m_arrowMesh(context, dp::MeshObject::DrawPrimitive::Triangles)
+  : m_arrowMesh(context, dp::MeshObject::DrawPrimitive::Triangles, "Arrow3d")
   , m_arrowMeshTexturingEnabled(preloadedData.m_arrowMeshTexturingEnabled)
   , m_texCoordFlipping(std::move(preloadedData.m_texCoordFlipping))
   , m_shadowMesh(
         preloadedData.m_shadowMeshData.has_value()
-            ? make_unique_dp<dp::MeshObject>(context, dp::MeshObject::DrawPrimitive::Triangles)
+            ? make_unique_dp<dp::MeshObject>(context, dp::MeshObject::DrawPrimitive::Triangles, "Arrow3dShadow")
             : nullptr)
   , m_state(CreateRenderState(gpu::Program::Arrow3d, DepthLayer::OverlayLayer))
   , m_meshOffset(std::move(preloadedData.m_meshOffset))

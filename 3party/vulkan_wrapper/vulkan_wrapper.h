@@ -25,6 +25,10 @@ extern "C" {
 #define VK_USE_PLATFORM_ANDROID_KHR 1
 #include <vulkan/vulkan.h>
 
+#if defined(__APPLE__)
+#include <vulkan/vulkan_macos.h>
+#endif
+
 /* Initialize the Vulkan function pointer variables declared in this header.
  * Returns 0 if vulkan is not available, non-zero if it is available.
  */
@@ -499,6 +503,10 @@ extern PFN_vkCmdEncodeVideoKHR vkCmdEncodeVideoKHR;
 extern PFN_vkCreateDebugReportCallbackEXT vkCreateDebugReportCallbackEXT;
 extern PFN_vkDestroyDebugReportCallbackEXT vkDestroyDebugReportCallbackEXT;
 extern PFN_vkDebugReportMessageEXT vkDebugReportMessageEXT;
+
+#if defined(__APPLE__)
+extern PFN_vkCreateMacOSSurfaceMVK vkCreateMacOSSurfaceMVK;
+#endif
 
 #ifdef __cplusplus
 }

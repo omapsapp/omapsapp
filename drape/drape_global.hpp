@@ -1,6 +1,7 @@
 #pragma once
 
 #include "drape/color.hpp"
+#include "drape/pointers.hpp"
 
 #include "geometry/point2d.hpp"
 
@@ -9,10 +10,16 @@
 #include "std/target_os.hpp"
 
 #include <cstdint>
+#include <functional>
 
-#if defined(__APPLE__) && !defined(OMIM_OS_MAC)
+#if defined(__APPLE__)
 #define OMIM_METAL_AVAILABLE
 #endif
+
+namespace gpu
+{
+class ProgramManager;
+}  // namespace gpu
 
 namespace dp
 {
@@ -130,4 +137,11 @@ inline dp::ApiVersion ApiVersionFromString(std::string const & str)
   return dp::ApiVersion::OpenGLES3;
 #endif
 }
+
+class GraphicsContext;
+class TextureManager;
+using RenderInjectionHandler = std::function<void(ref_ptr<dp::GraphicsContext>, 
+                                                  ref_ptr<TextureManager>, 
+                                                  ref_ptr<gpu::ProgramManager>,
+                                                  bool shutdown)>;
 }  // namespace dp

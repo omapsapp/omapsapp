@@ -87,7 +87,8 @@ DrapeEngine::DrapeEngine(Params && params)
                                     params.m_trafficEnabled,
                                     params.m_blockTapEvents,
                                     std::move(effects),
-                                    params.m_onGraphicsContextInitialized);
+                                    params.m_onGraphicsContextInitialized,
+                                    std::move(params.m_renderInjectionHandler));
 
   BackendRenderer::Params brParams(
       params.m_apiVersion, frParams.m_commutator, frParams.m_oglContextFactory, frParams.m_texMng,
@@ -196,6 +197,11 @@ void DrapeEngine::Scroll(double distanceX, double distanceY)
 void DrapeEngine::Rotate(double azimuth, bool isAnim)
 {
   AddUserEvent(make_unique_dp<RotateEvent>(azimuth, isAnim, nullptr /* parallelAnimCreator */));
+}
+
+void DrapeEngine::MakeFrameActive()
+{
+  AddUserEvent(make_unique_dp<ActiveFrameEvent>());
 }
 
 void DrapeEngine::ScaleAndSetCenter(m2::PointD const & centerPt, double scaleFactor, bool isAnim,

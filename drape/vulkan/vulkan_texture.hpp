@@ -38,6 +38,7 @@ public:
   VkImageView GetTextureView() const { return m_textureObject.m_imageView; }
   VkImage GetImage() const { return m_textureObject.m_image; }
   SamplerKey GetSamplerKey() const;
+  VkImageLayout GetCurrentLayout() const { return m_currentLayout; }
 
   void MakeImageLayoutTransition(VkCommandBuffer commandBuffer,
                                  VkImageLayout newLayout,

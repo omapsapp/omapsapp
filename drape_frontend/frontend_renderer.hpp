@@ -95,7 +95,8 @@ public:
            OverlaysShowStatsCallback && overlaysShowStatsCallback,
            bool allow3dBuildings, bool trafficEnabled, bool blockTapEvents,
            std::vector<PostprocessRenderer::Effect> && enabledEffects,
-           OnGraphicsContextInitialized const & onGraphicsContextInitialized)
+           OnGraphicsContextInitialized const & onGraphicsContextInitialized,
+           dp::RenderInjectionHandler&& renderInjectionHandler)
       : BaseRenderer::Params(apiVersion, commutator, factory, texMng, onGraphicsContextInitialized)
       , m_myPositionParams(std::move(myPositionParams))
       , m_viewport(viewport)
@@ -108,6 +109,7 @@ public:
       , m_trafficEnabled(trafficEnabled)
       , m_blockTapEvents(blockTapEvents)
       , m_enabledEffects(std::move(enabledEffects))
+      , m_renderInjectionHandler(std::move(renderInjectionHandler))
     {}
 
     MyPositionController::Params m_myPositionParams;
@@ -121,6 +123,7 @@ public:
     bool m_trafficEnabled;
     bool m_blockTapEvents;
     std::vector<PostprocessRenderer::Effect> m_enabledEffects;
+    dp::RenderInjectionHandler m_renderInjectionHandler;
   };
 
   explicit FrontendRenderer(Params && params);
@@ -194,7 +197,8 @@ private:
   bool HasTransitRouteData() const;
   bool HasRouteData() const;
 
-  ScreenBase const & ProcessEvents(bool & modelViewChanged, bool & viewportChanged);
+  ScreenBase const & ProcessEvents(bool & modelViewChanged, bool & viewportChanged, 
+                                   bool & needActiveFrame);
   void PrepareScene(ScreenBase const & modelView);
   void UpdateScene(ScreenBase const & modelView);
   void BuildOverlayTree(ScreenBase const & modelView);
@@ -429,6 +433,8 @@ private:
   drape_ptr<ScreenQuadRenderer> m_transitBackground;
 
   drape_ptr<DrapeNotifier> m_notifier;
+
+  dp::RenderInjectionHandler m_renderInjectionHandler;
 
   struct FrameData
   {

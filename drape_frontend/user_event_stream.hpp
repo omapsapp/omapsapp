@@ -42,7 +42,8 @@ public:
     AutoPerspective,
     VisibleViewport,
     Move,
-    Scroll
+    Scroll,
+    ActiveFrame
   };
 
   virtual ~UserEvent() = default;
@@ -400,6 +401,15 @@ private:
   double m_distanceY;
 };
 
+// Doesn't have any payload, allows to unfreeze rendering in frontend_renderer
+class ActiveFrameEvent : public UserEvent
+{
+public:
+  explicit ActiveFrameEvent(){}
+
+  EventType GetType() const override { return UserEvent::EventType::ActiveFrame; }
+};
+
 class UserEventStream
 {
 public:
@@ -434,7 +444,7 @@ public:
   UserEventStream();
 
   void AddEvent(drape_ptr<UserEvent> && event);
-  ScreenBase const & ProcessEvents(bool & modelViewChanged, bool & viewportChanged);
+  ScreenBase const & ProcessEvents(bool & modelViewChanged, bool & viewportChanged, bool & activeFrame);
   ScreenBase const & GetCurrentScreen() const;
   m2::RectD const & GetVisibleViewport() const;
 
