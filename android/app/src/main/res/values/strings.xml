@@ -539,7 +539,7 @@
     <string name="download_over_mobile_header">Download over a cellular network connection?</string>
     <string name="download_over_mobile_message">This could be considerably expensive with some plans or if roaming.</string>
     <string name="error_enter_correct_house_number">Enter a valid building number</string>
-    <string name="editor_storey_number">Number of floors (maximum of %d)</string>
+    <string name="editor_storey_number">Floors (inc. ground floor, excl. roof levels)</string>
     <!-- Error message in Editor when a user tries to set the number of floors for a building higher than %d floors -->
     <string name="error_enter_correct_storey_number">The number of floors must non exceed %d</string>
     <string name="editor_zip_code">ZIP Code</string>

@@ -16919,7 +16919,7 @@
 
   [editor_storey_number]
     tags = android,ios
-    en = Number of floors (maximum of %d)
+    en = Floors (inc. ground floor, excl. roof levels)
     af = Aantal verdiepings (maksimum van %d)
     ar = عدد الطوابق (بحد أقصى %d)
     az = Mərtəbə sayı (maks. %d)
