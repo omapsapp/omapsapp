@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.organicmaps.maplayer.LayersButton
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/track_recording_status"
+  style="@style/MwmWidget.MapButton"
+  android:contentDescription="@string/layers_title"
+  android:tint="@color/accent_color_selector"
+  app:srcCompat="@drawable/ic_track_recording_status" />
