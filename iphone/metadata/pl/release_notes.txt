@@ -1,20 +1,20 @@
-• New OpenStreetMap data as of January 8
-• Tap tracks to display statistics and an interactive elevation profile
-• A standalone Track Recording button
-• Track Recording Live Activity Widget with track statistics (iOS16.2 and later)
-• Added Serbian (Cyrillic) and Latvian languages
-• Added tower POIs
+• Nowe dane OpenStreetMap z 8 stycznia
+• Dotknij zarejestrowanej trasy, aby wyświetlić statystyki oraz interaktywny profil wysokości
+• Osobny przycisk do rejestracji trasy
+• Widżet Live Activity ze statystykami nagrywanej trasy (iOS 16.2 i nowsze)
+• Dodano języki serbski (cyrylica) i łotewski
+• Dodano POI dla wieży
 
-• Added specific icons for Hong Kong, Shenzhen metro and Berlin light rail, a separate monorail icon
-• Added a context menu to the coordinates button in POI details
-• Show a reminder popup every time a full screen mode is entered
-• Display an explanation when the OSM Editor category search returns nothing
-• Differentiate between grass and grassland/meadow colors
-• Less saturated/prominent residential gardens color
-• Fixed yellow road shields displayed as green in the night mode
-• Display vegetation fills earlier in the car navigation style
-• Display complex non-number levels for building POIs
-• Improve search for peaks and saddles/passes
-• EN as additional search language in the OSM Editor
-• Update Estonian, Finnish, German, Italian, Turkish translations
-• ...many more bug fixes and UI improvements
+• Dodano własne ikony dla metra w Hong Kongu i Shenzhen oraz kolei miejskiej w Berlinie, osobną ikonę dla kolei jednoszynowej
+• Dodano menu kontekstowe do przycisku ze współrzędnymi w szczegółach POI
+• Komunikat z przypomnieniem pokazuje się z każdym wejściem w tryb pełnoekranowy
+• Wyświetlanie wyjaśnienia, gdy wyszukiwarka kategorii edytora OSM nic nie znajdzie
+• Rozróżnienie kolorów trawnika i łąki
+• Mniej nasycony kolor ogrodów przydomowych
+• Poprawiono żółte tarcze dróg wyświetlające się jako zielone w trybie nocnym
+• Wyświetlanie pokrycia terenu roślinnością na mniejszym przybliżeniu w trybie nawigacji samochodowej
+• Wyświetlanie złożonych nienumerycznych poziomów dla POI w budynkach
+• Ulepszone wyszukiwanie szczytów i przełęczy
+• Angielski jest dodatkowym językiem wyszukiwania kategorii w edytorze OSM
+• Zaktualizowane tłumaczenia dla estońskiego, fińskiego, niemieckiego, włoskiego, tureckiego
+• ...oraz więcej poprawek błędów i ulepszeń interfejsu użytkownika

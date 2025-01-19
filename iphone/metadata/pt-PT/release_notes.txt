@@ -1,20 +1,20 @@
-• New OpenStreetMap data as of January 8
-• Tap tracks to display statistics and an interactive elevation profile
-• A standalone Track Recording button
-• Track Recording Live Activity Widget with track statistics (iOS16.2 and later)
-• Added Serbian (Cyrillic) and Latvian languages
-• Added tower POIs
+• Novos dados do OpenStreetMap a 8 de janeiro
+• Toque nas faixas para apresentar estatísticas e um perfil de elevação interativo
+• Um botão de gravação de faixas independente
+• Widget de atividade ao vivo com gravação de faixas e estatísticas de faixas (iOS 16.2 e posteriores)
+• Adicionados os idiomas sérvio (cirílico) e letão
+• Adicionados POIs de torre
 
-• Added specific icons for Hong Kong, Shenzhen metro and Berlin light rail, a separate monorail icon
-• Added a context menu to the coordinates button in POI details
-• Show a reminder popup every time a full screen mode is entered
-• Display an explanation when the OSM Editor category search returns nothing
-• Differentiate between grass and grassland/meadow colors
-• Less saturated/prominent residential gardens color
-• Fixed yellow road shields displayed as green in the night mode
-• Display vegetation fills earlier in the car navigation style
-• Display complex non-number levels for building POIs
-• Improve search for peaks and saddles/passes
-• EN as additional search language in the OSM Editor
-• Update Estonian, Finnish, German, Italian, Turkish translations
-• ...many more bug fixes and UI improvements
+• Adicionados ícones específicos para Hong Kong, metro de Shenzhen e comboio ligeiro de Berlim, um ícone de monocarril separado
+• Adicionado um menu de contexto ao botão de coordenadas nos detalhes do POI
+• Mostrar um pop-up de lembrete sempre que o modo de ecrã inteiro for acedido
+• Apresentar uma explicação quando a pesquisa da categoria do Editor OSM não devolve nada
+• Diferenciar entre as cores da erva e da pradaria/prado
+• Cor menos saturada/proeminente em jardins residenciais
+• Corrigidos os escudos de estrada amarelos apresentados como verdes no modo noturno
+• Exibir os enchimentos de vegetação mais cedo no estilo de navegação do carro
+• Visualizar níveis complexos não numéricos para a construção de POIs
+• Melhorar a procura de picos e selas/passagens
+• EN como idioma de pesquisa adicional no Editor OSM
+• Atualizar traduções em estónio, finlandês, alemão, italiano e turco
+• ...muitas outras correções de bugs e melhorias na interface do utilizador
