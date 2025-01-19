@@ -1,4 +1,4 @@
-#include "platform/qt_location_service.hpp"
+#include "platform/location_service/qt_location_service.hpp"
 
 #include "base/logging.hpp"
 #include "base/macros.hpp"
