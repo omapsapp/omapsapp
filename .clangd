@@ -1,0 +1,4 @@
+CompileFlags:
+  Remove:
+    # clang has an issue with this flag, while gcc does not
+    - "-mno-direct-extern-access"
