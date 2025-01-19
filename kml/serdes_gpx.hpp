@@ -72,7 +72,7 @@ private:
 
   void ResetPoint();
   bool MakeValid();
-  void ParseColor(std::string const & value);
+  void ParseColor(std::string_view colorStr);
   void ParseGarminColor(std::string const & value);
   void ParseOsmandColor(std::string const & value);
   bool IsValidCoordinatesPosition() const;

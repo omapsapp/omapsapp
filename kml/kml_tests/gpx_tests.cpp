@@ -11,7 +11,7 @@
 
 namespace gpx_tests
 {
-static kml::FileData loadGpxFromString(std::string_view content) {
+static kml::FileData LoadGpxFromString(std::string_view content) {
   TEST_NO_THROW(
   {
     kml::FileData dataFromText;
@@ -20,34 +20,58 @@ static kml::FileData loadGpxFromString(std::string_view content) {
   }, ());
 }
 
-static kml::FileData loadGpxFromFile(std::string const & file) {
+static kml::FileData LoadGpxFromFile(std::string const & file) {
   auto const fileName = GetPlatform().TestsDataPathForFile(file);
   std::string text;
   FileReader(fileName).ReadAsString(text);
-  return loadGpxFromString(text);
+  return LoadGpxFromString(text);
 }
 
-void importExportCompare(char const * testFile)
+static std::string ReadFile(char const * testFile)
 {
   auto const fileName = GetPlatform().TestsDataPathForFile(testFile);
   std::string sourceFileText;
   FileReader(fileName).ReadAsString(sourceFileText);
-  kml::FileData const dataFromFile = loadGpxFromFile(testFile);
+  return sourceFileText;
+}
+
+static std::string ReadFileAndSerialize(char const * testFile)
+{
+  kml::FileData const dataFromFile = LoadGpxFromFile(testFile);
   std::string resultBuffer;
   MemWriter<decltype(resultBuffer)> sink(resultBuffer);
   kml::gpx::SerializerGpx ser(dataFromFile);
   ser.Serialize(sink);
+  return resultBuffer;
+}
+
+void ImportExportCompare(char const * testFile)
+{
+  std::string const sourceFileText = ReadFile(testFile);
+  std::string const resultBuffer = ReadFileAndSerialize(testFile);
   TEST_EQUAL(resultBuffer, sourceFileText, ());
+}
+
+void ImportExportCompare(char const * sourceFile, char const * destinationFile)
+{
+  std::string const resultBuffer = ReadFileAndSerialize(sourceFile);
+  std::string const destinationFileText = ReadFile(destinationFile);
+  TEST_EQUAL(resultBuffer, destinationFileText, ());
 }
 
 UNIT_TEST(Gpx_ImportExport_Test)
 {
-  importExportCompare("test_data/gpx/export_test.gpx");
+  ImportExportCompare("test_data/gpx/export_test.gpx");
 }
 
 UNIT_TEST(Gpx_ImportExportEmpty_Test)
 {
-  importExportCompare("test_data/gpx/export_test_empty.gpx");
+  ImportExportCompare("test_data/gpx/export_test_empty.gpx");
+}
+
+UNIT_TEST(Gpx_ColorMapExport_Test)
+{
+  ImportExportCompare("test_data/gpx/color_map_src.gpx", "test_data/gpx/color_map_dst.gpx");
 }
 
 UNIT_TEST(Gpx_Test_Point_With_Valid_Timestamp)
@@ -68,7 +92,7 @@ UNIT_TEST(Gpx_Test_Point_With_Valid_Timestamp)
   bookmarkData.m_color = {kml::PredefinedColor::Red, 0};
   data.m_bookmarksData.emplace_back(std::move(bookmarkData));
 
-  kml::FileData const dataFromText = loadGpxFromString(input);
+  kml::FileData const dataFromText = LoadGpxFromString(input);
 
   TEST_EQUAL(dataFromText, data, ());
 }
@@ -83,14 +107,14 @@ UNIT_TEST(Gpx_Test_Point_With_Invalid_Timestamp)
  </wpt>
 )";
 
-  kml::FileData const dataFromText = loadGpxFromString(input);
+  kml::FileData const dataFromText = LoadGpxFromString(input);
   TEST_EQUAL(dataFromText.m_bookmarksData.size(), 1, ());
 }
 
 UNIT_TEST(Gpx_Test_Track_Without_Timestamps)
 {
   auto const fileName = "test_data/gpx/track_without_timestamps.gpx";
-  kml::FileData const dataFromText = loadGpxFromFile(fileName);
+  kml::FileData const dataFromText = LoadGpxFromFile(fileName);
   auto const & lines = dataFromText.m_tracksData[0].m_geometry.m_lines;
   TEST_EQUAL(lines.size(), 2, ());
   {
@@ -124,7 +148,7 @@ UNIT_TEST(Gpx_Test_Track_Without_Timestamps)
 UNIT_TEST(Gpx_Test_Track_With_Timestamps)
 {
   auto const fileName = "test_data/gpx/track_with_timestamps.gpx";
-  kml::FileData const dataFromText = loadGpxFromFile(fileName);
+  kml::FileData const dataFromText = LoadGpxFromFile(fileName);
   auto const & geometry = dataFromText.m_tracksData[0].m_geometry;
   TEST_EQUAL(geometry.m_lines.size(), 2, ());
   TEST_EQUAL(geometry.m_timestamps.size(), 2, ());
@@ -168,7 +192,7 @@ UNIT_TEST(Gpx_Altitude_Issues)
 </gpx>
 )";
 
-  kml::FileData const dataFromText = loadGpxFromString(input);
+  kml::FileData const dataFromText = LoadGpxFromString(input);
   auto const & line = dataFromText.m_tracksData[0].m_geometry.m_lines[0];
   TEST_EQUAL(line.size(), 6, ());
   TEST_EQUAL(line[0], geometry::PointWithAltitude(mercator::FromLatLon(1, 1), geometry::kInvalidAltitude), ());
@@ -200,7 +224,7 @@ UNIT_TEST(Gpx_Timestamp_Issues)
 </gpx>
 )";
 
-  kml::FileData const dataFromText = loadGpxFromString(input);
+  kml::FileData const dataFromText = LoadGpxFromString(input);
   auto const & times = dataFromText.m_tracksData[0].m_geometry.m_timestamps[0];
   TEST_EQUAL(times.size(), 8, ());
   TEST_EQUAL(times[0], base::StringToTimestamp("2024-05-04T19:00:00Z"), ());
@@ -215,21 +239,21 @@ UNIT_TEST(Gpx_Timestamp_Issues)
 
 UNIT_TEST(GoMap)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/go_map.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/go_map.gpx");
   auto const & line = dataFromFile.m_tracksData[0].m_geometry.m_lines[0];
   TEST_EQUAL(line.size(), 101, ());
 }
 
 UNIT_TEST(GpxStudio)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/gpx_studio.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/gpx_studio.gpx");
   auto const & line = dataFromFile.m_tracksData[0].m_geometry.m_lines[0];
   TEST_EQUAL(line.size(), 328, ());
 }
 
 UNIT_TEST(OsmTrack)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/osm_track.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/osm_track.gpx");
   auto const & line = dataFromFile.m_tracksData[0].m_geometry.m_lines[0];
   auto const & timestamps = dataFromFile.m_tracksData[0].m_geometry.m_timestamps[0];
   TEST_EQUAL(line.size(), 182, ());
@@ -238,14 +262,14 @@ UNIT_TEST(OsmTrack)
 
 UNIT_TEST(TowerCollector)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/tower_collector.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/tower_collector.gpx");
   auto line = dataFromFile.m_tracksData[0].m_geometry.m_lines[0];
   TEST_EQUAL(line.size(), 35, ());
 }
 
 UNIT_TEST(PointsOnly)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/points.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/points.gpx");
   auto bookmarks = dataFromFile.m_bookmarksData;
   TEST_EQUAL(bookmarks.size(), 3, ());
   TEST_EQUAL("Point 1", bookmarks[0].m_name[kml::kDefaultLang], ());
@@ -254,7 +278,7 @@ UNIT_TEST(PointsOnly)
 
 UNIT_TEST(Route)
 {
-  kml::FileData dataFromFile = loadGpxFromFile("test_data/gpx/route.gpx");
+  kml::FileData dataFromFile = LoadGpxFromFile("test_data/gpx/route.gpx");
   auto line = dataFromFile.m_tracksData[0].m_geometry.m_lines[0];
   TEST_EQUAL(line.size(), 2, ());
   TEST_EQUAL(dataFromFile.m_categoryData.m_name[kml::kDefaultLang], "Some random route", ());
@@ -264,7 +288,7 @@ UNIT_TEST(Route)
 
 UNIT_TEST(Color)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/color.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/color.gpx");
   uint32_t const red = 0xFF0000FF;
   uint32_t const blue = 0x0000FFFF;
   uint32_t const black = 0x000000FF;
@@ -276,7 +300,7 @@ UNIT_TEST(Color)
 
 UNIT_TEST(MultiTrackNames)
 {
-  kml::FileData dataFromFile = loadGpxFromFile("test_data/gpx/color.gpx");
+  kml::FileData dataFromFile = LoadGpxFromFile("test_data/gpx/color.gpx");
   TEST_EQUAL("new", dataFromFile.m_categoryData.m_name[kml::kDefaultLang], ());
   TEST_EQUAL("Short description", dataFromFile.m_categoryData.m_description[kml::kDefaultLang], ());
   TEST_EQUAL("new red", dataFromFile.m_tracksData[0].m_name[kml::kDefaultLang], ());
@@ -287,14 +311,14 @@ UNIT_TEST(MultiTrackNames)
 
 UNIT_TEST(Empty)
 {
-  kml::FileData dataFromFile = loadGpxFromFile("test_data/gpx/empty.gpx");
+  kml::FileData dataFromFile = LoadGpxFromFile("test_data/gpx/empty.gpx");
   TEST_EQUAL("new", dataFromFile.m_categoryData.m_name[kml::kDefaultLang], ());
   TEST_EQUAL(0, dataFromFile.m_tracksData.size(), ());
 }
 
 UNIT_TEST(OsmandColor1)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/osmand1.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/osmand1.gpx");
   uint32_t constexpr expected = 0xFF7800FF;
   TEST_EQUAL(dataFromFile.m_tracksData.size(), 4, ());
   TEST_EQUAL(expected, dataFromFile.m_tracksData[0].m_layers[0].m_color.m_rgba, ());
@@ -305,7 +329,7 @@ UNIT_TEST(OsmandColor1)
 
 UNIT_TEST(OsmandColor2)
 {
-  kml::FileData const dataFromFile = loadGpxFromFile("test_data/gpx/osmand2.gpx");
+  kml::FileData const dataFromFile = LoadGpxFromFile("test_data/gpx/osmand2.gpx");
   uint32_t const expected1 = 0x00FF00FF;
   uint32_t const expected2 = 0x1010A0FF;
   TEST_EQUAL(expected1, dataFromFile.m_bookmarksData[0].m_color.m_rgba, ());
@@ -330,7 +354,7 @@ d5
  </wpt>
  <wpt lat="1" lon="2"><name>5</name><cmt>qqq</cmt><desc>qqq</desc></wpt>
 )";
-  kml::FileData const dataFromText = loadGpxFromString(input);
+  kml::FileData const dataFromText = LoadGpxFromString(input);
   TEST_EQUAL("d1", dataFromText.m_bookmarksData[0].m_description.at(kml::kDefaultLang), ());
   TEST_EQUAL("d2\n\nc2", dataFromText.m_bookmarksData[1].m_description.at(kml::kDefaultLang), ());
   TEST_EQUAL("c3", dataFromText.m_bookmarksData[2].m_description.at(kml::kDefaultLang), ());
@@ -340,7 +364,7 @@ d5
 
 UNIT_TEST(OpentracksColor)
 {
-  kml::FileData dataFromFile = loadGpxFromFile("test_data/gpx/opentracks_color.gpx");
+  kml::FileData dataFromFile = LoadGpxFromFile("test_data/gpx/opentracks_color.gpx");
   uint32_t const expected = 0xC0C0C0FF;
   TEST_EQUAL(expected, dataFromFile.m_tracksData[0].m_layers[0].m_color.m_rgba, ());
 }
