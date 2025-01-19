@@ -142,7 +142,7 @@ public class BookmarkCategoriesAdapter extends BaseBookmarkCategoryAdapter<Recyc
       case TYPE_ACTION_ADD ->
       {
         Holders.GeneralViewHolder generalViewHolder = (Holders.GeneralViewHolder) holder;
-        generalViewHolder.getImage().setImageResource(R.drawable.ic_import);
+        generalViewHolder.getImage().setImageResource(R.drawable.ic_add_list);
         generalViewHolder.getText().setText(R.string.bookmarks_create_new_group);
       }
       case TYPE_ACTION_IMPORT ->
