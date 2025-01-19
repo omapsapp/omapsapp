@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical">
   <include layout="@layout/place_page_website" />
   <include layout="@layout/place_page_website_menu" />
+  <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/place_page_phone_fragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      tools:layout="@layout/place_page_phone_fragment" />
   <include layout="@layout/place_page_email" />
   <include layout="@layout/place_page_facebook" />
   <include layout="@layout/place_page_instagram" />
