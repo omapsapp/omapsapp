@@ -54,9 +54,11 @@ done
 
 OPT_TARGET=${@:$OPTIND}
 
+NO_QT_LOCATION=
 CMAKE_CONFIG="${CMAKE_CONFIG:-} -U SKIP_QT_GUI"
 if [ "$OPT_TARGET" != "desktop" -a -z "$OPT_DESIGNER" -a -z "$OPT_STANDALONE" ]; then
   CMAKE_CONFIG="${CMAKE_CONFIG:-} -DSKIP_QT_GUI=ON"
+  NO_QT_LOCATION=1
 fi
 
 # By default build everything
@@ -126,7 +128,21 @@ build()
   else
     DIRNAME="$OMIM_PATH/../omim-build-$(echo "$CONF" | tr '[:upper:]' '[:lower:]')"
   fi
-  [ -d "$DIRNAME" -a -n "$OPT_CLEAN" ] && rm -r "$DIRNAME"
+  if [ -d "$DIRNAME" -a -n "$OPT_CLEAN" ]; then
+    rm -r "$DIRNAME"
+  else 
+    if grep -q qt_location "$DIRNAME/platform/platform_autogen/mocs_compilation.cpp"; then
+      if [ -n "${NO_QT_LOCATION}" ]; then
+        # If mocs file includes the qt_location dependent unit but the target doesn't need it
+        rm -f "$DIRNAME/platform/platform_autogen/mocs_compilation.cpp"
+      fi
+    else
+      if [ -z "${NO_QT_LOCATION}" ]; then
+        # If mocs file is missing the qt_location dependent unit but the target requires it
+        rm -f "$DIRNAME/platform/platform_autogen/mocs_compilation.cpp"
+      fi
+    fi
+  fi
   if [ ! -d "$DIRNAME" ]; then
     mkdir -p "$DIRNAME"
   fi
