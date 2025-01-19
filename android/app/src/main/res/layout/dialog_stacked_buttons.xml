@@ -29,7 +29,7 @@
   <TextView
     android:id="@+id/btn__positive"
     style="@style/MwmWidget.Button.StackedButtonsDialog"
-    tools:text="Use Always"/>
+    tools:text="Always Use"/>
 
   <TextView
     android:id="@+id/btn__neutral"

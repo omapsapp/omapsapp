@@ -20624,7 +20624,7 @@
 
   [mobile_data_option_always]
     tags = android,ios
-    en = Use Always
+    en = Always Use
     af = Gebruik altyd
     ar = استخدام دائمًا
     az = İstənilən vaxt istifadə edin
