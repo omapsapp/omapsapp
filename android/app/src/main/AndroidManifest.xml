@@ -79,6 +79,7 @@
       android:resizeableActivity="true"
       android:supportsRtl="true"
       android:networkSecurityConfig="@xml/network_security_config"
+      android:manageSpaceActivity="app.organicmaps.ManageSpaceActivity"
       tools:targetApi="33">
 
     <!-- Allows for config and orientation change without killing/restarting main activity -->
@@ -361,6 +362,11 @@
         android:launchMode="singleTask"
         android:configChanges="uiMode"
         android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+
+    <activity-alias
+        android:name="app.organicmaps.ManageSpaceActivity"
+        android:exported="true"
+        android:targetActivity=".SplashActivity" />
 
     <activity
         android:name="app.organicmaps.downloader.DownloaderActivity"
