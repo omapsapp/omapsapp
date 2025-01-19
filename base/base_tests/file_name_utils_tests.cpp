@@ -81,6 +81,8 @@ UNIT_TEST(FilePath_Join)
   TEST_EQUAL("omim/strings.txt", base::JoinPath("omim/", "strings.txt"), ());
   TEST_EQUAL("../../omim/strings.txt", base::JoinPath("..", "..", "omim", "strings.txt"), ());
   TEST_EQUAL("../../omim/strings.txt", base::JoinPath("../", "..", "omim/", "strings.txt"), ());
+  TEST_EQUAL("omim/strings.txt", base::JoinPath("", "omim/", "strings.txt"), ());
+  TEST_EQUAL("omim/strings.txt", base::JoinPath("", "","omim/", "strings.txt"), ());  
 }
 
 #endif // OMIM_OS_WINDOWS
