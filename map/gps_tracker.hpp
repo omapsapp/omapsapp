@@ -1,6 +1,7 @@
 #pragma once
 
 #include "map/gps_track.hpp"
+#include "map/elevation_info.hpp"
 
 #include <atomic>
 #include <functional>
@@ -14,10 +15,12 @@ public:
 
   bool IsEnabled() const;
   void SetEnabled(bool enabled);
+  void Clear();
 
   bool IsEmpty() const;
   size_t GetTrackSize() const;
-  GpsTrackInfo GetTrackInfo() const { return m_track.GetTrackInfo(); }
+  GpsTrackInfo GetTrackInfo() const;
+  const ElevationInfo & GetElevationInfo() const;
 
   using TGpsTrackDiffCallback =
       std::function<void(std::vector<std::pair<size_t, location::GpsInfo>> && toAdd,

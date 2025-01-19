@@ -36,6 +36,7 @@ size_t const GpsTrackCollection::kInvalidId = std::numeric_limits<size_t>::max()
 GpsTrackCollection::GpsTrackCollection()
   : m_lastId(0)
   , m_trackInfo(GpsTrackInfo())
+  , m_elevationInfo(ElevationInfo())
 {}
 
 std::pair<size_t, size_t> GpsTrackCollection::Add(std::vector<TItem> const & items)
@@ -63,9 +64,9 @@ std::pair<size_t, size_t> GpsTrackCollection::Add(std::vector<TItem> const & ite
       m_trackInfo.m_duration = item.m_timestamp - m_items.front().m_timestamp;
 
       auto const deltaAltitude = item.m_altitude - lastItem.m_altitude;
-      if (item.m_altitude > lastItem.m_altitude)
+      if (deltaAltitude > 0)
         m_trackInfo.m_ascent += deltaAltitude;
-      if (item.m_altitude < lastItem.m_altitude)
+      if (deltaAltitude < 0)
         m_trackInfo.m_descent -= deltaAltitude;
 
       m_trackInfo.m_maxElevation = std::max(static_cast<double>(m_trackInfo.m_maxElevation), item.m_altitude);
@@ -107,6 +108,7 @@ std::pair<size_t, size_t> GpsTrackCollection::Clear(bool resetIds)
   m_items.clear();
   m_items.shrink_to_fit();
   m_trackInfo = {};
+  m_elevationInfo = {};
 
   if (resetIds)
     m_lastId = 0;
@@ -117,6 +119,17 @@ std::pair<size_t, size_t> GpsTrackCollection::Clear(bool resetIds)
 size_t GpsTrackCollection::GetSize() const
 {
   return m_items.size();
+}
+
+const ElevationInfo & GpsTrackCollection::GetElevationInfo()
+{
+  auto const elevationInfoSize = m_elevationInfo.GetSize();
+  if (elevationInfoSize < m_items.size())
+  {
+    auto const pointsToAdd = std::vector<TItem>(m_items.begin() + elevationInfoSize, m_items.end());
+    m_elevationInfo.AddGpsPoints(pointsToAdd);
+  }
+  return m_elevationInfo;
 }
 
 bool GpsTrackCollection::IsEmpty() const

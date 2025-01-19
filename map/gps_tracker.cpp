@@ -60,6 +60,11 @@ void GpsTracker::SetEnabled(bool enabled)
     m_track.Clear();
 }
 
+void GpsTracker::Clear()
+{
+  m_track.Clear();
+}
+
 bool GpsTracker::IsEnabled() const
 {
   return m_enabled;
@@ -73,6 +78,16 @@ bool GpsTracker::IsEmpty() const
 size_t GpsTracker::GetTrackSize() const
 {
   return m_track.GetSize();
+}
+
+GpsTrackInfo GpsTracker::GetTrackInfo() const
+{
+  return m_track.GetTrackInfo();
+}
+
+const ElevationInfo & GpsTracker::GetElevationInfo() const
+{
+  return m_track.GetElevationInfo();
 }
 
 void GpsTracker::Connect(TGpsTrackDiffCallback const & fn)
