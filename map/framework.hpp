@@ -687,9 +687,9 @@ public:
   bool LoadTransliteration();
   void SaveTransliteration(bool allowTranslit);
 
-  void Allow3dMode(bool allow3d, bool allow3dBuildings);
-  void Save3dMode(bool allow3d, bool allow3dBuildings);
-  void Load3dMode(bool & allow3d, bool & allow3dBuildings);
+  void Allow3dMode(bool allow3dAlways, bool allow3dInNavigation, bool allow3dBuildings);
+  void Save3dMode(bool allow3dAlways, bool allow3dInNavigation, bool allow3dBuildings);
+  void Load3dMode(bool & allow3dAlways, bool & allow3dInNavigation, bool & allow3dBuildings);
 
 private:
   void ApplyMapLanguageCode(std::string const & langCode);

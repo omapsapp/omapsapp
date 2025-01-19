@@ -184,7 +184,7 @@ public:
 
   void AllowAutoZoom(bool allowAutoZoom);
 
-  void Allow3dMode(bool allowPerspectiveInNavigation, bool allow3dBuildings);
+  void Allow3dMode(bool allowPerspectiveAlways, bool allowPerspectiveInNavigation, bool allow3dBuildings);
   void EnablePerspective();
 
   void UpdateGpsTrackPoints(std::vector<df::GpsTrackPoint> && toAdd,

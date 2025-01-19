@@ -430,17 +430,20 @@ MapStyle Framework::GetMapStyle() const
 
 void Framework::Save3dMode(bool allow3d, bool allow3dBuildings)
 {
-  m_work.Save3dMode(allow3d, allow3dBuildings);
+  bool _allow3dAlways = false;
+  m_work.Save3dMode(_allow3dAlways, allow3d, allow3dBuildings);
 }
 
 void Framework::Set3dMode(bool allow3d, bool allow3dBuildings)
 {
-  m_work.Allow3dMode(allow3d, allow3dBuildings);
+  bool _allow3dAlways = false;
+  m_work.Allow3dMode(_allow3dAlways, allow3d, allow3dBuildings);
 }
 
 void Framework::Get3dMode(bool & allow3d, bool & allow3dBuildings)
 {
-  m_work.Load3dMode(allow3d, allow3dBuildings);
+  bool _allow3dAlways = false;
+  m_work.Load3dMode(_allow3dAlways, allow3d, allow3dBuildings);
 }
 
 void Framework::SetMapLanguageCode(std::string const & languageCode)
