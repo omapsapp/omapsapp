@@ -228,7 +228,7 @@ void EditorTest::GetFeatureTypeInfoTest()
   {
     MwmSet::MwmId mwmId;
 
-    TEST(!editor.GetFeatureTypeInfo((*editor.m_features.Get()), mwmId, 0), ());
+    TEST(!editor.GetFeatureTypeInfo((*editor.m_features.load()), mwmId, 0), ());
   }
 
   auto const mwmId = ConstructTestMwm([](TestMwmBuilder & builder)
@@ -239,12 +239,12 @@ void EditorTest::GetFeatureTypeInfoTest()
 
   ForEachCafeAtPoint(m_dataSource, m2::PointD(1.0, 1.0), [&editor](FeatureType & ft)
   {
-    auto const featuresBefore = editor.m_features.Get();
+    auto const featuresBefore = editor.m_features.load();
     TEST(!editor.GetFeatureTypeInfo(*featuresBefore, ft.GetID().m_mwmId, ft.GetID().m_index), ());
 
     SetBuildingLevelsToOne(ft);
 
-    auto const featuresAfter = editor.m_features.Get();
+    auto const featuresAfter = editor.m_features.load();
     auto const fti = editor.GetFeatureTypeInfo(*featuresAfter, ft.GetID().m_mwmId, ft.GetID().m_index);
     TEST_NOT_EQUAL(fti, nullptr, ());
     TEST_EQUAL(fti->m_object.GetID(), ft.GetID(), ());
@@ -502,9 +502,9 @@ void EditorTest::ClearAllLocalEditsTest()
   osm::EditableMapObject emo;
   CreateCafeAtPoint({3.0, 3.0}, mwmId, emo);
 
-  TEST(!editor.m_features.Get()->empty(), ());
+  TEST(!editor.m_features.load()->empty(), ());
   editor.ClearAllLocalEdits();
-  TEST(editor.m_features.Get()->empty(), ());
+  TEST(editor.m_features.load()->empty(), ());
 }
 
 void EditorTest::GetFeaturesByStatusTest()
@@ -607,7 +607,7 @@ void EditorTest::OnMapDeregisteredTest()
     SetBuildingLevelsToOne(ft);
   });
 
-  TEST_EQUAL(editor.m_features.Get()->size(), 2, (editor.m_features.Get()->size()));
+  TEST_EQUAL(editor.m_features.load()->size(), 2, (editor.m_features.load()->size()));
 
   {
     platform::tests_support::AsyncGuiThread guiThread;
@@ -616,7 +616,7 @@ void EditorTest::OnMapDeregisteredTest()
   // The map is deregistered but the edits are not deleted until
   // LoadEdits() is called again, either on the next startup or
   // on registering a new map.
-  TEST_EQUAL(editor.m_features.Get()->size(), 2, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 2, ());
 
   {
     platform::tests_support::AsyncGuiThread guiThread;
@@ -626,13 +626,13 @@ void EditorTest::OnMapDeregisteredTest()
     TEST(gbMwmId.IsAlive(), ());
   }
   // The same map was registered: the edits are still here.
-  TEST_EQUAL(editor.m_features.Get()->size(), 2, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 2, ());
 
   {
     platform::tests_support::AsyncGuiThread guiThread;
     m_dataSource.DeregisterMap(gbMwmId.GetInfo()->GetLocalFile().GetCountryFile());
   }
-  TEST_EQUAL(editor.m_features.Get()->size(), 2, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 2, ());
 
   {
     platform::tests_support::AsyncGuiThread guiThread;
@@ -643,9 +643,9 @@ void EditorTest::OnMapDeregisteredTest()
   }
   // Another map was registered: all edits are reloaded and
   // the edits for the deleted map are removed.
-  TEST_EQUAL(editor.m_features.Get()->size(), 1, ());
-  auto const editedMwmId = editor.m_features.Get()->find(rfMwmId);
-  bool const result = (editedMwmId != editor.m_features.Get()->end());
+  TEST_EQUAL(editor.m_features.load()->size(), 1, ());
+  auto const editedMwmId = editor.m_features.load()->find(rfMwmId);
+  bool const result = (editedMwmId != editor.m_features.load()->end());
   TEST(result, ());
 }
 
@@ -1015,13 +1015,13 @@ void EditorTest::LoadMapEditsTest()
   CreateCafeAtPoint({5.0, 5.0}, rfMwmId, emo);
   features.emplace_back(emo.GetID());
 
-  editor.Save((*editor.m_features.Get()));
+  editor.Save((*editor.m_features.load()));
   editor.LoadEdits();
 
   auto const fillLoaded = [&editor](std::vector<FeatureID> & loadedFeatures)
   {
     loadedFeatures.clear();
-    for (auto const & mwm : *(editor.m_features.Get()))
+    for (auto const & mwm : *(editor.m_features.load()))
     {
       for (auto const & index : mwm.second)
       {
@@ -1056,12 +1056,12 @@ void EditorTest::LoadMapEditsTest()
   m_dataSource.DeregisterMap(m_mwmFiles.back().GetCountryFile());
   TEST(RemoveMwm(newRfMwmId), ());
 
-  TEST_EQUAL(editor.m_features.Get()->size(), 2, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 2, ());
 
   editor.LoadEdits();
   fillLoaded(loadedFeatures);
 
-  TEST_EQUAL(editor.m_features.Get()->size(), 1, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 1, ());
   TEST_EQUAL(loadedFeatures.size(), 2, ());
 
   osm::EditableMapObject gbEmo;
@@ -1073,7 +1073,7 @@ void EditorTest::LoadMapEditsTest()
   editor.LoadEdits();
   fillLoaded(loadedFeatures);
 
-  TEST_EQUAL(editor.m_features.Get()->size(), 1, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 1, ());
   TEST_EQUAL(loadedFeatures.size(), 1, ());
 
   m_dataSource.DeregisterMap(m_mwmFiles.back().GetCountryFile());
@@ -1088,7 +1088,7 @@ void EditorTest::LoadMapEditsTest()
   newGbMwmId.GetInfo()->m_version.SetSecondsSinceEpoch(time(nullptr) + 1);
 
   editor.LoadEdits();
-  TEST(editor.m_features.Get()->empty(), ());
+  TEST(editor.m_features.load()->empty(), ());
 }
 
 void EditorTest::SaveEditedFeatureTest()
@@ -1157,7 +1157,7 @@ void EditorTest::SaveTransactionTest()
     SetBuildingLevelsToOne(ft);
   });
 
-  auto const features = editor.m_features.Get();
+  auto const features = editor.m_features.load();
 
   TEST_EQUAL(features->size(), 2, ());
   TEST_EQUAL(features->begin()->second.size(), 1, ());
@@ -1181,7 +1181,7 @@ void EditorTest::SaveTransactionTest()
 
     TEST_EQUAL(saveResult, osm::Editor::SaveResult::NoFreeSpaceError, ());
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1204,7 +1204,7 @@ void EditorTest::SaveTransactionTest()
 
     TEST_EQUAL(saveResult, osm::Editor::SaveResult::SavingError, ());
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1220,7 +1220,7 @@ void EditorTest::SaveTransactionTest()
       editor.DeleteFeature(ft.GetID());
     });
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1236,7 +1236,7 @@ void EditorTest::SaveTransactionTest()
       editor.MarkFeatureAsObsolete(ft.GetID());
     });
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1258,7 +1258,7 @@ void EditorTest::SaveTransactionTest()
 
     TEST_EQUAL(editor.m_notes->NotUploadedNotesCount(), 0, ());
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1274,7 +1274,7 @@ void EditorTest::SaveTransactionTest()
       editor.RollBackChanges(ft.GetID());
     });
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1286,7 +1286,7 @@ void EditorTest::SaveTransactionTest()
 
   {
     editor.ClearAllLocalEdits();
-    TEST_EQUAL(editor.m_features.Get()->size(), 2, ());
+    TEST_EQUAL(editor.m_features.load()->size(), 2, ());
   }
 
   {
@@ -1295,7 +1295,7 @@ void EditorTest::SaveTransactionTest()
       editor.OnMapDeregistered(mwmId.GetInfo()->GetLocalFile());
     }
 
-    auto const features = editor.m_features.Get();
+    auto const features = editor.m_features.load();
     auto const mwmIt = features->find(mwmId);
 
     TEST(mwmIt != features->end(), ());
@@ -1308,7 +1308,7 @@ void EditorTest::SaveTransactionTest()
   optionalSaveStorage.AllowSave(true);
 
   editor.ClearAllLocalEdits();
-  TEST(editor.m_features.Get()->empty(), ());
+  TEST(editor.m_features.load()->empty(), ());
 }
 
 void EditorTest::Cleanup(platform::LocalCountryFile const & map)
@@ -1363,7 +1363,7 @@ void EditorTest::LoadExistingEditsXml()
   editor.SetStorageForTesting(std::move(memStorage));
 
   editor.LoadEdits();
-  TEST_EQUAL(editor.m_features.Get()->size(), 1, ());
+  TEST_EQUAL(editor.m_features.load()->size(), 1, ());
 }
 
 }  // namespace testing

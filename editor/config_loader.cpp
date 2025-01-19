@@ -31,7 +31,7 @@ void Waiter::Interrupt()
   m_event.notify_all();
 }
 
-ConfigLoader::ConfigLoader(base::AtomicSharedPtr<EditorConfig> & config) : m_config(config)
+ConfigLoader::ConfigLoader(std::atomic<std::shared_ptr<EditorConfig>> & config) : m_config(config)
 {
   pugi::xml_document doc;
   LoadFromLocal(doc);
@@ -47,7 +47,7 @@ void ConfigLoader::ResetConfig(pugi::xml_document const & doc)
 {
   auto config = std::make_shared<EditorConfig>();
   config->SetConfig(doc);
-  m_config.Set(config);
+  m_config.store(config);
 }
 
 // static

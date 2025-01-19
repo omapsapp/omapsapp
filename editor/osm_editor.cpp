@@ -164,7 +164,7 @@ void Editor::LoadEdits()
   if (!m_storage->Load(doc))
     return;
 
-  m_features.Set(make_shared<FeaturesContainer>());
+  m_features.store(make_shared<FeaturesContainer>());
   auto loadedFeatures = make_shared<FeaturesContainer>();
 
   auto rootNode = doc.child(kXmlRootNode);
@@ -196,7 +196,7 @@ void Editor::LoadEdits()
   if (needRewriteEdits)
     SaveTransaction(loadedFeatures);
   else
-    m_features.Set(loadedFeatures);
+    m_features.store(loadedFeatures);
 }
 
 bool Editor::Save(FeaturesContainer const & features) const
@@ -259,7 +259,7 @@ bool Editor::SaveTransaction(std::shared_ptr<FeaturesContainer> const & features
   if (!Save(*features))
     return false;
 
-  m_features.Set(features);
+  m_features.store(features);
   return true;
 }
 
@@ -279,19 +279,19 @@ void Editor::OnMapRegistered(platform::LocalCountryFile const &)
 
 FeatureStatus Editor::GetFeatureStatus(MwmId const & mwmId, uint32_t index) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   return GetFeatureStatusImpl(*features, mwmId, index);
 }
 
 FeatureStatus Editor::GetFeatureStatus(FeatureID const & fid) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   return GetFeatureStatusImpl(*features, fid.m_mwmId, fid.m_index);
 }
 
 bool Editor::IsFeatureUploaded(MwmId const & mwmId, uint32_t index) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   return IsFeatureUploadedImpl(*features, mwmId, index);
 }
 
@@ -299,7 +299,7 @@ void Editor::DeleteFeature(FeatureID const & fid)
 {
   CHECK_THREAD_CHECKER(MainThreadChecker, (""));
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   auto editableFeatures = make_shared<FeaturesContainer>(*features);
 
   auto const mwm = editableFeatures->find(fid.m_mwmId);
@@ -346,7 +346,7 @@ Editor::SaveResult Editor::SaveEditedFeature(EditableMapObject const & emo)
   FeatureID const & fid = emo.GetID();
   FeatureTypeInfo fti;
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
 
   auto const featureStatus = GetFeatureStatusImpl(*features, fid.m_mwmId, fid.m_index);
   ASSERT_NOT_EQUAL(featureStatus, FeatureStatus::Obsolete, ("Obsolete feature cannot be modified."));
@@ -445,7 +445,7 @@ bool Editor::RollBackChanges(FeatureID const & fid)
 void Editor::ForEachCreatedFeature(MwmId const & id, FeatureIndexFunctor const & f,
                                    m2::RectD const & rect, int /*scale*/) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
 
   auto const mwmFound = features->find(id);
   if (mwmFound == features->cend())
@@ -465,7 +465,7 @@ void Editor::ForEachCreatedFeature(MwmId const & id, FeatureIndexFunctor const &
 
 std::optional<osm::EditableMapObject> Editor::GetEditedFeature(FeatureID const & fid) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   auto const * featureInfo = GetFeatureTypeInfo(*features, fid.m_mwmId, fid.m_index);
   if (featureInfo == nullptr)
     return {};
@@ -475,7 +475,7 @@ std::optional<osm::EditableMapObject> Editor::GetEditedFeature(FeatureID const &
 
 bool Editor::GetEditedFeatureStreet(FeatureID const & fid, string & outFeatureStreet) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   auto const * featureInfo = GetFeatureTypeInfo(*features, fid.m_mwmId, fid.m_index);
   if (featureInfo == nullptr)
     return false;
@@ -487,7 +487,7 @@ bool Editor::GetEditedFeatureStreet(FeatureID const & fid, string & outFeatureSt
 std::vector<uint32_t> Editor::GetFeaturesByStatus(MwmId const & mwmId,
                                                   FeatureStatus status) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
 
   std::vector<uint32_t> result;
   auto const matchedMwm = features->find(mwmId);
@@ -505,7 +505,7 @@ std::vector<uint32_t> Editor::GetFeaturesByStatus(MwmId const & mwmId,
 
 EditableProperties Editor::GetEditableProperties(FeatureType & feature) const
 {
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
 
   auto const & fid = feature.GetID();
   auto const featureStatus = GetFeatureStatusImpl(*features, fid.m_mwmId, fid.m_index);
@@ -542,7 +542,7 @@ EditableProperties Editor::GetEditableProperties(FeatureType & feature) const
 EditableProperties Editor::GetEditablePropertiesForTypes(feature::TypesHolder const & types) const
 {
   editor::TypeAggregatedDescription desc;
-  if (m_config.Get()->GetTypeDescription(types.ToObjectNames(), desc))
+  if (m_config.load()->GetTypeDescription(types.ToObjectNames(), desc))
   {
     return { std::move(desc.m_editableFields), desc.IsNameEditable(),
              desc.IsAddressEditable(), desc.IsCuisineEditable() };
@@ -555,7 +555,7 @@ bool Editor::HaveMapEditsOrNotesToUpload() const
   if (m_notes->NotUploadedNotesCount() != 0)
     return true;
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   return HaveMapEditsToUpload(*features);
 }
 
@@ -564,7 +564,7 @@ bool Editor::HaveMapEditsToUpload(MwmId const & mwmId) const
   if (!mwmId.IsAlive())
     return false;
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
 
   auto const found = features->find(mwmId);
   if (found != features->cend())
@@ -584,7 +584,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
   if (m_notes->NotUploadedNotesCount())
     m_notes->Upload(OsmOAuth::ServerAuth(oauthToken));
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
 
   if (!HaveMapEditsToUpload(*features))
   {
@@ -596,7 +596,7 @@ void Editor::UploadChanges(string const & oauthToken, ChangesetTags tags,
   {
     int uploadedFeaturesCount = 0, errorsCount = 0;
     ChangesetWrapper changeset(secret, std::move(tags));
-    auto const features = m_features.Get();
+    auto const features = m_features.load();
 
     for (auto const & id : *features)
     {
@@ -786,7 +786,7 @@ void Editor::SaveUploadedInformation(FeatureID const & fid, UploadInfo const & u
 {
   CHECK_THREAD_CHECKER(MainThreadChecker, (""));
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   auto editableFeatures = make_shared<FeaturesContainer>(*features);
 
   auto id = editableFeatures->find(fid.m_mwmId);
@@ -860,7 +860,7 @@ bool Editor::RemoveFeatureIfExists(FeatureID const & fid)
 {
   CHECK_THREAD_CHECKER(MainThreadChecker, (""));
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   auto editableFeatures = make_shared<FeaturesContainer>(*features);
 
   auto matchedMwm = editableFeatures->find(fid.m_mwmId);
@@ -887,7 +887,7 @@ bool Editor::MarkFeatureAsObsolete(FeatureID const & fid)
 {
   CHECK_THREAD_CHECKER(MainThreadChecker, (""));
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   auto editableFeatures = make_shared<FeaturesContainer>(*features);
 
   auto const featureStatus = GetFeatureStatusImpl(*editableFeatures, fid.m_mwmId, fid.m_index);
@@ -921,7 +921,7 @@ Editor::Stats Editor::GetStats() const
   Stats stats;
   LOG(LDEBUG, ("Edited features status:"));
 
-  auto const features = m_features.Get();
+  auto const features = m_features.load();
   for (auto const & id : *features)
   {
     for (auto & index : id.second)
@@ -947,7 +947,7 @@ Editor::Stats Editor::GetStats() const
 
 NewFeatureCategories Editor::GetNewFeatureCategories() const
 {
-  return NewFeatureCategories(*(m_config.Get()));
+  return NewFeatureCategories(*(m_config.load()));
 }
 
 FeatureID Editor::GenerateNewFeatureId(FeaturesContainer const & features,
@@ -983,7 +983,7 @@ bool Editor::CreatePoint(uint32_t type, m2::PointD const & mercator, MwmId const
   }
 
   outFeature.SetMercator(mercator);
-  outFeature.SetID(GenerateNewFeatureId(*(m_features.Get()), id));
+  outFeature.SetID(GenerateNewFeatureId(*(m_features.load()), id));
   outFeature.SetType(type);
   outFeature.SetEditableProperties(GetEditablePropertiesForTypes(outFeature.GetTypes()));
   // Only point type features can be created at the moment.
@@ -1010,7 +1010,7 @@ void Editor::CreateNote(ms::LatLon const & latLon, FeatureID const & fid,
     sstr << "The place has gone or never existed. A user of Organic Maps application has reported "
             "that the POI was visible on the map (see snapshot date below), but was not found "
             "on the ground.\n";
-    auto const features = m_features.Get();
+    auto const features = m_features.load();
     auto const isCreated =
         GetFeatureStatusImpl(*features, fid.m_mwmId, fid.m_index) == FeatureStatus::Created;
     auto const createdAndUploaded =
