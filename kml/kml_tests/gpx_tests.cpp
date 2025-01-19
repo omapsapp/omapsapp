@@ -27,32 +27,35 @@ static kml::FileData LoadGpxFromFile(std::string const & file) {
   return LoadGpxFromString(text);
 }
 
-void ImportExportCompare(char const * testFile)
+static std::string ReadFile(char const * testFile)
 {
   auto const fileName = GetPlatform().TestsDataPathForFile(testFile);
   std::string sourceFileText;
   FileReader(fileName).ReadAsString(sourceFileText);
+  return sourceFileText;
+}
+
+static std::string ReadFileAndSerialize(char const * testFile)
+{
   kml::FileData const dataFromFile = LoadGpxFromFile(testFile);
   std::string resultBuffer;
   MemWriter<decltype(resultBuffer)> sink(resultBuffer);
   kml::gpx::SerializerGpx ser(dataFromFile);
   ser.Serialize(sink);
+  return resultBuffer;
+}
+
+void ImportExportCompare(char const * testFile)
+{
+  std::string const sourceFileText = ReadFile(testFile);
+  std::string const resultBuffer = ReadFileAndSerialize(testFile);
   TEST_EQUAL(resultBuffer, sourceFileText, ());
 }
 
 void ImportExportCompare(char const * sourceFile, char const * destinationFile)
 {
-  auto const sourceFileName = GetPlatform().TestsDataPathForFile(sourceFile);
-  std::string sourceFileText;
-  FileReader(sourceFileName).ReadAsString(sourceFileText);
-  kml::FileData const dataFromFile = LoadGpxFromFile(sourceFile);
-  std::string resultBuffer;
-  MemWriter<decltype(resultBuffer)> sink(resultBuffer);
-  kml::gpx::SerializerGpx ser(dataFromFile);
-  ser.Serialize(sink);
-  auto const destinationFileName = GetPlatform().TestsDataPathForFile(destinationFile);
-  std::string destinationFileText;
-  FileReader(destinationFileName).ReadAsString(destinationFileText);
+  std::string const resultBuffer = ReadFileAndSerialize(sourceFile);
+  std::string const destinationFileText = ReadFile(destinationFile);
   TEST_EQUAL(resultBuffer, destinationFileText, ());
 }
 
