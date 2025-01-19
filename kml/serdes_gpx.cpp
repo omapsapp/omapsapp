@@ -134,12 +134,11 @@ std::string const & GpxParser::GetTagFromEnd(size_t n) const
   return m_tags[m_tags.size() - n - 1];
 }
 
-void GpxParser::ParseColor(std::string_view value)
+void GpxParser::ParseColor(std::string_view colorStr)
 {
-  std::string_view colorStr = value;
   if (colorStr.empty())
   {
-    LOG(LWARNING, ("Invalid color value", value));
+    LOG(LWARNING, ("Invalid color value", colorStr));
     return;
   }
   if (colorStr.front() == '#')
@@ -149,7 +148,7 @@ void GpxParser::ParseColor(std::string_view value)
   auto const colorBytes = FromHex(colorStr);
   if (colorBytes.size() != 3)
   {
-    LOG(LWARNING, ("Invalid color value", value));
+    LOG(LWARNING, ("Invalid color value", colorStr));
     return;
   }
   m_color = kml::ToRGBA(colorBytes[0], colorBytes[1], colorBytes[2], (char)255);
@@ -509,7 +508,7 @@ std::tuple<uint8_t, uint8_t, uint8_t> ExtractRGB(uint32_t color)
   return {(color >> 24) & 0xFF, (color >> 16) & 0xFF, (color >> 8) & 0xFF};
 }
 
-int ColorDistance(uint32_t color1, uint32_t color2)
+uint32_t ColorDistance(uint32_t color1, uint32_t color2)
 {
   auto const [r1, g1, b1] = ExtractRGB(color1);
   auto const [r2, g2, b2] = ExtractRGB(color2);
@@ -540,22 +539,19 @@ std::string MapGarminColor(uint32_t rgba)
   auto const it = kHexToGarmin.find(rgba);
   if (it != kHexToGarmin.end())
     return it->second;
-  const auto & first = kHexToGarmin.begin();
-  u_int32_t min = ColorDistance(first->first, rgba);
-  std::string color = first->second;
+  auto [hex, closestColor] = *kHexToGarmin.begin();
+  uint32_t minDistance = ColorDistance(hex, rgba);
   for (const auto & [garminColor, garminName] : kHexToGarmin)
   {
-    int distance = ColorDistance(rgba, garminColor);
-    if (distance < min)
+    uint32_t distance = ColorDistance(rgba, garminColor);
+    if (distance < minDistance)
     {
-      min = distance;
-      color = garminName;
+      minDistance = distance;
+      closestColor = garminName;
     }
   }
-  return color;
+  return closestColor;
 }
-
-
 
 void SaveCategoryData(Writer & writer, CategoryData const & categoryData)
 {
