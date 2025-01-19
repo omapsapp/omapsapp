@@ -423,6 +423,10 @@ world  +
         construction  -
         cycleway  +
             bridge  -
+            difficult  -
+            easy  -
+            expert  -
+            intermediate  -
             tunnel  -
             {}
         elevator  -

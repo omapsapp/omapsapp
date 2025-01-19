@@ -3166,4 +3166,36 @@ UNIT_CLASS_TEST(TestWithClassificator, OsmType_MultipleComplexTypesSmoke)
   }
 }
 
+UNIT_CLASS_TEST(TestWithClassificator, OsmType_Mtb_Rating)
+{
+  using Type = std::vector<std::string>;
+  std::vector<std::pair<Type, Tags>> const conversions = {
+    {{"highway", "cycleway", "easy"}, {{"highway", "cycleway"}, {"mtb:scale", "0"}, {"smoothness", "good"}}},
+    {{"highway", "cycleway", "easy"}, {{"highway", "cycleway"}, {"mtb:scale", "S0"}}},
+    {{"highway", "cycleway", "easy"}, {{"highway", "cycleway"}, {"mtb:scale:imba", "1"}}},    
+    {{"highway", "cycleway", "easy"}, {{"highway", "cycleway"}, {"smoothness", "bad"}}},    
+
+    {{"highway", "cycleway", "intermediate"}, {{"highway", "cycleway"}, {"mtb:scale", "1"}, {"smoothness", "good"}}},
+    {{"highway", "cycleway", "intermediate"}, {{"highway", "cycleway"}, {"mtb:scale", "S2"}}},
+    {{"highway", "cycleway", "intermediate"}, {{"highway", "cycleway"}, {"mtb:scale:imba", "2"}}},    
+    {{"highway", "cycleway", "intermediate"}, {{"highway", "cycleway"}, {"smoothness", "horrible"}}},    
+
+    {{"highway", "cycleway", "difficult"}, {{"highway", "cycleway"}, {"mtb:scale", "3"}, {"smoothness", "very_bad"}}},
+    {{"highway", "cycleway", "difficult"}, {{"highway", "cycleway"}, {"mtb:scale", "S3"}}},
+    {{"highway", "cycleway", "difficult"}, {{"highway", "cycleway"}, {"mtb:scale:imba", "3"}, {"smoothness", "bad"}}},    
+    {{"highway", "cycleway", "difficult"}, {{"highway", "cycleway"}, {"smoothness", "very_horrible"}}},    
+
+    {{"highway", "cycleway", "expert"}, {{"highway", "cycleway"}, {"mtb:scale", "4"}, {"smoothness", "very_bad"}}},
+    {{"highway", "cycleway", "expert"}, {{"highway", "cycleway"}, {"mtb:scale", "S5"}}},
+    {{"highway", "cycleway", "expert"}, {{"highway", "cycleway"}, {"mtb:scale:imba", "4"}, {"smoothness", "bad"}}} 
+
+  };
+
+  for (auto const & type : conversions)
+  {
+    auto const params = GetFeatureBuilderParams(type.second);
+    TEST(params.IsTypeExist(GetType(type.first)), (type, params));
+  }
+}
+
 }  // namespace osm_type_test

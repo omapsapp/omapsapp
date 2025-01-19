@@ -246,6 +246,10 @@ highway-bridleway                                   # line z18-
 highway-bridleway-bridge                            # line z18-
 highway-cycleway                                    # line z18-
 highway-cycleway-bridge                             # line z18-
+highway-cycleway-difficult                          # line z18-
+highway-cycleway-easy                               # line z18-
+highway-cycleway-expert                             # line z18-
+highway-cycleway-intermediate                       # line z18-
 highway-footway                                     # line z18-
 highway-footway-area                                # line z18-
 highway-footway-bicycle                             # line z18-

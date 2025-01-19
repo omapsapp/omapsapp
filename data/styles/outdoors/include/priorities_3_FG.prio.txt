@@ -47,6 +47,10 @@ power-line::dash                                    # line::dash z15- (also has 
 
 highway-cycleway                                    # line z11- (also has pathtext z13-)
 highway-cycleway-bridge                             # line z11- (also has line::bridgeblack z17-, line::bridgewhite z15-, pathtext z13-)
+highway-cycleway-difficult                          # line z11- (also has pathtext z13-)
+highway-cycleway-easy                               # line z11- (also has pathtext z13-)
+highway-cycleway-expert                             # line z11- (also has pathtext z13-)
+highway-cycleway-intermediate                       # line z11- (also has pathtext z13-)
 highway-cycleway-tunnel                             # line z11- (also has line::tunnelBackground z17-, line::tunnelCasing z17-, pathtext z13-)
 highway-footway-crossing                            # line z16-
 highway-steps                                       # line z12- (also has pathtext z13-)

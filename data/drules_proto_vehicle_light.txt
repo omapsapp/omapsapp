@@ -9131,6 +9131,114 @@ cont {
   }
 }
 cont {
+  name: "highway-cycleway-difficult"
+  element {
+    scale: 18
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+}
+cont {
+  name: "highway-cycleway-easy"
+  element {
+    scale: 18
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+}
+cont {
+  name: "highway-cycleway-expert"
+  element {
+    scale: 18
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+}
+cont {
+  name: "highway-cycleway-intermediate"
+  element {
+    scale: 18
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 1.0
+      color: 1716933887
+      priority: 130
+    }
+  }
+}
+cont {
   name: "highway-footway"
   element {
     scale: 18

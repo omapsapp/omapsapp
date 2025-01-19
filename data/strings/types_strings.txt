@@ -12755,6 +12755,22 @@
     pl = Most drogowy dla rowerów
     pt-BR = Ponte para ciclistas
 
+  [type.highway.cycleway.easy]
+    en = easy mountainbike trail
+    de = leichter Mountainbike Trail
+
+  [type.highway.cycleway.intermediate]
+    en = intermediate mountainbike trail
+    de = mittelschwerer Mountainbike Trail
+
+  [type.highway.cycleway.difficult]
+    en = difficult mountainbike trail
+    de = schwerer Mountainbike Trail
+
+  [type.highway.cycleway.expert]
+    en = expert mountainbike trail
+    de = Sehr schwerer Mountainbike Trail
+
   [type.highway.cycleway.permissive]
     ref = type.highway.cycleway
     et = Piiratud jalgrattatee

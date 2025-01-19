@@ -617,10 +617,10 @@ mapswithme
 mapswithme
 mapswithme
 *aerialway|j-bar
-mapswithme
-mapswithme
-mapswithme
-mapswithme
+*highway|cycleway|easy
+*highway|cycleway|intermediate
+*highway|cycleway|difficult
+*highway|cycleway|expert
 mapswithme
 mapswithme
 mapswithme

@@ -661,6 +661,10 @@ highway-residential-tunnel::shield                  # shield::shield z15- (also 
 
 highway-cycleway                                    # pathtext z15- (also has line z13-)
 highway-cycleway-bridge                             # pathtext z15- (also has line z13-, line::bridgeblack z17-, line::bridgewhite z15-)
+highway-cycleway-difficult                          # pathtext z15- (also has line z13-)
+highway-cycleway-easy                               # pathtext z15- (also has line z13-)
+highway-cycleway-expert                             # pathtext z15- (also has line z13-)
+highway-cycleway-intermediate                       # pathtext z15- (also has line z13-)
 highway-cycleway-tunnel                             # pathtext z15- (also has line z13-, line::tunnelBackground z17-, line::tunnelCasing z17-)
 === 2953
 

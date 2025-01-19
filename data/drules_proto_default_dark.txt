@@ -22424,6 +22424,586 @@ cont {
   }
 }
 cont {
+  name: "highway-cycleway-difficult"
+  element {
+    scale: 13
+    lines {
+      width: 0.9
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 14
+    lines {
+      width: 1.0
+      color: 12218495
+      dashdot {
+        dd: 1.0
+        dd: 4.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 15
+    lines {
+      width: 2.0
+      color: 12218495
+      dashdot {
+        dd: 1.0
+        dd: 4.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 8
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 16
+    lines {
+      width: 2.5
+      color: 12218495
+      dashdot {
+        dd: 1.6
+        dd: 6.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 17
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 1.6
+        dd: 6.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 18
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 2.8
+        dd: 8.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 2.8
+        dd: 8.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 2.8
+        dd: 8.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+}
+cont {
+  name: "highway-cycleway-easy"
+  element {
+    scale: 13
+    lines {
+      width: 0.9
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 14
+    lines {
+      width: 1.0
+      color: 7224647
+      dashdot {
+        dd: 3.5
+        dd: 2.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 15
+    lines {
+      width: 2.0
+      color: 7224647
+      dashdot {
+        dd: 3.5
+        dd: 2.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 8
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 16
+    lines {
+      width: 2.5
+      color: 7224647
+      dashdot {
+        dd: 4.0
+        dd: 2.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 17
+    lines {
+      width: 3.0
+      color: 7224647
+      dashdot {
+        dd: 4.0
+        dd: 2.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 18
+    lines {
+      width: 3.0
+      color: 7224647
+      dashdot {
+        dd: 6.0
+        dd: 3.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 3.0
+      color: 7224647
+      dashdot {
+        dd: 6.0
+        dd: 3.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 3.0
+      color: 7224647
+      dashdot {
+        dd: 6.0
+        dd: 3.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+}
+cont {
+  name: "highway-cycleway-expert"
+  element {
+    scale: 13
+    lines {
+      width: 0.9
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 14
+    lines {
+      width: 1.0
+      color: 10879133
+      dashdot {
+        dd: 1.0
+        dd: 4.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 15
+    lines {
+      width: 1.0
+      color: 10879133
+      dashdot {
+        dd: 1.0
+        dd: 4.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 8
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 16
+    lines {
+      width: 1.5
+      color: 10879133
+      dashdot {
+        dd: 1.6
+        dd: 6.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 17
+    lines {
+      width: 2.0
+      color: 10879133
+      dashdot {
+        dd: 1.6
+        dd: 6.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 18
+    lines {
+      width: 2.5
+      color: 10879133
+      dashdot {
+        dd: 2.8
+        dd: 8.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 2.5
+      color: 10879133
+      dashdot {
+        dd: 2.8
+        dd: 8.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 2.5
+      color: 10879133
+      dashdot {
+        dd: 2.8
+        dd: 8.0
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+}
+cont {
+  name: "highway-cycleway-intermediate"
+  element {
+    scale: 13
+    lines {
+      width: 0.9
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 14
+    lines {
+      width: 1.0
+      color: 12218495
+      dashdot {
+        dd: 3.5
+        dd: 2.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 15
+    lines {
+      width: 2.0
+      color: 12218495
+      dashdot {
+        dd: 3.5
+        dd: 2.0
+      }
+      priority: 330
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 8
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 16
+    lines {
+      width: 2.5
+      color: 12218495
+      dashdot {
+        dd: 4.0
+        dd: 2.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 17
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 4.0
+        dd: 2.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 9
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 18
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 6.0
+        dd: 3.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 6.0
+        dd: 3.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 3.0
+      color: 12218495
+      dashdot {
+        dd: 6.0
+        dd: 3.5
+      }
+      priority: 330
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2953
+    }
+  }
+}
+cont {
   name: "highway-cycleway-tunnel"
   element {
     scale: 13

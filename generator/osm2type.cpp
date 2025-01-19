@@ -575,6 +575,7 @@ string DetermineSurfaceAndHighwayType(OsmElement * p)
   double surfaceGrade = 2; // default is "normal"
   string highway;
   string trackGrade;
+  string mtb_rating;
 
   for (auto const & tag : p->m_tags)
   {
@@ -590,6 +591,8 @@ string DetermineSurfaceAndHighwayType(OsmElement * p)
       highway = tag.m_value;
     else if (tag.m_key == "4wd_only" && (tag.m_value == "yes" || tag.m_value == "recommended"))
       return "unpaved_bad";
+    else if (tag.m_key == "_mtb_rating")
+      mtb_rating = tag.m_value;
   }
 
   // According to https://wiki.openstreetmap.org/wiki/Key:surface
@@ -736,7 +739,7 @@ string DetermineSurfaceAndHighwayType(OsmElement * p)
     }
   }
 
-  if (highway.empty() || (surface.empty() && smoothness.empty()))
+  if (highway.empty() || (surface.empty() && smoothness.empty() && mtb_rating.empty()))
     return {};
 
   bool isGood = true;
@@ -782,6 +785,8 @@ string DetermineSurfaceAndHighwayType(OsmElement * p)
     isGood = false;
   else if (!surface.empty() && surfaceGrade < 3)
     isGood = isPaved ? !Has(badSurfaces, surface) : !Has(veryBadSurfaces, surface);
+  else if (!mtb_rating.empty())
+    isGood = false;  // if path has an mtb:score(:imba)-tag, the surface is certainly bad
 
   string psurface = isPaved ? "paved_" : "unpaved_";
   psurface += isGood ? "good" : "bad";
@@ -816,6 +821,76 @@ string DeterminePathGrade(OsmElement * p)
 
   // hiking & mountain_hiking scales, excellent, good, intermediate & unknown visibilities means "no grade"
   return {};
+}
+
+string DetermineMtbRating(OsmElement * p)
+{
+  if ((!p->HasTag("mtb:scale") && !p->HasTag("mtb:scale:imba") && !p->HasTag("smoothness")))
+    return {};
+
+  enum eMtbRating : int
+  {
+    none = 0,
+    easy,
+    intermediate,
+    difficult,
+    expert
+  };
+
+  string mtbscale = p->GetTag("mtb:scale");
+  string imbascale = p->GetTag("mtb:scale:imba");
+  string SmoothnessType = p->GetTag("smoothness");
+
+  static std::map<std::string, eMtbRating> mtbscaleToRatingConversion = {
+    {"0", eMtbRating::easy},
+    {"1", eMtbRating::intermediate},
+    {"2", eMtbRating::intermediate},
+    {"3", eMtbRating::difficult},
+    {"4", eMtbRating::expert},
+    {"5", eMtbRating::expert},
+  };
+
+  static std::map<std::string, eMtbRating> imbabscaleToRatingConversion = {
+    {"1", eMtbRating::easy},
+    {"2", eMtbRating::intermediate},
+    {"3", eMtbRating::difficult},
+    {"4", eMtbRating::expert},
+  };
+
+  static std::map<std::string, eMtbRating> SmoothnessToRatingConversion = {
+    {"bad", eMtbRating::easy},
+    {"very_bad", eMtbRating::easy},
+    {"horrible", eMtbRating::intermediate},
+    {"very_horrible", eMtbRating::difficult},
+  };
+
+  int tmpRatingFromMtbScale = 0;
+  int tmpRatingFromImbaScale = 0;
+  int tmpRatingFromSmoothness = 0;
+  if (!mtbscale.empty() && mtbscaleToRatingConversion.count(mtbscale))
+    tmpRatingFromMtbScale = mtbscaleToRatingConversion[mtbscale];
+
+  if (!imbascale.empty() && imbabscaleToRatingConversion.count(imbascale))
+    tmpRatingFromImbaScale = imbabscaleToRatingConversion[imbascale];
+
+  if (!SmoothnessType.empty() && SmoothnessToRatingConversion.count(SmoothnessType))
+    tmpRatingFromSmoothness = SmoothnessToRatingConversion[SmoothnessType];
+
+  int overallRating = std::max({tmpRatingFromMtbScale, tmpRatingFromImbaScale, tmpRatingFromSmoothness});
+  switch (overallRating)
+  {
+    case eMtbRating::easy:
+      return "easy";
+    case eMtbRating::intermediate:
+      return "intermediate";
+    case eMtbRating::difficult:
+      return "difficult";
+    case eMtbRating::expert:
+      return "expert";
+    default:
+      return {};
+  } 
+  
 }
 
 void PreprocessElement(OsmElement * p, CalculateOriginFnT const & calcOrg)
@@ -897,6 +972,8 @@ void PreprocessElement(OsmElement * p, CalculateOriginFnT const & calcOrg)
   {
     p->AddTag("area", "yes");
   }
+
+  p->AddTag("_mtb_rating", DetermineMtbRating(p));
 
   p->AddTag("psurface", DetermineSurfaceAndHighwayType(p));
 

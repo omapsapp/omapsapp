@@ -644,10 +644,11 @@ line|z19-[highway=busway],
 line|z13-[highway=pedestrian],
 line|z13-[highway=ford]
 {color: @pedestrian;opacity: 0.85;}
-line|z13-[highway=cycleway],
+line|z13-[highway=cycleway][!_mtb_rating],
 line|z14-[highway=path][bicycle=designated]::cycleline,
 line|z15-[highway=footway][bicycle=designated]::cycleline,
 {color: @cycleway;}
+
 line|z13-[highway=construction],
 {color: @construction;opacity: 0.7;}
 line|z13-[highway=pedestrian][bridge?]::bridgewhite,
@@ -756,18 +757,18 @@ line|z16-[highway=pedestrian][bridge?]::bridgeblack,
 
 /* 8.4 Cycleway 13-22 ZOOM */
 
-line|z13[highway=cycleway],
+line|z13[highway=cycleway][!_mtb_rating],
 {opacity: 0.3;}
-line|z14[highway=cycleway],
+line|z14[highway=cycleway][!_mtb_rating],
 line|z14[highway=path][bicycle=designated]::cycleline,
 {opacity: 0.4;}
-line|z15[highway=cycleway],
+line|z15[highway=cycleway][!_mtb_rating],
 line|z15[highway=path][bicycle=designated]::cycleline,
 {opacity: 0.5;}
-line|z16-17[highway=cycleway],
+line|z16-17[highway=cycleway][!_mtb_rating],
 line|z16-17[highway=path][bicycle=designated]::cycleline,
 {opacity: 0.6;}
-line|z18-[highway=cycleway],
+line|z18-[highway=cycleway][!_mtb_rating],
 line|z18-[highway=path][bicycle=designated]::cycleline,
 {opacity: 0.8;}
 
@@ -776,7 +777,7 @@ line|z15-16[highway=footway][bicycle=designated]::cycleline,
 line|z17-[highway=footway][bicycle=designated]::cycleline,
 {opacity: 0.5;}
 
-line|z13[highway=cycleway]
+line|z13[highway=cycleway],
 {width: 0.9;}
 line|z14[highway=cycleway],
 line|z14[highway=path][bicycle=designated]::cycleline,
@@ -829,6 +830,50 @@ line|z18[highway=cycleway][bridge?]::bridgeblack
 {casing-width-add: 2.5;}
 line|z19-[highway=cycleway][bridge?]::bridgeblack
 {casing-width-add: 3;}
+
+line|z14[highway=cycleway][_mtb_rating=easy],
+{color: @cycleway;width: 1; dashes: 3.5,2;}
+line|z15[highway=cycleway][_mtb_rating=easy],
+{color: @cycleway;width: 2; dashes: 3.5,2;}
+line|z16[highway=cycleway][_mtb_rating=easy],
+{color: @cycleway;width: 2.5; dashes: 4,2.5;}
+line|z17[highway=cycleway][_mtb_rating=easy],
+{color: @cycleway;width: 3; dashes: 4,2.5;}
+line|z18-[highway=cycleway][_mtb_rating=easy],
+{color: @cycleway;width: 3; dashes: 6,3.5;}
+
+line|z14[highway=cycleway][_mtb_rating=intermediate],
+{color: @cycleway_mtbintermediate;width: 1; dashes: 3.5,2;}
+line|z15[highway=cycleway][_mtb_rating=intermediate],
+{color: @cycleway_mtbintermediate;width: 2; dashes: 3.5,2;}
+line|z16[highway=cycleway][_mtb_rating=intermediate],
+{color: @cycleway_mtbintermediate;width: 2.5; dashes: 4,2.5;}
+line|z17[highway=cycleway][_mtb_rating=intermediate],
+{color: @cycleway_mtbintermediate;width: 3; dashes: 4,2.5}
+line|z18-[highway=cycleway][_mtb_rating=intermediate],
+{color: @cycleway_mtbintermediate;width: 3; dashes: 6,3.5;}
+
+line|z14[highway=cycleway][_mtb_rating=difficult],
+{color: @cycleway_mtbintermediate;width: 1; dashes: 1,4;}
+line|z15[highway=cycleway][_mtb_rating=difficult],
+{color: @cycleway_mtbintermediate;width: 2; dashes: 1,4;}
+line|z16[highway=cycleway][_mtb_rating=difficult],
+{color: @cycleway_mtbintermediate;width: 2.5; dashes: 1.6,6;}
+line|z17[highway=cycleway][_mtb_rating=difficult],
+{color: @cycleway_mtbintermediate;width: 3; dashes: 1.6,6;}
+line|z18-[highway=cycleway][_mtb_rating=difficult],
+{color: @cycleway_mtbintermediate;width: 3; dashes: 2.8,8;}
+
+line|z14[highway=cycleway][_mtb_rating=expert], 
+{color: @cycleway_mtbexpert;width: 1; dashes: 1,4;}
+line|z15[highway=cycleway][_mtb_rating=expert],
+{color: @cycleway_mtbexpert;width: 1; dashes: 1,4;}
+line|z16[highway=cycleway][_mtb_rating=expert],
+{color: @cycleway_mtbexpert;width: 1.5; dashes: 1.6,6;}
+line|z17[highway=cycleway][_mtb_rating=expert],
+{color: @cycleway_mtbexpert;width: 2; dashes: 1.6,6;}
+line|z18-[highway=cycleway][_mtb_rating=expert],
+{color: @cycleway_mtbexpert;width: 2.5; dashes: 2.8,8;}
 
 /* 8.5 Construction 13-22 ZOOM */
 

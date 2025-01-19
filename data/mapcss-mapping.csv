@@ -730,10 +730,11 @@ piste:type|snow_park;616;
 deprecated|deprecated;617;x
 deprecated|deprecated;618;x
 aerialway|j-bar;619;
-deprecated|deprecated;620;x
-deprecated|deprecated;621;x
-deprecated|deprecated;622;x
-deprecated|deprecated;623;x
+# _mtb_rating is a mix of mtb:scale, surface smoothness and imba rating, see osm2type
+highway|cycleway|easy;[highway=cycleway][_mtb_rating=easy];;name;int_name;620;
+highway|cycleway|intermediate;[highway=cycleway][_mtb_rating=intermediate];;name;int_name;621;
+highway|cycleway|difficult;[highway=cycleway][_mtb_rating=difficult];;name;int_name;622;
+highway|cycleway|expert;[highway=cycleway][_mtb_rating=expert];;name;int_name;623;
 deprecated|deprecated;624;x
 deprecated|deprecated;625;x
 deprecated:railway|siding|bridge:06.2023;626;x
