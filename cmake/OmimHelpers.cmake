@@ -4,6 +4,10 @@ include(OmimConfig)
 function(omim_add_executable executable)
   add_executable(${executable} ${ARGN})
 
+  if (PLATFORM_WIN)
+    target_sources(${executable} PRIVATE "${CMAKE_CURRENT_FUNCTION_LIST_DIR}/windows/OrganicMaps.manifest")
+  endif()
+
   # Enable warnings for all our binaries.
   target_compile_options(${executable} PRIVATE ${OMIM_WARNING_FLAGS})
   target_include_directories(${executable} SYSTEM PRIVATE ${3PARTY_INCLUDE_DIRS})

@@ -192,6 +192,10 @@ if (PLATFORM_MAC)
   )
 endif()
 
+if (PLATFORM_WIN)
+  target_sources(${PROJECT_NAME} PRIVATE res/windows.rc)
+endif()
+
 if (BUILD_DESIGNER)
   execute_process(
     COMMAND cp -rf ${OMIM_ROOT}/data/resources-mdpi_light/ ${OMIM_ROOT}/data/resources-mdpi_design/
