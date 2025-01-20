@@ -1,0 +1,84 @@
+#
+# Update the planet.o5m and planet.pbf files on the generator host.
+#
+name: Generator / Planet
+on:
+  push:
+    branches:
+      - generator-actions
+  workflow_dispatch:
+    inputs:
+      planet_expiration_hours:
+        description: 'Update planet data if data is older than X hours.'
+        type: number
+        required: false
+        default: 12
+
+jobs:
+  update-planet:
+    name: Update Planet
+    runs-on: [self-hosted, planet]
+    environment: planet
+    concurrency:
+      group: planet
+      cancel-in-progress: false
+    timeout-minutes: 240 # 4 hours
+    steps:
+      - name: Sanity checks
+        run: |
+          [[ -n "${{ vars.PLANET_O5M }}" && "${{ vars.PLANET_O5M }}" != *$'\n'* ]] && \
+          [[ -n "${{ vars.PLANET_PBF }}" && "${{ vars.PLANET_PBF }}" != *$'\n'* ]] && \
+          echo 'GitHub Variables are OK'
+
+      - name: Check date
+        id: check_date
+        run: |
+          if [ ! -f "${{ vars.PLANET_PBF }}" ]; then
+            echo "Planet doesn't exist"
+            echo "update=true" >> $GITHUB_OUTPUT
+          else
+            current_timestamp="$(date +%s)"
+            data_timestamp="$(stat -c %Y "${{ vars.PLANET_PBF }}")"
+            age="$(( (current_timestamp - data_timestamp) / 3600 ))"
+            if [ "$age" -lt "${{ github.event.inputs.planet_expiration_hours || 12 }}" ]; then
+              echo "Planet is up to date - $age hours old"
+              echo "update=false" >> $GITHUB_OUTPUT
+            else
+              echo "Planet needs to be be updated - $age hours old"
+              echo "update=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Checkout osmctools sources
+        if: ${{ steps.check_date.outputs.update == 'true' }}
+        uses: actions/checkout@v4
+        with:
+          repository: 'organicmaps/osmctools'
+          path: osmctools
+
+      - name: Build osmctools
+        working-directory: osmctools
+        if: ${{ steps.check_date.outputs.update == 'true' }}
+        run: |
+          cmake -DCMAKE_BUILD_TYPE=Release .
+          cmake --build . --parallel $(nproc)
+          test -x osmconvert && test -x osmfilter && test -x osmupdate
+
+      - name: Update planet.o5m
+        working-directory: osmctools
+        if: ${{ steps.check_date.outputs.update == 'true' }}
+        run: |
+          ./osmupdate -v --drop-authors --drop-version --hash-memory=512000 \
+            "${{ vars.PLANET_O5M }}" \
+            "${{ vars.PLANET_O5M }}".inprogress
+          mv -f "${{ vars.PLANET_O5M }}".inprogress "${{ vars.PLANET_O5M }}"
+          ls -lh "${{ vars.PLANET_O5M }}"
+
+      - name: Update planet.pbf
+        working-directory: osmctools
+        if: ${{ steps.check_date.outputs.update == 'true' }}
+        run: |
+          ./osmconvert "${{ vars.PLANET_O5M }}" -o="${{ vars.PLANET_PBF }}.inprogress"
+          touch -r "${{ vars.PLANET_O5M }}" "${{ vars.PLANET_PBF }}.inprogress"
+          mv -f "${{ vars.PLANET_PBF }}".inprogress "${{ vars.PLANET_PBF }}"
+          ls -lh "${{ vars.PLANET_PBF }}"
