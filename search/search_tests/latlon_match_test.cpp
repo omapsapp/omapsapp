@@ -46,7 +46,35 @@ UNIT_TEST(LatLon_Match_Smoke)
   TestAlmostEqual(lat, 10.1);
   TestAlmostEqual(lon, 20.2);
 
+  TEST(MatchLatLonDegree("-10,10, 20,20", lat, lon), ());
+  TestAlmostEqual(lat, -10.1);
+  TestAlmostEqual(lon, 20.2);
+  
+  TEST(MatchLatLonDegree("10,10, -20,20", lat, lon), ());
+  TestAlmostEqual(lat, 10.1);
+  TestAlmostEqual(lon, -20.2);
+
+  TEST(MatchLatLonDegree("-10,10, -20,20", lat, lon), ());
+  TestAlmostEqual(lat, -10.1);
+  TestAlmostEqual(lon, -20.2);
+
+  TEST(MatchLatLonDegree("-10,10 20,20", lat, lon), ());
+  TestAlmostEqual(lat, -10.1);
+  TestAlmostEqual(lon, 20.2);
+  
+  TEST(MatchLatLonDegree("10,10 -20,20", lat, lon), ());
+  TestAlmostEqual(lat, 10.1);
+  TestAlmostEqual(lon, -20.2);
+
+  TEST(MatchLatLonDegree("-10,10 -20,20", lat, lon), ());
+  TestAlmostEqual(lat, -10.1);
+  TestAlmostEqual(lon, -20.2);
+
   TEST(MatchLatLonDegree("-22.3534 -42.7076\n", lat, lon), ());
+  TestAlmostEqual(lat, -22.3534);
+  TestAlmostEqual(lon, -42.7076);
+
+  TEST(MatchLatLonDegree("-22,3534 -42,7076\n", lat, lon), ());
   TestAlmostEqual(lat, -22.3534);
   TestAlmostEqual(lon, -42.7076);
 

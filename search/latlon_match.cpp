@@ -18,10 +18,16 @@ namespace
 string const kSpaces = " \t";
 string const kCharsToSkip = " \n\t,;:.()";
 string const kDecimalMarks = ".,";
+string const kNegative = "-";
 
 bool IsDecimalMark(char c)
 {
   return kDecimalMarks.find(c) != string::npos;
+}
+
+bool IsNegativeSymbol(char c)
+{
+  return kNegative.find(c) != string::npos;
 }
 
 template <typename Char>
@@ -99,6 +105,7 @@ double EatDouble(char const * str, char ** strEnd)
   bool gotDigitAfterMark = false;
   char const * markPos = nullptr;
   char const * p = str;
+  double modifier = 1.0;
   while (true)
   {
     if (IsDecimalMark(*p))
@@ -115,6 +122,10 @@ double EatDouble(char const * str, char ** strEnd)
       else
         gotDigitBeforeMark = true;
     }
+    else if (IsNegativeSymbol(*p))
+    {
+      modifier = -1.0;
+    }
     else
     {
       break;
@@ -129,7 +140,7 @@ double EatDouble(char const * str, char ** strEnd)
     *strEnd = const_cast<char *>(p);
     auto const x1 = atof(part1.c_str());
     auto const x2 = atof(part2.c_str());
-    return x1 + x2 * pow(10.0, -static_cast<double>(part2.size()));
+    return x1 + x2 * modifier * pow(10.0, -static_cast<double>(part2.size()));
   }
 
   return strtod(str, strEnd);
