@@ -13,8 +13,8 @@
     android:id="@+id/search_frame"
     android:layout_width="160dp"
     android:layout_height="160dp"
-    android:layout_alignParentStart="true"
-    android:layout_marginStart="-56dp"
+    android:layout_alignParentEnd="true"
+    android:layout_marginEnd="-56dp"
     android:background="?searchLayoutBackground"
     android:visibility="invisible"
     tools:visibility="visible">
@@ -23,7 +23,7 @@
       style="@style/MwmWidget.MapButton.Search"
       android:layout_alignParentTop="true"
       android:layout_centerHorizontal="true"
-      android:layout_marginStart="@dimen/margin_half_plus"
+      android:layout_marginEnd="@dimen/margin_half_plus"
       android:layout_marginTop="@dimen/margin_half"
       android:contentDescription="@string/category_fuel"
       app:srcCompat="@drawable/ic_routing_fuel_on" />
@@ -31,13 +31,13 @@
       android:id="@+id/search_parking"
       style="@style/MwmWidget.MapButton.Search"
       android:layout_marginTop="@dimen/margin_base_plus"
-      android:layout_toEndOf="@id/search_fuel"
+      android:layout_toStartOf="@id/search_fuel"
       android:contentDescription="@string/category_parking"
       app:srcCompat="@drawable/ic_routing_parking_on" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/search_eat"
       style="@style/MwmWidget.MapButton.Search"
-      android:layout_alignParentEnd="true"
+      android:layout_alignParentStart="true"
       android:layout_centerVertical="true"
       android:layout_marginEnd="@dimen/margin_half"
       android:contentDescription="@string/category_eat"
@@ -47,7 +47,7 @@
       style="@style/MwmWidget.MapButton.Search"
       android:layout_alignParentBottom="true"
       android:layout_marginBottom="@dimen/margin_base_plus"
-      android:layout_toEndOf="@id/search_fuel"
+      android:layout_toStartOf="@id/search_fuel"
       android:contentDescription="@string/category_shopping"
       app:srcCompat="@drawable/ic_routing_food_on" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -55,7 +55,7 @@
       style="@style/MwmWidget.MapButton.Search"
       android:layout_alignParentBottom="true"
       android:layout_centerHorizontal="true"
-      android:layout_marginStart="@dimen/margin_half_plus"
+      android:layout_marginEnd="@dimen/margin_half_plus"
       android:layout_marginBottom="@dimen/margin_half"
       android:contentDescription="@string/category_atm"
       app:srcCompat="@drawable/ic_routing_atm_on" />

@@ -7,7 +7,9 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:background="#20FF0000"
-  tools:showIn="@layout/layout_nav">
+  tools:showIn="@layout/layout_nav"
+  android:clipToPadding="false"
+  android:clipChildren="false">
   <FrameLayout
     android:id="@+id/street_frame"
     android:layout_width="match_parent"
@@ -113,7 +115,7 @@
       android:layout_margin="@dimen/margin_half"
       android:padding="@dimen/margin_half"
       android:visibility="gone"
-      app:layout_constraintStart_toEndOf="@+id/nav_speed_limit"
+      app:layout_constraintStart_toEndOf="@+id/nav_next_turn_container"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toBottomOf="@id/street_frame"
       app:activeLaneTintColor="?navLaneArrowActiveColor"
@@ -124,12 +126,12 @@
       tools:visibility="visible" />
 
   <app.organicmaps.widget.SpeedLimitView
-    android:id="@+id/nav_speed_limit"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:layout_margin="@dimen/margin_half"
-    app:editModeCurrentSpeed="90"
-    app:editModeSpeedLimit="120"
-    app:layout_constraintStart_toEndOf="@id/nav_next_turn_container"
-    app:layout_constraintTop_toBottomOf="@id/street_frame" />
+      android:id="@+id/nav_speed_limit"
+      android:layout_width="110dp"
+      android:layout_height="60dp"
+      app:editModeCurrentSpeed="90"
+      app:editModeSpeedLimit="120"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_marginBottom="88dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

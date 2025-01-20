@@ -18,21 +18,6 @@
     android:clipToPadding="false"
     android:padding="@dimen/nav_frame_padding"
     app:layout_constraintStart_toStartOf="parent">
-    <include
-      layout="@layout/map_buttons_bookmarks"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
-    <include
-      layout="@layout/map_buttons_search"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:layout_marginBottom="@dimen/margin_half"
-      app:layout_constraintBottom_toTopOf="@+id/btn_bookmarks"
-      app:layout_constraintStart_toStartOf="parent" />
   </androidx.constraintlayout.widget.ConstraintLayout>
   <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/map_buttons_inner_right"
@@ -44,6 +29,24 @@
     android:clipToPadding="false"
     android:padding="@dimen/nav_frame_padding"
     app:layout_constraintEnd_toEndOf="parent">
+
+    <include
+        layout="@layout/map_buttons_bookmarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/zoom_buttons_margin"
+        app:layout_constraintBottom_toTopOf="@+id/zoom_buttons_container"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <include
+        layout="@layout/map_buttons_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_half"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bookmarks"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <include
       layout="@layout/map_buttons_zoom"
       android:layout_width="wrap_content"
