@@ -1,5 +1,4 @@
-#include "qt/place_page_dialog_common.hpp"
-#include "qt/place_page_dialog_user.hpp"
+#include "qt/place_panel.hpp"
 
 #include "qt/qt_common/text_dialog.hpp"
 
@@ -8,19 +7,20 @@
 #include "platform/settings.hpp"
 
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QDialog>
 
 #include <sstream>
 #include <string>
 
 namespace
 {
-static int constexpr kMaxLengthOfPlacePageDescription = 500;
-static int constexpr kMinWidthOfShortDescription = 390;
+constexpr int kMaximumPanelWidthPixels = 390;
+constexpr int kMinimumPanelWidthPixels = 200;
+constexpr int kMaxLengthOfPlacePageDescription = 500;
 
 std::string getShortDescription(const std::string & description)
 {
@@ -58,13 +58,68 @@ public:
   }
 };
 
-PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info const & info,
-                                         search::ReverseGeocoder::Address const & address)
-  : QDialog(parent)
+void PlacePanel::addCommonButtons(QDialogButtonBox * dbb, place_page::Info const & info)
+{
+  dbb->setCenterButtons(true);
+
+  QPushButton * fromButton = new QPushButton("From");
+  fromButton->setIcon(QIcon(":/navig64/point-start.png"));
+  fromButton->setAutoDefault(false);
+  connect(fromButton, &QAbstractButton::clicked, this, [this, info](){ routeFrom(info); });
+  dbb->addButton(fromButton, QDialogButtonBox::ActionRole);
+
+  QPushButton * addStopButton = new QPushButton("Stop");
+  addStopButton->setIcon(QIcon(":/navig64/point-intermediate.png"));
+  addStopButton->setAutoDefault(false);
+  connect(addStopButton, &QAbstractButton::clicked, this, [this, info](){ addStop(info); });
+  dbb->addButton(addStopButton, QDialogButtonBox::ActionRole);
+
+  QPushButton * routeToButton = new QPushButton("To");
+  routeToButton->setIcon(QIcon(":/navig64/point-finish.png"));
+  routeToButton->setAutoDefault(false);
+  connect(routeToButton, &QAbstractButton::clicked, this, [this, info](){ routeTo(info); });
+  dbb->addButton(routeToButton, QDialogButtonBox::ActionRole);
+
+  if (info.ShouldShowEditPlace())
+  {
+    QPushButton * editButton = new QPushButton("Edit Place");
+    connect(editButton, &QAbstractButton::clicked, this, [this, info](){ editPlace(info); });
+    dbb->addButton(editButton, QDialogButtonBox::AcceptRole);
+  }
+}
+
+PlacePanel::PlacePanel(QWidget * parent)
+  : QWidget(parent)
+{
+  setMaximumWidth(kMaximumPanelWidthPixels);
+  setMinimumWidth(kMinimumPanelWidthPixels);
+}
+
+void PlacePanel::setPlace(place_page::Info const & info, search::ReverseGeocoder::Address const & address)
+{
+  bool developerMode;
+  if (settings::Get(settings::kDeveloperMode, developerMode) && developerMode)
+    updateInterfaceDeveloper(info, address);
+  else
+    updateInterfaceUser(info, address);
+}
+
+void PlacePanel::updateInterfaceUser(place_page::Info const & info, search::ReverseGeocoder::Address const & address)
 {
   auto const & title = info.GetTitle();
 
+  DeleteExistingLayout();
+
   QVBoxLayout * layout = new QVBoxLayout();
+
+  QScrollArea * scrollArea = new QScrollArea();
+  scrollArea->setWidgetResizable(true);
+  scrollArea->setFrameShape(QFrame::NoFrame);
+
+  QWidget *containerWidget = new QWidget();
+  QVBoxLayout * innerLayout = new QVBoxLayout(containerWidget);
+  containerWidget->setLayout(innerLayout);
+
   {
     QVBoxLayout * header = new QVBoxLayout();
 
@@ -89,12 +144,12 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
       header->addWidget(addressLabel);
     }
 
-    layout->addLayout(header);
+    innerLayout->addLayout(header);
   }
 
   {
     QHLine * line = new QHLine();
-    layout->addWidget(line);
+    innerLayout->addWidget(line);
   }
 
   {
@@ -249,24 +304,168 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
     data->setColumnStretch(0, 0);
     data->setColumnStretch(1, 1);
 
-    layout->addLayout(data);
+    innerLayout->addLayout(data);
   }
 
-  layout->addStretch(); 
+  innerLayout->addStretch(); 
 
   {
     QHLine * line = new QHLine();
-    layout->addWidget(line);
+    innerLayout->addWidget(line);
   }
+
+  scrollArea->setWidget(containerWidget);
+
+  layout->addWidget(scrollArea);
 
   {
     QDialogButtonBox * dbb = new QDialogButtonBox();
-    place_page_dialog::addCommonButtons(this, dbb, info.ShouldShowEditPlace());
+    addCommonButtons(dbb, info);
     layout->addWidget(dbb, Qt::AlignCenter);
   }
 
   setLayout(layout);
+}
 
-  auto const ppTitle = std::string("Place Page") + (info.IsBookmark() ? " (bookmarked)" : "");
-  setWindowTitle(ppTitle.c_str());
+void PlacePanel::updateInterfaceDeveloper(place_page::Info const & info,
+                                          search::ReverseGeocoder::Address const & address)
+{
+  DeleteExistingLayout();
+
+  QVBoxLayout * layout = new QVBoxLayout();
+
+  QScrollArea * scrollArea = new QScrollArea();
+  scrollArea->setWidgetResizable(true);
+  scrollArea->setFrameShape(QFrame::NoFrame);
+  
+  QWidget *containerWidget = new QWidget();
+  QGridLayout * grid = new QGridLayout(containerWidget);
+  containerWidget->setLayout(grid);
+
+  int row = 0;
+
+  auto const addEntry = [grid, &row](std::string const & key, std::string const & value, bool isLink = false)
+  {
+    grid->addWidget(new QLabel(QString::fromStdString(key)), row, 0);
+    QLabel * label = new QLabel(QString::fromStdString(value));
+    label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    label->setWordWrap(true);
+    if (isLink)
+    {
+      label->setOpenExternalLinks(true);
+      label->setTextInteractionFlags(Qt::TextBrowserInteraction);
+      label->setText(QString::fromStdString("<a href=\"" + value + "\">" + value + "</a>"));
+    }
+    grid->addWidget(label, row++, 1);
+    return label;
+  };
+
+  {
+    ms::LatLon const ll = info.GetLatLon();
+    addEntry("lat, lon", strings::to_string_dac(ll.m_lat, 7) + ", " + strings::to_string_dac(ll.m_lon, 7));
+  }
+
+  addEntry("CountryId", info.GetCountryId());
+
+  auto const & title = info.GetTitle();
+  if (!title.empty())
+    addEntry("Title", title);
+
+  if (auto const & subTitle = info.GetSubtitle(); !subTitle.empty())
+    addEntry("Subtitle", subTitle);
+
+  addEntry("Address", address.FormatAddress());
+
+  if (info.IsBookmark())
+  {
+    grid->addWidget(new QLabel("Bookmark"), row, 0);
+    grid->addWidget(new QLabel("Yes"), row++, 1);
+  }
+
+  if (info.IsMyPosition())
+  {
+    grid->addWidget(new QLabel("MyPosition"), row, 0);
+    grid->addWidget(new QLabel("Yes"), row++, 1);
+  }
+
+  if (info.HasApiUrl())
+  {
+    grid->addWidget(new QLabel("Api URL"), row, 0);
+    grid->addWidget(new QLabel(QString::fromStdString(info.GetApiUrl())), row++, 1);
+  }
+
+  if (info.IsFeature())
+  {
+    addEntry("Feature ID", DebugPrint(info.GetID()));
+    addEntry("Raw Types", DebugPrint(info.GetTypes()));
+  }
+
+  auto const layer = info.GetLayer();
+  if (layer != feature::LAYER_EMPTY)
+    addEntry("Layer", std::to_string(layer));
+
+  using PropID = osm::MapObject::MetadataID;
+
+  if (auto cuisines = info.FormatCuisines(); !cuisines.empty())
+    addEntry(DebugPrint(PropID::FMD_CUISINE), cuisines);
+
+  QDialogButtonBox * dbb = new QDialogButtonBox();
+  addCommonButtons(dbb, info);
+
+  if (auto const & descr = info.GetWikiDescription(); !descr.empty())
+  {
+    QPushButton * wikiButton = new QPushButton("Wiki");
+    connect(wikiButton, &QAbstractButton::clicked, this, [this, descr, title]()
+    {
+      auto textDialog = TextDialog(this, QString::fromStdString(descr), QString::fromStdString("Wikipedia: " + title));
+      textDialog.exec();
+    });
+    dbb->addButton(wikiButton, QDialogButtonBox::ActionRole);
+  }
+
+  info.ForEachMetadataReadable([&addEntry](PropID id, std::string const & value)
+  {
+    bool isLink = false;
+    switch (id)
+    {
+    case PropID::FMD_EMAIL:
+    case PropID::FMD_WEBSITE:
+    case PropID::FMD_CONTACT_FACEBOOK:
+    case PropID::FMD_CONTACT_INSTAGRAM:
+    case PropID::FMD_CONTACT_TWITTER:
+    case PropID::FMD_CONTACT_VK:
+    case PropID::FMD_CONTACT_LINE:
+    case PropID::FMD_WIKIPEDIA:
+    case PropID::FMD_WIKIMEDIA_COMMONS:
+      isLink = true;
+      break;
+    default:
+      break;
+    }
+
+    addEntry(DebugPrint(id), value, isLink);
+  });
+
+  // Stretch last row, to make grid appear at the top of the panel.
+  grid->setRowStretch(row, 1);
+  // Stretch 2nd column
+  grid->setColumnStretch(1, 1);
+
+  scrollArea->setWidget(containerWidget);
+
+  layout->addWidget(scrollArea);
+
+  layout->addWidget(dbb);
+
+  setLayout(layout);
+}
+
+void PlacePanel::DeleteExistingLayout()
+{
+  if (this->layout() != nullptr)
+  {
+    // Delete layout, and all sub-layouts and children widgets.
+    // https://stackoverflow.com/questions/7528680/how-to-delete-an-already-existing-layout-on-a-widget
+    QWidget().setLayout(this->layout());
+  }
 }

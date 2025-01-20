@@ -2,9 +2,7 @@
 
 #include "qt/create_feature_dialog.hpp"
 #include "qt/editor_dialog.hpp"
-#include "qt/place_page_dialog_common.hpp"
-#include "qt/place_page_dialog_developer.hpp"
-#include "qt/place_page_dialog_user.hpp"
+#include "qt/place_panel.hpp"
 #include "qt/qt_common/helpers.hpp"
 #include "qt/routing_settings_dialog.hpp"
 #include "qt/screenshoter.hpp"
@@ -95,15 +93,21 @@ df::TouchEvent::ETouchType qtTouchEventTypeToDfTouchEventType(QEvent::Type qEven
 }  // namespace
 
 DrawWidget::DrawWidget(Framework & framework, std::unique_ptr<ScreenshotParams> && screenshotParams,
-                       QWidget * parent)
+                       PlacePanel * placePanel, QWidget * parent)
   : TBase(framework, screenshotParams != nullptr, parent)
   , m_rubberBand(nullptr)
   , m_emulatingLocation(false)
+  , m_placePanel(placePanel)
 {
   setFocusPolicy(Qt::StrongFocus);
 
   m_framework.SetPlacePageListeners([this]() { ShowPlacePage(); },
                                     {} /* onClose */, {} /* onUpdate */, {} /*onSwitchFullScreen */);
+  
+  connect(m_placePanel, &PlacePanel::routeFrom, this, &DrawWidget::OnRouteFrom);
+  connect(m_placePanel, &PlacePanel::addStop, this, &DrawWidget::OnAddStop);
+  connect(m_placePanel, &PlacePanel::routeTo, this, &DrawWidget::OnRouteTo);
+  connect(m_placePanel, &PlacePanel::editPlace, this, &DrawWidget::OnEditPlace);
 
   auto & routingManager = m_framework.GetRoutingManager();
 
@@ -686,8 +690,11 @@ void DrawWidget::OnRouteRecommendation(RoutingManager::Recommendation recommenda
   }
 }
 
-void DrawWidget::ShowPlacePage()
+void DrawWidget::UpdatePlace()
 {
+  if (!m_framework.HasPlacePageInfo())
+    return;
+
   place_page::Info const & info = m_framework.GetCurrentPlacePageInfo();
   search::ReverseGeocoder::Address address;
   if (info.IsFeature())
@@ -700,59 +707,59 @@ void DrawWidget::ShowPlacePage()
     address = m_framework.GetAddressAtPoint(info.GetMercator());
   }
 
-  std::unique_ptr<QDialog> placePageDialog = nullptr;
-  bool developerMode;
-  if (settings::Get(settings::kDeveloperMode, developerMode) && developerMode)
-    placePageDialog = std::make_unique<PlacePageDialogDeveloper>(this, info, address);
-  else
-    placePageDialog = std::make_unique<PlacePageDialogUser>(this, info, address);
+  m_placePanel->setPlace(info, address);
+}
 
-  switch (placePageDialog->exec())
+void DrawWidget::ShowPlacePage()
+{
+  UpdatePlace();
+  m_placePanel->showPlace();
+}
+
+void DrawWidget::HidePlacePage()
+{
+  m_placePanel->hidePlace();
+}
+
+void DrawWidget::OnRouteFrom(place_page::Info const & info)
+{
+  SetRoutePointAddMode(RouteMarkType::Start);
+  SubmitRoutingPoint(info.GetMercator(), true);
+}
+
+void DrawWidget::OnAddStop(place_page::Info const & info)
+{
+  SetRoutePointAddMode(RouteMarkType::Intermediate);
+  SubmitRoutingPoint(info.GetMercator(), true);
+}
+
+void DrawWidget::OnRouteTo(place_page::Info const & info)
+{
+  SetRoutePointAddMode(RouteMarkType::Finish);
+  SubmitRoutingPoint(info.GetMercator(), true);
+}
+
+void DrawWidget::OnEditPlace(place_page::Info const & info)
+{
+  osm::EditableMapObject emo;
+  if (m_framework.GetEditableMapObject(info.GetID(), emo))
   {
-  case place_page_dialog::EditPlace:
-  {
-    osm::EditableMapObject emo;
-    if (m_framework.GetEditableMapObject(info.GetID(), emo))
+    EditorDialog dlg(this, emo);
+    int const result = dlg.exec();
+    if (result == QDialog::Accepted)
     {
-      EditorDialog dlg(this, emo);
-      int const result = dlg.exec();
-      if (result == QDialog::Accepted)
-      {
-        m_framework.SaveEditedMapObject(emo);
-        m_framework.UpdatePlacePageInfoForCurrentSelection();
-      }
-      else if (result == QDialogButtonBox::DestructiveRole)
-      {
-        m_framework.DeleteFeature(info.GetID());
-      }
+      m_framework.SaveEditedMapObject(emo);
+      m_framework.UpdatePlacePageInfoForCurrentSelection();
     }
-    else
+    else if (result == QDialogButtonBox::DestructiveRole)
     {
-      LOG(LERROR, ("Error while trying to edit feature."));
+      m_framework.DeleteFeature(info.GetID());
     }
   }
-  break;
-  case place_page_dialog::RouteFrom:
+  else
   {
-    SetRoutePointAddMode(RouteMarkType::Start);
-    SubmitRoutingPoint(info.GetMercator(), true);
+    LOG(LERROR, ("Error while trying to edit feature."));
   }
-  break;
-  case place_page_dialog::AddStop:
-  {
-    SetRoutePointAddMode(RouteMarkType::Intermediate);
-    SubmitRoutingPoint(info.GetMercator(), true);
-  }
-  break;
-  case place_page_dialog::RouteTo:
-  {
-    SetRoutePointAddMode(RouteMarkType::Finish);
-    SubmitRoutingPoint(info.GetMercator(), true);
-  }
-  break;
-  default: break;
-  }
-  m_framework.DeactivateMapSelection();
 }
 
 void DrawWidget::SetRuler(bool enabled)
