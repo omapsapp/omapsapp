@@ -604,6 +604,8 @@ private:
 
   /// This function can be used for enabling some experimental features for routing.
   bool ParseRoutingDebugCommand(search::SearchParams const & params);
+    
+  bool ParseAllTypesDebugCommand(search::SearchParams const & params);
 
   void FillFeatureInfo(FeatureID const & fid, place_page::Info & info) const;
   /// @param customTitle, if not empty, overrides any other calculated name.

@@ -65,3 +65,8 @@ All the following commands require an app restart:
 ## GPS
 
 - `?gpstrackaccuracy:XXX`: Changes the accuracy of the GPS while recording tracks. Replace `XXX` by the desired horizontal accuracy. Works only on iOS for now.
+
+## Place Page
+
+- `?all-types`: Shows all internal types in place page
+- `?no-all-types`: Disables showing all internal types in place page
