@@ -448,14 +448,16 @@
     <service
         android:name="app.organicmaps.car.CarAppService"
         android:exported="true"
-        android:foregroundServiceType="specialUse"
         tools:ignore="ExportedService">
       <intent-filter>
         <action android:name="androidx.car.app.CarAppService" />
         <category android:name="androidx.car.app.category.NAVIGATION" />
       </intent-filter>
-      <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-          android:value="@string/android_auto_fgs_explanation_for_special_use"/>
+      <intent-filter>
+        <action android:name="androidx.car.app.action.NAVIGATE" />
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:scheme="geo" />
+      </intent-filter>
     </service>
 
     <service
