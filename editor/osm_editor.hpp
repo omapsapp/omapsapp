@@ -8,6 +8,7 @@
 #include "editor/xml_feature.hpp"
 
 #include "indexer/editable_map_object.hpp"
+#include "indexer/edit_journal.hpp"
 #include "indexer/feature.hpp"
 #include "indexer/feature_source.hpp"
 #include "indexer/mwm_set.hpp"
@@ -131,6 +132,9 @@ public:
   /// @returns empty object if feature wasn't edited.
   std::optional<osm::EditableMapObject> GetEditedFeature(FeatureID const & fid) const;
 
+  /// @returns empty object if feature wasn't edited.
+  std::optional<osm::EditJournal> GetEditedFeatureJournal(FeatureID const & fid) const;
+
   /// @returns false if feature wasn't edited.
   /// @param outFeatureStreet is valid only if true was returned.
   bool GetEditedFeatureStreet(FeatureID const & fid, std::string & outFeatureStreet) const;
@@ -234,6 +238,8 @@ private:
   static FeatureStatus GetFeatureStatusImpl(FeaturesContainer const & features, MwmId const & mwmId, uint32_t index);
 
   static bool IsFeatureUploadedImpl(FeaturesContainer const & features, MwmId const & mwmId, uint32_t index);
+
+  void UpdateXMLFeatureTags(editor::XMLFeature & feature, std::list<JournalEntry> const & journal);
 
   /// Deleted, edited and created features.
   base::AtomicSharedPtr<FeaturesContainer> m_features;

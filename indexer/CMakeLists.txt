@@ -51,6 +51,8 @@ set(SRC
   drules_selector_parser.hpp
   drules_struct.pb.cc
   drules_struct.pb.h
+  edit_journal.cpp
+  edit_journal.hpp
   editable_map_object.cpp
   editable_map_object.hpp
   fake_feature_ids.cpp

@@ -109,6 +109,9 @@ public:
   /// @returns nullptr if langCode is invalid.
   static std::vector<std::string_view> const * GetTransliteratorsIdsByCode(int8_t langCode);
 
+  static std::string GetOSMTagByCode(uint8_t const langCode);
+  static uint8_t GetCodeByOSMTag(std::string const & name);
+
   inline bool operator==(StringUtf8Multilang const & rhs) const { return m_s == rhs.m_s; }
   inline bool operator!=(StringUtf8Multilang const & rhs) const { return !(*this == rhs); }
 
