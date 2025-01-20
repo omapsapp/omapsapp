@@ -58,4 +58,7 @@ public class Language
 
   @NonNull
   public static native String nativeNormalize(@NonNull String locale);
+
+  @NonNull
+  public static native void nativeRefreshSystemLocale();
 }

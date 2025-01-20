@@ -1,6 +1,7 @@
 #include "qt/ruler.hpp"
 
 #include "geometry/mercator.hpp"
+#include "platform/distance.hpp"
 
 #include <iomanip>
 #include <string>
@@ -52,13 +53,6 @@ void Ruler::SetDistance()
 
 void Ruler::SetId()
 {
-  std::ostringstream curValStream;
-  curValStream << std::fixed << std::setprecision(1);
-  if (m_sumDistanceM >= 1000.0)
-    curValStream << m_sumDistanceM / 1000.0 << " km";
-  else
-    curValStream << m_sumDistanceM << " m";
-
-  m_id = curValStream.str();
+  m_id = platform::Distance::CreateFormatted(m_sumDistanceM).ToString();
 }
 }  // namespace qt

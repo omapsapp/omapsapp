@@ -64,5 +64,9 @@ std::string OSMDistanceToMetersString(std::string const & osmRawValue,
                                       bool supportZeroAndNegativeValues = true,
                                       int digitsAfterComma = 2);
 std::string ToStringPrecision(double d, int pr);
-std::string ToStringPrecisionLocale(platform::Locale const & locale, double d, int pr);
+std::string ToStringPrecisionLocale(platform::Locale const & loc, double d, int pr);
+
+void SetSystemLocale(platform::Locale const & locale);
+void RefreshSystemLocale();
+
 }  // namespace measurement_utils

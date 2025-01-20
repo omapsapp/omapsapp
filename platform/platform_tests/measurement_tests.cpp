@@ -181,5 +181,10 @@ UNIT_TEST(ToStringPrecisionLocale)
     TEST_EQUAL(measurement_utils::ToStringPrecisionLocale(loc, d1, pr1), data.d1String, ());
     TEST_EQUAL(measurement_utils::ToStringPrecisionLocale(loc, d2, pr2),
                AddGroupingSeparators(d2String, loc.m_groupingSeparator), ());
+
+    measurement_utils::SetSystemLocale(loc);
+    TEST_EQUAL(measurement_utils::ToStringPrecision(d1, pr1), data.d1String, ());
+    TEST_EQUAL(measurement_utils::ToStringPrecision(d2, pr2),
+               AddGroupingSeparators(d2String, loc.m_groupingSeparator), ());
   }
 }

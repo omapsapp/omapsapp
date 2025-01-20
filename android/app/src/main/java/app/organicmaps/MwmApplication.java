@@ -4,7 +4,10 @@ import static app.organicmaps.location.LocationState.LOCATION_TAG;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -38,6 +41,7 @@ import app.organicmaps.settings.StoragePathManager;
 import app.organicmaps.sound.TtsPlayer;
 import app.organicmaps.util.Config;
 import app.organicmaps.util.ConnectionState;
+import app.organicmaps.util.Language;
 import app.organicmaps.util.SharedPropertiesUtils;
 import app.organicmaps.util.StorageUtils;
 import app.organicmaps.util.ThemeSwitcher;
@@ -83,6 +87,8 @@ public class MwmApplication extends Application implements Application.ActivityL
 
   @Nullable
   private WeakReference<Activity> mTopActivity;
+
+  private BroadcastReceiver mLocaleChangeReceiver;
 
   @UiThread
   @Nullable
@@ -207,6 +213,22 @@ public class MwmApplication extends Application implements Application.ActivityL
                        app.organicmaps.BuildConfig.BUILD_TYPE, UiUtils.isTablet(this));
     Config.setStoragePath(writablePath);
     Config.setStatisticsEnabled(SharedPropertiesUtils.isStatisticsEnabled(this));
+
+    // Force native system locale initialization at app start-up.
+    Language.nativeRefreshSystemLocale();
+
+    // Setup BroadcastReceiver to receive changes of system locale.
+    mLocaleChangeReceiver = new BroadcastReceiver()
+    {
+      @Override
+      public void onReceive(Context context, Intent intent)
+      {
+        // Refresh the native c++ system locale.
+        Language.nativeRefreshSystemLocale();
+      }
+    };
+
+    registerReceiver(mLocaleChangeReceiver, new IntentFilter(Intent.ACTION_LOCALE_CHANGED));
 
     mPlatformInitialized = true;
     Logger.i(TAG, "Platform initialized");

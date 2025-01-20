@@ -18,12 +18,29 @@
 
 namespace measurement_utils
 {
+// Global Locale variable to store system locale.
+static platform::Locale g_systemLocale =
+{
+  "",  // Undefined language.
+  "",  // Undefined country.
+  "",  // Undefined currency.
+  ".", // Dot as default decimal separator.
+  ","  // Comma as default grouping (thousands) separator.
+};
+
+void SetSystemLocale(platform::Locale const & locale)
+{
+  g_systemLocale = locale;
+}
+
+void RefreshSystemLocale()
+{
+  SetSystemLocale(platform::GetCurrentLocale());
+}
+
 std::string ToStringPrecision(double d, int pr)
 {
-  // We assume that the app will be restarted if a user changes device's locale.
-  static auto const locale = platform::GetCurrentLocale();
-
-  return ToStringPrecisionLocale(locale, d, pr);
+  return ToStringPrecisionLocale(g_systemLocale, d, pr);
 }
 
 std::string ToStringPrecisionLocale(platform::Locale const & loc, double d, int pr)
