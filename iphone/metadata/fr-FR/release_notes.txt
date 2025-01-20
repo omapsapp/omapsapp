@@ -1,20 +1,20 @@
-• New OpenStreetMap data as of January 8
-• Tap tracks to display statistics and an interactive elevation profile
-• A standalone Track Recording button
-• Track Recording Live Activity Widget with track statistics (iOS16.2 and later)
-• Added Serbian (Cyrillic) and Latvian languages
-• Added tower POIs
+• Nouvelles données OpenStreetMap du 8 janvier
+• Appuyez sur les pistes pour afficher des statistiques et un profil d'altitude interactif
+• Un bouton d'enregistrement de piste autonome
+• Widget d'activité en direct d'enregistrement de piste avec statistiques de piste (iOS 16.2 et versions ultérieures)
+• Ajout des langues serbe (cyrillique) et lettone
+• Ajout de POI de tour
 
-• Added specific icons for Hong Kong, Shenzhen metro and Berlin light rail, a separate monorail icon
-• Added a context menu to the coordinates button in POI details
-• Show a reminder popup every time a full screen mode is entered
-• Display an explanation when the OSM Editor category search returns nothing
-• Differentiate between grass and grassland/meadow colors
-• Less saturated/prominent residential gardens color
-• Fixed yellow road shields displayed as green in the night mode
-• Display vegetation fills earlier in the car navigation style
-• Display complex non-number levels for building POIs
-• Improve search for peaks and saddles/passes
-• EN as additional search language in the OSM Editor
-• Update Estonian, Finnish, German, Italian, Turkish translations
-• ...many more bug fixes and UI improvements
+• Ajout d'icônes spécifiques pour le métro de Hong Kong, de Shenzhen et le métro léger de Berlin, ainsi qu'une icône de monorail distincte
+• Ajout d'un menu contextuel au bouton de coordonnées dans les détails du POI
+• Afficher une fenêtre contextuelle de rappel à chaque fois que le mode plein écran est activé
+• Afficher une explication lorsque la recherche de catégorie de l'éditeur OSM ne renvoie rien
+• Faire la différence entre les couleurs de l’herbe et celles des prairies
+• Couleur des jardins résidentiels moins saturée/proéminente
+• Correction des panneaux routiers jaunes affichés en vert en mode nuit
+• Afficher les remplissages de végétation plus tôt dans le style de navigation automobile
+• Afficher des niveaux complexes non numériques pour la création de POI
+• Améliorer la recherche de sommets et de cols
+• EN comme langue de recherche supplémentaire dans l'éditeur OSM
+• Mettre à jour les traductions en estonien, finnois, allemand, italien et turc
+• ... de nombreuses autres corrections de bugs et améliorations de l'interface utilisateur

@@ -1,8 +1,8 @@
-• New OpenStreetMap data as of January 8
-• Dispay a speed limit sign in the navigation mode
-• Added Serbian (Cyrillic) and Latvian languages
-• Android Auto: sort bookmarks, improved location permission request experience
-• Added tower POIs
-• Added a setting for Kayak.com Hotel Links and a first-use opt-out option
+• Новые данные OpenStreetMap от 8 января
+• Отображение ограничения скорости в режиме навигации
+• Android Auto: сортировка меток, улучшены запросы на разрешение местоположения
+• На карту добавлены башни
+• Добавлена ​​настройка для отключения ссылок на отели с Kayak.com и возможность отказа при первом использовании
+• Добавлены сербский (кириллица) и латышский языки
 
-…more details at omaps.org/news
+…и многое другое на omaps.org/news

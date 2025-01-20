@@ -1,20 +1,20 @@
-• New OpenStreetMap data as of January 8
-• Tap tracks to display statistics and an interactive elevation profile
-• A standalone Track Recording button
-• Track Recording Live Activity Widget with track statistics (iOS16.2 and later)
-• Added Serbian (Cyrillic) and Latvian languages
-• Added tower POIs
+• Новые данные OpenStreetMap от 8 января
+• Выбор треков касанием на карте для отображения статистики и интерактивного высотного профиля
+• Отдельная кнопка записываемого трека
+• Виджет с актуальной статистикой записываемого трека (iOS16.2 и позднее)
+• Добавлены сербский (кириллица) и латышский языки
+• На карту добавлены башни
 
-• Added specific icons for Hong Kong, Shenzhen metro and Berlin light rail, a separate monorail icon
-• Added a context menu to the coordinates button in POI details
-• Show a reminder popup every time a full screen mode is entered
-• Display an explanation when the OSM Editor category search returns nothing
-• Differentiate between grass and grassland/meadow colors
-• Less saturated/prominent residential gardens color
-• Fixed yellow road shields displayed as green in the night mode
-• Display vegetation fills earlier in the car navigation style
-• Display complex non-number levels for building POIs
-• Improve search for peaks and saddles/passes
-• EN as additional search language in the OSM Editor
-• Update Estonian, Finnish, German, Italian, Turkish translations
-• ...many more bug fixes and UI improvements
+• Иконки, специфичные для метро Гонконга, Шеньженя и электричек Берлина, отдельная иконка для монорельсовых станций
+• Добавлено контекстное меню для кнопки с координатами выбранного объекта
+• При переходе в полноэкранный режим (длинное нажатие на карту) всегда показывается всплывающая подсказка
+• Если поиск по категориям в редакторе OSM не выдал ничего, то выводится пояснение (вместо списка всех категорий)
+• Для лугов/пастбищ установлены цвета, немного отличные от цвета травы
+• Менее насыщенный/заметный цвет для частных садов
+• Исправлено отображение жёлтых дорожные маркеры в ночном режиме (показывались зелёным цветом)
+• Во время автомобильной навигации цвета некоторых видов растительности теперь отображаются на меньшем увеличении 
+• Для этажности выбранных объектов также отображаются нечисловые значения (2Б, 1/2 и т.д.)
+• Улучшен поиск горных вершин и седловин/перевалов
+• Английский теперь всегда используется как дополнительный язык поиска в редакторе OSM
+• Обновлены переводы на эстонский, финский, немецкий, итальянский, турецкий языки
+• ...много других исправлений ошибок и улучшений пользовательского интерфейса

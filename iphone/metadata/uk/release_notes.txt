@@ -1,20 +1,20 @@
-• New OpenStreetMap data as of January 8
-• Tap tracks to display statistics and an interactive elevation profile
-• A standalone Track Recording button
-• Track Recording Live Activity Widget with track statistics (iOS16.2 and later)
-• Added Serbian (Cyrillic) and Latvian languages
-• Added tower POIs
+• Нові дані OpenStreetMap від 8 січня
+• Натисніть на трек, щоб побачити статистику та графік рельєфу
+• Окрема кнопка для запису треків
+• Абсолютно новій віджет із статистикою в реальномі часі (для iOS16.2 та піздніше)
+• Додано переклади сербською (кирилиця) та латиською мовами
+• Вежі відображаються на мапі
 
-• Added specific icons for Hong Kong, Shenzhen metro and Berlin light rail, a separate monorail icon
-• Added a context menu to the coordinates button in POI details
-• Show a reminder popup every time a full screen mode is entered
-• Display an explanation when the OSM Editor category search returns nothing
-• Differentiate between grass and grassland/meadow colors
-• Less saturated/prominent residential gardens color
-• Fixed yellow road shields displayed as green in the night mode
-• Display vegetation fills earlier in the car navigation style
-• Display complex non-number levels for building POIs
-• Improve search for peaks and saddles/passes
-• EN as additional search language in the OSM Editor
-• Update Estonian, Finnish, German, Italian, Turkish translations
-• ...many more bug fixes and UI improvements
+• Додано спеціальні іконки для метро в Гонконгу й Шеньчжені та для трамвайних ліній в Берліні
+• Кнопка з координатами отримала контексне меню в панені інформації для POI
+• Кожного разу при переході до повноекранного режиму відображається вспливаюча підказка
+• Додадкове пояснення для випадку відсутньої категорії в редакторі
+• Різні кольори для газонів та лугів
+• Меньш насичений колір для присадибних ділянок
+• Жовті щитки для доріг більше не відображаються зеленим кольором в нічному режимі
+• Ділянки з рослинами відображаються раніше в режимі автомобільної навігації 
+• Підтримка складних нецифрових номерів поверхів для POI
+• Покращено пошук для гірських вершин та сідловин
+• В OSM редакторі додано пошук англійською
+• Оновлення перекладів естонською, фінською, німецькою, італійською та турецькою мовами
+• ...та ще багано виправлень та покращень

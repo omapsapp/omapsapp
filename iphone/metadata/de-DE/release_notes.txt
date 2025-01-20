@@ -1,20 +1,20 @@
-• New OpenStreetMap data as of January 8
-• Tap tracks to display statistics and an interactive elevation profile
-• A standalone Track Recording button
-• Track Recording Live Activity Widget with track statistics (iOS16.2 and later)
-• Added Serbian (Cyrillic) and Latvian languages
-• Added tower POIs
+• Neue OpenStreetMap-Daten vom 8. Januar
+• Tippen Sie auf Tracks, um Statistiken und ein interaktives Höhenprofil anzuzeigen
+• Eine eigenständige Schaltfläche zur Trackaufzeichnung
+• Track-Aufzeichnung – Live-Aktivitäts-Widget mit Track-Statistiken (iOS 16.2 und höher)
+• Serbische (Kyrillisch) und Lettische Sprachen hinzugefügt
+• Turm-POIs hinzugefügt
 
-• Added specific icons for Hong Kong, Shenzhen metro and Berlin light rail, a separate monorail icon
-• Added a context menu to the coordinates button in POI details
-• Show a reminder popup every time a full screen mode is entered
-• Display an explanation when the OSM Editor category search returns nothing
-• Differentiate between grass and grassland/meadow colors
-• Less saturated/prominent residential gardens color
-• Fixed yellow road shields displayed as green in the night mode
-• Display vegetation fills earlier in the car navigation style
-• Display complex non-number levels for building POIs
-• Improve search for peaks and saddles/passes
-• EN as additional search language in the OSM Editor
-• Update Estonian, Finnish, German, Italian, Turkish translations
-• ...many more bug fixes and UI improvements
+• Spezielle Symbole für die U-Bahnen Hongkong und Shenzhen sowie die Stadtbahn Berlin hinzugefügt, ein separates Monorail-Symbol
+• Dem Koordinaten-Button in den POI-Details wurde ein Kontextmenü hinzugefügt
+• Bei jedem Wechsel in den Vollbildmodus ein Erinnerungs-Popup anzeigen
+• Eine Erklärung anzeigen, wenn die Kategoriesuche im OSM-Editor nichts ergibt
+• Unterscheiden Sie zwischen Gras- und Grünland-/Wiesenfarben
+• Weniger gesättigte/auffällige Farbe in Wohngärten
+• Gelbe Straßenschilder wurden korrigiert, sodass sie im Nachtmodus grün angezeigt wurden
+• Vegetationsfüllungen im Autonavigationsstil früher anzeigen
+• Anzeige komplexer Nicht-Zahlenebenen zum Erstellen von POIs
+• Verbesserte Suche nach Gipfeln und Sätteln/Pässen
+• EN als zusätzliche Suchsprache im OSM-Editor
+• Aktualisieren Sie die estnischen, finnischen, deutschen, italienischen und türkischen Übersetzungen
+• ...viele weitere Fehlerbehebungen und UI-Verbesserungen
