@@ -5099,6 +5099,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.organicmaps.debug;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 			};
 			name = Debug;
 		};
@@ -5121,6 +5122,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.organicmaps;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 			};
 			name = Release;
 		};

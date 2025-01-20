@@ -2,7 +2,7 @@
 
 #include "map/api_mark_point.hpp"
 #include "map/bookmark.hpp"
-#include "map/bookmark_manager.hpp"
+//#include "map/bookmark_manager.hpp"
 #include "map/features_fetcher.hpp"
 #include "map/isolines_manager.hpp"
 #include "map/mwm_url.hpp"

@@ -1,0 +1,11 @@
+module map {
+//  header "framework.hpp"
+//  header "bookmark_manager.hpp"
+  header "gps_track_collection.hpp"
+  header "track.hpp"
+  header "bookmark.hpp"
+  header "user_mark.hpp"
+  header "user_mark_layer.hpp"
+  header "elevation_info.hpp"
+  export *
+}

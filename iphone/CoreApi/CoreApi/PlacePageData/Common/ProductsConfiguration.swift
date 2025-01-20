@@ -1,4 +1,5 @@
 import Foundation
+import UIKit.UIGeometry
 
 @objcMembers
 public final class Product: NSObject {

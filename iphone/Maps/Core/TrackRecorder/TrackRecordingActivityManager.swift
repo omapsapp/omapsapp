@@ -1,10 +1,11 @@
 import ActivityKit
+import map
 
 #if canImport(ActivityKit)
 
 protocol TrackRecordingActivityManager {
-  func start(with info: TrackInfo) throws
-  func update(_ info: TrackInfo)
+  func start(with info: GpsTrackInfo) throws
+  func update(_ info: GpsTrackInfo)
   func stop()
 }
 
@@ -22,7 +23,7 @@ final class TrackRecordingLiveActivityManager {
 
 @available(iOS 16.2, *)
 extension TrackRecordingLiveActivityManager: TrackRecordingActivityManager {
-  func start(with info: TrackInfo) throws {
+  func start(with info: GpsTrackInfo) throws {
     guard activity == nil else { return }
     let state = TrackRecordingLiveActivityAttributes.ContentState(trackInfo: info)
     let content = ActivityContent<TrackRecordingLiveActivityAttributes.ContentState>(state: state, staleDate: nil)
@@ -30,7 +31,7 @@ extension TrackRecordingLiveActivityManager: TrackRecordingActivityManager {
     activity = try LiveActivityManager.startActivity(attributes, content: content)
   }
 
-  func update(_ info: TrackInfo) {
+  func update(_ info: GpsTrackInfo) {
     guard let activity else { return }
     let state = TrackRecordingLiveActivityAttributes.ContentState(trackInfo: info)
     let content = ActivityContent<TrackRecordingLiveActivityAttributes.ContentState>(state: state, staleDate: nil)
@@ -47,13 +48,13 @@ extension TrackRecordingLiveActivityManager: TrackRecordingActivityManager {
 // MARK: - Wrap TrackRecordingInfo to TrackRecordingLiveActivityAttributes.ContentState
 
 private extension TrackRecordingLiveActivityAttributes.ContentState {
-  init(trackInfo: TrackInfo) {
-    let distance = DistanceFormatter.distanceString(fromMeters: trackInfo.distance)
-    let duration = DurationFormatter.durationString(from: trackInfo.duration)
-    let maxElevation = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.maxElevation))
-    let minElevation = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.minElevation))
-    let ascent = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.ascent))
-    let descent = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.descent))
+  init(trackInfo: GpsTrackInfo) {
+    let distance = DistanceFormatter.distanceString(fromMeters: trackInfo.m_length)
+    let duration = DurationFormatter.durationString(from: trackInfo.m_duration)
+    let maxElevation = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.m_maxElevation))
+    let minElevation = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.m_minElevation))
+    let ascent = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.m_ascent))
+    let descent = AltitudeFormatter.altitudeString(fromMeters: Double(trackInfo.m_descent))
 
     self.distance = StatisticsViewModel(key: "", value: distance)
     self.duration = StatisticsViewModel(key: "", value: duration)

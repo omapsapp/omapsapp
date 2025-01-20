@@ -1,4 +1,5 @@
 import Foundation
+import CoreLocation.CLLocation
 
 @objcMembers
 public final class DateTimeFormatter: NSObject {

@@ -1,3 +1,7 @@
+import CoreApi
+import map
+import kml
+
 @objc
 enum TrackRecordingState: Int, Equatable {
   case inactive
@@ -13,12 +17,15 @@ enum TrackRecordingError: Error {
   case locationIsProhibited
 }
 
-protocol TrackRecordingObserver: AnyObject {
-  func addObserver(_ observer: AnyObject, recordingIsActiveDidChangeHandler: @escaping TrackRecordingStateHandler)
-  func removeObserver(_ observer: AnyObject)
+protocol TrackRecordingObservable: AnyObject {
+  func addObserver(_ observer: TrackRecordingObserver)
+  func removeObserver(_ observer: TrackRecordingObserver)
 }
 
-typealias TrackRecordingStateHandler = (TrackRecordingState, TrackInfo?) -> Void
+protocol TrackRecordingObserver: AnyObject {
+  func trackRecordingStateDidChange(_ state: TrackRecordingState)
+  func trackRecordingProgressDidChange(_ trackRecordingInfo: GpsTrackInfo)
+}
 
 @objcMembers
 final class TrackRecordingManager: NSObject {
@@ -28,11 +35,6 @@ final class TrackRecordingManager: NSObject {
   private enum SavingOption {
     case withoutSaving
     case saveWithName(String? = nil)
-  }
-
-  fileprivate struct Observation {
-    weak var observer: AnyObject?
-    var recordingStateDidChangeHandler: TrackRecordingStateHandler?
   }
 
   static let shared: TrackRecordingManager = {
@@ -48,8 +50,8 @@ final class TrackRecordingManager: NSObject {
 
   private let trackRecorder: TrackRecorder.Type
   private var activityManager: TrackRecordingActivityManager?
-  private var observations: [Observation] = []
-  private var trackRecordingInfo: TrackInfo?
+  private let listenerContainer = ListenerContainer<TrackRecordingObserver>()
+  private var trackRecordingInfo = GpsTrackInfo()
 
   var recordingState: TrackRecordingState {
     trackRecorder.isTrackRecordingEnabled() ? .active : .inactive
@@ -60,6 +62,8 @@ final class TrackRecordingManager: NSObject {
     self.activityManager = activityManager
     super.init()
     subscribeOnAppLifecycleEvents()
+
+    map.GpsTrackCollection()
   }
 
   // MARK: - Public methods
@@ -77,11 +81,6 @@ final class TrackRecordingManager: NSObject {
     } catch {
       handleError(error)
     }
-  }
-
-  @objc
-  func isActive() -> Bool {
-    recordingState == .active
   }
 
   func processAction(_ action: TrackRecordingAction, completion: (CompletionHandler)? = nil) {
@@ -113,7 +112,7 @@ final class TrackRecordingManager: NSObject {
   private func willResignActive() {
     guard let activityManager, recordingState == .active else { return }
     do {
-      try activityManager.start(with: trackRecordingInfo ?? .empty())
+      try activityManager.start(with: trackRecordingInfo)
     } catch {
       handleError(error)
     }
@@ -135,14 +134,14 @@ final class TrackRecordingManager: NSObject {
     trackRecorder.setTrackRecordingUpdateHandler { [weak self] info in
       guard let self else { return }
       self.trackRecordingInfo = info
-      self.notifyObservers()
       self.activityManager?.update(info)
+      self.listenerContainer.forEach { $0.trackRecordingProgressDidChange(info) }
     }
   }
 
   private func unsubscribeFromTrackRecordingProgressUpdates() {
     trackRecorder.setTrackRecordingUpdateHandler(nil)
-    trackRecordingInfo = nil
+    trackRecordingInfo = GpsTrackInfo()
   }
 
   // MARK: - Handle Start/Stop event and Errors
@@ -154,7 +153,10 @@ final class TrackRecordingManager: NSObject {
       case .inactive:
         subscribeOnTrackRecordingProgressUpdates()
         trackRecorder.startTrackRecording()
-        notifyObservers()
+        listenerContainer.forEach {
+          $0.trackRecordingStateDidChange(self.recordingState)
+          $0.trackRecordingProgressDidChange(self.trackRecordingInfo)
+        }
       case .active:
         break
       }
@@ -188,8 +190,9 @@ final class TrackRecordingManager: NSObject {
     unsubscribeFromTrackRecordingProgressUpdates()
     trackRecorder.stopTrackRecording()
     activityManager?.stop()
-    notifyObservers()
-    
+    listenerContainer.forEach {
+      $0.trackRecordingStateDidChange(self.recordingState)
+    }
     switch savingOption {
     case .withoutSaving:
       break
@@ -222,23 +225,16 @@ final class TrackRecordingManager: NSObject {
   }
 }
 
-// MARK: - TrackRecordingObserver
+// MARK: - TrackRecordingObservable
 
-extension TrackRecordingManager: TrackRecordingObserver {
-  @objc
-  func addObserver(_ observer: AnyObject, recordingIsActiveDidChangeHandler: @escaping TrackRecordingStateHandler) {
-    let observation = Observation(observer: observer, recordingStateDidChangeHandler: recordingIsActiveDidChangeHandler)
-    observations.append(observation)
-    recordingIsActiveDidChangeHandler(recordingState, trackRecordingInfo)
+extension TrackRecordingManager: TrackRecordingObservable {
+  func addObserver(_ observer: TrackRecordingObserver) {
+    listenerContainer.addListener(observer)
+    observer.trackRecordingStateDidChange(recordingState)
+    observer.trackRecordingProgressDidChange(trackRecordingInfo)
   }
 
-  @objc
-  func removeObserver(_ observer: AnyObject) {
-    observations.removeAll { $0.observer === observer }
-  }
-
-  private func notifyObservers() {
-    observations = observations.filter { $0.observer != nil }
-    observations.forEach { $0.recordingStateDidChangeHandler?(recordingState, trackRecordingInfo) }
+  func removeObserver(_ observer: TrackRecordingObserver) {
+    listenerContainer.removeListener(observer)
   }
 }

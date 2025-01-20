@@ -319,10 +319,10 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
   m_stringsBundle.SetDefaultString("postal_code", "Postal Code");
 
   m_featuresFetcher.InitClassificator();
-  m_featuresFetcher.SetOnMapDeregisteredCallback(bind(&Framework::OnMapDeregistered, this, _1));
+  m_featuresFetcher.SetOnMapDeregisteredCallback(std::bind(&Framework::OnMapDeregistered, this, _1));
   LOG(LDEBUG, ("Classificator initialized"));
 
-  m_displayedCategories = make_unique<search::DisplayedCategories>(GetDefaultCategories());
+  m_displayedCategories = std::make_unique<search::DisplayedCategories>(GetDefaultCategories());
 
   // To avoid possible races - init country info getter in constructor.
   InitCountryInfoGetter();
@@ -331,14 +331,14 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
   InitSearchAPI(params.m_numSearchAPIThreads);
   LOG(LDEBUG, ("Search API initialized, part 1"));
 
-  m_bmManager = make_unique<BookmarkManager>(BookmarkManager::Callbacks(
+  m_bmManager = std::make_unique<BookmarkManager>(BookmarkManager::Callbacks(
       [this]() -> StringsBundle const & { return m_stringsBundle; },
       [this]() -> SearchAPI & { return GetSearchAPI(); },
-      [this](vector<BookmarkInfo> const & marks) { GetSearchAPI().OnBookmarksCreated(marks); },
-      [this](vector<BookmarkInfo> const & marks) { GetSearchAPI().OnBookmarksUpdated(marks); },
-      [this](vector<kml::MarkId> const & marks) { GetSearchAPI().OnBookmarksDeleted(marks); },
-      [this](vector<BookmarkGroupInfo> const & marks) { GetSearchAPI().OnBookmarksAttached(marks); },
-      [this](vector<BookmarkGroupInfo> const & marks) { GetSearchAPI().OnBookmarksDetached(marks); }));
+      [this](std::vector<BookmarkInfo> const & marks) { GetSearchAPI().OnBookmarksCreated(marks); },
+      [this](std::vector<BookmarkInfo> const & marks) { GetSearchAPI().OnBookmarksUpdated(marks); },
+      [this](std::vector<kml::MarkId> const & marks) { GetSearchAPI().OnBookmarksDeleted(marks); },
+      [this](std::vector<BookmarkGroupInfo> const & marks) { GetSearchAPI().OnBookmarksAttached(marks); },
+      [this](std::vector<BookmarkGroupInfo> const & marks) { GetSearchAPI().OnBookmarksDetached(marks); }));
 
   m_bmManager->InitRegionAddressGetter(m_featuresFetcher.GetDataSource(), *m_infoGetter);
 

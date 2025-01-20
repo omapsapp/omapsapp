@@ -71,6 +71,7 @@
 		E2DC9C8C25264E0C0098174E /* types_v6.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = types_v6.hpp; sourceTree = "<group>"; };
 		E2DC9C8D25264E0C0098174E /* types_v8.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = types_v8.hpp; sourceTree = "<group>"; };
 		E2DC9C9025264E3E0098174E /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = types.cpp; sourceTree = "<group>"; };
+		EDCA7CC12D29AA9C003366CE /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		FA67C84A26BB365600B33DCA /* libplatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libplatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA67C84C26BB365C00B33DCA /* libbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libbase.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA67C85026BB370C00B33DCA /* libcoding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcoding.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +155,7 @@
 				E2DC9C9025264E3E0098174E /* types.cpp */,
 				45E4559420584ABA00D9F45E /* types.hpp */,
 				45E4559120584ABA00D9F45E /* visitors.hpp */,
+				EDCA7CC12D29AA9C003366CE /* module.modulemap */,
 			);
 			name = kml;
 			path = ../../kml;
