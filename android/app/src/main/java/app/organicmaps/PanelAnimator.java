@@ -11,13 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import app.organicmaps.util.Listeners;
+import org.chromium.base.ObserverList;
+
 import app.organicmaps.util.UiUtils;
 
 class PanelAnimator
 {
   private final MwmActivity mActivity;
-  private final Listeners<MwmActivity.LeftAnimationTrackListener> mAnimationTrackListeners = new Listeners<>();
+  private final ObserverList<MwmActivity.LeftAnimationTrackListener> mAnimationTrackListeners = new ObserverList<>();
+  private final ObserverList.RewindableIterator<MwmActivity.LeftAnimationTrackListener> mAnimationTrackIterator = mAnimationTrackListeners.rewindableIterator();
   private final View mPanel;
   private final int mWidth;
   @IntegerRes
@@ -33,7 +35,7 @@ class PanelAnimator
 
   void registerListener(@NonNull MwmActivity.LeftAnimationTrackListener animationTrackListener)
   {
-    mAnimationTrackListeners.register(animationTrackListener);
+    mAnimationTrackListeners.addObserver(animationTrackListener);
   }
 
   private void track(ValueAnimator animation)
@@ -42,9 +44,9 @@ class PanelAnimator
     mPanel.setTranslationX(offset);
     mPanel.setAlpha(offset / mWidth + 1.0f);
 
-    for (MwmActivity.LeftAnimationTrackListener listener: mAnimationTrackListeners)
-      listener.onTrackLeftAnimation(offset + mWidth);
-    mAnimationTrackListeners.finishIterate();
+    mAnimationTrackIterator.rewind();
+    while (mAnimationTrackIterator.hasNext())
+      mAnimationTrackIterator.next().onTrackLeftAnimation(offset + mWidth);
   }
 
   /** @param completionListener will be called before the fragment becomes actually visible */
@@ -70,9 +72,9 @@ class PanelAnimator
 
     UiUtils.show(mPanel);
 
-    for (MwmActivity.LeftAnimationTrackListener listener: mAnimationTrackListeners)
-      listener.onTrackStarted(false);
-    mAnimationTrackListeners.finishIterate();
+    mAnimationTrackIterator.rewind();
+    while (mAnimationTrackIterator.hasNext())
+      mAnimationTrackIterator.next().onTrackStarted(false);
 
     ValueAnimator animator = ValueAnimator.ofFloat(-mWidth, 0.0f);
     animator.addUpdateListener(this::track);
@@ -81,9 +83,9 @@ class PanelAnimator
       @Override
       public void onAnimationEnd(Animator animation)
       {
-        for (MwmActivity.LeftAnimationTrackListener listener: mAnimationTrackListeners)
-          listener.onTrackStarted(true);
-        mAnimationTrackListeners.finishIterate();
+        mAnimationTrackIterator.rewind();
+        while (mAnimationTrackIterator.hasNext())
+          mAnimationTrackIterator.next().onTrackStarted(true);
       }
     });
 
@@ -101,9 +103,9 @@ class PanelAnimator
       return;
     }
 
-    for (MwmActivity.LeftAnimationTrackListener listener: mAnimationTrackListeners)
-      listener.onTrackStarted(true);
-    mAnimationTrackListeners.finishIterate();
+    mAnimationTrackIterator.rewind();
+    while (mAnimationTrackIterator.hasNext())
+      mAnimationTrackIterator.next().onTrackStarted(true);
 
     ValueAnimator animator = ValueAnimator.ofFloat(0.0f, -mWidth);
     animator.addUpdateListener(this::track);
@@ -114,9 +116,9 @@ class PanelAnimator
       {
         UiUtils.hide(mPanel);
 
-        for (MwmActivity.LeftAnimationTrackListener listener: mAnimationTrackListeners)
-          listener.onTrackStarted(false);
-        mAnimationTrackListeners.finishIterate();
+        mAnimationTrackIterator.rewind();
+        while (mAnimationTrackIterator.hasNext())
+          mAnimationTrackIterator.next().onTrackStarted(false);
 
         if (completionListener != null)
           completionListener.run();
