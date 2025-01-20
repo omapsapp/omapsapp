@@ -265,7 +265,7 @@
 
 "placepage_distance" = "Раздаљина";
 
-"search_show_on_map" = "Погледај на мапи";
+"search_show_on_map" = "Прикажи на мапи";
 
 /* Text in menu */
 "website" = "Веб-сајт";
@@ -310,7 +310,7 @@
 "copyright" = "Copyright";
 
 /* Text in menu + Button in the main Help dialog */
-"report_a_bug" = "Пријави проблем";
+"report_a_bug" = "Пријавите проблем";
 
 /* Button in the About screen */
 "report_incorrect_map_bug" = "Пријавите или поправите нетачне податке на мапи";
@@ -619,7 +619,7 @@
 
 "invalid_username_or_password" = "Неисправно корисничко име или лозинка";
 
-"login" = "Пријави се";
+"login" = "Пријавите се";
 
 "login_osm" = "Пријава на OpenStreetMap";
 
@@ -910,7 +910,7 @@
 
 "traffic_update_maps_text" = "Да би се приказали подаци о саобраћају, мапа мора да се ажурира.";
 
-"big_font" = "Повећај слова на мапи";
+"big_font" = "Увећана слова на мапи";
 
 /* "traffic" as in road congestion */
 "traffic_update_app_message" = "Да бисте видели податке о саобраћају, морате да ажурирате апликацију.";
@@ -918,7 +918,7 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Подаци о саобраћају нису доступни";
 
-"enable_logging" = "Омогући снимање лог фајлова";
+"enable_logging" = "Снимање лог фајлова";
 
 "log_file_size" = "Величина лог фајла: %@";
 
@@ -1027,7 +1027,7 @@
 
 "download_button" = "Преузми";
 
-"speedcams_alert_title" = "Саобраћајне камере";
+"speedcams_alert_title" = "Прекршајне камере";
 
 "place_description_title" = "Опис места";
 
@@ -1050,7 +1050,7 @@
 
 "power_managment_setting_manual_max" = "Увек";
 
-"enable_logging_warning_message" = "Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције \"Пријави проблем\" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.";
+"enable_logging_warning_message" = "Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције \"Пријавите проблем\" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.";
 
 "driving_options_title" = "Опције рутирања";
 
@@ -1135,7 +1135,7 @@
 
 "ok" = "ОК";
 
-"speedcams_alert_title_carplay_1" = "Саобраћајне камере";
+"speedcams_alert_title_carplay_1" = "Прекршајне камере";
 
 "speedcams_alert_title_carplay_2" = "Упозорење прекорачења";
 
@@ -1258,7 +1258,7 @@
 "placepage_delete_track_button" = "Обриши путању";
 
 /* The track deletion confirmaion alert message. */
-"placepage_delete_track_confirmation_alert_message" = "Are you sure you want to delete this track?";
+"placepage_delete_track_confirmation_alert_message" = "Да ли сте сигурни да желите да обришете ову путању?";
 
 /* Placeholder for track name input on track edit screen */
 "placepage_track_name_hint" = "Назив путање";

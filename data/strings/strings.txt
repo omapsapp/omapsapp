@@ -2463,7 +2463,7 @@
     ro = Salvează hărțile în
     ru = Сохранять карты в
     sk = Uložiť mapy do
-    sr = Сачувај мапе у
+    sr = Место за чување мапа
     sv = Spara kartor i
     sw = Hifadhi ramani kwenye
     th = บันทึกแผนที่ไปยัง
@@ -6540,7 +6540,7 @@
     ro = Vezi pe hartă
     ru = Посмотреть на карте
     sk = Zobraziť na mape
-    sr = Погледај на мапи
+    sr = Прикажи на мапи
     sv = Visa på kartan
     th = ดูบนแผนที่
     tr = Haritada görüntüle
@@ -7281,7 +7281,7 @@
     ro = Raportează o eroare
     ru = Сообщить о проблеме
     sk = Nahlásiť chybu
-    sr = Пријави проблем
+    sr = Пријавите проблем
     sv = Rapportera en bugg
     th = แจ้งข้อผิดพลาด
     tr = Hata bildirin
@@ -8677,6 +8677,7 @@
     ro = Kayak.com Linkuri către hoteluri
     ru = Ссылки в гостиницах на Kayak.com
     sk = Kayak.com Hotel Odkazy
+    sr = Претрага хотела на Kayak.com
     sv = Kayak.com Hotellänkar
     sw = Viungo vya Hoteli ya Kayak.com
     th = ลงคโรงแรม Kayak.com
@@ -8724,6 +8725,7 @@
     ro = Fotografiile, recenziile, linkurile de rezervare sunt afișate pentru hotelurile care au o listă pe Kayak.com. Bonusul de recomandare primit pentru fiecare rezervare prin intermediul acestor linkuri este destinat dezvoltării Organic Maps.
     ru = Ссылки "Фотографии, отзывы, бронирование" отображаются для отелей, подключенных к Kayak.com. Реферальный бонус, полученный за каждое бронирование по этим ссылкам, идет на развитие Organic Maps.
     sk = Fotografie, recenzie a rezervačné odkazy sa zobrazujú pre hotely, ktoré majú svoju ponuku na Kayak.com. Bonus získaný za každú rezerváciu prostredníctvom týchto odkazov ide na rozvoj Organic Maps.
+    sr = Линкови "Фотографије, рецензије, резервације" приказују се за хотеле повезане са Kayak.com. Бонус добијен за сваку резервацију преко ових линкова иде за развој Organic Maps-а.
     sv = Foton, recensioner, bokningslänkar visas för hotell som har en lista på Kayak.com. Den värvningsbonus som erhålls för varje bokning via dessa länkar går till utveckling av Organic Maps.
     sw = Picha, maoni, viungo vya kuweka nafasi vinaonyeshwa kwa hoteli ambazo zimeorodheshwa kwenye Kayak.com. Bonasi ya rufaa inayopokelewa kwa kila nafasi iliyowekwa kupitia viungo hivi huenda kwenye uundaji wa Organic Maps.
     th = รปภาพ รวว ลงกการจองจะแสดงสำหรบโรงแรมทมรายการขอมลบน Kayak.com โบนสผแนะนำทไดรบสำหรบการจองแตละครงผานลงกเหลานจะนำไปใชในการพฒนา Organic Maps
@@ -14178,7 +14180,7 @@
     ro = Autentificare
     ru = Войти
     sk = Prihlásiť sa
-    sr = Пријави се
+    sr = Пријавите се
     sv = Logga in
     th = ล็อกอิน
     tr = Oturum aç
@@ -21025,7 +21027,7 @@
     ro = Mărește dimensiunea literelor pe hartă
     ru = Увеличить шрифт на карте
     sk = Zväčšiť veľkosť písma na mape
-    sr = Повећај слова на мапи
+    sr = Увећана слова на мапи
     sv = Öka teckenstorlek på kartan
     th = เพิ่มขนาดฟอนต์บนแผนที่
     tr = Haritadaki yazı tipi boyutunu artır
@@ -21208,7 +21210,7 @@
     ro = Activează jurnalizarea
     ru = Включить запись логов
     sk = Zapnúť zaznamenávanie
-    sr = Омогући снимање лог фајлова
+    sr = Снимање лог фајлова
     sv = Aktivera loggning
     th = เปิดใช้งานการเก็บล็อก
     tr = Günlüğü etkinleştir
@@ -24871,7 +24873,7 @@
     ro = Radare
     ru = Камеры скорости
     sk = Rýchlostné kamery
-    sr = Саобраћајне камере
+    sr = Прекршајне камере
     sv = Hastighetskameror
     sw = Kamera za mwendo-kasi
     th = กล้องตรวจจับความเร็ว
@@ -25398,7 +25400,7 @@
     ro = Opțiunea activează jurnalizarea în scopuri de diagnosticare. Aceasta poate fi utilă echipei noastre pentru a rezolva problemele cu aplicația. Activează temporar această opțiune pentru a înregistra și a ne trimite jurnale detaliate despre problema ta.
     ru = Данная настройка включается для записи действий в целях диагностики, чтобы помочь нашей команде выявить проблемы с приложением. Временно включайте эту настройку только для отправки детальной информации о найденной вами проблеме в приложении через кнопку "Сообщить о проблеме".
     sk = Týmto zapnete záznamenávanie diagnostických informácií, ktoré môžete poslať našej technickej podpore v prípade problémov s aplikáciou. Záznam môže obsahovať údaje o vašej polohe.
-    sr = Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције "Пријави проблем" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.
+    sr = Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције "Пријавите проблем" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.
     sv = Aktivera denna funktion för att logga detaljer för diagnostiska ändamål. Detta hjälper utvecklarna att identifiera problem med appen. Slå på funktionen endast på begäran av Organic Maps supporttjänst.
     sw = Chaguo huwasha data kwa madhumuni ya uchunguzi. Itakuwa muhimu kwa wafanyakazi wetu ambao wanatatua matatizo ya programu. Washa chaguo hili kwa maombi ya mhudumu wa Organic Maps tu.
     th = ออปชันเพื่อเปิดการบันทึกประวัติการทำงานเพื่อการวินิจฉัย ประวัติดังกล่าวอาจเป็นประโยชน์กับทีมงานช่วยเหลือของเราที่คอยจัดการกับปัญหาที่เจอระหว่างแอปทำงาน โปรดเปิดออปชันดังกล่าวจากการร้องข้อการสนับสนุนจาก Organic Maps เท่านั้น
@@ -27157,7 +27159,7 @@
     ro = Radare
     ru = Камеры
     sk = Radary
-    sr = Саобраћајне камере
+    sr = Прекршајне камере
     sv = Fartkameror
     sw = Kam za kasi
     th = จับความเร็ว
@@ -30083,7 +30085,7 @@
     ro = Păstrați ecranul pornit
     ru = Держи экран включённым
     sk = Nechať obrazovku zapnutú
-    sr = Држи укључен екран
+    sr = Екран увек укључен
     sv = Behåll skärmen på
     sw = Washa skrini
     th = เปิดหน้าจอไว้
@@ -30172,7 +30174,7 @@
     ro = Arată pe ecranul de blocare
     ru = Показывать на экране блокировки
     sk = Zobraziť na uzamknutej obrazovke
-    sr = Прикажи на закључаном екрану
+    sr = Приказ мапе на закључаном екрану
     tr = Kilit ekranında göster
     uk = Показувати на заблокованому екрані
     zh-Hans = 在锁屏上显示
@@ -30527,6 +30529,7 @@
     ro = Sunteți sigur că doriți să ștergeți această pistă?
     ru = Вы уверены, что хотите удалить этот трек?
     sk = Ste si istí, že chcete túto skladbu odstrániť?
+    sr = Да ли сте сигурни да желите да обришете ову путању?
     sv = Är du säker på att du vill radera det här spåret?
     sw = Je, una uhakika unataka kufuta wimbo huu?
     th = คุณแน่ใจหรือไม่ว่าต้องการลบแทร็กนี้

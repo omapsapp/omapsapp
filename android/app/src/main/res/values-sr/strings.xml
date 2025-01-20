@@ -84,7 +84,7 @@
     <!-- Settings button in system menu -->
     <string name="settings">Подешавања</string>
     <!-- Header of settings activity where user defines storage path -->
-    <string name="maps_storage">Сачувај мапе у</string>
+    <string name="maps_storage">Место за чување мапа</string>
     <!-- Detailed description of Maps Storage settings button -->
     <string name="maps_storage_summary">Изаберите фолдер у ком се чувају мапе.</string>
     <!-- E.g. "Downloaded maps: 500Mb" in Maps Storage settings -->
@@ -256,7 +256,7 @@
     <string name="pref_tts_unavailable">Није доступно</string>
     <string name="pref_map_auto_zoom">Аутоматско увећавање</string>
     <string name="placepage_distance">Раздаљина</string>
-    <string name="search_show_on_map">Погледај на мапи</string>
+    <string name="search_show_on_map">Прикажи на мапи</string>
     <!-- Menu button -->
     <string name="menu">Мени</string>
     <!-- Text in menu -->
@@ -276,7 +276,7 @@
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Подржи пројекат</string>
     <!-- Text in menu + Button in the main Help dialog -->
-    <string name="report_a_bug">Пријави проблем</string>
+    <string name="report_a_bug">Пријавите проблем</string>
     <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
     <string name="compass_calibration_recommended">Побољшајте смер стрелице тако што ћете померати телефон у путањи осмице као бисте калибрисали компас.</string>
     <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
@@ -312,6 +312,10 @@
     <string name="google_play_services">Google Play прецизност локације</string>
     <!-- Preference text -->
     <string name="pref_use_google_play">Брзо одређивање ваше локације коришћењем Bluetooth-а, WiFi-а, или мобилне мреже</string>
+    <!-- Preference title -->
+    <string name="pref_display_kayak_title">Претрага хотела на Kayak.com</string>
+    <!-- Preference description -->
+    <string name="pref_display_kayak_text">Линкови \"Фотографије, рецензије, резервације\" приказују се за хотеле повезане са Kayak.com. Бонус добијен за сваку резервацију преко ових линкова иде за развој Organic Maps-а.</string>
     <!-- Text for routing error dialog -->
     <string name="routing_download_maps_along">Преузми све мапе које се налазе на рути</string>
     <!-- Text for routing error dialog -->
@@ -451,7 +455,7 @@
     <string name="edit_opening_hours">Промени радно време</string>
     <string name="no_osm_account">Немате OpenStreetMap налог?</string>
     <string name="register_at_openstreetmap">Региструјте се на OpenStreetMap-у</string>
-    <string name="login">Пријави се</string>
+    <string name="login">Пријавите се</string>
     <!-- Status message indicating that user did not login to OSM profile yet. -->
     <string name="not_signed_in">Нисте пријављени</string>
     <string name="login_osm">Пријава на OpenStreetMap</string>
@@ -592,11 +596,11 @@
     <string name="mobile_data_option_never">Никад не користи</string>
     <string name="mobile_data_option_ask">Увек ме питај</string>
     <string name="traffic_update_maps_text">Да би се приказали подаци о саобраћају, мапа мора да се ажурира.</string>
-    <string name="big_font">Повећај слова на мапи</string>
+    <string name="big_font">Увећана слова на мапи</string>
     <string name="traffic_update_app">Молим Вас да ажурирате Organic Maps</string>
     <!-- "traffic" as in "road congestion" -->
     <string name="traffic_data_unavailable">Подаци о саобраћају нису доступни</string>
-    <string name="enable_logging">Омогући снимање лог фајлова</string>
+    <string name="enable_logging">Снимање лог фајлова</string>
     <!-- Settings: "Send general feedback" button -->
     <string name="feedback_general">Ваше мишљење</string>
     <string name="prefs_languages_information">Користимо системски сервис текст-у-говор за гласовне инструкције. Многи Андроид уређаји користе Google Препознавање и синтезу говора, који можете да преузмете или ажурирате путем Google Play продавнице (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
@@ -672,7 +676,7 @@
     <string name="limited_access">Ограничен приступ</string>
     <string name="bookmark_list_description_hint">Унесите опис (текст или html)</string>
     <string name="not_shared">Приватно</string>
-    <string name="speedcams_alert_title">Саобраћајне камере</string>
+    <string name="speedcams_alert_title">Прекршајне камере</string>
     <string name="place_description_title">Опис места</string>
     <!-- this text will be shown in application notification preferences opposite checkbox which enable/disable downloader notifications. Devices on Android 8+ are affected. -->
     <string name="notification_channel_downloader">Преузимање мапа</string>
@@ -687,7 +691,7 @@
     <string name="power_managment_setting_never">Никад</string>
     <string name="power_managment_setting_auto">Када је батерија при крају</string>
     <string name="power_managment_setting_manual_max">Увек</string>
-    <string name="enable_logging_warning_message">Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције \"Пријави проблем\" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.</string>
+    <string name="enable_logging_warning_message">Привремено укључите ову опцију да бисте сачували детаљне дијагностичке логове уколико имате неки проблем. Логове можете да нам пошаљете коришћењем опције \"Пријавите проблем\" у прозору Помоћ. Напомена: Логови могу да садрже информације о вашој локацији.</string>
     <string name="access_rules_author_only">Online измене</string>
     <string name="driving_options_title">Опције рутирања</string>
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
@@ -779,11 +783,11 @@
     <string name="connection_failure">Повезивање није успело</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="disconnect_usb_cable_title">Откачите USB кабл</string>
-    <string name="enable_keep_screen_on">Држи укључен екран</string>
+    <string name="enable_keep_screen_on">Екран увек укључен</string>
     <!-- Description in preferences -->
     <string name="enable_keep_screen_on_description">Када је одабрано, екран ће увек бити укључен док се приказује мапа.</string>
     <!-- A preference title; keep short! -->
-    <string name="enable_show_on_lock_screen">Прикажи на закључаном екрану</string>
+    <string name="enable_show_on_lock_screen">Приказ мапе на закључаном екрану</string>
     <!-- Description in preferences -->
     <string name="enable_show_on_lock_screen_description">Када је одабрано, апликација ће радити и на закључаном екрану, тј. када је уређај закључан.</string>
     <!-- Current language of the map! -->
