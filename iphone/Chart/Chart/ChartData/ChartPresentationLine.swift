@@ -11,7 +11,6 @@ final class ChartPresentationLine {
 
   var values: [ChartValue] { chartLine.values }
   var color: UIColor { chartLine.color }
-  var name: String { chartLine.name }
   var type: ChartLineType { chartLine.type }
 
   init(_ chartLine: ChartLine) {
